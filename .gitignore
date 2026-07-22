@@ -33,3 +33,5 @@ Thumbs.db
 *.sw?
 .vscode/
 .idea/
+
+.vercel
