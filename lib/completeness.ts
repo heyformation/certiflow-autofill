@@ -28,7 +28,7 @@ export function checkCandidateCompleteness(candidate: Partial<CandidateRow>): Co
     (candidate.mail_crm && candidate.mail_crm.trim())
   );
   if (!hasEmail) {
-    missingFields.push('Adresse e-mail (mail / mail_wedof / mail_crm)');
+    missingFields.push('Adresse e-mail');
   }
 
   // 4. Postal Address (at least one valid address)
@@ -38,7 +38,7 @@ export function checkCandidateCompleteness(candidate: Partial<CandidateRow>): Co
     (candidate.adresse_postale && candidate.adresse_postale.trim())
   );
   if (!hasAddress) {
-    missingFields.push('Adresse postale (adresse / adresse_wedof / adresse_postale)');
+    missingFields.push('Adresse postale');
   }
 
   // 5. Professional experience

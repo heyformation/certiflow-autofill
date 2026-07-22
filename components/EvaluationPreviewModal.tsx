@@ -1,7 +1,7 @@
 'use client';
 
 import { CandidateEvaluationResult, CandidateRow } from '@/lib/types';
-import { Award, CheckCircle2, CloudUpload, Download, FileText, X } from 'lucide-react';
+import { Award, CheckCircle2, CloudUpload, Download, Loader2, X } from 'lucide-react';
 import React, { useState } from 'react';
 
 interface EvaluationPreviewModalProps {
@@ -24,16 +24,27 @@ export const EvaluationPreviewModal: React.FC<EvaluationPreviewModalProps> = ({
   onSyncDrive,
 }) => {
   const [isSyncingDrive, setIsSyncingDrive] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   if (!isOpen || !candidate || !evalResult) return null;
 
   const handleDriveSyncClick = async () => {
-    if (!onSyncDrive) return;
+    if (!onSyncDrive || isSyncingDrive) return;
     setIsSyncingDrive(true);
     try {
       await onSyncDrive();
     } finally {
       setIsSyncingDrive(false);
+    }
+  };
+
+  const handleDownloadClick = async () => {
+    if (isDownloading) return;
+    setIsDownloading(true);
+    try {
+      await onDownloadPackage();
+    } finally {
+      setIsDownloading(false);
     }
   };
 
@@ -123,20 +134,29 @@ export const EvaluationPreviewModal: React.FC<EvaluationPreviewModalProps> = ({
             {onSyncDrive && (
               <button
                 onClick={handleDriveSyncClick}
-                disabled={isSyncingDrive}
+                disabled={isSyncingDrive || isDownloading}
                 className="flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-teal-300 font-semibold text-xs px-4 py-2.5 rounded-xl border border-slate-700 transition-all active:scale-95 disabled:opacity-50"
               >
-                <CloudUpload className="h-4 w-4 text-teal-400" />
+                {isSyncingDrive ? (
+                  <Loader2 className="h-4 w-4 text-teal-400 animate-spin" />
+                ) : (
+                  <CloudUpload className="h-4 w-4 text-teal-400" />
+                )}
                 <span>{isSyncingDrive ? 'Synchro Drive...' : 'Envoyer vers Google Drive'}</span>
               </button>
             )}
 
             <button
-              onClick={onDownloadPackage}
-              className="flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-lg transition-all active:scale-95"
+              onClick={handleDownloadClick}
+              disabled={isDownloading || isSyncingDrive}
+              className="flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-lg transition-all active:scale-95 disabled:opacity-50"
             >
-              <Download className="h-4 w-4" />
-              <span>Télécharger (.ZIP)</span>
+              {isDownloading ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                <Download className="h-4 w-4" />
+              )}
+              <span>{isDownloading ? 'Téléchargement...' : 'Télécharger (.ZIP)'}</span>
             </button>
           </div>
         </div>
