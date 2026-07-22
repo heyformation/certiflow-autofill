@@ -1,0 +1,35 @@
+# Dependencies
+/node_modules
+/.pnpm
+/.yarn
+
+# Next.js build output
+/.next/
+/out/
+/build/
+
+# Secret credentials & Environment variables
+.env*.local
+.env
+.env.production
+key.json
+*.pem
+
+# Temporary test scripts
+test_*.js
+test_*.ts
+run_*.js
+run_*.ts
+diag_*.js
+*.py
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vscode/
+.idea/
