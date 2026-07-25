@@ -41,6 +41,7 @@ export default function DashboardPage() {
   const [previewCandidate, setPreviewCandidate] = useState<CandidateRow | null>(null);
   const [previewEvalResult, setPreviewEvalResult] = useState<CandidateEvaluationResult | null>(null);
   const [producedCount, setProducedCount] = useState<number>(0);
+  const [fillStats, setFillStats] = useState<any>(null);
   const [isPreviewOpen, setIsPreviewOpen] = useState<boolean>(false);
 
   // AI Sheet Analysis state
@@ -186,6 +187,7 @@ export default function DashboardPage() {
         setPreviewCandidate(candidate);
         setPreviewEvalResult(data.evalResult);
         setProducedCount(data.producedCount);
+        setFillStats(data.fillStats || null);
         setIsPreviewOpen(true);
 
         // Reset manual toggles
@@ -445,6 +447,7 @@ export default function DashboardPage() {
         candidate={previewCandidate}
         evalResult={previewEvalResult}
         producedCount={producedCount}
+        fillStats={fillStats}
         onDownloadPackage={() => {
           if (previewCandidate) handleBatchGenerate([previewCandidate]);
         }}

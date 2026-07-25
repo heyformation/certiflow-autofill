@@ -1,8 +1,16 @@
 'use client';
 
 import { CandidateEvaluationResult, CandidateRow } from '@/lib/types';
-import { Award, CheckCircle2, CloudUpload, Download, Loader2, X } from 'lucide-react';
+import { Award, CheckCircle2, CheckSquare, CloudUpload, Download, FileText, Loader2, Sparkles, X } from 'lucide-react';
 import React, { useState } from 'react';
+
+export interface FillStats {
+  documents: number;
+  pdfs: number;
+  checkboxesChecked: number;
+  fieldsFilled: number;
+  aiFilledDocs: number;
+}
 
 interface EvaluationPreviewModalProps {
   isOpen: boolean;
@@ -10,6 +18,7 @@ interface EvaluationPreviewModalProps {
   candidate: CandidateRow | null;
   evalResult: CandidateEvaluationResult | null;
   producedCount: number;
+  fillStats?: FillStats | null;
   onDownloadPackage: () => void;
   onSyncDrive?: () => void;
 }
@@ -20,6 +29,7 @@ export const EvaluationPreviewModal: React.FC<EvaluationPreviewModalProps> = ({
   candidate,
   evalResult,
   producedCount,
+  fillStats,
   onDownloadPackage,
   onSyncDrive,
 }) => {
@@ -124,6 +134,42 @@ export const EvaluationPreviewModal: React.FC<EvaluationPreviewModalProps> = ({
             ))}
           </div>
         </div>
+
+        {/* Document Fill Status */}
+        {fillStats && (
+          <div className="mb-6">
+            <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+              Statut de Remplissage des Documents
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 text-center">
+                <FileText className="h-4 w-4 text-blue-400 mx-auto mb-1" />
+                <p className="text-lg font-bold text-white">{fillStats.documents}</p>
+                <p className="text-[10px] text-slate-500">Documents Word</p>
+              </div>
+              <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 text-center">
+                <FileText className="h-4 w-4 text-rose-400 mx-auto mb-1" />
+                <p className="text-lg font-bold text-white">{fillStats.pdfs}</p>
+                <p className="text-[10px] text-slate-500">PDF générés</p>
+              </div>
+              <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 text-center">
+                <CheckSquare className="h-4 w-4 text-emerald-400 mx-auto mb-1" />
+                <p className="text-lg font-bold text-white">{fillStats.checkboxesChecked}</p>
+                <p className="text-[10px] text-slate-500">Cases cochées</p>
+              </div>
+              <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 text-center">
+                <Sparkles className="h-4 w-4 text-amber-400 mx-auto mb-1" />
+                <p className="text-lg font-bold text-white">{fillStats.aiFilledDocs}</p>
+                <p className="text-[10px] text-slate-500">Remplis par IA</p>
+              </div>
+            </div>
+            {fillStats.pdfs === 0 && (
+              <p className="text-[10px] text-slate-500 mt-2">
+                PDF non activé (variable CLOUDCONVERT_API_KEY). Les documents Word restent disponibles au téléchargement.
+              </p>
+            )}
+          </div>
+        )}
 
         {/* Action Buttons: Instant Download & Google Drive Sync */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-slate-800">

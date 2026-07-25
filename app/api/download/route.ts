@@ -3,6 +3,10 @@ import { CandidateRow } from '@/lib/types';
 import JSZip from 'jszip';
 import { NextRequest, NextResponse } from 'next/server';
 
+// Batch generation of multiple candidates; allow a long duration.
+export const runtime = 'nodejs';
+export const maxDuration = 300;
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();

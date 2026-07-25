@@ -3,6 +3,10 @@ import { uploadFileToGoogleDrive } from '@/lib/google-drive';
 import { CandidateRow } from '@/lib/types';
 import { NextRequest, NextResponse } from 'next/server';
 
+// Generation + Drive upload of the full document set; allow a long duration.
+export const runtime = 'nodejs';
+export const maxDuration = 300;
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();

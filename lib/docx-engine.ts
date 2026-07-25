@@ -1,9 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import PizZip from 'pizzip';
+import { buildAiFillPlan } from './ai-fill-planner';
 import { generateCandidateEvaluation } from './claude-engine';
+import { applyFillPlan, extractStructure, FillReport } from './docx-filler';
 import { getJuryRules } from './jury-rules';
 import { generateCandidateMarkdownFiles } from './md-engine';
+import { convertDocxToPdf, isPdfConversionEnabled } from './pdf-converter';
 import { CandidateEvaluationResult, CandidateRow } from './types';
 
 const TEMPLATES_DIR = path.join(process.cwd(), 'Templates');
@@ -13,6 +16,8 @@ export interface GeneratedFile {
   relativePath: string; // e.g. "Proforma Institut/RS6485 - Comptabilité TPE/1_PV_evaluation.docx"
   category?: string;
   buffer: Buffer;
+  /** Fill diagnostics: how many tags/checkboxes/fields were populated. */
+  fillReport?: FillReport & { usedAi: boolean };
 }
 
 export async function generateCandidateDocuments(
@@ -38,14 +43,39 @@ export async function generateCandidateDocuments(
       .replace(/- Template\.docx$/i, '.docx')
       .replace(/_Template\.docx$/i, '.docx');
 
-    const filledBuffer = fillDocxTemplate(templatePath, candidate, evalResult, juryRules);
+    const documentName = path.basename(outputFileName, '.docx');
+    const { buffer: filledBuffer, fillReport } = await fillDocxTemplate(
+      templatePath,
+      documentName,
+      candidate,
+      evalResult,
+      juryRules,
+      userApiKey
+    );
 
     files.push({
-      filename: `${path.basename(outputFileName, '.docx')} - Filled.docx`,
+      filename: `${documentName} - Filled.docx`,
       relativePath: `${candidateFolder}/${outputFileName}`,
       category: 'Document Certifiant (Word)',
       buffer: filledBuffer,
+      fillReport,
     });
+
+    // Optional PDF rendering (Vercel-safe external conversion; DOCX stays as
+    // fallback when disabled or on failure).
+    if (isPdfConversionEnabled()) {
+      const pdfBuffer = await convertDocxToPdf(filledBuffer, `${outputFileName}`);
+      if (pdfBuffer) {
+        const pdfName = outputFileName.replace(/\.docx$/i, '.pdf');
+        files.push({
+          filename: `${documentName} - Filled.pdf`,
+          relativePath: `${candidateFolder}/${pdfName}`,
+          category: 'Document Certifiant (PDF)',
+          buffer: pdfBuffer,
+          fillReport,
+        });
+      }
+    }
   }
 
   // Generate Markdown (.md) documents
@@ -62,12 +92,14 @@ export async function generateCandidateDocuments(
   return { files, evalResult };
 }
 
-function fillDocxTemplate(
+async function fillDocxTemplate(
   templatePath: string,
+  documentName: string,
   candidate: CandidateRow,
   evalResult: CandidateEvaluationResult,
-  juryRules: ReturnType<typeof getJuryRules>
-): Buffer {
+  juryRules: ReturnType<typeof getJuryRules>,
+  userApiKey?: string
+): Promise<{ buffer: Buffer; fillReport: FillReport & { usedAi: boolean } }> {
   const content = fs.readFileSync(templatePath);
   const zip = new PizZip(content);
 
@@ -78,6 +110,14 @@ function fillDocxTemplate(
     month: '2-digit',
     year: 'numeric',
   });
+
+  // Spec §8.1 — empty source dates MUST stay empty (never today's date).
+  const dateDebut = candidate.date_debut_session || candidate.dates_session || '';
+  const dateFin = candidate.date_fin_session || candidate.dates_session || '';
+  const dateExamen = candidate.date_examen || '';
+  const datesSession =
+    candidate.dates_session ||
+    (dateDebut || dateFin ? `${dateDebut}${dateFin ? ` au ${dateFin}` : ''}` : '');
 
   const replacements: Record<string, string> = {
     // Identity & Contact
@@ -95,10 +135,11 @@ function fillDocxTemplate(
     '[POSTE]': 'Dirigeant / Collaborateur TPE',
 
     // Dates & Financials from Candidate Sheet Data
-    '[DATE_DEBUT_SESSION]': candidate.date_debut_session || candidate.dates_session || currentDate,
-    '[DATE_FIN_SESSION]': candidate.date_fin_session || candidate.dates_session || currentDate,
-    '[DATES_SESSION]': candidate.dates_session || `${candidate.date_debut_session || ''} au ${candidate.date_fin_session || ''}`,
-    '[DATE_EXAMEN]': candidate.date_examen || currentDate,
+    // Spec §8.1 — leave empty when the source is empty (no fictitious/today date).
+    '[DATE_DEBUT_SESSION]': dateDebut,
+    '[DATE_FIN_SESSION]': dateFin,
+    '[DATES_SESSION]': datesSession,
+    '[DATE_EXAMEN]': dateExamen,
     '[APPORTEUR]': candidate.apporteur || 'Direct',
     '[BUDGET]': candidate.budget || '1500',
     '[STATUT_EDOF]': candidate.statuts_edof || 'Payé',
@@ -110,8 +151,10 @@ function fillDocxTemplate(
     '[ORGANISME]': candidate.organisme,
     '[CODE_CERTIF]': candidate.code_certif,
     '[INTITULE_FORMATION]': candidate.formation,
-    '[DATE_SESSION]': currentDate,
-    '[DATE_JURY]': currentDate,
+    // Session/jury dates follow §8.1 (empty when source empty). Signature date
+    // is the document generation date, which is legitimately "today".
+    '[DATE_SESSION]': datesSession,
+    '[DATE_JURY]': dateExamen,
     '[DATE_SIGNATURE]': currentDate,
     '[DATE_VALIDITE]': '31/12/2028',
     '[VOIE_ACCES]': 'Formation continue',
@@ -173,14 +216,29 @@ function fillDocxTemplate(
     '[NOM_PROJET_TPE]': `Projet TPE ${candidate.prenom} ${candidate.nom}`,
   };
 
-  for (const [tag, value] of Object.entries(replacements)) {
-    const escapedTag = tag.replace(/\[/g, '\\[').replace(/\]/g, '\\]');
-    const regex = new RegExp(escapedTag, 'g');
-    docXml = docXml.replace(regex, value);
-  }
+  // ---- 3-mode fill --------------------------------------------------------
+  // Extract the document's fillable structure (tags, checkboxes, empty cells),
+  // then let the AI layer decide checkbox/field answers grounded in the
+  // candidate + evaluation profile. Tags are always applied from the map above.
+  const structure = extractStructure(docXml);
 
-  zip.file('word/document.xml', docXml);
-  return zip.generate({ type: 'nodebuffer', compression: 'DEFLATE' });
+  const { plan, usedAi } = await buildAiFillPlan(
+    candidate,
+    evalResult,
+    structure,
+    documentName,
+    userApiKey
+  );
+
+  // Merge the deterministic tag map into the plan (tags take the known values).
+  plan.tags = { ...replacements, ...(plan.tags || {}) };
+
+  const { xml: filledXml, report } = applyFillPlan(docXml, structure, plan);
+
+  zip.file('word/document.xml', filledXml);
+  const buffer = zip.generate({ type: 'nodebuffer', compression: 'DEFLATE' });
+
+  return { buffer, fillReport: { ...report, usedAi } };
 }
 
 function getTemplatesDir(): string {

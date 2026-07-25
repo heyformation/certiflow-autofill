@@ -3,6 +3,10 @@ import { generateCandidateDocuments } from '@/lib/docx-engine';
 import { CandidateRow, GenerationLog } from '@/lib/types';
 import { NextRequest, NextResponse } from 'next/server';
 
+// Generation calls Claude + optional PDF conversion; needs more than the 10s default.
+export const runtime = 'nodejs';
+export const maxDuration = 300;
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -45,16 +49,29 @@ export async function POST(req: NextRequest) {
       console.warn('Neon DB log warning:', dbErr)
     );
 
+    const fillStats = {
+      documents: files.filter((f) => f.filename.endsWith('.docx')).length,
+      pdfs: files.filter((f) => f.filename.endsWith('.pdf')).length,
+      checkboxesChecked: files.reduce(
+        (a, f) => a + (f.fillReport?.checkboxesChecked || 0),
+        0
+      ),
+      fieldsFilled: files.reduce((a, f) => a + (f.fillReport?.fieldsFilled || 0), 0),
+      aiFilledDocs: files.filter((f) => f.fillReport?.usedAi).length,
+    };
+
     return NextResponse.json({
       success: true,
       log: logEntry,
       evalResult,
       producedCount: files.length,
+      fillStats,
       filesSummary: files.map((f) => ({
         filename: f.filename,
         relativePath: f.relativePath,
         category: f.category,
         sizeBytes: f.buffer.length,
+        fillReport: f.fillReport,
       })),
     });
   } catch (err: any) {

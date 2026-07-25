@@ -2,6 +2,10 @@ import { analyzeExcelSheetData } from '@/lib/claude-engine';
 import { CandidateRow } from '@/lib/types';
 import { NextRequest, NextResponse } from 'next/server';
 
+// Calls Claude for sheet analysis; allow more than the 10s default.
+export const runtime = 'nodejs';
+export const maxDuration = 120;
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
