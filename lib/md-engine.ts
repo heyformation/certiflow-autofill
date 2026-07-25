@@ -22,33 +22,34 @@ export function generateCandidateMarkdownFiles(
   });
 
   const files: GeneratedMdFile[] = [];
+  const candidateMail = candidate.mail || candidate.mail_wedof || candidate.mail_crm || '';
+  const candidatePhone = candidate.numero_tel || '';
+  const candidateAddress = candidate.adresse || candidate.adresse_wedof || candidate.adresse_postale || '';
 
   // 1. Category A — CV Candidate
-  const cvContent = `# CV — ${candidate.civilite || 'M.'} ${candidate.prenom} ${candidate.nom}
+  const cvContent = `# CV — ${candidate.civilite || ''} ${candidate.prenom} ${candidate.nom}
 
 **Identité & Coordonnées**
 - **Nom complet** : ${candidate.prenom} ${candidate.nom}
-- **Titre / Civilité** : ${candidate.civilite || 'M.'}
-- **E-mail** : ${candidate.mail || candidate.mail_wedof || candidate.mail_crm || 'candidat@email.fr'}
-- **Téléphone** : ${candidate.numero_tel || '06 00 00 00 00'}
-- **Adresse** : ${candidate.adresse || candidate.adresse_wedof || candidate.adresse_postale || 'Paris, France'}
+- **Titre / Civilité** : ${candidate.civilite || ''}
+- **E-mail** : ${candidateMail}
+- **Téléphone** : ${candidatePhone}
+- **Adresse** : ${candidateAddress}
 - **Organisme de formation** : ${candidate.organisme}
 - **Certification visée** : ${candidate.code_certif} — ${candidate.formation}
 
 ---
 
 ## Parcours & Expérience Professionnelle
-${candidate.experience_pro || 'Expérience et pratique professionnelle adaptées aux opérations TPE.'}
+${candidate.experience_pro || ''}
 
-### Résumé IA du Parcours
-${evalResult.additionalAiTexts?.parcoursSummary || 'Parcours professionnel avec expérience significative adaptée aux exigences du Répertoire Spécifique.'}
+### Synthèse du Parcours
+${evalResult.additionalAiTexts?.parcoursSummary || ''}
 
 ---
 
-## Compétences Clés & Objectifs de Certification
-- Maîtrise des processus opérationnels TPE
-- Gestion administrative et organisationnelle
-- Projet d'entreprise : ${evalResult.additionalAiTexts?.projetSummary || 'Projet de structuration et développement d’activité TPE.'}
+## Compétences & Projet d'Entreprise
+- Projet d'entreprise : ${evalResult.additionalAiTexts?.projetSummary || ''}
 `;
 
   files.push({
@@ -69,7 +70,7 @@ ${evalResult.additionalAiTexts?.parcoursSummary || 'Parcours professionnel avec 
 ### 1. Profil & Situation
 - **Apprenant** : ${candidate.prenom} ${candidate.nom}
 - **Formation visée** : ${candidate.formation} (${candidate.code_certif})
-- **Expérience déclarée** : ${candidate.experience_pro}
+- **Expérience déclarée** : ${candidate.experience_pro || ''}
 
 ### 2. Auto-évaluation des Thématiques de Compétences (Échelle 1 à 5)
 ${evalResult.themeProfiles
@@ -79,8 +80,7 @@ ${evalResult.themeProfiles
 ---
 
 ### 3. Objectifs d'Apprentissage & Attentes
-- Approfondissement des thématiques cibles pour optimiser l'organisation de la TPE.
-- Acquisition des méthodologies certifiantes Qualiopi & Répertoire Spécifique.
+- Approfondissement cibles des compétences de la certification ${candidate.code_certif}.
 `;
 
   files.push({
@@ -122,7 +122,7 @@ ${evalResult.themeProfiles
 
   // 4. Category B — Grille d'Évaluation Certifiante (Exam Day)
   const grilleContent = `# Grille d'Évaluation Certifiante — ${candidate.code_certif}
-**Candidat** : ${candidate.civilite || 'M.'} ${candidate.prenom} ${candidate.nom}  
+**Candidat** : ${candidate.civilite || ''} ${candidate.prenom} ${candidate.nom}  
 **Certification** : ${candidate.formation} (${candidate.code_certif})  
 **Organisme** : ${candidate.organisme}  
 **Date d'examen** : ${candidate.date_examen || currentDate}  
@@ -157,38 +157,40 @@ ${evalResult.competencies
     content: grilleContent,
   });
 
-  // 5. Category B — PV de Jury
-  const pvContent = `# Procès-Verbal de Jury d'Évaluation — ${candidate.code_certif}
-**Organisme Certificateur Partner** : ${candidate.organisme}  
-**Certification** : ${candidate.code_certif} — ${candidate.formation}  
+  // 5. Category B — Procès-Verbal (PV) de Jury
+  const pvContent = `# Procès-Verbal de Délibération du Jury — ${candidate.code_certif}
+
+**Organisme Certificateur** : ${candidate.organisme}  
+**Date de tenue du Jury** : ${candidate.date_examen || currentDate}  
+**Lieu** : Siège Administratif / Distanciel  
 
 ---
 
-## Informations Candidat
-- **Nom & Prénom** : ${candidate.prenom} ${candidate.nom}
-- **Date de naissance** : ${candidate.date_naissance || 'Conforme'}
-- **Dates de session** : ${candidate.date_debut_session || candidate.dates_session || currentDate} au ${candidate.date_fin_session || candidate.dates_session || currentDate}
-- **Date d'examen** : ${candidate.date_examen || currentDate}
-
----
-
-## Composition du Jury
+## Composition du Jury d'Évaluation (Spec §7)
 - **Président(e) du Jury** : ${juryRules.presidentName}
 - **Membre du Jury** : ${juryRules.memberName}
-- **Contact administratif** : ${juryRules.contact}
+- **Contact Email Officiel** : ${juryRules.contact}
 
 ---
 
-## Délibération et Résultat Final
-- **Note d'évaluation globale** : **${evalResult.grilleEvaluation.convertedScore20} / 20**
-- **Mention accordée** : **ADMIS**
+## Candidat Évalué
+- **Nom & Prénom** : ${candidate.prenom} ${candidate.nom}
+- **Civilité** : ${candidate.civilite || ''}
+- **E-mail** : ${candidateMail}
+- **Certification** : ${candidate.formation} (${candidate.code_certif})
 
 ---
 
-## Signatures Officieuses
-- *Président du Jury* : ${juryRules.presidentName}
-- *Membre du Jury* : ${juryRules.memberName}
-- *Fait le ${currentDate} à Paris*
+## Délibération & Décision Finale
+Après examen des prestations du candidat, de la grille d'évaluation et du cas pratique :
+- **Note Convertie** : **${evalResult.grilleEvaluation.convertedScore20} / 20**
+- **Décision Générale** : **ADMIS (Certification Accordée)**
+
+---
+
+**Signatures des membres du Jury**  
+- *${juryRules.presidentName} (Président)*  
+- *${juryRules.memberName} (Membre)*  
 `;
 
   files.push({
@@ -198,18 +200,14 @@ ${evalResult.competencies
     content: pvContent,
   });
 
-  // 6. Category C — Évaluation Finale (Isolated Pedagogical)
+  // 6. Category C — Évaluation Finale Isolée
   const evalFinaleContent = `# Évaluation Finale — ${candidate.code_certif}
+
 **Candidat** : ${candidate.prenom} ${candidate.nom}  
 **Organisme** : ${candidate.organisme}  
-**Date** : ${currentDate}  
+**Statut Final** : **ADMIS (${evalResult.grilleEvaluation.convertedScore20}/20)**  
 
----
-
-## Rendu Général
-- **Résultat global** : **ADMIS** (${evalResult.grilleEvaluation.convertedScore20}/20)
-- **Modalité** : Évaluation écrite & cas pratiques
-- **Validation** : Ensemble des objectifs pédagogiques du Répertoire Spécifique validés.
+L'apprenant(e) ${candidate.prenom} ${candidate.nom} a validé l'ensemble des modules d'évaluation et cas pratiques pour la certification ${candidate.code_certif}.
 `;
 
   files.push({

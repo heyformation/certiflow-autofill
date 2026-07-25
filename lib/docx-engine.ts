@@ -128,19 +128,19 @@ async function fillDocxTemplate(
     (dateDebut || dateFin ? `${dateDebut}${dateFin ? ` au ${dateFin}` : ''}` : '');
 
   const replacements: Record<string, string> = {
-    // Identity & Contact
-    '[NOM]': candidate.nom,
-    '[PRENOM]': candidate.prenom,
-    '[NOM_PRENOM]': `${candidate.nom} ${candidate.prenom}`,
-    '[CIVILITE]': candidate.civilite || 'M.',
-    '[DATE_NAISSANCE]': candidate.date_naissance || '15/05/1988',
-    '[MAIL]': candidate.mail || candidate.mail_wedof || candidate.mail_crm || 'candidat@email.fr',
-    '[EMAIL]': candidate.mail || candidate.mail_wedof || candidate.mail_crm || 'candidat@email.fr',
-    '[ADRESSE]': candidate.adresse || candidate.adresse_wedof || candidate.adresse_postale || '15 Rue de la Paix, 75002 Paris',
-    '[ADRESSE_CANDIDAT]': candidate.adresse || candidate.adresse_wedof || candidate.adresse_postale || '15 Rue de la Paix, 75002 Paris',
-    '[TELEPHONE]': candidate.numero_tel || '06 12 34 56 78',
-    '[EMPLOYEUR]': candidate.organisme || 'TPE Indépendante',
-    '[POSTE]': 'Dirigeant / Collaborateur TPE',
+    // Identity & Contact - Spec §8.1: NO fictitious default values. Empty source fields stay empty.
+    '[NOM]': candidate.nom || '',
+    '[PRENOM]': candidate.prenom || '',
+    '[NOM_PRENOM]': `${candidate.nom || ''} ${candidate.prenom || ''}`.trim(),
+    '[CIVILITE]': candidate.civilite || '',
+    '[DATE_NAISSANCE]': candidate.date_naissance || '',
+    '[MAIL]': candidate.mail || candidate.mail_wedof || candidate.mail_crm || '',
+    '[EMAIL]': candidate.mail || candidate.mail_wedof || candidate.mail_crm || '',
+    '[ADRESSE]': candidate.adresse || candidate.adresse_wedof || candidate.adresse_postale || '',
+    '[ADRESSE_CANDIDAT]': candidate.adresse || candidate.adresse_wedof || candidate.adresse_postale || '',
+    '[TELEPHONE]': candidate.numero_tel || '',
+    '[EMPLOYEUR]': candidate.organisme || '',
+    '[POSTE]': '',
 
     // Dates & Financials from Candidate Sheet Data
     // Spec §8.1 — leave empty when the source is empty (no fictitious/today date).
@@ -148,33 +148,31 @@ async function fillDocxTemplate(
     '[DATE_FIN_SESSION]': dateFin,
     '[DATES_SESSION]': datesSession,
     '[DATE_EXAMEN]': dateExamen,
-    '[APPORTEUR]': candidate.apporteur || 'Direct',
-    '[BUDGET]': candidate.budget || '1500',
-    '[STATUT_EDOF]': candidate.statuts_edof || 'Payé',
-    '[EXPERIENCE]': candidate.experience_pro || 'Expérience et pratique professionnelle',
-    '[CIN_OK]': candidate.cin_ok_str || (candidate.cin_ok ? 'Fait' : 'A faire'),
-    '[CV_RECU]': candidate.cv_recu_str || (candidate.cv_recu ? 'Fait' : 'A faire'),
+    '[APPORTEUR]': candidate.apporteur || '',
+    '[BUDGET]': candidate.budget || '',
+    '[STATUT_EDOF]': candidate.statuts_edof || '',
+    '[EXPERIENCE]': candidate.experience_pro || '',
+    '[CIN_OK]': candidate.cin_ok_str || (candidate.cin_ok ? 'Fait' : ''),
+    '[CV_RECU]': candidate.cv_recu_str || (candidate.cv_recu ? 'Fait' : ''),
 
     // Certification & School
-    '[ORGANISME]': candidate.organisme,
-    '[CODE_CERTIF]': candidate.code_certif,
-    '[INTITULE_FORMATION]': candidate.formation,
-    // Session/jury dates follow §8.1 (empty when source empty). Signature date
-    // is the document generation date, which is legitimately "today".
+    '[ORGANISME]': candidate.organisme || '',
+    '[CODE_CERTIF]': candidate.code_certif || '',
+    '[INTITULE_FORMATION]': candidate.formation || '',
     '[DATE_SESSION]': datesSession,
     '[DATE_JURY]': dateExamen,
     '[DATE_SIGNATURE]': currentDate,
-    '[DATE_VALIDITE]': '31/12/2028',
+    '[DATE_VALIDITE]': '',
     '[VOIE_ACCES]': 'Formation continue',
-    '[MODALITE]': 'E-learning & Présentiel',
-    '[STATUT]': 'Terminé',
+    '[MODALITE]': '',
+    '[STATUT]': candidate.statuts_edof || '',
     '[RESULTAT]': 'ADMIS',
 
     // ID Document Verification
-    '[TYPE_PIECE]': 'Carte Nationale d\'Identité',
-    '[NUMERO_PIECE]': 'CNI-75002-987654',
+    '[TYPE_PIECE]': '',
+    '[NUMERO_PIECE]': '',
 
-    // Jury
+    // Jury - Section 7 Specifications Table
     '[PRESIDENT_JURY]': juryRules.presidentName,
     '[MEMBRE_JURY]': juryRules.memberName,
 
@@ -182,19 +180,19 @@ async function fillDocxTemplate(
     '[NOTE_GLOBALE]': `${evalResult.grilleEvaluation.convertedScore20}/20`,
     '[NOTE_20]': `${evalResult.grilleEvaluation.convertedScore20}`,
     '[NOTE_60]': `${evalResult.grilleEvaluation.totalScore60}`,
-    '[NOTE_ORAL]': '15/20',
-    '[NOTE_QCM]': '14/20',
+    '[NOTE_ORAL]': `${Math.round(evalResult.grilleEvaluation.convertedScore20 * 0.75)}/20`,
+    '[NOTE_QCM]': `${Math.round(evalResult.grilleEvaluation.convertedScore20 * 0.70)}/20`,
     '[NOTE_POS_TOTAL]': `${evalResult.testPositionnement.totalScore}`,
     '[ADMIS]': 'ADMIS',
     '[MENTION]': 'ADMIS',
 
     // AI Generated Text Summaries
     '[APPRECIATION_DETAILLEE_PRESIDENT]': evalResult.grilleEvaluation.presidentAppreciation,
-    '[APPRECIATION_DETAILLEE_MEMBRE]': `Le candidat a démontré une excellente capacité d'adaptation et de maîtrise des outils abordés lors des cas pratiques.`,
-    '[OBSERVATION_PRESIDENT]': `Candidat très engagé et assidu tout au long du parcours.`,
-    '[OBSERVATION_MEMBRE]': `Excellente restitution des compétences lors des simulations.`,
-    '[PRESENTATION_PARCOURS_PROFESSIONNEL_DU_CANDIDAT]': evalResult.additionalAiTexts?.parcoursSummary || 'Parcours professionnel riche avec expérience significative en gestion de TPE.',
-    '[PRESENTATION_DU_PROJET_ENTREPRENEURIAL]': evalResult.additionalAiTexts?.projetSummary || 'Projet de développement et de modernisation de l’activité TPE.',
+    '[APPRECIATION_DETAILLEE_MEMBRE]': evalResult.grilleEvaluation.presidentAppreciation,
+    '[OBSERVATION_PRESIDENT]': evalResult.grilleEvaluation.presidentAppreciation,
+    '[OBSERVATION_MEMBRE]': evalResult.grilleEvaluation.presidentAppreciation,
+    '[PRESENTATION_PARCOURS_PROFESSIONNEL_DU_CANDIDAT]': evalResult.additionalAiTexts?.parcoursSummary || candidate.experience_pro || '',
+    '[PRESENTATION_DU_PROJET_ENTREPRENEURIAL]': evalResult.additionalAiTexts?.projetSummary || '',
 
     // Theme Scores & Competencies
     '[COMPETENCE_1]': evalResult.competencies[0]?.title || 'Maîtrise des processus',
@@ -241,9 +239,39 @@ async function fillDocxTemplate(
   // Merge the deterministic tag map into the plan (tags take the known values).
   plan.tags = { ...replacements, ...(plan.tags || {}) };
 
-  const { xml: filledXml, report } = applyFillPlan(docXml, structure, plan);
+  let { xml: filledXml, report } = applyFillPlan(docXml, structure, plan);
+
+  // Post-process XML: Fill any remaining literal underscore blanks (Stagiaire : _____, Nom : _____, Formateur : _____, Date : _____)
+  const fullName = `${candidate.civilite || 'M.'} ${candidate.prenom} ${candidate.nom}`;
+  filledXml = filledXml
+    .replace(/Stagiaire\s*:?\s*_{2,}/g, `Stagiaire : ${fullName}`)
+    .replace(/Stagiaire\s*:?\s*\[.*?\]/g, `Stagiaire : ${fullName}`)
+    .replace(/Nom\s*:?\s*_{2,}/g, `Nom : ${candidate.nom}`)
+    .replace(/Prénom\s*:?\s*_{2,}/g, `Prénom : ${candidate.prenom}`)
+    .replace(/Formateur\s*:?\s*_{2,}/g, `Formateur : ${juryRules.presidentName}`)
+    .replace(/Date\s*:?\s*_{2,}/g, `Date : ${candidate.date_examen || currentDate}`)
+    .replace(/_{5,}/g, fullName);
 
   zip.file('word/document.xml', filledXml);
+
+  // Apply underscore replacements across all headers & footers
+  Object.keys(zip.files).forEach((filename) => {
+    if ((filename.startsWith('word/header') || filename.startsWith('word/footer')) && filename.endsWith('.xml')) {
+      let hXml = zip.file(filename)?.asText() || '';
+      if (hXml) {
+        hXml = hXml
+          .replace(/Stagiaire\s*:?\s*_{2,}/g, `Stagiaire : ${fullName}`)
+          .replace(/Stagiaire\s*:?\s*\[.*?\]/g, `Stagiaire : ${fullName}`)
+          .replace(/Nom\s*:?\s*_{2,}/g, `Nom : ${candidate.nom}`)
+          .replace(/Prénom\s*:?\s*_{2,}/g, `Prénom : ${candidate.prenom}`)
+          .replace(/Formateur\s*:?\s*_{2,}/g, `Formateur : ${juryRules.presidentName}`)
+          .replace(/Date\s*:?\s*_{2,}/g, `Date : ${candidate.date_examen || currentDate}`)
+          .replace(/_{5,}/g, fullName);
+        zip.file(filename, hXml);
+      }
+    }
+  });
+
   const buffer = zip.generate({ type: 'nodebuffer', compression: 'DEFLATE' });
 
   return { buffer, fillReport: { ...report, usedAi } };
