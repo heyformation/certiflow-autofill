@@ -7,6 +7,7 @@ import { applyFillPlan, extractStructure, FillReport } from './docx-filler';
 import { getJuryRules } from './jury-rules';
 import { generateCandidateMarkdownFiles } from './md-engine';
 import { convertDocxToPdf, isPdfConversionEnabled } from './pdf-converter';
+import { generateCandidatePdfFiles } from './pdf-engine';
 import { CandidateEvaluationResult, CandidateRow } from './types';
 
 const TEMPLATES_DIR = path.join(process.cwd(), 'Templates');
@@ -86,6 +87,17 @@ export async function generateCandidateDocuments(
       relativePath: mf.relativePath,
       category: mf.category,
       buffer: Buffer.from(mf.content, 'utf-8'),
+    });
+  }
+
+  // Generate Filled PDF (.pdf) documents
+  const pdfFiles = await generateCandidatePdfFiles(candidate, evalResult);
+  for (const pf of pdfFiles) {
+    files.push({
+      filename: pf.filename,
+      relativePath: pf.relativePath,
+      category: pf.category,
+      buffer: pf.buffer,
     });
   }
 

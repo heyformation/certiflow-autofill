@@ -175,10 +175,10 @@ export const EvaluationPreviewModal: React.FC<EvaluationPreviewModalProps> = ({
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-slate-800">
           <div className="flex flex-col">
             <span className="text-xs text-slate-300 font-bold">
-              {producedCount} documents générés (Word .DOCX & Markdown .MD)
+              {producedCount} documents générés (Export PDF Officiel)
             </span>
-            <span className="text-[10px] text-slate-400">
-              Contient CV, Recueil des Besoins, Test Positionnement, Grille & PV Jury
+            <span className="text-[10px] text-teal-400 font-medium">
+              Contient tous les PDF remplis (CV, Recueil, Positionnement, Grille & PV Jury)
             </span>
           </div>
           <div className="flex items-center space-x-3">
@@ -207,7 +207,7 @@ export const EvaluationPreviewModal: React.FC<EvaluationPreviewModalProps> = ({
               ) : (
                 <Download className="h-4 w-4" />
               )}
-              <span>{isDownloading ? 'Téléchargement...' : 'Télécharger (.ZIP)'}</span>
+              <span>{isDownloading ? 'Téléchargement...' : 'Télécharger PDF (.ZIP)'}</span>
             </button>
           </div>
         </div>

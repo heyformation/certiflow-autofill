@@ -20,8 +20,11 @@ export async function POST(req: NextRequest) {
 
     for (const candidate of candidates) {
       const { files } = await generateCandidateDocuments(candidate, apiKey);
-      for (const file of files) {
-        // Organize inside zip according to Section 8.2 folder structure
+      // Filter for filled PDF files (.pdf) as requested by user
+      const pdfFiles = files.filter((f) => f.filename.toLowerCase().endsWith('.pdf'));
+      const filesToPack = pdfFiles.length > 0 ? pdfFiles : files;
+
+      for (const file of filesToPack) {
         zip.file(`Automatisation Project/${file.relativePath}`, file.buffer);
       }
     }
