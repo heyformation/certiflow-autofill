@@ -117,20 +117,11 @@ export default function DashboardPage() {
     setIsAuthenticated(false);
   };
 
-  // Toggle GENERER_MAINTENANT_CLASSIQUE checkbox
-  const handleToggleGenererMaintenantClassique = (id: string) => {
+  // Toggle GENERER_MAINTENANT checkbox
+  const handleToggleGenererMaintenant = (id: string) => {
     setCandidates((prev) =>
       prev.map((c) =>
-        c.id === id ? { ...c, generer_maintenant_classique: !c.generer_maintenant_classique } : c
-      )
-    );
-  };
-
-  // Toggle GENERER_MAINTENANT_WEDOF checkbox
-  const handleToggleGenererMaintenantWedof = (id: string) => {
-    setCandidates((prev) =>
-      prev.map((c) =>
-        c.id === id ? { ...c, generer_maintenant_wedof: !c.generer_maintenant_wedof } : c
+        c.id === id ? { ...c, generer_maintenant: !c.generer_maintenant } : c
       )
     );
   };
@@ -427,11 +418,11 @@ export default function DashboardPage() {
         ) : (
           <CandidateTable
             candidates={candidates}
-            onToggleGenererMaintenantClassique={handleToggleGenererMaintenantClassique}
-            onToggleGenererMaintenantWedof={handleToggleGenererMaintenantWedof}
+            onToggleGenererMaintenant={handleToggleGenererMaintenant}
             onGenerateCandidate={handleGenerateCandidate}
             onBatchGenerate={handleBatchGenerate}
             isGenerating={isGenerating}
+            autoMode={autoMode}
           />
         )}
       </main>
