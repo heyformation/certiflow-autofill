@@ -158,3 +158,163 @@ Format de réponse STRICT JSON :
     },
   };
 }
+
+export interface SheetAiAnalysisResult {
+  executiveSummary: string;
+  qualityScore: number;
+  classiqueReadinessSummary: string;
+  wedofReadinessSummary: string;
+  documentAudit: {
+    missingCinCount: number;
+    missingCvCount: number;
+    missingDatesCount: number;
+    notes: string;
+  };
+  recommendations: string[];
+  certificationsBreakdown: Array<{ code: string; total: number; ready: number }>;
+}
+
+export async function analyzeExcelSheetData(
+  candidates: CandidateRow[],
+  userApiKey?: string
+): Promise<SheetAiAnalysisResult> {
+  const effectiveApiKey = userApiKey || process.env.CLAUDE_API_KEY;
+
+  const total = candidates.length;
+  const proformaCount = candidates.filter((c) => c.organisme === 'Proforma Institut').length;
+  const proskillsCount = candidates.filter((c) => c.organisme === 'Proskills Institut').length;
+
+  const readyClassique = candidates.filter((c) => c.pret_generation_classique).length;
+  const readyWedof = candidates.filter((c) => c.pret_generation_wedof).length;
+  const readyAny = candidates.filter((c) => c.pret_pour_generation).length;
+
+  const missingCinCount = candidates.filter(
+    (c) => !c.cin_ok && (!c.cin_ok_str || c.cin_ok_str.toLowerCase() !== 'fait')
+  ).length;
+  const missingCvCount = candidates.filter(
+    (c) => !c.cv_recu && (!c.cv_recu_str || c.cv_recu_str.toLowerCase() !== 'fait')
+  ).length;
+  const missingDatesCount = candidates.filter(
+    (c) => !c.date_debut_session || !c.date_fin_session
+  ).length;
+
+  // Certifications breakdown
+  const certMap: Record<string, { total: number; ready: number }> = {};
+  candidates.forEach((c) => {
+    const code = c.code_certif || 'AUTRE';
+    if (!certMap[code]) certMap[code] = { total: 0, ready: 0 };
+    certMap[code].total += 1;
+    if (c.pret_pour_generation) certMap[code].ready += 1;
+  });
+
+  const certificationsBreakdown = Object.entries(certMap).map(([code, stat]) => ({
+    code,
+    total: stat.total,
+    ready: stat.ready,
+  }));
+
+  const calculatedQualityScore = total > 0 ? Math.round((readyAny / total) * 100) : 0;
+
+  let executiveSummary = '';
+  let classiqueReadinessSummary = '';
+  let wedofReadinessSummary = '';
+  let auditNotes = '';
+  let recommendations: string[] = [];
+
+  if (effectiveApiKey) {
+    try {
+      const anthropic = new Anthropic({ apiKey: effectiveApiKey });
+      const prompt = `Vous êtes un Expert en Audit de Données EDOF et Conformation Qualiopi pour Proforma et Proskills Institut.
+Vous devez analyser les données extraites de l'onglet AUTOMATISATION d'un fichier EDOF.xlsx.
+
+Statistiques globales :
+- Total candidats inscrits : ${total}
+- Organismes : Proforma Institut (${proformaCount}), Proskills Institut (${proskillsCount})
+- Éligibles Génération Classique (PRET_GENERATION_CLASSIQUE) : ${readyClassique} / ${total} (${Math.round((readyClassique/total)*100)}%)
+- Éligibles Génération WeDOF (PRET_GENERATION_WEDOF) : ${readyWedof} / ${total} (${Math.round((readyWedof/total)*100)}%)
+- Total éligibles au moins un mode : ${readyAny} / ${total}
+- Candidats sans CIN valide : ${missingCinCount}
+- Candidats sans CV fourni : ${missingCvCount}
+- Candidats sans dates de session : ${missingDatesCount}
+- Distribution des certifs : ${JSON.stringify(certificationsBreakdown)}
+
+Consignes :
+Fournissez une analyse d'expert au format STRICT JSON :
+{
+  "executiveSummary": "...",
+  "classiqueReadinessSummary": "...",
+  "wedofReadinessSummary": "...",
+  "auditNotes": "...",
+  "recommendations": ["Recommandation 1", "Recommandation 2", "Recommandation 3"]
+}`;
+
+      const candidateModels = [
+        'claude-sonnet-4-5-20250929',
+        'claude-3-5-sonnet-20241022',
+        'claude-3-haiku-20240307',
+      ];
+
+      for (const modelName of candidateModels) {
+        try {
+          const response = await anthropic.messages.create({
+            model: modelName,
+            max_tokens: 700,
+            messages: [{ role: 'user', content: prompt }],
+          });
+
+          const resContent = response.content[0];
+          if (resContent && resContent.type === 'text') {
+            const parsed = JSON.parse(resContent.text);
+            executiveSummary = parsed.executiveSummary;
+            classiqueReadinessSummary = parsed.classiqueReadinessSummary;
+            wedofReadinessSummary = parsed.wedofReadinessSummary;
+            auditNotes = parsed.auditNotes;
+            recommendations = parsed.recommendations;
+            break;
+          }
+        } catch (e) {
+          // Fallback to next model
+        }
+      }
+    } catch (err) {
+      console.warn('Claude AI Sheet Analysis failed:', err);
+    }
+  }
+
+  // Fallbacks if AI API call is absent or fails
+  if (!executiveSummary) {
+    executiveSummary = `Le fichier contient ${total} apprenants. ${readyAny} candidats (${calculatedQualityScore}%) sont éligibles à la génération immédiate de leurs documents de certification.`;
+  }
+  if (!classiqueReadinessSummary) {
+    classiqueReadinessSummary = `${readyClassique} apprenants (${Math.round((readyClassique / Math.max(1, total)) * 100)}%) disposent d'une formation et de dates de session complètes pour la génération Classique.`;
+  }
+  if (!wedofReadinessSummary) {
+    wedofReadinessSummary = `${readyWedof} apprenants (${Math.round((readyWedof / Math.max(1, total)) * 100)}%) répondent aux critères d'examen WeDOF (CIN validée et CV ou Expérience renseignée).`;
+  }
+  if (!auditNotes) {
+    auditNotes = `${missingCinCount} candidats nécessitent une validation CIN, ${missingCvCount} n'ont pas encore déposé de CV.`;
+  }
+  if (recommendations.length === 0) {
+    recommendations = [
+      `Prioriser le remplissage des CIN pour les ${missingCinCount} candidats éligibles à l'examen WeDOF.`,
+      `Vérifier les dates de session pour les ${missingDatesCount} dossiers incomplets en génération Classique.`,
+      `Lancer la génération groupée ZIP pour les ${readyAny} dossiers certifiants validés.`,
+    ];
+  }
+
+  return {
+    executiveSummary,
+    qualityScore: calculatedQualityScore,
+    classiqueReadinessSummary,
+    wedofReadinessSummary,
+    documentAudit: {
+      missingCinCount,
+      missingCvCount,
+      missingDatesCount,
+      notes: auditNotes,
+    },
+    recommendations,
+    certificationsBreakdown,
+  };
+}
+

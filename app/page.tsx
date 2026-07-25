@@ -1,5 +1,6 @@
 'use client';
 
+import { AiAnalysisModal } from '@/components/AiAnalysisModal';
 import { CandidateTable } from '@/components/CandidateTable';
 import { EvaluationPreviewModal } from '@/components/EvaluationPreviewModal';
 import { LoadingOverlay, LoadingType } from '@/components/LoadingOverlay';
@@ -7,6 +8,7 @@ import { LoginPage } from '@/components/LoginPage';
 import { Navbar } from '@/components/Navbar';
 import { SettingsModal } from '@/components/SettingsModal';
 import { StatsCard } from '@/components/StatsCard';
+import { SheetAiAnalysisResult } from '@/lib/claude-engine';
 import { CandidateEvaluationResult, CandidateRow } from '@/lib/types';
 import { Bot, FileSpreadsheet, FileUp, Sparkles, UploadCloud } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
@@ -41,7 +43,45 @@ export default function DashboardPage() {
   const [producedCount, setProducedCount] = useState<number>(0);
   const [isPreviewOpen, setIsPreviewOpen] = useState<boolean>(false);
 
+  // AI Sheet Analysis state
+  const [isAnalysisOpen, setIsAnalysisOpen] = useState<boolean>(false);
+  const [analysisResult, setAnalysisResult] = useState<SheetAiAnalysisResult | null>(null);
+  const [isAnalyzing, setIsAnalyzing] = useState<boolean>(false);
+
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleRunAiAnalysis = async () => {
+    if (candidates.length === 0) return;
+
+    setIsAnalyzing(true);
+    setLoadingState({
+      isOpen: true,
+      type: 'GENERATE',
+      message: 'Analyse IA du Fichier EDOF en cours...',
+      subMessage: 'Audit de la qualité des données et évaluation des critères de certification par Anthropic Claude...',
+    });
+
+    try {
+      const res = await fetch('/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ candidates, apiKey }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.analysis) {
+        setAnalysisResult(data.analysis);
+        setIsAnalysisOpen(true);
+      } else {
+        alert(data.error || 'Erreur lors de l’analyse IA.');
+      }
+    } catch (err) {
+      alert('Erreur réseau lors de l’analyse IA.');
+    } finally {
+      setIsAnalyzing(false);
+      setLoadingState({ isOpen: false, type: null });
+    }
+  };
 
   // Check login session & auto-connect Claude API key on initial mount
   useEffect(() => {
@@ -66,10 +106,21 @@ export default function DashboardPage() {
     setIsAuthenticated(false);
   };
 
-  // Toggle GENERER_MAINTENANT checkbox
-  const handleToggleGenererMaintenant = (id: string) => {
+  // Toggle GENERER_MAINTENANT_CLASSIQUE checkbox
+  const handleToggleGenererMaintenantClassique = (id: string) => {
     setCandidates((prev) =>
-      prev.map((c) => (c.id === id ? { ...c, generer_maintenant: !c.generer_maintenant } : c))
+      prev.map((c) =>
+        c.id === id ? { ...c, generer_maintenant_classique: !c.generer_maintenant_classique } : c
+      )
+    );
+  };
+
+  // Toggle GENERER_MAINTENANT_WEDOF checkbox
+  const handleToggleGenererMaintenantWedof = (id: string) => {
+    setCandidates((prev) =>
+      prev.map((c) =>
+        c.id === id ? { ...c, generer_maintenant_wedof: !c.generer_maintenant_wedof } : c
+      )
     );
   };
 
@@ -118,7 +169,7 @@ export default function DashboardPage() {
       isOpen: true,
       type: 'GENERATE',
       message: `Génération pour ${candidate.prenom} ${candidate.nom}...`,
-      subMessage: `Évaluation Claude AI et remplissage des 11 modèles Word (.DOCX) pour ${candidate.code_certif}...`,
+      subMessage: `Évaluation Claude AI et remplissage des modèles Word (.DOCX) pour ${candidate.code_certif}...`,
     });
 
     try {
@@ -137,9 +188,18 @@ export default function DashboardPage() {
         setProducedCount(data.producedCount);
         setIsPreviewOpen(true);
 
-        // Reset GENERER_MAINTENANT checkbox per section 8.3 specification
+        // Reset manual toggles
         setCandidates((prev) =>
-          prev.map((c) => (c.id === candidate.id ? { ...c, generer_maintenant: false } : c))
+          prev.map((c) =>
+            c.id === candidate.id
+              ? {
+                  ...c,
+                  generer_maintenant_classique: false,
+                  generer_maintenant_wedof: false,
+                  generer_maintenant: false,
+                }
+              : c
+          )
         );
       } else {
         alert(data.error || 'Échec de la génération des documents.');
@@ -239,7 +299,9 @@ export default function DashboardPage() {
 
   // Stats computation
   const totalCount = candidates.length;
-  const readyCount = candidates.filter((c) => c.pret_pour_generation).length;
+  const readyClassiqueCount = candidates.filter((c) => c.pret_generation_classique).length;
+  const readyWedofCount = candidates.filter((c) => c.pret_generation_wedof).length;
+  const totalReadyCount = candidates.filter((c) => c.pret_pour_generation).length;
   const incompleteCount = candidates.filter((c) => !c.pret_pour_generation).length;
 
   return (
@@ -283,11 +345,22 @@ export default function DashboardPage() {
             </h2>
             <p className="text-xs text-slate-400 mt-1 max-w-2xl leading-relaxed">
               Importation directe de l’onglet <strong className="text-slate-200">AUTOMATISATION</strong> de votre fichier EDOF.xlsx. 
-              Remplissage automatisé de vos 80 modèles originaux (.DOCX) situés dans <code className="bg-slate-800 text-teal-300 px-1.5 py-0.5 rounded">F:\Office\Hedar_project\Templates</code> via l'API Claude Anthropic.
+              Prise en charge duale : <strong className="text-emerald-400">PRET_GENERATION_CLASSIQUE</strong> & <strong className="text-indigo-400">PRET_GENERATION_WEDOF</strong>.
             </p>
           </div>
 
           <div className="flex items-center space-x-3">
+            {candidates.length > 0 && (
+              <button
+                onClick={handleRunAiAnalysis}
+                disabled={isAnalyzing}
+                className="flex items-center space-x-2 bg-slate-900 hover:bg-slate-800 text-teal-300 font-bold text-xs px-4 py-2.5 rounded-xl border border-teal-500/30 transition-all active:scale-95 shadow-md disabled:opacity-50"
+              >
+                <Bot className="h-4 w-4 text-teal-400" />
+                <span>{isAnalyzing ? 'Analyse IA...' : 'Analyse IA Fichier'}</span>
+              </button>
+            )}
+
             <button
               onClick={() => fileInputRef.current?.click()}
               disabled={isUploading}
@@ -302,9 +375,10 @@ export default function DashboardPage() {
         {/* Dashboard Stats */}
         <StatsCard
           total={totalCount}
-          ready={readyCount}
+          readyClassique={readyClassiqueCount}
+          readyWedof={readyWedofCount}
+          totalReady={totalReadyCount}
           incomplete={incompleteCount}
-          generated={0}
         />
 
         {/* Main Content Area: Empty State or Candidate Grid */}
@@ -315,7 +389,7 @@ export default function DashboardPage() {
             </div>
             <h3 className="text-xl font-bold text-white mb-1">Aucune donnée candidat chargée</h3>
             <p className="text-xs text-slate-400 max-w-md leading-relaxed mb-6">
-              Veuillez charger votre fichier Excel officiel <strong className="text-slate-200">EDOF.xlsx</strong>.
+              Veuillez charger votre fichier Excel officiel <strong className="text-slate-200">Developer of EDOF_restructure_v9.xlsx</strong>.
               Le système extraira automatiquement les informations de l'onglet <span className="text-teal-400 font-semibold">AUTOMATISATION</span> et remplira tous vos modèles Word (.DOCX) avec l'IA.
             </p>
             <div className="flex items-center gap-3">
@@ -341,7 +415,8 @@ export default function DashboardPage() {
         ) : (
           <CandidateTable
             candidates={candidates}
-            onToggleGenererMaintenant={handleToggleGenererMaintenant}
+            onToggleGenererMaintenantClassique={handleToggleGenererMaintenantClassique}
+            onToggleGenererMaintenantWedof={handleToggleGenererMaintenantWedof}
             onGenerateCandidate={handleGenerateCandidate}
             onBatchGenerate={handleBatchGenerate}
             isGenerating={isGenerating}
@@ -376,6 +451,14 @@ export default function DashboardPage() {
         onSyncDrive={() => {
           if (previewCandidate) handleDriveSync(previewCandidate);
         }}
+      />
+
+      {/* AI Sheet Analysis Modal */}
+      <AiAnalysisModal
+        isOpen={isAnalysisOpen}
+        onClose={() => setIsAnalysisOpen(false)}
+        analysis={analysisResult}
+        totalCandidates={candidates.length}
       />
     </div>
   );

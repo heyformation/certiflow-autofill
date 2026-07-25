@@ -11,9 +11,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Données candidat manquantes' }, { status: 400 });
     }
 
-    if (!candidate.pret_pour_generation && !candidate.generer_maintenant) {
+    const isEligible =
+      candidate.pret_pour_generation ||
+      candidate.pret_generation_classique ||
+      candidate.pret_generation_wedof ||
+      candidate.generer_maintenant ||
+      candidate.generer_maintenant_classique ||
+      candidate.generer_maintenant_wedof;
+
+    if (!isEligible) {
       return NextResponse.json(
-        { error: 'Le candidat n’a pas tous les champs requis remplis.' },
+        { error: 'Le candidat n’a pas au moins un mode de génération prêt (Classique ou WeDOF).' },
         { status: 400 }
       );
     }

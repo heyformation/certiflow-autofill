@@ -19,6 +19,8 @@ export async function POST(req: NextRequest) {
       success: true,
       totalRows: candidates.length,
       readyCount: candidates.filter((c) => c.pret_pour_generation).length,
+      readyClassiqueCount: candidates.filter((c) => c.pret_generation_classique).length,
+      readyWedofCount: candidates.filter((c) => c.pret_generation_wedof).length,
       candidates,
     });
   } catch (err: any) {

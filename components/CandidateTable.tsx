@@ -1,12 +1,13 @@
 'use client';
 
-import { CandidateRow, Organization, RSCertificationCode } from '@/lib/types';
-import { AlertTriangle, CheckCircle2, Download, FileText, Play, Search } from 'lucide-react';
+import { CandidateRow } from '@/lib/types';
+import { AlertTriangle, CheckCircle2, Download, FileCheck, Play, Search } from 'lucide-react';
 import React, { useState } from 'react';
 
 interface CandidateTableProps {
   candidates: CandidateRow[];
-  onToggleGenererMaintenant: (id: string) => void;
+  onToggleGenererMaintenantClassique: (id: string) => void;
+  onToggleGenererMaintenantWedof: (id: string) => void;
   onGenerateCandidate: (candidate: CandidateRow) => void;
   onBatchGenerate: (selectedCandidates: CandidateRow[]) => void;
   isGenerating: boolean;
@@ -14,7 +15,8 @@ interface CandidateTableProps {
 
 export const CandidateTable: React.FC<CandidateTableProps> = ({
   candidates,
-  onToggleGenererMaintenant,
+  onToggleGenererMaintenantClassique,
+  onToggleGenererMaintenantWedof,
   onGenerateCandidate,
   onBatchGenerate,
   isGenerating,
@@ -37,8 +39,10 @@ export const CandidateTable: React.FC<CandidateTableProps> = ({
     const matchesRs = rsFilter === 'ALL' || c.code_certif === rsFilter;
 
     let matchesReady = true;
-    if (readyFilter === 'READY') matchesReady = c.pret_pour_generation;
-    if (readyFilter === 'INCOMPLETE') matchesReady = !c.pret_pour_generation;
+    if (readyFilter === 'CLASSIQUE') matchesReady = c.pret_generation_classique;
+    else if (readyFilter === 'WEDOF') matchesReady = c.pret_generation_wedof;
+    else if (readyFilter === 'ANY_READY') matchesReady = c.pret_pour_generation;
+    else if (readyFilter === 'INCOMPLETE') matchesReady = !c.pret_pour_generation;
 
     return matchesSearch && matchesOrg && matchesRs && matchesReady;
   });
@@ -106,10 +110,12 @@ export const CandidateTable: React.FC<CandidateTableProps> = ({
           <select
             value={readyFilter}
             onChange={(e) => setReadyFilter(e.target.value)}
-            className="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-teal-500"
+            className="bg-slate-950 border border-slate-800 text-slate-300 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-teal-500 font-medium"
           >
             <option value="ALL">Tous les Statuts</option>
-            <option value="READY">Prêt pour Génération (TRUE)</option>
+            <option value="ANY_READY">Prêt Global (Classique OU WeDOF)</option>
+            <option value="CLASSIQUE">Prêt Classique (TRUE)</option>
+            <option value="WEDOF">Prêt WeDOF (TRUE)</option>
             <option value="INCOMPLETE">Champs Incomplets (FALSE)</option>
           </select>
         </div>
@@ -143,25 +149,32 @@ export const CandidateTable: React.FC<CandidateTableProps> = ({
                   className="rounded border-slate-700 bg-slate-900 text-teal-600 focus:ring-teal-500"
                 />
               </th>
-              <th className="p-4">Candidat</th>
+              <th className="p-4">Apprenant</th>
               <th className="p-4">Organisme</th>
               <th className="p-4">Certification</th>
-              <th className="p-4">Champs Requis</th>
-              <th className="p-4 text-center">Prêt (Auto)</th>
-              <th className="p-4 text-center">Générer Maintenant</th>
+              <th className="p-4 text-center">Prêt Classique</th>
+              <th className="p-4 text-center">Prêt WeDOF</th>
+              <th className="p-4 text-center">Générer Classique</th>
+              <th className="p-4 text-center">Générer WeDOF</th>
               <th className="p-4 text-right">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800/60">
             {filteredCandidates.length === 0 ? (
               <tr>
-                <td colSpan={8} className="p-8 text-center text-slate-500 font-medium">
+                <td colSpan={9} className="p-8 text-center text-slate-500 font-medium">
                   Aucun candidat ne correspond aux filtres sélectionnés.
                 </td>
               </tr>
             ) : (
               filteredCandidates.map((c) => {
                 const isProforma = c.organisme === 'Proforma Institut';
+                const canGenerate =
+                  c.pret_pour_generation ||
+                  c.generer_maintenant_classique ||
+                  c.generer_maintenant_wedof ||
+                  c.generer_maintenant;
+
                 return (
                   <tr
                     key={c.id}
@@ -197,53 +210,82 @@ export const CandidateTable: React.FC<CandidateTableProps> = ({
                     </td>
                     <td className="p-4">
                       <div className="font-medium text-slate-200">{c.code_certif}</div>
-                      <div className="text-[11px] text-slate-400 truncate max-w-[200px]">
+                      <div className="text-[11px] text-slate-400 truncate max-w-[180px]">
                         {c.formation}
                       </div>
                     </td>
-                    <td className="p-4">
-                      {c.pret_pour_generation ? (
-                        <span className="text-emerald-400 font-medium inline-flex items-center gap-1">
-                          <CheckCircle2 className="h-3.5 w-3.5" /> Complet
-                        </span>
-                      ) : (
-                        <div className="text-amber-400 font-normal flex items-start gap-1">
-                          <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5" />
-                          <span className="text-[10px] leading-tight">
-                            Manque: {c.missing_fields.join(', ')}
-                          </span>
-                        </div>
-                      )}
-                    </td>
+
+                    {/* PRET GENERATION CLASSIQUE */}
                     <td className="p-4 text-center">
                       <span
-                        className={`inline-block px-2 py-0.5 rounded text-[10px] font-bold ${
-                          c.pret_pour_generation
-                            ? 'bg-emerald-500/20 text-emerald-300'
-                            : 'bg-slate-800 text-slate-500'
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold border ${
+                          c.pret_generation_classique
+                            ? 'bg-emerald-500/10 text-emerald-300 border-emerald-500/30'
+                            : 'bg-slate-800/50 text-slate-500 border-slate-700/50'
                         }`}
                       >
-                        {c.pret_pour_generation ? 'TRUE' : 'FALSE'}
+                        {c.pret_generation_classique ? (
+                          <>
+                            <CheckCircle2 className="h-3 w-3 text-emerald-400" /> TRUE
+                          </>
+                        ) : (
+                          'FALSE'
+                        )}
                       </span>
                     </td>
+
+                    {/* PRET GENERATION WEDOF */}
+                    <td className="p-4 text-center">
+                      <span
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold border ${
+                          c.pret_generation_wedof
+                            ? 'bg-indigo-500/10 text-indigo-300 border-indigo-500/30'
+                            : 'bg-slate-800/50 text-slate-500 border-slate-700/50'
+                        }`}
+                      >
+                        {c.pret_generation_wedof ? (
+                          <>
+                            <FileCheck className="h-3 w-3 text-indigo-400" /> TRUE
+                          </>
+                        ) : (
+                          'FALSE'
+                        )}
+                      </span>
+                    </td>
+
+                    {/* GENERER MAINTENANT CLASSIQUE */}
                     <td className="p-4 text-center">
                       <label className="inline-flex items-center cursor-pointer">
                         <input
                           type="checkbox"
-                          checked={c.generer_maintenant}
-                          onChange={() => onToggleGenererMaintenant(c.id)}
+                          checked={c.generer_maintenant_classique}
+                          onChange={() => onToggleGenererMaintenantClassique(c.id)}
                           className="sr-only peer"
                         />
-                        <div className="w-9 h-5 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-teal-600 relative"></div>
+                        <div className="w-8 h-4.5 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-3.5 after:w-3.5 after:transition-all peer-checked:bg-emerald-600 relative"></div>
                       </label>
                     </td>
+
+                    {/* GENERER MAINTENANT WEDOF */}
+                    <td className="p-4 text-center">
+                      <label className="inline-flex items-center cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={c.generer_maintenant_wedof}
+                          onChange={() => onToggleGenererMaintenantWedof(c.id)}
+                          className="sr-only peer"
+                        />
+                        <div className="w-8 h-4.5 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-3.5 after:w-3.5 after:transition-all peer-checked:bg-indigo-600 relative"></div>
+                      </label>
+                    </td>
+
                     <td className="p-4 text-right">
                       <button
                         onClick={() => onGenerateCandidate(c)}
-                        disabled={isGenerating || (!c.pret_pour_generation && !c.generer_maintenant)}
-                        className="inline-flex items-center space-x-1 bg-slate-800 hover:bg-slate-700 text-teal-300 font-medium px-3 py-1.5 rounded-lg border border-slate-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                        disabled={isGenerating || !canGenerate}
+                        className="inline-flex items-center space-x-1.5 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-semibold px-3 py-1.5 rounded-lg transition-all shadow-sm active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:from-teal-600"
                       >
-                        <Play className="h-3.5 w-3.5 fill-teal-300" />
+                        <Play className="h-3.5 w-3.5 fill-white" />
                         <span>Générer</span>
                       </button>
                     </td>
@@ -257,3 +299,4 @@ export const CandidateTable: React.FC<CandidateTableProps> = ({
     </div>
   );
 };
+

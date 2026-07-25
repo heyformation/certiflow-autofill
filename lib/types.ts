@@ -31,8 +31,15 @@ export interface CandidateRow {
   lien_signature?: string;
   budget?: string;
   duree?: string;
+  pret_generation_classique: boolean;
+  pret_generation_wedof: boolean;
+  generer_maintenant_classique: boolean;
+  generer_maintenant_wedof: boolean;
   pret_pour_generation: boolean;
   generer_maintenant: boolean;
+  cin_ok_str?: string;
+  cv_recu_str?: string;
+  inscription_confirmee?: string;
   missing_fields: string[];
 }
 
