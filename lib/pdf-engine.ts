@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import mammoth from 'mammoth';
 import PDFDocument from 'pdfkit';
-import { getJuryRules } from './jury-rules';
-import { CandidateEvaluationResult, CandidateRow } from './types';
+import { CandidateRow } from './types';
 
 export interface GeneratedPdfFile {
   filename: string;
@@ -25,254 +25,142 @@ function getAfmFontPath(fontName: string): string | null {
   return null;
 }
 
-export async function generateCandidatePdfFiles(
-  candidate: CandidateRow,
-  evalResult: CandidateEvaluationResult
-): Promise<GeneratedPdfFile[]> {
-  const juryRules = getJuryRules(candidate.organisme);
-  const candidateFolder = `${candidate.organisme}/${candidate.code_certif} - ${getModuleShortName(candidate.code_certif)}`;
+/**
+ * Convert a filled Word (.docx) buffer into a 100% complete, full-content PDF.
+ * Parses the full document structure (headers, paragraphs, tables, lists, text)
+ * and renders it page-by-page into a professional A4 PDF.
+ */
+export async function convertFilledDocxToPdf(
+  docxBuffer: Buffer,
+  documentTitle: string,
+  candidate: CandidateRow
+): Promise<Buffer> {
+  const { value: html } = await mammoth.convertToHtml({ buffer: docxBuffer });
 
   const isProforma = candidate.organisme === 'Proforma Institut';
   const brandColor = isProforma ? '#6E1F14' : '#0B3D3D';
-  const accentColor = isProforma ? '#A8442B' : '#168F82';
   const lightBg = isProforma ? '#FBEEE9' : '#E8F5F3';
 
-  const currentDate = new Date().toLocaleDateString('fr-FR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  });
+  return new Promise((resolve, reject) => {
+    try {
+      const doc = new PDFDocument({ margin: 40, size: 'A4', autoFirstPage: true });
+      const buffers: Buffer[] = [];
 
-  const pdfFiles: GeneratedPdfFile[] = [];
+      doc.on('data', (chunk) => buffers.push(chunk));
+      doc.on('end', () => resolve(Buffer.concat(buffers)));
+      doc.on('error', (err) => reject(err));
 
-  // Helper to build PDF document buffer safely
-  const buildPdfBuffer = (
-    title: string,
-    category: string,
-    renderContent: (doc: InstanceType<typeof PDFDocument>) => void
-  ): Promise<Buffer> => {
-    return new Promise((resolve, reject) => {
-      try {
-        const doc = new PDFDocument({ margin: 40, size: 'A4' });
-        const buffers: Buffer[] = [];
+      const setFont = (fontName: string) => {
+        try {
+          const fontPath = getAfmFontPath(fontName);
+          if (fontPath) doc.font(fontPath);
+          else doc.font(fontName);
+        } catch {
+          // Default fallback
+        }
+      };
 
-        doc.on('data', (chunk) => buffers.push(chunk));
-        doc.on('end', () => resolve(Buffer.concat(buffers)));
-        doc.on('error', (err) => reject(err));
+      // Running Header Banner on first page
+      const renderHeaderBanner = () => {
+        doc.rect(0, 0, 595.28, 55).fill(brandColor);
 
-        // Safe Font Set
-        const setFont = (fontName: string) => {
-          try {
-            const fontPath = getAfmFontPath(fontName);
-            if (fontPath) {
-              doc.font(fontPath);
-            } else {
-              doc.font(fontName);
-            }
-          } catch {
-            // Fallback default
-          }
-        };
-
-        // Header Banner
-        doc.rect(0, 0, 595.28, 70).fill(brandColor);
-
-        doc.fillColor('#FFFFFF').fontSize(16);
+        doc.fillColor('#FFFFFF').fontSize(13);
         setFont('Helvetica-Bold');
-        doc.text(title.toUpperCase(), 40, 20, { width: 515, align: 'left' });
+        doc.text(documentTitle.toUpperCase(), 40, 15, { width: 515, align: 'left' });
 
-        doc.fontSize(10);
+        doc.fontSize(9);
         setFont('Helvetica');
-        doc.text(`${candidate.organisme} — Certification ${candidate.code_certif}`, 40, 42, {
+        doc.text(`${candidate.organisme} — ${candidate.code_certif} ${candidate.formation}`, 40, 32, {
           width: 515,
           align: 'left',
         });
 
-        doc.y = 85;
+        doc.y = 65;
+      };
 
-        // Candidate Header Box
-        doc.rect(40, doc.y, 515.28, 55).fill(lightBg);
+      renderHeaderBanner();
 
-        const headerY = doc.y + 8;
-        doc.fillColor('#1E293B').fontSize(10);
-        setFont('Helvetica-Bold');
-        doc.text(`Candidat : ${candidate.civilite || 'M.'} ${candidate.prenom} ${candidate.nom}`, 50, headerY);
+      // Simple HTML -> PDF Block Parser for full document content
+      // Splits HTML into block elements (h1, h2, h3, p, table, li)
+      const blocks = html.match(/<h[1-6][^>]*>[\s\S]*?<\/h[1-6]>|<p[^>]*>[\s\S]*?<\/p>|<table[^>]*>[\s\S]*?<\/table>|<ul[^>]*>[\s\S]*?<\/ul>|<ol[^>]*>[\s\S]*?<\/ol>/gi) || [html];
 
-        setFont('Helvetica');
-        doc.fontSize(9)
-          .text(`E-mail : ${candidate.mail || candidate.mail_wedof || candidate.mail_crm || 'N/A'} | Tel : ${candidate.numero_tel || 'N/A'}`, 50, headerY + 14)
-          .text(`Certification : ${candidate.formation} (${candidate.code_certif})`, 50, headerY + 28);
+      for (const block of blocks) {
+        // Page overflow protection: add new page if near bottom
+        if (doc.y > 750) {
+          doc.addPage();
+          renderHeaderBanner();
+        }
 
-        doc.y = 150;
-        doc.fillColor('#0F172A');
+        const textContent = block.replace(/<[^>]+>/g, '').trim();
+        if (!textContent) continue;
 
-        // Custom Content
-        renderContent(doc);
+        if (/^<h1/i.test(block)) {
+          doc.moveDown(0.5);
+          doc.fillColor(brandColor).fontSize(14);
+          setFont('Helvetica-Bold');
+          doc.text(textContent);
+          doc.moveDown(0.3);
+        } else if (/^<h2/i.test(block)) {
+          doc.moveDown(0.4);
+          doc.fillColor(brandColor).fontSize(12);
+          setFont('Helvetica-Bold');
+          doc.text(textContent);
+          doc.moveDown(0.2);
+        } else if (/^<h3/i.test(block)) {
+          doc.moveDown(0.3);
+          doc.fillColor('#1E293B').fontSize(11);
+          setFont('Helvetica-Bold');
+          doc.text(textContent);
+          doc.moveDown(0.2);
+        } else if (/^<table/i.test(block)) {
+          // Render table block nicely
+          doc.moveDown(0.3);
+          const rows = block.match(/<tr[^>]*>[\s\S]*?<\/tr>/gi) || [];
+          for (const row of rows) {
+            if (doc.y > 750) {
+              doc.addPage();
+              renderHeaderBanner();
+            }
+            const cells = (row.match(/<td[^>]*>[\s\S]*?<\/td>|<th[^>]*>[\s\S]*?<\/th>/gi) || []).map((c) =>
+              c.replace(/<[^>]+>/g, '').trim()
+            );
 
-        // Footer
-        const pageHeight = 841.89;
-        doc.fontSize(8);
-        setFont('Helvetica-Oblique');
-        doc.fillColor('#64748B').text(
-          `Document certifié par ${candidate.organisme} — Fait le ${currentDate} à Paris. Mention : ADMIS`,
-          40,
-          pageHeight - 35,
-          { width: 515, align: 'center' }
-        );
+            if (cells.length > 0) {
+              const cellWidth = Math.floor(515 / Math.max(1, cells.length));
+              const startX = 40;
+              const startY = doc.y;
 
-        doc.end();
-      } catch (err) {
-        reject(err);
+              doc.rect(startX, startY, 515, 20).fillAndStroke(lightBg, '#CBD5E1');
+
+              cells.forEach((cellText, colIdx) => {
+                doc.fillColor('#0F172A').fontSize(8.5);
+                setFont('Helvetica');
+                doc.text(cellText, startX + colIdx * cellWidth + 5, startY + 5, {
+                  width: cellWidth - 10,
+                  height: 12,
+                  ellipsis: true,
+                });
+              });
+              doc.y = startY + 22;
+            }
+          }
+          doc.moveDown(0.3);
+        } else {
+          // Paragraph / Text
+          doc.fillColor('#334155').fontSize(9.5);
+          if (/<strong>|<b>/i.test(block)) setFont('Helvetica-Bold');
+          else setFont('Helvetica');
+
+          doc.text(textContent, { width: 515, align: 'left' });
+          doc.moveDown(0.3);
+        }
       }
-    });
-  };
 
-  try {
-    // 1. CV Candidate PDF
-    const cvBuf = await buildPdfBuffer('CV Candidat', 'Category A — CV', (doc) => {
-      doc.fontSize(13).fillColor(brandColor).text('PARCOURS ET EXPÉRIENCE PROFESSIONNELLE', { underline: true });
-      doc.moveDown(0.5);
-      doc.fontSize(10).fillColor('#334155').text(candidate.experience_pro || 'Expérience et pratique professionnelle adaptées aux opérations TPE.');
-
-      doc.moveDown(1.5);
-      doc.fontSize(13).fillColor(brandColor).text('SYNTHÈSE DU PROFIL IA ET COMPÉTENCES', { underline: true });
-      doc.moveDown(0.5);
-      doc.fontSize(10).fillColor('#334155').text(evalResult.additionalAiTexts?.parcoursSummary || 'Parcours professionnel riche avec expérience significative en gestion et opérations TPE.');
-
-      doc.moveDown(1.5);
-      doc.fontSize(13).fillColor(brandColor).text('PROJET D’ENTREPRISE ET CERTIFICATION VISÉE', { underline: true });
-      doc.moveDown(0.5);
-      doc.fontSize(10).fillColor('#334155').text(evalResult.additionalAiTexts?.projetSummary || 'Projet d’entreprise structuré axé sur le développement d’activité TPE.');
-    });
-    pdfFiles.push({
-      filename: `CV - ${candidate.prenom} ${candidate.nom}.pdf`,
-      relativePath: `${candidateFolder}/CV - ${candidate.prenom} ${candidate.nom}.pdf`,
-      category: 'Category A — CV (PDF)',
-      buffer: cvBuf,
-    });
-
-    // 2. Recueil des Besoins PDF
-    const recueilBuf = await buildPdfBuffer('Recueil des Besoins', 'Category B — Pedagogique', (doc) => {
-      doc.fontSize(12).fillColor(brandColor).text('1. AUTO-ÉVALUATION DES THÉMATIQUES DE COMPÉTENCES (ÉCHELLE 1 À 5)');
-      doc.moveDown(0.5);
-
-      evalResult.themeProfiles.forEach((t) => {
-        doc.fontSize(10).fillColor('#1E293B').text(`- ${t.themeTitle} : `, { continued: true });
-        doc.fillColor(accentColor).text(`Niveau ${t.level} / 5`);
-      });
-
-      doc.moveDown(1.5);
-      doc.fontSize(12).fillColor(brandColor).text('2. OBJECTIFS D’APPRENTISSAGE ET BESOINS EXPRIMÉS');
-      doc.moveDown(0.5);
-      doc.fontSize(10).fillColor('#334155').text('Approfondissement ciblé des thématiques fondamentales afin d’optimiser l’organisation et le rendement opérationnel de la TPE.');
-    });
-    pdfFiles.push({
-      filename: `Recueil_des_Besoins - ${candidate.code_certif} - ${candidate.nom}.pdf`,
-      relativePath: `${candidateFolder}/Recueil_des_Besoins - ${candidate.code_certif} - ${candidate.nom}.pdf`,
-      category: 'Category B — Pedagogique (PDF)',
-      buffer: recueilBuf,
-    });
-
-    // 3. Test de Positionnement PDF
-    const testPosBuf = await buildPdfBuffer('Test de Positionnement', 'Category B — Pedagogique', (doc) => {
-      doc.fontSize(12).fillColor(brandColor).text('RÉSULTAT GLOBAL DU POSITIONNEMENT');
-      doc.moveDown(0.5);
-      doc.fontSize(14).fillColor(accentColor).text(`Score Global : ${evalResult.testPositionnement.totalScore} / 20  (${evalResult.testPositionnement.scorePercentage}% de réussite)`);
-      doc.fontSize(9).fillColor('#64748B').text('*Score d\'évaluation diagnostique informatif (non éliminatoire)');
-
-      doc.moveDown(1.5);
-      doc.fontSize(12).fillColor(brandColor).text('DÉTAIL PAR DOMAINE DE COMPÉTENCE');
-      doc.moveDown(0.5);
-
-      evalResult.themeProfiles.forEach((t) => {
-        doc.fontSize(10).fillColor('#1E293B').text(`${t.themeTitle}`);
-        doc.fontSize(9).fillColor('#475569').text(`Niveau diagnostiqué : ${t.level}/5 — Assimilation conforme aux prérequis de la certification.`);
-        doc.moveDown(0.3);
-      });
-    });
-    pdfFiles.push({
-      filename: `Test_de_Positionnement - ${candidate.code_certif} - ${candidate.nom}.pdf`,
-      relativePath: `${candidateFolder}/Test_de_Positionnement - ${candidate.code_certif} - ${candidate.nom}.pdf`,
-      category: 'Category B — Pedagogique (PDF)',
-      buffer: testPosBuf,
-    });
-
-    // 4. Grille d'Évaluation Certifiante PDF
-    const grilleBuf = await buildPdfBuffer('Grille d\'Évaluation Certifiante', 'Category B — Jury', (doc) => {
-      doc.fontSize(12).fillColor(brandColor).text('SYNTHÈSE DES NOTES CERTIFIANTES (EXAM DAY)');
-      doc.moveDown(0.5);
-      doc.fontSize(12).fillColor('#1E293B').text(`Note Totale / 60 : ${evalResult.grilleEvaluation.totalScore60} / 60`);
-      doc.fontSize(14).fillColor(accentColor).text(`Note Convertie / 20 : ${evalResult.grilleEvaluation.convertedScore20} / 20`);
-      doc.fontSize(12).fillColor('#059669').text(`Décision du Jury : ${evalResult.grilleEvaluation.juryMention}`);
-
-      doc.moveDown(1.5);
-      doc.fontSize(12).fillColor(brandColor).text('EVALUATION DÉTAILLÉE DES CRITÈRES');
-      doc.moveDown(0.5);
-
-      evalResult.competencies.forEach((c) => {
-        doc.fontSize(10).fillColor('#1E293B').text(`${c.title} — ${c.score}/${c.maxScore}`);
-        doc.fontSize(9).fillColor('#334155').text(`Observation : ${c.appreciation}`);
-        doc.moveDown(0.4);
-      });
-
-      doc.moveDown(1);
-      doc.fontSize(10).fillColor(brandColor).text(`Appréciation du Président du Jury (${juryRules.presidentName}) :`);
-      doc.fontSize(9).fillColor('#1E293B').text(`"${evalResult.grilleEvaluation.presidentAppreciation}"`);
-    });
-    pdfFiles.push({
-      filename: `Grille_Evaluation - ${candidate.code_certif} - ${candidate.nom}.pdf`,
-      relativePath: `${candidateFolder}/Grille_Evaluation - ${candidate.code_certif} - ${candidate.nom}.pdf`,
-      category: 'Category B — Jury (PDF)',
-      buffer: grilleBuf,
-    });
-
-    // 5. PV de Jury PDF
-    const pvBuf = await buildPdfBuffer('Procès-Verbal de Jury', 'Category B — Jury', (doc) => {
-      doc.fontSize(12).fillColor(brandColor).text('COMPOSITION DU JURY D’ÉVALUATION');
-      doc.moveDown(0.5);
-      doc.fontSize(10).fillColor('#1E293B')
-        .text(`Président(e) du Jury : ${juryRules.presidentName}`)
-        .text(`Membre du Jury : ${juryRules.memberName}`)
-        .text(`Contact Administratif : ${juryRules.contact}`);
-
-      doc.moveDown(1.5);
-      doc.fontSize(12).fillColor(brandColor).text('DÉLIBÉRATION ET RÉSULTAT FINAL');
-      doc.moveDown(0.5);
-      doc.fontSize(13).fillColor(accentColor).text(`Note d'Évaluation Globale : ${evalResult.grilleEvaluation.convertedScore20} / 20`);
-      doc.fontSize(14).fillColor('#059669').text('MENTION DE LA CERTIFICATION : ADMIS');
-
-      doc.moveDown(2);
-      doc.fontSize(10).fillColor('#1E293B').text('Signatures officieuses des membres du Jury :');
-      doc.moveDown(0.5);
-      doc.fontSize(9).text(`- ${juryRules.presidentName} (Président)`);
-      doc.text(`- ${juryRules.memberName} (Membre)`);
-    });
-    pdfFiles.push({
-      filename: `PV_Jury - ${candidate.code_certif} - ${candidate.nom}.pdf`,
-      relativePath: `${candidateFolder}/PV_Jury - ${candidate.code_certif} - ${candidate.nom}.pdf`,
-      category: 'Category B — Jury (PDF)',
-      buffer: pvBuf,
-    });
-
-    // 6. Évaluation Finale PDF
-    const evalFinaleBuf = await buildPdfBuffer('Évaluation Finale', 'Category C — Isolé', (doc) => {
-      doc.fontSize(12).fillColor(brandColor).text('SYNTHÈSE DE L’ÉVALUATION FINALE');
-      doc.moveDown(0.5);
-      doc.fontSize(11).fillColor('#1E293B').text(`L’apprenant(e) ${candidate.prenom} ${candidate.nom} a complété avec succès l’ensemble des évaluations finales et cas pratiques pour la certification ${candidate.code_certif}.`);
-      doc.moveDown(1);
-      doc.fontSize(13).fillColor('#059669').text(`Statut Final : ADMIS (${evalResult.grilleEvaluation.convertedScore20}/20)`);
-    });
-    pdfFiles.push({
-      filename: `Evaluation_Finale - ${candidate.code_certif} - ${candidate.nom}.pdf`,
-      relativePath: `${candidateFolder}/Evaluation_Finale - ${candidate.code_certif} - ${candidate.nom}.pdf`,
-      category: 'Category C — Isolé (PDF)',
-      buffer: evalFinaleBuf,
-    });
-  } catch (err) {
-    console.warn('PDF generation error, continuing:', err);
-  }
-
-  return pdfFiles;
+      doc.end();
+    } catch (err) {
+      reject(err);
+    }
+  });
 }
 
 function getModuleShortName(codeCertif: string): string {

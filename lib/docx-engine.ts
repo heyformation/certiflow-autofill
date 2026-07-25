@@ -7,7 +7,7 @@ import { applyFillPlan, extractStructure, FillReport } from './docx-filler';
 import { getJuryRules } from './jury-rules';
 import { generateCandidateMarkdownFiles } from './md-engine';
 import { convertDocxToPdf, isPdfConversionEnabled } from './pdf-converter';
-import { generateCandidatePdfFiles } from './pdf-engine';
+import { convertFilledDocxToPdf } from './pdf-engine';
 import { CandidateEvaluationResult, CandidateRow } from './types';
 
 const TEMPLATES_DIR = path.join(process.cwd(), 'Templates');
@@ -35,7 +35,7 @@ export async function generateCandidateDocuments(
 
   const files: GeneratedFile[] = [];
 
-  // Generate Word (.docx) documents
+  // Generate Word (.docx) & Filled PDF (.pdf) documents
   for (const templatePath of matchingTemplates) {
     const templateFileName = path.basename(templatePath);
     
@@ -62,10 +62,15 @@ export async function generateCandidateDocuments(
       fillReport,
     });
 
-    // Optional PDF rendering (Vercel-safe external conversion; DOCX stays as
-    // fallback when disabled or on failure).
-    if (isPdfConversionEnabled()) {
-      const pdfBuffer = await convertDocxToPdf(filledBuffer, `${outputFileName}`);
+    // Convert 100% full filled Word template directly to PDF (.pdf)
+    try {
+      let pdfBuffer: Buffer | null = null;
+      if (isPdfConversionEnabled()) {
+        pdfBuffer = await convertDocxToPdf(filledBuffer, `${outputFileName}`);
+      }
+      if (!pdfBuffer) {
+        pdfBuffer = await convertFilledDocxToPdf(filledBuffer, documentName, candidate);
+      }
       if (pdfBuffer) {
         const pdfName = outputFileName.replace(/\.docx$/i, '.pdf');
         files.push({
@@ -76,6 +81,8 @@ export async function generateCandidateDocuments(
           fillReport,
         });
       }
+    } catch (pdfErr) {
+      console.warn(`PDF conversion warning for ${documentName}:`, pdfErr);
     }
   }
 
@@ -87,17 +94,6 @@ export async function generateCandidateDocuments(
       relativePath: mf.relativePath,
       category: mf.category,
       buffer: Buffer.from(mf.content, 'utf-8'),
-    });
-  }
-
-  // Generate Filled PDF (.pdf) documents
-  const pdfFiles = await generateCandidatePdfFiles(candidate, evalResult);
-  for (const pf of pdfFiles) {
-    files.push({
-      filename: pf.filename,
-      relativePath: pf.relativePath,
-      category: pf.category,
-      buffer: pf.buffer,
     });
   }
 
