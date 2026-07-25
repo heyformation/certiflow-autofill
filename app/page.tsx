@@ -84,7 +84,7 @@ export default function DashboardPage() {
     }
   };
 
-  // Check login session & auto-connect Claude API key on initial mount
+  // Check login session & auto-connect Claude API key on initial mount, and auto-load candidates
   useEffect(() => {
     const authStatus = localStorage.getItem('certiflow_auth');
     if (authStatus === 'true') {
@@ -100,6 +100,16 @@ export default function DashboardPage() {
         }
       })
       .catch(() => {});
+
+    // Auto-load dataset from PostgreSQL DB / default Excel
+    fetch('/api/candidates')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && Array.isArray(data.candidates) && data.candidates.length > 0) {
+          setCandidates(data.candidates);
+        }
+      })
+      .catch((err) => console.warn('Auto-load candidates skipped:', err));
   }, []);
 
   const handleLogout = () => {

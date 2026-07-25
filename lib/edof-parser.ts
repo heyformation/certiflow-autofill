@@ -96,13 +96,19 @@ export function parseEdofExcelBuffer(buffer: Buffer): CandidateRow[] {
 
     const formation = getVal('Formation', 'FORMATION', 'CODE_CERTIF', 'TITRE_CERTIF', 'INTITULE') || 'Formation Certifiante';
 
-    // Infer RS code
+    // Infer RS code by RS number and official title keywords
     let code_certif: RSCertificationCode = 'RS6485';
     const textToMatch = `${formation} ${getVal('Code certification', 'code_certif', 'code_rs', 'rs')}`.toUpperCase();
-    if (textToMatch.includes('7200')) code_certif = 'RS7200';
-    else if (textToMatch.includes('7311')) code_certif = 'RS7311';
-    else if (textToMatch.includes('7344')) code_certif = 'RS7344';
-    else if (textToMatch.includes('6485')) code_certif = 'RS6485';
+
+    if (textToMatch.includes('7200') || textToMatch.includes('RESEAUX SOCIAUX') || textToMatch.includes('RÉSEAUX SOCIAUX')) {
+      code_certif = 'RS7200';
+    } else if (textToMatch.includes('7311') || textToMatch.includes('EFFICACITE') || textToMatch.includes('EFFICACITÉ')) {
+      code_certif = 'RS7311';
+    } else if (textToMatch.includes('7344') || textToMatch.includes('DEVELOPPER') || textToMatch.includes('DÉVELOPPER')) {
+      code_certif = 'RS7344';
+    } else if (textToMatch.includes('6485') || textToMatch.includes('COMPTABLE') || textToMatch.includes('COMPTABILITE')) {
+      code_certif = 'RS6485';
+    }
 
     // Infer Organization
     let organisme: Organization = 'Proforma Institut';

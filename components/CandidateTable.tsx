@@ -67,6 +67,57 @@ export const CandidateTable: React.FC<CandidateTableProps> = ({
 
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+      {/* Category Tabs by Certification */}
+      <div className="px-5 py-3 border-b border-slate-800/80 bg-slate-950/60 flex flex-wrap items-center gap-2">
+        <span className="text-xs font-semibold text-slate-400 mr-2 uppercase tracking-wider">
+          Catégories Certification :
+        </span>
+        {[
+          { key: 'ALL', label: 'Toutes les Certifications', count: candidates.length },
+          {
+            key: 'RS6485',
+            label: 'RS6485 — Comptabilité TPE',
+            count: candidates.filter((c) => c.code_certif === 'RS6485').length,
+          },
+          {
+            key: 'RS7200',
+            label: 'RS7200 — Réseaux Sociaux',
+            count: candidates.filter((c) => c.code_certif === 'RS7200').length,
+          },
+          {
+            key: 'RS7311',
+            label: 'RS7311 — IA TPE',
+            count: candidates.filter((c) => c.code_certif === 'RS7311').length,
+          },
+          {
+            key: 'RS7344',
+            label: 'RS7344 — IA Activité',
+            count: candidates.filter((c) => c.code_certif === 'RS7344').length,
+          },
+        ].map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => setRsFilter(tab.key)}
+            className={`px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all flex items-center gap-1.5 ${
+              rsFilter === tab.key
+                ? 'bg-teal-500/20 text-teal-300 border-teal-500/50 shadow-sm'
+                : 'bg-slate-900 text-slate-400 border-slate-800 hover:bg-slate-800 hover:text-slate-200'
+            }`}
+          >
+            <span>{tab.label}</span>
+            <span
+              className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                rsFilter === tab.key
+                  ? 'bg-teal-400/20 text-teal-300'
+                  : 'bg-slate-800 text-slate-400'
+              }`}
+            >
+              {tab.count}
+            </span>
+          </button>
+        ))}
+      </div>
+
       {/* Table Toolbar / Controls */}
       <div className="p-5 border-b border-slate-800 bg-slate-900/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex flex-wrap items-center gap-3 flex-1">
