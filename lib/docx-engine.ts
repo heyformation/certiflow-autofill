@@ -3,6 +3,7 @@ import path from 'path';
 import PizZip from 'pizzip';
 import { generateCandidateEvaluation } from './claude-engine';
 import { getJuryRules } from './jury-rules';
+import { generateCandidateMarkdownFiles } from './md-engine';
 import { CandidateEvaluationResult, CandidateRow } from './types';
 
 const TEMPLATES_DIR = path.join(process.cwd(), 'Templates');
@@ -28,6 +29,7 @@ export async function generateCandidateDocuments(
 
   const files: GeneratedFile[] = [];
 
+  // Generate Word (.docx) documents
   for (const templatePath of matchingTemplates) {
     const templateFileName = path.basename(templatePath);
     
@@ -41,8 +43,19 @@ export async function generateCandidateDocuments(
     files.push({
       filename: `${path.basename(outputFileName, '.docx')} - Filled.docx`,
       relativePath: `${candidateFolder}/${outputFileName}`,
-      category: 'Document Certifiant',
+      category: 'Document Certifiant (Word)',
       buffer: filledBuffer,
+    });
+  }
+
+  // Generate Markdown (.md) documents
+  const mdFiles = generateCandidateMarkdownFiles(candidate, evalResult);
+  for (const mf of mdFiles) {
+    files.push({
+      filename: mf.filename,
+      relativePath: mf.relativePath,
+      category: mf.category,
+      buffer: Buffer.from(mf.content, 'utf-8'),
     });
   }
 
@@ -72,14 +85,26 @@ function fillDocxTemplate(
     '[PRENOM]': candidate.prenom,
     '[NOM_PRENOM]': `${candidate.nom} ${candidate.prenom}`,
     '[CIVILITE]': candidate.civilite || 'M.',
-    '[DATE_NAISSANCE]': '15/05/1988',
-    '[MAIL]': candidate.mail || 'candidat@email.fr',
-    '[EMAIL]': candidate.mail || 'candidat@email.fr',
-    '[ADRESSE]': candidate.adresse || '15 Rue de la Paix, 75002 Paris',
-    '[ADRESSE_CANDIDAT]': candidate.adresse || '15 Rue de la Paix, 75002 Paris',
+    '[DATE_NAISSANCE]': candidate.date_naissance || '15/05/1988',
+    '[MAIL]': candidate.mail || candidate.mail_wedof || candidate.mail_crm || 'candidat@email.fr',
+    '[EMAIL]': candidate.mail || candidate.mail_wedof || candidate.mail_crm || 'candidat@email.fr',
+    '[ADRESSE]': candidate.adresse || candidate.adresse_wedof || candidate.adresse_postale || '15 Rue de la Paix, 75002 Paris',
+    '[ADRESSE_CANDIDAT]': candidate.adresse || candidate.adresse_wedof || candidate.adresse_postale || '15 Rue de la Paix, 75002 Paris',
     '[TELEPHONE]': candidate.numero_tel || '06 12 34 56 78',
-    '[EMPLOYEUR]': 'TPE Indépendante',
+    '[EMPLOYEUR]': candidate.organisme || 'TPE Indépendante',
     '[POSTE]': 'Dirigeant / Collaborateur TPE',
+
+    // Dates & Financials from Candidate Sheet Data
+    '[DATE_DEBUT_SESSION]': candidate.date_debut_session || candidate.dates_session || currentDate,
+    '[DATE_FIN_SESSION]': candidate.date_fin_session || candidate.dates_session || currentDate,
+    '[DATES_SESSION]': candidate.dates_session || `${candidate.date_debut_session || ''} au ${candidate.date_fin_session || ''}`,
+    '[DATE_EXAMEN]': candidate.date_examen || currentDate,
+    '[APPORTEUR]': candidate.apporteur || 'Direct',
+    '[BUDGET]': candidate.budget || '1500',
+    '[STATUT_EDOF]': candidate.statuts_edof || 'Payé',
+    '[EXPERIENCE]': candidate.experience_pro || 'Expérience et pratique professionnelle',
+    '[CIN_OK]': candidate.cin_ok_str || (candidate.cin_ok ? 'Fait' : 'A faire'),
+    '[CV_RECU]': candidate.cv_recu_str || (candidate.cv_recu ? 'Fait' : 'A faire'),
 
     // Certification & School
     '[ORGANISME]': candidate.organisme,
@@ -158,10 +183,19 @@ function fillDocxTemplate(
   return zip.generate({ type: 'nodebuffer', compression: 'DEFLATE' });
 }
 
-function getMatchingTemplates(organisme: string, codeCertif: string): string[] {
-  if (!fs.existsSync(TEMPLATES_DIR)) return [];
+function getTemplatesDir(): string {
+  const primary = path.join(process.cwd(), 'Templates');
+  if (fs.existsSync(primary)) return primary;
+  const secondary = path.join(__dirname, '..', '..', 'Templates');
+  if (fs.existsSync(secondary)) return secondary;
+  return primary;
+}
 
-  const files = fs.readdirSync(TEMPLATES_DIR);
+function getMatchingTemplates(organisme: string, codeCertif: string): string[] {
+  const dir = getTemplatesDir();
+  if (!fs.existsSync(dir)) return [];
+
+  const files = fs.readdirSync(dir);
   return files
     .filter((f) => {
       const lower = f.toLowerCase();
@@ -170,7 +204,7 @@ function getMatchingTemplates(organisme: string, codeCertif: string): string[] {
       const certifMatch = lower.includes(codeCertif.toLowerCase());
       return orgMatch && certifMatch && f.endsWith('.docx') && !f.startsWith('~$');
     })
-    .map((f) => path.join(TEMPLATES_DIR, f));
+    .map((f) => path.join(dir, f));
 }
 
 function getModuleShortName(codeCertif: string): string {

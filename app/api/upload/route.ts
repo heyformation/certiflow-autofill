@@ -1,3 +1,4 @@
+import { saveCandidatesToDb } from '@/lib/db';
 import { parseEdofExcelBuffer } from '@/lib/edof-parser';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -14,6 +15,11 @@ export async function POST(req: NextRequest) {
     const buffer = Buffer.from(arrayBuffer);
 
     const candidates = parseEdofExcelBuffer(buffer);
+
+    // Persist parsed candidates into Neon PostgreSQL
+    saveCandidatesToDb(candidates).catch((dbErr) =>
+      console.warn('Neon DB persistence background warning:', dbErr)
+    );
 
     return NextResponse.json({
       success: true,

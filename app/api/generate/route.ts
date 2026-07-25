@@ -1,3 +1,4 @@
+import { logGenerationToDb } from '@/lib/db';
 import { generateCandidateDocuments } from '@/lib/docx-engine';
 import { CandidateRow, GenerationLog } from '@/lib/types';
 import { NextRequest, NextResponse } from 'next/server';
@@ -38,6 +39,11 @@ export async function POST(req: NextRequest) {
       documentsProduced: files.map((f) => f.filename),
       status: 'SUCCESS',
     };
+
+    // Log generation to Neon PostgreSQL
+    logGenerationToDb(logEntry).catch((dbErr) =>
+      console.warn('Neon DB log warning:', dbErr)
+    );
 
     return NextResponse.json({
       success: true,
