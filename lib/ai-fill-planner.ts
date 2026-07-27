@@ -27,7 +27,9 @@ import { CandidateEvaluationResult, CandidateRow } from './types';
 
 const CLAUDE_MODELS = [
   'claude-sonnet-4-5-20250929',
+  'claude-3-7-sonnet-20250219',
   'claude-3-5-sonnet-20241022',
+  'claude-3-5-haiku-20241022',
   'claude-3-haiku-20240307',
 ];
 
@@ -59,24 +61,37 @@ export function buildFallbackPlan(
   const fields: Record<string, string> = {};
   for (const slot of structure.fieldSlots) {
     const l = slot.label.toLowerCase();
-    if (l.includes('nom') && l.includes('prénom')) fields[slot.id] = fullName;
-    else if (l.includes('nom et pr')) fields[slot.id] = fullName;
-    else if (l === 'nom' || l.includes('nom du candidat')) fields[slot.id] = candidate.nom;
-    else if (l.includes('prénom')) fields[slot.id] = candidate.prenom;
-    else if (l.includes('e-mail') || l.includes('email') || l.includes('mail'))
+    if ((l.includes('nom') && l.includes('prénom')) || l.includes('nom et pr') || l.includes('candidat'))
+      fields[slot.id] = fullName;
+    else if (l === 'nom' || l.includes('nom du candidat') || l.includes('nom de famille'))
+      fields[slot.id] = candidate.nom;
+    else if (l.includes('prénom') || l.includes('prenom'))
+      fields[slot.id] = candidate.prenom;
+    else if (l.includes('e-mail') || l.includes('email') || l.includes('mail') || l.includes('courriel'))
       fields[slot.id] = contact.mail;
-    else if (l.includes('téléphone') || l.includes('tel')) fields[slot.id] = contact.tel;
-    else if (l.includes('adresse')) fields[slot.id] = contact.adresse;
-    else if (l.includes('certification') || l.includes('formation'))
+    else if (l.includes('téléphone') || l.includes('tel') || l.includes('portable') || l.includes('mobile'))
+      fields[slot.id] = contact.tel;
+    else if (l.includes('adresse') || l.includes('domicile') || l.includes('résidence'))
+      fields[slot.id] = contact.adresse;
+    else if (l.includes('certification') || l.includes('formation') || l.includes('intitulé') || l.includes('titre'))
       fields[slot.id] = `${candidate.code_certif} - ${candidate.formation}`;
-    else if (l.includes('fonction') || l.includes('activité'))
+    else if (l.includes('organisme') || l.includes('établissement') || l.includes('centre'))
+      fields[slot.id] = candidate.organisme;
+    else if (l.includes('fonction') || l.includes('activité') || l.includes('poste') || l.includes('expérience'))
       fields[slot.id] = candidate.experience_pro ? candidate.experience_pro.split(/[.\n]/)[0].slice(0, 80) : '';
-    else if (l.includes('président')) fields[slot.id] = jury.presidentName;
-    else if (l.includes('membre')) fields[slot.id] = jury.memberName;
+    else if (l.includes('président') || l.includes('responsable'))
+      fields[slot.id] = jury.presidentName;
+    else if (l.includes('membre'))
+      fields[slot.id] = jury.memberName;
     // Dates: only if source has them (spec §8.1) — never invent.
-    else if (l.includes("date de l'entretien") || l.includes("date de l'analyse"))
+    else if (l.includes("date de l'entretien") || l.includes("date de l'analyse") || l.includes("date examen") || l.includes("date d'examen"))
       fields[slot.id] = candidate.date_examen || '';
-    else if (l.includes('date')) fields[slot.id] = '';
+    else if (l.includes("date début") || l.includes("début session") || l.includes("période"))
+      fields[slot.id] = candidate.date_debut_session || candidate.dates_session || '';
+    else if (l.includes("date fin") || l.includes("fin session"))
+      fields[slot.id] = candidate.date_fin_session || candidate.dates_session || '';
+    else if (l.includes('date'))
+      fields[slot.id] = candidate.date_examen || '';
   }
 
   // ---- Checkboxes: pick one option per group, biased by average level -----
@@ -112,7 +127,7 @@ export async function buildAiFillPlan(
 ): Promise<{ plan: FillPlan; usedAi: boolean }> {
   const fallback = buildFallbackPlan(candidate, evalResult, structure);
 
-  const apiKey = userApiKey || process.env.CLAUDE_API_KEY;
+  const apiKey = userApiKey || process.env.CLAUDE_API_KEY || process.env.ANTHROPIC_API_KEY;
   const hasStructure =
     structure.checkboxGroups.length > 0 || structure.fieldSlots.length > 0;
   if (!apiKey || !hasStructure) {

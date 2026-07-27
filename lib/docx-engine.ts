@@ -3,7 +3,7 @@ import path from 'path';
 import PizZip from 'pizzip';
 import { buildAiFillPlan } from './ai-fill-planner';
 import { generateCandidateEvaluation } from './claude-engine';
-import { applyFillPlan, extractStructure, FillReport } from './docx-filler';
+import { applyFillPlan, extractStructure, FillReport, normalizeDocxXml } from './docx-filler';
 import { getJuryRules } from './jury-rules';
 import { generateCandidateMarkdownFiles } from './md-engine';
 import { convertDocxToPdf, isPdfConversionEnabled } from './pdf-converter';
@@ -220,6 +220,19 @@ async function fillDocxTemplate(
     '[POINT_FORT_2]': 'Excellente compréhension des enjeux TPE',
     '[POINT_FORT_3]': 'Autonomie pratique',
     '[NOM_PROJET_TPE]': `Projet TPE ${candidate.prenom} ${candidate.nom}`,
+
+    // Unhandled / Secondary Tags Cleanup
+    '[AJOURNE]': '',
+    '[NB_H]': candidate.civilite === 'Mme' || candidate.civilite === 'Mlle' ? '0' : '1',
+    '[NB_F]': candidate.civilite === 'Mme' || candidate.civilite === 'Mlle' ? '1' : '0',
+    '[NB_TOTAL]': '1',
+    '[NB_H_RECUS]': candidate.civilite === 'Mme' || candidate.civilite === 'Mlle' ? '0' : '1',
+    '[NB_F_RECUES]': candidate.civilite === 'Mme' || candidate.civilite === 'Mlle' ? '1' : '0',
+    '[NB_TOTAL_RECUS]': '1',
+    '[NOM_PRENOM_1]': `${candidate.nom || ''} ${candidate.prenom || ''}`.trim(),
+    '[NOM_PRENOM_2]': juryRules.presidentName,
+    '[PERIODE]': datesSession,
+    '[PRÉNOM]': candidate.prenom || '',
   };
 
   // ---- 3-mode fill --------------------------------------------------------
@@ -250,15 +263,31 @@ async function fillDocxTemplate(
     .replace(/Prénom\s*:?\s*_{2,}/g, `Prénom : ${candidate.prenom}`)
     .replace(/Formateur\s*:?\s*_{2,}/g, `Formateur : ${juryRules.presidentName}`)
     .replace(/Date\s*:?\s*_{2,}/g, `Date : ${candidate.date_examen || currentDate}`)
-    .replace(/_{5,}/g, fullName);
+    .replace(/_{5,}/g, fullName)
+    .replace(/\[[A-Z0-9_ÉÈÀÊÂÇa-zéèàêâç]+\]/g, '');
 
   zip.file('word/document.xml', filledXml);
 
-  // Apply underscore replacements across all headers & footers
+  // Apply tag and underscore replacements across all headers & footers
   Object.keys(zip.files).forEach((filename) => {
     if ((filename.startsWith('word/header') || filename.startsWith('word/footer')) && filename.endsWith('.xml')) {
       let hXml = zip.file(filename)?.asText() || '';
       if (hXml) {
+        hXml = normalizeDocxXml(hXml);
+        if (plan.tags) {
+          for (const [tag, rawValue] of Object.entries(plan.tags)) {
+            const value = rawValue ?? '';
+            const escapedTag = tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const re = new RegExp(escapedTag, 'g');
+            if (re.test(hXml)) {
+              const escVal = value
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+              hXml = hXml.replace(re, escVal);
+            }
+          }
+        }
         hXml = hXml
           .replace(/Stagiaire\s*:?\s*_{2,}/g, `Stagiaire : ${fullName}`)
           .replace(/Stagiaire\s*:?\s*\[.*?\]/g, `Stagiaire : ${fullName}`)
@@ -266,7 +295,8 @@ async function fillDocxTemplate(
           .replace(/Prénom\s*:?\s*_{2,}/g, `Prénom : ${candidate.prenom}`)
           .replace(/Formateur\s*:?\s*_{2,}/g, `Formateur : ${juryRules.presidentName}`)
           .replace(/Date\s*:?\s*_{2,}/g, `Date : ${candidate.date_examen || currentDate}`)
-          .replace(/_{5,}/g, fullName);
+          .replace(/_{5,}/g, fullName)
+          .replace(/\[[A-Z0-9_ÉÈÀÊÂÇa-zéèàêâç]+\]/g, '');
         zip.file(filename, hXml);
       }
     }

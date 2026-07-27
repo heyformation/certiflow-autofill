@@ -85,9 +85,32 @@ function visibleText(xmlFragment: string): string {
 }
 
 /**
+ * Normalize OOXML paragraphs so that bracketed tags like [NOM] split across
+ * multiple <w:r> runs by Word formatting are consolidated into a single run.
+ */
+export function normalizeDocxXml(xml: string): string {
+  if (!xml) return '';
+  return xml.replace(/<w:p\b[\s\S]*?<\/w:p>/g, (para) => {
+    if (para.includes('[') && para.includes(']')) {
+      return para.replace(/\[([\s\S]*?)\]/g, (fullMatch) => {
+        if (/<[^>]+>/.test(fullMatch)) {
+          const cleanInside = fullMatch.replace(/<[^>]+>/g, '').trim();
+          if (/^[A-Z0-9_ÉÈÀÊÂÇa-zéèàêâç]+$/i.test(cleanInside)) {
+            return `[${cleanInside}]`;
+          }
+        }
+        return fullMatch;
+      });
+    }
+    return para;
+  });
+}
+
+/**
  * Extract the fillable structure from a document.xml string.
  */
-export function extractStructure(docXml: string): DocxStructure {
+export function extractStructure(rawDocXml: string): DocxStructure {
+  const docXml = normalizeDocxXml(rawDocXml);
   // ---- 1. TAG slots -------------------------------------------------------
   const tagSet = new Set<string>();
   const tagRegex = /\[[A-Z0-9_ÉÈÀÊÂÇa-zéèàêâç]+\]/g;
@@ -134,18 +157,22 @@ export function extractStructure(docXml: string): DocxStructure {
   for (const opt of options) {
     // The question is the visible text between the previous option's paragraph
     // and this checkbox, i.e. the nearest non-empty paragraph before sdtStart.
-    const gapStart = lastOptionEnd === -1 ? Math.max(0, opt.sdtStart - 2000) : lastOptionEnd;
+    const gapStart = lastOptionEnd === -1 ? Math.max(0, opt.sdtStart - 3000) : lastOptionEnd;
     const gap = docXml.slice(gapStart, opt.sdtStart);
-    // Collect visible text of paragraphs in the gap; use the last non-empty one.
+    // Collect visible text of paragraphs in the gap.
     const paraTexts = gap
       .split('</w:p>')
       .map((p) => visibleText(p))
-      .filter((t) => t.length > 0 && t !== GLYPH_UNCHECKED);
-    const questionCandidate = paraTexts.length ? paraTexts[paraTexts.length - 1] : '';
+      .filter((t) => t.length > 0 && t !== GLYPH_UNCHECKED && t !== GLYPH_CHECKED);
 
-    // Start a new group when we detect a real question (has text and previous
-    // group already has options), otherwise keep appending.
-    const isNewQuestion = questionCandidate.length > 0 && paraTexts.length > 0;
+    // Find a true Question paragraph in the gap (not an option text starting with A), B), C), D))
+    const questionCandidate = paraTexts.slice().reverse().find((t) => {
+      const isOptionText = /^[A-E1-9][\).\s-]/i.test(t.trim());
+      return !isOptionText;
+    }) || '';
+
+    // Start a new group ONLY when a genuine question heading/paragraph is detected
+    const isNewQuestion = questionCandidate.length > 0 && currentGroup && currentGroup.question !== questionCandidate;
     if (!currentGroup || (isNewQuestion && currentGroup.options.length > 0)) {
       currentGroup = {
         id: `grp${checkboxGroups.length}`,
@@ -283,7 +310,7 @@ export function applyFillPlan(
   structure: DocxStructure,
   plan: FillPlan
 ): { xml: string; report: FillReport } {
-  let xml = docXml;
+  let xml = normalizeDocxXml(docXml);
 
   // ---- Fields & checkboxes must be applied by descending offset so earlier
   // ---- edits do not shift later offsets. Collect edits then sort.

@@ -126,9 +126,6 @@ export function parseEdofExcelBuffer(buffer: Buffer): CandidateRow[] {
       'CV',
       'DESCRIPTION'
     );
-    if (!experience_pro) {
-      experience_pro = 'Expérience et pratique professionnelle en gestion et opérations TPE.';
-    }
 
     const rawClassiqueBool = getBool('PRET_GENERATION_CLASSIQUE');
     const rawWedofBool = getBool('PRET_GENERATION_WEDOF');
@@ -142,7 +139,7 @@ export function parseEdofExcelBuffer(buffer: Buffer): CandidateRow[] {
       id: `cand-${index + 1}-${Date.now().toString(36)}`,
       nom,
       prenom,
-      civilite: getVal('CIVILITE', 'CIVILITÉ') || 'M.',
+      civilite: getVal('CIVILITE', 'CIVILITÉ'),
       organisme,
       apporteur: getVal('Apporteur', 'APPORTEUR'),
       statuts_edof: getVal('Statut EDOF', 'STATUT_EDOF', 'STATUTS EDOF'),
@@ -152,13 +149,13 @@ export function parseEdofExcelBuffer(buffer: Buffer): CandidateRow[] {
       date_debut_session: getVal('Date debut session', 'DATE_DEBUT_SESSION', 'DATE_DEBUT'),
       date_fin_session: getVal('Date fin session', 'DATE_FIN_SESSION', 'DATE_FIN'),
       date_examen: getVal('Date examen', 'date_examen', 'DATE_EXAMEN'),
-      adresse: getVal('Adresse', 'ADRESSE', 'ADRESSE_POSTALE') || 'Paris, France',
+      adresse: getVal('Adresse', 'ADRESSE', 'ADRESSE_POSTALE'),
       adresse_wedof: getVal('adresse_wedof', 'ADRESSE_WEDOF'),
       adresse_postale: getVal('ADRESSE_POSTALE'),
-      mail: getVal('Email', 'mail', 'MAIL', 'EMAIL', 'COURRIEL') || 'candidat@certiflow.fr',
+      mail: getVal('Email', 'mail', 'MAIL', 'EMAIL', 'COURRIEL'),
       mail_wedof: getVal('mail_wedof'),
       mail_crm: getVal('mail_crm'),
-      numero_tel: getVal('Telephone', 'numero_tel', 'TEL', 'TELEPHONE', 'MOBILE') || '06 00 00 00 00',
+      numero_tel: getVal('Telephone', 'numero_tel', 'TEL', 'TELEPHONE', 'MOBILE'),
       date_naissance: getVal('Date de naissance', 'date_naissance', 'DATE_NAISSANCE'),
       experience_pro,
       cv_recu: getBool('CV recu', 'cv_recu'),

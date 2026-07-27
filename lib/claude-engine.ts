@@ -25,7 +25,7 @@ export async function generateCandidateEvaluation(
   candidate: CandidateRow,
   userApiKey?: string
 ): Promise<CandidateEvaluationResult> {
-  const effectiveApiKey = userApiKey || process.env.CLAUDE_API_KEY;
+  const effectiveApiKey = userApiKey || process.env.CLAUDE_API_KEY || process.env.ANTHROPIC_API_KEY;
   const juryRules = getJuryRules(candidate.organisme);
   const themeConfig = getThemeConfig(candidate.code_certif);
 
@@ -98,7 +98,9 @@ Format de réponse STRICT JSON :
 
       const candidateModels = [
         'claude-sonnet-4-5-20250929',
+        'claude-3-7-sonnet-20250219',
         'claude-3-5-sonnet-20241022',
+        'claude-3-5-haiku-20241022',
         'claude-3-haiku-20240307',
       ];
 
@@ -178,7 +180,7 @@ export async function analyzeExcelSheetData(
   candidates: CandidateRow[],
   userApiKey?: string
 ): Promise<SheetAiAnalysisResult> {
-  const effectiveApiKey = userApiKey || process.env.CLAUDE_API_KEY;
+  const effectiveApiKey = userApiKey || process.env.CLAUDE_API_KEY || process.env.ANTHROPIC_API_KEY;
 
   const total = candidates.length;
   const proformaCount = candidates.filter((c) => c.organisme === 'Proforma Institut').length;

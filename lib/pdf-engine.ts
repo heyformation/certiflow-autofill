@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import mammoth from 'mammoth';
 import PDFDocument from 'pdfkit';
+import { execSync } from 'child_process';
 import { CandidateRow } from './types';
 
 export interface GeneratedPdfFile {
@@ -26,15 +27,80 @@ function getAfmFontPath(fontName: string): string | null {
 }
 
 /**
- * Convert a filled Word (.docx) buffer into a 100% complete, full-content PDF.
- * Parses the full document structure (headers, paragraphs, tables, lists, text)
- * and renders it page-by-page into a professional A4 PDF.
+ * Native MS Word PDF converter on Windows. Uses local Microsoft Word COM Automation
+ * to render 100% pixel-perfect PDF files with exact original table formatting, logos,
+ * headers, and fonts.
+ */
+export async function convertFilledDocxToPdfNative(
+  docxBuffer: Buffer
+): Promise<Buffer | null> {
+  if (process.platform !== 'win32') return null;
+
+  const tempDir = path.join(process.cwd(), '.next', 'cache', 'pdf-temp');
+  if (!fs.existsSync(tempDir)) {
+    fs.mkdirSync(tempDir, { recursive: true });
+  }
+
+  const id = Math.random().toString(36).substring(2, 9);
+  const tempDocx = path.join(tempDir, `input_${id}.docx`);
+  const tempPdf = path.join(tempDir, `output_${id}.pdf`);
+  const tempPs1 = path.join(tempDir, `script_${id}.ps1`);
+
+  try {
+    fs.writeFileSync(tempDocx, docxBuffer);
+
+    const psScript = `
+$OutputEncoding = [System.Text.Encoding]::UTF8
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$docx = [System.IO.Path]::GetFullPath("${tempDocx.replace(/\\/g, '/')}")
+$pdf = [System.IO.Path]::GetFullPath("${tempPdf.replace(/\\/g, '/')}")
+$word = New-Object -ComObject Word.Application
+$word.Visible = $false
+$doc = $word.Documents.Open($docx)
+$doc.ExportAsFixedFormat($pdf, 17)
+$doc.Close(0)
+$word.Quit()
+`;
+
+    fs.writeFileSync(tempPs1, '\uFEFF' + psScript, 'utf8');
+    execSync(`powershell -NoProfile -ExecutionPolicy Bypass -File "${tempPs1}"`, {
+      stdio: 'pipe',
+      timeout: 35000,
+    });
+
+    if (fs.existsSync(tempPdf)) {
+      const pdfBuffer = fs.readFileSync(tempPdf);
+      return pdfBuffer;
+    }
+  } catch (err) {
+    console.warn('Native Word PDF conversion fallback triggered:', err);
+  } finally {
+    try {
+      if (fs.existsSync(tempDocx)) fs.unlinkSync(tempDocx);
+      if (fs.existsSync(tempPdf)) fs.unlinkSync(tempPdf);
+      if (fs.existsSync(tempPs1)) fs.unlinkSync(tempPs1);
+    } catch {}
+  }
+  return null;
+}
+
+/**
+ * Convert a filled Word (.docx) buffer into a 100% complete PDF.
+ * Uses native MS Word COM on Windows first for pixel-perfect PDF rendering,
+ * falling back to structured PDF parser on non-Windows environments.
  */
 export async function convertFilledDocxToPdf(
   docxBuffer: Buffer,
   documentTitle: string,
   candidate: CandidateRow
 ): Promise<Buffer> {
+  // 1. Try native MS Word PDF export first for 100% exact layout fidelity
+  const nativePdf = await convertFilledDocxToPdfNative(docxBuffer);
+  if (nativePdf && nativePdf.length > 1000) {
+    return nativePdf;
+  }
+
+  // 2. Fallback to Mammoth + PDFKit engine
   const { value: html } = await mammoth.convertToHtml({ buffer: docxBuffer });
 
   const isProforma = candidate.organisme === 'Proforma Institut';
