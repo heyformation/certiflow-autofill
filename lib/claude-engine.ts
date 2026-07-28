@@ -8,6 +8,25 @@ import {
   ThemeScoreProfile,
 } from './types';
 
+export function isAnthropicQuotaOrAuthError(err: any): boolean {
+  if (!err) return false;
+  const status = err.status || err.statusCode;
+  if (status === 401 || status === 403 || status === 429) return true;
+  const msg = (err.message || String(err)).toLowerCase();
+  return (
+    msg.includes('credit') ||
+    msg.includes('balance') ||
+    msg.includes('quota') ||
+    msg.includes('rate_limit') ||
+    msg.includes('rate limit') ||
+    msg.includes('over_quota') ||
+    msg.includes('insufficient_quota') ||
+    msg.includes('invalid_api_key') ||
+    msg.includes('authentication_error') ||
+    msg.includes('invalid api key')
+  );
+}
+
 // Deterministic seed PRNG for variance consistency
 function seededRandom(seed: string): () => number {
   let h = 0;
@@ -104,6 +123,8 @@ Format de réponse STRICT JSON :
         'claude-3-haiku-20240307',
       ];
 
+      let quotaError: string | null = null;
+
       for (const modelName of candidateModels) {
         try {
           const response = await anthropic.messages.create({
@@ -118,13 +139,24 @@ Format de réponse STRICT JSON :
             claudeAppreciation = parsed.appreciationPresident;
             candidateBackgroundSummary = parsed.parcoursSummary;
             entrepreneurialProjectSummary = parsed.projetSummary;
+            quotaError = null;
             break;
           }
-        } catch (e) {
-          // Try next model
+        } catch (e: any) {
+          if (isAnthropicQuotaOrAuthError(e)) {
+            quotaError = `Erreur API Anthropic: Crédits/Tokens épuisés ou clé API invalide (${e.message || 'Quota dépassé'}). Veuillez recharger vos crédits Claude.`;
+            break;
+          }
         }
       }
-    } catch (err) {
+
+      if (quotaError) {
+        throw new Error(quotaError);
+      }
+    } catch (err: any) {
+      if (isAnthropicQuotaOrAuthError(err) || err.message?.includes('Crédits/Tokens épuisés')) {
+        throw err;
+      }
       console.warn('Claude API call failed, using deterministic fallbacks:', err);
     }
   }
@@ -256,6 +288,8 @@ Fournissez une analyse d'expert au format STRICT JSON :
         'claude-3-haiku-20240307',
       ];
 
+      let quotaError: string | null = null;
+
       for (const modelName of candidateModels) {
         try {
           const response = await anthropic.messages.create({
@@ -272,13 +306,24 @@ Fournissez une analyse d'expert au format STRICT JSON :
             wedofReadinessSummary = parsed.wedofReadinessSummary;
             auditNotes = parsed.auditNotes;
             recommendations = parsed.recommendations;
+            quotaError = null;
             break;
           }
-        } catch (e) {
-          // Fallback to next model
+        } catch (e: any) {
+          if (isAnthropicQuotaOrAuthError(e)) {
+            quotaError = `Erreur API Anthropic: Crédits/Tokens épuisés ou clé API invalide (${e.message || 'Quota dépassé'}). Veuillez recharger vos crédits Claude.`;
+            break;
+          }
         }
       }
-    } catch (err) {
+
+      if (quotaError) {
+        throw new Error(quotaError);
+      }
+    } catch (err: any) {
+      if (isAnthropicQuotaOrAuthError(err) || err.message?.includes('Crédits/Tokens épuisés')) {
+        throw err;
+      }
       console.warn('Claude AI Sheet Analysis failed:', err);
     }
   }

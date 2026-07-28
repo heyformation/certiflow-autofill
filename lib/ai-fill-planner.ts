@@ -21,6 +21,7 @@
  */
 
 import { Anthropic } from '@anthropic-ai/sdk';
+import { isAnthropicQuotaOrAuthError } from './claude-engine';
 import { DocxStructure, FillPlan, structureToMarkdownView } from './docx-filler';
 import { getJuryRules } from './jury-rules';
 import { CandidateEvaluationResult, CandidateRow } from './types';
@@ -198,11 +199,16 @@ N'inclus dans "checkboxes" que les options cochées (true).`;
           const plan = sanitizePlan(parsed, candidate, structure, fallback);
           return { plan, usedAi: true };
         }
-      } catch {
-        // try next model
+      } catch (e: any) {
+        if (isAnthropicQuotaOrAuthError(e)) {
+          throw new Error(`Erreur API Anthropic: Crédits/Tokens épuisés ou clé API invalide (${e.message || 'Quota dépassé'}).`);
+        }
       }
     }
-  } catch (err) {
+  } catch (err: any) {
+    if (isAnthropicQuotaOrAuthError(err) || err.message?.includes('Crédits/Tokens épuisés')) {
+      throw err;
+    }
     console.warn('AI fill-plan failed, using deterministic fallback:', err);
   }
 
