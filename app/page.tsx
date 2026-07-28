@@ -436,9 +436,6 @@ export default function DashboardPage() {
       <SettingsModal
         isOpen={isSettingsOpen}
         onClose={() => setIsSettingsOpen(false)}
-        apiKey={apiKey}
-        onSaveApiKey={(key) => setApiKey(key)}
-        isAutoConnected={isAutoConnected}
       />
 
       {/* Evaluation Preview Modal */}
