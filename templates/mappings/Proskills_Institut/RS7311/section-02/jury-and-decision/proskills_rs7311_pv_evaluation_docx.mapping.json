@@ -95,6 +95,38 @@
       "blocking_reason": "Filled reference did not provide same-format structural evidence."
     },
     {
+      "semantic_field": "candidate.questionnaire.responses.pv_evaluation.date_du_jury",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.pv_evaluation.date_du_jury",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 5,
+          "xpath": "/document/body[1]/p[6]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "01/03/2026",
+      "confidence": "HIGH",
+      "evidence": "Date du jury field at top of document",
+      "validation": {
+        "type": [
+          "string"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
       "semantic_field": "evaluation.result",
       "source_class": "UNRESOLVED",
       "source_path": "$.evaluation.result",
@@ -826,3 +858,4 @@
     ]
   }
 }
+

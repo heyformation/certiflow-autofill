@@ -643,10 +643,62 @@ export function buildCanonicalInput(
     nom_prenom: candidateFullName,
     votre_nom: candidate.nom || '',
     votre_prenom: candidate.prenom || '',
+    // Additional fields from mapping
+    employeur: 'Auto-entrepreneur',
+    statut: candidate.statuts_edof || 'Indépendant',
+    element_cle_projet_3: "Déploiement d'indicateurs de pilotage opérationnels",
+    appreciation_detaillee_membre: evalResult.grilleEvaluation.presidentAppreciation,
+    contenu_developpe_5: 'Évaluation et ajustement continu des actions mises en place',
+    point_fort_3: 'Projet concret ancré dans la réalité opérationnelle de la TPE',
+    '4_pieces_justificatives_du_dossier': 'Attestations et justificatifs fournis complets',
+    '5_attestation_de_conformite': 'Conformité du dossier validée',
+    adresse_candidat: candidate.adresse || candidate.adresse_wedof || candidate.adresse_postale || '',
+    telephone: candidate.numero_tel || '',
+    email: candidate.mail || candidate.mail_wedof || candidate.mail_crm || '',
+    voie_acces: 'Formation continue',
+    note_oral: Math.round(evalResult.grilleEvaluation.convertedScore20 * 0.75).toString(),
+    note_globale: evalResult.grilleEvaluation.convertedScore20.toString(),
+    date_session: formatDate(dateExamen),
+    date_signature: formatDate(dateExamen),
+    date_naissance: candidate.date_naissance || '',
+    type_piece: 'CNI',
+    numero_piece: '',
+    date_validite: '',
+    observation_president: evalResult.grilleEvaluation.presidentAppreciation,
+    observation_membre: evalResult.grilleEvaluation.presidentAppreciation,
+    thematique_1: 'Pilotage et gestion de la TPE',
+    thematique_2: "Utilisation de l'IA pour améliorer l'efficacité",
+    thematique_3: 'Automatisation des processus clés',
+    thematique_4: 'Analyse et exploitation des données',
+    thematique_5: 'Optimisation de la performance globale',
+    contenu_developpe_1: 'Analyse approfondie des besoins et des processus existants',
+    contenu_developpe_2: "Mise en place d'outils d'automatisation adaptés",
+    contenu_developpe_3: "Exploitation de l'IA pour la prise de décision",
+    contenu_developpe_4: 'Suivi des indicateurs de performance',
   };
 
   responses.pv_evaluation = {
     stagiaire: candidateFullName,
+    // Date fields
+    date_du_jury: formatDate(dateExamen),
+    date_d_enregistrement_du_proces_verbal: formatDate(dateExamen),
+    date_du_constat: formatDate(dateExamen),
+    // Grille de contrôle fields (conformity checks)
+    transmission_conforme_des_grilles_d_evaluation_au_jury: 'Conforme',
+    transmission_conforme_des_grilles_d_evaluation_au_jury_transmission_conforme_des_grilles_d_eval: 'Oui',
+    transmission_conforme_des_grilles_d_evaluation_au_jury_transmission_conforme_des_grilles_d_eval_2: 'Validé',
+    transmission_conforme_des_grilles_d_evaluation_au_jury_transmission_conforme_des_grilles_d_eval_3: 'Conforme',
+    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les: 'Conforme',
+    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation: 'Oui',
+    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation_2: 'Validé',
+    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation_3: 'Conforme',
+    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation_4: 'RAS',
+    // Dysfonctionnement fields (leave empty - should not be auto-filled)
+    resultats_et_commentaires: '',
+    resultats_et_commentaires_resultats_et_commentaires: '',
+    resultats_et_commentaires_resultats_et_commentaires_2: '',
+    // Main PV text
+    proces_verbal_de_jury_d_evaluation: `Procès-verbal de jury d'évaluation pour la certification RS7311 - ${candidateFullName} - Session du ${formatDate(dateExamen)}`,
   };
 
   // ── Scoring levels ──
@@ -739,6 +791,7 @@ export function buildCanonicalInput(
     president: jury.presidentName,
     membre: jury.memberName,
     contact: jury.contact,
+    trainer_evaluator_name: jury.presidentName, // The trainer is typically the president
   };
 
   // ── Manual inputs (ID card placeholders, counts) ──
