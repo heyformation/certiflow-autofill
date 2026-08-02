@@ -9,7 +9,7 @@ import {
   populateDocx,
   getPath,
 } from './certiflow-engine';
-import { convertDocxToPdf, isPdfConversionEnabled } from './pdf-converter';
+// PDF conversion removed — DOCX-only output
 
 export interface FillReport {
   tagsReplaced: number;
@@ -152,41 +152,6 @@ export async function generateCandidateDocuments(
         fillReport: baseFillReport,
       });
 
-      // Attempt PDF conversion
-      if (isPdfConversionEnabled()) {
-        try {
-          const pdfBuffer = await convertDocxToPdf(docxBytes, outputFileName);
-          if (pdfBuffer) {
-            const pdfName = outputFileName.replace(/\.docx$/i, '.pdf');
-            files.push({
-              filename: `${documentName}.pdf`,
-              relativePath: `${candidateFolder}/${pdfName}`,
-              category: 'Document Certifiant (PDF)',
-              buffer: pdfBuffer,
-              fillReport: baseFillReport,
-            });
-          } else {
-            const warnMsg = `PDF non généré pour ${documentName} (CloudConvert a retourné null).`;
-            warnings.push(warnMsg);
-            files[files.length - 1].fillReport = { ...baseFillReport, pdfError: warnMsg };
-          }
-        } catch (pdfErr: any) {
-          const errMsg = pdfErr?.message || String(pdfErr);
-          let friendlyPdf = errMsg;
-          if (errMsg.includes('401') || errMsg.includes('auth')) {
-            friendlyPdf = `Clé CloudConvert invalide ou expirée. Vérifiez CLOUDCONVERT_API_KEY dans .env.local.`;
-          } else if (errMsg.includes('quota') || errMsg.includes('limit')) {
-            friendlyPdf = `Quota CloudConvert dépassé. Vérifiez votre abonnement.`;
-          }
-          const warnMsg = `PDF non généré pour ${documentName} — ${friendlyPdf}`;
-          warnings.push(warnMsg);
-          // Mark the last-added DOCX with the error
-          const lastFile = files[files.length - 1];
-          if (lastFile) {
-            lastFile.fillReport = { ...baseFillReport, pdfError: warnMsg };
-          }
-        }
-      }
     } catch (err: any) {
       const msg = `Erreur modèle ${tmpl.filename}: ${err?.message || String(err)}`;
       console.error(msg, err);
