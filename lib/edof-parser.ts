@@ -2,6 +2,78 @@ import * as XLSX from 'xlsx';
 import { checkCandidateCompleteness } from './completeness';
 import { CandidateRow, Organization, RSCertificationCode } from './types';
 
+export function generateDeterministicCandidateId(
+  nom: string,
+  prenom: string,
+  organisme: string,
+  code_certif: string
+): string {
+  const normNom = (nom || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+  const normPrenom = (prenom || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+  const normOrg = (organisme || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+  const normCode = (code_certif || '').trim().toLowerCase();
+  return `cand-${normOrg}-${normCode}-${normNom}-${normPrenom}`;
+}
+
+export function enrichAndDeduplicateCandidates(candidates: CandidateRow[]): CandidateRow[] {
+  if (!candidates || candidates.length === 0) return [];
+
+  // Step 1: Map known contact details for each person (nom + prenom + organisme)
+  const personContacts = new Map<string, { mail?: string; numero_tel?: string; adresse?: string; date_naissance?: string }>();
+
+  for (const c of candidates) {
+    const personKey = `${(c.nom || '').trim().toLowerCase()}_${(c.prenom || '').trim().toLowerCase()}_${(c.organisme || '').trim().toLowerCase()}`;
+    const existing = personContacts.get(personKey) || {};
+    personContacts.set(personKey, {
+      mail: (c.mail && c.mail.trim()) || existing.mail || '',
+      numero_tel: (c.numero_tel && c.numero_tel.trim()) || existing.numero_tel || '',
+      adresse: (c.adresse && c.adresse.trim()) || existing.adresse || '',
+      date_naissance: (c.date_naissance && c.date_naissance.trim()) || existing.date_naissance || '',
+    });
+  }
+
+  // Step 2: Enrich contact details & deduplicate by candidate ID
+  const deduplicatedMap = new Map<string, CandidateRow>();
+
+  for (const c of candidates) {
+    const detId = generateDeterministicCandidateId(c.nom, c.prenom, c.organisme, c.code_certif);
+    const personKey = `${(c.nom || '').trim().toLowerCase()}_${(c.prenom || '').trim().toLowerCase()}_${(c.organisme || '').trim().toLowerCase()}`;
+    const contact = personContacts.get(personKey) || {};
+
+    const mail = (c.mail && c.mail.trim()) || contact.mail || '';
+    const numero_tel = (c.numero_tel && c.numero_tel.trim()) || contact.numero_tel || '';
+    const adresse = (c.adresse && c.adresse.trim()) || contact.adresse || '';
+    const date_naissance = (c.date_naissance && c.date_naissance.trim()) || contact.date_naissance || '';
+
+    const existing = deduplicatedMap.get(detId);
+
+    const merged: CandidateRow = {
+      ...c,
+      id: detId,
+      mail: mail || existing?.mail || '',
+      numero_tel: numero_tel || existing?.numero_tel || '',
+      adresse: adresse || existing?.adresse || '',
+      date_naissance: date_naissance || existing?.date_naissance || '',
+      cv_recu: c.cv_recu || existing?.cv_recu || false,
+      cin_ok: c.cin_ok || existing?.cin_ok || false,
+      pret_generation_classique: c.pret_generation_classique || existing?.pret_generation_classique || false,
+      pret_generation_wedof: c.pret_generation_wedof || existing?.pret_generation_wedof || false,
+      pret_pour_generation: c.pret_pour_generation || existing?.pret_pour_generation || false,
+    };
+
+    // Re-check completeness with enriched fields
+    const completeness = checkCandidateCompleteness(merged);
+    merged.pret_generation_classique = merged.pret_generation_classique || completeness.pretClassique;
+    merged.pret_generation_wedof = merged.pret_generation_wedof || completeness.pretWedof;
+    merged.pret_pour_generation = merged.pret_generation_classique || merged.pret_generation_wedof;
+    merged.missing_fields = completeness.missingFields;
+
+    deduplicatedMap.set(detId, merged);
+  }
+
+  return Array.from(deduplicatedMap.values());
+}
+
 export function parseEdofExcelBuffer(buffer: Buffer): CandidateRow[] {
   const workbook = XLSX.read(buffer, { type: 'buffer' });
   
@@ -52,7 +124,7 @@ export function parseEdofExcelBuffer(buffer: Buffer): CandidateRow[] {
     return firstCell !== '' && !firstCell.toUpperCase().startsWith('NOTES');
   });
 
-  return dataRows.map((rowArr, index) => {
+  const parsedCandidates = dataRows.map((rowArr, index) => {
     // Convert row array into key-value map using detected headers
     const rowObj: Record<string, any> = {};
     headers.forEach((h, colIdx) => {
@@ -136,7 +208,7 @@ export function parseEdofExcelBuffer(buffer: Buffer): CandidateRow[] {
     const cv_recu_str = getVal('CV recu', 'CV');
 
     const candidatePartial: Partial<CandidateRow> = {
-      id: `cand-${index + 1}-${Date.now().toString(36)}`,
+      id: generateDeterministicCandidateId(nom, prenom, organisme, code_certif),
       nom,
       prenom,
       civilite: getVal('CIVILITE', 'CIVILITÉ'),
@@ -187,5 +259,8 @@ export function parseEdofExcelBuffer(buffer: Buffer): CandidateRow[] {
       missing_fields: completeness.missingFields,
     } as CandidateRow;
   });
+
+  return enrichAndDeduplicateCandidates(parsedCandidates);
 }
+
 

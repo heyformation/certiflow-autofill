@@ -598,19 +598,25 @@ export function buildCanonicalInput(
     nom_et_prenom: candidateFullName,
     date_de_l_entretien_de_l_analyse: formatDate(dateExamen),
     date_de_l_entretien_de_l_analyse_date_de_l_entretien_de_l_analyse: formatDate(dateExamen),
+    // FIXED: Use unique content, not duplicate candidate name
     principaux_objectifs_et_attentes_exprimes_par_le_candidat:
-      `Développer mes compétences professionnelles en lien avec mon activité de TPE afin d'améliorer mon efficacité opérationnelle.`,
+      `Développer mes compétences en ${candidate.code_certif} pour améliorer l'efficacité opérationnelle de ma TPE grâce aux outils numériques et à l'IA.`,
     score_obtenu_au_test_de_positionnement_sur_20: `${evalResult.testPositionnement.totalScore}/20`,
     date_passation_du_test: formatDate(dateExamen),
     themes_ou_notions_maitrises_points_forts_identifies:
-      evalResult.competencies[0]?.title || `Bonne compréhension globale du domaine certifié.`,
+      evalResult.competencies.slice(0, 2).map(c => c.title).join(', ') || `Bonne compréhension globale du domaine certifié.`,
     themes_ou_notions_a_renforcer_lacunes_identifiees:
-      `Points à consolider identifiés lors de l'entretien d'analyse.`,
+      evalResult.competencies.slice(-2).map(c => c.title).join(', ') || `Points à consolider identifiés lors de l'entretien d'analyse.`,
     adaptations_a_prevoir_cocher_toutes_les_options_pertinentes: `aucune_adaptation_necessaire`,
     nom_du_formateur_evaluateur_certificateur_ayant_realise_l_analyse: jury.presidentName,
     fonction_activite_actuelle_du_candidat: candidate.experience_pro
       ? candidate.experience_pro.split(/[.\n]/)[0].slice(0, 100).trim()
       : 'Dirigeant de TPE',
+    // ADDED: Missing fields
+    certification_visee: `${candidate.code_certif} - ${candidate.formation}`,
+    points_de_vigilance_ou_besoins_specifiques_identifies: 'Aucun besoin spécifique identifié',
+    statut_d_eligibilite: 'eligible',
+    date_et_signature: formatDate(dateExamen),
   };
 
   // ── Recueil des besoins answers ──
@@ -693,16 +699,17 @@ export function buildCanonicalInput(
     date_du_jury: formatDate(dateExamen),
     date_d_enregistrement_du_proces_verbal: formatDate(dateExamen),
     date_du_constat: formatDate(dateExamen),
-    // Grille de contrôle fields (conformity checks)
-    transmission_conforme_des_grilles_d_evaluation_au_jury: 'Conforme',
-    transmission_conforme_des_grilles_d_evaluation_au_jury_transmission_conforme_des_grilles_d_eval: 'Oui',
-    transmission_conforme_des_grilles_d_evaluation_au_jury_transmission_conforme_des_grilles_d_eval_2: 'Validé',
-    transmission_conforme_des_grilles_d_evaluation_au_jury_transmission_conforme_des_grilles_d_eval_3: 'Conforme',
-    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les: 'Conforme',
-    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation: 'Oui',
-    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation_2: 'Validé',
-    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation_3: 'Conforme',
-    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation_4: 'RAS',
+    // Grille de contrôle fields - LEAVE BLANK for manual completion
+    // (These map to mutually-exclusive status columns: Réalisé/Partiellement/Non réalisé/Commentaires)
+    transmission_conforme_des_grilles_d_evaluation_au_jury: '',
+    transmission_conforme_des_grilles_d_evaluation_au_jury_transmission_conforme_des_grilles_d_eval: '',
+    transmission_conforme_des_grilles_d_evaluation_au_jury_transmission_conforme_des_grilles_d_eval_2: '',
+    transmission_conforme_des_grilles_d_evaluation_au_jury_transmission_conforme_des_grilles_d_eval_3: '',
+    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les: '',
+    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation: '',
+    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation_2: '',
+    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation_3: '',
+    mise_en_place_conforme_de_l_organisation_permettant_l_appreciation_des_resultats_pour_les_mise_en_place_conforme_de_l_organisation_4: '',
     // Dysfonctionnement fields (leave empty - should not be auto-filled)
     resultats_et_commentaires: '',
     resultats_et_commentaires_resultats_et_commentaires: '',

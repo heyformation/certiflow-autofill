@@ -1,5 +1,6 @@
-import { Pool } from 'pg';
 import { CandidateRow, GenerationLog } from './types';
+import { enrichAndDeduplicateCandidates } from './edof-parser';
+import { Pool } from 'pg';
 
 let pool: Pool | null = null;
 
