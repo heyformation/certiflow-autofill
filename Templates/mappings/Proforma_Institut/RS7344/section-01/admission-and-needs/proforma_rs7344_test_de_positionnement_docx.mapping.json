@@ -1,0 +1,1415 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7344_test_de_positionnement_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7344/section-01/admission-and-needs/Test de Positionnement - RS7344 - Proforma Institut - Template.docx",
+  "template_hash": "e566b3ce79283267855a65300efea5c537d906a4895cc50cdf6ea3b3787150c2",
+  "source_original_path": "Proforma Institut/RS7344 - IA pour Développer son Activité/Test de Positionnement - RS7344 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7344",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "admission-and-needs",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7344 - IA pour Développer son Activité/Test de Positionnement - RS7344 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS7344 - IA pour Développer son Activité/Test de Positionnement - RS7344 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9952,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "BERTRAND Camille"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "candidate.identity.full_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.identity.full_name",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 5,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "BERTRAND Camille",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'BERTRAND Camille' after label 'Nom et Prénom *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.1_l_ia_generative_permet_principalement_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.1_l_ia_generative_permet_principalement_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "1. L'IA générative permet principalement : *  1 point",
+        "options": [
+          {
+            "value": "a_d_analyser_des_stocks",
+            "label": "A. D'analyser des stocks",
+            "part": "word/document.xml",
+            "paragraph_index": 8,
+            "xpath": "/document/body[1]/p[7]",
+            "template_text_sha256": "40178b72e8d63702333e402020684ae2a12740b0534a84eb6a09d1cdd6c6a51c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_de_creer_du_contenu_texte_image_audio",
+            "label": "B. De créer du contenu (texte, image, audio)",
+            "part": "word/document.xml",
+            "paragraph_index": 9,
+            "xpath": "/document/body[1]/p[8]",
+            "template_text_sha256": "59efce63120a7d5588166d22680df7250f652d8fc351026708a07858c2bafbde",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_de_reparer_un_ordinateur",
+            "label": "C. De réparer un ordinateur",
+            "part": "word/document.xml",
+            "paragraph_index": 10,
+            "xpath": "/document/body[1]/p[9]",
+            "template_text_sha256": "a8b7075af6291ede68ae8e1cacfd8cb73225b4f60555e64ad9ba838c00d131cc",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_de_securiser_un_reseau",
+            "label": "D. De sécuriser un réseau",
+            "part": "word/document.xml",
+            "paragraph_index": 11,
+            "xpath": "/document/body[1]/p[10]",
+            "template_text_sha256": "b607bcb0adcfa8bc1ee171592607ae38296067eb4319bb10d9f234bc9decddad",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_de_creer_du_contenu_texte_image_audio",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '1. L'IA générative permet principalement : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_d_analyser_des_stocks",
+          "b_de_creer_du_contenu_texte_image_audio",
+          "c_de_reparer_un_ordinateur",
+          "d_de_securiser_un_reseau"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.2_une_ia_predictive_sert_a_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.2_une_ia_predictive_sert_a_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "2. Une IA prédictive sert à : *  1 point",
+        "options": [
+          {
+            "value": "a_generer_des_images",
+            "label": "A. Générer des images",
+            "part": "word/document.xml",
+            "paragraph_index": 13,
+            "xpath": "/document/body[1]/p[12]",
+            "template_text_sha256": "3b765462bf14af95b3f3a45793164d440c49bad431879af697f929e1b91ed800",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_automatiser_un_email",
+            "label": "B. Automatiser un email",
+            "part": "word/document.xml",
+            "paragraph_index": 14,
+            "xpath": "/document/body[1]/p[13]",
+            "template_text_sha256": "aaccec9b05aab44ae740e4b7c32b26d4ef653a5500c6778109d1eaaa74625a4c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_anticiper_des_tendances_a_partir_de_donnees",
+            "label": "C. Anticiper des tendances à partir de données",
+            "part": "word/document.xml",
+            "paragraph_index": 15,
+            "xpath": "/document/body[1]/p[14]",
+            "template_text_sha256": "da10aa5e61375c7f4d849814d2878c8aa0d03762ef034532a1a052636f192d1f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_creer_un_site_web",
+            "label": "D. Créer un site web",
+            "part": "word/document.xml",
+            "paragraph_index": 16,
+            "xpath": "/document/body[1]/p[15]",
+            "template_text_sha256": "14cf1399f07250287107b67fc78d54e4e2b64f92de5445f91cef6253f664b5e2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_anticiper_des_tendances_a_partir_de_donnees",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '2. Une IA prédictive sert à : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_generer_des_images",
+          "b_automatiser_un_email",
+          "c_anticiper_des_tendances_a_partir_de_donnees",
+          "d_creer_un_site_web"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.3_l_automatisation_en_entreprise_permet_principalement_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.3_l_automatisation_en_entreprise_permet_principalement_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "3. L'automatisation en entreprise permet principalement : *  1 point",
+        "options": [
+          {
+            "value": "a_augmenter_les_taches_manuelles",
+            "label": "A. Augmenter les tâches manuelles",
+            "part": "word/document.xml",
+            "paragraph_index": 18,
+            "xpath": "/document/body[1]/p[17]",
+            "template_text_sha256": "48fd02bfe568f39cf3e157c37ca54b11aaee3e77254ca576af871c9a79634f35",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_supprimer_toute_intervention_humaine",
+            "label": "B. Supprimer toute intervention humaine",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "720a26642def7dfce8b2229b50fc9c2afd66c91bbdddcdf00532b801983de241",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_gagner_du_temps_sur_des_taches_repetitives",
+            "label": "C. Gagner du temps sur des tâches répétitives",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/p[19]",
+            "template_text_sha256": "9752af1105de704210d8aaca56133f0e7b5e78c7fbe227211131068e1221d46b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_remplacer_la_direction",
+            "label": "D. Remplacer la direction",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "4a7c561a1e5172de355b54e8358b99195aa374f88debaf47986182afdd24e92a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_gagner_du_temps_sur_des_taches_repetitives",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '3. L'automatisation en entreprise permet principalement : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_augmenter_les_taches_manuelles",
+          "b_supprimer_toute_intervention_humaine",
+          "c_gagner_du_temps_sur_des_taches_repetitives",
+          "d_remplacer_la_direction"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.4_parmi_ces_elements_lequel_est_un_levier_de_croissance_lie_a_l_ia_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.4_parmi_ces_elements_lequel_est_un_levier_de_croissance_lie_a_l_ia_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "4. Parmi ces éléments, lequel est un levier de croissance lié à l'IA ? *  1 point",
+        "options": [
+          {
+            "value": "a_augmentation_des_erreurs",
+            "label": "A. Augmentation des erreurs",
+            "part": "word/document.xml",
+            "paragraph_index": 23,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "c276ecd1801311d4443efa50d87ca989b716c86744b210d9a5f2a066ed913264",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_gain_de_temps",
+            "label": "B. Gain de temps",
+            "part": "word/document.xml",
+            "paragraph_index": 24,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "54e93169cd276d43aef4fe47ddd7756d6b8275daec38fb123556c721cd2ae4b7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_complexification_des_process",
+            "label": "C. Complexification des process",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "108957608d0e938fd57b6aa15ce6c7b7522e2144590737fd13f1de3a1bb62223",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_diminution_de_la_productivite",
+            "label": "D. Diminution de la productivité",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "248d38b6f505c5c4fbbc42af7c9c42d1aa88c5b39dfb0d81862f4f2023da6486",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_gain_de_temps",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '4. Parmi ces éléments, lequel est un levier de croissance lié à l'IA ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_augmentation_des_erreurs",
+          "b_gain_de_temps",
+          "c_complexification_des_process",
+          "d_diminution_de_la_productivite"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.5_une_tache_chronophage_est_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.5_une_tache_chronophage_est_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "5. Une tâche « chronophage » est : *  1 point",
+        "options": [
+          {
+            "value": "a_une_tache_inutile",
+            "label": "A. Une tâche inutile",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "ccaa374e1464d121782192ed6faff7f02189103f36b47259340c04eb0a664108",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_une_tache_qui_prend_beaucoup_de_temps",
+            "label": "B. Une tâche qui prend beaucoup de temps",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[28]",
+            "template_text_sha256": "b4d6fac8990fe5a8bcc0fd9c9e6bad55576cb64c75915388a3522c1c8a9b65d1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_une_tache_urgente",
+            "label": "C. Une tâche urgente",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "5290f45990f25793e2734f9cceb0d5cbcfe9cd2d961fa17b886d76993fdf2c15",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_une_tache_strategique",
+            "label": "D. Une tâche stratégique",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "30cced8c85db8dcf582b2de519f8e583fee3ec6d62577aaf50fd144efa1a052b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_une_tache_qui_prend_beaucoup_de_temps",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '5. Une tâche « chronophage » est : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_une_tache_inutile",
+          "b_une_tache_qui_prend_beaucoup_de_temps",
+          "c_une_tache_urgente",
+          "d_une_tache_strategique"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.6_une_strategie_d_ia_doit_etre_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.6_une_strategie_d_ia_doit_etre_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "6. Une stratégie d'IA doit être : *  1 point",
+        "options": [
+          {
+            "value": "a_identique_pour_toutes_les_entreprises",
+            "label": "A. Identique pour toutes les entreprises",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "bd4e2ca1d8fdc3b049a6fcbe06de41165e2df30e5d4efe96072da5c5395bb50b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_adaptee_aux_besoins_et_ressources_internes",
+            "label": "B. Adaptée aux besoins et ressources internes",
+            "part": "word/document.xml",
+            "paragraph_index": 34,
+            "xpath": "/document/body[1]/p[33]",
+            "template_text_sha256": "74a50bab19ab5cc0fc564a254c4d4fcde4e28af8e320315f3a16325fb42b521f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_basee_uniquement_sur_la_technologie",
+            "label": "C. Basée uniquement sur la technologie",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[34]",
+            "template_text_sha256": "db1cc045a90fbed0048de122858ba117c4b5b6b1593b3af7246a5501934cfada",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_decidee_par_un_prestataire_externe",
+            "label": "D. Décidée par un prestataire externe",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "6aeca5e35a5dac9a3b837a527358ed4519f387560bd9b67b0f9c1214fe3eb2ab",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_adaptee_aux_besoins_et_ressources_internes",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '6. Une stratégie d'IA doit être : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_identique_pour_toutes_les_entreprises",
+          "b_adaptee_aux_besoins_et_ressources_internes",
+          "c_basee_uniquement_sur_la_technologie",
+          "d_decidee_par_un_prestataire_externe"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.7_une_feuille_de_route_operationnelle_sert_a_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.7_une_feuille_de_route_operationnelle_sert_a_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "7. Une feuille de route opérationnelle sert à : *  1 point",
+        "options": [
+          {
+            "value": "a_lister_les_salaries",
+            "label": "A. Lister les salariés",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[37]",
+            "template_text_sha256": "af44fd75952bc8d6b072cd9be217931bdaffebc38620adc1efc49310b79aa6b3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_planifier_les_actions_et_priorites",
+            "label": "B. Planifier les actions et priorités",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "89d8117dd63214aa98f2c5a731ea2c0ae1f39449795fcdad3ab6bd4b6b43508a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_acheter_du_materiel",
+            "label": "C. Acheter du matériel",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "e2d05c8ae36fe02d2d9f3d3e70634bd16360fcdcc975b384068b1a578ffbc6e3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_supprimer_les_budgets",
+            "label": "D. Supprimer les budgets",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "ff1dcee7ff55e31c386e745c13eea48ca96e268a848fa8d57fda71e9808029a0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_planifier_les_actions_et_priorites",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '7. Une feuille de route opérationnelle sert à : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_lister_les_salaries",
+          "b_planifier_les_actions_et_priorites",
+          "c_acheter_du_materiel",
+          "d_supprimer_les_budgets"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.8_parmi_ces_contraintes_laquelle_doit_etre_analysee_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.8_parmi_ces_contraintes_laquelle_doit_etre_analysee_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "8. Parmi ces contraintes, laquelle doit être analysée ? *  1 point",
+        "options": [
+          {
+            "value": "a_budget_disponible",
+            "label": "A. Budget disponible",
+            "part": "word/document.xml",
+            "paragraph_index": 43,
+            "xpath": "/document/body[1]/p[42]",
+            "template_text_sha256": "b74580f4d67e14567a1df74bb4af81bfdd374f271ee3bdc7a78f968e60b39fab",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_competences_internes",
+            "label": "B. Compétences internes",
+            "part": "word/document.xml",
+            "paragraph_index": 44,
+            "xpath": "/document/body[1]/p[43]",
+            "template_text_sha256": "470e95ace21690c35df2a74c94f7a72084197ba203702d6e01b07d826b211a43",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_infrastructure_technique",
+            "label": "C. Infrastructure technique",
+            "part": "word/document.xml",
+            "paragraph_index": 45,
+            "xpath": "/document/body[1]/p[44]",
+            "template_text_sha256": "5c5d28d9f6918cd974471e3843ef4e8481cc0b7c28d2e6486931d460f0ec7664",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_toutes_les_reponses",
+            "label": "D. Toutes les réponses",
+            "part": "word/document.xml",
+            "paragraph_index": 46,
+            "xpath": "/document/body[1]/p[45]",
+            "template_text_sha256": "185630080338cb0962cd7d877a48cf9db3f7c81887dd595cad764766911842c8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "d_toutes_les_reponses",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '8. Parmi ces contraintes, laquelle doit être analysée ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_budget_disponible",
+          "b_competences_internes",
+          "c_infrastructure_technique",
+          "d_toutes_les_reponses"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.9_l_ia_peut_etre_integree_en_priorite_dans_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.9_l_ia_peut_etre_integree_en_priorite_dans_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "9. L'IA peut être intégrée en priorité dans : *  1 point",
+        "options": [
+          {
+            "value": "a_l_administratif",
+            "label": "A. L'administratif",
+            "part": "word/document.xml",
+            "paragraph_index": 48,
+            "xpath": "/document/body[1]/p[47]",
+            "template_text_sha256": "d17cd13493834a68cdd6b8608c2c438eb1836e9ef542e9486e38dabe3213f933",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_marketing",
+            "label": "B. Le marketing",
+            "part": "word/document.xml",
+            "paragraph_index": 49,
+            "xpath": "/document/body[1]/p[48]",
+            "template_text_sha256": "3e574b36fff1260e502d662ce4110d7859f94ef12284be688a00c6b0f2853a7f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_la_relation_client",
+            "label": "C. La relation client",
+            "part": "word/document.xml",
+            "paragraph_index": 50,
+            "xpath": "/document/body[1]/p[49]",
+            "template_text_sha256": "ee71e046137494f7cc14582e6b4b20803857414c7772e59c09d9bf3ff2dc18b5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_tous_les_poles",
+            "label": "D. Tous les pôles",
+            "part": "word/document.xml",
+            "paragraph_index": 51,
+            "xpath": "/document/body[1]/p[50]",
+            "template_text_sha256": "11a5a901047b4de2ecaded676fe06aa2ad7c80993b143f06c407c1c70f727d33",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "d_tous_les_poles",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '9. L'IA peut être intégrée en priorité dans : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_l_administratif",
+          "b_le_marketing",
+          "c_la_relation_client",
+          "d_tous_les_poles"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.10_le_prompt_engineering_consiste_a_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.10_le_prompt_engineering_consiste_a_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "10. Le « Prompt Engineering » consiste à : *  1 point",
+        "options": [
+          {
+            "value": "a_programmer_en_python",
+            "label": "A. Programmer en Python",
+            "part": "word/document.xml",
+            "paragraph_index": 53,
+            "xpath": "/document/body[1]/p[52]",
+            "template_text_sha256": "f13d56de8d437adf723e40132c79f04b094ecab0621252486630765ee7346ca2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_formuler_efficacement_des_instructions_a_une_ia",
+            "label": "B. Formuler efficacement des instructions à une IA",
+            "part": "word/document.xml",
+            "paragraph_index": 54,
+            "xpath": "/document/body[1]/p[53]",
+            "template_text_sha256": "c23a84cdc0292c56c18b9358462c07596ca165bb0fecc4a4319815efcfd3b911",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_installer_un_logiciel",
+            "label": "C. Installer un logiciel",
+            "part": "word/document.xml",
+            "paragraph_index": 55,
+            "xpath": "/document/body[1]/p[54]",
+            "template_text_sha256": "0426969965900f2a9477ac0e5e9dc7d4b42a254ef7e883b4d74d4b1a4816a693",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_creer_un_serveur",
+            "label": "D. Créer un serveur",
+            "part": "word/document.xml",
+            "paragraph_index": 56,
+            "xpath": "/document/body[1]/p[55]",
+            "template_text_sha256": "83ce221eb9611444fe523d372fc67de396239fd037da708e6970fac8f8d64f38",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_formuler_efficacement_des_instructions_a_une_ia",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '10. Le « Prompt Engineering » consiste à : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_programmer_en_python",
+          "b_formuler_efficacement_des_instructions_a_une_ia",
+          "c_installer_un_logiciel",
+          "d_creer_un_serveur"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.11_une_bonne_instruction_prompt_doit_etre_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.11_une_bonne_instruction_prompt_doit_etre_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "11. Une bonne instruction (prompt) doit être : *  1 point",
+        "options": [
+          {
+            "value": "a_vague",
+            "label": "A. Vague",
+            "part": "word/document.xml",
+            "paragraph_index": 58,
+            "xpath": "/document/body[1]/p[57]",
+            "template_text_sha256": "2e9adb9f74398395332a15672c1052bef5f86f29a1fdb41dbe1250e202add667",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_tres_courte",
+            "label": "B. Très courte",
+            "part": "word/document.xml",
+            "paragraph_index": 59,
+            "xpath": "/document/body[1]/p[58]",
+            "template_text_sha256": "53a324db4870329b4a39bf5f52680217dd49a90a2364298676ad89c1826ce24e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_claire_et_precise",
+            "label": "C. Claire et précise",
+            "part": "word/document.xml",
+            "paragraph_index": 60,
+            "xpath": "/document/body[1]/p[59]",
+            "template_text_sha256": "21e2ff4f76d7351d9ead902b1a02209bdcbbff18df1d9bdbddfd516115f9ac8e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_en_majuscules",
+            "label": "D. En majuscules",
+            "part": "word/document.xml",
+            "paragraph_index": 61,
+            "xpath": "/document/body[1]/p[60]",
+            "template_text_sha256": "a4311c9dd10f9455ae5455c800654bc2cc00bc346aed1920b2a0e498da10b9b3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_claire_et_precise",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '11. Une bonne instruction (prompt) doit être : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_vague",
+          "b_tres_courte",
+          "c_claire_et_precise",
+          "d_en_majuscules"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.12_lors_du_parametrage_d_un_outil_ia_il_faut_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.12_lors_du_parametrage_d_un_outil_ia_il_faut_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "12. Lors du paramétrage d'un outil IA, il faut : *  1 point",
+        "options": [
+          {
+            "value": "a_tester_en_situation_reelle",
+            "label": "A. Tester en situation réelle",
+            "part": "word/document.xml",
+            "paragraph_index": 63,
+            "xpath": "/document/body[1]/p[62]",
+            "template_text_sha256": "42dbefc4d14fdfeffc6a7230eeec09c8ad9c099ded9028615b8042076f3d7843",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_l_utiliser_sans_reglages",
+            "label": "B. L'utiliser sans réglages",
+            "part": "word/document.xml",
+            "paragraph_index": 64,
+            "xpath": "/document/body[1]/p[63]",
+            "template_text_sha256": "842034d9701fa36ebc4af20e76b37d2968b012d5f5a8a4eac772eeb13044d45f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_ignorer_les_resultats",
+            "label": "C. Ignorer les résultats",
+            "part": "word/document.xml",
+            "paragraph_index": 65,
+            "xpath": "/document/body[1]/p[64]",
+            "template_text_sha256": "7c777352961b584587fd70b5b9476b34d7f79af17448408578a900b0a8cf48e6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_eviter_toute_verification",
+            "label": "D. Éviter toute vérification",
+            "part": "word/document.xml",
+            "paragraph_index": 66,
+            "xpath": "/document/body[1]/p[65]",
+            "template_text_sha256": "8d8cc140db7d2221f8fdf83c158a7c583d58d10dc97564af4c51cafc0bd6abd0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_tester_en_situation_reelle",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '12. Lors du paramétrage d'un outil IA, il faut : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_tester_en_situation_reelle",
+          "b_l_utiliser_sans_reglages",
+          "c_ignorer_les_resultats",
+          "d_eviter_toute_verification"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.13_le_reglement_general_sur_la_protection_des_donnees_rgpd_concerne_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.13_le_reglement_general_sur_la_protection_des_donnees_rgpd_concerne_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "13. Le Règlement général sur la protection des données (RGPD) concerne : *  1 point",
+        "options": [
+          {
+            "value": "a_la_securite_incendie",
+            "label": "A. La sécurité incendie",
+            "part": "word/document.xml",
+            "paragraph_index": 68,
+            "xpath": "/document/body[1]/p[67]",
+            "template_text_sha256": "8eafb3911b3ff750089f77f196c39ce72b69cb58161a89de687e653f3d5ce7e2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_la_protection_des_donnees_personnelles",
+            "label": "B. La protection des données personnelles",
+            "part": "word/document.xml",
+            "paragraph_index": 69,
+            "xpath": "/document/body[1]/p[68]",
+            "template_text_sha256": "7aa210999ae66dab7f18250830a1536d0ba9fbd2e14cd877b8fe62a4183fc560",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_marketing_uniquement",
+            "label": "C. Le marketing uniquement",
+            "part": "word/document.xml",
+            "paragraph_index": 70,
+            "xpath": "/document/body[1]/p[69]",
+            "template_text_sha256": "d7ed931c2161a822391f27c7885076aac51b921f47b9fa4117d41459ba96dfe8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_les_logiciels_payants",
+            "label": "D. Les logiciels payants",
+            "part": "word/document.xml",
+            "paragraph_index": 71,
+            "xpath": "/document/body[1]/p[70]",
+            "template_text_sha256": "f937ab410778b7459a9c526c5e262cf26b9aa427becab7f65b4d4bf48e8acbb7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_la_protection_des_donnees_personnelles",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '13. Le Règlement général sur la protection des données (RGPD) concerne : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_la_securite_incendie",
+          "b_la_protection_des_donnees_personnelles",
+          "c_le_marketing_uniquement",
+          "d_les_logiciels_payants"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.14_une_entreprise_utilisant_l_ia_reste_responsable_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.14_une_entreprise_utilisant_l_ia_reste_responsable_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "14. Une entreprise utilisant l'IA reste responsable : *  1 point",
+        "options": [
+          {
+            "value": "a_de_rien",
+            "label": "A. De rien",
+            "part": "word/document.xml",
+            "paragraph_index": 73,
+            "xpath": "/document/body[1]/p[72]",
+            "template_text_sha256": "6d0da0d0b59d580f60e2971f62fc74ed8613d4b4c6827159f80afd2ae1970a34",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_uniquement_du_materiel",
+            "label": "B. Uniquement du matériel",
+            "part": "word/document.xml",
+            "paragraph_index": 74,
+            "xpath": "/document/body[1]/p[73]",
+            "template_text_sha256": "6900c13dc8ea66dadd0215d5f9c292375e9fbcc7ea07ab3c55d7006e7fcd74c9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_des_decisions_prises_sur_la_base_des_resultats_ia",
+            "label": "C. Des décisions prises sur la base des résultats IA",
+            "part": "word/document.xml",
+            "paragraph_index": 75,
+            "xpath": "/document/body[1]/p[74]",
+            "template_text_sha256": "ae49d70bc5b43b71e55a3f91173bca75198ac5aff5cce1dd57f97152f6d9ab4a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_du_fournisseur_uniquement",
+            "label": "D. Du fournisseur uniquement",
+            "part": "word/document.xml",
+            "paragraph_index": 76,
+            "xpath": "/document/body[1]/p[75]",
+            "template_text_sha256": "0e299b39f31697e425bf2fc792fcd4fc3b3697a77dc0735595c2ff70c9d2c44c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_des_decisions_prises_sur_la_base_des_resultats_ia",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '14. Une entreprise utilisant l'IA reste responsable : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_de_rien",
+          "b_uniquement_du_materiel",
+          "c_des_decisions_prises_sur_la_base_des_resultats_ia",
+          "d_du_fournisseur_uniquement"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.15_l_accompagnement_au_changement_vise_a_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.15_l_accompagnement_au_changement_vise_a_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "15. L'accompagnement au changement vise à : *  1 point",
+        "options": [
+          {
+            "value": "a_imposer_l_ia_sans_explication",
+            "label": "A. Imposer l'IA sans explication",
+            "part": "word/document.xml",
+            "paragraph_index": 78,
+            "xpath": "/document/body[1]/p[77]",
+            "template_text_sha256": "f9ca4c1b35f0e7222a5c5ae9eb894469c7fc22acc6ad46a3f09e5514c1796507",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_former_et_rassurer_les_collaborateurs",
+            "label": "B. Former et rassurer les collaborateurs",
+            "part": "word/document.xml",
+            "paragraph_index": 79,
+            "xpath": "/document/body[1]/p[78]",
+            "template_text_sha256": "6a93e2fa1d4b7458798583243e871b952697ba9d7750a56d9cc413e4a2de67a2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_supprimer_des_postes",
+            "label": "C. Supprimer des postes",
+            "part": "word/document.xml",
+            "paragraph_index": 80,
+            "xpath": "/document/body[1]/p[79]",
+            "template_text_sha256": "3d26bec2e520956fd1e47cc9442105c161ee7aa3ee3740fb1266004dca7cf0a1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_diminuer_la_communication",
+            "label": "D. Diminuer la communication",
+            "part": "word/document.xml",
+            "paragraph_index": 81,
+            "xpath": "/document/body[1]/p[80]",
+            "template_text_sha256": "9fad21dc212a0f081480e54c9b5a367c9e3eb2324650ed9048dac7ad23852586",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_former_et_rassurer_les_collaborateurs",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '15. L'accompagnement au changement vise à : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_imposer_l_ia_sans_explication",
+          "b_former_et_rassurer_les_collaborateurs",
+          "c_supprimer_des_postes",
+          "d_diminuer_la_communication"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.16_une_charte_interne_ia_sert_a_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.16_une_charte_interne_ia_sert_a_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "16. Une charte interne IA sert à : *  1 point",
+        "options": [
+          {
+            "value": "a_decorer_les_bureaux",
+            "label": "A. Décorer les bureaux",
+            "part": "word/document.xml",
+            "paragraph_index": 83,
+            "xpath": "/document/body[1]/p[82]",
+            "template_text_sha256": "444051495f7d658985fe10f8846cf51ccfefdb97d7d815314f7f5cb8a1ab40cb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_definir_les_regles_d_usage_et_d_ethique",
+            "label": "B. Définir les règles d'usage et d'éthique",
+            "part": "word/document.xml",
+            "paragraph_index": 84,
+            "xpath": "/document/body[1]/p[83]",
+            "template_text_sha256": "f4e0ab61d96ad7103ec9bb473008d394aa6760a89cce3114617152cbabc648a5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_augmenter_le_budget",
+            "label": "C. Augmenter le budget",
+            "part": "word/document.xml",
+            "paragraph_index": 85,
+            "xpath": "/document/body[1]/p[84]",
+            "template_text_sha256": "455a660a81a916e37f4596148ff98a903bb77d3996e3fd265d71729a847c16ab",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_controler_les_salaires",
+            "label": "D. Contrôler les salaires",
+            "part": "word/document.xml",
+            "paragraph_index": 86,
+            "xpath": "/document/body[1]/p[85]",
+            "template_text_sha256": "62625ac58b94aad9c6f28dc7ae96ffb37eef22622139d6d44449f23ebb3a69ab",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_definir_les_regles_d_usage_et_d_ethique",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '16. Une charte interne IA sert à : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_decorer_les_bureaux",
+          "b_definir_les_regles_d_usage_et_d_ethique",
+          "c_augmenter_le_budget",
+          "d_controler_les_salaires"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.17_l_accessibilite_numerique_concerne_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.17_l_accessibilite_numerique_concerne_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "17. L'accessibilité numérique concerne : *  1 point",
+        "options": [
+          {
+            "value": "a_uniquement_les_personnes_en_situation_de_handicap",
+            "label": "A. Uniquement les personnes en situation de handicap",
+            "part": "word/document.xml",
+            "paragraph_index": 88,
+            "xpath": "/document/body[1]/p[87]",
+            "template_text_sha256": "912434e07cf2bc113d00a1036d30cbdd6382ddcbb5cd71f24299f5d60f783c0a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_l_adaptation_des_outils_a_tous_les_utilisateurs",
+            "label": "B. L'adaptation des outils à tous les utilisateurs",
+            "part": "word/document.xml",
+            "paragraph_index": 89,
+            "xpath": "/document/body[1]/p[88]",
+            "template_text_sha256": "257f53409c62676f58deec1b229a66b1ecdf877ef6c54f091aad17a2f6a5b46e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_les_logiciels_gratuits",
+            "label": "C. Les logiciels gratuits",
+            "part": "word/document.xml",
+            "paragraph_index": 90,
+            "xpath": "/document/body[1]/p[89]",
+            "template_text_sha256": "5be70a95cb9c1e8201f4d02d25e46304aee690174af7a3bf49ad48e2e0e2a780",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_les_reseaux_sociaux",
+            "label": "D. Les réseaux sociaux",
+            "part": "word/document.xml",
+            "paragraph_index": 91,
+            "xpath": "/document/body[1]/p[90]",
+            "template_text_sha256": "60c0bac816df183dde7d1da45955a73ef87106b0f2611d117ab2a8296df9ec40",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_l_adaptation_des_outils_a_tous_les_utilisateurs",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '17. L'accessibilité numérique concerne : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_uniquement_les_personnes_en_situation_de_handicap",
+          "b_l_adaptation_des_outils_a_tous_les_utilisateurs",
+          "c_les_logiciels_gratuits",
+          "d_les_reseaux_sociaux"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.18_un_kpi_est_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.18_un_kpi_est_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "18. Un KPI est : *  1 point",
+        "options": [
+          {
+            "value": "a_un_logiciel",
+            "label": "A. Un logiciel",
+            "part": "word/document.xml",
+            "paragraph_index": 93,
+            "xpath": "/document/body[1]/p[92]",
+            "template_text_sha256": "d54639853014b5d8f8d975b8df8892554fcdffa563a6a3923ff3928fcc761708",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_un_indicateur_de_performance",
+            "label": "B. Un indicateur de performance",
+            "part": "word/document.xml",
+            "paragraph_index": 94,
+            "xpath": "/document/body[1]/p[93]",
+            "template_text_sha256": "c53d31f5ee45ab4779524afeb4715fb17f5094bb49d31f2f8a32b155e596de6b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_un_type_d_ia",
+            "label": "C. Un type d'IA",
+            "part": "word/document.xml",
+            "paragraph_index": 95,
+            "xpath": "/document/body[1]/p[94]",
+            "template_text_sha256": "e30f47d95d992183d67cf72972f455791852c8c2ee469aa543241c3564492706",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_une_base_de_donnees",
+            "label": "D. Une base de données",
+            "part": "word/document.xml",
+            "paragraph_index": 96,
+            "xpath": "/document/body[1]/p[95]",
+            "template_text_sha256": "27492e058cc2de8fd075ba02ea4ce83d4f7d303dcbe52198bd815e048d072dd8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_un_indicateur_de_performance",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '18. Un KPI est : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_un_logiciel",
+          "b_un_indicateur_de_performance",
+          "c_un_type_d_ia",
+          "d_une_base_de_donnees"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.19_mesurer_l_impact_de_l_ia_permet_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.19_mesurer_l_impact_de_l_ia_permet_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "19. Mesurer l'impact de l'IA permet : *  1 point",
+        "options": [
+          {
+            "value": "a_de_supprimer_l_evaluation",
+            "label": "A. De supprimer l'évaluation",
+            "part": "word/document.xml",
+            "paragraph_index": 98,
+            "xpath": "/document/body[1]/p[97]",
+            "template_text_sha256": "d6258e3546334f22e0b72339244236563d87fab739e14e51329555426f32cc47",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_d_ameliorer_continuellement_les_resultats",
+            "label": "B. D'améliorer continuellement les résultats",
+            "part": "word/document.xml",
+            "paragraph_index": 99,
+            "xpath": "/document/body[1]/p[98]",
+            "template_text_sha256": "6ffb02857288801078af0beea94d6b88cc88ce9959da33bb0b6fd1c8323556fb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_de_compliquer_l_organisation",
+            "label": "C. De compliquer l'organisation",
+            "part": "word/document.xml",
+            "paragraph_index": 100,
+            "xpath": "/document/body[1]/p[99]",
+            "template_text_sha256": "13743eccd54b714daad6f19bd68eb41c3382a6df3d08d55406833f4fc59c78f4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_de_remplacer_la_strategie",
+            "label": "D. De remplacer la stratégie",
+            "part": "word/document.xml",
+            "paragraph_index": 101,
+            "xpath": "/document/body[1]/p[100]",
+            "template_text_sha256": "2de8431154bbe76641722e034ee39c0754330f7f7be2702eef8f0cfbe5ca57b0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_d_ameliorer_continuellement_les_resultats",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '19. Mesurer l'impact de l'IA permet : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_de_supprimer_l_evaluation",
+          "b_d_ameliorer_continuellement_les_resultats",
+          "c_de_compliquer_l_organisation",
+          "d_de_remplacer_la_strategie"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.20_l_optimisation_continue_consiste_a_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.20_l_optimisation_continue_consiste_a_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "20. L'optimisation continue consiste à : *  1 point",
+        "options": [
+          {
+            "value": "a_ne_rien_changer",
+            "label": "A. Ne rien changer",
+            "part": "word/document.xml",
+            "paragraph_index": 103,
+            "xpath": "/document/body[1]/p[102]",
+            "template_text_sha256": "e590ae28831c998814b38fe4b6c368bda864055f6f82abf2a67366eac3cc4a14",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_ajuster_la_strategie_selon_les_resultats_observes",
+            "label": "B. Ajuster la stratégie selon les résultats observés",
+            "part": "word/document.xml",
+            "paragraph_index": 104,
+            "xpath": "/document/body[1]/p[103]",
+            "template_text_sha256": "466bd907472c1528aebb75867c94e1cd1604d256deb0e41917a16b23736dd75d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_supprimer_les_outils",
+            "label": "C. Supprimer les outils",
+            "part": "word/document.xml",
+            "paragraph_index": 105,
+            "xpath": "/document/body[1]/p[104]",
+            "template_text_sha256": "882a938b58ae33ab503fe8c2efffd2ffe2c83cf765941c07e7b6137a9da28cc5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_automatiser_sans_controle",
+            "label": "D. Automatiser sans contrôle",
+            "part": "word/document.xml",
+            "paragraph_index": 106,
+            "xpath": "/document/body[1]/p[105]",
+            "template_text_sha256": "c6c1299119b7088284b32eca275a501f15227d6767c4198b5bef13b021060386",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_ajuster_la_strategie_selon_les_resultats_observes",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '20. L'optimisation continue consiste à : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_ne_rien_changer",
+          "b_ajuster_la_strategie_selon_les_resultats_observes",
+          "c_supprimer_les_outils",
+          "d_automatiser_sans_controle"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [],
+  "blocking_reasons": [],
+  "production_readiness": {
+    "status": "COMPLETE",
+    "field_count": 21,
+    "confirmed_field_count": 21,
+    "concrete_target_count": 21,
+    "evidence_count": 21,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 0,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": []
+  }
+}

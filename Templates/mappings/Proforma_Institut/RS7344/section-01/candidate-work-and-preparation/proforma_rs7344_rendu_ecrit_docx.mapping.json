@@ -1,0 +1,2233 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7344_rendu_ecrit_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7344/section-01/candidate-work-and-preparation/Rendu Ecrit - RS7344 - Proforma Institut - Template.docx",
+  "template_hash": "9b801b052e96130604f6bed937da1d49592a5793b13b356f61474ffa761f5f2c",
+  "source_original_path": "Proforma Institut/RS7344 - IA pour Développer son Activité/Rendu Ecrit - RS7344 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7344",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "candidate-work-and-preparation",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7344 - IA pour Développer son Activité/Rendu Ecrit - RS7344 - Proforma Institut - Template.docx",
+    "filled_reference": null,
+    "confidence": "BLOCKED",
+    "structure_similarity": 0.0,
+    "rationale": "No same-group filled reference.",
+    "same_format": false,
+    "candidate_identity": null
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "candidate.identity.full_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.identity.full_name",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 5,
+          "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Candidat'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.professional.company_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.company_name",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 9,
+          "xpath": "/document/body[1]/tbl[1]/tr[3]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Entreprise'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.date_de_rendu",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.date_de_rendu",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 11,
+          "xpath": "/document/body[1]/tbl[1]/tr[4]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Date de rendu'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.professional.company_name_presentez_brievement_votre_entreprise_so",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.company_name_presentez_brievement_votre_entreprise_so",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 16,
+          "xpath": "/document/body[1]/p[9]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Présentez brièvement votre entreprise : son activité, sa taille, ses volumes (clients, données, opérations…), et pourquoi l'IA représente '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.professional.company_name_presentez_brievement_votre_entreprise_so_2",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.company_name_presentez_brievement_votre_entreprise_so_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 17,
+          "xpath": "/document/body[1]/p[10]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Présentez brièvement votre entreprise : son activité, sa taille, ses volumes (clients, données, opérations…), et pourquoi l'IA représente '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.professional.company_name_presentez_brievement_votre_entreprise_so_3",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.company_name_presentez_brievement_votre_entreprise_so_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 18,
+          "xpath": "/document/body[1]/p[11]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Présentez brièvement votre entreprise : son activité, sa taille, ses volumes (clients, données, opérations…), et pourquoi l'IA représente '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.professional.company_name_presentez_brievement_votre_entreprise_so_4",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.company_name_presentez_brievement_votre_entreprise_so_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 19,
+          "xpath": "/document/body[1]/p[12]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Présentez brièvement votre entreprise : son activité, sa taille, ses volumes (clients, données, opérations…), et pourquoi l'IA représente '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.professional.current_position",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.current_position",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 30,
+          "xpath": "/document/body[1]/p[23]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Citez au moins 2 à 3 sources concrètes et diversifiées (sites spécialisés, organismes professionnels, presse sectorielle) avec une courte '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.professional.current_position",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.current_position",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 31,
+          "xpath": "/document/body[1]/p[24]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Citez au moins 2 à 3 sources concrètes et diversifiées (sites spécialisés, organismes professionnels, presse sectorielle) avec une courte '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.professional.current_position",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.current_position",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 32,
+          "xpath": "/document/body[1]/p[25]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Citez au moins 2 à 3 sources concrètes et diversifiées (sites spécialisés, organismes professionnels, presse sectorielle) avec une courte '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 35,
+          "xpath": "/document/body[1]/p[28]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.2) que vous identifiez de façon EXHAUSTIVE et JUSTIFIÉE les processus internes stratégiques (administratifs, mark'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process_le_jury_verifie_ici_cr1_2_que_vous_ident",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process_le_jury_verifie_ici_cr1_2_que_vous_ident",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 36,
+          "xpath": "/document/body[1]/p[29]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.2) que vous identifiez de façon EXHAUSTIVE et JUSTIFIÉE les processus internes stratégiques (administratifs, mark'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process_le_jury_verifie_ici_cr1_2_que_vous_ident_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process_le_jury_verifie_ici_cr1_2_que_vous_ident_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 37,
+          "xpath": "/document/body[1]/p[30]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.2) que vous identifiez de façon EXHAUSTIVE et JUSTIFIÉE les processus internes stratégiques (administratifs, mark'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process_le_jury_verifie_ici_cr1_2_que_vous_ident_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process_le_jury_verifie_ici_cr1_2_que_vous_ident_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 38,
+          "xpath": "/document/body[1]/p[31]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.2) que vous identifiez de façon EXHAUSTIVE et JUSTIFIÉE les processus internes stratégiques (administratifs, mark'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process_le_jury_verifie_ici_cr1_2_que_vous_ident_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process_le_jury_verifie_ici_cr1_2_que_vous_ident_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 39,
+          "xpath": "/document/body[1]/p[32]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.2) que vous identifiez de façon EXHAUSTIVE et JUSTIFIÉE les processus internes stratégiques (administratifs, mark'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process_le_jury_verifie_ici_cr1_2_que_vous_ident_5",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_2_que_vous_identifiez_de_facon_exhaustive_et_justifiee_les_process_le_jury_verifie_ici_cr1_2_que_vous_ident_5",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 40,
+          "xpath": "/document/body[1]/p[33]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.2) que vous identifiez de façon EXHAUSTIVE et JUSTIFIÉE les processus internes stratégiques (administratifs, mark'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 43,
+          "xpath": "/document/body[1]/p[36]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.3) que les outils IA que vous choisissez sont cohérents avec les processus ciblés ci-dessus, et que vous ARGUMENT'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr_le_jury_verifie_ici_cr1_3_que_les_outils",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr_le_jury_verifie_ici_cr1_3_que_les_outils",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 44,
+          "xpath": "/document/body[1]/p[37]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.3) que les outils IA que vous choisissez sont cohérents avec les processus ciblés ci-dessus, et que vous ARGUMENT'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr_le_jury_verifie_ici_cr1_3_que_les_outils_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr_le_jury_verifie_ici_cr1_3_que_les_outils_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 45,
+          "xpath": "/document/body[1]/p[38]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.3) que les outils IA que vous choisissez sont cohérents avec les processus ciblés ci-dessus, et que vous ARGUMENT'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr_le_jury_verifie_ici_cr1_3_que_les_outils_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr_le_jury_verifie_ici_cr1_3_que_les_outils_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 46,
+          "xpath": "/document/body[1]/p[39]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.3) que les outils IA que vous choisissez sont cohérents avec les processus ciblés ci-dessus, et que vous ARGUMENT'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr_le_jury_verifie_ici_cr1_3_que_les_outils_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr_le_jury_verifie_ici_cr1_3_que_les_outils_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 47,
+          "xpath": "/document/body[1]/p[40]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.3) que les outils IA que vous choisissez sont cohérents avec les processus ciblés ci-dessus, et que vous ARGUMENT'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr_le_jury_verifie_ici_cr1_3_que_les_outils_5",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr1_3_que_les_outils_ia_que_vous_choisissez_sont_coherents_avec_les_pr_le_jury_verifie_ici_cr1_3_que_les_outils_5",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 48,
+          "xpath": "/document/body[1]/p[41]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr1.3) que les outils IA que vous choisissez sont cohérents avec les processus ciblés ci-dessus, et que vous ARGUMENT'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr2_3_que_vous_identifiez_les_contraintes_techniques_liees_aux_outils",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr2_3_que_vous_identifiez_les_contraintes_techniques_liees_aux_outils",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 103,
+          "xpath": "/document/body[1]/p[68]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr2.3) que vous identifiez les contraintes techniques (liées aux outils choisis, à vos systèmes existants) ET organis'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr2_3_que_vous_identifiez_les_contraintes_techniques_liees_aux_outils_le_jury_verifie_ici_cr2_3_que_vous_ident",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr2_3_que_vous_identifiez_les_contraintes_techniques_liees_aux_outils_le_jury_verifie_ici_cr2_3_que_vous_ident",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 104,
+          "xpath": "/document/body[1]/p[69]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr2.3) que vous identifiez les contraintes techniques (liées aux outils choisis, à vos systèmes existants) ET organis'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr2_3_que_vous_identifiez_les_contraintes_techniques_liees_aux_outils_le_jury_verifie_ici_cr2_3_que_vous_ident_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr2_3_que_vous_identifiez_les_contraintes_techniques_liees_aux_outils_le_jury_verifie_ici_cr2_3_que_vous_ident_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 105,
+          "xpath": "/document/body[1]/p[70]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr2.3) que vous identifiez les contraintes techniques (liées aux outils choisis, à vos systèmes existants) ET organis'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr2_3_que_vous_identifiez_les_contraintes_techniques_liees_aux_outils_le_jury_verifie_ici_cr2_3_que_vous_ident_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr2_3_que_vous_identifiez_les_contraintes_techniques_liees_aux_outils_le_jury_verifie_ici_cr2_3_que_vous_ident_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 106,
+          "xpath": "/document/body[1]/p[71]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr2.3) que vous identifiez les contraintes techniques (liées aux outils choisis, à vos systèmes existants) ET organis'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr2_3_que_vous_identifiez_les_contraintes_techniques_liees_aux_outils_le_jury_verifie_ici_cr2_3_que_vous_ident_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr2_3_que_vous_identifiez_les_contraintes_techniques_liees_aux_outils_le_jury_verifie_ici_cr2_3_que_vous_ident_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 107,
+          "xpath": "/document/body[1]/p[72]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr2.3) que vous identifiez les contraintes techniques (liées aux outils choisis, à vos systèmes existants) ET organis'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_1_que_vous_expliquez_concretement_la_configuration_realisee_sur_au",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_1_que_vous_expliquez_concretement_la_configuration_realisee_sur_au",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 111,
+          "xpath": "/document/body[1]/p[76]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.1) que vous expliquez CONCRÈTEMENT la configuration réalisée sur au moins un outil IA (compte, rôles, paramétrage'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_1_que_vous_expliquez_concretement_la_configuration_realisee_sur_au_le_jury_verifie_ici_cr3_1_que_vous_expli",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_1_que_vous_expliquez_concretement_la_configuration_realisee_sur_au_le_jury_verifie_ici_cr3_1_que_vous_expli",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 112,
+          "xpath": "/document/body[1]/p[77]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.1) que vous expliquez CONCRÈTEMENT la configuration réalisée sur au moins un outil IA (compte, rôles, paramétrage'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_1_que_vous_expliquez_concretement_la_configuration_realisee_sur_au_le_jury_verifie_ici_cr3_1_que_vous_expli_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_1_que_vous_expliquez_concretement_la_configuration_realisee_sur_au_le_jury_verifie_ici_cr3_1_que_vous_expli_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 113,
+          "xpath": "/document/body[1]/p[78]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.1) que vous expliquez CONCRÈTEMENT la configuration réalisée sur au moins un outil IA (compte, rôles, paramétrage'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_1_que_vous_expliquez_concretement_la_configuration_realisee_sur_au_le_jury_verifie_ici_cr3_1_que_vous_expli_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_1_que_vous_expliquez_concretement_la_configuration_realisee_sur_au_le_jury_verifie_ici_cr3_1_que_vous_expli_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 114,
+          "xpath": "/document/body[1]/p[79]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.1) que vous expliquez CONCRÈTEMENT la configuration réalisée sur au moins un outil IA (compte, rôles, paramétrage'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_1_que_vous_expliquez_concretement_la_configuration_realisee_sur_au_le_jury_verifie_ici_cr3_1_que_vous_expli_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_1_que_vous_expliquez_concretement_la_configuration_realisee_sur_au_le_jury_verifie_ici_cr3_1_que_vous_expli_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 115,
+          "xpath": "/document/body[1]/p[80]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.1) que vous expliquez CONCRÈTEMENT la configuration réalisée sur au moins un outil IA (compte, rôles, paramétrage'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_2_que_votre_prompt_est_contextualise_structure_et_precis_et_que_vo",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_2_que_votre_prompt_est_contextualise_structure_et_precis_et_que_vo",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 124,
+          "xpath": "/document/body[1]/p[89]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.2) que votre prompt est contextualisé, structuré et précis, ET que vous démontrez une démarche d'optimisation par'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_2_que_votre_prompt_est_contextualise_structure_et_precis_et_que_vo_le_jury_verifie_ici_cr3_2_que_votre_prom",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_2_que_votre_prompt_est_contextualise_structure_et_precis_et_que_vo_le_jury_verifie_ici_cr3_2_que_votre_prom",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 125,
+          "xpath": "/document/body[1]/p[90]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.2) que votre prompt est contextualisé, structuré et précis, ET que vous démontrez une démarche d'optimisation par'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_2_que_votre_prompt_est_contextualise_structure_et_precis_et_que_vo_le_jury_verifie_ici_cr3_2_que_votre_prom_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_2_que_votre_prompt_est_contextualise_structure_et_precis_et_que_vo_le_jury_verifie_ici_cr3_2_que_votre_prom_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 126,
+          "xpath": "/document/body[1]/p[91]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.2) que votre prompt est contextualisé, structuré et précis, ET que vous démontrez une démarche d'optimisation par'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_2_que_votre_prompt_est_contextualise_structure_et_precis_et_que_vo_le_jury_verifie_ici_cr3_2_que_votre_prom_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_2_que_votre_prompt_est_contextualise_structure_et_precis_et_que_vo_le_jury_verifie_ici_cr3_2_que_votre_prom_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 127,
+          "xpath": "/document/body[1]/p[92]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.2) que votre prompt est contextualisé, structuré et précis, ET que vous démontrez une démarche d'optimisation par'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_3_que_vous_identifiez_precisement_les_competences_internes_ou_exte",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_3_que_vous_identifiez_precisement_les_competences_internes_ou_exte",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 130,
+          "xpath": "/document/body[1]/p[95]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.3) que vous identifiez précisément les compétences internes ou externes nécessaires (DSI, Data Scientist, dévelop'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_3_que_vous_identifiez_precisement_les_competences_internes_ou_exte_le_jury_verifie_ici_cr3_3_que_vous_ident",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_3_que_vous_identifiez_precisement_les_competences_internes_ou_exte_le_jury_verifie_ici_cr3_3_que_vous_ident",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 131,
+          "xpath": "/document/body[1]/p[96]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.3) que vous identifiez précisément les compétences internes ou externes nécessaires (DSI, Data Scientist, dévelop'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_3_que_vous_identifiez_precisement_les_competences_internes_ou_exte_le_jury_verifie_ici_cr3_3_que_vous_ident_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_3_que_vous_identifiez_precisement_les_competences_internes_ou_exte_le_jury_verifie_ici_cr3_3_que_vous_ident_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 132,
+          "xpath": "/document/body[1]/p[97]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.3) que vous identifiez précisément les compétences internes ou externes nécessaires (DSI, Data Scientist, dévelop'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_3_que_vous_identifiez_precisement_les_competences_internes_ou_exte_le_jury_verifie_ici_cr3_3_que_vous_ident_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_3_que_vous_identifiez_precisement_les_competences_internes_ou_exte_le_jury_verifie_ici_cr3_3_que_vous_ident_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 133,
+          "xpath": "/document/body[1]/p[98]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.3) que vous identifiez précisément les compétences internes ou externes nécessaires (DSI, Data Scientist, dévelop'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_4_que_vous_identifiez_et_expliquez_les_actions_et_controles_mis_en",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_4_que_vous_identifiez_et_expliquez_les_actions_et_controles_mis_en",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 136,
+          "xpath": "/document/body[1]/p[101]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.4) que vous identifiez et expliquez les actions et contrôles mis en œuvre pour une utilisation conforme à la régl'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_4_que_vous_identifiez_et_expliquez_les_actions_et_controles_mis_en_le_jury_verifie_ici_cr3_4_que_vous_ident",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_4_que_vous_identifiez_et_expliquez_les_actions_et_controles_mis_en_le_jury_verifie_ici_cr3_4_que_vous_ident",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 137,
+          "xpath": "/document/body[1]/p[102]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.4) que vous identifiez et expliquez les actions et contrôles mis en œuvre pour une utilisation conforme à la régl'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_4_que_vous_identifiez_et_expliquez_les_actions_et_controles_mis_en_le_jury_verifie_ici_cr3_4_que_vous_ident_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_4_que_vous_identifiez_et_expliquez_les_actions_et_controles_mis_en_le_jury_verifie_ici_cr3_4_que_vous_ident_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 138,
+          "xpath": "/document/body[1]/p[103]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.4) que vous identifiez et expliquez les actions et contrôles mis en œuvre pour une utilisation conforme à la régl'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_4_que_vous_identifiez_et_expliquez_les_actions_et_controles_mis_en_le_jury_verifie_ici_cr3_4_que_vous_ident_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_4_que_vous_identifiez_et_expliquez_les_actions_et_controles_mis_en_le_jury_verifie_ici_cr3_4_que_vous_ident_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 139,
+          "xpath": "/document/body[1]/p[104]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.4) que vous identifiez et expliquez les actions et contrôles mis en œuvre pour une utilisation conforme à la régl'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_4_que_vous_identifiez_et_expliquez_les_actions_et_controles_mis_en_le_jury_verifie_ici_cr3_4_que_vous_ident_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr3_4_que_vous_identifiez_et_expliquez_les_actions_et_controles_mis_en_le_jury_verifie_ici_cr3_4_que_vous_ident_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 140,
+          "xpath": "/document/body[1]/p[105]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr3.4) que vous identifiez et expliquez les actions et contrôles mis en œuvre pour une utilisation conforme à la régl'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr4_1_que_vous_prevoyez_la_formation_de_toutes_les_equipes_concernees",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr4_1_que_vous_prevoyez_la_formation_de_toutes_les_equipes_concernees",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 144,
+          "xpath": "/document/body[1]/p[109]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr4.1) que vous prévoyez la formation de TOUTES les équipes concernées, avec des actions adaptées à votre contexte (s'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr4_1_que_vous_prevoyez_la_formation_de_toutes_les_equipes_concernees_le_jury_verifie_ici_cr4_1_que_vous_prevo",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr4_1_que_vous_prevoyez_la_formation_de_toutes_les_equipes_concernees_le_jury_verifie_ici_cr4_1_que_vous_prevo",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 145,
+          "xpath": "/document/body[1]/p[110]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr4.1) que vous prévoyez la formation de TOUTES les équipes concernées, avec des actions adaptées à votre contexte (s'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr4_1_que_vous_prevoyez_la_formation_de_toutes_les_equipes_concernees_le_jury_verifie_ici_cr4_1_que_vous_prevo_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr4_1_que_vous_prevoyez_la_formation_de_toutes_les_equipes_concernees_le_jury_verifie_ici_cr4_1_que_vous_prevo_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 146,
+          "xpath": "/document/body[1]/p[111]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr4.1) que vous prévoyez la formation de TOUTES les équipes concernées, avec des actions adaptées à votre contexte (s'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr4_1_que_vous_prevoyez_la_formation_de_toutes_les_equipes_concernees_le_jury_verifie_ici_cr4_1_que_vous_prevo_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr4_1_que_vous_prevoyez_la_formation_de_toutes_les_equipes_concernees_le_jury_verifie_ici_cr4_1_que_vous_prevo_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 147,
+          "xpath": "/document/body[1]/p[112]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr4.1) que vous prévoyez la formation de TOUTES les équipes concernées, avec des actions adaptées à votre contexte (s'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_1_que_vos_indicateurs_permettent_d_evaluer_precisement_l_impact_su",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_1_que_vos_indicateurs_permettent_d_evaluer_precisement_l_impact_su",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 172,
+          "xpath": "/document/body[1]/p[127]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr5.1) que vos indicateurs permettent d'évaluer précisément l'impact sur la productivité et l'efficacité opérationnel'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_1_que_vos_indicateurs_permettent_d_evaluer_precisement_l_impact_su_le_jury_verifie_ici_cr5_1_que_vos_indica",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_1_que_vos_indicateurs_permettent_d_evaluer_precisement_l_impact_su_le_jury_verifie_ici_cr5_1_que_vos_indica",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 173,
+          "xpath": "/document/body[1]/p[128]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr5.1) que vos indicateurs permettent d'évaluer précisément l'impact sur la productivité et l'efficacité opérationnel'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_1_que_vos_indicateurs_permettent_d_evaluer_precisement_l_impact_su_le_jury_verifie_ici_cr5_1_que_vos_indica_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_1_que_vos_indicateurs_permettent_d_evaluer_precisement_l_impact_su_le_jury_verifie_ici_cr5_1_que_vos_indica_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 174,
+          "xpath": "/document/body[1]/p[129]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr5.1) que vos indicateurs permettent d'évaluer précisément l'impact sur la productivité et l'efficacité opérationnel'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_1_que_vos_indicateurs_permettent_d_evaluer_precisement_l_impact_su_le_jury_verifie_ici_cr5_1_que_vos_indica_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_1_que_vos_indicateurs_permettent_d_evaluer_precisement_l_impact_su_le_jury_verifie_ici_cr5_1_que_vos_indica_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 175,
+          "xpath": "/document/body[1]/p[130]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr5.1) que vos indicateurs permettent d'évaluer précisément l'impact sur la productivité et l'efficacité opérationnel'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_1_que_vos_indicateurs_permettent_d_evaluer_precisement_l_impact_su_le_jury_verifie_ici_cr5_1_que_vos_indica_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_1_que_vos_indicateurs_permettent_d_evaluer_precisement_l_impact_su_le_jury_verifie_ici_cr5_1_que_vos_indica_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 176,
+          "xpath": "/document/body[1]/p[131]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr5.1) que vos indicateurs permettent d'évaluer précisément l'impact sur la productivité et l'efficacité opérationnel'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_2_que_vous_prevoyez_un_processus_d_exploitation_complet_avec_au_mi",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_2_que_vous_prevoyez_un_processus_d_exploitation_complet_avec_au_mi",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 184,
+          "xpath": "/document/body[1]/p[139]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr5.2) que vous prévoyez un processus d'exploitation complet, avec au minimum : une fréquence d'analyse, une méthode '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_2_que_vous_prevoyez_un_processus_d_exploitation_complet_avec_au_mi_le_jury_verifie_ici_cr5_2_que_vous_prevo",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_2_que_vous_prevoyez_un_processus_d_exploitation_complet_avec_au_mi_le_jury_verifie_ici_cr5_2_que_vous_prevo",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 185,
+          "xpath": "/document/body[1]/p[140]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr5.2) que vous prévoyez un processus d'exploitation complet, avec au minimum : une fréquence d'analyse, une méthode '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_2_que_vous_prevoyez_un_processus_d_exploitation_complet_avec_au_mi_le_jury_verifie_ici_cr5_2_que_vous_prevo_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_2_que_vous_prevoyez_un_processus_d_exploitation_complet_avec_au_mi_le_jury_verifie_ici_cr5_2_que_vous_prevo_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 186,
+          "xpath": "/document/body[1]/p[141]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr5.2) que vous prévoyez un processus d'exploitation complet, avec au minimum : une fréquence d'analyse, une méthode '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_2_que_vous_prevoyez_un_processus_d_exploitation_complet_avec_au_mi_le_jury_verifie_ici_cr5_2_que_vous_prevo_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_2_que_vous_prevoyez_un_processus_d_exploitation_complet_avec_au_mi_le_jury_verifie_ici_cr5_2_que_vous_prevo_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 187,
+          "xpath": "/document/body[1]/p[142]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr5.2) que vous prévoyez un processus d'exploitation complet, avec au minimum : une fréquence d'analyse, une méthode '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_2_que_vous_prevoyez_un_processus_d_exploitation_complet_avec_au_mi_le_jury_verifie_ici_cr5_2_que_vous_prevo_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.rendu_ecrit.le_jury_verifie_ici_cr5_2_que_vous_prevoyez_un_processus_d_exploitation_complet_avec_au_mi_le_jury_verifie_ici_cr5_2_que_vous_prevo_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 188,
+          "xpath": "/document/body[1]/p[143]",
+          "in_table": false,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '→ Le jury vérifie ici (Cr5.2) que vous prévoyez un processus d'exploitation complet, avec au minimum : une fréquence d'analyse, une méthode '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "reason": "No same-format filled reference; mapping is label-based and requires review."
+    }
+  ],
+  "blocking_reasons": [
+    "1 structural/text difference(s) require review; see mapping evidence and placeholder discovery report.",
+    "No filled reference was located for this template.",
+    "No same-group filled reference."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 59,
+    "confirmed_field_count": 0,
+    "concrete_target_count": 59,
+    "evidence_count": 59,
+    "structural_only_evidence_count": 59,
+    "unresolved_difference_count": 1,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "59 field(s) rely only on structural-slot inference.",
+      "59 field(s) are not CONFIRMED.",
+      "1 unresolved source/template difference(s) remain."
+    ]
+  }
+}

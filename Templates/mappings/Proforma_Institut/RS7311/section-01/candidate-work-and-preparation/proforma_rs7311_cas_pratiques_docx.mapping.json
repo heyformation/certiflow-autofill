@@ -1,0 +1,268 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7311_cas_pratiques_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7311/section-01/candidate-work-and-preparation/Cas Pratiques - RS7311 - Proforma Institut - Template.docx",
+  "template_hash": "113943ac4c2233fa9aa67749dc75a543f014113fb39ba929951ebda359f15212",
+  "source_original_path": "Proforma Institut/RS7311 - IA TPE/Cas Pratiques - RS7311 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7311",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "candidate-work-and-preparation",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7311 - IA TPE/Cas Pratiques - RS7311 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS7311 - IA TPE/Cas Pratiques - RS7311 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.8276,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": null
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.stagiaire",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.stagiaire",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 7,
+          "xpath": "/document/body[1]/p[8]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Camille Bertrand",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Camille Bertrand' after label 'Stagiaire'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 22,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "L'IA est un outil qui automatise les tâches répétitives comme la rédaction, mais elle ne remplace pas votre expertise technique ni votre relation client.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'L'IA est un outil qui automatise les tâches répétitives comme la rédaction, mais elle ne remplace pas votre expertise te' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 43,
+          "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Prompt 1: décris en 2 phrases une rénovation de salle de bain avec ton professionnel. Texte simulé : Une salle de bain transformée en 3 jours, entre modernité et fonctionnalité.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Prompt 1: décris en 2 phrases une rénovation de salle de bain avec ton professionnel. Texte simulé : Une salle de bain t' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 64,
+          "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "1) Cibler les 3 plus gros clients avec une offre de fidélité. 2) Renforcer la communication en basse saison. 3) Diversifier la clientèle. 4) Ajuster les tarifs selon la saisonnalité.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '1) Cibler les 3 plus gros clients avec une offre de fidélité. 2) Renforcer la communication en basse saison. 3) Diversif' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 85,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Questions : nom, type de besoin, urgence, adresse, disponibilité. Message final : merci, un technicien vous recontacte sous 24h. Configuration via un outil no-code connecté au formulaire du site.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Questions : nom, type de besoin, urgence, adresse, disponibilité. Message final : merci, un technicien vous recontacte s' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 2,
+      "xpath": "/document/body[1]/p[3]",
+      "blank_content": "Cas d'évaluation (exemple) — Document vierge",
+      "filled_content": "Cas d'évaluation (exemple)",
+      "reason": "Unsafe non-slot text change (similarity 0.74); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 34,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 55,
+      "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 76,
+      "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "5 structural/text difference(s) require review; see mapping evidence and placeholder discovery report."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 5,
+    "confirmed_field_count": 5,
+    "concrete_target_count": 5,
+    "evidence_count": 5,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 5,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "5 unresolved source/template difference(s) remain."
+    ]
+  }
+}

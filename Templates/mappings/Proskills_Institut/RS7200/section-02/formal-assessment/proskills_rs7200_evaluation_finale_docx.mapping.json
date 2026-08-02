@@ -1,0 +1,2174 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proskills_rs7200_evaluation_finale_docx",
+  "template_path": "final-templates/Proskills_Institut/RS7200/section-02/formal-assessment/Evaluation Finale - RS7200 - Proskills Institut - Template.docx",
+  "template_hash": "dabf173b439b6a48635755c9b486f34c76825d6241b5752d55eb651cad89d870",
+  "source_original_path": "Proskills Institut/RS7200 - Réseaux Sociaux TPE/Evaluation Finale - RS7200 - Proskills Institut - Template.docx",
+  "organization": "Proskills Institut",
+  "certification": "RS7200",
+  "major_section": "Évaluation certificative et décision",
+  "subsection": "formal-assessment",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proskills Institut/RS7200 - Réseaux Sociaux TPE/Evaluation Finale - RS7200 - Proskills Institut - Template.docx",
+    "filled_reference": "Proskills Institut/RS7200 - Réseaux Sociaux TPE/Evaluation Finale - RS7200 - Proskills Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9345,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "bre de likes uniquement"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.stagiaire",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.stagiaire",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 7,
+          "xpath": "/document/body[1]/p[8]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Nathan Lecomte",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Nathan Lecomte' after label 'Stagiaire'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_le_taux_d_engagement_sur_un_post_se_calcule_generalement_par",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_le_taux_d_engagement_sur_un_post_se_calcule_generalement_par",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Le taux d'engagement sur un post se calcule généralement par :",
+        "options": [
+          {
+            "value": "a_nombre_de_likes_uniquement",
+            "label": "A) Nombre de likes uniquement",
+            "part": "word/document.xml",
+            "paragraph_index": 18,
+            "xpath": "/document/body[1]/p[17]",
+            "template_text_sha256": "be98d48f8334cf06caf734aaabf6d2838498f9e90e25982576f862eb092bb573",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_likes_commentaires_partages_nombre_d_abonnes_x_100",
+            "label": "B) (Likes + commentaires + partages) / nombre d'abonnés x 100",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "6eca3e8825d490057b563c0d954c41d00062c9539b3d9013a521c5cf1a01b882",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_nombre_de_followers_total",
+            "label": "C) Nombre de followers total",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/p[19]",
+            "template_text_sha256": "e7b40242ed45c0e3965da5db08979a395309e854377322f3c2c6a4ba3807e7e0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_nombre_de_publications_par_semaine",
+            "label": "D) Nombre de publications par semaine",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "772c8c3980c39258d99bb81c565388b4ac57c0ba2eb33a7a429b8a90b96bd9ba",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_likes_commentaires_partages_nombre_d_abonnes_x_100",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Le taux d'engagement sur un post se calcule généralement par :'.",
+      "validation": {
+        "enum": [
+          "a_nombre_de_likes_uniquement",
+          "b_likes_commentaires_partages_nombre_d_abonnes_x_100",
+          "c_nombre_de_followers_total",
+          "d_nombre_de_publications_par_semaine"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_un_algorithme_de_plateforme_sociale_privilegie_generalement_les_contenus_qui",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_un_algorithme_de_plateforme_sociale_privilegie_generalement_les_contenus_qui",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Un algorithme de plateforme sociale privilégie généralement les contenus qui :",
+        "options": [
+          {
+            "value": "a_generent_le_plus_d_interactions_rapidement_apres_publicati",
+            "label": "A) Génèrent le plus d'interactions rapidement après publication",
+            "part": "word/document.xml",
+            "paragraph_index": 23,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "b5dc2d052e489cc03b084d79407caba6c5c7dedc05a207a1aa6a79405db49761",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_sont_les_plus_longs",
+            "label": "B) Sont les plus longs",
+            "part": "word/document.xml",
+            "paragraph_index": 24,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "2e69b38364b06eaa9a5bee41b56bb7525c64745f3aae162c5927bfca945a5478",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_contiennent_le_plus_de_hashtags",
+            "label": "C) Contiennent le plus de hashtags",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "d333fb4e6b9789c6b7c0787cf481a5c231184463297274544803e552bcc6e3e6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_sont_publies_la_nuit",
+            "label": "D) Sont publiés la nuit",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "099083356bfcab8628adeb4043d79cd160d09b499c12e747c039deea82286c9c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_generent_le_plus_d_interactions_rapidement_apres_publicati",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Un algorithme de plateforme sociale privilégie généralement les contenus qui :'.",
+      "validation": {
+        "enum": [
+          "a_generent_le_plus_d_interactions_rapidement_apres_publicati",
+          "b_sont_les_plus_longs",
+          "c_contiennent_le_plus_de_hashtags",
+          "d_sont_publies_la_nuit"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_3_la_preuve_sociale_avis_temoignages_sur_les_reseaux_sociaux_sert_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_3_la_preuve_sociale_avis_temoignages_sur_les_reseaux_sociaux_sert_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. La 'preuve sociale' (avis, témoignages) sur les réseaux sociaux sert à :",
+        "options": [
+          {
+            "value": "a_remplacer_la_publicite_payante",
+            "label": "A) Remplacer la publicité payante",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "7fa2808a34197278461802b4db39c5a7e4c5e3a1ee08c0b7c305b90bbacb2ec7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_renforcer_la_confiance_des_prospects_grace_a_l_experience",
+            "label": "B) Renforcer la confiance des prospects grâce à l'expérience d'autres clients",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[28]",
+            "template_text_sha256": "6ab6ecd9cf5a6c1bed23b82b8efe461dbb3332485d45124674e2000ed68fa921",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_augmenter_automatiquement_les_ventes",
+            "label": "C) Augmenter automatiquement les ventes",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "19b066f578f0dda2da1cac3d96fd0b27c72ccababfec68d6d058134e836b1dbb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_eviter_de_repondre_aux_messages",
+            "label": "D) Éviter de répondre aux messages",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "ac5e7c4b2989978d913cfbab8f9b0996d8936f3430063c439c9667dde10a4aa0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_renforcer_la_confiance_des_prospects_grace_a_l_experience",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. La 'preuve sociale' (avis, témoignages) sur les réseaux sociaux sert à :'.",
+      "validation": {
+        "enum": [
+          "a_remplacer_la_publicite_payante",
+          "b_renforcer_la_confiance_des_prospects_grace_a_l_experience",
+          "c_augmenter_automatiquement_les_ventes",
+          "d_eviter_de_repondre_aux_messages"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_4_publier_au_bon_moment_heure_jour_permet_surtout_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_4_publier_au_bon_moment_heure_jour_permet_surtout_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Publier au bon moment (heure/jour) permet surtout de :",
+        "options": [
+          {
+            "value": "a_garantir_la_viralite",
+            "label": "A) Garantir la viralité",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "30741b8067352f8d6a9daa9a7abc996cf0f1ca481aefcc8dae2b4319aee243d4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_toucher_son_audience_quand_elle_est_la_plus_active",
+            "label": "B) Toucher son audience quand elle est la plus active",
+            "part": "word/document.xml",
+            "paragraph_index": 34,
+            "xpath": "/document/body[1]/p[33]",
+            "template_text_sha256": "616bbe9e665e59a490bdcda60feed0066e56af277eaa9ad605dc88afd1b66281",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_reduire_le_cout_de_l_abonnement",
+            "label": "C) Réduire le coût de l'abonnement",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[34]",
+            "template_text_sha256": "9f18c00ed948eafbe2a5939975ea831b382fc78efe20d3efe8e42b8e7b8dd304",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_eviter_la_concurrence",
+            "label": "D) Éviter la concurrence",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "2ae132d81206f3ed67babbe4e2ddc675f2b5c57e5238cb66a96b31b2dd1c4256",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_toucher_son_audience_quand_elle_est_la_plus_active",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Publier au bon moment (heure/jour) permet surtout de :'.",
+      "validation": {
+        "enum": [
+          "a_garantir_la_viralite",
+          "b_toucher_son_audience_quand_elle_est_la_plus_active",
+          "c_reduire_le_cout_de_l_abonnement",
+          "d_eviter_la_concurrence"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_5_un_contenu_evergreen_designe_un_contenu",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_5_un_contenu_evergreen_designe_un_contenu",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Un contenu 'evergreen' désigne un contenu :",
+        "options": [
+          {
+            "value": "a_lie_a_une_actualite_ponctuelle",
+            "label": "A) Lié à une actualité ponctuelle",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[37]",
+            "template_text_sha256": "39411485fd785e297ddc8db3c394b074aaa7c9978cd711d93fb65a0c9cc5bf32",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_toujours_pertinent_qui_ne_se_perime_pas_rapidement",
+            "label": "B) Toujours pertinent, qui ne se périme pas rapidement",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "56eb7eeebebc6d4931c7a7cf129cc7bb27bc0aff3a667e0ee37cfc68644838e5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_publie_une_seule_fois_par_an",
+            "label": "C) Publié une seule fois par an",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "413dc02e740fbf1df1ffc50303e8886682a3bacf1a886b6dbedbb262f4cc61e5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_reserve_aux_fetes_de_fin_d_annee",
+            "label": "D) Réservé aux fêtes de fin d'année",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "369787d8ad34b51d409a0f903b0fae086cb890454529f14a67850bea82a40ad7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_toujours_pertinent_qui_ne_se_perime_pas_rapidement",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Un contenu 'evergreen' désigne un contenu :'.",
+      "validation": {
+        "enum": [
+          "a_lie_a_une_actualite_ponctuelle",
+          "b_toujours_pertinent_qui_ne_se_perime_pas_rapidement",
+          "c_publie_une_seule_fois_par_an",
+          "d_reserve_aux_fetes_de_fin_d_annee"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_comment_mesureriez_vous_concretement_si_votre_presence_sur_les_reseaux_sociaux",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_comment_mesureriez_vous_concretement_si_votre_presence_sur_les_reseaux_sociaux",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 44,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je mesurerais l'efficacité en suivant chaque mois le taux d'engagement, la portée de mes publications et surtout le nombre de contacts ou devis générés directement via les réseaux sociaux.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je mesurerais l'efficacité en suivant chaque mois le taux d'engagement, la portée de mes publications et surtout le nomb' after label 'Question 1 : Comment mesureriez-vous concrètement si votre présence sur les réseaux sociaux est efficace ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_donnez_un_exemple_de_contenu_evergreen_que_vous_pourriez_publier_pour_votre_act",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_donnez_un_exemple_de_contenu_evergreen_que_vous_pourriez_publier_pour_votre_act",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 49,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Un guide pratique intemporel du type \"5 conseils pour entretenir votre installation\", toujours utile quelle que soit la saison où il est lu.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Un guide pratique intemporel du type \"5 conseils pour entretenir votre installation\", toujours utile quelle que soit la ' after label 'Question 2 : Donnez un exemple de contenu 'evergreen' que vous pourriez publier pour votre activité.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_un_audit_de_ligne_editoriale_consiste_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_un_audit_de_ligne_editoriale_consiste_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Un audit de ligne éditoriale consiste à :",
+        "options": [
+          {
+            "value": "a_supprimer_tous_les_anciens_posts",
+            "label": "A) Supprimer tous les anciens posts",
+            "part": "word/document.xml",
+            "paragraph_index": 62,
+            "xpath": "/document/body[1]/p[53]",
+            "template_text_sha256": "a42e75cb14a83ed7882404a8f2f1054c3e68e28aa3375e146b2e5e65fab34570",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_analyser_les_publications_passees_pour_identifier_ce_qui_f",
+            "label": "B) Analyser les publications passées pour identifier ce qui fonctionne ou non",
+            "part": "word/document.xml",
+            "paragraph_index": 63,
+            "xpath": "/document/body[1]/p[54]",
+            "template_text_sha256": "e7b2076a489b081b25e648a47feb72865cbeed3a6698e2c823a44e64565b2a7e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_changer_de_plateforme_chaque_mois",
+            "label": "C) Changer de plateforme chaque mois",
+            "part": "word/document.xml",
+            "paragraph_index": 64,
+            "xpath": "/document/body[1]/p[55]",
+            "template_text_sha256": "752490a9394b0dd15990fc25677af0a70335339f3d22b10f4220405ca296f88e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_ignorer_les_statistiques",
+            "label": "D) Ignorer les statistiques",
+            "part": "word/document.xml",
+            "paragraph_index": 65,
+            "xpath": "/document/body[1]/p[56]",
+            "template_text_sha256": "b025e4085b464e493cde00758000fa44ae2a58c46c78ecc084b4b85ebc4540ec",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_analyser_les_publications_passees_pour_identifier_ce_qui_f",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Un audit de ligne éditoriale consiste à :'.",
+      "validation": {
+        "enum": [
+          "a_supprimer_tous_les_anciens_posts",
+          "b_analyser_les_publications_passees_pour_identifier_ce_qui_f",
+          "c_changer_de_plateforme_chaque_mois",
+          "d_ignorer_les_statistiques"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_adapter_sa_ligne_editoriale_selon_la_saison_de_son_activite_permet_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_adapter_sa_ligne_editoriale_selon_la_saison_de_son_activite_permet_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Adapter sa ligne éditoriale selon la saison de son activité permet de :",
+        "options": [
+          {
+            "value": "a_rester_pertinent_par_rapport_aux_besoins_reels_des_clients",
+            "label": "A) Rester pertinent par rapport aux besoins réels des clients",
+            "part": "word/document.xml",
+            "paragraph_index": 67,
+            "xpath": "/document/body[1]/p[58]",
+            "template_text_sha256": "9793d44bb773587ffce6c67d3fa177d95c0a4605a894ae4682b01bc9f72e45e9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_reduire_le_nombre_d_abonnes",
+            "label": "B) Réduire le nombre d'abonnés",
+            "part": "word/document.xml",
+            "paragraph_index": 68,
+            "xpath": "/document/body[1]/p[59]",
+            "template_text_sha256": "16f84119820606cc04ffee0c9a70d84b3c30b33e19def747a6922d8f9d3376f8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_eviter_de_publier_en_hiver",
+            "label": "C) Éviter de publier en hiver",
+            "part": "word/document.xml",
+            "paragraph_index": 69,
+            "xpath": "/document/body[1]/p[60]",
+            "template_text_sha256": "bc945bd1d44ebf07e27a0109882b5ae59d5c6e0f0ffb3f8157288ec117912448",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_ne_publier_que_des_promotions",
+            "label": "D) Ne publier que des promotions",
+            "part": "word/document.xml",
+            "paragraph_index": 70,
+            "xpath": "/document/body[1]/p[61]",
+            "template_text_sha256": "154ebf7afbe7793a67881f702558107e158df25e19f17af7b4e82889f9a8c398",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_rester_pertinent_par_rapport_aux_besoins_reels_des_clients",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Adapter sa ligne éditoriale selon la saison de son activité permet de :'.",
+      "validation": {
+        "enum": [
+          "a_rester_pertinent_par_rapport_aux_besoins_reels_des_clients",
+          "b_reduire_le_nombre_d_abonnes",
+          "c_eviter_de_publier_en_hiver",
+          "d_ne_publier_que_des_promotions"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_3_une_ligne_editoriale_coherente_sur_plusieurs_plateformes_doit",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_3_une_ligne_editoriale_coherente_sur_plusieurs_plateformes_doit",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Une ligne éditoriale cohérente sur plusieurs plateformes doit :",
+        "options": [
+          {
+            "value": "a_etre_identique_au_mot_pres_partout",
+            "label": "A) Être identique au mot près partout",
+            "part": "word/document.xml",
+            "paragraph_index": 72,
+            "xpath": "/document/body[1]/p[63]",
+            "template_text_sha256": "65d547fd1cde18f608ebd3971c99f7e37f36ed0928204cf32a40faa6ab7382b2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_garder_le_meme_ton_et_les_memes_valeurs_adaptes_au_format",
+            "label": "B) Garder le même ton et les mêmes valeurs, adaptés au format de chaque plateforme",
+            "part": "word/document.xml",
+            "paragraph_index": 73,
+            "xpath": "/document/body[1]/p[64]",
+            "template_text_sha256": "6c595ea5b0512fab6d784a7f82f15a9e36d5d1b836bd74853c90c795a2ad4b27",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_changer_completement_de_message_selon_la_plateforme",
+            "label": "C) Changer complètement de message selon la plateforme",
+            "part": "word/document.xml",
+            "paragraph_index": 74,
+            "xpath": "/document/body[1]/p[65]",
+            "template_text_sha256": "bb668c92850628b7978ea6516ceed54dbdeb7a02811e100c538c227065671d2b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_se_limiter_a_une_seule_plateforme",
+            "label": "D) Se limiter à une seule plateforme",
+            "part": "word/document.xml",
+            "paragraph_index": 75,
+            "xpath": "/document/body[1]/p[66]",
+            "template_text_sha256": "6e2989a03a7826b57817e394382b977bbf3948c47cb8a8e4853bd4a316bcc758",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_garder_le_meme_ton_et_les_memes_valeurs_adaptes_au_format",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Une ligne éditoriale cohérente sur plusieurs plateformes doit :'.",
+      "validation": {
+        "enum": [
+          "a_etre_identique_au_mot_pres_partout",
+          "b_garder_le_meme_ton_et_les_memes_valeurs_adaptes_au_format",
+          "c_changer_completement_de_message_selon_la_plateforme",
+          "d_se_limiter_a_une_seule_plateforme"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_4_le_storytelling_en_contenu_professionnel_consiste_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_4_le_storytelling_en_contenu_professionnel_consiste_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Le storytelling en contenu professionnel consiste à :",
+        "options": [
+          {
+            "value": "a_raconter_une_histoire_authentique_pour_creer_une_connexion",
+            "label": "A) Raconter une histoire authentique pour créer une connexion avec l'audience",
+            "part": "word/document.xml",
+            "paragraph_index": 77,
+            "xpath": "/document/body[1]/p[68]",
+            "template_text_sha256": "56c356206353f9eecaa93e39fcc45c54ca79535a26d6bc7f0e00f3d394d1e71d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_eviter_de_parler_de_soi",
+            "label": "B) Éviter de parler de soi",
+            "part": "word/document.xml",
+            "paragraph_index": 78,
+            "xpath": "/document/body[1]/p[69]",
+            "template_text_sha256": "48c5735b5360f6865bd6dec0f73628c9b4888975930f512b1cf2e2f215f4de99",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_publier_uniquement_des_chiffres",
+            "label": "C) Publier uniquement des chiffres",
+            "part": "word/document.xml",
+            "paragraph_index": 79,
+            "xpath": "/document/body[1]/p[70]",
+            "template_text_sha256": "da5901b594bf1361e9da5a2294aad049f06376868af3610ed0d36e6d00063a66",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_copier_les_histoires_d_un_concurrent",
+            "label": "D) Copier les histoires d'un concurrent",
+            "part": "word/document.xml",
+            "paragraph_index": 80,
+            "xpath": "/document/body[1]/p[71]",
+            "template_text_sha256": "e68c0b5d9efc77de4a04da146201c1b90af80606ddffac1fcf1941ab76fdbd30",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_raconter_une_histoire_authentique_pour_creer_une_connexion",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Le storytelling en contenu professionnel consiste à :'.",
+      "validation": {
+        "enum": [
+          "a_raconter_une_histoire_authentique_pour_creer_une_connexion",
+          "b_eviter_de_parler_de_soi",
+          "c_publier_uniquement_des_chiffres",
+          "d_copier_les_histoires_d_un_concurrent"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_5_un_plan_de_contenu_trimestriel_permet_notamment_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_5_un_plan_de_contenu_trimestriel_permet_notamment_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Un plan de contenu trimestriel permet notamment de :",
+        "options": [
+          {
+            "value": "a_anticiper_les_temps_forts_saisons_evenements_et_garder_une",
+            "label": "A) Anticiper les temps forts (saisons, événements) et garder une cohérence",
+            "part": "word/document.xml",
+            "paragraph_index": 82,
+            "xpath": "/document/body[1]/p[73]",
+            "template_text_sha256": "4a4d5df424fc787b30b37441069f35e6e3b43d4b82e39f0d6dcfa9de167de366",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_remplacer_le_calendrier_fiscal",
+            "label": "B) Remplacer le calendrier fiscal",
+            "part": "word/document.xml",
+            "paragraph_index": 83,
+            "xpath": "/document/body[1]/p[74]",
+            "template_text_sha256": "a2577884d657443b045ad9f0dbfd4fe1d8727e590fb9b01775d4e7cd583d125b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_eviter_toute_improvisation_ponctuelle",
+            "label": "C) Éviter toute improvisation ponctuelle",
+            "part": "word/document.xml",
+            "paragraph_index": 84,
+            "xpath": "/document/body[1]/p[75]",
+            "template_text_sha256": "c9cf14f45048aa687ecf8259f22c176351d76428795f98d8295ff568edfe47ad",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_se_dispenser_d_indicateurs_de_suivi",
+            "label": "D) Se dispenser d'indicateurs de suivi",
+            "part": "word/document.xml",
+            "paragraph_index": 85,
+            "xpath": "/document/body[1]/p[76]",
+            "template_text_sha256": "40de1bb743b60e53181db7616d975ba3aafd73b14ab0bb135039324fa468dc4f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_anticiper_les_temps_forts_saisons_evenements_et_garder_une",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Un plan de contenu trimestriel permet notamment de :'.",
+      "validation": {
+        "enum": [
+          "a_anticiper_les_temps_forts_saisons_evenements_et_garder_une",
+          "b_remplacer_le_calendrier_fiscal",
+          "c_eviter_toute_improvisation_ponctuelle",
+          "d_se_dispenser_d_indicateurs_de_suivi"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_comment_adapteriez_vous_votre_ligne_editoriale_selon_les_saisons_de_votre_activ",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_comment_adapteriez_vous_votre_ligne_editoriale_selon_les_saisons_de_votre_activ",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 88,
+          "xpath": "/document/body[1]/tbl[5]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je regarderais quels types de posts (conseils, réalisations, promotions) ont généré le plus d'engagement et de contacts, pour reproduire ce qui fonctionne et ajuster ce qui ne fonctionne pas.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je regarderais quels types de posts (conseils, réalisations, promotions) ont généré le plus d'engagement et de contacts,' after label 'Question 1 : Comment adapteriez-vous votre ligne éditoriale selon les saisons de votre activité ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_racontez_en_quelques_lignes_une_histoire_authentique_de_votre_activite_que_vous",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_racontez_en_quelques_lignes_une_histoire_authentique_de_votre_activite_que_vous",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 93,
+          "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Un client m'a contacté en urgence un dimanche soir, j'ai pu me déplacer rapidement et résoudre son problème le soir même : cette réactivité est devenue un argument que je partage régulièrement.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Un client m'a contacté en urgence un dimanche soir, j'ai pu me déplacer rapidement et résoudre son problème le soir même' after label 'Question 2 : Racontez en quelques lignes une histoire authentique de votre activité que vous pourriez publier.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_un_carrousel_plusieurs_images_dans_un_seul_post_est_utile_pour",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_un_carrousel_plusieurs_images_dans_un_seul_post_est_utile_pour",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Un carrousel (plusieurs images dans un seul post) est utile pour :",
+        "options": [
+          {
+            "value": "a_raconter_une_histoire_en_plusieurs_etapes_ou_presenter_plu",
+            "label": "A) Raconter une histoire en plusieurs étapes ou présenter plusieurs réalisations",
+            "part": "word/document.xml",
+            "paragraph_index": 106,
+            "xpath": "/document/body[1]/p[89]",
+            "template_text_sha256": "c85909fca8554c9be594c8d6694f462b3a2b7f1f8795a157414e273556b01d71",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_reduire_le_temps_de_creation_de_contenu",
+            "label": "B) Réduire le temps de création de contenu",
+            "part": "word/document.xml",
+            "paragraph_index": 107,
+            "xpath": "/document/body[1]/p[90]",
+            "template_text_sha256": "0f989284ba5689c6f7e018b9dffc20ae2f8e13551f51bfb70bbfc2d8720890ef",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_remplacer_une_video_obligatoirement",
+            "label": "C) Remplacer une vidéo obligatoirement",
+            "part": "word/document.xml",
+            "paragraph_index": 108,
+            "xpath": "/document/body[1]/p[91]",
+            "template_text_sha256": "b47b461fabb6b22133ccba814c62eba8ab103f7a30f23aa6be1a6ebf1825a6c9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_eviter_d_ecrire_une_legende",
+            "label": "D) Éviter d'écrire une légende",
+            "part": "word/document.xml",
+            "paragraph_index": 109,
+            "xpath": "/document/body[1]/p[92]",
+            "template_text_sha256": "d5a7c0aa82055c16aaf3bc6579dab0796c38b52c4edf851be19f1e6e529fb888",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_raconter_une_histoire_en_plusieurs_etapes_ou_presenter_plu",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Un carrousel (plusieurs images dans un seul post) est utile pour :'.",
+      "validation": {
+        "enum": [
+          "a_raconter_une_histoire_en_plusieurs_etapes_ou_presenter_plu",
+          "b_reduire_le_temps_de_creation_de_contenu",
+          "c_remplacer_une_video_obligatoirement",
+          "d_eviter_d_ecrire_une_legende"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_le_montage_video_pour_les_reseaux_sociaux_doit_privilegier",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_le_montage_video_pour_les_reseaux_sociaux_doit_privilegier",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Le montage vidéo pour les réseaux sociaux doit privilégier :",
+        "options": [
+          {
+            "value": "a_des_plans_tres_longs_sans_coupe",
+            "label": "A) Des plans très longs sans coupe",
+            "part": "word/document.xml",
+            "paragraph_index": 111,
+            "xpath": "/document/body[1]/p[94]",
+            "template_text_sha256": "d80c958a07d240ef26c54c1431c49a10154f52cc3b0850fe02964de356cf9d2d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_un_rythme_dynamique_avec_des_coupes_regulieres",
+            "label": "B) Un rythme dynamique avec des coupes régulières",
+            "part": "word/document.xml",
+            "paragraph_index": 112,
+            "xpath": "/document/body[1]/p[95]",
+            "template_text_sha256": "65d8423fdd31a200cc6d7d44aac2db6bf183889416936c91d97ab2a6cb598edd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_l_absence_totale_de_musique",
+            "label": "C) L'absence totale de musique",
+            "part": "word/document.xml",
+            "paragraph_index": 113,
+            "xpath": "/document/body[1]/p[96]",
+            "template_text_sha256": "a82e446a4bbf0f2d5eb9e92f1fc1f3f6873d60266e8daedc7b69a32e3819b2b5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_une_duree_minimale_de_10_minutes",
+            "label": "D) Une durée minimale de 10 minutes",
+            "part": "word/document.xml",
+            "paragraph_index": 114,
+            "xpath": "/document/body[1]/p[97]",
+            "template_text_sha256": "671afbdd616637064199611b8e671648be25c25e4126f3dd3ded475967155868",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_un_rythme_dynamique_avec_des_coupes_regulieres",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Le montage vidéo pour les réseaux sociaux doit privilégier :'.",
+      "validation": {
+        "enum": [
+          "a_des_plans_tres_longs_sans_coupe",
+          "b_un_rythme_dynamique_avec_des_coupes_regulieres",
+          "c_l_absence_totale_de_musique",
+          "d_une_duree_minimale_de_10_minutes"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_3_un_batch_content_tournage_prise_de_vue_groupee_permet_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_3_un_batch_content_tournage_prise_de_vue_groupee_permet_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Un batch content (tournage/prise de vue groupée) permet de :",
+        "options": [
+          {
+            "value": "a_creer_plusieurs_contenus_en_une_seule_session_pour_gagner",
+            "label": "A) Créer plusieurs contenus en une seule session pour gagner du temps",
+            "part": "word/document.xml",
+            "paragraph_index": 116,
+            "xpath": "/document/body[1]/p[99]",
+            "template_text_sha256": "ff0083944bb7209989e41acd68467cc2c77eac9028ad93ef6de088ab83583aff",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_publier_tout_en_une_seule_fois",
+            "label": "B) Publier tout en une seule fois",
+            "part": "word/document.xml",
+            "paragraph_index": 117,
+            "xpath": "/document/body[1]/p[100]",
+            "template_text_sha256": "ed8ab2bb2a019b26d40275b472290d0252d9582edcb30e6acb5be7d2cd64f16f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_remplacer_la_planification",
+            "label": "C) Remplacer la planification",
+            "part": "word/document.xml",
+            "paragraph_index": 118,
+            "xpath": "/document/body[1]/p[101]",
+            "template_text_sha256": "2f5b46be622c621cd4954920ba9e0510ce36a3004e2945652ae2fb5c810a6d6b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_eviter_de_varier_les_formats",
+            "label": "D) Éviter de varier les formats",
+            "part": "word/document.xml",
+            "paragraph_index": 119,
+            "xpath": "/document/body[1]/p[102]",
+            "template_text_sha256": "da7fba178941d72da2218f7e16c85ddee90ea1ab505ade5b2a2c8fc99b9a96a5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_creer_plusieurs_contenus_en_une_seule_session_pour_gagner",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Un batch content (tournage/prise de vue groupée) permet de :'.",
+      "validation": {
+        "enum": [
+          "a_creer_plusieurs_contenus_en_une_seule_session_pour_gagner",
+          "b_publier_tout_en_une_seule_fois",
+          "c_remplacer_la_planification",
+          "d_eviter_de_varier_les_formats"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_4_les_temoignages_clients_filmes_sont_efficaces_car_ils",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_4_les_temoignages_clients_filmes_sont_efficaces_car_ils",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Les témoignages clients filmés sont efficaces car ils :",
+        "options": [
+          {
+            "value": "a_coutent_tres_cher_a_produire",
+            "label": "A) Coûtent très cher à produire",
+            "part": "word/document.xml",
+            "paragraph_index": 121,
+            "xpath": "/document/body[1]/p[104]",
+            "template_text_sha256": "a9fc141f72e54febcbaa576892f00119b0c6573ff26e94561de6338f8b3a1046",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_apportent_une_preuve_sociale_authentique_et_rassurante",
+            "label": "B) Apportent une preuve sociale authentique et rassurante",
+            "part": "word/document.xml",
+            "paragraph_index": 122,
+            "xpath": "/document/body[1]/p[105]",
+            "template_text_sha256": "e6091d9c2368d681f09072e39e2876b4668d28b50c2b3dd7335bc0b357677137",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_remplacent_le_service_apres_vente",
+            "label": "C) Remplacent le service après-vente",
+            "part": "word/document.xml",
+            "paragraph_index": 123,
+            "xpath": "/document/body[1]/p[106]",
+            "template_text_sha256": "671f8044781b933be1c21c28507cd4af3c534e17fd0a52b62b07caaa45492a53",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_sont_interdits_sur_les_reseaux_sociaux",
+            "label": "D) Sont interdits sur les réseaux sociaux",
+            "part": "word/document.xml",
+            "paragraph_index": 124,
+            "xpath": "/document/body[1]/p[107]",
+            "template_text_sha256": "6433f7e753d8e362d90ed68f84f9e35090bc67535c50fea826b10a6e7063289e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_apportent_une_preuve_sociale_authentique_et_rassurante",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Les témoignages clients filmés sont efficaces car ils :'.",
+      "validation": {
+        "enum": [
+          "a_coutent_tres_cher_a_produire",
+          "b_apportent_une_preuve_sociale_authentique_et_rassurante",
+          "c_remplacent_le_service_apres_vente",
+          "d_sont_interdits_sur_les_reseaux_sociaux"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_5_pour_ameliorer_la_qualite_de_ses_photos_sans_materiel_professionnel_on_peut",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_5_pour_ameliorer_la_qualite_de_ses_photos_sans_materiel_professionnel_on_peut",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Pour améliorer la qualité de ses photos sans matériel professionnel, on peut :",
+        "options": [
+          {
+            "value": "a_nettoyer_l_objectif_et_stabiliser_son_smartphone",
+            "label": "A) Nettoyer l'objectif et stabiliser son smartphone",
+            "part": "word/document.xml",
+            "paragraph_index": 126,
+            "xpath": "/document/body[1]/p[109]",
+            "template_text_sha256": "e6bb60b2d7a2debd7427328e6f9829c781a1c98aa1aae052f41c8339d21cdfbe",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_toujours_photographier_a_contre_jour",
+            "label": "B) Toujours photographier à contre-jour",
+            "part": "word/document.xml",
+            "paragraph_index": 127,
+            "xpath": "/document/body[1]/p[110]",
+            "template_text_sha256": "8d36e0f77d81d9f9253913f79d64e2853f7fe2072a02af5d81609a9ac59bfa6d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_utiliser_un_flash_puissant_en_interieur",
+            "label": "C) Utiliser un flash puissant en intérieur",
+            "part": "word/document.xml",
+            "paragraph_index": 128,
+            "xpath": "/document/body[1]/p[111]",
+            "template_text_sha256": "e0cd2a71787fe12af7623f06de0c80a4e55e1fd4d45272da28226631075c520e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_zoomer_au_maximum",
+            "label": "D) Zoomer au maximum",
+            "part": "word/document.xml",
+            "paragraph_index": 129,
+            "xpath": "/document/body[1]/p[112]",
+            "template_text_sha256": "0d13936bc6bb94286c3420dd906f21f1cec0a7300e112262a183ec0cf8e92a45",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_nettoyer_l_objectif_et_stabiliser_son_smartphone",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Pour améliorer la qualité de ses photos sans matériel professionnel, on peut :'.",
+      "validation": {
+        "enum": [
+          "a_nettoyer_l_objectif_et_stabiliser_son_smartphone",
+          "b_toujours_photographier_a_contre_jour",
+          "c_utiliser_un_flash_puissant_en_interieur",
+          "d_zoomer_au_maximum"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_organisez_une_session_de_batch_content_listez_5_contenus_que_vous_pourriez_cree",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_organisez_une_session_de_batch_content_listez_5_contenus_que_vous_pourriez_cree",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 132,
+          "xpath": "/document/body[1]/tbl[8]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Photo avant, photo pendant l'intervention, photo après, gros plan sur un détail soigné, et une photo de l'équipe sur le chantier : 5 contenus réalisables en une seule visite.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Photo avant, photo pendant l'intervention, photo après, gros plan sur un détail soigné, et une photo de l'équipe sur le ' after label 'Question 1 : Organisez une session de 'batch content' : listez 5 contenus que vous pourriez créer en une seule prise de '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_comment_mettriez_vous_en_scene_un_temoignage_client_filme_pour_votre_activite",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_comment_mettriez_vous_en_scene_un_temoignage_client_filme_pour_votre_activite",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 137,
+          "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je filmerais le client en train de raconter son besoin initial, puis sa satisfaction après l'intervention, avec des plans simples et une lumière naturelle, sans script trop rigide pour garder son authenticité.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je filmerais le client en train de raconter son besoin initial, puis sa satisfaction après l'intervention, avec des plan' after label 'Question 2 : Comment mettriez-vous en scène un témoignage client filmé pour votre activité ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_un_pilier_de_contenu_coulisses_pour_un_artisan_peut_inclure",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_un_pilier_de_contenu_coulisses_pour_un_artisan_peut_inclure",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Un pilier de contenu 'coulisses' pour un artisan peut inclure :",
+        "options": [
+          {
+            "value": "a_des_photos_de_son_atelier_ou_de_sa_preparation",
+            "label": "A) Des photos de son atelier ou de sa préparation",
+            "part": "word/document.xml",
+            "paragraph_index": 150,
+            "xpath": "/document/body[1]/p[125]",
+            "template_text_sha256": "f88f3b4635d630b6c74d27cc664abee96c9e22d03c8a302c9fca580d850f0588",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_uniquement_des_tarifs",
+            "label": "B) Uniquement des tarifs",
+            "part": "word/document.xml",
+            "paragraph_index": 151,
+            "xpath": "/document/body[1]/p[126]",
+            "template_text_sha256": "4e00a5b9e1fda1458d686b7296824e4f79d74a1120d24599017cb7b2d9119e31",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_des_donnees_financieres_confidentielles",
+            "label": "C) Des données financières confidentielles",
+            "part": "word/document.xml",
+            "paragraph_index": 152,
+            "xpath": "/document/body[1]/p[127]",
+            "template_text_sha256": "46889b18ce7ff47f691403048e8a46d87d2f38f9c9a39da0182b043a02fa76df",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_des_publicites_concurrentes",
+            "label": "D) Des publicités concurrentes",
+            "part": "word/document.xml",
+            "paragraph_index": 153,
+            "xpath": "/document/body[1]/p[128]",
+            "template_text_sha256": "56ca529406a0aba9d0658334f1eff314676ce1af7f0c18666fdcbc31aacec951",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_des_photos_de_son_atelier_ou_de_sa_preparation",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Un pilier de contenu 'coulisses' pour un artisan peut inclure :'.",
+      "validation": {
+        "enum": [
+          "a_des_photos_de_son_atelier_ou_de_sa_preparation",
+          "b_uniquement_des_tarifs",
+          "c_des_donnees_financieres_confidentielles",
+          "d_des_publicites_concurrentes"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_la_coherence_d_un_calendrier_editorial_sur_plusieurs_mois_permet_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_la_coherence_d_un_calendrier_editorial_sur_plusieurs_mois_permet_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. La cohérence d'un calendrier éditorial sur plusieurs mois permet de :",
+        "options": [
+          {
+            "value": "a_renforcer_la_reconnaissance_de_marque_et_la_regularite_per",
+            "label": "A) Renforcer la reconnaissance de marque et la régularité perçue par l'audience",
+            "part": "word/document.xml",
+            "paragraph_index": 155,
+            "xpath": "/document/body[1]/p[130]",
+            "template_text_sha256": "d39b859fe63ef814882a27f153bd6a7195706563d9277640e6ad114607328761",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_reduire_le_nombre_de_contenus_necessaires",
+            "label": "B) Réduire le nombre de contenus nécessaires",
+            "part": "word/document.xml",
+            "paragraph_index": 156,
+            "xpath": "/document/body[1]/p[131]",
+            "template_text_sha256": "9a9e301e66d4fe1c4afe0e231a48dc2bd265e5bc6cd91623aa952c8c879fedb0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_remplacer_les_statistiques",
+            "label": "C) Remplacer les statistiques",
+            "part": "word/document.xml",
+            "paragraph_index": 157,
+            "xpath": "/document/body[1]/p[132]",
+            "template_text_sha256": "4e93a72098aaf83eafe119379ea9457da3ccb0d3393b641eedcc82d5259b87b9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_eviter_toute_nouveaute",
+            "label": "D) Éviter toute nouveauté",
+            "part": "word/document.xml",
+            "paragraph_index": 158,
+            "xpath": "/document/body[1]/p[133]",
+            "template_text_sha256": "9ed836be44a21958314d58dc55c092f6a09ab91ae4c4f252ecec849501ca9619",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_renforcer_la_reconnaissance_de_marque_et_la_regularite_per",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. La cohérence d'un calendrier éditorial sur plusieurs mois permet de :'.",
+      "validation": {
+        "enum": [
+          "a_renforcer_la_reconnaissance_de_marque_et_la_regularite_per",
+          "b_reduire_le_nombre_de_contenus_necessaires",
+          "c_remplacer_les_statistiques",
+          "d_eviter_toute_nouveaute"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_3_un_outil_d_automatisation_de_publication_doit_etre_complete_par",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_3_un_outil_d_automatisation_de_publication_doit_etre_complete_par",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Un outil d'automatisation de publication doit être complété par :",
+        "options": [
+          {
+            "value": "a_aucune_verification_tout_est_automatique",
+            "label": "A) Aucune vérification, tout est automatique",
+            "part": "word/document.xml",
+            "paragraph_index": 160,
+            "xpath": "/document/body[1]/p[135]",
+            "template_text_sha256": "1a42db3fa93124ed394a6e7a8582eaea44165bb7a08d960db9a4b483d9c66e15",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_un_suivi_humain_regulier_des_commentaires_et_messages",
+            "label": "B) Un suivi humain régulier des commentaires et messages",
+            "part": "word/document.xml",
+            "paragraph_index": 161,
+            "xpath": "/document/body[1]/p[136]",
+            "template_text_sha256": "37dc07f2c2a0c40097eb4877e8bf5a4b3ead833550dad921c8d88adaeb8b03a1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_la_suppression_du_compte",
+            "label": "C) La suppression du compte",
+            "part": "word/document.xml",
+            "paragraph_index": 162,
+            "xpath": "/document/body[1]/p[137]",
+            "template_text_sha256": "b44ba70cb718eb4618af83c7bdb1905423f93cc744a5f77ea4a60f120d6151e9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_blocage_des_abonnes",
+            "label": "D) Le blocage des abonnés",
+            "part": "word/document.xml",
+            "paragraph_index": 163,
+            "xpath": "/document/body[1]/p[138]",
+            "template_text_sha256": "109ccade3acf8c3538467086d9f3115cdab640eee5304b24c769db65de603150",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_un_suivi_humain_regulier_des_commentaires_et_messages",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Un outil d'automatisation de publication doit être complété par :'.",
+      "validation": {
+        "enum": [
+          "a_aucune_verification_tout_est_automatique",
+          "b_un_suivi_humain_regulier_des_commentaires_et_messages",
+          "c_la_suppression_du_compte",
+          "d_le_blocage_des_abonnes"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_4_adapter_son_calendrier_apres_un_imprevu_actualite_meteo_montre_surtout",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_4_adapter_son_calendrier_apres_un_imprevu_actualite_meteo_montre_surtout",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Adapter son calendrier après un imprévu (actualité, météo...) montre surtout :",
+        "options": [
+          {
+            "value": "a_un_manque_d_organisation",
+            "label": "A) Un manque d'organisation",
+            "part": "word/document.xml",
+            "paragraph_index": 165,
+            "xpath": "/document/body[1]/p[140]",
+            "template_text_sha256": "5153d9aa8412176aeff2cb98d01583bd0db0296ca3fe00a89d7c3dba9422759c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_une_capacite_d_adaptation_et_de_reactivite_appreciee_par_l",
+            "label": "B) Une capacité d'adaptation et de réactivité appréciée par l'audience",
+            "part": "word/document.xml",
+            "paragraph_index": 166,
+            "xpath": "/document/body[1]/p[141]",
+            "template_text_sha256": "3e130487667fa55c05a7484344a188dd49af2a6cf5b2b96ea3a8743e91cf6449",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_une_erreur_a_eviter_a_tout_prix",
+            "label": "C) Une erreur à éviter à tout prix",
+            "part": "word/document.xml",
+            "paragraph_index": 167,
+            "xpath": "/document/body[1]/p[142]",
+            "template_text_sha256": "c78c4b31a2b70b0488a6354921b3dfdd592895ab4235be4a76921ea02508db87",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_une_perte_de_coherence_definitive",
+            "label": "D) Une perte de cohérence définitive",
+            "part": "word/document.xml",
+            "paragraph_index": 168,
+            "xpath": "/document/body[1]/p[143]",
+            "template_text_sha256": "127459254afd694370774ce24c554afe423e04d89960262465c6ab99980c5041",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_une_capacite_d_adaptation_et_de_reactivite_appreciee_par_l",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Adapter son calendrier après un imprévu (actualité, météo...) montre surtout :'.",
+      "validation": {
+        "enum": [
+          "a_un_manque_d_organisation",
+          "b_une_capacite_d_adaptation_et_de_reactivite_appreciee_par_l",
+          "c_une_erreur_a_eviter_a_tout_prix",
+          "d_une_perte_de_coherence_definitive"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_5_la_planification_a_moyen_terme_trimestre_doit_rester",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_5_la_planification_a_moyen_terme_trimestre_doit_rester",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. La planification à moyen terme (trimestre) doit rester :",
+        "options": [
+          {
+            "value": "a_totalement_figee_sans_possibilite_de_changement",
+            "label": "A) Totalement figée sans possibilité de changement",
+            "part": "word/document.xml",
+            "paragraph_index": 170,
+            "xpath": "/document/body[1]/p[145]",
+            "template_text_sha256": "c03fc78bdbc7bd22a19e814e8abe3247241b6352fd4af9ab3a0d1e5d79cabd38",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_un_cadre_flexible_ajustable_selon_les_resultats_et_l_actua",
+            "label": "B) Un cadre flexible, ajustable selon les résultats et l'actualité",
+            "part": "word/document.xml",
+            "paragraph_index": 171,
+            "xpath": "/document/body[1]/p[146]",
+            "template_text_sha256": "f1c6e4ae8031a944ff77ef2be767d580626ac2ec57fc3980dc1a7c92443072f5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_interdite_pour_les_petites_structures",
+            "label": "C) Interdite pour les petites structures",
+            "part": "word/document.xml",
+            "paragraph_index": 172,
+            "xpath": "/document/body[1]/p[147]",
+            "template_text_sha256": "ee6c9b4de470bbc0f837c34639e01af7559278a794f7bfe0ee7f5e9b77b897ad",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_reservee_aux_grandes_entreprises",
+            "label": "D) Réservée aux grandes entreprises",
+            "part": "word/document.xml",
+            "paragraph_index": 173,
+            "xpath": "/document/body[1]/p[148]",
+            "template_text_sha256": "4b9b9c1bed1274038e064680b2dfeab620bed514139889674cdd40e2fe6f5baa",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_un_cadre_flexible_ajustable_selon_les_resultats_et_l_actua",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. La planification à moyen terme (trimestre) doit rester :'.",
+      "validation": {
+        "enum": [
+          "a_totalement_figee_sans_possibilite_de_changement",
+          "b_un_cadre_flexible_ajustable_selon_les_resultats_et_l_actua",
+          "c_interdite_pour_les_petites_structures",
+          "d_reservee_aux_grandes_entreprises"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_comment_ajusteriez_vous_votre_calendrier_editorial_si_un_imprevu_meteo_actualit",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_comment_ajusteriez_vous_votre_calendrier_editorial_si_un_imprevu_meteo_actualit",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 176,
+          "xpath": "/document/body[1]/tbl[11]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "En cas de météo défavorable annoncée, je décalerais mes publications de conseils saisonniers et j'ajouterais un post d'actualité pratique lié à cet événement, en gardant le reste du calendrier inchangé.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'En cas de météo défavorable annoncée, je décalerais mes publications de conseils saisonniers et j'ajouterais un post d'a' after label 'Question 1 : Comment ajusteriez-vous votre calendrier éditorial si un imprévu (météo, actualité) impactait votre activit'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_proposez_3_piliers_de_contenu_recurrents_adaptes_a_votre_metier",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_proposez_3_piliers_de_contenu_recurrents_adaptes_a_votre_metier",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 181,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Coulisses de l'atelier, conseils pratiques d'entretien, réalisations avant/après.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Coulisses de l'atelier, conseils pratiques d'entretien, réalisations avant/après.' after label 'Question 2 : Proposez 3 piliers de contenu récurrents adaptés à votre métier.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_le_taux_de_conversion_sur_les_reseaux_sociaux_mesure",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_le_taux_de_conversion_sur_les_reseaux_sociaux_mesure",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Le taux de conversion sur les réseaux sociaux mesure :",
+        "options": [
+          {
+            "value": "a_le_nombre_de_likes",
+            "label": "A) Le nombre de likes",
+            "part": "word/document.xml",
+            "paragraph_index": 194,
+            "xpath": "/document/body[1]/p[161]",
+            "template_text_sha256": "6ed9590fb8d645ec7b171ce11841aa5d7b007c45456e9d65b9820aaa488786c0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_la_proportion_de_personnes_ayant_realise_une_action_concre",
+            "label": "B) La proportion de personnes ayant réalisé une action concrète (contact, devis) après avoir vu le contenu",
+            "part": "word/document.xml",
+            "paragraph_index": 195,
+            "xpath": "/document/body[1]/p[162]",
+            "template_text_sha256": "d6a4269fd494775ec184694007b0635ce5b7f5d9723d7768f58834d49d6d6d78",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_nombre_d_abonnes_total",
+            "label": "C) Le nombre d'abonnés total",
+            "part": "word/document.xml",
+            "paragraph_index": 196,
+            "xpath": "/document/body[1]/p[163]",
+            "template_text_sha256": "5f29c89515cd7aecc01a7bb32774d682a6a75e2d393b56cfce9bfc8e0fbb14d1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_budget_publicitaire_depense",
+            "label": "D) Le budget publicitaire dépensé",
+            "part": "word/document.xml",
+            "paragraph_index": 197,
+            "xpath": "/document/body[1]/p[164]",
+            "template_text_sha256": "1046ddd420bbce14991523afc12fc85741ef1623b8abe41cb7af941beb32d65a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_la_proportion_de_personnes_ayant_realise_une_action_concre",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Le taux de conversion sur les réseaux sociaux mesure :'.",
+      "validation": {
+        "enum": [
+          "a_le_nombre_de_likes",
+          "b_la_proportion_de_personnes_ayant_realise_une_action_concre",
+          "c_le_nombre_d_abonnes_total",
+          "d_le_budget_publicitaire_depense"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_une_boucle_d_amelioration_continue_en_reseaux_sociaux_consiste_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_une_boucle_d_amelioration_continue_en_reseaux_sociaux_consiste_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Une boucle d'amélioration continue en réseaux sociaux consiste à :",
+        "options": [
+          {
+            "value": "a_publier_toujours_le_meme_contenu",
+            "label": "A) Publier toujours le même contenu",
+            "part": "word/document.xml",
+            "paragraph_index": 199,
+            "xpath": "/document/body[1]/p[166]",
+            "template_text_sha256": "9ac67a043b3c2dc2c9fcde86c45df2b850c2324eae2a7e3110c4cae4423e2328",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_tester_mesurer_analyser_et_ajuster_regulierement_sa_strate",
+            "label": "B) Tester, mesurer, analyser et ajuster régulièrement sa stratégie",
+            "part": "word/document.xml",
+            "paragraph_index": 200,
+            "xpath": "/document/body[1]/p[167]",
+            "template_text_sha256": "d173f5531a31fe7ba5865b358ace518eb533e96344374583cd0a4cb6f455ee99",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_ignorer_les_statistiques",
+            "label": "C) Ignorer les statistiques",
+            "part": "word/document.xml",
+            "paragraph_index": 201,
+            "xpath": "/document/body[1]/p[168]",
+            "template_text_sha256": "31204b6c806980eeeddf21a648e54b895b5d4f465a32dd77a8a0158ab902d488",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_changer_de_plateforme_chaque_semaine",
+            "label": "D) Changer de plateforme chaque semaine",
+            "part": "word/document.xml",
+            "paragraph_index": 202,
+            "xpath": "/document/body[1]/p[169]",
+            "template_text_sha256": "90035337b798edd1241e64db6e6fd9ce2558bbea302c2c38ab4748f6c22e6cea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_tester_mesurer_analyser_et_ajuster_regulierement_sa_strate",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Une boucle d'amélioration continue en réseaux sociaux consiste à :'.",
+      "validation": {
+        "enum": [
+          "a_publier_toujours_le_meme_contenu",
+          "b_tester_mesurer_analyser_et_ajuster_regulierement_sa_strate",
+          "c_ignorer_les_statistiques",
+          "d_changer_de_plateforme_chaque_semaine"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_3_comparer_un_post_publicitaire_payant_a_un_post_organique_permet_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_3_comparer_un_post_publicitaire_payant_a_un_post_organique_permet_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Comparer un post publicitaire payant à un post organique permet de :",
+        "options": [
+          {
+            "value": "a_evaluer_le_retour_sur_investissement_de_la_publicite",
+            "label": "A) Évaluer le retour sur investissement de la publicité",
+            "part": "word/document.xml",
+            "paragraph_index": 204,
+            "xpath": "/document/body[1]/p[171]",
+            "template_text_sha256": "cc992168168e98e1fc70d180e25c9ce1bcb2d09349f0eafa922fc8dfbbe3e894",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_remplacer_totalement_le_contenu_organique",
+            "label": "B) Remplacer totalement le contenu organique",
+            "part": "word/document.xml",
+            "paragraph_index": 205,
+            "xpath": "/document/body[1]/p[172]",
+            "template_text_sha256": "a332a4831d4f4dd811450854bd2fc14fdff93af82cb327a618d69ed20772bf58",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_eviter_toute_analyse",
+            "label": "C) Éviter toute analyse",
+            "part": "word/document.xml",
+            "paragraph_index": 206,
+            "xpath": "/document/body[1]/p[173]",
+            "template_text_sha256": "1c5339a36696498af12ed6d84c340d664b761e3a88d560ba18c7689ac0b11bde",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_garantir_des_ventes",
+            "label": "D) Garantir des ventes",
+            "part": "word/document.xml",
+            "paragraph_index": 207,
+            "xpath": "/document/body[1]/p[174]",
+            "template_text_sha256": "f2b27014cb88da720acf8c98ad0d0e14adacfa29a094dc5085382f1fb3377622",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_evaluer_le_retour_sur_investissement_de_la_publicite",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Comparer un post publicitaire payant à un post organique permet de :'.",
+      "validation": {
+        "enum": [
+          "a_evaluer_le_retour_sur_investissement_de_la_publicite",
+          "b_remplacer_totalement_le_contenu_organique",
+          "c_eviter_toute_analyse",
+          "d_garantir_des_ventes"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_4_un_objectif_chiffre_ex_20_abonnes_mois_permet_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_4_un_objectif_chiffre_ex_20_abonnes_mois_permet_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Un objectif chiffré (ex: +20 abonnés/mois) permet de :",
+        "options": [
+          {
+            "value": "a_evaluer_objectivement_sa_progression",
+            "label": "A) Évaluer objectivement sa progression",
+            "part": "word/document.xml",
+            "paragraph_index": 209,
+            "xpath": "/document/body[1]/p[176]",
+            "template_text_sha256": "b19b52e89c5737471d28faa0d28cbb38c065e5b209084f948501313bfaa2817b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_remplacer_la_ligne_editoriale",
+            "label": "B) Remplacer la ligne éditoriale",
+            "part": "word/document.xml",
+            "paragraph_index": 210,
+            "xpath": "/document/body[1]/p[177]",
+            "template_text_sha256": "17100f40e59c6efb694dbf77e60a9b91497b090d47981332b5cd869f7efbe04d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_eviter_toute_planification",
+            "label": "C) Éviter toute planification",
+            "part": "word/document.xml",
+            "paragraph_index": 211,
+            "xpath": "/document/body[1]/p[178]",
+            "template_text_sha256": "5e8755482fe86645f189c5732597745302684137ec5b4f3b09607a04bdd5c019",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_se_dispenser_de_contenu",
+            "label": "D) Se dispenser de contenu",
+            "part": "word/document.xml",
+            "paragraph_index": 212,
+            "xpath": "/document/body[1]/p[179]",
+            "template_text_sha256": "4a05dcd4cb98560c9657939d6f411e749ecdb81e3fe97213cb4391aa4fd56bfe",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_evaluer_objectivement_sa_progression",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Un objectif chiffré (ex: +20 abonnés/mois) permet de :'.",
+      "validation": {
+        "enum": [
+          "a_evaluer_objectivement_sa_progression",
+          "b_remplacer_la_ligne_editoriale",
+          "c_eviter_toute_planification",
+          "d_se_dispenser_de_contenu"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_5_une_strategie_social_media_doit_etre_revisee",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_5_une_strategie_social_media_doit_etre_revisee",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Une stratégie social media doit être révisée :",
+        "options": [
+          {
+            "value": "a_une_fois_tous_les_5_ans",
+            "label": "A) Une fois tous les 5 ans",
+            "part": "word/document.xml",
+            "paragraph_index": 214,
+            "xpath": "/document/body[1]/p[181]",
+            "template_text_sha256": "84b24860cc6b0b3c698ceca70691f3f232e0ab61d54b262009ed30f43a53e1d3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_regulierement_en_fonction_des_resultats_observes",
+            "label": "B) Régulièrement, en fonction des résultats observés",
+            "part": "word/document.xml",
+            "paragraph_index": 215,
+            "xpath": "/document/body[1]/p[182]",
+            "template_text_sha256": "a40905665b6df8d4d2d1aa51bc1844e4e2bee78d0bc2d945f00698ab3357e231",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_jamais_apres_son_lancement",
+            "label": "C) Jamais après son lancement",
+            "part": "word/document.xml",
+            "paragraph_index": 216,
+            "xpath": "/document/body[1]/p[183]",
+            "template_text_sha256": "7154e9fb2549fc00f9405efb26e36f74b4ae771f2cc017fa797fffce9b433c42",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_uniquement_en_cas_de_crise",
+            "label": "D) Uniquement en cas de crise",
+            "part": "word/document.xml",
+            "paragraph_index": 217,
+            "xpath": "/document/body[1]/p[184]",
+            "template_text_sha256": "e8b6a48d971defbf6e58edf3da78232814e736f3a7e77e4b06119fa0b3708120",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_regulierement_en_fonction_des_resultats_observes",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Une stratégie social media doit être révisée :'.",
+      "validation": {
+        "enum": [
+          "a_une_fois_tous_les_5_ans",
+          "b_regulierement_en_fonction_des_resultats_observes",
+          "c_jamais_apres_son_lancement",
+          "d_uniquement_en_cas_de_crise"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_fixez_vous_un_objectif_chiffre_realiste_pour_votre_presence_sur_les_reseaux_soc",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_fixez_vous_un_objectif_chiffre_realiste_pour_votre_presence_sur_les_reseaux_soc",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 220,
+          "xpath": "/document/body[1]/tbl[14]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je me fixe comme objectif d'obtenir 20 demandes de contact via les réseaux sociaux d'ici 3 mois, en maintenant un rythme régulier de publications et en développant les témoignages clients.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je me fixe comme objectif d'obtenir 20 demandes de contact via les réseaux sociaux d'ici 3 mois, en maintenant un rythme' after label 'Question 1 : Fixez-vous un objectif chiffré réaliste pour votre présence sur les réseaux sociaux dans les 3 prochains mo'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_comment_sauriez_vous_qu_il_est_temps_d_ajuster_votre_strategie_de_contenu",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_comment_sauriez_vous_qu_il_est_temps_d_ajuster_votre_strategie_de_contenu",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 225,
+          "xpath": "/document/body[1]/tbl[15]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je saurais qu'il faut ajuster ma stratégie si mes indicateurs stagnent ou baissent pendant plusieurs semaines consécutives malgré une publication régulière et variée.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je saurais qu'il faut ajuster ma stratégie si mes indicateurs stagnent ou baissent pendant plusieurs semaines consécutiv' after label 'Question 2 : Comment sauriez-vous qu'il est temps d'ajuster votre stratégie de contenu ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 2,
+      "xpath": "/document/body[1]/p[3]",
+      "blank_content": "Recueil des évaluations finales (Parties 1 et 2 - QCM et Questions Ouvertes) — Document vierge",
+      "filled_content": "Recueil des évaluations finales (Parties 1 et 2 - QCM et Questions Ouvertes)",
+      "reason": "Unsafe non-slot text change (similarity 0.89); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 57,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 101,
+      "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 145,
+      "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 189,
+      "xpath": "/document/body[1]/tbl[13]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "6 structural/text difference(s) require review; see mapping evidence and placeholder discovery report.",
+    "Official scoring formula and/or pass threshold are not proven across the supplied documents; result automation remains unresolved."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 36,
+    "confirmed_field_count": 36,
+    "concrete_target_count": 36,
+    "evidence_count": 36,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 6,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "6 unresolved source/template difference(s) remain."
+    ]
+  }
+}

@@ -1,0 +1,1053 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7200_recueil_des_besoins_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7200/section-01/admission-and-needs/Recueil des Besoins - RS7200 - Proforma Institut - Template.docx",
+  "template_hash": "dbb65523b91ad9144cd0217001457b0023e94d92cadb1481346268889e9224c2",
+  "source_original_path": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Recueil des Besoins - RS7200 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7200",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "admission-and-needs",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Recueil des Besoins - RS7200 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Recueil des Besoins - RS7200 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9785,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "DERKAOUI Sandra"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "candidate.identity.full_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.identity.full_name",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 5,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "DERKAOUI Sandra",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'DERKAOUI Sandra' after label 'Nom et prénom *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.professional.current_position",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.current_position",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Compréhension du fonctionnement des algorithmes",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 80,
+            "xpath": "/document/body[1]/tbl[5]/tr[7]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 81,
+            "xpath": "/document/body[1]/tbl[5]/tr[7]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 82,
+            "xpath": "/document/body[1]/tbl[5]/tr[7]/tc[4]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 83,
+            "xpath": "/document/body[1]/tbl[5]/tr[7]/tc[5]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 84,
+            "xpath": "/document/body[1]/tbl[5]/tr[7]/tc[6]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Compréhension du fonctionnement des algorithmes'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field",
+          "field",
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.niveau_de_maitrise",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.niveau_de_maitrise",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Niveau de maîtrise",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 18,
+            "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[4]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[5]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 22,
+            "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[6]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Niveau de maîtrise'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field",
+          "field",
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.quels_sont_les_principaux_reseaux_sociaux_que_votre_tpe_utilise_actuellement_ou_envisage_d",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.quels_sont_les_principaux_reseaux_sociaux_que_votre_tpe_utilise_actuellement_ou_envisage_d",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Quels sont les principaux réseaux sociaux que votre TPE utilise actuellement (ou envisage d'utiliser) pour sa promotion ? (Sélectionnez toutes les options pertinentes)",
+        "options": [
+          {
+            "value": "facebook",
+            "label": "Facebook",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[11]",
+            "template_text_sha256": "cba1f6e8fca685801cef5d1e698a0ad330012f04e327b0461964544418bf3623",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "instagram",
+            "label": "Instagram",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[12]",
+            "template_text_sha256": "3d805e2a7939e9d8848af1e7bce4984e526c3e7b8bd5d41c2572186b457af57a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "linkedin",
+            "label": "LinkedIn",
+            "part": "word/document.xml",
+            "paragraph_index": 27,
+            "xpath": "/document/body[1]/p[13]",
+            "template_text_sha256": "d6010d685e3adbc674f56c7aaf78b39a0c643a75ca0c8cb297aeafbdb6a6370d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "tiktok",
+            "label": "TikTok",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[14]",
+            "template_text_sha256": "0dad4ccd2bd3a434dc01988981a156521f2a2a250760013477dc35f90cfa6d5c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "twitter_x",
+            "label": "Twitter/X",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[15]",
+            "template_text_sha256": "8c40a4b6eb4fed80d3e92889ddc2306c8c5b2b9b593528fa2de25b04c4174bd7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "pinterest",
+            "label": "Pinterest",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[16]",
+            "template_text_sha256": "af12bac09046847df3c63b0afd6b94d48070a4fe1c11baf3c422c33ab6c47e10",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "je_n_utilise_aucun_reseau_social_professionnellement",
+            "label": "Je n'utilise aucun réseau social professionnellement",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[17]",
+            "template_text_sha256": "4c39b53e9c6b1f99863459a4ef5aa756b59d2e7ee98bb956c916d16787a4a185",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "autre_precisez",
+            "label": "Autre (précisez)",
+            "part": "word/document.xml",
+            "paragraph_index": 32,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "97bbb1be418a88134b99d8ac05667f54b8e06c0463a65952ca604131c11d2754",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "pinterest",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Quels sont les principaux réseaux sociaux que votre TPE utilise actuellement (ou envisage d'utiliser) pour sa promotion ? (Sélectionnez toutes les options pertinentes)'.",
+      "validation": {
+        "enum": [
+          "facebook",
+          "instagram",
+          "linkedin",
+          "tiktok",
+          "twitter_x",
+          "pinterest",
+          "je_n_utilise_aucun_reseau_social_professionnellement",
+          "autre_precisez"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.quels_sont_vos_principaux_objectifs_en_participant_a_cette_formation_selectionnez_jusqu_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.quels_sont_vos_principaux_objectifs_en_participant_a_cette_formation_selectionnez_jusqu_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Quels sont vos principaux objectifs en participant à cette formation ? (Sélectionnez jusqu'à 3 priorités)",
+        "options": [
+          {
+            "value": "augmenter_la_notoriete_de_ma_tpe",
+            "label": "Augmenter la notoriété de ma TPE",
+            "part": "word/document.xml",
+            "paragraph_index": 34,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "97de44645cc7820d5c9f28a9ab2c9acf0235505aed930d5ef98e3f167fa54cfd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "ameliorer_la_visibilite_de_mes_produits_services",
+            "label": "Améliorer la visibilité de mes produits/services",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[21]",
+            "template_text_sha256": "4a27277d6632bd1fae69aec7a7fe9d7c2a5cee62954b810b00bcaa5d8752d097",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "acquerir_de_nouveaux_clients_prospects_generation_de_leads",
+            "label": "Acquérir de nouveaux clients/prospects (génération de leads)",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "4dd034e863304c7ed7f2b7693f55d562fd59dc8faa5ea3c07a4a91bcdce596d7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "ameliorer_l_engagement_de_ma_communaute",
+            "label": "Améliorer l'engagement de ma communauté",
+            "part": "word/document.xml",
+            "paragraph_index": 37,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "774fb1f9dc09568e51f4878d3b326c2017948ff85a5e40d70bc10e3f28b91f23",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "maitriser_la_creation_de_contenu_visuels_videos_textes",
+            "label": "Maîtriser la création de contenu (visuels, vidéos, textes)",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "ae81d0df46d59c6d866b85c67843c8ab43777cb4bc56bfe3b2f36e3caf220c27",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "savoir_planifier_et_automatiser_les_publications",
+            "label": "Savoir planifier et automatiser les publications",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "12d904670702addd08fbad3cf707447abf0d714ccec2bbfb5ae6436dab9b80da",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "apprendre_a_analyser_les_statistiques_kpis_et_ajuster_ma_str",
+            "label": "Apprendre à analyser les statistiques (KPIs) et ajuster ma stratégie",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[26]",
+            "template_text_sha256": "334a9cc724af11e945957ea52a0fe45c5058e00eec56dee01e63cbb845f19451",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "definir_clairement_ma_cible_persona_et_mon_positionnement",
+            "label": "Définir clairement ma cible (persona) et mon positionnement",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "8edb5733341745422160d938f6fe61ba025b4c2351776a81ec4f70c08552b040",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "apprendre_a_analyser_les_statistiques_kpis_et_ajuster_ma_str",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Quels sont vos principaux objectifs en participant à cette formation ? (Sélectionnez jusqu'à 3 priorités)'.",
+      "validation": {
+        "enum": [
+          "augmenter_la_notoriete_de_ma_tpe",
+          "ameliorer_la_visibilite_de_mes_produits_services",
+          "acquerir_de_nouveaux_clients_prospects_generation_de_leads",
+          "ameliorer_l_engagement_de_ma_communaute",
+          "maitriser_la_creation_de_contenu_visuels_videos_textes",
+          "savoir_planifier_et_automatiser_les_publications",
+          "apprendre_a_analyser_les_statistiques_kpis_et_ajuster_ma_str",
+          "definir_clairement_ma_cible_persona_et_mon_positionnement"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.definition_des_objectifs_et_identification_des_cibles_persona",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.definition_des_objectifs_et_identification_des_cibles_persona",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Définition des objectifs et identification des cibles (persona)",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 50,
+            "xpath": "/document/body[1]/tbl[5]/tr[2]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 51,
+            "xpath": "/document/body[1]/tbl[5]/tr[2]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 52,
+            "xpath": "/document/body[1]/tbl[5]/tr[2]/tc[4]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 53,
+            "xpath": "/document/body[1]/tbl[5]/tr[2]/tc[5]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 54,
+            "xpath": "/document/body[1]/tbl[5]/tr[2]/tc[6]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Définition des objectifs et identification des cibles (persona)'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field",
+          "field",
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.elaboration_d_une_strategie_editoriale_coherente",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.elaboration_d_une_strategie_editoriale_coherente",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Élaboration d'une stratégie éditoriale cohérente",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 56,
+            "xpath": "/document/body[1]/tbl[5]/tr[3]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 57,
+            "xpath": "/document/body[1]/tbl[5]/tr[3]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 58,
+            "xpath": "/document/body[1]/tbl[5]/tr[3]/tc[4]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 59,
+            "xpath": "/document/body[1]/tbl[5]/tr[3]/tc[5]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 60,
+            "xpath": "/document/body[1]/tbl[5]/tr[3]/tc[6]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Élaboration d'une stratégie éditoriale cohérente'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field",
+          "field",
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.creation_de_visuels_engageants_ex_avec_canva",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.creation_de_visuels_engageants_ex_avec_canva",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Création de visuels engageants (ex: avec Canva)",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 62,
+            "xpath": "/document/body[1]/tbl[5]/tr[4]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 63,
+            "xpath": "/document/body[1]/tbl[5]/tr[4]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 64,
+            "xpath": "/document/body[1]/tbl[5]/tr[4]/tc[4]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 65,
+            "xpath": "/document/body[1]/tbl[5]/tr[4]/tc[5]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 66,
+            "xpath": "/document/body[1]/tbl[5]/tr[4]/tc[6]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Création de visuels engageants (ex: avec Canva)'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field",
+          "field",
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.redaction_de_posts_efficaces_et_techniques_de_storytelling",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.redaction_de_posts_efficaces_et_techniques_de_storytelling",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Rédaction de posts efficaces et techniques de storytelling",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 68,
+            "xpath": "/document/body[1]/tbl[5]/tr[5]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 69,
+            "xpath": "/document/body[1]/tbl[5]/tr[5]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 70,
+            "xpath": "/document/body[1]/tbl[5]/tr[5]/tc[4]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 71,
+            "xpath": "/document/body[1]/tbl[5]/tr[5]/tc[5]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 72,
+            "xpath": "/document/body[1]/tbl[5]/tr[5]/tc[6]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Rédaction de posts efficaces et techniques de storytelling'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field",
+          "field",
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.planification_et_programmation_des_publications_meta_business_suite",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.planification_et_programmation_des_publications_meta_business_suite",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Planification et programmation des publications (Meta Business Suite)",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 74,
+            "xpath": "/document/body[1]/tbl[5]/tr[6]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 75,
+            "xpath": "/document/body[1]/tbl[5]/tr[6]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 76,
+            "xpath": "/document/body[1]/tbl[5]/tr[6]/tc[4]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 77,
+            "xpath": "/document/body[1]/tbl[5]/tr[6]/tc[5]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 78,
+            "xpath": "/document/body[1]/tbl[5]/tr[6]/tc[6]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Planification et programmation des publications (Meta Business Suite)'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field",
+          "field",
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.analyse_des_statistiques_et_des_indicateurs_de_performance_kpis",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.analyse_des_statistiques_et_des_indicateurs_de_performance_kpis",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Analyse des statistiques et des indicateurs de performance (KPIs)",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 86,
+            "xpath": "/document/body[1]/tbl[5]/tr[8]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 87,
+            "xpath": "/document/body[1]/tbl[5]/tr[8]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 88,
+            "xpath": "/document/body[1]/tbl[5]/tr[8]/tc[4]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 89,
+            "xpath": "/document/body[1]/tbl[5]/tr[8]/tc[5]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 90,
+            "xpath": "/document/body[1]/tbl[5]/tr[8]/tc[6]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Analyse des statistiques et des indicateurs de performance (KPIs)'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field",
+          "field",
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.etes_vous_familiarise_e_avec_l_outil_de_creation_graphique_canva",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.etes_vous_familiarise_e_avec_l_outil_de_creation_graphique_canva",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Êtes-vous familiarisé(e) avec l'outil de création graphique Canva ?",
+        "options": [
+          {
+            "value": "oui_je_l_utilise_regulierement",
+            "label": "Oui, je l'utilise régulièrement",
+            "part": "word/document.xml",
+            "paragraph_index": 93,
+            "xpath": "/document/body[1]/p[31]",
+            "template_text_sha256": "20fa59f6a30a8b0980341b77400d924773f1e84e528d533b6e03ed5ef03fcb10",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "oui_mais_je_suis_debutant_e",
+            "label": "Oui, mais je suis débutant(e)",
+            "part": "word/document.xml",
+            "paragraph_index": 94,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "a5042ebfb9cc464757a7f41f67204e6d0c7f36a892638db434814939a77452c3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non_pas_du_tout",
+            "label": "Non, pas du tout",
+            "part": "word/document.xml",
+            "paragraph_index": 95,
+            "xpath": "/document/body[1]/p[33]",
+            "template_text_sha256": "ef098f70b11b38f481db10ca840a700f2c80aa4a71106c7717a8f73e196a5d6b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "oui_mais_je_suis_debutant_e",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Êtes-vous familiarisé(e) avec l'outil de création graphique Canva ?'.",
+      "validation": {
+        "enum": [
+          "oui_je_l_utilise_regulierement",
+          "oui_mais_je_suis_debutant_e",
+          "non_pas_du_tout"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.quel_type_de_contenu_trouvez_vous_le_plus_difficile_a_produire_ou_a_gerer_actuellement",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.quel_type_de_contenu_trouvez_vous_le_plus_difficile_a_produire_ou_a_gerer_actuellement",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 97,
+          "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Création de visuels (images, carrousels)",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Création de visuels (images, carrousels)' after label 'Quel type de contenu trouvez-vous le plus difficile à produire ou à gérer actuellement ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.quelles_sont_vos_attentes_principales_ou_les_points_specifiques_que_vous_souhaitez_absolum",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.quelles_sont_vos_attentes_principales_ou_les_points_specifiques_que_vous_souhaitez_absolum",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 100,
+          "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "A) Apprendre à créer et publier du contenu attractif sur les réseaux sociaux les plus utilisés (Instagram, Facebook, LinkedIn) pour développer la visibilité de mon activité.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'A) Apprendre à créer et publier du contenu attractif sur les réseaux sociaux les plus utilisés (Instagram, Facebook, Lin' after label 'Quelles sont vos attentes principales ou les points spécifiques que vous souhaitez absolument couvrir durant cette forma'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [],
+  "blocking_reasons": [],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 14,
+    "confirmed_field_count": 14,
+    "concrete_target_count": 6,
+    "evidence_count": 14,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 0,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "8 field(s) lack a concrete format-specific target."
+    ]
+  }
+}

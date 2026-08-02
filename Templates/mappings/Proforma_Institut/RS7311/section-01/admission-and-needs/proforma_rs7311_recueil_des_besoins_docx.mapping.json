@@ -1,0 +1,617 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7311_recueil_des_besoins_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7311/section-01/admission-and-needs/Recueil des Besoins - RS7311 - Proforma Institut - Template.docx",
+  "template_hash": "a0edede17f56371b08e9fb4abef1812bf39641eb60154129307406eb4b1ee61a",
+  "source_original_path": "Proforma Institut/RS7311 - IA TPE/Recueil des Besoins - RS7311 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7311",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "admission-and-needs",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7311 - IA TPE/Recueil des Besoins - RS7311 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS7311 - IA TPE/Recueil des Besoins - RS7311 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9833,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "RENAUD Sophie"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "candidate.identity.full_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.identity.full_name",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 5,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "RENAUD Sophie",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'RENAUD Sophie' after label 'Nom et Prénom *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.avez_vous_des_besoins_specifiques_lies_a_un_handicap_ou_toute_autre_condition_necessitant",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.avez_vous_des_besoins_specifiques_lies_a_un_handicap_ou_toute_autre_condition_necessitant",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 9,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "/",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '/' after label 'Avez-vous des besoins spécifiques liés à un handicap ou toute autre condition nécessitant un aménagement particulier pou'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.aisance_outils_numeriques",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.aisance_outils_numeriques",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Aisance outils numériques",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[4]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 22,
+            "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[5]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 23,
+            "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[6]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Aisance outils numériques'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field",
+          "field",
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.quel_s_besoin_s_ou_probleme_s_specifique_s_souhaitez_vous_resoudre_dans_votre_tpe_grace_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.quel_s_besoin_s_ou_probleme_s_specifique_s_souhaitez_vous_resoudre_dans_votre_tpe_grace_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Quel(s) besoin(s) ou problème(s) spécifique(s) souhaitez-vous résoudre dans votre TPE grâce à l'Intelligence Artificielle ? (plusieurs réponses possibles)",
+        "options": [
+          {
+            "value": "gagner_du_temps_sur_des_taches_repetitives_redaction_emails",
+            "label": "Gagner du temps sur des tâches répétitives (rédaction, emails, organisation administrative)",
+            "part": "word/document.xml",
+            "paragraph_index": 27,
+            "xpath": "/document/body[1]/p[13]",
+            "template_text_sha256": "05a444d6910e24f295f0285f079818189dd7f8379b68dd451a14d4a0353b2589",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "ameliorer_ma_communication_et_mon_contenu_reseaux_sociaux_ma",
+            "label": "Améliorer ma communication et mon contenu (réseaux sociaux, marketing, relation client)",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[14]",
+            "template_text_sha256": "560c4f39690a1dc84b622234a1efdd39f96d20b5d20b07e3daf426c37e2626de",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "mieux_analyser_mes_donnees_pour_prendre_de_meilleures_decisi",
+            "label": "Mieux analyser mes données pour prendre de meilleures décisions (ventes, stock, finances)",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[15]",
+            "template_text_sha256": "b12f0c898181da6259eabf4b60e5a9465c0226991efcc870977a040fa3f33a69",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "automatiser_une_partie_de_mon_activite_devis_factures_prise",
+            "label": "Automatiser une partie de mon activité (devis, factures, prise de rendez-vous, support client)",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[16]",
+            "template_text_sha256": "1dc8b6261952094db0cf118c1e80538237ee8b4cdf80a6f98f41df976c436b8b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "mieux_analyser_mes_donnees_pour_prendre_de_meilleures_decisi",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Quel(s) besoin(s) ou problème(s) spécifique(s) souhaitez-vous résoudre dans votre TPE grâce à l'Intelligence Artificielle ? (plusieurs réponses possibles)'.",
+      "validation": {
+        "enum": [
+          "gagner_du_temps_sur_des_taches_repetitives_redaction_emails",
+          "ameliorer_ma_communication_et_mon_contenu_reseaux_sociaux_ma",
+          "mieux_analyser_mes_donnees_pour_prendre_de_meilleures_decisi",
+          "automatiser_une_partie_de_mon_activite_devis_factures_prise"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.professional.current_position",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.current_position",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Un ordinateur (PC ou Mac) fonctionnel",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 54,
+            "xpath": "/document/body[1]/tbl[5]/tr[2]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 55,
+            "xpath": "/document/body[1]/tbl[5]/tr[2]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Un ordinateur (PC ou Mac) fonctionnel'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.si_vous_avez_deja_teste_des_outils_d_ia_lesquels_avez_vous_utilises",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.si_vous_avez_deja_teste_des_outils_d_ia_lesquels_avez_vous_utilises",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Si vous avez déjà testé des outils d'IA, lesquels avez-vous utilisés ?",
+        "options": [
+          {
+            "value": "chatgpt_ou_un_autre_grand_modele_de_langage",
+            "label": "ChatGPT (ou un autre grand modèle de langage)",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "48a9d74c501ec733b338bb732ee9fc2a457e929860780eec8d4c54e0f92e23ef",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "outil_de_generation_d_images_videos_ex_midjourney_dall_e",
+            "label": "Outil de génération d'images/vidéos (ex: Midjourney, DALL-E)",
+            "part": "word/document.xml",
+            "paragraph_index": 37,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "77845a67ec60298282190b3914f67cb4c1c83d55e5f7a8b34917250febe120c2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "outil_d_automatisation_ex_zapier_make",
+            "label": "Outil d'automatisation (ex: Zapier, Make)",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "1988d39499eb5280e5680bb1e0598a69aec75928c634437cb89bdf18ca92b194",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "outil_d_analyse_de_donnees_business_intelligence",
+            "label": "Outil d'analyse de données (Business Intelligence)",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "0ec8600472e4606933f03355205cd2c8b66ffb729e691ba4a5911816c4062807",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "autre_veuillez_preciser_ci_dessous",
+            "label": "Autre (Veuillez préciser ci-dessous)",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[26]",
+            "template_text_sha256": "b95299b534f32836560eeac43b9f7f3d848683d66e6d9b162dce9683b7731e7e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "outil_de_generation_d_images_videos_ex_midjourney_dall_e",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Si vous avez déjà testé des outils d'IA, lesquels avez-vous utilisés ?'.",
+      "validation": {
+        "enum": [
+          "chatgpt_ou_un_autre_grand_modele_de_langage",
+          "outil_de_generation_d_images_videos_ex_midjourney_dall_e",
+          "outil_d_automatisation_ex_zapier_make",
+          "outil_d_analyse_de_donnees_business_intelligence",
+          "autre_veuillez_preciser_ci_dessous"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.quels_sont_les_objectifs_prioritaires_que_vous_souhaitez_atteindre_en_integrant_l_ia_dans",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.quels_sont_les_objectifs_prioritaires_que_vous_souhaitez_atteindre_en_integrant_l_ia_dans",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Quels sont les objectifs prioritaires que vous souhaitez atteindre en intégrant l'IA dans votre TPE ? (Sélectionnez jusqu'à 3 priorités)",
+        "options": [
+          {
+            "value": "ameliorer_la_qualite_et_la_vitesse_de_la_redaction_emails_co",
+            "label": "Améliorer la qualité et la vitesse de la rédaction (emails, contenus marketing, documents internes)",
+            "part": "word/document.xml",
+            "paragraph_index": 42,
+            "xpath": "/document/body[1]/p[28]",
+            "template_text_sha256": "9acb7fd7b100ffa891ae5212f128f50791420fd8bf95b35649c7982178a72556",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "optimiser_l_analyse_et_l_exploitation_de_donnees_comptabilit",
+            "label": "Optimiser l'analyse et l'exploitation de données (comptabilité, clientèle, marché)",
+            "part": "word/document.xml",
+            "paragraph_index": 43,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "9733307700d6269fda78c617e0e636c59a3db68c318cc0d0dd0842d685290364",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "automatiser_des_taches_administratives_ou_repetitives_gestio",
+            "label": "Automatiser des tâches administratives ou répétitives (gestion des rendez-vous, suivi de commandes)",
+            "part": "word/document.xml",
+            "paragraph_index": 44,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "66b537868945b64536e6b9ff9bdedcffc69b63d65592a56a3f40f8288911f2df",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "aide_a_la_creation_visuelle_ou_marketing_images_videos_idees",
+            "label": "Aide à la création visuelle ou marketing (images, vidéos, idées de campagne)",
+            "part": "word/document.xml",
+            "paragraph_index": 45,
+            "xpath": "/document/body[1]/p[31]",
+            "template_text_sha256": "eebe6b22b69bfe79b5e08af54937340e7f9e1a4fccec7a46d9a98c6e7a6d55b7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "ameliorer_le_service_client_chatbots_reponse_automatique",
+            "label": "Améliorer le service client (chatbots, réponse automatique)",
+            "part": "word/document.xml",
+            "paragraph_index": 46,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "0861df45e1e3293c6d5b0c7f737aa366c3616c5cff80ce3fe376048dc0787a9b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "aide_a_la_prise_de_decision_strategique",
+            "label": "Aide à la prise de décision stratégique",
+            "part": "word/document.xml",
+            "paragraph_index": 47,
+            "xpath": "/document/body[1]/p[33]",
+            "template_text_sha256": "1cd2acb76653f72e6433b66ef780a4ce4a12abe3a87a5204cdd4ee4fedf17b90",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "ameliorer_le_service_client_chatbots_reponse_automatique",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Quels sont les objectifs prioritaires que vous souhaitez atteindre en intégrant l'IA dans votre TPE ? (Sélectionnez jusqu'à 3 priorités)'.",
+      "validation": {
+        "enum": [
+          "ameliorer_la_qualite_et_la_vitesse_de_la_redaction_emails_co",
+          "optimiser_l_analyse_et_l_exploitation_de_donnees_comptabilit",
+          "automatiser_des_taches_administratives_ou_repetitives_gestio",
+          "aide_a_la_creation_visuelle_ou_marketing_images_videos_idees",
+          "ameliorer_le_service_client_chatbots_reponse_automatique",
+          "aide_a_la_prise_de_decision_strategique"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.une_connexion_internet_stable_et_haut_debit",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.une_connexion_internet_stable_et_haut_debit",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Une connexion internet stable et haut débit",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 57,
+            "xpath": "/document/body[1]/tbl[5]/tr[3]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 58,
+            "xpath": "/document/body[1]/tbl[5]/tr[3]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Une connexion internet stable et haut débit'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.un_microphone_et_des_haut_parleurs_casque",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.un_microphone_et_des_haut_parleurs_casque",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Un microphone et des haut-parleurs/casque",
+        "options": [
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 60,
+            "xpath": "/document/body[1]/tbl[5]/tr[4]/tc[2]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "field",
+            "label": "",
+            "part": "word/document.xml",
+            "paragraph_index": 61,
+            "xpath": "/document/body[1]/tbl[5]/tr[4]/tc[3]/p[1]",
+            "template_text_sha256": "45cb70c209f0e7a9d8556e4283e196dafb83871ed3a8a61d9617da7424af106d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "field",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Un microphone et des haut-parleurs/casque'.",
+      "validation": {
+        "enum": [
+          "field",
+          "field"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.avez_vous_des_besoins_specifiques_ou_une_situation_necessitant_un_amenagement_pedagogique",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.avez_vous_des_besoins_specifiques_ou_une_situation_necessitant_un_amenagement_pedagogique",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Avez-vous des besoins spécifiques ou une situation nécessitant un aménagement pédagogique ? Si oui, merci de préciser (facultatif) *",
+        "options": [
+          {
+            "value": "oui",
+            "label": "Oui",
+            "part": "word/document.xml",
+            "paragraph_index": 64,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "3b470d2c1846fa2d2240f240146acd9d26c3983b2ad147697ee7ffd756ec8dea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non",
+            "label": "Non",
+            "part": "word/document.xml",
+            "paragraph_index": 65,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "a797aee61e3a8eafab4ae8d490bb08d3113054a5b78772677b7200a1aac83c82",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "autre",
+            "label": "Autre :",
+            "part": "word/document.xml",
+            "paragraph_index": 66,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "8e52a2c2e8e88d128add46be27bba8ae3f10a203f89fb5ac5aeadf629a570db4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "non",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Avez-vous des besoins spécifiques ou une situation nécessitant un aménagement pédagogique ? Si oui, merci de préciser (facultatif) *'.",
+      "validation": {
+        "enum": [
+          "oui",
+          "non",
+          "autre"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [],
+  "blocking_reasons": [],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 10,
+    "confirmed_field_count": 10,
+    "concrete_target_count": 6,
+    "evidence_count": 10,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 0,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "4 field(s) lack a concrete format-specific target."
+    ]
+  }
+}

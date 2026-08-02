@@ -1,0 +1,1007 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7344_pv_evaluation_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7344/section-02/jury-and-decision/PV Evaluation - RS7344 - Proforma Institut - Template.docx",
+  "template_hash": "381392ba45b4c9dff8f55937c035fb9857c4e6c9cd8b172403f7cd7f95cb7e26",
+  "source_original_path": "Proforma Institut/RS7344 - IA pour Développer son Activité/PV Evaluation - RS7344 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7344",
+  "major_section": "Évaluation certificative et décision",
+  "subsection": "jury-and-decision",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7344 - IA pour Développer son Activité/PV Evaluation - RS7344 - Proforma Institut - Template.docx",
+    "filled_reference": null,
+    "confidence": "BLOCKED",
+    "structure_similarity": 0.0,
+    "rationale": "No same-group filled reference.",
+    "same_format": false,
+    "candidate_identity": null
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "candidate.questionnaire.responses.pv_evaluation.deliberation_des_resultats",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.pv_evaluation.deliberation_des_resultats",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 13,
+          "xpath": "/document/body[1]/p[14]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Délibération des résultats.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.pv_evaluation.prenom_nom_c1_acquis_non_acquis_c2_acquis_non_acquis_c3_acquis_non_acquis_c4_acquis_non_ac",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.pv_evaluation.prenom_nom_c1_acquis_non_acquis_c2_acquis_non_acquis_c3_acquis_non_acquis_c4_acquis_non_ac",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 21,
+          "xpath": "/document/body[1]/p[22]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '//PRENOM// //NOM// (C1 : //ACQUIS / NON ACQUIS//, C2 : //ACQUIS / NON ACQUIS//, C3 : //ACQUIS / NON ACQUIS//, C4 : //ACQUIS / NON ACQUIS//, '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 49,
+          "xpath": "/document/body[1]/tbl[1]/tr[5]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Sélection conforme des membres du jury d’évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 50,
+          "xpath": "/document/body[1]/tbl[1]/tr[5]/tc[3]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Sélection conforme des membres du jury d’évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 51,
+          "xpath": "/document/body[1]/tbl[1]/tr[5]/tc[4]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Sélection conforme des membres du jury d’évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 52,
+          "xpath": "/document/body[1]/tbl[1]/tr[5]/tc[5]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Sélection conforme des membres du jury d’évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 54,
+          "xpath": "/document/body[1]/tbl[1]/tr[6]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Consignes remises aux membres du jury d'évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 55,
+          "xpath": "/document/body[1]/tbl[1]/tr[6]/tc[3]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Consignes remises aux membres du jury d'évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 56,
+          "xpath": "/document/body[1]/tbl[1]/tr[6]/tc[4]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Consignes remises aux membres du jury d'évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 57,
+          "xpath": "/document/body[1]/tbl[1]/tr[6]/tc[5]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Consignes remises aux membres du jury d'évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.pv_evaluation.transmission_conforme_des_grilles_d_evaluation_au_jury_d_evaluation",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.pv_evaluation.transmission_conforme_des_grilles_d_evaluation_au_jury_d_evaluation",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 59,
+          "xpath": "/document/body[1]/tbl[1]/tr[7]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Transmission conforme des grilles d’évaluation au jury d’évaluation'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.pv_evaluation.transmission_conforme_des_grilles_d_evaluation_au_jury_d_evaluation_transmission_conforme_des_grilles_d_eval",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.pv_evaluation.transmission_conforme_des_grilles_d_evaluation_au_jury_d_evaluation_transmission_conforme_des_grilles_d_eval",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 60,
+          "xpath": "/document/body[1]/tbl[1]/tr[7]/tc[3]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Transmission conforme des grilles d’évaluation au jury d’évaluation'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.pv_evaluation.transmission_conforme_des_grilles_d_evaluation_au_jury_d_evaluation_transmission_conforme_des_grilles_d_eval_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.pv_evaluation.transmission_conforme_des_grilles_d_evaluation_au_jury_d_evaluation_transmission_conforme_des_grilles_d_eval_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 61,
+          "xpath": "/document/body[1]/tbl[1]/tr[7]/tc[4]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Transmission conforme des grilles d’évaluation au jury d’évaluation'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.pv_evaluation.transmission_conforme_des_grilles_d_evaluation_au_jury_d_evaluation_transmission_conforme_des_grilles_d_eval_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.pv_evaluation.transmission_conforme_des_grilles_d_evaluation_au_jury_d_evaluation_transmission_conforme_des_grilles_d_eval_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 62,
+          "xpath": "/document/body[1]/tbl[1]/tr[7]/tc[5]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Transmission conforme des grilles d’évaluation au jury d’évaluation'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 69,
+          "xpath": "/document/body[1]/tbl[1]/tr[9]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Mise en place conforme de l’organisation permettant l’appréciation des résultats pour les membres du jury d'évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 70,
+          "xpath": "/document/body[1]/tbl[1]/tr[9]/tc[3]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Mise en place conforme de l’organisation permettant l’appréciation des résultats pour les membres du jury d'évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 71,
+          "xpath": "/document/body[1]/tbl[1]/tr[9]/tc[4]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Mise en place conforme de l’organisation permettant l’appréciation des résultats pour les membres du jury d'évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 72,
+          "xpath": "/document/body[1]/tbl[1]/tr[9]/tc[5]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Mise en place conforme de l’organisation permettant l’appréciation des résultats pour les membres du jury d'évaluation.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "signatures.candidate_or_authorized_signer",
+      "source_class": "SIGNATURE",
+      "source_path": "$.signatures.candidate_or_authorized_signer",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 102,
+          "xpath": "/document/body[1]/p[33]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Signature :  //SIGNATURE RESPONSABLE ORGANISATION DES ÉPREUVES//'.",
+      "validation": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Asset identifier or approved image path; never auto-invented."
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.pv_evaluation.date_du_constat",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.pv_evaluation.date_du_constat",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 108,
+          "xpath": "/document/body[1]/tbl[2]/tr[2]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Date du constat'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.professional.current_position",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.current_position",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 112,
+          "xpath": "/document/body[1]/tbl[2]/tr[4]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Nature du dysfonctionnement (Anomalie / Fraude)'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.professional.current_position",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.current_position",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 114,
+          "xpath": "/document/body[1]/tbl[2]/tr[5]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Contexte dans lequel le dysfonctionnement s’est produit'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.pv_evaluation.resultats_et_commentaires",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.pv_evaluation.resultats_et_commentaires",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 118,
+          "xpath": "/document/body[1]/tbl[2]/tr[7]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": " ",
+          "template_text_sha256": "abfbd10daf8965c8860b3582af942d7a7cac972b31d1c50f382b67d9b6c07365",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Résultats et commentaires'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.pv_evaluation.resultats_et_commentaires_resultats_et_commentaires",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.pv_evaluation.resultats_et_commentaires_resultats_et_commentaires",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 119,
+          "xpath": "/document/body[1]/p[37]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Résultats et commentaires'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "signatures.candidate_or_authorized_signer",
+      "source_class": "SIGNATURE",
+      "source_path": "$.signatures.candidate_or_authorized_signer",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 121,
+          "xpath": "/document/body[1]/p[39]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Signature :  //SIGNATURE RESPONSABLE ORGANISATION DES ÉPREUVES//'.",
+      "validation": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Asset identifier or approved image path; never auto-invented."
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.professional.company_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.company_name",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/footer1.xml",
+          "paragraph_index": 1,
+          "xpath": "/ftr/p[2]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label '//INSÉREZ NOM ENTREPRISE, ADRESSE, SIRET//'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "reason": "No same-format filled reference; mapping is label-based and requires review."
+    }
+  ],
+  "blocking_reasons": [
+    "1 structural/text difference(s) require review; see mapping evidence and placeholder discovery report.",
+    "Authorized jury identities, decision provenance, and signature sources are not supplied.",
+    "No filled reference was located for this template.",
+    "No same-group filled reference."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 26,
+    "confirmed_field_count": 0,
+    "concrete_target_count": 26,
+    "evidence_count": 26,
+    "structural_only_evidence_count": 26,
+    "unresolved_difference_count": 1,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "26 field(s) rely only on structural-slot inference.",
+      "26 field(s) are not CONFIRMED.",
+      "1 unresolved source/template difference(s) remain."
+    ]
+  }
+}

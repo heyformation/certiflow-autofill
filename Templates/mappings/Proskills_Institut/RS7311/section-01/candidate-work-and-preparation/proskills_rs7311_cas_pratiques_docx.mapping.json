@@ -1,0 +1,268 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proskills_rs7311_cas_pratiques_docx",
+  "template_path": "final-templates/Proskills_Institut/RS7311/section-01/candidate-work-and-preparation/Cas Pratiques - RS7311 - Proskills Institut - Template.docx",
+  "template_hash": "3fd7ccfb7fc1d8ab038ebed7976b3a11bcce6df8692358bb4883a53cf4b7888c",
+  "source_original_path": "Proskills Institut/RS7311 - IA TPE/Cas Pratiques - RS7311 - Proskills Institut - Template.docx",
+  "organization": "Proskills Institut",
+  "certification": "RS7311",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "candidate-work-and-preparation",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proskills Institut/RS7311 - IA TPE/Cas Pratiques - RS7311 - Proskills Institut - Template.docx",
+    "filled_reference": "Proskills Institut/RS7311 - IA TPE/Cas Pratiques - RS7311 - Proskills Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.8276,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": null
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.stagiaire",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.stagiaire",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 7,
+          "xpath": "/document/body[1]/p[8]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Nathan Lecomte",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Nathan Lecomte' after label 'Stagiaire'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 22,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "L'IA automatise les tâches répétitives mais ne remplace ni mon expertise ni ma relation client directe.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'L'IA automatise les tâches répétitives mais ne remplace ni mon expertise ni ma relation client directe.' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 43,
+          "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Prompt : décris en 2 phrases une rénovation de terrasse, ton professionnel. Texte simulé : Une terrasse entièrement rénovée en 4 jours, alliant robustesse et esthétique.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Prompt : décris en 2 phrases une rénovation de terrasse, ton professionnel. Texte simulé : Une terrasse entièrement réno' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 64,
+          "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "1) Fidéliser mes meilleurs clients. 2) Renforcer ma communication en période creuse. 3) Diversifier ma clientèle. 4) Ajuster mes tarifs selon la saison.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '1) Fidéliser mes meilleurs clients. 2) Renforcer ma communication en période creuse. 3) Diversifier ma clientèle. 4) Aju' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 85,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Questions : nom, besoin, urgence, adresse, disponibilité. Message final : merci, nous vous recontactons sous 24h. Configuration via un outil no-code relié au site.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Questions : nom, besoin, urgence, adresse, disponibilité. Message final : merci, nous vous recontactons sous 24h. Config' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 2,
+      "xpath": "/document/body[1]/p[3]",
+      "blank_content": "Cas d'évaluation (exemple) — Document vierge",
+      "filled_content": "Cas d'évaluation (exemple)",
+      "reason": "Unsafe non-slot text change (similarity 0.74); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 34,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 55,
+      "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 76,
+      "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "5 structural/text difference(s) require review; see mapping evidence and placeholder discovery report."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 5,
+    "confirmed_field_count": 5,
+    "concrete_target_count": 5,
+    "evidence_count": 5,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 5,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "5 unresolved source/template difference(s) remain."
+    ]
+  }
+}

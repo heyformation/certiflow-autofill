@@ -1,0 +1,272 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7200_trame_dossier_certification_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7200/section-01/candidate-work-and-preparation/Trame Dossier Certification - RS7200 - Proforma Institut - Template.docx",
+  "template_hash": "820859864de30f6102197d1508ac7c03f985d40d7689c9a0a2c436b9f165877d",
+  "source_original_path": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Trame Dossier Certification - RS7200 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7200",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "candidate-work-and-preparation",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Trame Dossier Certification - RS7200 - Proforma Institut - Template.docx",
+    "filled_reference": null,
+    "confidence": "BLOCKED",
+    "structure_similarity": 0.0,
+    "rationale": "No same-group filled reference.",
+    "same_format": false,
+    "candidate_identity": null
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "candidate.questionnaire.responses.trame_dossier_certification.votre_nom",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.trame_dossier_certification.votre_nom",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 12,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Votre nom :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.trame_dossier_certification.votre_prenom",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.trame_dossier_certification.votre_prenom",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 14,
+          "xpath": "/document/body[1]/tbl[2]/tr[2]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Votre prénom :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.trame_dossier_certification.votre_date_d_oral",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.trame_dossier_certification.votre_date_d_oral",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 16,
+          "xpath": "/document/body[1]/tbl[2]/tr[3]/tc[2]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Votre date d’oral :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.trame_dossier_certification.votre_date_d_oral_votre_date_d_oral",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.trame_dossier_certification.votre_date_d_oral_votre_date_d_oral",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 17,
+          "xpath": "/document/body[1]/p[11]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Votre date d’oral :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.trame_dossier_certification.votre_date_d_oral_votre_date_d_oral_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.trame_dossier_certification.votre_date_d_oral_votre_date_d_oral_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 18,
+          "xpath": "/document/body[1]/p[12]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Votre date d’oral :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.trame_dossier_certification.votre_date_d_oral_votre_date_d_oral_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.trame_dossier_certification.votre_date_d_oral_votre_date_d_oral_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 19,
+          "xpath": "/document/body[1]/p[13]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Votre date d’oral :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "reason": "No same-format filled reference; mapping is label-based and requires review."
+    }
+  ],
+  "blocking_reasons": [
+    "1 structural/text difference(s) require review; see mapping evidence and placeholder discovery report.",
+    "No filled reference was located for this template.",
+    "No same-group filled reference."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 6,
+    "confirmed_field_count": 0,
+    "concrete_target_count": 6,
+    "evidence_count": 6,
+    "structural_only_evidence_count": 6,
+    "unresolved_difference_count": 1,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "6 field(s) rely only on structural-slot inference.",
+      "6 field(s) are not CONFIRMED.",
+      "1 unresolved source/template difference(s) remain."
+    ]
+  }
+}

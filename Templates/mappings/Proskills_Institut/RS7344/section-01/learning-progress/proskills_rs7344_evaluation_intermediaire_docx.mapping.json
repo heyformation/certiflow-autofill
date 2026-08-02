@@ -1,0 +1,2173 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proskills_rs7344_evaluation_intermediaire_docx",
+  "template_path": "final-templates/Proskills_Institut/RS7344/section-01/learning-progress/Evaluation Intermediaire - RS7344 - Proskills Institut - Template.docx",
+  "template_hash": "021eaaa770437864eda1bf84b5d9b957234d1c7f8b630255a9103ef1cad7781d",
+  "source_original_path": "Proskills Institut/RS7344 - IA pour Développer son Activité/Evaluation Intermediaire - RS7344 - Proskills Institut - Template.docx",
+  "organization": "Proskills Institut",
+  "certification": "RS7344",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "learning-progress",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proskills Institut/RS7344 - IA pour Développer son Activité/Evaluation Intermediaire - RS7344 - Proskills Institut - Template.docx",
+    "filled_reference": "Proskills Institut/RS7344 - IA pour Développer son Activité/Evaluation Intermediaire - RS7344 - Proskills Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9345,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": ", e-mail, téléphone...)"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.stagiaire",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.stagiaire",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 7,
+          "xpath": "/document/body[1]/p[8]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Nathan Lecomte",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Nathan Lecomte' after label 'Stagiaire'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_pour_une_tpe_l_intelligence_artificielle_designe_avant_tout",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_pour_une_tpe_l_intelligence_artificielle_designe_avant_tout",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Pour une TPE, l'intelligence artificielle désigne avant tout :",
+        "options": [
+          {
+            "value": "a_un_robot_humanoide",
+            "label": "A) Un robot humanoïde",
+            "part": "word/document.xml",
+            "paragraph_index": 18,
+            "xpath": "/document/body[1]/p[17]",
+            "template_text_sha256": "1b5b3358ecb6e4781d09b8f68431eb5e1265bbd69e0e18cd4fb501df90a4d642",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_des_programmes_capables_d_apprendre_et_d_automatiser_des_t",
+            "label": "B) Des programmes capables d'apprendre et d'automatiser des tâches répétitives",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "f6077ae063ad4d536d9d7a0287bc69c58febc45c1670a9e1bbc36455682d4a53",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_un_simple_tableur_avance",
+            "label": "C) Un simple tableur avancé",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/p[19]",
+            "template_text_sha256": "c1581180d10be35e0080da5d75f2007c4bc46717a35949b92191b1efd7dd4d68",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_un_logiciel_de_surveillance_du_personnel",
+            "label": "D) Un logiciel de surveillance du personnel",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "68c236a47a818368a89e56d6a42af86451753a024f23be052e66478e358fb87b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_des_programmes_capables_d_apprendre_et_d_automatiser_des_t",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Pour une TPE, l'intelligence artificielle désigne avant tout :'.",
+      "validation": {
+        "enum": [
+          "a_un_robot_humanoide",
+          "b_des_programmes_capables_d_apprendre_et_d_automatiser_des_t",
+          "c_un_simple_tableur_avance",
+          "d_un_logiciel_de_surveillance_du_personnel"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_un_modele_comme_claude_ou_chatgpt_est_un_exemple_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_un_modele_comme_claude_ou_chatgpt_est_un_exemple_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Un modèle comme Claude ou ChatGPT est un exemple de :",
+        "options": [
+          {
+            "value": "a_ia_robotique",
+            "label": "A) IA robotique",
+            "part": "word/document.xml",
+            "paragraph_index": 23,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "0653b7e43517314b4569b2cb07778736159241e7d375d4c20d992977c9df9831",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_modele_de_langage_generatif_llm",
+            "label": "B) Modèle de langage génératif (LLM)",
+            "part": "word/document.xml",
+            "paragraph_index": 24,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "5689d72da93a85ad60f32c96fc967a23eba9a8eb7407ab3b201554cc372c22af",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_ia_de_reconnaissance_faciale",
+            "label": "C) IA de reconnaissance faciale",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "f76b0275aba138fc6e9e428f8741e87e2c0a67c23734a89f8847cb9da0d81452",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_ia_de_trading_automatique",
+            "label": "D) IA de trading automatique",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "17f4aae47808f54d67c358615f253ccb55ac9cf4893df8b9efa64f4ed78a4a1e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_modele_de_langage_generatif_llm",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Un modèle comme Claude ou ChatGPT est un exemple de :'.",
+      "validation": {
+        "enum": [
+          "a_ia_robotique",
+          "b_modele_de_langage_generatif_llm",
+          "c_ia_de_reconnaissance_faciale",
+          "d_ia_de_trading_automatique"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_pour_un_artisan_l_usage_de_l_ia_le_plus_simple_a_mettre_en_place_est_souvent",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_pour_un_artisan_l_usage_de_l_ia_le_plus_simple_a_mettre_en_place_est_souvent",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Pour un artisan, l'usage de l'IA le plus simple à mettre en place est souvent :",
+        "options": [
+          {
+            "value": "a_creer_des_robots_de_production",
+            "label": "A) Créer des robots de production",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "e15717bf7912cdf35d6f752a226836daf1772da93790862bcfc8510553b1fe20",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_rediger_des_messages_clients_et_des_descriptions_de_presta",
+            "label": "B) Rédiger des messages clients et des descriptions de prestations",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[28]",
+            "template_text_sha256": "8400f1f7dba528ce2b793db08c341c7ca898b4ead5d493f72a08a9173e394d1f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_analyser_du_big_data",
+            "label": "C) Analyser du Big Data",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "ce5f3be669c654cdf9d8b0b0b86a177e6bf88ee1c2c8b3ac504ca43f78a49ec4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_programmer_des_algorithmes_financiers",
+            "label": "D) Programmer des algorithmes financiers",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "0ade0d2db323cf2fbe7b077417483e055d80cb914ec9f5ee63c07fcabd7d138f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_rediger_des_messages_clients_et_des_descriptions_de_presta",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Pour un artisan, l'usage de l'IA le plus simple à mettre en place est souvent :'.",
+      "validation": {
+        "enum": [
+          "a_creer_des_robots_de_production",
+          "b_rediger_des_messages_clients_et_des_descriptions_de_presta",
+          "c_analyser_du_big_data",
+          "d_programmer_des_algorithmes_financiers"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_cartographier_ses_processus_consiste_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_cartographier_ses_processus_consiste_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Cartographier ses processus consiste à :",
+        "options": [
+          {
+            "value": "a_prendre_des_photos_des_locaux",
+            "label": "A) Prendre des photos des locaux",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "5500de2b3170bb71f9c148d85595387df3fa442cd29dbdbaee335a5f10a2fd2f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_lister_et_visualiser_l_ensemble_des_taches_et_flux_de_trav",
+            "label": "B) Lister et visualiser l'ensemble des tâches et flux de travail de l'activité",
+            "part": "word/document.xml",
+            "paragraph_index": 34,
+            "xpath": "/document/body[1]/p[33]",
+            "template_text_sha256": "df9dc463818c77fd8a8ebe846310efe520054a6f33ab36c813e262da129d7f74",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_localiser_geographiquement_ses_clients",
+            "label": "C) Localiser géographiquement ses clients",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[34]",
+            "template_text_sha256": "42b4806b7abc4665ad8952d438cafd93ee728dcc4210330d06e49ca6d535d98d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_faire_l_inventaire_du_materiel",
+            "label": "D) Faire l'inventaire du matériel",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "7b1c1d9614ceb763c4034eebf8f942e87a84c979a785c523663003759a9ce6fb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_lister_et_visualiser_l_ensemble_des_taches_et_flux_de_trav",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Cartographier ses processus consiste à :'.",
+      "validation": {
+        "enum": [
+          "a_prendre_des_photos_des_locaux",
+          "b_lister_et_visualiser_l_ensemble_des_taches_et_flux_de_trav",
+          "c_localiser_geographiquement_ses_clients",
+          "d_faire_l_inventaire_du_materiel"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_une_tache_est_consideree_automatisable_par_l_ia_si_elle_est",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_une_tache_est_consideree_automatisable_par_l_ia_si_elle_est",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Une tâche est considérée 'automatisable par l'IA' si elle est :",
+        "options": [
+          {
+            "value": "a_realisee_uniquement_par_le_dirigeant",
+            "label": "A) Réalisée uniquement par le dirigeant",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[37]",
+            "template_text_sha256": "d90434e738842e351ee7720b482cf4e7dfc3a29c5738a0da683f6ee953eb18b2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_repetitive_basee_sur_des_regles_claires_et_chronophage",
+            "label": "B) Répétitive, basée sur des règles claires et chronophage",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "2414f775742c837015fc7f6e6f6d0bf1b6c31c955c7838eeae05ad64ae6ca0a4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_tres_couteuse",
+            "label": "C) Très coûteuse",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "b6561a8d539588808909c32259d6ac122664b1e759b1551600d1cd7ed2e70265",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_toujours_en_contact_direct_avec_le_client",
+            "label": "D) Toujours en contact direct avec le client",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "9ac09f3ea2d524744b49990e2895561f79f2267b3eccfccfa086add8c65f8a94",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_repetitive_basee_sur_des_regles_claires_et_chronophage",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Une tâche est considérée 'automatisable par l'IA' si elle est :'.",
+      "validation": {
+        "enum": [
+          "a_realisee_uniquement_par_le_dirigeant",
+          "b_repetitive_basee_sur_des_regles_claires_et_chronophage",
+          "c_tres_couteuse",
+          "d_toujours_en_contact_direct_avec_le_client"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_l_ia_vous_parait_elle_utile_pour_votre_activite_actuelle_argumentez_sincerement",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_l_ia_vous_parait_elle_utile_pour_votre_activite_actuelle_argumentez_sincerement",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 44,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "L'IA me permet de préparer plus vite mes messages clients et mes devis types.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'L'IA me permet de préparer plus vite mes messages clients et mes devis types.' after label 'Question 1 : L'IA vous paraît-elle utile pour votre activité actuelle ? Argumentez sincèrement.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_listez_5_taches_regulieres_de_votre_metier_qui_pourraient_etre_partiellement_as",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_listez_5_taches_regulieres_de_votre_metier_qui_pourraient_etre_partiellement_as",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 49,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Devis, relances, réponses aux avis, description de prestations, planification.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Devis, relances, réponses aux avis, description de prestations, planification.' after label 'Question 2 : Listez 5 tâches régulières de votre métier qui pourraient être partiellement assistées par l'IA.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_pour_generer_des_idees_de_publications_sur_les_reseaux_sociaux_la_meilleure_pra",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_pour_generer_des_idees_de_publications_sur_les_reseaux_sociaux_la_meilleure_pra",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Pour générer des idées de publications sur les réseaux sociaux, la meilleure pratique avec l'IA est de :",
+        "options": [
+          {
+            "value": "a_la_laisser_publier_seule_sans_relecture",
+            "label": "A) La laisser publier seule sans relecture",
+            "part": "word/document.xml",
+            "paragraph_index": 62,
+            "xpath": "/document/body[1]/p[53]",
+            "template_text_sha256": "f85a440ac12846dde72d01cdba41de3b77188df09edadc1cba2d8b166b3ccae0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_l_utiliser_pour_proposer_des_brouillons_que_vous_personnal",
+            "label": "B) L'utiliser pour proposer des brouillons que vous personnalisez ensuite",
+            "part": "word/document.xml",
+            "paragraph_index": 63,
+            "xpath": "/document/body[1]/p[54]",
+            "template_text_sha256": "096328f882733ddb911acb7ae6242c4e27474153d2da90981ac36972b34c77c7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_copier_coller_le_texte_genere_tel_quel",
+            "label": "C) Copier-coller le texte généré tel quel",
+            "part": "word/document.xml",
+            "paragraph_index": 64,
+            "xpath": "/document/body[1]/p[55]",
+            "template_text_sha256": "67dc8d2f98d22dd085128f1cb825a687903f03cb4e37d8b7854ffc2ffb860ac5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_l_utiliser_uniquement_pour_traduire",
+            "label": "D) L'utiliser uniquement pour traduire",
+            "part": "word/document.xml",
+            "paragraph_index": 65,
+            "xpath": "/document/body[1]/p[56]",
+            "template_text_sha256": "596fdc0552749c18f8106cb46090338daf08fb9b02f26c72a8e4f31f69acce0f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_l_utiliser_pour_proposer_des_brouillons_que_vous_personnal",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Pour générer des idées de publications sur les réseaux sociaux, la meilleure pratique avec l'IA est de :'.",
+      "validation": {
+        "enum": [
+          "a_la_laisser_publier_seule_sans_relecture",
+          "b_l_utiliser_pour_proposer_des_brouillons_que_vous_personnal",
+          "c_copier_coller_le_texte_genere_tel_quel",
+          "d_l_utiliser_uniquement_pour_traduire"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_l_ia_peut_personnaliser_la_relation_client_notamment_en",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_l_ia_peut_personnaliser_la_relation_client_notamment_en",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. L'IA peut personnaliser la relation client notamment en :",
+        "options": [
+          {
+            "value": "a_remplacant_totalement_l_echange_humain",
+            "label": "A) Remplaçant totalement l'échange humain",
+            "part": "word/document.xml",
+            "paragraph_index": 67,
+            "xpath": "/document/body[1]/p[58]",
+            "template_text_sha256": "5044201ef2bbb6cdbcecbc5a8d72cb09d32154a40a95df1c799498a58fa312de",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_generant_des_reponses_adaptees_aux_questions_frequentes",
+            "label": "B) Générant des réponses adaptées aux questions fréquentes",
+            "part": "word/document.xml",
+            "paragraph_index": 68,
+            "xpath": "/document/body[1]/p[59]",
+            "template_text_sha256": "0f68fd06f7b2bf97cd16465ee21bafc8ffbe0efd558ba5c0a04ffc5beefcdfd5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_analysant_les_comptes_bancaires_des_clients",
+            "label": "C) Analysant les comptes bancaires des clients",
+            "part": "word/document.xml",
+            "paragraph_index": 69,
+            "xpath": "/document/body[1]/p[60]",
+            "template_text_sha256": "d9a23b794c8cbb8d11a7909404b4b3be66401476a28767562a56a76206ea17b0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_relancant_automatiquement_les_impayes_sans_controle",
+            "label": "D) Relançant automatiquement les impayés sans contrôle",
+            "part": "word/document.xml",
+            "paragraph_index": 70,
+            "xpath": "/document/body[1]/p[61]",
+            "template_text_sha256": "128ac8136757e219ec29a0a64832999afb77580812faca5cfaaa0d025ba52765",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_generant_des_reponses_adaptees_aux_questions_frequentes",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. L'IA peut personnaliser la relation client notamment en :'.",
+      "validation": {
+        "enum": [
+          "a_remplacant_totalement_l_echange_humain",
+          "b_generant_des_reponses_adaptees_aux_questions_frequentes",
+          "c_analysant_les_comptes_bancaires_des_clients",
+          "d_relancant_automatiquement_les_impayes_sans_controle"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_un_chatbot_sur_le_site_d_un_artisan_est_surtout_utile_pour",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_un_chatbot_sur_le_site_d_un_artisan_est_surtout_utile_pour",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Un chatbot sur le site d'un artisan est surtout utile pour :",
+        "options": [
+          {
+            "value": "a_remplacer_l_intervention_technique",
+            "label": "A) Remplacer l'intervention technique",
+            "part": "word/document.xml",
+            "paragraph_index": 72,
+            "xpath": "/document/body[1]/p[63]",
+            "template_text_sha256": "b880ca269cad0503a5fe78a6fb5baa049829d605f7748c2b31dae4bc420f7eeb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_repondre_24h_24_aux_questions_courantes_horaires_tarifs_rd",
+            "label": "B) Répondre 24h/24 aux questions courantes (horaires, tarifs, RDV)",
+            "part": "word/document.xml",
+            "paragraph_index": 73,
+            "xpath": "/document/body[1]/p[64]",
+            "template_text_sha256": "8e8a5b01b18cdd2bb8afc94e3d4cd4278b7dba23811da0fde3524057e194a029",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_facturer_automatiquement",
+            "label": "C) Facturer automatiquement",
+            "part": "word/document.xml",
+            "paragraph_index": 74,
+            "xpath": "/document/body[1]/p[65]",
+            "template_text_sha256": "78958249c7036c16438921fabe5acf07a7fb37ea6e93d55a3c72e4de197dc6e1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_surveiller_la_concurrence",
+            "label": "D) Surveiller la concurrence",
+            "part": "word/document.xml",
+            "paragraph_index": 75,
+            "xpath": "/document/body[1]/p[66]",
+            "template_text_sha256": "142705f0b1ad6796f2e542aa467a7845a4d07ab954bf35559aba4af8cc16a51e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_repondre_24h_24_aux_questions_courantes_horaires_tarifs_rd",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Un chatbot sur le site d'un artisan est surtout utile pour :'.",
+      "validation": {
+        "enum": [
+          "a_remplacer_l_intervention_technique",
+          "b_repondre_24h_24_aux_questions_courantes_horaires_tarifs_rd",
+          "c_facturer_automatiquement",
+          "d_surveiller_la_concurrence"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_pour_optimiser_une_publicite_facebook_instagram_avec_l_ia_on_peut",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_pour_optimiser_une_publicite_facebook_instagram_avec_l_ia_on_peut",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Pour optimiser une publicité Facebook/Instagram avec l'IA, on peut :",
+        "options": [
+          {
+            "value": "a_laisser_l_ia_choisir_seule_le_budget_sans_controle",
+            "label": "A) Laisser l'IA choisir seule le budget sans contrôle",
+            "part": "word/document.xml",
+            "paragraph_index": 77,
+            "xpath": "/document/body[1]/p[68]",
+            "template_text_sha256": "cf27cbaaf4ba7e13a4cc9dc9055a27742bc95d325016dc0523b785265a38d9cb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_utiliser_le_ciblage_automatique_tout_en_gardant_la_main_su",
+            "label": "B) Utiliser le ciblage automatique tout en gardant la main sur le message",
+            "part": "word/document.xml",
+            "paragraph_index": 78,
+            "xpath": "/document/body[1]/p[69]",
+            "template_text_sha256": "2aa4e7f31ddcc3683c80dfc7736dd417d7dac427750c2fa735b71e8b06dde002",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_se_passer_totalement_de_strategie",
+            "label": "C) Se passer totalement de stratégie",
+            "part": "word/document.xml",
+            "paragraph_index": 79,
+            "xpath": "/document/body[1]/p[70]",
+            "template_text_sha256": "76c42eaa593312e33b8a97c5929cbd66dbc9a47b7f538499a652b28464c00b65",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_n_utiliser_que_des_visuels_generes_sans_relecture",
+            "label": "D) N'utiliser que des visuels générés sans relecture",
+            "part": "word/document.xml",
+            "paragraph_index": 80,
+            "xpath": "/document/body[1]/p[71]",
+            "template_text_sha256": "ac33b0ce58dbdd34dd6d3cd20de8713f9331474eb8cbe97abe554b2ece7c0f35",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_utiliser_le_ciblage_automatique_tout_en_gardant_la_main_su",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Pour optimiser une publicité Facebook/Instagram avec l'IA, on peut :'.",
+      "validation": {
+        "enum": [
+          "a_laisser_l_ia_choisir_seule_le_budget_sans_controle",
+          "b_utiliser_le_ciblage_automatique_tout_en_gardant_la_main_su",
+          "c_se_passer_totalement_de_strategie",
+          "d_n_utiliser_que_des_visuels_generes_sans_relecture"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_analyser_les_avis_google_avec_l_ia_permet_surtout_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_analyser_les_avis_google_avec_l_ia_permet_surtout_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Analyser les avis Google avec l'IA permet surtout de :",
+        "options": [
+          {
+            "value": "a_supprimer_les_avis_negatifs",
+            "label": "A) Supprimer les avis négatifs",
+            "part": "word/document.xml",
+            "paragraph_index": 82,
+            "xpath": "/document/body[1]/p[73]",
+            "template_text_sha256": "c4bcb12643a4f6f3bb57108529ac9923a58f4211caa520c2726fe85b00a6af10",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_identifier_les_themes_recurrents_de_satisfaction_et_d_insa",
+            "label": "B) Identifier les thèmes récurrents de satisfaction et d'insatisfaction",
+            "part": "word/document.xml",
+            "paragraph_index": 83,
+            "xpath": "/document/body[1]/p[74]",
+            "template_text_sha256": "5d620572f58dfbafc296a1c7caffa903fff12b44fd32f4dceed32ce169e36fd1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_contester_systematiquement_les_avis",
+            "label": "C) Contester systématiquement les avis",
+            "part": "word/document.xml",
+            "paragraph_index": 84,
+            "xpath": "/document/body[1]/p[75]",
+            "template_text_sha256": "62bed536b42d753cee03501ac7420ca311e535c7d124245d6133b26250c0462c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_repondre_sans_jamais_relire",
+            "label": "D) Répondre sans jamais relire",
+            "part": "word/document.xml",
+            "paragraph_index": 85,
+            "xpath": "/document/body[1]/p[76]",
+            "template_text_sha256": "7e3cccb1f3f37fb141189fc929ab15b44bfe1294eb159a4f44fd0b4dc90893c6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_identifier_les_themes_recurrents_de_satisfaction_et_d_insa",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Analyser les avis Google avec l'IA permet surtout de :'.",
+      "validation": {
+        "enum": [
+          "a_supprimer_les_avis_negatifs",
+          "b_identifier_les_themes_recurrents_de_satisfaction_et_d_insa",
+          "c_contester_systematiquement_les_avis",
+          "d_repondre_sans_jamais_relire"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_comment_utiliseriez_vous_un_assistant_ia_pour_ameliorer_votre_communication_cli",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_comment_utiliseriez_vous_un_assistant_ia_pour_ameliorer_votre_communication_cli",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 88,
+          "xpath": "/document/body[1]/tbl[5]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je générerais des brouillons de posts que je retouche ensuite avec mes photos de chantier.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je générerais des brouillons de posts que je retouche ensuite avec mes photos de chantier.' after label 'Question 1 : Comment utiliseriez-vous un assistant IA pour améliorer votre communication client ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_en_quoi_l_ia_peut_elle_renforcer_votre_relation_client_sans_remplacer_le_contac",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_en_quoi_l_ia_peut_elle_renforcer_votre_relation_client_sans_remplacer_le_contac",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 93,
+          "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "En laissant toujours un canal humain disponible pour les questions complexes.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'En laissant toujours un canal humain disponible pour les questions complexes.' after label 'Question 2 : En quoi l'IA peut-elle renforcer votre relation client sans remplacer le contact humain ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_le_rgpd_s_applique_a_une_tpe_des_lors_qu_elle",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_le_rgpd_s_applique_a_une_tpe_des_lors_qu_elle",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Le RGPD s'applique à une TPE dès lors qu'elle :",
+        "options": [
+          {
+            "value": "a_emploie_plus_de_20_salaries",
+            "label": "A) Emploie plus de 20 salariés",
+            "part": "word/document.xml",
+            "paragraph_index": 106,
+            "xpath": "/document/body[1]/p[89]",
+            "template_text_sha256": "9be55f2f38c23fa69ad2573a6ec377daf769b00e4f73f3da0c9625ba1e506a10",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_traite_des_donnees_personnelles_de_clients_nom_e_mail_tele",
+            "label": "B) Traite des données personnelles de clients (nom, e-mail, téléphone...)",
+            "part": "word/document.xml",
+            "paragraph_index": 107,
+            "xpath": "/document/body[1]/p[90]",
+            "template_text_sha256": "0fadac02f50ad434a0d64c0de0133969b33c9629fc4ba7f2c4029d2bc31742bd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_a_un_ca_superieur_a_500_000",
+            "label": "C) A un CA supérieur à 500 000 €",
+            "part": "word/document.xml",
+            "paragraph_index": 108,
+            "xpath": "/document/body[1]/p[91]",
+            "template_text_sha256": "687c1f27a9d08e2779b9ef0ac87d10fe40da88617585248a9dc953bb78fd3d0d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_est_implantee_a_l_etranger",
+            "label": "D) Est implantée à l'étranger",
+            "part": "word/document.xml",
+            "paragraph_index": 109,
+            "xpath": "/document/body[1]/p[92]",
+            "template_text_sha256": "3a67f317590ec09ebb5b80d74ff3e165f2b488a6c19b1fc94c28726b2721b6de",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_traite_des_donnees_personnelles_de_clients_nom_e_mail_tele",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Le RGPD s'applique à une TPE dès lors qu'elle :'.",
+      "validation": {
+        "enum": [
+          "a_emploie_plus_de_20_salaries",
+          "b_traite_des_donnees_personnelles_de_clients_nom_e_mail_tele",
+          "c_a_un_ca_superieur_a_500_000",
+          "d_est_implantee_a_l_etranger"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_en_redigeant_un_e_mail_avec_une_ia_generative_contenant_des_coordonnees_client",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_en_redigeant_un_e_mail_avec_une_ia_generative_contenant_des_coordonnees_client",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. En rédigeant un e-mail avec une IA générative contenant des coordonnées client, il faut :",
+        "options": [
+          {
+            "value": "a_ne_rien_changer_ces_outils_sont_toujours_confidentiels",
+            "label": "A) Ne rien changer, ces outils sont toujours confidentiels",
+            "part": "word/document.xml",
+            "paragraph_index": 111,
+            "xpath": "/document/body[1]/p[94]",
+            "template_text_sha256": "2a69b8ff2f6a67751578e982cdb53ba8837c555a2da490173006741de47ad928",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_rester_prudent_et_privilegier_des_donnees_fictives_ou_anon",
+            "label": "B) Rester prudent et privilégier des données fictives ou anonymisées",
+            "part": "word/document.xml",
+            "paragraph_index": 112,
+            "xpath": "/document/body[1]/p[95]",
+            "template_text_sha256": "c0d4d226522d613a5473d2ef5f9ed1dd50aff5b13db6b67488760e339d01870e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_obtenir_un_agrement_cnil_avant_chaque_usage",
+            "label": "C) Obtenir un agrément CNIL avant chaque usage",
+            "part": "word/document.xml",
+            "paragraph_index": 113,
+            "xpath": "/document/body[1]/p[96]",
+            "template_text_sha256": "238f458a10ac860d49518abe8af5c08b34fbd950a4c1dde8c287142344b705cb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_attendre_l_accord_du_client_pour_chaque_message",
+            "label": "D) Attendre l'accord du client pour chaque message",
+            "part": "word/document.xml",
+            "paragraph_index": 114,
+            "xpath": "/document/body[1]/p[97]",
+            "template_text_sha256": "340352fefb5fcd1821f366a5a55e093537c85b5cb086f5e16403b97b57a06b6e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_rester_prudent_et_privilegier_des_donnees_fictives_ou_anon",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. En rédigeant un e-mail avec une IA générative contenant des coordonnées client, il faut :'.",
+      "validation": {
+        "enum": [
+          "a_ne_rien_changer_ces_outils_sont_toujours_confidentiels",
+          "b_rester_prudent_et_privilegier_des_donnees_fictives_ou_anon",
+          "c_obtenir_un_agrement_cnil_avant_chaque_usage",
+          "d_attendre_l_accord_du_client_pour_chaque_message"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_un_workflow_automatise_consiste_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_un_workflow_automatise_consiste_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Un workflow automatisé consiste à :",
+        "options": [
+          {
+            "value": "a_faire_travailler_des_machines_en_usine",
+            "label": "A) Faire travailler des machines en usine",
+            "part": "word/document.xml",
+            "paragraph_index": 116,
+            "xpath": "/document/body[1]/p[99]",
+            "template_text_sha256": "0ed03141e490fe6c4dd9402ea2a83cc1d71d288bfa25c4de2f78d698ac1c2413",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_enchainer_automatiquement_des_taches_entre_plusieurs_outil",
+            "label": "B) Enchaîner automatiquement des tâches entre plusieurs outils sans action manuelle",
+            "part": "word/document.xml",
+            "paragraph_index": 117,
+            "xpath": "/document/body[1]/p[100]",
+            "template_text_sha256": "2e86e13a20418d1ff2600d067e68eb0e0c04fd76aed78ce939f3d82f9548977e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_reduire_les_etapes_de_fabrication",
+            "label": "C) Réduire les étapes de fabrication",
+            "part": "word/document.xml",
+            "paragraph_index": 118,
+            "xpath": "/document/body[1]/p[101]",
+            "template_text_sha256": "6dfa02c1e10fa2bf34bec6928d582748e03f7892ae6da247ad672811c6ffc8b6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_reorganiser_les_horaires_du_personnel",
+            "label": "D) Réorganiser les horaires du personnel",
+            "part": "word/document.xml",
+            "paragraph_index": 119,
+            "xpath": "/document/body[1]/p[102]",
+            "template_text_sha256": "daed614a6d3393a7fb22ba679155ffd12eb52fc791c315608ecccf458b71e2f9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_enchainer_automatiquement_des_taches_entre_plusieurs_outil",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Un workflow automatisé consiste à :'.",
+      "validation": {
+        "enum": [
+          "a_faire_travailler_des_machines_en_usine",
+          "b_enchainer_automatiquement_des_taches_entre_plusieurs_outil",
+          "c_reduire_les_etapes_de_fabrication",
+          "d_reorganiser_les_horaires_du_personnel"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_un_outil_comme_make_ou_zapier_sert_principalement_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_un_outil_comme_make_ou_zapier_sert_principalement_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Un outil comme Make ou Zapier sert principalement à :",
+        "options": [
+          {
+            "value": "a_creer_des_applications_mobiles",
+            "label": "A) Créer des applications mobiles",
+            "part": "word/document.xml",
+            "paragraph_index": 121,
+            "xpath": "/document/body[1]/p[104]",
+            "template_text_sha256": "745f94d6c2b98859e7977519483166ab1312a164c5bbd86cd2c929e71e2547bd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_connecter_des_applications_entre_elles_et_automatiser_des",
+            "label": "B) Connecter des applications entre elles et automatiser des flux de données",
+            "part": "word/document.xml",
+            "paragraph_index": 122,
+            "xpath": "/document/body[1]/p[105]",
+            "template_text_sha256": "03a5c6565c9946ccea86b9afd37e954b3ab7d63b57c56a5e30c0da13836e5ca1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_gerer_la_paie",
+            "label": "C) Gérer la paie",
+            "part": "word/document.xml",
+            "paragraph_index": 123,
+            "xpath": "/document/body[1]/p[106]",
+            "template_text_sha256": "65bfe1629e9583848502cc1918957548d7aed0735a555e4adfb32c8be053b357",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_creer_des_sites_e_commerce",
+            "label": "D) Créer des sites e-commerce",
+            "part": "word/document.xml",
+            "paragraph_index": 124,
+            "xpath": "/document/body[1]/p[107]",
+            "template_text_sha256": "0ca7c55bf80cff1c0c16f8b3437b091750f0af7403f67268547bd9645d37b057",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_connecter_des_applications_entre_elles_et_automatiser_des",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Un outil comme Make ou Zapier sert principalement à :'.",
+      "validation": {
+        "enum": [
+          "a_creer_des_applications_mobiles",
+          "b_connecter_des_applications_entre_elles_et_automatiser_des",
+          "c_gerer_la_paie",
+          "d_creer_des_sites_e_commerce"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_la_fenetre_de_contexte_d_un_modele_ia_designe",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_la_fenetre_de_contexte_d_un_modele_ia_designe",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. La 'fenêtre de contexte' d'un modèle IA désigne :",
+        "options": [
+          {
+            "value": "a_la_taille_d_ecran_recommandee",
+            "label": "A) La taille d'écran recommandée",
+            "part": "word/document.xml",
+            "paragraph_index": 126,
+            "xpath": "/document/body[1]/p[109]",
+            "template_text_sha256": "987641a6644f59cc138356a326f9fe8d51856d06434ae25193b45346c4a1b870",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_la_quantite_de_texte_que_le_modele_peut_traiter_en_une_con",
+            "label": "B) La quantité de texte que le modèle peut traiter en une conversation",
+            "part": "word/document.xml",
+            "paragraph_index": 127,
+            "xpath": "/document/body[1]/p[110]",
+            "template_text_sha256": "3ed1fa990a78b44c05dc0456f1e888807553a63704169971efa11f3663f5768e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_la_localisation_du_serveur",
+            "label": "C) La localisation du serveur",
+            "part": "word/document.xml",
+            "paragraph_index": 128,
+            "xpath": "/document/body[1]/p[111]",
+            "template_text_sha256": "f80e4b3e649a9b6f67d2f0dae2590239a8998dbbe75b135e639dbe903d446c10",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_duree_de_l_abonnement",
+            "label": "D) La durée de l'abonnement",
+            "part": "word/document.xml",
+            "paragraph_index": 129,
+            "xpath": "/document/body[1]/p[112]",
+            "template_text_sha256": "52c20ffdd635344c31c713604e61d45f3c9ff2229ddbf5a623699c1d14774d68",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_la_quantite_de_texte_que_le_modele_peut_traiter_en_une_con",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. La 'fenêtre de contexte' d'un modèle IA désigne :'.",
+      "validation": {
+        "enum": [
+          "a_la_taille_d_ecran_recommandee",
+          "b_la_quantite_de_texte_que_le_modele_peut_traiter_en_une_con",
+          "c_la_localisation_du_serveur",
+          "d_la_duree_de_l_abonnement"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_expliquez_les_elements_cles_d_un_prompt_efficace_avec_un_exemple_tire_de_votre",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_expliquez_les_elements_cles_d_un_prompt_efficace_avec_un_exemple_tire_de_votre",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 132,
+          "xpath": "/document/body[1]/tbl[8]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Contexte, objectif, ton et format attendu.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Contexte, objectif, ton et format attendu.' after label 'Question 1 : Expliquez les éléments clés d'un prompt efficace, avec un exemple tiré de votre métier.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_quelles_donnees_clients_ne_devez_vous_jamais_saisir_dans_une_ia_publique_gratui",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_quelles_donnees_clients_ne_devez_vous_jamais_saisir_dans_une_ia_publique_gratui",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 137,
+          "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Toujours relire avant publication pour éviter les erreurs factuelles.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Toujours relire avant publication pour éviter les erreurs factuelles.' after label 'Question 2 : Quelles données clients ne devez-vous jamais saisir dans une IA publique gratuite ? Pourquoi ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_la_conduite_du_changement_lors_de_l_arrivee_de_l_ia_dans_une_tpe_implique_surto",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_la_conduite_du_changement_lors_de_l_arrivee_de_l_ia_dans_une_tpe_implique_surto",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. La conduite du changement lors de l'arrivée de l'IA dans une TPE implique surtout de :",
+        "options": [
+          {
+            "value": "a_imposer_les_outils_sans_explication",
+            "label": "A) Imposer les outils sans explication",
+            "part": "word/document.xml",
+            "paragraph_index": 150,
+            "xpath": "/document/body[1]/p[125]",
+            "template_text_sha256": "7dae9ad9c5626e638303c41504781e71c0a2494e8046737021e50a97a2e52d0b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_former_et_accompagner_les_collaborateurs_pour_faciliter_l",
+            "label": "B) Former et accompagner les collaborateurs pour faciliter l'adoption",
+            "part": "word/document.xml",
+            "paragraph_index": 151,
+            "xpath": "/document/body[1]/p[126]",
+            "template_text_sha256": "c862a12a89b5dae8a30efa74401cb098b8b8bfa42bd78bb41ec4b3fdd0f68352",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_remplacer_progressivement_les_employes",
+            "label": "C) Remplacer progressivement les employés",
+            "part": "word/document.xml",
+            "paragraph_index": 152,
+            "xpath": "/document/body[1]/p[127]",
+            "template_text_sha256": "c4c298cc94640708ee70e297e0a67c69e6db21f6a6762e0e4aeaef8c068ca45f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_changer_de_secteur_d_activite",
+            "label": "D) Changer de secteur d'activité",
+            "part": "word/document.xml",
+            "paragraph_index": 153,
+            "xpath": "/document/body[1]/p[128]",
+            "template_text_sha256": "49b38fcec4835a55e0996eab5d140351b2bd52c5d7eb4f28e9ed47ee99efd70b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_former_et_accompagner_les_collaborateurs_pour_faciliter_l",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. La conduite du changement lors de l'arrivée de l'IA dans une TPE implique surtout de :'.",
+      "validation": {
+        "enum": [
+          "a_imposer_les_outils_sans_explication",
+          "b_former_et_accompagner_les_collaborateurs_pour_faciliter_l",
+          "c_remplacer_progressivement_les_employes",
+          "d_changer_de_secteur_d_activite"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_une_charte_ia_en_entreprise_sert_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_une_charte_ia_en_entreprise_sert_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Une charte IA en entreprise sert à :",
+        "options": [
+          {
+            "value": "a_certifier_une_conformite_iso",
+            "label": "A) Certifier une conformité ISO",
+            "part": "word/document.xml",
+            "paragraph_index": 155,
+            "xpath": "/document/body[1]/p[130]",
+            "template_text_sha256": "3d8b2d35fa51980470a0a7316d36a5dc0a5510e731eb2a976c95f107b4541ecf",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_definir_les_regles_d_usage_ethique_et_responsable_de_l_ia",
+            "label": "B) Définir les règles d'usage éthique et responsable de l'IA",
+            "part": "word/document.xml",
+            "paragraph_index": 156,
+            "xpath": "/document/body[1]/p[131]",
+            "template_text_sha256": "af6be0f5e281dc661c1f6cb1380a04b3058b2c0b7007a1bdfd27b7fa9b837439",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_garantir_l_absence_totale_de_biais",
+            "label": "C) Garantir l'absence totale de biais",
+            "part": "word/document.xml",
+            "paragraph_index": 157,
+            "xpath": "/document/body[1]/p[132]",
+            "template_text_sha256": "3e424a20853b6c42ccf91782e4b6abf65e7d7f95aa4bd080ec71009001e8b818",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_remplacer_le_reglement_interieur",
+            "label": "D) Remplacer le règlement intérieur",
+            "part": "word/document.xml",
+            "paragraph_index": 158,
+            "xpath": "/document/body[1]/p[133]",
+            "template_text_sha256": "3606ebefbab3ba183dbe8f36845efbb49925ee4daf5299cd0b3e72c5f1acfeaa",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_definir_les_regles_d_usage_ethique_et_responsable_de_l_ia",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Une charte IA en entreprise sert à :'.",
+      "validation": {
+        "enum": [
+          "a_certifier_une_conformite_iso",
+          "b_definir_les_regles_d_usage_ethique_et_responsable_de_l_ia",
+          "c_garantir_l_absence_totale_de_biais",
+          "d_remplacer_le_reglement_interieur"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_un_biais_algorithmique_designe",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_un_biais_algorithmique_designe",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Un biais algorithmique désigne :",
+        "options": [
+          {
+            "value": "a_une_erreur_de_calcul",
+            "label": "A) Une erreur de calcul",
+            "part": "word/document.xml",
+            "paragraph_index": 160,
+            "xpath": "/document/body[1]/p[135]",
+            "template_text_sha256": "1dd1431b6b83c2e5889289d1eeaf2c1c49b37b4f81999f858d946d86f51f86a0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_une_distorsion_des_resultats_liee_a_des_donnees_d_entraine",
+            "label": "B) Une distorsion des résultats liée à des données d'entraînement déséquilibrées",
+            "part": "word/document.xml",
+            "paragraph_index": 161,
+            "xpath": "/document/body[1]/p[136]",
+            "template_text_sha256": "e3a1bf74a29a0574846455c54dec5f9d0ee169484aaef9e72db4a221ffc27bad",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_un_bug_informatique",
+            "label": "C) Un bug informatique",
+            "part": "word/document.xml",
+            "paragraph_index": 162,
+            "xpath": "/document/body[1]/p[137]",
+            "template_text_sha256": "96bec05b2a67b231019e415c5be9bfa90ac3adf074e71ed0b7d2e56947cc967b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_un_probleme_de_connexion_reseau",
+            "label": "D) Un problème de connexion réseau",
+            "part": "word/document.xml",
+            "paragraph_index": 163,
+            "xpath": "/document/body[1]/p[138]",
+            "template_text_sha256": "38d3d03a1cc3557c6229dc578ab1eb61f93fd6985c427c3dac4a0942e08559dd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_une_distorsion_des_resultats_liee_a_des_donnees_d_entraine",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Un biais algorithmique désigne :'.",
+      "validation": {
+        "enum": [
+          "a_une_erreur_de_calcul",
+          "b_une_distorsion_des_resultats_liee_a_des_donnees_d_entraine",
+          "c_un_bug_informatique",
+          "d_un_probleme_de_connexion_reseau"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_le_reglement_europeen_sur_l_ia_ai_act_classe_les_systemes_selon",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_le_reglement_europeen_sur_l_ia_ai_act_classe_les_systemes_selon",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Le règlement européen sur l'IA (AI Act) classe les systèmes selon :",
+        "options": [
+          {
+            "value": "a_leur_cout",
+            "label": "A) Leur coût",
+            "part": "word/document.xml",
+            "paragraph_index": 165,
+            "xpath": "/document/body[1]/p[140]",
+            "template_text_sha256": "96a45da26b96688382d159e5c298e32c7c81853635189a65931bb123e430e38e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_leur_niveau_de_risque_pour_les_droits_fondamentaux_et_la_s",
+            "label": "B) Leur niveau de risque pour les droits fondamentaux et la sécurité",
+            "part": "word/document.xml",
+            "paragraph_index": 166,
+            "xpath": "/document/body[1]/p[141]",
+            "template_text_sha256": "77705154597e6ebb5a610173c88deffcb52aa565d57a56e16e8ecc979fd234d7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_la_nationalite_de_l_editeur",
+            "label": "C) La nationalité de l'éditeur",
+            "part": "word/document.xml",
+            "paragraph_index": 167,
+            "xpath": "/document/body[1]/p[142]",
+            "template_text_sha256": "416a9270ba4c72c9a00394d6aa50c3e9d9b1bbbf667e223bb1692c75036d5a63",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_taille_de_l_entreprise_utilisatrice",
+            "label": "D) La taille de l'entreprise utilisatrice",
+            "part": "word/document.xml",
+            "paragraph_index": 168,
+            "xpath": "/document/body[1]/p[143]",
+            "template_text_sha256": "85a3664bd08ad088cd62f29044582a87d5d4a016b9bb25476391dbc0a3dd31c1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_leur_niveau_de_risque_pour_les_droits_fondamentaux_et_la_s",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Le règlement européen sur l'IA (AI Act) classe les systèmes selon :'.",
+      "validation": {
+        "enum": [
+          "a_leur_cout",
+          "b_leur_niveau_de_risque_pour_les_droits_fondamentaux_et_la_s",
+          "c_la_nationalite_de_l_editeur",
+          "d_la_taille_de_l_entreprise_utilisatrice"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_face_a_des_collaborateurs_inquiets_de_l_ia_un_dirigeant_doit_avant_tout",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_face_a_des_collaborateurs_inquiets_de_l_ia_un_dirigeant_doit_avant_tout",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Face à des collaborateurs inquiets de l'IA, un dirigeant doit avant tout :",
+        "options": [
+          {
+            "value": "a_imposer_les_outils_par_autorite",
+            "label": "A) Imposer les outils par autorité",
+            "part": "word/document.xml",
+            "paragraph_index": 170,
+            "xpath": "/document/body[1]/p[145]",
+            "template_text_sha256": "7a6cd7e88efebba52d403bface434de6b18cda299ad52eb47745442e0786df14",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_ecouter_expliquer_les_objectifs_et_les_impliquer_dans_le_c",
+            "label": "B) Écouter, expliquer les objectifs et les impliquer dans le changement",
+            "part": "word/document.xml",
+            "paragraph_index": 171,
+            "xpath": "/document/body[1]/p[146]",
+            "template_text_sha256": "6a721d875d3f1d1079f8ebb1864d3e5d9f9850053e06d750d9fc435eb236e3b9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_ignorer_leurs_craintes",
+            "label": "C) Ignorer leurs craintes",
+            "part": "word/document.xml",
+            "paragraph_index": 172,
+            "xpath": "/document/body[1]/p[147]",
+            "template_text_sha256": "e0c28679b468d1e97c27988ceaeb4fb5bca5ac28cb092fa36726f6eb1889a717",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_renoncer_totalement_a_l_ia",
+            "label": "D) Renoncer totalement à l'IA",
+            "part": "word/document.xml",
+            "paragraph_index": 173,
+            "xpath": "/document/body[1]/p[148]",
+            "template_text_sha256": "b96212c91948430ff93c043f14b145c4732bec2aef77761ea566ccb18dba6710",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_ecouter_expliquer_les_objectifs_et_les_impliquer_dans_le_c",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Face à des collaborateurs inquiets de l'IA, un dirigeant doit avant tout :'.",
+      "validation": {
+        "enum": [
+          "a_imposer_les_outils_par_autorite",
+          "b_ecouter_expliquer_les_objectifs_et_les_impliquer_dans_le_c",
+          "c_ignorer_leurs_craintes",
+          "d_renoncer_totalement_a_l_ia"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_un_collaborateur_vous_dit_que_l_ia_n_est_pas_faite_pour_une_petite_structure_qu",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_un_collaborateur_vous_dit_que_l_ia_n_est_pas_faite_pour_une_petite_structure_qu",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 176,
+          "xpath": "/document/body[1]/tbl[11]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Même une petite structure gagne du temps sur les tâches répétitives grâce à l'IA.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Même une petite structure gagne du temps sur les tâches répétitives grâce à l'IA.' after label 'Question 1 : Un collaborateur vous dit que l'IA n'est pas faite pour une petite structure. Que lui répondez-vous ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_pourquoi_est_il_important_de_garder_un_humain_dans_la_boucle_lors_de_l_usage_de",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_pourquoi_est_il_important_de_garder_un_humain_dans_la_boucle_lors_de_l_usage_de",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 181,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Pour garder une supervision humaine sur les décisions importantes.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Pour garder une supervision humaine sur les décisions importantes.' after label 'Question 2 : Pourquoi est-il important de garder un humain dans la boucle lors de l'usage de l'IA ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_le_roi_d_un_outil_ia_pour_une_tpe_se_calcule_surtout_par",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_le_roi_d_un_outil_ia_pour_une_tpe_se_calcule_surtout_par",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Le ROI d'un outil IA pour une TPE se calcule surtout par :",
+        "options": [
+          {
+            "value": "a_le_nombre_de_contenus_generes",
+            "label": "A) Le nombre de contenus générés",
+            "part": "word/document.xml",
+            "paragraph_index": 194,
+            "xpath": "/document/body[1]/p[161]",
+            "template_text_sha256": "0a58b18ac699eb9ef8f9f5ae25920b87903443e4c85883655ba0d607a1510df6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_temps_economise_x_le_taux_horaire_moins_le_cout_de_l_ou",
+            "label": "B) Le temps économisé x le taux horaire, moins le coût de l'outil",
+            "part": "word/document.xml",
+            "paragraph_index": 195,
+            "xpath": "/document/body[1]/p[162]",
+            "template_text_sha256": "8a2f44f66051ee635cccd9521d926543faeae42c7243fa46bcc15da402520b46",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_la_satisfaction_des_employes",
+            "label": "C) La satisfaction des employés",
+            "part": "word/document.xml",
+            "paragraph_index": 196,
+            "xpath": "/document/body[1]/p[163]",
+            "template_text_sha256": "a65c1b36c63b6ce0d02f4263d60a72b0e73f8ad559b63bdc0ceab68cb771fe55",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_nombre_de_vues_sur_les_reseaux",
+            "label": "D) Le nombre de vues sur les réseaux",
+            "part": "word/document.xml",
+            "paragraph_index": 197,
+            "xpath": "/document/body[1]/p[164]",
+            "template_text_sha256": "eeed361a977aa5d7f18623057e8b2fad89cf3a24ebb99bf85cf1d3c8193888ed",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_temps_economise_x_le_taux_horaire_moins_le_cout_de_l_ou",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Le ROI d'un outil IA pour une TPE se calcule surtout par :'.",
+      "validation": {
+        "enum": [
+          "a_le_nombre_de_contenus_generes",
+          "b_le_temps_economise_x_le_taux_horaire_moins_le_cout_de_l_ou",
+          "c_la_satisfaction_des_employes",
+          "d_le_nombre_de_vues_sur_les_reseaux"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_pour_mesurer_l_efficacite_d_un_outil_ia_de_generation_de_contenu_marketing_on_r",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_pour_mesurer_l_efficacite_d_un_outil_ia_de_generation_de_contenu_marketing_on_r",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Pour mesurer l'efficacité d'un outil IA de génération de contenu marketing, on regarde surtout :",
+        "options": [
+          {
+            "value": "a_le_nombre_de_publications",
+            "label": "A) Le nombre de publications",
+            "part": "word/document.xml",
+            "paragraph_index": 199,
+            "xpath": "/document/body[1]/p[166]",
+            "template_text_sha256": "e5b28518943b998c8ffacfa716197b857d5d0b4ec975fd16a97be3e662153376",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_taux_d_engagement_likes_commentaires_prises_de_contact",
+            "label": "B) Le taux d'engagement (likes, commentaires, prises de contact)",
+            "part": "word/document.xml",
+            "paragraph_index": 200,
+            "xpath": "/document/body[1]/p[167]",
+            "template_text_sha256": "dc999192558e110eb26f1f870b42bdbbc90387fec1b3f1961b145d3a31ca14c5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_prix_de_l_abonnement",
+            "label": "C) Le prix de l'abonnement",
+            "part": "word/document.xml",
+            "paragraph_index": 201,
+            "xpath": "/document/body[1]/p[168]",
+            "template_text_sha256": "f61efbd81359f32362ed97eab1aef7300b9470d8f2034f1322800c329a93e47f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_vitesse_de_generation",
+            "label": "D) La vitesse de génération",
+            "part": "word/document.xml",
+            "paragraph_index": 202,
+            "xpath": "/document/body[1]/p[169]",
+            "template_text_sha256": "908e601dee8d644509aa6496ab52041fe87ea991c45c2d0d8cac017aa1adb0f4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_taux_d_engagement_likes_commentaires_prises_de_contact",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Pour mesurer l'efficacité d'un outil IA de génération de contenu marketing, on regarde surtout :'.",
+      "validation": {
+        "enum": [
+          "a_le_nombre_de_publications",
+          "b_le_taux_d_engagement_likes_commentaires_prises_de_contact",
+          "c_le_prix_de_l_abonnement",
+          "d_la_vitesse_de_generation"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_une_boucle_d_amelioration_continue_avec_l_ia_consiste_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_une_boucle_d_amelioration_continue_avec_l_ia_consiste_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Une boucle d'amélioration continue avec l'IA consiste à :",
+        "options": [
+          {
+            "value": "a_utiliser_l_outil_toujours_de_la_meme_facon",
+            "label": "A) Utiliser l'outil toujours de la même façon",
+            "part": "word/document.xml",
+            "paragraph_index": 204,
+            "xpath": "/document/body[1]/p[171]",
+            "template_text_sha256": "4935e1b9e2f3b0043836d1af799606bc895834106616e6edd8b46896fa393109",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_tester_mesurer_analyser_et_ajuster_regulierement_son_usage",
+            "label": "B) Tester, mesurer, analyser et ajuster régulièrement son usage",
+            "part": "word/document.xml",
+            "paragraph_index": 205,
+            "xpath": "/document/body[1]/p[172]",
+            "template_text_sha256": "44ae2bb5df0eac5319612fe46b9128efa7beaedc225004e1b4aa3089f77b9d2d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_changer_d_outil_chaque_mois",
+            "label": "C) Changer d'outil chaque mois",
+            "part": "word/document.xml",
+            "paragraph_index": 206,
+            "xpath": "/document/body[1]/p[173]",
+            "template_text_sha256": "28fffa30e82061041961c9b98a7e785ebe644df4011ad3b48cbf264e896861cb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_confier_l_amelioration_a_un_prestataire_externe_uniquement",
+            "label": "D) Confier l'amélioration à un prestataire externe uniquement",
+            "part": "word/document.xml",
+            "paragraph_index": 207,
+            "xpath": "/document/body[1]/p[174]",
+            "template_text_sha256": "e44cdb7286dbf84cc363ca4ead20a0d18a5a5d5b8c220edc1a8ba11ced256d2c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_tester_mesurer_analyser_et_ajuster_regulierement_son_usage",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Une boucle d'amélioration continue avec l'IA consiste à :'.",
+      "validation": {
+        "enum": [
+          "a_utiliser_l_outil_toujours_de_la_meme_facon",
+          "b_tester_mesurer_analyser_et_ajuster_regulierement_son_usage",
+          "c_changer_d_outil_chaque_mois",
+          "d_confier_l_amelioration_a_un_prestataire_externe_uniquement"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_pour_mesurer_l_impact_de_l_ia_sur_la_relation_client_l_indicateur_le_plus_perti",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_pour_mesurer_l_impact_de_l_ia_sur_la_relation_client_l_indicateur_le_plus_perti",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Pour mesurer l'impact de l'IA sur la relation client, l'indicateur le plus pertinent est :",
+        "options": [
+          {
+            "value": "a_le_cout_de_l_outil",
+            "label": "A) Le coût de l'outil",
+            "part": "word/document.xml",
+            "paragraph_index": 209,
+            "xpath": "/document/body[1]/p[176]",
+            "template_text_sha256": "d75091ccdf43fcf46c5f33d5d9a85c8f30000e4bf9a612f997a061acc2b59e57",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_taux_de_reponse_et_le_delai_moyen_de_reponse",
+            "label": "B) Le taux de réponse et le délai moyen de réponse",
+            "part": "word/document.xml",
+            "paragraph_index": 210,
+            "xpath": "/document/body[1]/p[177]",
+            "template_text_sha256": "5562c6d41a4cde53a7d96321ac4bd9f31ad1ddba3d15e863954c6e778450713d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_nombre_de_mots_generes",
+            "label": "C) Le nombre de mots générés",
+            "part": "word/document.xml",
+            "paragraph_index": 211,
+            "xpath": "/document/body[1]/p[178]",
+            "template_text_sha256": "c79976d04a969f7f0f21e6f5a0158c1a9217beb7bdfacd94de85b196a38ca04f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_ressenti_du_dirigeant_seul",
+            "label": "D) Le ressenti du dirigeant seul",
+            "part": "word/document.xml",
+            "paragraph_index": 212,
+            "xpath": "/document/body[1]/p[179]",
+            "template_text_sha256": "e20c46252e4c5238170c3aa87bb2cfd418a8ee7aa8037da566d845aeb25ee515",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_taux_de_reponse_et_le_delai_moyen_de_reponse",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Pour mesurer l'impact de l'IA sur la relation client, l'indicateur le plus pertinent est :'.",
+      "validation": {
+        "enum": [
+          "a_le_cout_de_l_outil",
+          "b_le_taux_de_reponse_et_le_delai_moyen_de_reponse",
+          "c_le_nombre_de_mots_generes",
+          "d_le_ressenti_du_dirigeant_seul"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_optimiser_durablement_l_usage_de_l_ia_dans_une_tpe_necessite_surtout",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_optimiser_durablement_l_usage_de_l_ia_dans_une_tpe_necessite_surtout",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Optimiser durablement l'usage de l'IA dans une TPE nécessite surtout :",
+        "options": [
+          {
+            "value": "a_un_poste_dedie_a_temps_plein",
+            "label": "A) Un poste dédié à temps plein",
+            "part": "word/document.xml",
+            "paragraph_index": 214,
+            "xpath": "/document/body[1]/p[181]",
+            "template_text_sha256": "b422da19c4973f9f68785b460b09abeaed490c271ab81b727726bb61abde0055",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_une_revue_reguliere_des_usages_et_des_resultats_obtenus",
+            "label": "B) Une revue régulière des usages et des résultats obtenus",
+            "part": "word/document.xml",
+            "paragraph_index": 215,
+            "xpath": "/document/body[1]/p[182]",
+            "template_text_sha256": "b57968932d32ee0cf1ed4020ea16cf00413d0a87800c3834db87e72b128f8bb5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_un_budget_r_d_consequent",
+            "label": "C) Un budget R&D conséquent",
+            "part": "word/document.xml",
+            "paragraph_index": 216,
+            "xpath": "/document/body[1]/p[183]",
+            "template_text_sha256": "bad78bd4547ba216cc50e214225f7c5ae03a80eed4391d7a69746b555802be88",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_des_certifications_officielles",
+            "label": "D) Des certifications officielles",
+            "part": "word/document.xml",
+            "paragraph_index": 217,
+            "xpath": "/document/body[1]/p[184]",
+            "template_text_sha256": "678e019081d3f6ff671f1aa096762fe87bcebbe554a1a5f4c46e07a85ccdd605",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_une_revue_reguliere_des_usages_et_des_resultats_obtenus",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Optimiser durablement l'usage de l'IA dans une TPE nécessite surtout :'.",
+      "validation": {
+        "enum": [
+          "a_un_poste_dedie_a_temps_plein",
+          "b_une_revue_reguliere_des_usages_et_des_resultats_obtenus",
+          "c_un_budget_r_d_consequent",
+          "d_des_certifications_officielles"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_quels_4_indicateurs_suivriez_vous_pour_mesurer_l_impact_de_l_ia_sur_votre_activ",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_quels_4_indicateurs_suivriez_vous_pour_mesurer_l_impact_de_l_ia_sur_votre_activ",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 220,
+          "xpath": "/document/body[1]/tbl[14]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Temps gagné, taux de réponse client, taux d'engagement, délai moyen de traitement.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Temps gagné, taux de réponse client, taux d'engagement, délai moyen de traitement.' after label 'Question 1 : Quels 4 indicateurs suivriez-vous pour mesurer l'impact de l'IA sur votre activité ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_comment_distinguez_vous_un_bon_roi_d_un_mauvais_roi_pour_un_outil_ia_donnez_un",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_comment_distinguez_vous_un_bon_roi_d_un_mauvais_roi_pour_un_outil_ia_donnez_un",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 225,
+          "xpath": "/document/body[1]/tbl[15]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Bon ROI : 4h économisées par mois pour un outil à 15€, largement rentable.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Bon ROI : 4h économisées par mois pour un outil à 15€, largement rentable.' after label 'Question 2 : Comment distinguez-vous un bon ROI d'un mauvais ROI pour un outil IA ? Donnez un exemple chiffré.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 2,
+      "xpath": "/document/body[1]/p[3]",
+      "blank_content": "Recueil complet des évaluations intermédiaires — Document vierge",
+      "filled_content": "Recueil complet des évaluations intermédiaires",
+      "reason": "Unsafe non-slot text change (similarity 0.84); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 57,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 101,
+      "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 145,
+      "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 189,
+      "xpath": "/document/body[1]/tbl[13]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "6 structural/text difference(s) require review; see mapping evidence and placeholder discovery report."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 36,
+    "confirmed_field_count": 36,
+    "concrete_target_count": 36,
+    "evidence_count": 36,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 6,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "6 unresolved source/template difference(s) remain."
+    ]
+  }
+}

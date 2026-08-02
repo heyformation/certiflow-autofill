@@ -1,0 +1,530 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proskills_rs6485_cas_pratiques_docx",
+  "template_path": "final-templates/Proskills_Institut/RS6485/section-01/candidate-work-and-preparation/Cas Pratiques - RS6485 - Proskills Institut - Template.docx",
+  "template_hash": "8b49353449eee13a398d86e6e8dc355c666de5add4c44e33565dc439b0d466ad",
+  "source_original_path": "Proskills Institut/RS6485 - Comptabilité TPE/Cas Pratiques - RS6485 - Proskills Institut - Template.docx",
+  "organization": "Proskills Institut",
+  "certification": "RS6485",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "candidate-work-and-preparation",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proskills Institut/RS6485 - Comptabilité TPE/Cas Pratiques - RS6485 - Proskills Institut - Template.docx",
+    "filled_reference": "Proskills Institut/RS6485 - Comptabilité TPE/Cas Pratiques - RS6485 - Proskills Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.8458,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": null
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.stagiaire",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.stagiaire",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 7,
+          "xpath": "/document/body[1]/p[8]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Nathan Lecomte",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Nathan Lecomte' after label 'Stagiaire'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 22,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Capitaux propres = 96 000 - 11 000 - 27 000 = 58 000 €. Cela montre que l'entreprise dispose d'une base financière solide, indépendante des dettes.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Capitaux propres = 96 000 - 11 000 - 27 000 = 58 000 €. Cela montre que l'entreprise dispose d'une base financière solid' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 43,
+          "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "TVA collectée = 14 800x10% = 1 480 €. TVA déductible = (2 600+950+310)x20% = 772 €. TVA à reverser = 1 480 - 772 = 708 €.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'TVA collectée = 14 800x10% = 1 480 €. TVA déductible = (2 600+950+310)x20% = 772 €. TVA à reverser = 1 480 - 772 = 708 €' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 64,
+          "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Coût annuel alternant = 720x12 = 8 640 €. En intégrant l'amortissement du véhicule, il faudrait générer environ 12 000 € de CA supplémentaire pour absorber ces nouvelles charges.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Coût annuel alternant = 720x12 = 8 640 €. En intégrant l'amortissement du véhicule, il faudrait générer environ 12 000 €' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 85,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Résultat = 16 400 - 6 100 - 4 300 - 3 800 = 2 200 €. Marge brute = (16 400-6 100)/16 400 = 63%. L'écart de -14% s'explique par un client ayant reporté sa commande à mai.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Résultat = 16 400 - 6 100 - 4 300 - 3 800 = 2 200 €. Marge brute = (16 400-6 100)/16 400 = 63%. L'écart de -14% s'expliq' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 106,
+          "xpath": "/document/body[1]/tbl[15]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "EI+salarié : simple mais responsabilité illimitée. SARL : partage de la charge de travail mais formalisme accru. SASU : protection du patrimoine mais coûts sociaux plus élevés. Je pencherais pour la SASU à ce stade de développement.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'EI+salarié : simple mais responsabilité illimitée. SARL : partage de la charge de travail mais formalisme accru. SASU : ' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_5",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_5",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 127,
+          "xpath": "/document/body[1]/tbl[18]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je contacte le fournisseur pour confirmer le montant, j'enregistre la facture manquante, je procède au règlement et j'informe mon comptable pour la déclaration de TVA concernée.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je contacte le fournisseur pour confirmer le montant, j'enregistre la facture manquante, je procède au règlement et j'in' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_6",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_6",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 148,
+          "xpath": "/document/body[1]/tbl[21]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Solde prévisionnel = 19 500 - 3 900 + 2 800 + 5 200 = 23 600 €. La fermeture de 2 semaines est tout à fait finançable.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Solde prévisionnel = 19 500 - 3 900 + 2 800 + 5 200 = 23 600 €. La fermeture de 2 semaines est tout à fait finançable.' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_7",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_7",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 169,
+          "xpath": "/document/body[1]/tbl[24]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Marge nette = 31 000/182 000 = 17%. ROE = 31 000/54 000 = 57%. BFR = 15 200+3 900-5 400 = 13 700 €. La situation est saine avec une bonne rentabilité des capitaux investis.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Marge nette = 31 000/182 000 = 17%. ROE = 31 000/54 000 = 57%. BFR = 15 200+3 900-5 400 = 13 700 €. La situation est sai' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_8",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_8",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 190,
+          "xpath": "/document/body[1]/tbl[27]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "EI : cotisations = 49 000x45% = 22 050 €. SASU : charges = 22 000x78% = 17 160 € + flat tax = 18 000x30% = 5 400 €, soit 22 560 € au total. Les deux options sont proches, l'EI reste légèrement plus légère.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'EI : cotisations = 49 000x45% = 22 050 €. SASU : charges = 22 000x78% = 17 160 € + flat tax = 18 000x30% = 5 400 €, soit' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_9",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_9",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 211,
+          "xpath": "/document/body[1]/tbl[30]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "EI : cotisations = 49 000x45% = 22 050 €. SASU : charges = 22 000x78% = 17 160 € + flat tax = 18 000x30% = 5 400 €, soit 22 560 € au total. Les deux options sont proches, l'EI reste légèrement plus légère.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'EI : cotisations = 49 000x45% = 22 050 €. SASU : charges = 22 000x78% = 17 160 € + flat tax = 18 000x30% = 5 400 €, soit' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 34,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 55,
+      "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 76,
+      "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 97,
+      "xpath": "/document/body[1]/tbl[13]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 118,
+      "xpath": "/document/body[1]/tbl[16]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 139,
+      "xpath": "/document/body[1]/tbl[19]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 160,
+      "xpath": "/document/body[1]/tbl[22]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 181,
+      "xpath": "/document/body[1]/tbl[25]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 202,
+      "xpath": "/document/body[1]/tbl[28]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "10 structural/text difference(s) require review; see mapping evidence and placeholder discovery report."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 11,
+    "confirmed_field_count": 11,
+    "concrete_target_count": 11,
+    "evidence_count": 11,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 10,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "10 unresolved source/template difference(s) remain."
+    ]
+  }
+}

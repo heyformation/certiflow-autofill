@@ -1,0 +1,3428 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs6485_evaluation_finale_docx",
+  "template_path": "final-templates/Proforma_Institut/RS6485/section-02/formal-assessment/Evaluation Finale - RS6485 - Proforma Institut - Template.docx",
+  "template_hash": "ab36048db386adcfddfcd1c828f40af315451a043f1c3f0bad97ad76b960172d",
+  "source_original_path": "Proforma Institut/RS6485 - Comptabilité TPE/Evaluation Finale - RS6485 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS6485",
+  "major_section": "Évaluation certificative et décision",
+  "subsection": "formal-assessment",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS6485 - Comptabilité TPE/Evaluation Finale - RS6485 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS6485 - Comptabilité TPE/Evaluation Finale - RS6485 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.7241,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": null
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.stagiaire",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.stagiaire",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 7,
+          "xpath": "/document/body[1]/p[8]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Camille Bertrand",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Camille Bertrand' after label 'Stagiaire'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_l_amortissement_lineaire_d_un_bien_s_etalant_sur_5_ans_achete_6_000_ht_genere_u",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_l_amortissement_lineaire_d_un_bien_s_etalant_sur_5_ans_achete_6_000_ht_genere_u",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. L'amortissement linéaire d'un bien s'étalant sur 5 ans, acheté 6 000 € HT, génère une dotation annuelle de :",
+        "options": [
+          {
+            "value": "a_600",
+            "label": "A) 600 €",
+            "part": "word/document.xml",
+            "paragraph_index": 18,
+            "xpath": "/document/body[1]/p[17]",
+            "template_text_sha256": "089a3ce54d12f2372801ca4d517984b19dc0d814c6128c75642db2c4f46fea4f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_1_000",
+            "label": "B) 1 000 €",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "1d820d7256eb7db181ae7ff69bad625dfdd27ca4f128a739a20af0e3096c37f9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_1_200",
+            "label": "C) 1 200 €",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/p[19]",
+            "template_text_sha256": "386ec74810b7ee4b9e76b347bdb6567cfa321b6efa27c52944a04076d63447c7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_1_500",
+            "label": "D) 1 500 €",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "4aed60ba6c855b2669d024f8a0c4cedcc794cdb091cd78c847709bdbda0ae6d5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_1_200",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. L'amortissement linéaire d'un bien s'étalant sur 5 ans, acheté 6 000 € HT, génère une dotation annuelle de :'.",
+      "validation": {
+        "enum": [
+          "a_600",
+          "b_1_000",
+          "c_1_200",
+          "d_1_500"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_le_rapprochement_bancaire_consiste_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_le_rapprochement_bancaire_consiste_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Le 'rapprochement bancaire' consiste à :",
+        "options": [
+          {
+            "value": "a_comparer_le_solde_de_votre_journal_de_banque_avec_le_relev",
+            "label": "A) Comparer le solde de votre journal de banque avec le relevé bancaire réel",
+            "part": "word/document.xml",
+            "paragraph_index": 23,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "37257da3571d20995a4d24cfbe573f751765ed2f954e16d011dc4a4cf3c9d71b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_effectuer_un_virement_entre_deux_comptes",
+            "label": "B) Effectuer un virement entre deux comptes",
+            "part": "word/document.xml",
+            "paragraph_index": 24,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "ffaca3bfae807d864e3110fbf651db937bbb82b41f5a44038dbab46bc22a7494",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_calculer_votre_capacite_d_emprunt",
+            "label": "C) Calculer votre capacité d'emprunt",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "1b3ca325aa7a4f1358e9545c6615409455e34c7f1ead5f6b39f9dc74ca038e33",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_verifier_que_les_factures_fournisseurs_sont_payees",
+            "label": "D) Vérifier que les factures fournisseurs sont payées",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "c95d7de24f101e3b722d8514f4527cba543dd64ab379e56da891402b9535ff35",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_comparer_le_solde_de_votre_journal_de_banque_avec_le_relev",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Le 'rapprochement bancaire' consiste à :'.",
+      "validation": {
+        "enum": [
+          "a_comparer_le_solde_de_votre_journal_de_banque_avec_le_relev",
+          "b_effectuer_un_virement_entre_deux_comptes",
+          "c_calculer_votre_capacite_d_emprunt",
+          "d_verifier_que_les_factures_fournisseurs_sont_payees"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_3_une_note_de_credit_ou_avoir_est_emise_lorsque",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_3_une_note_de_credit_ou_avoir_est_emise_lorsque",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Une 'note de crédit' (ou avoir) est émise lorsque :",
+        "options": [
+          {
+            "value": "a_un_client_paie_en_avance",
+            "label": "A) Un client paie en avance",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "f1dd6dc03e4a287075f6e3f66d788c1042074df82e7ca74160369c739b8d8f84",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_vous_annulez_ou_remboursez_partiellement_une_facture_deja",
+            "label": "B) Vous annulez ou remboursez partiellement une facture déjà émise",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[28]",
+            "template_text_sha256": "e5deb8755802947ec170a4858777dfe6bb75b78b8826e7a695fd7541a27272ef",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_vous_accordez_un_pret_a_un_client",
+            "label": "C) Vous accordez un prêt à un client",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "78eca587e604ea1677f2c19a120536fcc0b2cdfdfb0d06266af69e350844fdd6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_un_fournisseur_vous_accorde_une_remise_sur_le_prochain_ach",
+            "label": "D) Un fournisseur vous accorde une remise sur le prochain achat",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "8649cf03569356af757afeeddedc67299b1fc4858f8d8264f9eff63d7ed825a1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_vous_annulez_ou_remboursez_partiellement_une_facture_deja",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Une 'note de crédit' (ou avoir) est émise lorsque :'.",
+      "validation": {
+        "enum": [
+          "a_un_client_paie_en_avance",
+          "b_vous_annulez_ou_remboursez_partiellement_une_facture_deja",
+          "c_vous_accordez_un_pret_a_un_client",
+          "d_un_fournisseur_vous_accorde_une_remise_sur_le_prochain_ach"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_4_en_regime_reel_simplifie_le_registre_des_immobilisations_est_obligatoire_que_do",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_4_en_regime_reel_simplifie_le_registre_des_immobilisations_est_obligatoire_que_do",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. En régime réel simplifié, le registre des immobilisations est obligatoire. Que doit-il contenir ?",
+        "options": [
+          {
+            "value": "a_la_liste_des_clients_et_leurs_soldes",
+            "label": "A) La liste des clients et leurs soldes",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "faa4c5b0f4a35ab9d5eee10bad70025eebc3335103889e5f7b618a238647a68b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_la_liste_des_biens_amortissables_avec_date_valeur_duree_d",
+            "label": "B) La liste des biens amortissables avec date, valeur, durée d'amortissement",
+            "part": "word/document.xml",
+            "paragraph_index": 34,
+            "xpath": "/document/body[1]/p[33]",
+            "template_text_sha256": "462e2311610186edd16ec6a55356dd5099cf4541ee0b764847dc69327202c67e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_planning_de_maintenance_preventive",
+            "label": "C) Le planning de maintenance préventive",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[34]",
+            "template_text_sha256": "53d07c3b20bac207bfac600bafa90f2088ce3d354887667a7678656dbaf66335",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_liste_des_fournisseurs_agrees",
+            "label": "D) La liste des fournisseurs agréés",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "b8a8eb59d3df570799817db0cb9a016cfc94bb407edf380d1ef25fcc617665ae",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_la_liste_des_biens_amortissables_avec_date_valeur_duree_d",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. En régime réel simplifié, le registre des immobilisations est obligatoire. Que doit-il contenir ?'.",
+      "validation": {
+        "enum": [
+          "a_la_liste_des_clients_et_leurs_soldes",
+          "b_la_liste_des_biens_amortissables_avec_date_valeur_duree_d",
+          "c_le_planning_de_maintenance_preventive",
+          "d_la_liste_des_fournisseurs_agrees"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_5_les_charges_a_payer_en_comptabilite_representent",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_5_les_charges_a_payer_en_comptabilite_representent",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Les 'charges à payer' en comptabilité représentent :",
+        "options": [
+          {
+            "value": "a_les_depenses_deja_payees_mais_pas_encore_livrees",
+            "label": "A) Les dépenses déjà payées mais pas encore livrées",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[37]",
+            "template_text_sha256": "9b30ab122a98b44be71d577b19215e221e3506b93d45c881762917546bee9a56",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_les_charges_dont_le_montant_est_connu_mais_pas_encore_fact",
+            "label": "B) Les charges dont le montant est connu mais pas encore facturé ou payé à la clôture",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "59b7db5d429f0c31bb936ec15cad34767adb1b363815b2dee3f8d95bd83838fb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_les_provisions_pour_risques_futurs",
+            "label": "C) Les provisions pour risques futurs",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "33fc28ce665f84a746c090b5e5b4dcbba4eb3ff209b707919e4b9d7fed04aedd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_les_acomptes_verses_aux_fournisseurs",
+            "label": "D) Les acomptes versés aux fournisseurs",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "4bde458d64d603e7dbda3184a53e801ab75c3b8e836d42f3a7c91844b7855d0a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_les_charges_dont_le_montant_est_connu_mais_pas_encore_fact",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Les 'charges à payer' en comptabilité représentent :'.",
+      "validation": {
+        "enum": [
+          "a_les_depenses_deja_payees_mais_pas_encore_livrees",
+          "b_les_charges_dont_le_montant_est_connu_mais_pas_encore_fact",
+          "c_les_provisions_pour_risques_futurs",
+          "d_les_acomptes_verses_aux_fournisseurs"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_expliquez_le_processus_complet_de_facturation_de_l_emission_au_paiement_pour_un",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_expliquez_le_processus_complet_de_facturation_de_l_emission_au_paiement_pour_un",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 44,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je réalise le devis, l'intervention, j'émets la facture, je la transmets au client puis je suis son règlement jusqu'à l'encaissement.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je réalise le devis, l'intervention, j'émets la facture, je la transmets au client puis je suis son règlement jusqu'à l'' after label 'Question 1 : Expliquez le processus complet de facturation, de l'émission au paiement, pour une intervention chez un cli'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_qu_est_ce_qu_un_plan_de_financement_et_pourquoi_est_il_utile_pour_une_tpe",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_qu_est_ce_qu_un_plan_de_financement_et_pourquoi_est_il_utile_pour_une_tpe",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 49,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "C'est un document qui liste les besoins et ressources financières d'un projet ; il est utile pour convaincre une banque et anticiper la trésorerie.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'C'est un document qui liste les besoins et ressources financières d'un projet ; il est utile pour convaincre une banque ' after label 'Question 2 : Qu'est-ce qu'un 'plan de financement' et pourquoi est-il utile pour une TPE ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 59,
+          "xpath": "/document/body[1]/tbl[5]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je vérifie la facture avec le fournisseur, je l'enregistre dans mon journal d'achats, je règle le montant dû et je préviens mon comptable pour la régularisation de la TVA déductible.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je vérifie la facture avec le fournisseur, je l'enregistre dans mon journal d'achats, je règle le montant dû et je prévi' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.amortissements_rapprochement_bancaire_plan_de_financement_evaluation_finale",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.amortissements_rapprochement_bancaire_plan_de_financement_evaluation_finale",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 68,
+          "xpath": "/document/body[1]/p[53]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Module 2 — Opérations Comptables Courantes",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Module 2 — Opérations Comptables Courantes' after label 'Amortissements, rapprochement bancaire, plan de financement — Évaluation finale'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.type_evaluation_finale",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.type_evaluation_finale",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 71,
+          "xpath": "/document/body[1]/p[54]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Stagiaire : Camille Bertrand",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Stagiaire : Camille Bertrand' after label 'Type : Évaluation finale'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_construisez_un_previsionnel_de_tresorerie_simplifie_pour_les_3_prochains_mois_j",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_construisez_un_previsionnel_de_tresorerie_simplifie_pour_les_3_prochains_mois_j",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 100,
+          "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "PARTIE 2 — Questions ouvertes (5 points chacune)",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'PARTIE 2 — Questions ouvertes (5 points chacune)' after label 'Question 1 : Construisez un prévisionnel de trésorerie simplifié pour les 3 prochains mois (janvier, février, mars) pour'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_construisez_un_previsionnel_de_tresorerie_simplifie_pour_les_3_prochains_mois_j_question_1_construisez_un_previsionnel_d",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_construisez_un_previsionnel_de_tresorerie_simplifie_pour_les_3_prochains_mois_j_question_1_construisez_un_previsionnel_d",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 101,
+          "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[2]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Question 1 : Construisez un prévisionnel de trésorerie simplifié pour les 3 prochains mois (janvier, février, mars) pour votre activité.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Question 1 : Construisez un prévisionnel de trésorerie simplifié pour les 3 prochains mois (janvier, février, mars) pour' after label 'Question 1 : Construisez un prévisionnel de trésorerie simplifié pour les 3 prochains mois (janvier, février, mars) pour'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_construisez_un_previsionnel_de_tresorerie_simplifie_pour_les_3_prochains_mois_j_question_1_construisez_un_previsionnel_d_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_construisez_un_previsionnel_de_tresorerie_simplifie_pour_les_3_prochains_mois_j_question_1_construisez_un_previsionnel_d_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 102,
+          "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[3]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Janvier : solde positif grâce aux encaissements de fin d'année. Février : tension légère liée aux charges fixes. Mars : reprise avec les nouveaux chantiers.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Janvier : solde positif grâce aux encaissements de fin d'année. Février : tension légère liée aux charges fixes. Mars : ' after label 'Question 1 : Construisez un prévisionnel de trésorerie simplifié pour les 3 prochains mois (janvier, février, mars) pour'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_qu_est_ce_que_l_effet_ciseau_en_gestion_d_entreprise_et_donnez_un_exemple_dans",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_qu_est_ce_que_l_effet_ciseau_en_gestion_d_entreprise_et_donnez_un_exemple_dans",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 106,
+          "xpath": "/document/body[1]/tbl[8]/tr[1]/tc[1]/p[2]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Question 2 : Qu'est-ce que l'effet ciseau en gestion d'entreprise et donnez un exemple dans votre secteur.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Question 2 : Qu'est-ce que l'effet ciseau en gestion d'entreprise et donnez un exemple dans votre secteur.' after label 'Question 2 : Qu'est-ce que l'effet ciseau en gestion d'entreprise et donnez un exemple dans votre secteur.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_qu_est_ce_que_l_effet_ciseau_en_gestion_d_entreprise_et_donnez_un_exemple_dans_question_2_qu_est_ce_que_l_effet_ciseau",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_qu_est_ce_que_l_effet_ciseau_en_gestion_d_entreprise_et_donnez_un_exemple_dans_question_2_qu_est_ce_que_l_effet_ciseau",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 107,
+          "xpath": "/document/body[1]/tbl[8]/tr[1]/tc[1]/p[3]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "C'est quand les charges augmentent plus vite que le CA ; par exemple si mes achats de matériaux augmentent sans que je répercute la hausse sur mes prix.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'C'est quand les charges augmentent plus vite que le CA ; par exemple si mes achats de matériaux augmentent sans que je r' after label 'Question 2 : Qu'est-ce que l'effet ciseau en gestion d'entreprise et donnez un exemple dans votre secteur.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.vous_souhaitez_evaluer_si_vous_pouvez_prendre_3_semaines_de_vacances_en_aout_sans_mettre_v",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.vous_souhaitez_evaluer_si_vous_pouvez_prendre_3_semaines_de_vacances_en_aout_sans_mettre_v",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 112,
+          "xpath": "/document/body[1]/p[87]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Scénario —",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Scénario —' after label 'Vous souhaitez évaluer si vous pouvez prendre 3 semaines de vacances en août sans mettre votre trésorerie en danger. Don'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 115,
+          "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Mission : Calculez le solde prévisionnel au 31 août et évaluez si les vacances sont financièrement viables.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Mission : Calculez le solde prévisionnel au 31 août et évaluez si les vacances sont financièrement viables.' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 116,
+          "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[2]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Votre production :",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Votre production :' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 117,
+          "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[3]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Solde prévisionnel = 22 000 - 4 200 + 3 500 + 6 800 = 28 100 €. Le solde reste largement positif, les vacances sont donc finançables sans risque.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Solde prévisionnel = 22 000 - 4 200 + 3 500 + 6 800 = 28 100 €. Le solde reste largement positif, les vacances sont donc' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.type_evaluation_finale_type_evaluation_finale",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.type_evaluation_finale_type_evaluation_finale",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 127,
+          "xpath": "/document/body[1]/p[94]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Fonds de roulement, ratios, flux de trésorerie, effet ciseau",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Fonds de roulement, ratios, flux de trésorerie, effet ciseau' after label 'Type : Évaluation finale'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 156,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "☐ C) Ignorer si c'est inférieur à 10%",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '☐ C) Ignorer si c'est inférieur à 10%' after label 'Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous le'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 157,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[2]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "☐ D) Attendre la fin de l'année pour évaluer",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '☐ D) Attendre la fin de l'année pour évaluer' after label 'Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous le'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 158,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[3]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "PARTIE 2 — Questions ouvertes (5 points chacune)",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'PARTIE 2 — Questions ouvertes (5 points chacune)' after label 'Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous le'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 159,
+          "xpath": "/document/body[1]/p[123]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous les calculez.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous le' after label 'Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous le'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_comment_interpreteriez_vous_un_taux_de_marge_nette_de_8_pour_une_tpe_artisanale",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_comment_interpreteriez_vous_un_taux_de_marge_nette_de_8_pour_une_tpe_artisanale",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 164,
+          "xpath": "/document/body[1]/p[125]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Question 2 : Comment interpréteriez-vous un taux de marge nette de 8% pour une TPE artisanale ? Est-ce satisfaisant ?",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Question 2 : Comment interpréteriez-vous un taux de marge nette de 8% pour une TPE artisanale ? Est-ce satisfaisant ?' after label 'Question 2 : Comment interpréteriez-vous un taux de marge nette de 8% pour une TPE artisanale ? Est-ce satisfaisant ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 171,
+          "xpath": "/document/body[1]/tbl[15]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Votre expert-comptable vous remet votre bilan annuel. Données clés : CA = 195 000 € | Résultat net = 38 000 € | Capitaux propres = 62 000 € | Créances clients = 18 500 € | Dettes fournisseurs = 6 200 € | Stocks = 4 800 €.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Votre expert-comptable vous remet votre bilan annuel. Données clés : CA = 195 000 € | Résultat net = 38 000 € | Capitaux' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_5",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_5",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 173,
+          "xpath": "/document/body[1]/tbl[15]/tr[1]/tc[1]/p[3]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Mission : Calculez 3 ratios clés (taux de marge nette, ROE, BFR) et interprétez votre situation financière.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Mission : Calculez 3 ratios clés (taux de marge nette, ROE, BFR) et interprétez votre situation financière.' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_6",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_6",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 174,
+          "xpath": "/document/body[1]/tbl[15]/tr[1]/tc[1]/p[4]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Votre production :",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Votre production :' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_7",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_7",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 175,
+          "xpath": "/document/body[1]/tbl[15]/tr[1]/tc[1]/p[5]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Marge nette = 38 000/195 000 = 19,5%. ROE = 38 000/62 000 = 61%. BFR = 18 500+4 800-6 200 = 17 100 €. Ma situation financière est saine avec une bonne rentabilité.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Marge nette = 38 000/195 000 = 19,5%. ROE = 38 000/62 000 = 61%. BFR = 18 500+4 800-6 200 = 17 100 €. Ma situation finan' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 212,
+          "xpath": "/document/body[1]/tbl[17]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "☐ A) 3 ans",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '☐ A) 3 ans' after label 'Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous le'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_5",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_5",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 213,
+          "xpath": "/document/body[1]/tbl[17]/tr[1]/tc[1]/p[2]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "☐ B) 10 ans",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '☐ B) 10 ans' after label 'Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous le'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_6",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_6",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 214,
+          "xpath": "/document/body[1]/tbl[17]/tr[1]/tc[1]/p[3]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "☐ C) 5 ans",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '☐ C) 5 ans' after label 'Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous le'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_7",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_construisez_un_tableau_de_bord_complet_pour_votre_activite_avec_6_kpis_choisis_question_1_construisez_un_tableau_de_bor_7",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 215,
+          "xpath": "/document/body[1]/p[163]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "☒ D) 7 ans",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '☒ D) 7 ans' after label 'Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous le'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_comment_interpreteriez_vous_un_taux_de_marge_nette_de_8_pour_une_tpe_artisanale_question_2_comment_interpreteriez_vous_u",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_comment_interpreteriez_vous_un_taux_de_marge_nette_de_8_pour_une_tpe_artisanale_question_2_comment_interpreteriez_vous_u",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 217,
+          "xpath": "/document/body[1]/tbl[18]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Question 1 : Quelles sont selon vous les 5 bonnes pratiques d'organisation comptable pour une TPE artisanale ?",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Question 1 : Quelles sont selon vous les 5 bonnes pratiques d'organisation comptable pour une TPE artisanale ?' after label 'Question 2 : Comment interpréteriez-vous un taux de marge nette de 8% pour une TPE artisanale ? Est-ce satisfaisant ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_comment_interpreteriez_vous_un_taux_de_marge_nette_de_8_pour_une_tpe_artisanale_question_2_comment_interpreteriez_vous_u_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_comment_interpreteriez_vous_un_taux_de_marge_nette_de_8_pour_une_tpe_artisanale_question_2_comment_interpreteriez_vous_u_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 218,
+          "xpath": "/document/body[1]/tbl[18]/tr[1]/tc[1]/p[2]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Classer ses factures chaque semaine, séparer comptes pro et perso, suivre sa trésorerie, transmettre les documents au comptable régulièrement et archiver 7 ans.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Classer ses factures chaque semaine, séparer comptes pro et perso, suivre sa trésorerie, transmettre les documents au co' after label 'Question 2 : Comment interpréteriez-vous un taux de marge nette de 8% pour une TPE artisanale ? Est-ce satisfaisant ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_8",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_8",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 227,
+          "xpath": "/document/body[1]/tbl[20]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "PARTIE 3 — Mise en situation / Cas pratique (5 points)",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'PARTIE 3 — Mise en situation / Cas pratique (5 points)' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_9",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_9",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 228,
+          "xpath": "/document/body[1]/tbl[20]/tr[1]/tc[1]/p[2]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Scénario —",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Scénario —' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_10",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_10",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 229,
+          "xpath": "/document/body[1]/tbl[20]/tr[1]/tc[1]/p[3]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Vous êtes en EI au régime réel simplifié avec un CA de 195 000 € et un bénéfice de 55 000 €. Votre expert-comptable vous propose de basculer en SASU pour réduire votre pression sociale. Il vous explique qu'en SASU vous pourriez vous verser 25 000 € de salaire et 20 000 € de dividendes.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Vous êtes en EI au régime réel simplifié avec un CA de 195 000 € et un bénéfice de 55 000 €. Votre expert-comptable vous' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_11",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_11",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 231,
+          "xpath": "/document/body[1]/tbl[20]/tr[1]/tc[1]/p[5]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Mission : Comparez les deux options (EI vs SASU) en termes de cotisations sociales et d'imposition (utilisez les taux simplifiés : cotisations EI ~45% du bénéfice ; salaire SASU ~80% de charges patronales/salariales ; dividendes SASU : 30% flat tax).",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Mission : Comparez les deux options (EI vs SASU) en termes de cotisations sociales et d'imposition (utilisez les taux si' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_12",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_12",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 232,
+          "xpath": "/document/body[1]/tbl[20]/tr[1]/tc[1]/p[6]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Votre production :",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Votre production :' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_13",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_13",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 233,
+          "xpath": "/document/body[1]/p[170]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "EI : cotisations = 55 000x45% = 24 750 €. SASU : charges sur salaire = 25 000x80% = 20 000 € + flat tax dividendes = 20 000x30% = 6 000 €, soit 26 000 € au total. L'EI reste légèrement plus avantageuse ici.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'EI : cotisations = 55 000x45% = 24 750 €. SASU : charges sur salaire = 25 000x80% = 20 000 € + flat tax dividendes = 20 ' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_quelles_sont_selon_vous_les_5_bonnes_pratiques_d_organisation_comptable_pour_un",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_quelles_sont_selon_vous_les_5_bonnes_pratiques_d_organisation_comptable_pour_un",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 268,
+          "xpath": "/document/body[1]/tbl[22]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "☐ D) S'inscrire à la chambre de métiers",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '☐ D) S'inscrire à la chambre de métiers' after label 'Question 1 : Quelles sont selon vous les 5 bonnes pratiques d'organisation comptable pour une TPE artisanale ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_quelles_sont_selon_vous_les_5_bonnes_pratiques_d_organisation_comptable_pour_un_question_1_quelles_sont_selon_vous_les_5",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_quelles_sont_selon_vous_les_5_bonnes_pratiques_d_organisation_comptable_pour_un_question_1_quelles_sont_selon_vous_les_5",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 269,
+          "xpath": "/document/body[1]/tbl[22]/tr[1]/tc[1]/p[2]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Question 5. L'obligation de conservation des documents comptables en France est de :",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Question 5. L'obligation de conservation des documents comptables en France est de :' after label 'Question 1 : Quelles sont selon vous les 5 bonnes pratiques d'organisation comptable pour une TPE artisanale ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_quelles_sont_selon_vous_les_5_bonnes_pratiques_d_organisation_comptable_pour_un_question_1_quelles_sont_selon_vous_les_5_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_quelles_sont_selon_vous_les_5_bonnes_pratiques_d_organisation_comptable_pour_un_question_1_quelles_sont_selon_vous_les_5_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 270,
+          "xpath": "/document/body[1]/tbl[22]/tr[1]/tc[1]/p[3]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "☐ A) 3 ans",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '☐ A) 3 ans' after label 'Question 1 : Quelles sont selon vous les 5 bonnes pratiques d'organisation comptable pour une TPE artisanale ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_quelles_sont_selon_vous_les_5_bonnes_pratiques_d_organisation_comptable_pour_un_question_1_quelles_sont_selon_vous_les_5_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_quelles_sont_selon_vous_les_5_bonnes_pratiques_d_organisation_comptable_pour_un_question_1_quelles_sont_selon_vous_les_5_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 271,
+          "xpath": "/document/body[1]/p[203]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "☐ B) 10 ans",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '☐ B) 10 ans' after label 'Question 1 : Quelles sont selon vous les 5 bonnes pratiques d'organisation comptable pour une TPE artisanale ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_bilan_de_formation_rs6485_qu_avez_vous_appris_qui_changera_concretement_votre_g",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_bilan_de_formation_rs6485_qu_avez_vous_appris_qui_changera_concretement_votre_g",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 273,
+          "xpath": "/document/body[1]/tbl[23]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "☒ D) 7 ans",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '☒ D) 7 ans' after label 'Question 2 : Bilan de formation RS6485 : qu'avez-vous appris qui changera concrètement votre gestion d'entreprise ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_bilan_de_formation_rs6485_qu_avez_vous_appris_qui_changera_concretement_votre_g_question_2_bilan_de_formation_rs6485_qu",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_bilan_de_formation_rs6485_qu_avez_vous_appris_qui_changera_concretement_votre_g_question_2_bilan_de_formation_rs6485_qu",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 274,
+          "xpath": "/document/body[1]/tbl[23]/tr[1]/tc[1]/p[2]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "PARTIE 2 — Questions ouvertes (5 points chacune)",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'PARTIE 2 — Questions ouvertes (5 points chacune)' after label 'Question 2 : Bilan de formation RS6485 : qu'avez-vous appris qui changera concrètement votre gestion d'entreprise ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_bilan_de_formation_rs6485_qu_avez_vous_appris_qui_changera_concretement_votre_g_question_2_bilan_de_formation_rs6485_qu_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_bilan_de_formation_rs6485_qu_avez_vous_appris_qui_changera_concretement_votre_g_question_2_bilan_de_formation_rs6485_qu_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 275,
+          "xpath": "/document/body[1]/tbl[23]/tr[1]/tc[1]/p[3]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Question 1 : Quelles sont selon vous les 5 bonnes pratiques d'organisation comptable pour une TPE artisanale ?",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Question 1 : Quelles sont selon vous les 5 bonnes pratiques d'organisation comptable pour une TPE artisanale ?' after label 'Question 2 : Bilan de formation RS6485 : qu'avez-vous appris qui changera concrètement votre gestion d'entreprise ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_bilan_de_formation_rs6485_qu_avez_vous_appris_qui_changera_concretement_votre_g_question_2_bilan_de_formation_rs6485_qu_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_bilan_de_formation_rs6485_qu_avez_vous_appris_qui_changera_concretement_votre_g_question_2_bilan_de_formation_rs6485_qu_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 276,
+          "xpath": "/document/body[1]/p[205]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Classer ses factures chaque semaine, séparer comptes pro et perso, suivre sa trésorerie, transmettre les documents au comptable régulièrement et archiver 7 ans.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Classer ses factures chaque semaine, séparer comptes pro et perso, suivre sa trésorerie, transmettre les documents au co' after label 'Question 2 : Bilan de formation RS6485 : qu'avez-vous appris qui changera concrètement votre gestion d'entreprise ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.vous_etes_en_ei_au_regime_reel_simplifie_avec_un_ca_de_195_000_et_un_benefice_de_55_000_vo",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.vous_etes_en_ei_au_regime_reel_simplifie_avec_un_ca_de_195_000_et_un_benefice_de_55_000_vo",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 280,
+          "xpath": "/document/body[1]/p[207]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Question 2 : Bilan de formation RS6485 : qu'avez-vous appris qui changera concrètement votre gestion d'entreprise ?",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Question 2 : Bilan de formation RS6485 : qu'avez-vous appris qui changera concrètement votre gestion d'entreprise ?' after label 'Vous êtes en EI au régime réel simplifié avec un CA de 195 000 € et un bénéfice de 55 000 €. Votre expert-comptable vous'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_14",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_14",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 285,
+          "xpath": "/document/body[1]/tbl[25]/tr[1]/tc[1]/p[3]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "PARTIE 3 — Mise en situation / Cas pratique (5 points)",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'PARTIE 3 — Mise en situation / Cas pratique (5 points)' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_15",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_15",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 286,
+          "xpath": "/document/body[1]/tbl[25]/tr[1]/tc[1]/p[4]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Scénario —",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Scénario —' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.votre_production_votre_production_16",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.votre_production_votre_production_16",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 287,
+          "xpath": "/document/body[1]/tbl[25]/tr[1]/tc[1]/p[5]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Vous êtes en EI au régime réel simplifié avec un CA de 195 000 € et un bénéfice de 55 000 €. Votre expert-comptable vous propose de basculer en SASU pour réduire votre pression sociale. Il vous explique qu'en SASU vous pourriez vous verser 25 000 € de salaire et 20 000 € de dividendes.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Vous êtes en EI au régime réel simplifié avec un CA de 195 000 € et un bénéfice de 55 000 €. Votre expert-comptable vous' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "reason": "Paragraph container count differs (289 template vs 299 filled); only same-index stable containers were considered."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 11,
+      "xpath": "/document/body[1]/p[12]",
+      "blank_content": "Amortissements, journaux, analyse du compte de résultat — Évaluation finale",
+      "filled_content": "Amortissements, journaux, analyse du compte de résultat",
+      "reason": "Unsafe non-slot text change (similarity 0.85); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 66,
+      "xpath": "/document/body[1]/p[51]",
+      "blank_content": "Module 2 — Opérations Comptables Courantes",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 67,
+      "xpath": "/document/body[1]/p[52]",
+      "blank_content": "Amortissements, rapprochement bancaire, plan de financement — Évaluation finale",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 69,
+      "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Amortissements, rapprochement bancaire, plan de financement",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 70,
+      "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[2]/p[1]",
+      "blank_content": "Type : Évaluation finale",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 72,
+      "xpath": "/document/body[1]/p[55]",
+      "blank_content": "PARTIE 1 — QCM (1 point par question)",
+      "filled_content": "Type : Évaluation finale",
+      "reason": "Unsafe non-slot text change (similarity 0.30); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 73,
+      "xpath": "/document/body[1]/p[56]",
+      "blank_content": "Question 1. Le 'fonds de roulement' (FR) d'une entreprise se calcule par :",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 74,
+      "xpath": "/document/body[1]/p[57]",
+      "blank_content": "☐ A) CA - Charges variables",
+      "filled_content": "PARTIE 1 — QCM (1 point par question)",
+      "reason": "Unsafe non-slot text change (similarity 0.31); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 75,
+      "xpath": "/document/body[1]/p[58]",
+      "blank_content": "☐ B) Capitaux permanents - Actif immobilisé",
+      "filled_content": "Question 1. Le 'fonds de roulement' (FR) d'une entreprise se calcule par :",
+      "reason": "Unsafe non-slot text change (similarity 0.22); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 76,
+      "xpath": "/document/body[1]/p[59]",
+      "blank_content": "☐ C) Actif circulant / Dettes à court terme",
+      "filled_content": "☐ A) CA - Charges variables",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 77,
+      "xpath": "/document/body[1]/p[60]",
+      "blank_content": "☐ D) Bénéfice net / Capitaux propres",
+      "filled_content": "☒ B) Capitaux permanents - Actif immobilisé",
+      "reason": "Unsafe non-slot text change (similarity 0.41); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 78,
+      "xpath": "/document/body[1]/p[61]",
+      "blank_content": "Question 2. Un ratio de liquidité générale supérieur à 1 signifie :",
+      "filled_content": "☐ C) Actif circulant / Dettes à court terme",
+      "reason": "Unsafe non-slot text change (similarity 0.15); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 79,
+      "xpath": "/document/body[1]/p[62]",
+      "blank_content": "☐ A) L'entreprise est en difficulté",
+      "filled_content": "☐ D) Bénéfice net / Capitaux propres",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 80,
+      "xpath": "/document/body[1]/p[63]",
+      "blank_content": "☐ B) L'entreprise peut honorer ses dettes à court terme avec ses actifs circulants",
+      "filled_content": "Question 2. Un ratio de liquidité générale supérieur à 1 signifie :",
+      "reason": "Unsafe non-slot text change (similarity 0.24); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 81,
+      "xpath": "/document/body[1]/p[64]",
+      "blank_content": "☐ C) L'entreprise est surendettée",
+      "filled_content": "☐ A) L'entreprise est en difficulté",
+      "reason": "Unsafe non-slot text change (similarity 0.76); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 82,
+      "xpath": "/document/body[1]/p[65]",
+      "blank_content": "☐ D) Le CA est supérieur aux charges",
+      "filled_content": "☒ B) L'entreprise peut honorer ses dettes à court terme avec ses actifs circulants",
+      "reason": "Unsafe non-slot text change (similarity 0.32); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 83,
+      "xpath": "/document/body[1]/p[66]",
+      "blank_content": "Question 3. Dans un prévisionnel de trésorerie, un solde mensuel négatif indique :",
+      "filled_content": "☐ C) L'entreprise est surendettée",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 84,
+      "xpath": "/document/body[1]/p[67]",
+      "blank_content": "☐ A) Une perte d'exploitation ce mois",
+      "filled_content": "☐ D) Le CA est supérieur aux charges",
+      "reason": "Unsafe non-slot text change (similarity 0.41); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 85,
+      "xpath": "/document/body[1]/p[68]",
+      "blank_content": "☐ B) Un mois où les sorties d'argent dépassent les entrées (tension de trésorerie)",
+      "filled_content": "Question 3. Dans un prévisionnel de trésorerie, un solde mensuel négatif indique :",
+      "reason": "Unsafe non-slot text change (similarity 0.32); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 86,
+      "xpath": "/document/body[1]/p[69]",
+      "blank_content": "☐ C) Une fraude fiscale",
+      "filled_content": "☐ A) Une perte d'exploitation ce mois",
+      "reason": "Unsafe non-slot text change (similarity 0.43); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 87,
+      "xpath": "/document/body[1]/p[70]",
+      "blank_content": "☐ D) Une erreur de calcul",
+      "filled_content": "☒ B) Un mois où les sorties d'argent dépassent les entrées (tension de trésorerie)",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 88,
+      "xpath": "/document/body[1]/p[71]",
+      "blank_content": "Question 4. La 'marge sur coût variable' (MCV) est utilisée pour :",
+      "filled_content": "☐ C) Une fraude fiscale",
+      "reason": "Unsafe non-slot text change (similarity 0.18); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 89,
+      "xpath": "/document/body[1]/p[72]",
+      "blank_content": "☐ A) Calculer le bénéfice brut",
+      "filled_content": "☐ D) Une erreur de calcul",
+      "reason": "Unsafe non-slot text change (similarity 0.33); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 90,
+      "xpath": "/document/body[1]/p[73]",
+      "blank_content": "☐ B) Calculer la contribution de chaque vente à la couverture des charges fixes",
+      "filled_content": "Question 4. La 'marge sur coût variable' (MCV) est utilisée pour :",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 91,
+      "xpath": "/document/body[1]/p[74]",
+      "blank_content": "☐ C) Fixer le prix de vente HT",
+      "filled_content": "☐ A) Calculer le bénéfice brut",
+      "reason": "Unsafe non-slot text change (similarity 0.47); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 92,
+      "xpath": "/document/body[1]/p[75]",
+      "blank_content": "☐ D) Calculer la TVA à reverser",
+      "filled_content": "☒ B) Calculer la contribution de chaque vente à la couverture des charges fixes",
+      "reason": "Unsafe non-slot text change (similarity 0.42); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 93,
+      "xpath": "/document/body[1]/p[76]",
+      "blank_content": "Question 5. Lors de l'établissement d'un prévisionnel, les 'hypothèses basses' (pessimistes) servent à :",
+      "filled_content": "☐ C) Fixer le prix de vente HT",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 94,
+      "xpath": "/document/body[1]/p[77]",
+      "blank_content": "☐ A) Rassurer les banquiers",
+      "filled_content": "☐ D) Calculer la TVA à reverser",
+      "reason": "Unsafe non-slot text change (similarity 0.48); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 95,
+      "xpath": "/document/body[1]/p[78]",
+      "blank_content": "☐ B) Tester la résistance du projet si les résultats sont inférieurs aux prévisions",
+      "filled_content": "Question 5. Lors de l'établissement d'un prévisionnel, les 'hypothèses basses' (pessimistes) servent à :",
+      "reason": "Unsafe non-slot text change (similarity 0.28); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 96,
+      "xpath": "/document/body[1]/p[79]",
+      "blank_content": "☐ C) Réduire les impôts prévisionnels",
+      "filled_content": "☐ A) Rassurer les banquiers",
+      "reason": "Unsafe non-slot text change (similarity 0.47); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 97,
+      "xpath": "/document/body[1]/p[80]",
+      "blank_content": "☐ D) Gonfler artificiellement les résultats",
+      "filled_content": "☒ B) Tester la résistance du projet si les résultats sont inférieurs aux prévisions",
+      "reason": "Unsafe non-slot text change (similarity 0.38); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 98,
+      "xpath": "/document/body[1]/p[81]",
+      "blank_content": "PARTIE 2 — Questions ouvertes (5 points chacune)",
+      "filled_content": "☐ C) Réduire les impôts prévisionnels",
+      "reason": "Unsafe non-slot text change (similarity 0.24); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 99,
+      "xpath": "/document/body[1]/p[82]",
+      "blank_content": "Question 1 : Construisez un prévisionnel de trésorerie simplifié pour les 3 prochains mois (janvier, février, mars) pour votre activité.",
+      "filled_content": "☐ D) Gonfler artificiellement les résultats",
+      "reason": "Unsafe non-slot text change (similarity 0.19); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 104,
+      "xpath": "/document/body[1]/p[84]",
+      "blank_content": "Question 2 : Qu'est-ce que l'effet ciseau en gestion d'entreprise et donnez un exemple dans votre secteur.",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 109,
+      "xpath": "/document/body[1]/p[86]",
+      "blank_content": "PARTIE 3 — Mise en situation / Cas pratique (5 points)",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 110,
+      "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Scénario — ",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 111,
+      "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[2]",
+      "blank_content": "Vous souhaitez évaluer si vous pouvez prendre 3 semaines de vacances en août sans mettre votre trésorerie en danger. Données : Solde banque au 1er août = 22 000 €. Charges fixes août = 4 200 €. CA attendu (1 semaine active avant départ) = 3 500 €. Factures clients à encaisser = 6 800 €.",
+      "filled_content": "PARTIE 3 — Mise en situation / Cas pratique (5 points)",
+      "reason": "Unsafe non-slot text change (similarity 0.15); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 113,
+      "xpath": "/document/body[1]/p[88]",
+      "blank_content": "Mission : Calculez le solde prévisionnel au 31 août et évaluez si les vacances sont financièrement viables.",
+      "filled_content": "Vous souhaitez évaluer si vous pouvez prendre 3 semaines de vacances en août sans mettre votre trésorerie en danger. Données : Solde banque au 1er août = 22 000 €. Charges fixes août = 4 200 €. CA attendu (1 semaine active avant départ) = 3 500 €. Factures clients à encaisser = 6 800 €.",
+      "reason": "Unsafe non-slot text change (similarity 0.03); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 114,
+      "xpath": "/document/body[1]/p[89]",
+      "blank_content": "Votre production :",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 122,
+      "xpath": "/document/body[1]/p[91]",
+      "blank_content": "Module 3 — Pilotage Prévisionnel",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 123,
+      "xpath": "/document/body[1]/p[92]",
+      "blank_content": "Fonds de roulement, ratios, flux de trésorerie, effet ciseau — Évaluation finale",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 125,
+      "xpath": "/document/body[1]/tbl[11]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 126,
+      "xpath": "/document/body[1]/tbl[11]/tr[1]/tc[2]/p[1]",
+      "blank_content": "Type : Évaluation finale",
+      "filled_content": "Module 3 — Pilotage Prévisionnel",
+      "reason": "Unsafe non-slot text change (similarity 0.32); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 128,
+      "xpath": "/document/body[1]/p[95]",
+      "blank_content": "PARTIE 1 — QCM (1 point par question)",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 129,
+      "xpath": "/document/body[1]/p[96]",
+      "blank_content": "Question 1. Le 'fonds de roulement' (FR) d'une entreprise se calcule par :",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.20); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 130,
+      "xpath": "/document/body[1]/p[97]",
+      "blank_content": "☐ A) CA - Charges variables",
+      "filled_content": "Type : Évaluation finale",
+      "reason": "Unsafe non-slot text change (similarity 0.31); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 131,
+      "xpath": "/document/body[1]/p[98]",
+      "blank_content": "☐ B) Capitaux permanents - Actif immobilisé",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 132,
+      "xpath": "/document/body[1]/p[99]",
+      "blank_content": "☐ C) Actif circulant / Dettes à court terme",
+      "filled_content": "PARTIE 1 — QCM (1 point par question)",
+      "reason": "Unsafe non-slot text change (similarity 0.28); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 133,
+      "xpath": "/document/body[1]/p[100]",
+      "blank_content": "☐ D) Bénéfice net / Capitaux propres",
+      "filled_content": "Question 1. Le 'taux de rotation des stocks' est particulièrement important pour un artisan car :",
+      "reason": "Unsafe non-slot text change (similarity 0.23); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 134,
+      "xpath": "/document/body[1]/p[101]",
+      "blank_content": "Question 2. Un ratio de liquidité générale supérieur à 1 signifie :",
+      "filled_content": "☐ A) Il détermine le taux de TVA applicable",
+      "reason": "Unsafe non-slot text change (similarity 0.18); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 135,
+      "xpath": "/document/body[1]/p[102]",
+      "blank_content": "☐ A) L'entreprise est en difficulté",
+      "filled_content": "☒ B) Un stock qui tourne lentement immobilise de la trésorerie inutilement",
+      "reason": "Unsafe non-slot text change (similarity 0.31); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 136,
+      "xpath": "/document/body[1]/p[103]",
+      "blank_content": "☐ B) L'entreprise peut honorer ses dettes à court terme avec ses actifs circulants",
+      "filled_content": "☐ C) Il fixe le prix de vente minimum",
+      "reason": "Unsafe non-slot text change (similarity 0.18); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 137,
+      "xpath": "/document/body[1]/p[104]",
+      "blank_content": "☐ C) L'entreprise est surendettée",
+      "filled_content": "☐ D) Il détermine la fréquence des audits comptables",
+      "reason": "Unsafe non-slot text change (similarity 0.31); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 138,
+      "xpath": "/document/body[1]/p[105]",
+      "blank_content": "☐ D) Le CA est supérieur aux charges",
+      "filled_content": "Question 2. La 'rentabilité des capitaux propres' (ROE) se calcule par :",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 139,
+      "xpath": "/document/body[1]/p[106]",
+      "blank_content": "Question 3. Dans un prévisionnel de trésorerie, un solde mensuel négatif indique :",
+      "filled_content": "☐ A) CA / Capitaux propres x 100",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 140,
+      "xpath": "/document/body[1]/p[107]",
+      "blank_content": "☐ A) Une perte d'exploitation ce mois",
+      "filled_content": "☒ B) Bénéfice net / Capitaux propres x 100",
+      "reason": "Unsafe non-slot text change (similarity 0.33); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 141,
+      "xpath": "/document/body[1]/p[108]",
+      "blank_content": "☐ B) Un mois où les sorties d'argent dépassent les entrées (tension de trésorerie)",
+      "filled_content": "☐ C) Capitaux propres / Total bilan x 100",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 142,
+      "xpath": "/document/body[1]/p[109]",
+      "blank_content": "☐ C) Une fraude fiscale",
+      "filled_content": "☐ D) Charges / Produits x 100",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 143,
+      "xpath": "/document/body[1]/p[110]",
+      "blank_content": "☐ D) Une erreur de calcul",
+      "filled_content": "Question 3. Un tableau de bord efficace doit privilégier :",
+      "reason": "Unsafe non-slot text change (similarity 0.31); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 144,
+      "xpath": "/document/body[1]/p[111]",
+      "blank_content": "Question 4. La 'marge sur coût variable' (MCV) est utilisée pour :",
+      "filled_content": "☐ A) Le maximum d'indicateurs possible pour être exhaustif",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 145,
+      "xpath": "/document/body[1]/p[112]",
+      "blank_content": "☐ A) Calculer le bénéfice brut",
+      "filled_content": "☒ B) 3 à 7 indicateurs clés actionnables, lisibles en 5 minutes",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 146,
+      "xpath": "/document/body[1]/p[113]",
+      "blank_content": "☐ B) Calculer la contribution de chaque vente à la couverture des charges fixes",
+      "filled_content": "☐ C) Uniquement les indicateurs financiers",
+      "reason": "Unsafe non-slot text change (similarity 0.43); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 147,
+      "xpath": "/document/body[1]/p[114]",
+      "blank_content": "☐ C) Fixer le prix de vente HT",
+      "filled_content": "☐ D) Les indicateurs du mois précédent uniquement",
+      "reason": "Unsafe non-slot text change (similarity 0.41); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 148,
+      "xpath": "/document/body[1]/p[115]",
+      "blank_content": "☐ D) Calculer la TVA à reverser",
+      "filled_content": "Question 4. La 'valeur ajoutée' d'une entreprise se calcule par :",
+      "reason": "Unsafe non-slot text change (similarity 0.21); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 149,
+      "xpath": "/document/body[1]/p[116]",
+      "blank_content": "Question 5. Lors de l'établissement d'un prévisionnel, les 'hypothèses basses' (pessimistes) servent à :",
+      "filled_content": "☒ A) CA - Achats et charges externes",
+      "reason": "Unsafe non-slot text change (similarity 0.19); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 150,
+      "xpath": "/document/body[1]/p[117]",
+      "blank_content": "☐ A) Rassurer les banquiers",
+      "filled_content": "☐ B) CA - Toutes les charges",
+      "reason": "Unsafe non-slot text change (similarity 0.47); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 151,
+      "xpath": "/document/body[1]/p[118]",
+      "blank_content": "☐ B) Tester la résistance du projet si les résultats sont inférieurs aux prévisions",
+      "filled_content": "☐ C) Bénéfice net + Amortissements",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 152,
+      "xpath": "/document/body[1]/p[119]",
+      "blank_content": "☐ C) Réduire les impôts prévisionnels",
+      "filled_content": "☐ D) Produits financiers - Charges financières",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 153,
+      "xpath": "/document/body[1]/p[120]",
+      "blank_content": "☐ D) Gonfler artificiellement les résultats",
+      "filled_content": "Question 5. Un 'écart défavorable' dans un tableau de bord entre le réel et le prévisionnel doit conduire à :",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 154,
+      "xpath": "/document/body[1]/p[121]",
+      "blank_content": "PARTIE 2 — Questions ouvertes (5 points chacune)",
+      "filled_content": "☐ A) Modifier le prévisionnel pour qu'il corresponde au réel",
+      "reason": "Unsafe non-slot text change (similarity 0.33); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 155,
+      "xpath": "/document/body[1]/p[122]",
+      "blank_content": "Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous les calculez.",
+      "filled_content": "☒ B) Analyser la cause et prendre une action corrective",
+      "reason": "Unsafe non-slot text change (similarity 0.30); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 160,
+      "xpath": "/document/body[1]/p[124]",
+      "blank_content": "Question 2 : Comment interpréteriez-vous un taux de marge nette de 8% pour une TPE artisanale ? Est-ce satisfaisant ?",
+      "filled_content": "CA mensuel, marge brute, trésorerie, nombre de devis transformés, délai de paiement client, taux de satisfaction ; calculés chaque mois à partir de mon logiciel de facturation.",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 165,
+      "xpath": "/document/body[1]/p[126]",
+      "blank_content": "PARTIE 3 — Mise en situation / Cas pratique (5 points)",
+      "filled_content": "C'est un niveau correct mais perfectible pour l'artisanat ; je chercherais à l'améliorer en optimisant mes achats et mon organisation.",
+      "reason": "Unsafe non-slot text change (similarity 0.18); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 166,
+      "xpath": "/document/body[1]/tbl[14]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Scénario — ",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 167,
+      "xpath": "/document/body[1]/tbl[14]/tr[1]/tc[1]/p[2]",
+      "blank_content": "Votre expert-comptable vous remet votre bilan annuel. Données clés : CA = 195 000 € | Résultat net = 38 000 € | Capitaux propres = 62 000 € | Créances clients = 18 500 € | Dettes fournisseurs = 6 200 € | Stocks = 4 800 €.",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 169,
+      "xpath": "/document/body[1]/p[128]",
+      "blank_content": "Mission : Calculez 3 ratios clés (taux de marge nette, ROE, BFR) et interprétez votre situation financière.",
+      "filled_content": "PARTIE 3 — Mise en situation / Cas pratique (5 points)",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 170,
+      "xpath": "/document/body[1]/p[129]",
+      "blank_content": "Votre production :",
+      "filled_content": "Scénario — ",
+      "reason": "Unsafe non-slot text change (similarity 0.28); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 178,
+      "xpath": "/document/body[1]/p[131]",
+      "blank_content": "Module 4 — Tableau de Bord et Contrôle de Gestion",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 179,
+      "xpath": "/document/body[1]/p[132]",
+      "blank_content": "Rotation des stocks, ROE, valeur ajoutée, analyse annuelle — Évaluation finale",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 181,
+      "xpath": "/document/body[1]/tbl[16]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 182,
+      "xpath": "/document/body[1]/tbl[16]/tr[1]/tc[2]/p[1]",
+      "blank_content": "Type : Évaluation finale",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 184,
+      "xpath": "/document/body[1]/p[135]",
+      "blank_content": "PARTIE 1 — QCM (1 point par question)",
+      "filled_content": "Module 4 — Tableau de Bord et Contrôle de Gestion",
+      "reason": "Unsafe non-slot text change (similarity 0.37); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 185,
+      "xpath": "/document/body[1]/p[136]",
+      "blank_content": "Question 1. Le 'taux de rotation des stocks' est particulièrement important pour un artisan car :",
+      "filled_content": "Rotation des stocks, ROE, valeur ajoutée, analyse annuelle",
+      "reason": "Unsafe non-slot text change (similarity 0.37); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 186,
+      "xpath": "/document/body[1]/p[137]",
+      "blank_content": "☐ A) Il détermine le taux de TVA applicable",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 187,
+      "xpath": "/document/body[1]/p[138]",
+      "blank_content": "☐ B) Un stock qui tourne lentement immobilise de la trésorerie inutilement",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 188,
+      "xpath": "/document/body[1]/p[139]",
+      "blank_content": "☐ C) Il fixe le prix de vente minimum",
+      "filled_content": "Type : Évaluation finale",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 189,
+      "xpath": "/document/body[1]/p[140]",
+      "blank_content": "☐ D) Il détermine la fréquence des audits comptables",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 190,
+      "xpath": "/document/body[1]/p[141]",
+      "blank_content": "Question 2. La 'rentabilité des capitaux propres' (ROE) se calcule par :",
+      "filled_content": "PARTIE 1 — QCM (1 point par question)",
+      "reason": "Unsafe non-slot text change (similarity 0.17); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 191,
+      "xpath": "/document/body[1]/p[142]",
+      "blank_content": "☐ A) CA / Capitaux propres x 100",
+      "filled_content": "Question 1. En régime micro-BIC pour les prestations de services, le taux d'abattement forfaitaire pour charges est de :",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 192,
+      "xpath": "/document/body[1]/p[143]",
+      "blank_content": "☐ B) Bénéfice net / Capitaux propres x 100",
+      "filled_content": "☐ A) 29%",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 193,
+      "xpath": "/document/body[1]/p[144]",
+      "blank_content": "☐ C) Capitaux propres / Total bilan x 100",
+      "filled_content": "☒ B) 34%",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 194,
+      "xpath": "/document/body[1]/p[145]",
+      "blank_content": "☐ D) Charges / Produits x 100",
+      "filled_content": "☐ C) 50%",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 195,
+      "xpath": "/document/body[1]/p[146]",
+      "blank_content": "Question 3. Un tableau de bord efficace doit privilégier :",
+      "filled_content": "☐ D) 71%",
+      "reason": "Unsafe non-slot text change (similarity 0.06); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 196,
+      "xpath": "/document/body[1]/p[147]",
+      "blank_content": "☐ A) Le maximum d'indicateurs possible pour être exhaustif",
+      "filled_content": "Question 2. La 'liasse fiscale' est :",
+      "reason": "Unsafe non-slot text change (similarity 0.11); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 197,
+      "xpath": "/document/body[1]/p[148]",
+      "blank_content": "☐ B) 3 à 7 indicateurs clés actionnables, lisibles en 5 minutes",
+      "filled_content": "☐ A) La déclaration mensuelle de TVA",
+      "reason": "Unsafe non-slot text change (similarity 0.38); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 198,
+      "xpath": "/document/body[1]/p[149]",
+      "blank_content": "☐ C) Uniquement les indicateurs financiers",
+      "filled_content": "☒ B) L'ensemble des formulaires fiscaux déposés annuellement avec le bilan",
+      "reason": "Unsafe non-slot text change (similarity 0.31); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 199,
+      "xpath": "/document/body[1]/p[150]",
+      "blank_content": "☐ D) Les indicateurs du mois précédent uniquement",
+      "filled_content": "☐ C) La liste des fournisseurs fiscaux",
+      "reason": "Unsafe non-slot text change (similarity 0.41); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 200,
+      "xpath": "/document/body[1]/p[151]",
+      "blank_content": "Question 4. La 'valeur ajoutée' d'une entreprise se calcule par :",
+      "filled_content": "☐ D) Le dossier de demande de crédit bancaire",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 201,
+      "xpath": "/document/body[1]/p[152]",
+      "blank_content": "☐ A) CA - Achats et charges externes",
+      "filled_content": "Question 3. Une entreprise peut choisir volontairement d'opter pour l'impôt sur les sociétés (IS) dans certains statuts. L'IS est notamment avantageux quand :",
+      "reason": "Unsafe non-slot text change (similarity 0.20); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 202,
+      "xpath": "/document/body[1]/p[153]",
+      "blank_content": "☐ B) CA - Toutes les charges",
+      "filled_content": "☒ A) L'entrepreneur réinvestit ses bénéfices dans l'entreprise plutôt que de les prélever",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 203,
+      "xpath": "/document/body[1]/p[154]",
+      "blank_content": "☐ C) Bénéfice + Amortissements",
+      "filled_content": "☐ B) L'entrepreneur est dans la tranche d'IR la plus basse",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 204,
+      "xpath": "/document/body[1]/p[155]",
+      "blank_content": "☐ D) Produits financiers - Charges financières",
+      "filled_content": "☐ C) L'entreprise réalise peu de bénéfices",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 205,
+      "xpath": "/document/body[1]/p[156]",
+      "blank_content": "Question 5. Un 'écart défavorable' dans un tableau de bord entre le réel et le prévisionnel doit conduire à :",
+      "filled_content": "☐ D) Le gérant est en auto-entrepreneur",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 206,
+      "xpath": "/document/body[1]/p[157]",
+      "blank_content": "☐ A) Modifier le prévisionnel pour qu'il corresponde au réel",
+      "filled_content": "Question 4. La 'Déclaration Sociale des Indépendants' (DSI) sert à :",
+      "reason": "Unsafe non-slot text change (similarity 0.23); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 207,
+      "xpath": "/document/body[1]/p[158]",
+      "blank_content": "☐ B) Analyser la cause et prendre une action corrective",
+      "filled_content": "☒ A) Déclarer ses charges sociales personnelles en tant que travailleur indépendant",
+      "reason": "Unsafe non-slot text change (similarity 0.30); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 208,
+      "xpath": "/document/body[1]/p[159]",
+      "blank_content": "☐ C) Ignorer si c'est inférieur à 10%",
+      "filled_content": "☐ B) Déclarer les salaires de ses employés",
+      "reason": "Unsafe non-slot text change (similarity 0.33); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 209,
+      "xpath": "/document/body[1]/p[160]",
+      "blank_content": "☐ D) Attendre la fin de l'année pour évaluer",
+      "filled_content": "☐ C) Payer la TVA des indépendants",
+      "reason": "Unsafe non-slot text change (similarity 0.41); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 210,
+      "xpath": "/document/body[1]/p[161]",
+      "blank_content": "PARTIE 2 — Questions ouvertes (5 points chacune)",
+      "filled_content": "☐ D) S'inscrire à la chambre de métiers",
+      "reason": "Unsafe non-slot text change (similarity 0.28); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 211,
+      "xpath": "/document/body[1]/p[162]",
+      "blank_content": "Question 1 : Construisez un tableau de bord complet pour votre activité avec 6 KPIs choisis et expliquez comment vous les calculez.",
+      "filled_content": "Question 5. L'obligation de conservation des documents comptables en France est de :",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 216,
+      "xpath": "/document/body[1]/p[164]",
+      "blank_content": "Question 2 : Comment interpréteriez-vous un taux de marge nette de 8% pour une TPE artisanale ? Est-ce satisfaisant ?",
+      "filled_content": "PARTIE 2 — Questions ouvertes (5 points chacune)",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 221,
+      "xpath": "/document/body[1]/p[166]",
+      "blank_content": "PARTIE 3 — Mise en situation / Cas pratique (5 points)",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 222,
+      "xpath": "/document/body[1]/tbl[19]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Scénario — ",
+      "filled_content": "Question 2 : Bilan de formation RS6485 : qu'avez-vous appris qui changera concrètement votre gestion d'entreprise ?",
+      "reason": "Unsafe non-slot text change (similarity 0.11); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 223,
+      "xpath": "/document/body[1]/tbl[19]/tr[1]/tc[1]/p[2]",
+      "blank_content": "Votre expert-comptable vous remet votre bilan annuel. Données clés : CA = 195 000 € | Résultat net = 38 000 € | Capitaux propres = 62 000 € | Créances clients = 18 500 € | Dettes fournisseurs = 6 200 € | Stocks = 4 800 €.",
+      "filled_content": "J'ai appris à lire mon bilan et à construire un tableau de bord simple pour suivre mon activité mensuellement.",
+      "reason": "Unsafe non-slot text change (similarity 0.13); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 225,
+      "xpath": "/document/body[1]/p[168]",
+      "blank_content": "Mission : Calculez 3 ratios clés (taux de marge nette, ROE, BFR) et interprétez votre situation financière.",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 226,
+      "xpath": "/document/body[1]/p[169]",
+      "blank_content": "Votre production :",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 234,
+      "xpath": "/document/body[1]/p[171]",
+      "blank_content": "Module 5 — Statuts Juridiques et Organisation",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 235,
+      "xpath": "/document/body[1]/p[172]",
+      "blank_content": "Fiscalité, cotisations, liasse fiscale, organisation comptable — Évaluation finale",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 237,
+      "xpath": "/document/body[1]/tbl[21]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 238,
+      "xpath": "/document/body[1]/tbl[21]/tr[1]/tc[2]/p[1]",
+      "blank_content": "Type : Évaluation finale",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 240,
+      "xpath": "/document/body[1]/p[175]",
+      "blank_content": "PARTIE 1 — QCM (1 point par question)",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 241,
+      "xpath": "/document/body[1]/p[176]",
+      "blank_content": "Question 1. En régime micro-BIC pour les prestations de services, le taux d'abattement forfaitaire pour charges est de :",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 242,
+      "xpath": "/document/body[1]/p[177]",
+      "blank_content": "☐ A) 29%",
+      "filled_content": "Module 5 — Statuts Juridiques et Organisation",
+      "reason": "Unsafe non-slot text change (similarity 0.08); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 243,
+      "xpath": "/document/body[1]/p[178]",
+      "blank_content": "☐ B) 34%",
+      "filled_content": "Fiscalité, cotisations, liasse fiscale, organisation comptable",
+      "reason": "Unsafe non-slot text change (similarity 0.06); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 244,
+      "xpath": "/document/body[1]/p[179]",
+      "blank_content": "☐ C) 50%",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 245,
+      "xpath": "/document/body[1]/p[180]",
+      "blank_content": "☐ D) 71%",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.11); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 246,
+      "xpath": "/document/body[1]/p[181]",
+      "blank_content": "Question 2. La 'liasse fiscale' est :",
+      "filled_content": "Type : Évaluation finale",
+      "reason": "Unsafe non-slot text change (similarity 0.36); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 247,
+      "xpath": "/document/body[1]/p[182]",
+      "blank_content": "☐ A) La déclaration mensuelle de TVA",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 248,
+      "xpath": "/document/body[1]/p[183]",
+      "blank_content": "☐ B) L'ensemble des formulaires fiscaux déposés annuellement avec le bilan",
+      "filled_content": "PARTIE 1 — QCM (1 point par question)",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 249,
+      "xpath": "/document/body[1]/p[184]",
+      "blank_content": "☐ C) La liste des fournisseurs fiscaux",
+      "filled_content": "Question 1. En régime micro-BIC pour les prestations de services, le taux d'abattement forfaitaire pour charges est de :",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 250,
+      "xpath": "/document/body[1]/p[185]",
+      "blank_content": "☐ D) Le dossier de demande de crédit bancaire",
+      "filled_content": "☐ A) 29%",
+      "reason": "Unsafe non-slot text change (similarity 0.15); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 251,
+      "xpath": "/document/body[1]/p[186]",
+      "blank_content": "Question 3. Une entreprise peut choisir volontairement d'opter pour l'impôt sur les sociétés (IS) dans certains statuts. L'IS est notamment avantageux quand :",
+      "filled_content": "☒ B) 34%",
+      "reason": "Unsafe non-slot text change (similarity 0.02); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 252,
+      "xpath": "/document/body[1]/p[187]",
+      "blank_content": "☐ A) L'entrepreneur réinvestit ses bénéfices dans l'entreprise plutôt que de les prélever",
+      "filled_content": "☐ C) 50%",
+      "reason": "Unsafe non-slot text change (similarity 0.08); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 253,
+      "xpath": "/document/body[1]/p[188]",
+      "blank_content": "☐ B) L'entrepreneur est dans la tranche d'IR la plus basse",
+      "filled_content": "☐ D) 71%",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 254,
+      "xpath": "/document/body[1]/p[189]",
+      "blank_content": "☐ C) L'entreprise réalise peu de bénéfices",
+      "filled_content": "Question 2. La 'liasse fiscale' est :",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 255,
+      "xpath": "/document/body[1]/p[190]",
+      "blank_content": "☐ D) Le gérant est en auto-entrepreneur",
+      "filled_content": "☐ A) La déclaration mensuelle de TVA",
+      "reason": "Unsafe non-slot text change (similarity 0.21); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 256,
+      "xpath": "/document/body[1]/p[191]",
+      "blank_content": "Question 4. La 'Déclaration Sociale des Indépendants' (DSI) sert à :",
+      "filled_content": "☒ B) L'ensemble des formulaires fiscaux déposés annuellement avec le bilan",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 257,
+      "xpath": "/document/body[1]/p[192]",
+      "blank_content": "☐ A) Déclarer ses charges sociales personnelles en tant que travailleur indépendant",
+      "filled_content": "☐ C) La liste des fournisseurs fiscaux",
+      "reason": "Unsafe non-slot text change (similarity 0.31); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 258,
+      "xpath": "/document/body[1]/p[193]",
+      "blank_content": "☐ B) Déclarer les salaires de ses employés",
+      "filled_content": "☐ D) Le dossier de demande de crédit bancaire",
+      "reason": "Unsafe non-slot text change (similarity 0.32); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 259,
+      "xpath": "/document/body[1]/p[194]",
+      "blank_content": "☐ C) Payer la TVA des indépendants",
+      "filled_content": "Question 3. Une entreprise peut choisir volontairement d'opter pour l'impôt sur les sociétés (IS) dans certains statuts. L'IS est notamment avantageux quand :",
+      "reason": "Unsafe non-slot text change (similarity 0.20); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 260,
+      "xpath": "/document/body[1]/p[195]",
+      "blank_content": "☐ D) S'inscrire à la chambre de métiers",
+      "filled_content": "☒ A) L'entrepreneur réinvestit ses bénéfices dans l'entreprise plutôt que de les prélever",
+      "reason": "Unsafe non-slot text change (similarity 0.33); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 261,
+      "xpath": "/document/body[1]/p[196]",
+      "blank_content": "Question 5. L'obligation de conservation des documents comptables en France est de :",
+      "filled_content": "☐ B) L'entrepreneur est dans la tranche d'IR la plus basse",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 262,
+      "xpath": "/document/body[1]/p[197]",
+      "blank_content": "☐ A) 3 ans",
+      "filled_content": "☐ C) L'entreprise réalise peu de bénéfices",
+      "reason": "Unsafe non-slot text change (similarity 0.31); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 263,
+      "xpath": "/document/body[1]/p[198]",
+      "blank_content": "☐ B) 10 ans",
+      "filled_content": "☐ D) Le gérant est en auto-entrepreneur",
+      "reason": "Unsafe non-slot text change (similarity 0.28); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 264,
+      "xpath": "/document/body[1]/p[199]",
+      "blank_content": "☐ C) 5 ans",
+      "filled_content": "Question 4. La 'Déclaration Sociale des Indépendants' (DSI) sert à :",
+      "reason": "Unsafe non-slot text change (similarity 0.10); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 265,
+      "xpath": "/document/body[1]/p[200]",
+      "blank_content": "☐ D) 7 ans",
+      "filled_content": "☒ A) Déclarer ses charges sociales personnelles en tant que travailleur indépendant",
+      "reason": "Unsafe non-slot text change (similarity 0.13); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 266,
+      "xpath": "/document/body[1]/p[201]",
+      "blank_content": "PARTIE 2 — Questions ouvertes (5 points chacune)",
+      "filled_content": "☐ B) Déclarer les salaires de ses employés",
+      "reason": "Unsafe non-slot text change (similarity 0.24); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 267,
+      "xpath": "/document/body[1]/p[202]",
+      "blank_content": "Question 1 : Quelles sont selon vous les 5 bonnes pratiques d'organisation comptable pour une TPE artisanale ?",
+      "filled_content": "☐ C) Payer la TVA des indépendants",
+      "reason": "Unsafe non-slot text change (similarity 0.14); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 272,
+      "xpath": "/document/body[1]/p[204]",
+      "blank_content": "Question 2 : Bilan de formation RS6485 : qu'avez-vous appris qui changera concrètement votre gestion d'entreprise ?",
+      "filled_content": "☐ C) 5 ans",
+      "reason": "Unsafe non-slot text change (similarity 0.10); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 277,
+      "xpath": "/document/body[1]/p[206]",
+      "blank_content": "PARTIE 3 — Mise en situation / Cas pratique (5 points)",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 278,
+      "xpath": "/document/body[1]/tbl[24]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Scénario — ",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 279,
+      "xpath": "/document/body[1]/tbl[24]/tr[1]/tc[1]/p[2]",
+      "blank_content": "Vous êtes en EI au régime réel simplifié avec un CA de 195 000 € et un bénéfice de 55 000 €. Votre expert-comptable vous propose de basculer en SASU pour réduire votre pression sociale. Il vous explique qu'en SASU vous pourriez vous verser 25 000 € de salaire et 20 000 € de dividendes.",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 281,
+      "xpath": "/document/body[1]/p[208]",
+      "blank_content": "Mission : Comparez les deux options (EI vs SASU) en termes de cotisations sociales et d'imposition (utilisez les taux simplifiés : cotisations EI ~45% du bénéfice ; salaire SASU ~80% de charges patronales/salariales ; dividendes SASU : 30% flat tax).",
+      "filled_content": "J'ai appris à lire mon bilan et à construire un tableau de bord simple pour suivre mon activité mensuellement.",
+      "reason": "Unsafe non-slot text change (similarity 0.28); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 282,
+      "xpath": "/document/body[1]/p[209]",
+      "blank_content": "Votre production :",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "155 structural/text difference(s) require review; see mapping evidence and placeholder discovery report.",
+    "Official scoring formula and/or pass threshold are not proven across the supplied documents; result automation remains unresolved."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 54,
+    "confirmed_field_count": 54,
+    "concrete_target_count": 54,
+    "evidence_count": 54,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 155,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "155 unresolved source/template difference(s) remain."
+    ]
+  }
+}

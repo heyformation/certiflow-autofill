@@ -1,0 +1,2350 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proskills_rs6485_evaluation_intermediaire_docx",
+  "template_path": "final-templates/Proskills_Institut/RS6485/section-01/learning-progress/Evaluations Intermediaires - RS6485 - Proskills Institut - Template.docx",
+  "template_hash": "b6c69fdc3cc6d3c72afb08038664c6ad0fe29ce67d512b810d43b52ffe3d5655",
+  "source_original_path": "Proskills Institut/RS6485 - Comptabilité TPE/Evaluations Intermediaires - RS6485 - Proskills Institut - Template.docx",
+  "organization": "Proskills Institut",
+  "certification": "RS6485",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "learning-progress",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proskills Institut/RS6485 - Comptabilité TPE/Evaluations Intermediaires - RS6485 - Proskills Institut - Template.docx",
+    "filled_reference": "Proskills Institut/RS6485 - Comptabilité TPE/Evaluations Intermediaires - RS6485 - Proskills Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.936,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "ment respectivement"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.stagiaire",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.stagiaire",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 7,
+          "xpath": "/document/body[1]/p[8]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Nathan Lecomte",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Nathan Lecomte' after label 'Stagiaire'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_le_bilan_comptable_d_une_entreprise_sert_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_le_bilan_comptable_d_une_entreprise_sert_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Le bilan comptable d'une entreprise sert à :",
+        "options": [
+          {
+            "value": "a_lister_les_recettes_du_mois",
+            "label": "A) Lister les recettes du mois",
+            "part": "word/document.xml",
+            "paragraph_index": 18,
+            "xpath": "/document/body[1]/p[17]",
+            "template_text_sha256": "f38918a46fafed6a78a685a9e8f552aafb439a8c5e0badfc2fbf6ead44f62240",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_donner_une_photographie_du_patrimoine_a_une_date_donnee",
+            "label": "B) Donner une photographie du patrimoine à une date donnée",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "da2b51d6a88b172fb44d3384b75bc4a39b2ea5f4702d330abb238a282f7543d9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_calculer_les_salaires",
+            "label": "C) Calculer les salaires",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/p[19]",
+            "template_text_sha256": "161794ed21d8db4a05bf93dcdb332c2c3787e58ef721c3d3a9345c60a9254082",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_declarer_la_tva",
+            "label": "D) Déclarer la TVA",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "fbacf7db1b54c4a01c39e70e3b7a36332b993c5312e77b34504d56fbe076da3e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_donner_une_photographie_du_patrimoine_a_une_date_donnee",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Le bilan comptable d'une entreprise sert à :'.",
+      "validation": {
+        "enum": [
+          "a_lister_les_recettes_du_mois",
+          "b_donner_une_photographie_du_patrimoine_a_une_date_donnee",
+          "c_calculer_les_salaires",
+          "d_declarer_la_tva"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_dans_le_plan_comptable_general_pcg_les_comptes_de_classe_7_correspondent_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_dans_le_plan_comptable_general_pcg_les_comptes_de_classe_7_correspondent_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Dans le Plan Comptable Général (PCG), les comptes de classe 7 correspondent à :",
+        "options": [
+          {
+            "value": "a_les_charges",
+            "label": "A) Les charges",
+            "part": "word/document.xml",
+            "paragraph_index": 23,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "2db586a5eb400347f294c373e0aa94c7ff802c88490c137ba36c2f46b36d45e4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_les_immobilisations",
+            "label": "B) Les immobilisations",
+            "part": "word/document.xml",
+            "paragraph_index": 24,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "806ae2af4c42fb237644b405d25ca8703bbbecb8971c202fb757aaff84767dfd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_les_produits",
+            "label": "C) Les produits",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "abf3f91376667ae5f0557ed149bd413e37a825de49d59028a2964401adb111a0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_les_capitaux_propres",
+            "label": "D) Les capitaux propres",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "db8883c1a1f7e2485066c0a6769403a86069db95a44dc670617e501932ef9260",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_les_produits",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Dans le Plan Comptable Général (PCG), les comptes de classe 7 correspondent à :'.",
+      "validation": {
+        "enum": [
+          "a_les_charges",
+          "b_les_immobilisations",
+          "c_les_produits",
+          "d_les_capitaux_propres"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_quel_document_indique_si_l_entreprise_a_fait_un_benefice_ou_une_perte_sur_l_exe",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_quel_document_indique_si_l_entreprise_a_fait_un_benefice_ou_une_perte_sur_l_exe",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Quel document indique si l'entreprise a fait un bénéfice ou une perte sur l'exercice ?",
+        "options": [
+          {
+            "value": "a_le_grand_livre",
+            "label": "A) Le grand livre",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "d3077014213093a4bfda7f43e8ba543db8dab1e8448d6b834ec4d2f59d263010",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_compte_de_resultat",
+            "label": "B) Le compte de résultat",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[28]",
+            "template_text_sha256": "5c986bd64248eb5728489e5e1318fc6b2ae3b3f4ec2e6aae15862788fb706e9e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_bilan",
+            "label": "C) Le bilan",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "111b6c5d7be99d9f67dc1e3d9bc82bd28a38a96a719fadf2ec8bfff5871d0260",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_balance",
+            "label": "D) La balance",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "99e63b9cc08052ca644aa972a0bb57a398b4ce2c0501326a65efe0f9e3f8b7e8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_compte_de_resultat",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Quel document indique si l'entreprise a fait un bénéfice ou une perte sur l'exercice ?'.",
+      "validation": {
+        "enum": [
+          "a_le_grand_livre",
+          "b_le_compte_de_resultat",
+          "c_le_bilan",
+          "d_la_balance"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_la_tresorerie_disponible_d_une_entreprise_correspond_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_la_tresorerie_disponible_d_une_entreprise_correspond_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. La trésorerie disponible d'une entreprise correspond à :",
+        "options": [
+          {
+            "value": "a_le_total_des_creances_clients",
+            "label": "A) Le total des créances clients",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "bf45f422091b49144d257e87c62e8a93271d21efedffa55b7597234a2fa19bc9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_encaissements_cumules_moins_decaissements_cumules",
+            "label": "B) Encaissements cumulés moins décaissements cumulés",
+            "part": "word/document.xml",
+            "paragraph_index": 34,
+            "xpath": "/document/body[1]/p[33]",
+            "template_text_sha256": "bf9ad4519568fa8d7635ee90a218b0ccf1de4a8cb95cbcfa8c2622585a3c63e6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_chiffre_d_affaires_annuel",
+            "label": "C) Le chiffre d'affaires annuel",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[34]",
+            "template_text_sha256": "01170a8775fee429dce6afc935c31474a7b50aba1bab86cf5821424d612ca9d4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_resultat_net_avant_impot",
+            "label": "D) Le résultat net avant impôt",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "fe3849dcb4d59316bac253bb6c08e5cd31a58fa4048c670c234ad5aa7df78423",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_encaissements_cumules_moins_decaissements_cumules",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. La trésorerie disponible d'une entreprise correspond à :'.",
+      "validation": {
+        "enum": [
+          "a_le_total_des_creances_clients",
+          "b_encaissements_cumules_moins_decaissements_cumules",
+          "c_le_chiffre_d_affaires_annuel",
+          "d_le_resultat_net_avant_impot"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_les_capitaux_propres_au_passif_du_bilan_representent",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_les_capitaux_propres_au_passif_du_bilan_representent",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Les 'capitaux propres' au passif du bilan représentent :",
+        "options": [
+          {
+            "value": "a_le_stock_de_matieres_premieres",
+            "label": "A) Le stock de matières premières",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[37]",
+            "template_text_sha256": "bd884ac4a4def6e0379d71c180863d8de8c97ac66648b2918a9d556d3abd26b7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_les_emprunts_bancaires_en_cours",
+            "label": "B) Les emprunts bancaires en cours",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "35220f7a50391fa96f6d577aaa6c0b1c618ef115291a1b435b114b7fdb5c7aee",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_ce_qui_appartient_reellement_a_l_entrepreneur_apports_bene",
+            "label": "C) Ce qui appartient réellement à l'entrepreneur (apports + bénéfices non distribués)",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "b37a5344c6c40bca29baa15f1b2f48d10853cf477072b1ccb54be0a8db7913d1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_les_dettes_fournisseurs",
+            "label": "D) Les dettes fournisseurs",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "96223d8ac771b26d8a0a3807d0d74b9b4514dacb097611fff94d03e2b04e9acf",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_ce_qui_appartient_reellement_a_l_entrepreneur_apports_bene",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Les 'capitaux propres' au passif du bilan représentent :'.",
+      "validation": {
+        "enum": [
+          "a_le_stock_de_matieres_premieres",
+          "b_les_emprunts_bancaires_en_cours",
+          "c_ce_qui_appartient_reellement_a_l_entrepreneur_apports_bene",
+          "d_les_dettes_fournisseurs"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_expliquez_avec_vos_mots_la_difference_entre_un_bilan_et_un_compte_de_resultat",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_expliquez_avec_vos_mots_la_difference_entre_un_bilan_et_un_compte_de_resultat",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 44,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Le bilan est une photo du patrimoine à une date donnée, le compte de résultat retrace l'activité sur une période.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Le bilan est une photo du patrimoine à une date donnée, le compte de résultat retrace l'activité sur une période.' after label 'Question 1 : Expliquez avec vos mots la différence entre un bilan et un compte de résultat.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_pour_votre_activite_citez_4_elements_qui_figureraient_a_l_actif_de_votre_bilan",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_pour_votre_activite_citez_4_elements_qui_figureraient_a_l_actif_de_votre_bilan",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 49,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Mon matériel professionnel, mon véhicule, mes stocks et mes créances clients.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Mon matériel professionnel, mon véhicule, mes stocks et mes créances clients.' after label 'Question 2 : Pour votre activité, citez 4 éléments qui figureraient à l'actif de votre bilan.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 59,
+          "xpath": "/document/body[1]/tbl[5]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Capitaux propres = 96 000 - 11 000 - 27 000 = 58 000 €. Cela montre que l'entreprise dispose d'une base financière solide, indépendante des dettes.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Capitaux propres = 96 000 - 11 000 - 27 000 = 58 000 €. Cela montre que l'entreprise dispose d'une base financière solid' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_la_tva_facturee_aux_clients_et_celle_payee_aux_fournisseurs_se_nomment_respecti",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_la_tva_facturee_aux_clients_et_celle_payee_aux_fournisseurs_se_nomment_respecti",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. La TVA facturée aux clients et celle payée aux fournisseurs se nomment respectivement :",
+        "options": [
+          {
+            "value": "a_tva_due_et_tva_remboursable",
+            "label": "A) TVA due et TVA remboursable",
+            "part": "word/document.xml",
+            "paragraph_index": 76,
+            "xpath": "/document/body[1]/p[57]",
+            "template_text_sha256": "5d386773a711ad525fcaf09ab4b75a2440d06565399adb8835daac4a8a6ebccc",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_tva_collectee_et_tva_deductible",
+            "label": "B) TVA collectée et TVA déductible",
+            "part": "word/document.xml",
+            "paragraph_index": 77,
+            "xpath": "/document/body[1]/p[58]",
+            "template_text_sha256": "2b9dc13878ae894d5de04a83bec668eecfc26d8a815d58c8a30566a41e3dd263",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_tva_fixe_et_tva_variable",
+            "label": "C) TVA fixe et TVA variable",
+            "part": "word/document.xml",
+            "paragraph_index": 78,
+            "xpath": "/document/body[1]/p[59]",
+            "template_text_sha256": "ac2c35b1f622453f3f19db24e55b658e19a96e08696f9c4ebf052f7f89b572c4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_tva_pro_et_tva_perso",
+            "label": "D) TVA pro et TVA perso",
+            "part": "word/document.xml",
+            "paragraph_index": 79,
+            "xpath": "/document/body[1]/p[60]",
+            "template_text_sha256": "13a473d5d349225547e2b5bc6206020adb20da40cccc5c2ccb007189711e2f2a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_tva_collectee_et_tva_deductible",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. La TVA facturée aux clients et celle payée aux fournisseurs se nomment respectivement :'.",
+      "validation": {
+        "enum": [
+          "a_tva_due_et_tva_remboursable",
+          "b_tva_collectee_et_tva_deductible",
+          "c_tva_fixe_et_tva_variable",
+          "d_tva_pro_et_tva_perso"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_le_taux_de_tva_applicable_a_des_travaux_d_amelioration_dans_un_logement_de_plus",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_le_taux_de_tva_applicable_a_des_travaux_d_amelioration_dans_un_logement_de_plus",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Le taux de TVA applicable à des travaux d'amélioration dans un logement de plus de 2 ans est généralement de :",
+        "options": [
+          {
+            "value": "a_5_5",
+            "label": "A) 5,5%",
+            "part": "word/document.xml",
+            "paragraph_index": 81,
+            "xpath": "/document/body[1]/p[62]",
+            "template_text_sha256": "11ac4fd0aa337fa021dc9afced2be0c68dc27d35ae758f8d95bab96e8861f212",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_10",
+            "label": "B) 10%",
+            "part": "word/document.xml",
+            "paragraph_index": 82,
+            "xpath": "/document/body[1]/p[63]",
+            "template_text_sha256": "6235eb8cfffb64aa23241fa779a7fc062fb45f1636214b5a83207d5f140e8a56",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_20",
+            "label": "C) 20%",
+            "part": "word/document.xml",
+            "paragraph_index": 83,
+            "xpath": "/document/body[1]/p[64]",
+            "template_text_sha256": "ad0e90005a7f493434f40ba2cfd3b4b247fde5474f2f4eff219fa685cd637d8c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_0",
+            "label": "D) 0%",
+            "part": "word/document.xml",
+            "paragraph_index": 84,
+            "xpath": "/document/body[1]/p[65]",
+            "template_text_sha256": "c6e5a35badd48e79fba2482e271bd84ba39ebde9209c4b72073f22c30ca271ac",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_10",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Le taux de TVA applicable à des travaux d'amélioration dans un logement de plus de 2 ans est généralement de :'.",
+      "validation": {
+        "enum": [
+          "a_5_5",
+          "b_10",
+          "c_20",
+          "d_0"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_parmi_les_mentions_suivantes_laquelle_est_obligatoire_sur_une_facture",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_parmi_les_mentions_suivantes_laquelle_est_obligatoire_sur_une_facture",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Parmi les mentions suivantes, laquelle est OBLIGATOIRE sur une facture ?",
+        "options": [
+          {
+            "value": "a_le_numero_de_siret_de_l_emetteur",
+            "label": "A) Le numéro de SIRET de l'émetteur",
+            "part": "word/document.xml",
+            "paragraph_index": 86,
+            "xpath": "/document/body[1]/p[67]",
+            "template_text_sha256": "36dad143f16b35b8200ba43d4ef1781a1ed4a34dd740f5a867c2c21be8b725a9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_la_photo_du_chantier",
+            "label": "B) La photo du chantier",
+            "part": "word/document.xml",
+            "paragraph_index": 87,
+            "xpath": "/document/body[1]/p[68]",
+            "template_text_sha256": "186042675f26712076bea950d2a0560e4042118a9469dd4e6f0da25ce7958bc5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_logo_du_client",
+            "label": "C) Le logo du client",
+            "part": "word/document.xml",
+            "paragraph_index": 88,
+            "xpath": "/document/body[1]/p[69]",
+            "template_text_sha256": "b3f0a797fb4ee31d4f18d2da629d800e281bd29f47bebd1ee165cb50aa320518",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_couleur_du_produit",
+            "label": "D) La couleur du produit",
+            "part": "word/document.xml",
+            "paragraph_index": 89,
+            "xpath": "/document/body[1]/p[70]",
+            "template_text_sha256": "b372dc6d33bc531e7274781824a5f8db8a1644df76051e6c818f6754c22ceb84",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_le_numero_de_siret_de_l_emetteur",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Parmi les mentions suivantes, laquelle est OBLIGATOIRE sur une facture ?'.",
+      "validation": {
+        "enum": [
+          "a_le_numero_de_siret_de_l_emetteur",
+          "b_la_photo_du_chantier",
+          "c_le_logo_du_client",
+          "d_la_couleur_du_produit"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_un_journal_des_ventes_enregistre",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_un_journal_des_ventes_enregistre",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Un 'journal des ventes' enregistre :",
+        "options": [
+          {
+            "value": "a_les_achats_de_matieres_premieres",
+            "label": "A) Les achats de matières premières",
+            "part": "word/document.xml",
+            "paragraph_index": 91,
+            "xpath": "/document/body[1]/p[72]",
+            "template_text_sha256": "6f18a89c9b27e6628bbe960acd7f7bc42f3b3e9a5194ed55338a153320a28181",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_les_ventes_realisees_aux_clients",
+            "label": "B) Les ventes réalisées aux clients",
+            "part": "word/document.xml",
+            "paragraph_index": 92,
+            "xpath": "/document/body[1]/p[73]",
+            "template_text_sha256": "b33dc2bd929f595e430f25b6a13d78bb3bdc880bc56f357d6a540cfdb3b06fef",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_les_salaires_verses",
+            "label": "C) Les salaires versés",
+            "part": "word/document.xml",
+            "paragraph_index": 93,
+            "xpath": "/document/body[1]/p[74]",
+            "template_text_sha256": "b2629456729dcd4d1c0cca88013b1b3be97a7121315d20782380205304bd7040",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_les_emprunts_bancaires",
+            "label": "D) Les emprunts bancaires",
+            "part": "word/document.xml",
+            "paragraph_index": 94,
+            "xpath": "/document/body[1]/p[75]",
+            "template_text_sha256": "04e1efa0ec95fdd509dbbb9bf1295a87891615c0c0e606c01a31c80621595afe",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_les_ventes_realisees_aux_clients",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Un 'journal des ventes' enregistre :'.",
+      "validation": {
+        "enum": [
+          "a_les_achats_de_matieres_premieres",
+          "b_les_ventes_realisees_aux_clients",
+          "c_les_salaires_verses",
+          "d_les_emprunts_bancaires"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_le_delai_de_paiement_legal_maximum_entre_professionnels_b2b_sauf_accord_contrai",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_le_delai_de_paiement_legal_maximum_entre_professionnels_b2b_sauf_accord_contrai",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Le délai de paiement légal maximum entre professionnels (B2B), sauf accord contraire, est de :",
+        "options": [
+          {
+            "value": "a_30_jours",
+            "label": "A) 30 jours",
+            "part": "word/document.xml",
+            "paragraph_index": 96,
+            "xpath": "/document/body[1]/p[77]",
+            "template_text_sha256": "2ec070cce06fe884c9d429340dc0b3c68a910beced5b5c4e306a6323d66e744a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_45_jours_fin_de_mois_ou_60_jours",
+            "label": "B) 45 jours fin de mois ou 60 jours",
+            "part": "word/document.xml",
+            "paragraph_index": 97,
+            "xpath": "/document/body[1]/p[78]",
+            "template_text_sha256": "9da2e23e3ed541e17e29bacd9c513abc8a1c50259de1034c32550cf6749e95e9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_90_jours",
+            "label": "C) 90 jours",
+            "part": "word/document.xml",
+            "paragraph_index": 98,
+            "xpath": "/document/body[1]/p[79]",
+            "template_text_sha256": "cbe3ccba50ee514d7ca74bb9a2e53f914c71af5b87900d9c59f64a2c89d74f6a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_120_jours",
+            "label": "D) 120 jours",
+            "part": "word/document.xml",
+            "paragraph_index": 99,
+            "xpath": "/document/body[1]/p[80]",
+            "template_text_sha256": "8bb862ec73234cd30b609389284955e1682da8dc8295182447a71eebce3eeff8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_45_jours_fin_de_mois_ou_60_jours",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Le délai de paiement légal maximum entre professionnels (B2B), sauf accord contraire, est de :'.",
+      "validation": {
+        "enum": [
+          "a_30_jours",
+          "b_45_jours_fin_de_mois_ou_60_jours",
+          "c_90_jours",
+          "d_120_jours"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_expliquez_comment_fonctionne_le_mecanisme_de_la_tva_pour_une_petite_entreprise",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_expliquez_comment_fonctionne_le_mecanisme_de_la_tva_pour_une_petite_entreprise",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 102,
+          "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je facture la TVA à mes clients, je récupère celle payée sur mes achats, et je reverse la différence à l'État chaque trimestre.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je facture la TVA à mes clients, je récupère celle payée sur mes achats, et je reverse la différence à l'État chaque tri' after label 'Question 1 : Expliquez comment fonctionne le mécanisme de la TVA pour une petite entreprise comme la vôtre.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_citez_5_mentions_obligatoires_que_doit_comporter_une_facture_que_vous_emettez",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_citez_5_mentions_obligatoires_que_doit_comporter_une_facture_que_vous_emettez",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 107,
+          "xpath": "/document/body[1]/tbl[8]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Numéro, date, SIRET, description de la prestation, montants HT/TVA/TTC.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Numéro, date, SIRET, description de la prestation, montants HT/TVA/TTC.' after label 'Question 2 : Citez 5 mentions obligatoires que doit comporter une facture que vous émettez.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.votre_production_votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.votre_production_votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 117,
+          "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "TVA collectée = 14 800x10% = 1 480 €. TVA déductible = (2 600+950+310)x20% = 772 €. TVA à reverser = 1 480 - 772 = 708 €.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'TVA collectée = 14 800x10% = 1 480 €. TVA déductible = (2 600+950+310)x20% = 772 €. TVA à reverser = 1 480 - 772 = 708 €' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_le_besoin_en_fonds_de_roulement_bfr_correspond_principalement_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_le_besoin_en_fonds_de_roulement_bfr_correspond_principalement_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Le Besoin en Fonds de Roulement (BFR) correspond principalement à :",
+        "options": [
+          {
+            "value": "a_l_argent_immobilise_dans_les_creances_clients_et_les_stock",
+            "label": "A) L'argent immobilisé dans les créances clients et les stocks, diminué des dettes fournisseurs",
+            "part": "word/document.xml",
+            "paragraph_index": 134,
+            "xpath": "/document/body[1]/p[97]",
+            "template_text_sha256": "8ea35d6a0f429bdcf73bba1af0c5a8c53da62491863f0190fcc26fe7f96a4d22",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_solde_du_compte_bancaire_professionnel",
+            "label": "B) Le solde du compte bancaire professionnel",
+            "part": "word/document.xml",
+            "paragraph_index": 135,
+            "xpath": "/document/body[1]/p[98]",
+            "template_text_sha256": "61ee2dcc869a445bfd7d2d0da6b717e30f8aa69f97db92949495e98279f28357",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_montant_des_cotisations_sociales",
+            "label": "C) Le montant des cotisations sociales",
+            "part": "word/document.xml",
+            "paragraph_index": 136,
+            "xpath": "/document/body[1]/p[99]",
+            "template_text_sha256": "cbf31baed504290f6abebc773844da208a810ff99050767d38cc754d543b6853",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_valeur_du_materiel_professionnel",
+            "label": "D) La valeur du matériel professionnel",
+            "part": "word/document.xml",
+            "paragraph_index": 137,
+            "xpath": "/document/body[1]/p[100]",
+            "template_text_sha256": "9ee4fc2560e06191ae0485bcfb2a7ef858f2ec390ecb0a3e1f79d9d6a85098fa",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_l_argent_immobilise_dans_les_creances_clients_et_les_stock",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Le Besoin en Fonds de Roulement (BFR) correspond principalement à :'.",
+      "validation": {
+        "enum": [
+          "a_l_argent_immobilise_dans_les_creances_clients_et_les_stock",
+          "b_le_solde_du_compte_bancaire_professionnel",
+          "c_le_montant_des_cotisations_sociales",
+          "d_la_valeur_du_materiel_professionnel"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_le_seuil_de_rentabilite_d_une_entreprise_designe",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_le_seuil_de_rentabilite_d_une_entreprise_designe",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Le seuil de rentabilité d'une entreprise désigne :",
+        "options": [
+          {
+            "value": "a_le_chiffre_d_affaires_minimum_pour_couvrir_l_ensemble_des",
+            "label": "A) Le chiffre d'affaires minimum pour couvrir l'ensemble des charges",
+            "part": "word/document.xml",
+            "paragraph_index": 139,
+            "xpath": "/document/body[1]/p[102]",
+            "template_text_sha256": "b5ac108adbdb50d87d332003af29142dc42239591f5e4dd0dc14ab9bbe70d009",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_benefice_maximum_atteignable",
+            "label": "B) Le bénéfice maximum atteignable",
+            "part": "word/document.xml",
+            "paragraph_index": 140,
+            "xpath": "/document/body[1]/p[103]",
+            "template_text_sha256": "0dc4ab39755f129c0d57b11d49d8f39b0664d735d883fff85e6163a7bda346e9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_montant_de_l_apport_initial",
+            "label": "C) Le montant de l'apport initial",
+            "part": "word/document.xml",
+            "paragraph_index": 141,
+            "xpath": "/document/body[1]/p[104]",
+            "template_text_sha256": "a1e7e5d6008dfb890075d6da8c511221580db11e81a93ed64bbb92275e5e9ca1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_date_de_depot_du_bilan",
+            "label": "D) La date de dépôt du bilan",
+            "part": "word/document.xml",
+            "paragraph_index": 142,
+            "xpath": "/document/body[1]/p[105]",
+            "template_text_sha256": "b18e6b480358f802db85cba6273aec268d3c818bc1be5614801e67ed11d8f3e4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_le_chiffre_d_affaires_minimum_pour_couvrir_l_ensemble_des",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Le seuil de rentabilité d'une entreprise désigne :'.",
+      "validation": {
+        "enum": [
+          "a_le_chiffre_d_affaires_minimum_pour_couvrir_l_ensemble_des",
+          "b_le_benefice_maximum_atteignable",
+          "c_le_montant_de_l_apport_initial",
+          "d_la_date_de_depot_du_bilan"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_un_budget_previsionnel_se_construit_habituellement_sur",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_un_budget_previsionnel_se_construit_habituellement_sur",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Un budget prévisionnel se construit habituellement sur :",
+        "options": [
+          {
+            "value": "a_une_semaine",
+            "label": "A) Une semaine",
+            "part": "word/document.xml",
+            "paragraph_index": 144,
+            "xpath": "/document/body[1]/p[107]",
+            "template_text_sha256": "e25e7d0c8abc886d867054261c2f94cbf0a5175f9f6373a8600f09eb3547824e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_un_mois",
+            "label": "B) Un mois",
+            "part": "word/document.xml",
+            "paragraph_index": 145,
+            "xpath": "/document/body[1]/p[108]",
+            "template_text_sha256": "6a443e2be37eee3aed50ae2218d3ed0328dfc501e4a110d4d146cf9692afa4a6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_12_mois",
+            "label": "C) 12 mois",
+            "part": "word/document.xml",
+            "paragraph_index": 146,
+            "xpath": "/document/body[1]/p[109]",
+            "template_text_sha256": "4f15c564be8f7ddc3f69c9c98b952750fa30da634035b1ff1068934174d2b3ed",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_5_ans",
+            "label": "D) 5 ans",
+            "part": "word/document.xml",
+            "paragraph_index": 147,
+            "xpath": "/document/body[1]/p[110]",
+            "template_text_sha256": "926f584ef9053b7ba873eae37035482b676fa8410d3bea58ecb8429a0ad04bd6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_12_mois",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Un budget prévisionnel se construit habituellement sur :'.",
+      "validation": {
+        "enum": [
+          "a_une_semaine",
+          "b_un_mois",
+          "c_12_mois",
+          "d_5_ans"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_les_charges_fixes_d_une_tpe_sont_celles_qui",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_les_charges_fixes_d_une_tpe_sont_celles_qui",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Les charges fixes d'une TPE sont celles qui :",
+        "options": [
+          {
+            "value": "a_varient_selon_le_volume_d_activite",
+            "label": "A) Varient selon le volume d'activité",
+            "part": "word/document.xml",
+            "paragraph_index": 149,
+            "xpath": "/document/body[1]/p[112]",
+            "template_text_sha256": "219e5c4b55f0750402d0e5cefd83e32d0fb1de47fe19182a35bdad029be6d7ed",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_restent_stables_quel_que_soit_le_niveau_d_activite_loyer_a",
+            "label": "B) Restent stables quel que soit le niveau d'activité (loyer, assurances...)",
+            "part": "word/document.xml",
+            "paragraph_index": 150,
+            "xpath": "/document/body[1]/p[113]",
+            "template_text_sha256": "51cf2dfadd2198a974fda91276db188f82f66990ddbd2dbc074d90a52b29e1c2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_ne_concernent_que_les_impots",
+            "label": "C) Ne concernent que les impôts",
+            "part": "word/document.xml",
+            "paragraph_index": 151,
+            "xpath": "/document/body[1]/p[114]",
+            "template_text_sha256": "49081430257434da716842203eb825a728f57cbadbd29fde9e96f578ea8995cf",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_dependent_du_nombre_de_clients",
+            "label": "D) Dépendent du nombre de clients",
+            "part": "word/document.xml",
+            "paragraph_index": 152,
+            "xpath": "/document/body[1]/p[115]",
+            "template_text_sha256": "fbb57efabecb7c450969e963b0a906e081635e987200c02ffa6e076fb125ae00",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_restent_stables_quel_que_soit_le_niveau_d_activite_loyer_a",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Les charges fixes d'une TPE sont celles qui :'.",
+      "validation": {
+        "enum": [
+          "a_varient_selon_le_volume_d_activite",
+          "b_restent_stables_quel_que_soit_le_niveau_d_activite_loyer_a",
+          "c_ne_concernent_que_les_impots",
+          "d_dependent_du_nombre_de_clients"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_un_tableau_de_flux_de_tresorerie_previsionnel_permet_surtout_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_un_tableau_de_flux_de_tresorerie_previsionnel_permet_surtout_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Un tableau de flux de trésorerie prévisionnel permet surtout de :",
+        "options": [
+          {
+            "value": "a_calculer_l_impot_sur_les_societes",
+            "label": "A) Calculer l'impôt sur les sociétés",
+            "part": "word/document.xml",
+            "paragraph_index": 154,
+            "xpath": "/document/body[1]/p[117]",
+            "template_text_sha256": "6ebf11e327dc699663dfe3cf6ef58a7377a4dd2e8bdfeefa3d541dec479308fe",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_anticiper_les_mois_ou_la_tresorerie_pourrait_etre_tendue",
+            "label": "B) Anticiper les mois où la trésorerie pourrait être tendue",
+            "part": "word/document.xml",
+            "paragraph_index": 155,
+            "xpath": "/document/body[1]/p[118]",
+            "template_text_sha256": "807156bd8e2b85a104d8e6c1e418372b58b9b34e049ee5e20513ef9ecd87bdd3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_fixer_les_prix_de_vente",
+            "label": "C) Fixer les prix de vente",
+            "part": "word/document.xml",
+            "paragraph_index": 156,
+            "xpath": "/document/body[1]/p[119]",
+            "template_text_sha256": "39f90617ecebf153f0e9de6b42065082d3bb27b7e9bef0e4a3553352ca63e93d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_calculer_les_amortissements",
+            "label": "D) Calculer les amortissements",
+            "part": "word/document.xml",
+            "paragraph_index": 157,
+            "xpath": "/document/body[1]/p[120]",
+            "template_text_sha256": "0c343b08e6ef33648383cb663df494cef368643cde2f8553793092693e41fc6b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_anticiper_les_mois_ou_la_tresorerie_pourrait_etre_tendue",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Un tableau de flux de trésorerie prévisionnel permet surtout de :'.",
+      "validation": {
+        "enum": [
+          "a_calculer_l_impot_sur_les_societes",
+          "b_anticiper_les_mois_ou_la_tresorerie_pourrait_etre_tendue",
+          "c_fixer_les_prix_de_vente",
+          "d_calculer_les_amortissements"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_comment_calculez_vous_le_seuil_de_rentabilite_de_votre_activite_illustrez_avec",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_comment_calculez_vous_le_seuil_de_rentabilite_de_votre_activite_illustrez_avec",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 160,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je divise mes charges fixes annuelles par mon taux de marge sur coût variable pour obtenir le CA minimum à atteindre.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je divise mes charges fixes annuelles par mon taux de marge sur coût variable pour obtenir le CA minimum à atteindre.' after label 'Question 1 : Comment calculez-vous le seuil de rentabilité de votre activité ? Illustrez avec vos propres chiffres.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_pourquoi_un_budget_previsionnel_reste_utile_meme_quand_on_est_bien_accompagne_p",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_pourquoi_un_budget_previsionnel_reste_utile_meme_quand_on_est_bien_accompagne_p",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 165,
+          "xpath": "/document/body[1]/tbl[13]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Il me permet de garder la main sur mes décisions et d'anticiper mes besoins de financement en amont.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Il me permet de garder la main sur mes décisions et d'anticiper mes besoins de financement en amont.' after label 'Question 2 : Pourquoi un budget prévisionnel reste utile même quand on est bien accompagné par un comptable ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.votre_production_votre_production_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.votre_production_votre_production_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 175,
+          "xpath": "/document/body[1]/tbl[15]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Coût annuel alternant = 720x12 = 8 640 €. En intégrant l'amortissement du véhicule, il faudrait générer environ 12 000 € de CA supplémentaire pour absorber ces nouvelles charges.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Coût annuel alternant = 720x12 = 8 640 €. En intégrant l'amortissement du véhicule, il faudrait générer environ 12 000 €' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_un_ratio_de_rentabilite_compare_generalement",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_un_ratio_de_rentabilite_compare_generalement",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Un ratio de rentabilité compare généralement :",
+        "options": [
+          {
+            "value": "a_le_nombre_de_devis_envoyes_au_nombre_de_clients",
+            "label": "A) Le nombre de devis envoyés au nombre de clients",
+            "part": "word/document.xml",
+            "paragraph_index": 192,
+            "xpath": "/document/body[1]/p[137]",
+            "template_text_sha256": "05bb705fa1c118a99dbf5fa95864f2fa3901244ea9b34fd95360a21ea73f6870",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_benefice_net_au_chiffre_d_affaires_ou_aux_capitaux_prop",
+            "label": "B) Le bénéfice net au chiffre d'affaires ou aux capitaux propres",
+            "part": "word/document.xml",
+            "paragraph_index": 193,
+            "xpath": "/document/body[1]/p[138]",
+            "template_text_sha256": "846b75f4c1e0515b8dc14996a5f468e8d162ab40186af8ede34a9dbc1a072c21",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_les_heures_travaillees_au_nombre_de_salaries",
+            "label": "C) Les heures travaillées au nombre de salariés",
+            "part": "word/document.xml",
+            "paragraph_index": 194,
+            "xpath": "/document/body[1]/p[139]",
+            "template_text_sha256": "9aac4ae21e4da0b29431dd36bed2fafa552552f9c7f89f70c18778e7387c77e0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_surface_de_l_atelier",
+            "label": "D) La surface de l'atelier",
+            "part": "word/document.xml",
+            "paragraph_index": 195,
+            "xpath": "/document/body[1]/p[140]",
+            "template_text_sha256": "97b4f5dc43e4824103287c1d8967107e2d87757bfa8f473d29e8ef21bcb4bd4d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_benefice_net_au_chiffre_d_affaires_ou_aux_capitaux_prop",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Un ratio de rentabilité compare généralement :'.",
+      "validation": {
+        "enum": [
+          "a_le_nombre_de_devis_envoyes_au_nombre_de_clients",
+          "b_le_benefice_net_au_chiffre_d_affaires_ou_aux_capitaux_prop",
+          "c_les_heures_travaillees_au_nombre_de_salaries",
+          "d_la_surface_de_l_atelier"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_un_indicateur_kpi_dans_un_tableau_de_bord_d_artisan_sert_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_un_indicateur_kpi_dans_un_tableau_de_bord_d_artisan_sert_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Un indicateur KPI dans un tableau de bord d'artisan sert à :",
+        "options": [
+          {
+            "value": "a_gerer_la_paie",
+            "label": "A) Gérer la paie",
+            "part": "word/document.xml",
+            "paragraph_index": 197,
+            "xpath": "/document/body[1]/p[142]",
+            "template_text_sha256": "a22050600525e2f503fdf8942b009bf2c9f7b0e93648d42682c34e41aecd694f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_mesurer_l_atteinte_d_un_objectif_de_performance",
+            "label": "B) Mesurer l'atteinte d'un objectif de performance",
+            "part": "word/document.xml",
+            "paragraph_index": 198,
+            "xpath": "/document/body[1]/p[143]",
+            "template_text_sha256": "657e6649e6e7dc33e7d55546d504feea6fa65bc47ec179559d72a741e291ad0c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_remplacer_la_comptabilite",
+            "label": "C) Remplacer la comptabilité",
+            "part": "word/document.xml",
+            "paragraph_index": 199,
+            "xpath": "/document/body[1]/p[144]",
+            "template_text_sha256": "72e01ead145defa3e5392311276255e9dec2037053c18e5e7c5c62efb90ef182",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_calculer_la_tva",
+            "label": "D) Calculer la TVA",
+            "part": "word/document.xml",
+            "paragraph_index": 200,
+            "xpath": "/document/body[1]/p[145]",
+            "template_text_sha256": "8be2563a41cce782e2d61fd7ec301be86e3420a8ad899e3e8979355f741e143e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_mesurer_l_atteinte_d_un_objectif_de_performance",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Un indicateur KPI dans un tableau de bord d'artisan sert à :'.",
+      "validation": {
+        "enum": [
+          "a_gerer_la_paie",
+          "b_mesurer_l_atteinte_d_un_objectif_de_performance",
+          "c_remplacer_la_comptabilite",
+          "d_calculer_la_tva"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_le_taux_de_marge_brute_se_calcule_par",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_le_taux_de_marge_brute_se_calcule_par",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Le taux de marge brute se calcule par :",
+        "options": [
+          {
+            "value": "a_ca_cout_d_achat_des_fournitures_ca_x_100",
+            "label": "A) (CA - Coût d'achat des fournitures) / CA x 100",
+            "part": "word/document.xml",
+            "paragraph_index": 202,
+            "xpath": "/document/body[1]/p[147]",
+            "template_text_sha256": "8f2ae23b52292d48b063be4665b22af674eb6cb8d7ba677ca06d2f9948dd6b01",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_ca_charges_totales",
+            "label": "B) CA / Charges totales",
+            "part": "word/document.xml",
+            "paragraph_index": 203,
+            "xpath": "/document/body[1]/p[148]",
+            "template_text_sha256": "29e941c02f27abd4b90e94aaa2d6cc3a6b348786871b505ef36c98a669758668",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_benefice_net_ca",
+            "label": "C) Bénéfice net / CA",
+            "part": "word/document.xml",
+            "paragraph_index": 204,
+            "xpath": "/document/body[1]/p[149]",
+            "template_text_sha256": "79bf31456f55b3620d586057bcb74b716d67c37093360ffdbeaef8ea0c7f91dc",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_ca_nombre_de_clients",
+            "label": "D) CA / Nombre de clients",
+            "part": "word/document.xml",
+            "paragraph_index": 205,
+            "xpath": "/document/body[1]/p[150]",
+            "template_text_sha256": "2d74020f473ff13d04d444177d489aebe151df4b1647a2304628d87a02a4c0eb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_ca_cout_d_achat_des_fournitures_ca_x_100",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Le taux de marge brute se calcule par :'.",
+      "validation": {
+        "enum": [
+          "a_ca_cout_d_achat_des_fournitures_ca_x_100",
+          "b_ca_charges_totales",
+          "c_benefice_net_ca",
+          "d_ca_nombre_de_clients"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_pour_rester_reactif_il_est_conseille_de_suivre_ses_indicateurs",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_pour_rester_reactif_il_est_conseille_de_suivre_ses_indicateurs",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Pour rester réactif, il est conseillé de suivre ses indicateurs :",
+        "options": [
+          {
+            "value": "a_une_fois_par_an_seulement",
+            "label": "A) Une fois par an seulement",
+            "part": "word/document.xml",
+            "paragraph_index": 207,
+            "xpath": "/document/body[1]/p[152]",
+            "template_text_sha256": "598025b4d66e1824eb1f69d0527a0d56ab992ef5967a2e65a0cff5bbd68b31f3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_chaque_mois",
+            "label": "B) Chaque mois",
+            "part": "word/document.xml",
+            "paragraph_index": 208,
+            "xpath": "/document/body[1]/p[153]",
+            "template_text_sha256": "187f568f3f3f92bd3a06027150c6895259f1a18ad247a128631b59cdf1097e7c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_uniquement_en_cas_de_baisse_d_activite",
+            "label": "C) Uniquement en cas de baisse d'activité",
+            "part": "word/document.xml",
+            "paragraph_index": 209,
+            "xpath": "/document/body[1]/p[154]",
+            "template_text_sha256": "10fac4124b924dc316a731bb878057b84343ce29a2b09605b46629bf64950c3f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_tous_les_3_ans",
+            "label": "D) Tous les 3 ans",
+            "part": "word/document.xml",
+            "paragraph_index": 210,
+            "xpath": "/document/body[1]/p[155]",
+            "template_text_sha256": "5ebbe4e86d2d5177d42d9ac29fea392d512d70d67443b47af0dea46ae8b503f4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_chaque_mois",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Pour rester réactif, il est conseillé de suivre ses indicateurs :'.",
+      "validation": {
+        "enum": [
+          "a_une_fois_par_an_seulement",
+          "b_chaque_mois",
+          "c_uniquement_en_cas_de_baisse_d_activite",
+          "d_tous_les_3_ans"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_le_delai_moyen_de_reglement_clients_mesure",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_le_delai_moyen_de_reglement_clients_mesure",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Le délai moyen de règlement clients mesure :",
+        "options": [
+          {
+            "value": "a_la_duree_moyenne_d_un_chantier",
+            "label": "A) La durée moyenne d'un chantier",
+            "part": "word/document.xml",
+            "paragraph_index": 212,
+            "xpath": "/document/body[1]/p[157]",
+            "template_text_sha256": "79d4d269c7426d8685fc46e6d15828219c194a42bf5e9471aa3d8d73a6e96833",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_temps_entre_l_emission_de_la_facture_et_son_encaissemen",
+            "label": "B) Le temps entre l'émission de la facture et son encaissement",
+            "part": "word/document.xml",
+            "paragraph_index": 213,
+            "xpath": "/document/body[1]/p[158]",
+            "template_text_sha256": "283517e0f6945b5ebdb8797a9beba22ec0c15a5389fe939b12602e53a6e31a20",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_delai_de_garantie_legale",
+            "label": "C) Le délai de garantie légale",
+            "part": "word/document.xml",
+            "paragraph_index": 214,
+            "xpath": "/document/body[1]/p[159]",
+            "template_text_sha256": "3c4e5d035160d45bf2c7507324fa740cdb757b0060189ed78649b7b9704507a8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_temps_de_fabrication_d_un_devis",
+            "label": "D) Le temps de fabrication d'un devis",
+            "part": "word/document.xml",
+            "paragraph_index": 215,
+            "xpath": "/document/body[1]/p[160]",
+            "template_text_sha256": "d03f9ff4c08fe36e92007327b5d987cff44e5dc1d999537284e11bdbb92cd54b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_temps_entre_l_emission_de_la_facture_et_son_encaissemen",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Le délai moyen de règlement clients mesure :'.",
+      "validation": {
+        "enum": [
+          "a_la_duree_moyenne_d_un_chantier",
+          "b_le_temps_entre_l_emission_de_la_facture_et_son_encaissemen",
+          "c_le_delai_de_garantie_legale",
+          "d_le_temps_de_fabrication_d_un_devis"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_quels_5_indicateurs_suivriez_vous_chaque_mois_pour_piloter_votre_activite_justi",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_quels_5_indicateurs_suivriez_vous_chaque_mois_pour_piloter_votre_activite_justi",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 218,
+          "xpath": "/document/body[1]/tbl[17]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "CA, marge brute, trésorerie, délai de paiement clients, nombre de devis transformés en contrats.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'CA, marge brute, trésorerie, délai de paiement clients, nombre de devis transformés en contrats.' after label 'Question 1 : Quels 5 indicateurs suivriez-vous chaque mois pour piloter votre activité ? Justifiez vos choix.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_quelle_difference_faites_vous_entre_le_controle_de_gestion_et_la_comptabilite_g",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_quelle_difference_faites_vous_entre_le_controle_de_gestion_et_la_comptabilite_g",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 223,
+          "xpath": "/document/body[1]/tbl[18]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "La comptabilité constate le passé, le contrôle de gestion aide à décider pour l'avenir grâce à des indicateurs de suivi.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'La comptabilité constate le passé, le contrôle de gestion aide à décider pour l'avenir grâce à des indicateurs de suivi.' after label 'Question 2 : Quelle différence faites-vous entre le contrôle de gestion et la comptabilité générale ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.votre_production_votre_production_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.votre_production_votre_production_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 233,
+          "xpath": "/document/body[1]/tbl[20]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Résultat = 16 400 - 6 100 - 4 300 - 3 800 = 2 200 €. Marge brute = (16 400-6 100)/16 400 = 63%. L'écart de -14% s'explique par un client ayant reporté sa commande à mai.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Résultat = 16 400 - 6 100 - 4 300 - 3 800 = 2 200 €. Marge brute = (16 400-6 100)/16 400 = 63%. L'écart de -14% s'expliq' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_le_plafond_de_chiffre_d_affaires_annuel_en_micro_entreprise_pour_une_activite_d",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_le_plafond_de_chiffre_d_affaires_annuel_en_micro_entreprise_pour_une_activite_d",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Le plafond de chiffre d'affaires annuel en micro-entreprise pour une activité de prestations de services est de :",
+        "options": [
+          {
+            "value": "a_77_700",
+            "label": "A) 77 700 €",
+            "part": "word/document.xml",
+            "paragraph_index": 250,
+            "xpath": "/document/body[1]/p[177]",
+            "template_text_sha256": "1cd4bf43d9f752a4e1b6879f0013621ec289e676c1684225fab23e0bb625dc5f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_188_700",
+            "label": "B) 188 700 €",
+            "part": "word/document.xml",
+            "paragraph_index": 251,
+            "xpath": "/document/body[1]/p[178]",
+            "template_text_sha256": "acb48e2f38e8239db09ecf50f964dcd7802a3561ad56859fb11900d0c4fdab27",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_36_800",
+            "label": "C) 36 800 €",
+            "part": "word/document.xml",
+            "paragraph_index": 252,
+            "xpath": "/document/body[1]/p[179]",
+            "template_text_sha256": "0d2c5e58dbc0549758eff723c6a5d91fdaca8a55cce59cb59b98d982c0560f40",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_250_000",
+            "label": "D) 250 000 €",
+            "part": "word/document.xml",
+            "paragraph_index": 253,
+            "xpath": "/document/body[1]/p[180]",
+            "template_text_sha256": "5c86d88a6c853bc94e246bcece4edcbd36c95d2b717c9139821b1641ca74b375",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_77_700",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Le plafond de chiffre d'affaires annuel en micro-entreprise pour une activité de prestations de services est de :'.",
+      "validation": {
+        "enum": [
+          "a_77_700",
+          "b_188_700",
+          "c_36_800",
+          "d_250_000"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_en_entreprise_individuelle_au_regime_reel_le_resultat_est_impose",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_en_entreprise_individuelle_au_regime_reel_le_resultat_est_impose",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. En Entreprise Individuelle au régime réel, le résultat est imposé :",
+        "options": [
+          {
+            "value": "a_a_l_impot_sur_les_societes",
+            "label": "A) À l'impôt sur les sociétés",
+            "part": "word/document.xml",
+            "paragraph_index": 255,
+            "xpath": "/document/body[1]/p[182]",
+            "template_text_sha256": "12e65d5c5473907a6708d943cd13591bf1de1ffc586262e403ecf037a3ae73d7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_a_l_impot_sur_le_revenu_categorie_bic",
+            "label": "B) À l'impôt sur le revenu, catégorie BIC",
+            "part": "word/document.xml",
+            "paragraph_index": 256,
+            "xpath": "/document/body[1]/p[183]",
+            "template_text_sha256": "2dd9329cb0a16d9920be6ce5522a293c620cc2c9bdccc826848660114dd1d397",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_a_un_forfait_de_12",
+            "label": "C) À un forfait de 12%",
+            "part": "word/document.xml",
+            "paragraph_index": 257,
+            "xpath": "/document/body[1]/p[184]",
+            "template_text_sha256": "ec481562f307549544792734261d84499b8b72129e6e784d24e852f1e42d2cfb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_il_n_est_jamais_impose",
+            "label": "D) Il n'est jamais imposé",
+            "part": "word/document.xml",
+            "paragraph_index": 258,
+            "xpath": "/document/body[1]/p[185]",
+            "template_text_sha256": "f83830a92303afd02511e73a6674981fc2ce73896b84582275618867e37cb633",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_a_l_impot_sur_le_revenu_categorie_bic",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. En Entreprise Individuelle au régime réel, le résultat est imposé :'.",
+      "validation": {
+        "enum": [
+          "a_a_l_impot_sur_les_societes",
+          "b_a_l_impot_sur_le_revenu_categorie_bic",
+          "c_a_un_forfait_de_12",
+          "d_il_n_est_jamais_impose"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_par_rapport_a_l_ei_la_sasu_presente_surtout_l_avantage_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_par_rapport_a_l_ei_la_sasu_presente_surtout_l_avantage_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Par rapport à l'EI, la SASU présente surtout l'avantage de :",
+        "options": [
+          {
+            "value": "a_supprimer_toute_cotisation_sociale",
+            "label": "A) Supprimer toute cotisation sociale",
+            "part": "word/document.xml",
+            "paragraph_index": 260,
+            "xpath": "/document/body[1]/p[187]",
+            "template_text_sha256": "16c8606195e3455e89adeb93f80cc6d790413d8418cdc3e6ed2b916b4795e1b8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_limiter_la_responsabilite_de_l_entrepreneur_aux_apports",
+            "label": "B) Limiter la responsabilité de l'entrepreneur aux apports",
+            "part": "word/document.xml",
+            "paragraph_index": 261,
+            "xpath": "/document/body[1]/p[188]",
+            "template_text_sha256": "39e8dc7fcf7fc37134cf94674ad83fc758b9153b99684a09303a78fded9521b8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_dispenser_de_facturation_de_tva",
+            "label": "C) Dispenser de facturation de TVA",
+            "part": "word/document.xml",
+            "paragraph_index": 262,
+            "xpath": "/document/body[1]/p[189]",
+            "template_text_sha256": "3e4e8493cb83d9946fb4fb4de67e85deae8947314c5e054bf331c1e722903e87",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_interdire_le_recrutement_de_salaries",
+            "label": "D) Interdire le recrutement de salariés",
+            "part": "word/document.xml",
+            "paragraph_index": 263,
+            "xpath": "/document/body[1]/p[190]",
+            "template_text_sha256": "5ef2efe54b566bc34a89d5e9479b07ec0b4cc8e393140bd5ee97a4570c41ce00",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_limiter_la_responsabilite_de_l_entrepreneur_aux_apports",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Par rapport à l'EI, la SASU présente surtout l'avantage de :'.",
+      "validation": {
+        "enum": [
+          "a_supprimer_toute_cotisation_sociale",
+          "b_limiter_la_responsabilite_de_l_entrepreneur_aux_apports",
+          "c_dispenser_de_facturation_de_tva",
+          "d_interdire_le_recrutement_de_salaries"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_un_expert_comptable_est_il_obligatoire_pour_une_micro_entreprise",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_un_expert_comptable_est_il_obligatoire_pour_une_micro_entreprise",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Un expert-comptable est-il obligatoire pour une micro-entreprise ?",
+        "options": [
+          {
+            "value": "a_oui_dans_tous_les_cas",
+            "label": "A) Oui, dans tous les cas",
+            "part": "word/document.xml",
+            "paragraph_index": 265,
+            "xpath": "/document/body[1]/p[192]",
+            "template_text_sha256": "ee6b407838b6646673d42945c25e28617a96570ca0ef2159c2e4f6bf6b200a10",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_non_ce_n_est_pas_une_obligation_legale",
+            "label": "B) Non, ce n'est pas une obligation légale",
+            "part": "word/document.xml",
+            "paragraph_index": 266,
+            "xpath": "/document/body[1]/p[193]",
+            "template_text_sha256": "864d78908d1495239596fddb802523506e6309fb96699e0e4877cfeb90b0057f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_seulement_au_dela_de_3_salaries",
+            "label": "C) Seulement au-delà de 3 salariés",
+            "part": "word/document.xml",
+            "paragraph_index": 267,
+            "xpath": "/document/body[1]/p[194]",
+            "template_text_sha256": "c8ad7b822809a1bfdbb7a6985fa0a48686ef28fed8bbb065e69fdbf1211566d5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_seulement_pour_les_sarl",
+            "label": "D) Seulement pour les SARL",
+            "part": "word/document.xml",
+            "paragraph_index": 268,
+            "xpath": "/document/body[1]/p[195]",
+            "template_text_sha256": "1891508742a12fed052e7e3a7110db9521a0aa1f9810e999934729dde338258c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_non_ce_n_est_pas_une_obligation_legale",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Un expert-comptable est-il obligatoire pour une micro-entreprise ?'.",
+      "validation": {
+        "enum": [
+          "a_oui_dans_tous_les_cas",
+          "b_non_ce_n_est_pas_une_obligation_legale",
+          "c_seulement_au_dela_de_3_salaries",
+          "d_seulement_pour_les_sarl"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_le_statut_de_conjoint_collaborateur_convient_lorsque",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_le_statut_de_conjoint_collaborateur_convient_lorsque",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Le statut de conjoint collaborateur convient lorsque :",
+        "options": [
+          {
+            "value": "a_le_conjoint_est_actionnaire_majoritaire",
+            "label": "A) Le conjoint est actionnaire majoritaire",
+            "part": "word/document.xml",
+            "paragraph_index": 270,
+            "xpath": "/document/body[1]/p[197]",
+            "template_text_sha256": "30a03ff0f0b05bf6ae0c52b10d4252112a06791588e7078a2a9ee4ab0d60cc09",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_conjoint_participe_regulierement_a_l_activite_sans_etre",
+            "label": "B) Le conjoint participe régulièrement à l'activité sans être salarié",
+            "part": "word/document.xml",
+            "paragraph_index": 271,
+            "xpath": "/document/body[1]/p[198]",
+            "template_text_sha256": "a384a1d04928627c86a6747915f7dc6def0a75ba063c6276e78acfaf67fb8a70",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_l_entreprise_depasse_le_seuil_de_tva",
+            "label": "C) L'entreprise dépasse le seuil de TVA",
+            "part": "word/document.xml",
+            "paragraph_index": 272,
+            "xpath": "/document/body[1]/p[199]",
+            "template_text_sha256": "a7e5b1e2c22c2efa58f0e9ccb54a5834532a77dffc10196a33ec85ff2e9fe436",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_on_cree_un_groupe_de_societes",
+            "label": "D) On crée un groupe de sociétés",
+            "part": "word/document.xml",
+            "paragraph_index": 273,
+            "xpath": "/document/body[1]/p[200]",
+            "template_text_sha256": "a0a5b44ab59a3c7af7bdabc84bc4000598a8cd61dc368ab72173383d7e4d1eee",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_conjoint_participe_regulierement_a_l_activite_sans_etre",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Le statut de conjoint collaborateur convient lorsque :'.",
+      "validation": {
+        "enum": [
+          "a_le_conjoint_est_actionnaire_majoritaire",
+          "b_le_conjoint_participe_regulierement_a_l_activite_sans_etre",
+          "c_l_entreprise_depasse_le_seuil_de_tva",
+          "d_on_cree_un_groupe_de_societes"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_presentez_un_avantage_et_un_inconvenient_du_regime_micro_entreprise_pour_un_art",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_presentez_un_avantage_et_un_inconvenient_du_regime_micro_entreprise_pour_un_art",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 276,
+          "xpath": "/document/body[1]/tbl[22]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Avantage : simplicité administrative. Inconvénient : impossibilité de déduire les charges réelles au-delà de l'abattement forfaitaire.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Avantage : simplicité administrative. Inconvénient : impossibilité de déduire les charges réelles au-delà de l'abattemen' after label 'Question 1 : Présentez un avantage et un inconvénient du régime micro-entreprise pour un artisan.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_decrivez_comment_vous_organisez_la_transmission_de_vos_documents_a_votre_expert",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_decrivez_comment_vous_organisez_la_transmission_de_vos_documents_a_votre_expert",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 281,
+          "xpath": "/document/body[1]/tbl[23]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je scanne mes factures chaque semaine et je les transmets via une application dédiée à mon cabinet comptable.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je scanne mes factures chaque semaine et je les transmets via une application dédiée à mon cabinet comptable.' after label 'Question 2 : Décrivez comment vous organisez la transmission de vos documents à votre expert-comptable.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.votre_production_votre_production_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.votre_production_votre_production_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 291,
+          "xpath": "/document/body[1]/tbl[25]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "EI+salarié : simple mais responsabilité illimitée. SARL : partage de la charge de travail mais formalisme accru. SASU : protection du patrimoine mais coûts sociaux plus élevés. Je pencherais pour la SASU à ce stade de développement.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'EI+salarié : simple mais responsabilité illimitée. SARL : partage de la charge de travail mais formalisme accru. SASU : ' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 71,
+      "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 129,
+      "xpath": "/document/body[1]/tbl[11]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 187,
+      "xpath": "/document/body[1]/tbl[16]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 245,
+      "xpath": "/document/body[1]/tbl[21]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Nathan Lecomte",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "5 structural/text difference(s) require review; see mapping evidence and placeholder discovery report."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 41,
+    "confirmed_field_count": 41,
+    "concrete_target_count": 41,
+    "evidence_count": 41,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 5,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "5 unresolved source/template difference(s) remain."
+    ]
+  }
+}

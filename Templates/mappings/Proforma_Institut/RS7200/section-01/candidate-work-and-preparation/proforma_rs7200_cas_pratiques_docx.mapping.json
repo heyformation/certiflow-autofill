@@ -1,0 +1,350 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7200_cas_pratiques_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7200/section-01/candidate-work-and-preparation/Cas Pratiques - RS7200 - Proforma Institut - Template.docx",
+  "template_hash": "f817bd5ba9766a63c9c181d334179dfd7975a6164a6760f3a5144604f135862f",
+  "source_original_path": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Cas Pratiques - RS7200 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7200",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "candidate-work-and-preparation",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Cas Pratiques - RS7200 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Cas Pratiques - RS7200 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.8376,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": null
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.stagiaire",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.stagiaire",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 7,
+          "xpath": "/document/body[1]/p[8]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Camille Bertrand",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Camille Bertrand' after label 'Stagiaire'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 22,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je lui conseillerais de se concentrer sur 1 ou 2 réseaux maximum au lieu de 5, de préparer plusieurs publications à l'avance le week-end (batch content), et de partager simplement des photos avant/après de ses réparations qui parlent d'elles-mêmes sans nécessiter beaucoup de texte.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je lui conseillerais de se concentrer sur 1 ou 2 réseaux maximum au lieu de 5, de préparer plusieurs publications à l'av' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 43,
+          "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je proposerais de publier 80% de contenu utile (conseils d'entretien, astuces, réponses aux questions fréquentes) et 20% seulement de promotion directe, avec un ton plus humain et des photos de mes interventions pour créer une différence claire avec cette approche uniquement tarifaire.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je proposerais de publier 80% de contenu utile (conseils d'entretien, astuces, réponses aux questions fréquentes) et 20%' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_2",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_2",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 64,
+          "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je prendrais d'abord une photo large de la pièce entière en lumière naturelle depuis la porte, puis un gros plan sur un détail soigné (robinetterie, carrelage), et enfin une photo avant/après en gardant le même angle pour bien montrer la transformation.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je prendrais d'abord une photo large de la pièce entière en lumière naturelle depuis la porte, puis un gros plan sur un ' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 85,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Semaine 1 : conseil d'entretien printanier + photo d'un chantier récent. Semaine 2 : astuce pratique + coulisses d'intervention. Semaine 3 : témoignage client + avant/après. Semaine 4 : offre spéciale printemps + question à la communauté, soit 8 publications réparties sur les thèmes conseil, réalisation, coulisses et promotion.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Semaine 1 : conseil d'entretien printanier + photo d'un chantier récent. Semaine 2 : astuce pratique + coulisses d'inter' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_4",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_4",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 106,
+          "xpath": "/document/body[1]/tbl[15]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Les posts éducatifs performent presque deux fois mieux que les posts de réalisations en termes de portée. Je proposerais d'augmenter la part de contenu éducatif tout en gardant quelques réalisations marquantes, et de tester des formats carrousel pour les conseils afin d'augmenter encore l'engagement.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Les posts éducatifs performent presque deux fois mieux que les posts de réalisations en termes de portée. Je proposerais' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.cas_pratiques.votre_production_votre_production_5",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.cas_pratiques.votre_production_votre_production_5",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 120,
+          "xpath": "/document/body[1]/tbl[17]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "La progression est positive et régulière sur les 3 mois (abonnés, portée et devis en hausse constante). Pour le mois 4, je fixerais comme objectifs : +25 abonnés, une portée de 550 et 5 demandes de devis, en maintenant le même rythme de publication et en misant davantage sur le contenu qui a le mieux fonctionné.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'La progression est positive et régulière sur les 3 mois (abonnés, portée et devis en hausse constante). Pour le mois 4, ' after label 'Votre production :'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 2,
+      "xpath": "/document/body[1]/p[3]",
+      "blank_content": "Recueil des mises en situation / cas pratiques (Partie 3 de chaque évaluation) — Document vierge",
+      "filled_content": "Recueil des mises en situation / cas pratiques (Partie 3 de chaque évaluation)",
+      "reason": "Unsafe non-slot text change (similarity 0.90); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 34,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 55,
+      "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 76,
+      "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 97,
+      "xpath": "/document/body[1]/tbl[13]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "6 structural/text difference(s) require review; see mapping evidence and placeholder discovery report."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 7,
+    "confirmed_field_count": 7,
+    "concrete_target_count": 7,
+    "evidence_count": 7,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 6,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "6 unresolved source/template difference(s) remain."
+    ]
+  }
+}

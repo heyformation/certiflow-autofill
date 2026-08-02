@@ -1,0 +1,1360 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proskills_rs7311_dossier_de_presentation_docx",
+  "template_path": "final-templates/Proskills_Institut/RS7311/section-01/candidate-work-and-preparation/Dossier de Presentation - RS7311 - Proskills Institut - Template.docx",
+  "template_hash": "729188a92ab845fc8598c2503245e317b3c2c20bc612f79b63cec35d4420c8e2",
+  "source_original_path": "Proskills Institut/RS7311 - IA TPE/Dossier de Presentation - RS7311 - Proskills Institut - Template.docx",
+  "organization": "Proskills Institut",
+  "certification": "RS7311",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "candidate-work-and-preparation",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proskills Institut/RS7311 - IA TPE/Dossier de Presentation - RS7311 - Proskills Institut - Template.docx",
+    "filled_reference": "Proskills Institut/RS7311 - IA TPE/Dossier de Presentation - RS7311 - Proskills Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.5182,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "Lecomte Nathan"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.result",
+      "source_class": "UNRESOLVED",
+      "source_path": "$.evaluation.result",
+      "target": {
+        "type": "docx_multi_location",
+        "locations": [
+          {
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[6]",
+            "in_table": false,
+            "style": null,
+            "template_text": "",
+            "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "strategy": "fill_empty_or_marker_paragraph",
+            "fixed_prefix": ""
+          },
+          {
+            "part": "word/document.xml",
+            "paragraph_index": 68,
+            "xpath": "/document/body[1]/p[25]",
+            "in_table": false,
+            "style": null,
+            "template_text": "",
+            "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "strategy": "fill_empty_or_marker_paragraph",
+            "fixed_prefix": ""
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Certification obtenue avec succès",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Certification obtenue avec succès' after label 'Note obtenue : [NOTE_GLOBALE]/20 - [ADMIS/AJOURNÉ]'. Repeated at word/document.xml paragraph 68.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.identity.full_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.identity.full_name",
+      "target": {
+        "type": "docx_multi_location",
+        "locations": [
+          {
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[7]",
+            "in_table": false,
+            "style": null,
+            "template_text": "",
+            "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "strategy": "fill_empty_or_marker_paragraph",
+            "fixed_prefix": ""
+          },
+          {
+            "part": "word/document.xml",
+            "paragraph_index": 82,
+            "xpath": "/document/body[1]/p[32]",
+            "in_table": false,
+            "style": null,
+            "template_text": "",
+            "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "strategy": "fill_empty_or_marker_paragraph",
+            "fixed_prefix": ""
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "1. PROFIL DU CANDIDAT",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '1. PROFIL DU CANDIDAT' after label '1. PROFIL DU CANDIDAT'. Repeated at word/document.xml paragraph 82.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.dossier_de_presentation.employeur",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.dossier_de_presentation.employeur",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 37,
+          "xpath": "/document/body[1]/p[10]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Lecomte Élec (installation électrique)",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Lecomte Élec (installation électrique)' after label '[EMPLOYEUR]'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.dossier_de_presentation.element_cle_projet_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.dossier_de_presentation.element_cle_projet_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 48,
+          "xpath": "/document/body[1]/p[21]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Automatisation partielle de la planification des interventions",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Automatisation partielle de la planification des interventions' after label '[ELEMENT_CLE_PROJET_3]'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.dossier_de_presentation.2_resultats_de_la_certification",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.dossier_de_presentation.2_resultats_de_la_certification",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 50,
+          "xpath": "/document/body[1]/p[22]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "2. RÉSULTATS DE LA CERTIFICATION",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '2. RÉSULTATS DE LA CERTIFICATION' after label '2. RÉSULTATS DE LA CERTIFICATION'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.dossier_de_presentation.appreciation_detaillee_membre",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.dossier_de_presentation.appreciation_detaillee_membre",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 80,
+          "xpath": "/document/body[1]/p[31]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Bonne compréhension des limites et des bonnes pratiques d'usage de l'IA. L'automatisation de la planification des interventions est une idée pertinente et bien détaillée. Dossier validé, félicitations au candidat.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Bonne compréhension des limites et des bonnes pratiques d'usage de l'IA. L'automatisation de la planification des interv' after label '[APPRECIATION_DETAILLEE_MEMBRE]'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.dossier_de_presentation.contenu_developpe_5",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.dossier_de_presentation.contenu_developpe_5",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 103,
+          "xpath": "/document/body[1]/p[35]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "RGPD, IA Act, usage responsable de l'IA",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'RGPD, IA Act, usage responsable de l'IA' after label '[CONTENU_DEVELOPPE_5]'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.dossier_de_presentation.point_fort_3",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.dossier_de_presentation.point_fort_3",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 108,
+          "xpath": "/document/body[1]/p[40]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Bonne prise en compte du cadre réglementaire",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Bonne prise en compte du cadre réglementaire' after label '[POINT_FORT_3]'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.dossier_de_presentation.4_pieces_justificatives_du_dossier",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.dossier_de_presentation.4_pieces_justificatives_du_dossier",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 110,
+          "xpath": "/document/body[1]/p[41]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "4. PIÈCES JUSTIFICATIVES DU DOSSIER",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '4. PIÈCES JUSTIFICATIVES DU DOSSIER' after label '4. PIÈCES JUSTIFICATIVES DU DOSSIER'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.dossier_de_presentation.statut",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.dossier_de_presentation.statut",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 128,
+          "xpath": "/document/body[1]/p[43]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Émise et reçue",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Émise et reçue' after label '[STATUT]'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.dossier_de_presentation.5_attestation_de_conformite",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.dossier_de_presentation.5_attestation_de_conformite",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 130,
+          "xpath": "/document/body[1]/p[44]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "5. ATTESTATION DE CONFORMITÉ",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '5. ATTESTATION DE CONFORMITÉ' after label '5. ATTESTATION DE CONFORMITÉ'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "reason": "Paragraph container count differs (138 template vs 139 filled); only same-index stable containers were considered."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 5,
+      "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[2]/p[1]",
+      "blank_content": "[NOM] [PRÉNOM]",
+      "filled_content": "Lecomte Nathan",
+      "reason": "Unsafe non-slot text change (similarity 0.07); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 7,
+      "xpath": "/document/body[1]/tbl[2]/tr[2]/tc[2]/p[1]",
+      "blank_content": "[DATE_NAISSANCE]",
+      "filled_content": "2 septembre 1990",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 9,
+      "xpath": "/document/body[1]/tbl[2]/tr[3]/tc[2]/p[1]",
+      "blank_content": "[TYPE_PIECE] n°[NUMERO_PIECE] - valable jusqu'au [DATE_VALIDITE]",
+      "filled_content": "CNI n°112233445566 - valable jusqu'au 15/11/2028",
+      "reason": "Unsafe non-slot text change (similarity 0.43); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 11,
+      "xpath": "/document/body[1]/tbl[2]/tr[4]/tc[2]/p[1]",
+      "blank_content": "[ADRESSE_CANDIDAT]",
+      "filled_content": "8 impasse des Chênes, 13008 Marseille",
+      "reason": "Unsafe non-slot text change (similarity 0.04); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[2]/tr[5]/tc[2]/p[1]",
+      "blank_content": "[TELEPHONE]",
+      "filled_content": "06 98 12 34 56",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 15,
+      "xpath": "/document/body[1]/tbl[2]/tr[6]/tc[2]/p[1]",
+      "blank_content": "[EMAIL]",
+      "filled_content": "nathan.lecomte90@gmail.com",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 19,
+      "xpath": "/document/body[1]/tbl[2]/tr[8]/tc[2]/p[1]",
+      "blank_content": "[DATE_SESSION] – [MODALITE]",
+      "filled_content": "16 avril 2026 – à distance",
+      "reason": "Unsafe non-slot text change (similarity 0.11); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 21,
+      "xpath": "/document/body[1]/tbl[2]/tr[9]/tc[2]/p[1]",
+      "blank_content": "[VOIE_ACCES]",
+      "filled_content": "Formation Professionnelle Continue (FPC)",
+      "reason": "Unsafe non-slot text change (similarity 0.08); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 25,
+      "xpath": "/document/body[1]/p[5]",
+      "blank_content": "Note obtenue : [NOTE_GLOBALE]/20 - [ADMIS/AJOURNÉ]",
+      "filled_content": "Note obtenue : 16/20 - ADMIS",
+      "reason": "Unsafe non-slot text change (similarity 0.67); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 27,
+      "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+      "blank_content": "1. PROFIL DU CANDIDAT",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 29,
+      "xpath": "/document/body[1]/p[8]",
+      "blank_content": "1.1 Parcours professionnel",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 30,
+      "xpath": "/document/body[1]/p[9]",
+      "blank_content": "[PRESENTATION_PARCOURS_PROFESSIONNEL_DU_CANDIDAT]",
+      "filled_content": "1.1 Parcours professionnel",
+      "reason": "Unsafe non-slot text change (similarity 0.03); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 31,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Période",
+      "filled_content": "À la tête de « Lecomte Élec » depuis 2024, Nathan Lecomte souhaite utiliser l'IA pour accélérer la rédaction de ses devis et mieux organiser le suivi de ses chantiers.",
+      "reason": "Unsafe non-slot text change (similarity 0.07); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 32,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[2]/p[1]",
+      "blank_content": "Poste",
+      "filled_content": "Période",
+      "reason": "Unsafe non-slot text change (similarity 0.50); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 33,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[3]/p[1]",
+      "blank_content": "Employeur",
+      "filled_content": "Poste",
+      "reason": "Unsafe non-slot text change (similarity 0.29); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 34,
+      "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[1]/p[1]",
+      "blank_content": "[PERIODE]",
+      "filled_content": "Employeur",
+      "reason": "Unsafe non-slot text change (similarity 0.11); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 35,
+      "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[2]/p[1]",
+      "blank_content": "[POSTE]",
+      "filled_content": "2024 - 2026",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 36,
+      "xpath": "/document/body[1]/tbl[4]/tr[2]/tc[3]/p[1]",
+      "blank_content": "[EMPLOYEUR]",
+      "filled_content": "Dirigeant",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 38,
+      "xpath": "/document/body[1]/p[11]",
+      "blank_content": "1.2 Compétences",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 39,
+      "xpath": "/document/body[1]/p[12]",
+      "blank_content": "[COMPETENCE_1]",
+      "filled_content": "1.2 Compétences",
+      "reason": "Unsafe non-slot text change (similarity 0.07); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 40,
+      "xpath": "/document/body[1]/p[13]",
+      "blank_content": "[COMPETENCE_2]",
+      "filled_content": "Identification d'opportunités IA adaptées à une TPE du bâtiment",
+      "reason": "Unsafe non-slot text change (similarity 0.05); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 41,
+      "xpath": "/document/body[1]/p[14]",
+      "blank_content": "[COMPETENCE_3]",
+      "filled_content": "Génération de contenus techniques (fiches chantier, devis) avec l'IA",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 42,
+      "xpath": "/document/body[1]/p[15]",
+      "blank_content": "[COMPETENCE_4]",
+      "filled_content": "Automatisation de tâches de planification",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 43,
+      "xpath": "/document/body[1]/p[16]",
+      "blank_content": "1.3 Projet entrepreneurial",
+      "filled_content": "Prise en compte du cadre éthique et réglementaire (RGPD, IA Act)",
+      "reason": "Unsafe non-slot text change (similarity 0.24); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 44,
+      "xpath": "/document/body[1]/p[17]",
+      "blank_content": "[PRESENTATION_DU_PROJET_ENTREPRENEURIAL]",
+      "filled_content": "1.3 Projet entrepreneurial",
+      "reason": "Unsafe non-slot text change (similarity 0.03); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 45,
+      "xpath": "/document/body[1]/p[18]",
+      "blank_content": "[ELEMENT_CLE_PROJET_1]",
+      "filled_content": "Nathan Lecomte intègre l'IA dans « Lecomte Élec » pour accélérer la rédaction de devis types, générer des fiches techniques de chantier et automatiser une partie de la planification.",
+      "reason": "Unsafe non-slot text change (similarity 0.02); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 46,
+      "xpath": "/document/body[1]/p[19]",
+      "blank_content": "[ELEMENT_CLE_PROJET_2]",
+      "filled_content": "Génération assistée de devis types pour les installations courantes",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 47,
+      "xpath": "/document/body[1]/p[20]",
+      "blank_content": "[ELEMENT_CLE_PROJET_3]",
+      "filled_content": "Fiches techniques de chantier générées et adaptées par l'IA",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 49,
+      "xpath": "/document/body[1]/tbl[5]/tr[1]/tc[1]/p[1]",
+      "blank_content": "2. RÉSULTATS DE LA CERTIFICATION",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 51,
+      "xpath": "/document/body[1]/p[23]",
+      "blank_content": "2.1 Synthèse des résultats",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 52,
+      "xpath": "/document/body[1]/p[24]",
+      "blank_content": "Le candidat a passé l'évaluation le [DATE_SESSION] – [MODALITE]. La session s'est déroulée [SANS/AVEC] dysfonctionnement, conformément au référentiel RS7311.",
+      "filled_content": "2.1 Synthèse des résultats",
+      "reason": "Unsafe non-slot text change (similarity 0.10); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 53,
+      "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Épreuve / Compétence évaluée",
+      "filled_content": "Le candidat a passé l'évaluation le 16 avril 2026 – à distance. La session s'est déroulée sans aucun dysfonctionnement, conformément au référentiel RS7311.",
+      "reason": "Unsafe non-slot text change (similarity 0.14); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 54,
+      "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[2]/p[1]",
+      "blank_content": "Note",
+      "filled_content": "Épreuve / Compétence évaluée",
+      "reason": "Unsafe non-slot text change (similarity 0.19); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 55,
+      "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[3]/p[1]",
+      "blank_content": "Résultat",
+      "filled_content": "Note",
+      "reason": "Unsafe non-slot text change (similarity 0.17); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 56,
+      "xpath": "/document/body[1]/tbl[6]/tr[2]/tc[1]/p[1]",
+      "blank_content": "Oral - Grille de compétences C1 à C5",
+      "filled_content": "Résultat",
+      "reason": "Unsafe non-slot text change (similarity 0.09); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 57,
+      "xpath": "/document/body[1]/tbl[6]/tr[2]/tc[2]/p[1]",
+      "blank_content": "[NOTE_ORAL]/5",
+      "filled_content": "Oral - Grille de compétences C1 à C5",
+      "reason": "Unsafe non-slot text change (similarity 0.08); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 58,
+      "xpath": "/document/body[1]/tbl[6]/tr[2]/tc[3]/p[1]",
+      "blank_content": "[RESULTAT]",
+      "filled_content": "4,2/5",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 59,
+      "xpath": "/document/body[1]/tbl[6]/tr[3]/tc[1]/p[1]",
+      "blank_content": "Dossier de présentation",
+      "filled_content": "ADMIS",
+      "reason": "Unsafe non-slot text change (similarity 0.07); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 60,
+      "xpath": "/document/body[1]/tbl[6]/tr[3]/tc[2]/p[1]",
+      "blank_content": "[STATUT]",
+      "filled_content": "Dossier de présentation",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 61,
+      "xpath": "/document/body[1]/tbl[6]/tr[3]/tc[3]/p[1]",
+      "blank_content": "[VALIDE/NON_VALIDE]",
+      "filled_content": "OK",
+      "reason": "Unsafe non-slot text change (similarity 0.10); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 62,
+      "xpath": "/document/body[1]/tbl[6]/tr[4]/tc[1]/p[1]",
+      "blank_content": "Soutenance orale devant jury",
+      "filled_content": "OK",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 63,
+      "xpath": "/document/body[1]/tbl[6]/tr[4]/tc[2]/p[1]",
+      "blank_content": "[STATUT]",
+      "filled_content": "Soutenance orale devant jury",
+      "reason": "Unsafe non-slot text change (similarity 0.06); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 64,
+      "xpath": "/document/body[1]/tbl[6]/tr[4]/tc[3]/p[1]",
+      "blank_content": "[VALIDE/NON_VALIDE]",
+      "filled_content": "OK",
+      "reason": "Unsafe non-slot text change (similarity 0.10); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 65,
+      "xpath": "/document/body[1]/tbl[6]/tr[5]/tc[1]/p[1]",
+      "blank_content": "TOTAL - NOTE GLOBALE",
+      "filled_content": "OK",
+      "reason": "Unsafe non-slot text change (similarity 0.09); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 66,
+      "xpath": "/document/body[1]/tbl[6]/tr[5]/tc[2]/p[1]",
+      "blank_content": "[NOTE_GLOBALE]/20",
+      "filled_content": "TOTAL - NOTE GLOBALE",
+      "reason": "Unsafe non-slot text change (similarity 0.59); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 67,
+      "xpath": "/document/body[1]/tbl[6]/tr[5]/tc[3]/p[1]",
+      "blank_content": "[ADMIS/AJOURNE]",
+      "filled_content": "16/20",
+      "reason": "Unsafe non-slot text change (similarity 0.10); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 69,
+      "xpath": "/document/body[1]/p[26]",
+      "blank_content": "2.2 Observations du jury",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 70,
+      "xpath": "/document/body[1]/p[27]",
+      "blank_content": "Anthony Malheiro (Président) : [OBSERVATION_PRESIDENT]",
+      "filled_content": "2.2 Observations du jury",
+      "reason": "Unsafe non-slot text change (similarity 0.10); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 71,
+      "xpath": "/document/body[1]/p[28]",
+      "blank_content": "Romain Picano Palombo : [OBSERVATION_MEMBRE]",
+      "filled_content": "Anthony Malheiro (Président) : Bonne appropriation des outils IA pour un métier technique",
+      "reason": "Unsafe non-slot text change (similarity 0.17); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 72,
+      "xpath": "/document/body[1]/p[29]",
+      "blank_content": "Les membres du jury attestent ne pas avoir de lien personnel ou professionnel avec le candidat, conformément aux exigences de l'organisme certificateur CreActifs.",
+      "filled_content": "Romain Picano Palombo : Automatisation de la planification bien pensée",
+      "reason": "Unsafe non-slot text change (similarity 0.19); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 73,
+      "xpath": "/document/body[1]/p[30]",
+      "blank_content": "2.3 Commentaires détaillés du jury",
+      "filled_content": "Les membres du jury attestent ne pas avoir de lien personnel ou professionnel avec le candidat, conformément aux exigences de l'organisme certificateur CreActifs.",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 74,
+      "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Jury",
+      "filled_content": "2.3 Commentaires détaillés du jury",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 75,
+      "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[2]/p[1]",
+      "blank_content": "Appréciation générale",
+      "filled_content": "Jury",
+      "reason": "Unsafe non-slot text change (similarity 0.08); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 76,
+      "xpath": "/document/body[1]/tbl[7]/tr[2]/tc[1]/p[1]",
+      "blank_content": "Anthony Malheiro - Président",
+      "filled_content": "Appréciation générale",
+      "reason": "Unsafe non-slot text change (similarity 0.33); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 77,
+      "xpath": "/document/body[1]/tbl[7]/tr[2]/tc[2]/p[1]",
+      "blank_content": "[APPRECIATION_DETAILLEE_PRESIDENT]",
+      "filled_content": "Anthony Malheiro - Président",
+      "reason": "Unsafe non-slot text change (similarity 0.06); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 78,
+      "xpath": "/document/body[1]/tbl[7]/tr[3]/tc[1]/p[1]",
+      "blank_content": "Romain Picano Palombo",
+      "filled_content": "Le candidat présente des cas d'usage IA cohérents avec son activité d'électricien. Les fiches techniques générées sont pertinentes et adaptées. Le volet RGPD est correctement traité. Admission validée.",
+      "reason": "Unsafe non-slot text change (similarity 0.04); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 79,
+      "xpath": "/document/body[1]/tbl[7]/tr[3]/tc[2]/p[1]",
+      "blank_content": "[APPRECIATION_DETAILLEE_MEMBRE]",
+      "filled_content": "Romain Picano Palombo",
+      "reason": "Unsafe non-slot text change (similarity 0.08); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 81,
+      "xpath": "/document/body[1]/tbl[8]/tr[1]/tc[1]/p[1]",
+      "blank_content": "3. CONTENU DU DOSSIER PRÉSENTÉ PAR LE CANDIDAT",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 83,
+      "xpath": "/document/body[1]/p[33]",
+      "blank_content": "3.1 Présentation du projet TPE - [NOM_PROJET_TPE]",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 84,
+      "xpath": "/document/body[1]/p[34]",
+      "blank_content": "Le candidat a présenté un dossier complet portant sur la certification RS7311. Le projet couvre l'ensemble des compétences visées :",
+      "filled_content": "3.1 Présentation du projet TPE - Lecomte Nathan",
+      "reason": "Unsafe non-slot text change (similarity 0.31); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 85,
+      "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[1]",
+      "blank_content": "N°",
+      "filled_content": "Le candidat a présenté un dossier complet portant sur la certification RS7311. Le projet couvre l'ensemble des compétences visées :",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 86,
+      "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[2]/p[1]",
+      "blank_content": "Thématique abordée",
+      "filled_content": "N°",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 87,
+      "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[3]/p[1]",
+      "blank_content": "Contenu développé par le candidat",
+      "filled_content": "Thématique abordée",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 88,
+      "xpath": "/document/body[1]/tbl[9]/tr[2]/tc[1]/p[1]",
+      "blank_content": "1",
+      "filled_content": "Contenu développé par le candidat",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 89,
+      "xpath": "/document/body[1]/tbl[9]/tr[2]/tc[2]/p[1]",
+      "blank_content": "[THEMATIQUE_1]",
+      "filled_content": "1",
+      "reason": "Unsafe non-slot text change (similarity 0.13); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 90,
+      "xpath": "/document/body[1]/tbl[9]/tr[2]/tc[3]/p[1]",
+      "blank_content": "[CONTENU_DEVELOPPE_1]",
+      "filled_content": "Opportunités d'application de l'IA",
+      "reason": "Unsafe non-slot text change (similarity 0.04); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 91,
+      "xpath": "/document/body[1]/tbl[9]/tr[3]/tc[1]/p[1]",
+      "blank_content": "2",
+      "filled_content": "Devis types, fiches techniques, planification",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 92,
+      "xpath": "/document/body[1]/tbl[9]/tr[3]/tc[2]/p[1]",
+      "blank_content": "[THEMATIQUE_2]",
+      "filled_content": "2",
+      "reason": "Unsafe non-slot text change (similarity 0.13); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 93,
+      "xpath": "/document/body[1]/tbl[9]/tr[3]/tc[3]/p[1]",
+      "blank_content": "[CONTENU_DEVELOPPE_2]",
+      "filled_content": "Contenus générés avec l'IA",
+      "reason": "Unsafe non-slot text change (similarity 0.04); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 94,
+      "xpath": "/document/body[1]/tbl[9]/tr[4]/tc[1]/p[1]",
+      "blank_content": "3",
+      "filled_content": "Fiches chantier, prompts techniques justifiés",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 95,
+      "xpath": "/document/body[1]/tbl[9]/tr[4]/tc[2]/p[1]",
+      "blank_content": "[THEMATIQUE_3]",
+      "filled_content": "3",
+      "reason": "Unsafe non-slot text change (similarity 0.13); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 96,
+      "xpath": "/document/body[1]/tbl[9]/tr[4]/tc[3]/p[1]",
+      "blank_content": "[CONTENU_DEVELOPPE_3]",
+      "filled_content": "Synthèse et analyse de données",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 97,
+      "xpath": "/document/body[1]/tbl[9]/tr[5]/tc[1]/p[1]",
+      "blank_content": "4",
+      "filled_content": "Suivi des interventions et délais moyens",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 98,
+      "xpath": "/document/body[1]/tbl[9]/tr[5]/tc[2]/p[1]",
+      "blank_content": "[THEMATIQUE_4]",
+      "filled_content": "4",
+      "reason": "Unsafe non-slot text change (similarity 0.13); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 99,
+      "xpath": "/document/body[1]/tbl[9]/tr[5]/tc[3]/p[1]",
+      "blank_content": "[CONTENU_DEVELOPPE_4]",
+      "filled_content": "Automatisation de tâches",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 100,
+      "xpath": "/document/body[1]/tbl[9]/tr[6]/tc[1]/p[1]",
+      "blank_content": "5",
+      "filled_content": "Planification assistée des rendez-vous chantier",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 101,
+      "xpath": "/document/body[1]/tbl[9]/tr[6]/tc[2]/p[1]",
+      "blank_content": "[THEMATIQUE_5]",
+      "filled_content": "5",
+      "reason": "Unsafe non-slot text change (similarity 0.13); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 102,
+      "xpath": "/document/body[1]/tbl[9]/tr[6]/tc[3]/p[1]",
+      "blank_content": "[CONTENU_DEVELOPPE_5]",
+      "filled_content": "Impact et bonnes pratiques",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 104,
+      "xpath": "/document/body[1]/p[36]",
+      "blank_content": "3.2 Points forts relevés",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 105,
+      "xpath": "/document/body[1]/p[37]",
+      "blank_content": "[POINT_FORT_1]",
+      "filled_content": "3.2 Points forts relevés",
+      "reason": "Unsafe non-slot text change (similarity 0.05); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 106,
+      "xpath": "/document/body[1]/p[38]",
+      "blank_content": "[POINT_FORT_2]",
+      "filled_content": "Cas d'usage techniques bien choisis pour un métier du bâtiment",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 107,
+      "xpath": "/document/body[1]/p[39]",
+      "blank_content": "[POINT_FORT_3]",
+      "filled_content": "Automatisation de la planification pertinente et détaillée",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 109,
+      "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+      "blank_content": "4. PIÈCES JUSTIFICATIVES DU DOSSIER",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 111,
+      "xpath": "/document/body[1]/p[42]",
+      "blank_content": "Les pièces suivantes ont été transmises à l'organisme certificateur CreActifs dans le cadre de la session [DATE_SESSION] :",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 112,
+      "xpath": "/document/body[1]/tbl[11]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Document",
+      "filled_content": "Les pièces suivantes ont été transmises à l'organisme certificateur CreActifs dans le cadre de la session du 16 avril 2026 – à distance :",
+      "reason": "Unsafe non-slot text change (similarity 0.07); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 113,
+      "xpath": "/document/body[1]/tbl[11]/tr[1]/tc[2]/p[1]",
+      "blank_content": "Statut",
+      "filled_content": "Document",
+      "reason": "Unsafe non-slot text change (similarity 0.14); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 114,
+      "xpath": "/document/body[1]/tbl[11]/tr[2]/tc[1]/p[1]",
+      "blank_content": "Pièce d'identité candidat",
+      "filled_content": "Statut",
+      "reason": "Unsafe non-slot text change (similarity 0.19); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 115,
+      "xpath": "/document/body[1]/tbl[11]/tr[2]/tc[2]/p[1]",
+      "blank_content": "[STATUT]",
+      "filled_content": "Pièce d'identité candidat",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 116,
+      "xpath": "/document/body[1]/tbl[11]/tr[3]/tc[1]/p[1]",
+      "blank_content": "Grille d'évaluation orale - Réponses du candidat",
+      "filled_content": "Vérifiée",
+      "reason": "Unsafe non-slot text change (similarity 0.11); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 117,
+      "xpath": "/document/body[1]/tbl[11]/tr[3]/tc[2]/p[1]",
+      "blank_content": "[STATUT]",
+      "filled_content": "Grille d'évaluation orale - Réponses du candidat",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 118,
+      "xpath": "/document/body[1]/tbl[11]/tr[4]/tc[1]/p[1]",
+      "blank_content": "Dossier de présentation candidat (.docx)",
+      "filled_content": "Corrigée et archivée",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 119,
+      "xpath": "/document/body[1]/tbl[11]/tr[4]/tc[2]/p[1]",
+      "blank_content": "[STATUT]",
+      "filled_content": "Dossier de présentation candidat (.docx)",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 120,
+      "xpath": "/document/body[1]/tbl[11]/tr[5]/tc[1]/p[1]",
+      "blank_content": "Support de présentation (.pptx)",
+      "filled_content": "Transmis à CreActifs",
+      "reason": "Unsafe non-slot text change (similarity 0.20); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 121,
+      "xpath": "/document/body[1]/tbl[11]/tr[5]/tc[2]/p[1]",
+      "blank_content": "[STATUT]",
+      "filled_content": "Support de présentation (.pptx)",
+      "reason": "Unsafe non-slot text change (similarity 0.05); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 122,
+      "xpath": "/document/body[1]/tbl[11]/tr[6]/tc[1]/p[1]",
+      "blank_content": "PV de jury d'évaluation",
+      "filled_content": "Présenté devant le jury",
+      "reason": "Unsafe non-slot text change (similarity 0.39); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 123,
+      "xpath": "/document/body[1]/tbl[11]/tr[6]/tc[2]/p[1]",
+      "blank_content": "[STATUT]",
+      "filled_content": "PV de jury d'évaluation",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 124,
+      "xpath": "/document/body[1]/tbl[11]/tr[7]/tc[1]/p[1]",
+      "blank_content": "Fiche mission - Responsable organisation des épreuves",
+      "filled_content": "Signé par le jury",
+      "reason": "Unsafe non-slot text change (similarity 0.20); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 125,
+      "xpath": "/document/body[1]/tbl[11]/tr[7]/tc[2]/p[1]",
+      "blank_content": "[STATUT]",
+      "filled_content": "Fiche mission - Responsable organisation des épreuves",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 126,
+      "xpath": "/document/body[1]/tbl[11]/tr[8]/tc[1]/p[1]",
+      "blank_content": "Convocation du candidat",
+      "filled_content": "Complétée par Anthony Malheiro",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 127,
+      "xpath": "/document/body[1]/tbl[11]/tr[8]/tc[2]/p[1]",
+      "blank_content": "[STATUT]",
+      "filled_content": "Convocation du candidat",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 129,
+      "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+      "blank_content": "5. ATTESTATION DE CONFORMITÉ",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 131,
+      "xpath": "/document/body[1]/p[45]",
+      "blank_content": "Je soussigné(e), Anthony Malheiro, Responsable de l'organisation des épreuves au sein de Proskills Institut, atteste que :",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 132,
+      "xpath": "/document/body[1]/p[46]",
+      "blank_content": "La candidature de [PRENOM] [NOM] est conforme au référentiel RS7311",
+      "filled_content": "Je soussigné(e), Anthony Malheiro, Responsable de l'organisation des épreuves au sein de Proskills Institut, atteste que :",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 133,
+      "xpath": "/document/body[1]/p[47]",
+      "blank_content": "L'identité du candidat a été vérifiée conformément à la procédure (pièce d'identité présentée)",
+      "filled_content": "La candidature de Nathan Lecomte est conforme au référentiel RS7311",
+      "reason": "Unsafe non-slot text change (similarity 0.40); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 134,
+      "xpath": "/document/body[1]/p[48]",
+      "blank_content": "La session d'évaluation s'est déroulée le [DATE_SESSION], [SANS/AVEC] dysfonctionnement",
+      "filled_content": "L'identité du candidat a été vérifiée conformément à la procédure (pièce d'identité présentée)",
+      "reason": "Unsafe non-slot text change (similarity 0.18); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 135,
+      "xpath": "/document/body[1]/p[49]",
+      "blank_content": "L'ensemble des pièces justificatives a été collecté et sera transmis à CreActifs",
+      "filled_content": "La session d'évaluation s'est déroulée le 16 avril 2026, sans aucun dysfonctionnement",
+      "reason": "Unsafe non-slot text change (similarity 0.23); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 136,
+      "xpath": "/document/body[1]/p[50]",
+      "blank_content": "Les membres du jury n'ont aucun lien personnel ou professionnel avec le candidat",
+      "filled_content": "L'ensemble des pièces justificatives a été collecté et sera transmis à CreActifs",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 137,
+      "xpath": "/document/body[1]/p[51]",
+      "blank_content": "Fait à Marseille, le [DATE_SIGNATURE]",
+      "filled_content": "Les membres du jury n'ont aucun lien personnel ou professionnel avec le candidat",
+      "reason": "Unsafe non-slot text change (similarity 0.22); no automatic template mutation."
+    },
+    {
+      "part": "word/header1.xml",
+      "paragraph_index": 0,
+      "xpath": "/hdr/p[1]",
+      "blank_content": "DOSSIER DE PRÉSENTATION - CERTIFICATION RS7311  |  [NOM] [PRENOM]  |  PROSKILLS INSTITUT",
+      "filled_content": "DOSSIER DE PRÉSENTATION - CERTIFICATION RS7311  |  Lecomte Nathan  |  PROSKILLS INSTITUT",
+      "reason": "Unsafe non-slot text change (similarity 0.85); no automatic template mutation."
+    },
+    {
+      "part": "word/footer1.xml",
+      "paragraph_index": 0,
+      "xpath": "/ftr/p[1]",
+      "blank_content": "Session [DATE_SESSION]  —  Proskills Institut",
+      "filled_content": "Session du 16 avril 2026  —  Proskills Institut",
+      "reason": "Unsafe non-slot text change (similarity 0.67); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "111 structural/text difference(s) require review; see mapping evidence and placeholder discovery report."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 11,
+    "confirmed_field_count": 11,
+    "concrete_target_count": 11,
+    "evidence_count": 11,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 111,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "111 unresolved source/template difference(s) remain."
+    ]
+  }
+}

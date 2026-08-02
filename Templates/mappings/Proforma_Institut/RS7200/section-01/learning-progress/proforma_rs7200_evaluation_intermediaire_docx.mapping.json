@@ -1,0 +1,2173 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7200_evaluation_intermediaire_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7200/section-01/learning-progress/Evaluation Intermediaire - RS7200 - Proforma Institut - Template.docx",
+  "template_hash": "9c2d634f7a79e1ac40859853f168a08ba23b7e4c5b25a5e102166483dd907abc",
+  "source_original_path": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Evaluation Intermediaire - RS7200 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7200",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "learning-progress",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Evaluation Intermediaire - RS7200 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Evaluation Intermediaire - RS7200 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9345,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "bre de publicités diffusées"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.stagiaire",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.stagiaire",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 7,
+          "xpath": "/document/body[1]/p[8]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Camille Bertrand",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Camille Bertrand' after label 'Stagiaire'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_quel_est_le_reseau_social_le_plus_utilise_en_france_en_2025",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_quel_est_le_reseau_social_le_plus_utilise_en_france_en_2025",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Quel est le réseau social le plus utilisé en France en 2025 ?",
+        "options": [
+          {
+            "value": "a_twitter_x",
+            "label": "A) Twitter/X",
+            "part": "word/document.xml",
+            "paragraph_index": 18,
+            "xpath": "/document/body[1]/p[17]",
+            "template_text_sha256": "7103d2fba47c20d56c51ae46370b998328a56191b72d1efcb2e6158285552c03",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_instagram",
+            "label": "B) Instagram",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "217d195fa03ea87907f244c19c5f8a62fc6573d298ced19fe57c6e9e8fd29434",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_facebook",
+            "label": "C) Facebook",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/p[19]",
+            "template_text_sha256": "51d66853feb891eba44eea9f1c7278ffa637e9eac3df6762805ea43d7f50578b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_tiktok",
+            "label": "D) TikTok",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "a27d07e769349e791b567af2d7e190ff2181abc599486e278ca7c413babfef48",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_facebook",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Quel est le réseau social le plus utilisé en France en 2025 ?'.",
+      "validation": {
+        "enum": [
+          "a_twitter_x",
+          "b_instagram",
+          "c_facebook",
+          "d_tiktok"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_quel_format_de_contenu_instagram_genere_le_plus_d_engagement_en_2025",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_quel_format_de_contenu_instagram_genere_le_plus_d_engagement_en_2025",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Quel format de contenu Instagram génère le plus d'engagement en 2025 ?",
+        "options": [
+          {
+            "value": "a_les_stories",
+            "label": "A) Les Stories",
+            "part": "word/document.xml",
+            "paragraph_index": 23,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "720a9ddc0feab35538c847cdd7e490e7f137ae1153d03113a6f2df64e46f8403",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_les_reels",
+            "label": "B) Les Reels",
+            "part": "word/document.xml",
+            "paragraph_index": 24,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "744c0d3e94b43dc2ccf3cb4f9039c78984c899d9367b65c68f982aa8220ba968",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_les_publications_photo_statique",
+            "label": "C) Les publications photo statique",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "a63c3f53efd9215ffe38516c2f1b522dc1352c514cf04aca3c9e3579639044f0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_les_messages_prives",
+            "label": "D) Les messages privés",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "20882fdff1a73bc8c06eb3d567cc7041e87014c56ba7a8680c71bfa5255f86d4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_les_reels",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Quel format de contenu Instagram génère le plus d'engagement en 2025 ?'.",
+      "validation": {
+        "enum": [
+          "a_les_stories",
+          "b_les_reels",
+          "c_les_publications_photo_statique",
+          "d_les_messages_prives"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_linkedin_est_recommande_pour_quel_usage_dans_une_tpe_artisanale",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_linkedin_est_recommande_pour_quel_usage_dans_une_tpe_artisanale",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. LinkedIn est recommandé pour quel usage dans une TPE artisanale ?",
+        "options": [
+          {
+            "value": "a_vente_directe_aux_particuliers",
+            "label": "A) Vente directe aux particuliers",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "1d3f2f908304fa5857ded61500f20ea8f6b614fdcd28c9f0e83f7bcd8c2b179a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_partenariats_et_prescripteurs_professionnels",
+            "label": "B) Partenariats et prescripteurs professionnels",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[28]",
+            "template_text_sha256": "72b25458e9518edb928070f73453e40c741e64ab71cacf73b780136a6b79124b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_montrer_des_realisations_visuelles",
+            "label": "C) Montrer des réalisations visuelles",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "f807826533e7f432e28f13125f4a9a3a83e3e6c8735dc7d08d7831cc46afd7df",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_recruter_du_personnel_uniquement",
+            "label": "D) Recruter du personnel uniquement",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "1906554d23136a436bb69696a9012fa3dc2305a0ac49c3aae83f3db65a820203",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_partenariats_et_prescripteurs_professionnels",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. LinkedIn est recommandé pour quel usage dans une TPE artisanale ?'.",
+      "validation": {
+        "enum": [
+          "a_vente_directe_aux_particuliers",
+          "b_partenariats_et_prescripteurs_professionnels",
+          "c_montrer_des_realisations_visuelles",
+          "d_recruter_du_personnel_uniquement"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_que_designe_la_portee_organique_sur_les_reseaux_sociaux",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_que_designe_la_portee_organique_sur_les_reseaux_sociaux",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Que désigne la « portée organique » sur les réseaux sociaux ?",
+        "options": [
+          {
+            "value": "a_le_nombre_de_publicites_diffusees",
+            "label": "A) Le nombre de publicités diffusées",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "1bba66e6214bedf36bb5ca71964f2f7b432e6544b9fe591563849c1e2efe1d03",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_les_personnes_atteintes_naturellement_sans_budget",
+            "label": "B) Les personnes atteintes naturellement, sans budget",
+            "part": "word/document.xml",
+            "paragraph_index": 34,
+            "xpath": "/document/body[1]/p[33]",
+            "template_text_sha256": "4afe67f1fbd5edc423fc00911a6140b1adfd8c34dc1d210d69fdc8ff4408f6d2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_taux_de_clics_sur_les_liens",
+            "label": "C) Le taux de clics sur les liens",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[34]",
+            "template_text_sha256": "0bbfbae0a13a0217cfa055acfee507766aeb3f7ea100dfbe7d3cb948f9d91378",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_nombre_total_d_abonnes",
+            "label": "D) Le nombre total d'abonnés",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "f728ceb1161ede3161e52ec7d6aacb71bd8f7dc39401bf53a5b3b094b89043b5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_les_personnes_atteintes_naturellement_sans_budget",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Que désigne la « portée organique » sur les réseaux sociaux ?'.",
+      "validation": {
+        "enum": [
+          "a_le_nombre_de_publicites_diffusees",
+          "b_les_personnes_atteintes_naturellement_sans_budget",
+          "c_le_taux_de_clics_sur_les_liens",
+          "d_le_nombre_total_d_abonnes"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_pour_une_tpe_artisanale_combien_de_reseaux_sociaux_est_il_conseille_de_gerer_ac",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_pour_une_tpe_artisanale_combien_de_reseaux_sociaux_est_il_conseille_de_gerer_ac",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Pour une TPE artisanale, combien de réseaux sociaux est-il conseillé de gérer activement ?",
+        "options": [
+          {
+            "value": "a_4_a_5_reseaux",
+            "label": "A) 4 à 5 réseaux",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[37]",
+            "template_text_sha256": "13fb5366395f44e4b4abd7f4cae5b8a27d3ec0e1684a5079a1c57ff77cffd9e1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_1_a_2_reseaux",
+            "label": "B) 1 à 2 réseaux",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "ddc236041e2635b53517588e97f31b0d25d1e4ea3178f9c0350d0ed11c4cea73",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_3_a_4_reseaux",
+            "label": "C) 3 à 4 réseaux",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "2b6d612601b14ee2a130ad2a933a3589fdf640ccd0ecdedcf34ad547ea3247f4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_autant_que_possible",
+            "label": "D) Autant que possible",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "07169f55b50a1c775cd0bb80f4b013cc4fb50be504fcd9ca3f34900a461e9cef",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_1_a_2_reseaux",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Pour une TPE artisanale, combien de réseaux sociaux est-il conseillé de gérer activement ?'.",
+      "validation": {
+        "enum": [
+          "a_4_a_5_reseaux",
+          "b_1_a_2_reseaux",
+          "c_3_a_4_reseaux",
+          "d_autant_que_possible"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_expliquez_en_4_5_lignes_l_interet_des_reseaux_sociaux_pour_un_artisan_independa",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_expliquez_en_4_5_lignes_l_interet_des_reseaux_sociaux_pour_un_artisan_independa",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 44,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Les réseaux sociaux permettent à un artisan indépendant de se faire connaître gratuitement, de montrer ses réalisations en images, de rassurer les futurs clients grâce aux avis et au bouche-à-oreille numérique, et de rester présent dans l'esprit de sa clientèle entre deux chantiers. C'est aussi un moyen simple de recruter sans passer par la publicité payante.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Les réseaux sociaux permettent à un artisan indépendant de se faire connaître gratuitement, de montrer ses réalisations ' after label 'Question 1 : Expliquez en 4-5 lignes l'intérêt des réseaux sociaux pour un artisan indépendant.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_decrivez_en_3_points_les_principales_differences_entre_facebook_et_instagram",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_decrivez_en_3_points_les_principales_differences_entre_facebook_et_instagram",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 49,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Facebook touche une audience plus large et plus âgée, avec des groupes locaux utiles pour le bouche-à-oreille. Instagram est plus visuel, idéal pour montrer des réalisations en photo/vidéo, et touche un public plus jeune. Facebook favorise le texte et les avis, Instagram favorise l'esthétique et les stories.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Facebook touche une audience plus large et plus âgée, avec des groupes locaux utiles pour le bouche-à-oreille. Instagram' after label 'Question 2 : Décrivez en 3 points les principales différences entre Facebook et Instagram.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_que_doit_contenir_une_ligne_editoriale_pour_une_tpe",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_que_doit_contenir_une_ligne_editoriale_pour_une_tpe",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Que doit contenir une ligne éditoriale pour une TPE ?",
+        "options": [
+          {
+            "value": "a_la_liste_des_hashtags_a_utiliser",
+            "label": "A) La liste des hashtags à utiliser",
+            "part": "word/document.xml",
+            "paragraph_index": 62,
+            "xpath": "/document/body[1]/p[53]",
+            "template_text_sha256": "71670e33e20978dc16ca93c1fded5a6236d8e9517c79c986b9c253c30056630a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_ton_les_themes_la_frequence_et_le_style_de_publication",
+            "label": "B) Le ton, les thèmes, la fréquence et le style de publication",
+            "part": "word/document.xml",
+            "paragraph_index": 63,
+            "xpath": "/document/body[1]/p[54]",
+            "template_text_sha256": "e465cd50749497075bb8ed0d83c76592a8c881f99062dfd8329f27fe75e4d657",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_budget_publicitaire_mensuel",
+            "label": "C) Le budget publicitaire mensuel",
+            "part": "word/document.xml",
+            "paragraph_index": 64,
+            "xpath": "/document/body[1]/p[55]",
+            "template_text_sha256": "aae7c1d60136a20bd3ca7cf76a587e3ccbacdc646ddab527853dfa042113165a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_liste_des_concurrents_a_surveiller",
+            "label": "D) La liste des concurrents à surveiller",
+            "part": "word/document.xml",
+            "paragraph_index": 65,
+            "xpath": "/document/body[1]/p[56]",
+            "template_text_sha256": "120a482d995648b4bc12d1453b95fbe024c10688b75588c547d4da263adcca76",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_ton_les_themes_la_frequence_et_le_style_de_publication",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Que doit contenir une ligne éditoriale pour une TPE ?'.",
+      "validation": {
+        "enum": [
+          "a_la_liste_des_hashtags_a_utiliser",
+          "b_le_ton_les_themes_la_frequence_et_le_style_de_publication",
+          "c_le_budget_publicitaire_mensuel",
+          "d_la_liste_des_concurrents_a_surveiller"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_la_regle_des_80_20_en_marketing_de_contenu_sur_les_rs_signifie",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_la_regle_des_80_20_en_marketing_de_contenu_sur_les_rs_signifie",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. La règle des « 80/20 » en marketing de contenu sur les RS signifie :",
+        "options": [
+          {
+            "value": "a_80_de_publicite_payante_20_de_contenu_gratuit",
+            "label": "A) 80% de publicité payante, 20% de contenu gratuit",
+            "part": "word/document.xml",
+            "paragraph_index": 67,
+            "xpath": "/document/body[1]/p[58]",
+            "template_text_sha256": "912e06da83ad37c2088181c27ba5b5f89a42b49dd3ab2562caabefc1d1a6009f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_80_de_contenu_utile_divertissant_20_de_contenu_promotionne",
+            "label": "B) 80% de contenu utile/divertissant, 20% de contenu promotionnel",
+            "part": "word/document.xml",
+            "paragraph_index": 68,
+            "xpath": "/document/body[1]/p[59]",
+            "template_text_sha256": "4f591cf07e4a78d35f9b269b7650ab33469c21418a11ce652c883a4a2637eb66",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_80_de_texte_20_d_images",
+            "label": "C) 80% de texte, 20% d'images",
+            "part": "word/document.xml",
+            "paragraph_index": 69,
+            "xpath": "/document/body[1]/p[60]",
+            "template_text_sha256": "4838620325e89c803395e1451fd1b3b6742a841945e49bb5b0acc87a7c8f9863",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_80_de_posts_facebook_20_de_posts_instagram",
+            "label": "D) 80% de posts Facebook, 20% de posts Instagram",
+            "part": "word/document.xml",
+            "paragraph_index": 70,
+            "xpath": "/document/body[1]/p[61]",
+            "template_text_sha256": "8c335a732ebeaa8672326fa66e75a947dc27ecfec3c4459f06b5c1b0fbdc9f30",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_80_de_contenu_utile_divertissant_20_de_contenu_promotionne",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. La règle des « 80/20 » en marketing de contenu sur les RS signifie :'.",
+      "validation": {
+        "enum": [
+          "a_80_de_publicite_payante_20_de_contenu_gratuit",
+          "b_80_de_contenu_utile_divertissant_20_de_contenu_promotionne",
+          "c_80_de_texte_20_d_images",
+          "d_80_de_posts_facebook_20_de_posts_instagram"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_un_pilier_de_contenu_pour_un_plombier_chauffagiste_pourrait_etre",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_un_pilier_de_contenu_pour_un_plombier_chauffagiste_pourrait_etre",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Un « pilier de contenu » pour un plombier-chauffagiste pourrait être :",
+        "options": [
+          {
+            "value": "a_la_liste_de_prix_de_ses_interventions",
+            "label": "A) La liste de prix de ses interventions",
+            "part": "word/document.xml",
+            "paragraph_index": 72,
+            "xpath": "/document/body[1]/p[63]",
+            "template_text_sha256": "f316b90a60ea205b40ef92e6d7f6bb366c29a079e3d9b2897479f860cfea8ee5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_des_conseils_pratiques_pour_eviter_les_pannes",
+            "label": "B) Des conseils pratiques pour éviter les pannes",
+            "part": "word/document.xml",
+            "paragraph_index": 73,
+            "xpath": "/document/body[1]/p[64]",
+            "template_text_sha256": "640b75f1868e724928858faf8db4b8b661af1bdc6ee5d2446e75324d67b6112d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_les_coordonnees_de_ses_fournisseurs",
+            "label": "C) Les coordonnées de ses fournisseurs",
+            "part": "word/document.xml",
+            "paragraph_index": 74,
+            "xpath": "/document/body[1]/p[65]",
+            "template_text_sha256": "c617bfdad5f9b1b245c9da049b54c42cf2a0cf2f2c4ac84dcb81c95cb646efbc",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_les_offres_promotionnelles_de_ses_concurrents",
+            "label": "D) Les offres promotionnelles de ses concurrents",
+            "part": "word/document.xml",
+            "paragraph_index": 75,
+            "xpath": "/document/body[1]/p[66]",
+            "template_text_sha256": "1a8ec2e8a5e5e9782fb77bd79f069c261caeededdb137cd8810b34a73d7489c8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_des_conseils_pratiques_pour_eviter_les_pannes",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Un « pilier de contenu » pour un plombier-chauffagiste pourrait être :'.",
+      "validation": {
+        "enum": [
+          "a_la_liste_de_prix_de_ses_interventions",
+          "b_des_conseils_pratiques_pour_eviter_les_pannes",
+          "c_les_coordonnees_de_ses_fournisseurs",
+          "d_les_offres_promotionnelles_de_ses_concurrents"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_parmi_ces_types_de_contenu_lequel_est_dit_educatif",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_parmi_ces_types_de_contenu_lequel_est_dit_educatif",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Parmi ces types de contenu, lequel est dit « éducatif » ?",
+        "options": [
+          {
+            "value": "a_photo_d_un_chantier_termine_chez_m_martin",
+            "label": "A) Photo d'un chantier terminé chez M. Martin",
+            "part": "word/document.xml",
+            "paragraph_index": 77,
+            "xpath": "/document/body[1]/p[68]",
+            "template_text_sha256": "cbe86ab72b6233aec978eb7bd79bb0bfd4ab3b6a212ddf82e72aea810cd527e5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_3_signes_que_votre_chaudiere_a_besoin_d_entretien",
+            "label": "B) « 3 signes que votre chaudière a besoin d'entretien »",
+            "part": "word/document.xml",
+            "paragraph_index": 78,
+            "xpath": "/document/body[1]/p[69]",
+            "template_text_sha256": "772d9e917c56bef179c68dd606afad4cb398ddbb3bbf4120e272eaa198e638ab",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_bonne_fete_a_tous_nos_clients",
+            "label": "C) « Bonne fête à tous nos clients! »",
+            "part": "word/document.xml",
+            "paragraph_index": 79,
+            "xpath": "/document/body[1]/p[70]",
+            "template_text_sha256": "26aca143f73a171298325505a266c4fe9df28ce4da17bb6543d80b770cb23440",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_voici_notre_equipe_de_choc",
+            "label": "D) « Voici notre équipe de choc! »",
+            "part": "word/document.xml",
+            "paragraph_index": 80,
+            "xpath": "/document/body[1]/p[71]",
+            "template_text_sha256": "3036641a6514ef70e59ab8bec7a58385e9922d17ec5684995e2b629739364423",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_3_signes_que_votre_chaudiere_a_besoin_d_entretien",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Parmi ces types de contenu, lequel est dit « éducatif » ?'.",
+      "validation": {
+        "enum": [
+          "a_photo_d_un_chantier_termine_chez_m_martin",
+          "b_3_signes_que_votre_chaudiere_a_besoin_d_entretien",
+          "c_bonne_fete_a_tous_nos_clients",
+          "d_voici_notre_equipe_de_choc"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_quelle_est_la_fonction_principale_du_storytelling_dans_la_communication_d_une_t",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_quelle_est_la_fonction_principale_du_storytelling_dans_la_communication_d_une_t",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Quelle est la fonction principale du storytelling dans la communication d'une TPE ?",
+        "options": [
+          {
+            "value": "a_raconter_l_historique_de_l_entreprise_en_chiffres",
+            "label": "A) Raconter l'historique de l'entreprise en chiffres",
+            "part": "word/document.xml",
+            "paragraph_index": 82,
+            "xpath": "/document/body[1]/p[73]",
+            "template_text_sha256": "d89c9ec7b548ab6d4bc71589741b9b9677e72424cd7a07e108a0268c27bdc3c1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_creer_une_connexion_emotionnelle_avec_les_clients",
+            "label": "B) Créer une connexion émotionnelle avec les clients",
+            "part": "word/document.xml",
+            "paragraph_index": 83,
+            "xpath": "/document/body[1]/p[74]",
+            "template_text_sha256": "4f3e7473961f16439d58e514a48363ebc9fe7fdb43584f08db25d0343fa48251",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_faire_la_publicite_des_concurrents",
+            "label": "C) Faire la publicité des concurrents",
+            "part": "word/document.xml",
+            "paragraph_index": 84,
+            "xpath": "/document/body[1]/p[75]",
+            "template_text_sha256": "65758ff130547accc8508223932fef3773bfaadd7d6319b58f3c777055e98efb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_expliquer_les_tarifs_de_maniere_narrative",
+            "label": "D) Expliquer les tarifs de manière narrative",
+            "part": "word/document.xml",
+            "paragraph_index": 85,
+            "xpath": "/document/body[1]/p[76]",
+            "template_text_sha256": "2e2a09a3e62d6612796b56c215da261bfcf80612392582f4707f3316b42681a8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_creer_une_connexion_emotionnelle_avec_les_clients",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Quelle est la fonction principale du storytelling dans la communication d'une TPE ?'.",
+      "validation": {
+        "enum": [
+          "a_raconter_l_historique_de_l_entreprise_en_chiffres",
+          "b_creer_une_connexion_emotionnelle_avec_les_clients",
+          "c_faire_la_publicite_des_concurrents",
+          "d_expliquer_les_tarifs_de_maniere_narrative"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_definissez_votre_positionnement_sur_les_reseaux_sociaux_en_2_3_phrases",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_definissez_votre_positionnement_sur_les_reseaux_sociaux_en_2_3_phrases",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 88,
+          "xpath": "/document/body[1]/tbl[5]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je me positionne comme un artisan de proximité, sérieux et pédagogue, qui partage des conseils utiles en plus de montrer son savoir-faire, pour créer une relation de confiance avant même le premier contact.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je me positionne comme un artisan de proximité, sérieux et pédagogue, qui partage des conseils utiles en plus de montrer' after label 'Question 1 : Définissez votre positionnement sur les réseaux sociaux en 2-3 phrases.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_listez_4_piliers_de_contenu_que_vous_souhaitez_utiliser_sur_votre_page_professi",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_listez_4_piliers_de_contenu_que_vous_souhaitez_utiliser_sur_votre_page_professi",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 93,
+          "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Conseils pratiques d'entretien, avant/après de chantiers, présentation de l'équipe, réponses aux questions fréquentes des clients.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Conseils pratiques d'entretien, avant/après de chantiers, présentation de l'équipe, réponses aux questions fréquentes de' after label 'Question 2 : Listez 4 piliers de contenu que vous souhaitez utiliser sur votre page professionnelle.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_sur_facebook_quelle_longueur_de_texte_est_recommandee_pour_un_post_engageant",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_sur_facebook_quelle_longueur_de_texte_est_recommandee_pour_un_post_engageant",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Sur Facebook, quelle longueur de texte est recommandée pour un post engageant ?",
+        "options": [
+          {
+            "value": "a_moins_de_40_caracteres",
+            "label": "A) Moins de 40 caractères",
+            "part": "word/document.xml",
+            "paragraph_index": 106,
+            "xpath": "/document/body[1]/p[89]",
+            "template_text_sha256": "5455e2b41ebe9c4326ec6da3c9f0d3fad5b763ddf0dbba68edaadc9836e0ec12",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_entre_1_500_et_2_000_caracteres",
+            "label": "B) Entre 1 500 et 2 000 caractères",
+            "part": "word/document.xml",
+            "paragraph_index": 107,
+            "xpath": "/document/body[1]/p[90]",
+            "template_text_sha256": "22dafb245a9f009ca03cccbb3c2af8bb28d16a494f0e9766f9fac289b3c2e6ef",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_80_a_150_caracteres",
+            "label": "C) 80 à 150 caractères",
+            "part": "word/document.xml",
+            "paragraph_index": 108,
+            "xpath": "/document/body[1]/p[91]",
+            "template_text_sha256": "8433bc85b46cafab118bbe5edcb2ad81011f454e473c88b21b3e771ca76e1300",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_plus_de_3_000_caracteres",
+            "label": "D) Plus de 3 000 caractères",
+            "part": "word/document.xml",
+            "paragraph_index": 109,
+            "xpath": "/document/body[1]/p[92]",
+            "template_text_sha256": "919e00a9ceb69e9e6a5b03d94417e4f5e63b90d5838f61890b1bb36fae0823a8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_80_a_150_caracteres",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Sur Facebook, quelle longueur de texte est recommandée pour un post engageant ?'.",
+      "validation": {
+        "enum": [
+          "a_moins_de_40_caracteres",
+          "b_entre_1_500_et_2_000_caracteres",
+          "c_80_a_150_caracteres",
+          "d_plus_de_3_000_caracteres"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_qu_est_ce_qu_un_carrousel_sur_instagram_ou_facebook",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_qu_est_ce_qu_un_carrousel_sur_instagram_ou_facebook",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Qu'est-ce qu'un « carrousel » sur Instagram ou Facebook ?",
+        "options": [
+          {
+            "value": "a_une_video_courte_de_15_secondes",
+            "label": "A) Une vidéo courte de 15 secondes",
+            "part": "word/document.xml",
+            "paragraph_index": 111,
+            "xpath": "/document/body[1]/p[94]",
+            "template_text_sha256": "2d73ee1e49c67e8b7b921a696af7a4c4de8a24890b7389f864233b2636279d8d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_un_diaporama_de_2_a_10_images_ou_videos",
+            "label": "B) Un diaporama de 2 à 10 images ou vidéos",
+            "part": "word/document.xml",
+            "paragraph_index": 112,
+            "xpath": "/document/body[1]/p[95]",
+            "template_text_sha256": "82a65e8693410aaa7e39a8cb8a6efe860891f608279cd87d7622a42d853ef2b4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_une_publication_qui_se_repete_sur_le_fil",
+            "label": "C) Une publication qui se répète sur le fil",
+            "part": "word/document.xml",
+            "paragraph_index": 113,
+            "xpath": "/document/body[1]/p[96]",
+            "template_text_sha256": "50355cd36766044d66ed23e5a508208d45e6b780276498f1890bbac4e032f487",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_un_profil_de_rotation_automatique_des_posts",
+            "label": "D) Un profil de rotation automatique des posts",
+            "part": "word/document.xml",
+            "paragraph_index": 114,
+            "xpath": "/document/body[1]/p[97]",
+            "template_text_sha256": "f7dd003b2f4627beaaad2319a386e0e55467c05b574453757d732a9e34c1ae65",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_un_diaporama_de_2_a_10_images_ou_videos",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Qu'est-ce qu'un « carrousel » sur Instagram ou Facebook ?'.",
+      "validation": {
+        "enum": [
+          "a_une_video_courte_de_15_secondes",
+          "b_un_diaporama_de_2_a_10_images_ou_videos",
+          "c_une_publication_qui_se_repete_sur_le_fil",
+          "d_un_profil_de_rotation_automatique_des_posts"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_quelle_est_la_resolution_recommandee_pour_un_visuel_carre_canva_facebook_instag",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_quelle_est_la_resolution_recommandee_pour_un_visuel_carre_canva_facebook_instag",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Quelle est la résolution recommandée pour un visuel carré Canva (Facebook/Instagram) ?",
+        "options": [
+          {
+            "value": "a_640_x_480_pixels",
+            "label": "A) 640 x 480 pixels",
+            "part": "word/document.xml",
+            "paragraph_index": 116,
+            "xpath": "/document/body[1]/p[99]",
+            "template_text_sha256": "5ec9ef52d317a0153f91525a2412aca4056d73c1c842bf4f36f5ff35c88446f1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_1920_x_1080_pixels",
+            "label": "B) 1920 x 1080 pixels",
+            "part": "word/document.xml",
+            "paragraph_index": 117,
+            "xpath": "/document/body[1]/p[100]",
+            "template_text_sha256": "bc705a6ca2a954d94b60540f40677fcfa53829e82373eabf0866ec00281e3f24",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_1080_x_1080_pixels",
+            "label": "C) 1080 x 1080 pixels",
+            "part": "word/document.xml",
+            "paragraph_index": 118,
+            "xpath": "/document/body[1]/p[101]",
+            "template_text_sha256": "55005553222bfcd404061d777da86960544e03b4d3448288a576e4b9e46371a7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_4k_3840_x_2160",
+            "label": "D) 4K (3840 x 2160)",
+            "part": "word/document.xml",
+            "paragraph_index": 119,
+            "xpath": "/document/body[1]/p[102]",
+            "template_text_sha256": "1fb45f83172589d2c9e4b63057d156e09d7950b350e0414ced2afd25d246ce06",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_1080_x_1080_pixels",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Quelle est la résolution recommandée pour un visuel carré Canva (Facebook/Instagram) ?'.",
+      "validation": {
+        "enum": [
+          "a_640_x_480_pixels",
+          "b_1920_x_1080_pixels",
+          "c_1080_x_1080_pixels",
+          "d_4k_3840_x_2160"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_pour_photographier_un_chantier_avec_un_smartphone_quelle_regle_de_composition_e",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_pour_photographier_un_chantier_avec_un_smartphone_quelle_regle_de_composition_e",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Pour photographier un chantier avec un smartphone, quelle règle de composition est la plus recommandée ?",
+        "options": [
+          {
+            "value": "a_la_regle_des_tiers",
+            "label": "A) La règle des tiers",
+            "part": "word/document.xml",
+            "paragraph_index": 121,
+            "xpath": "/document/body[1]/p[104]",
+            "template_text_sha256": "a3d07573636f7944be9afcb263b17abaf2fac1aa3421502bf8556e60aba1d31c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_la_regle_du_demi_cercle",
+            "label": "B) La règle du demi-cercle",
+            "part": "word/document.xml",
+            "paragraph_index": 122,
+            "xpath": "/document/body[1]/p[105]",
+            "template_text_sha256": "1dec02c388b6c52f8e70f49853dc86b99ddd429feefa994a4c5e6f3e34697da1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_la_regle_de_symetrie",
+            "label": "C) La règle de symétrie",
+            "part": "word/document.xml",
+            "paragraph_index": 123,
+            "xpath": "/document/body[1]/p[106]",
+            "template_text_sha256": "a8ada22efa6a97dbec4fd0df299b596c7789c3ac9541bc85fa09cb75d7c7ade5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_regle_du_cadre_en_or",
+            "label": "D) La règle du cadre en or",
+            "part": "word/document.xml",
+            "paragraph_index": 124,
+            "xpath": "/document/body[1]/p[107]",
+            "template_text_sha256": "cc3c96915b0d6b84599dea9be7eb24081b87fc0c7adb692fdc04dcd41c0cdeb4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_la_regle_des_tiers",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Pour photographier un chantier avec un smartphone, quelle règle de composition est la plus recommandée ?'.",
+      "validation": {
+        "enum": [
+          "a_la_regle_des_tiers",
+          "b_la_regle_du_demi_cercle",
+          "c_la_regle_de_symetrie",
+          "d_la_regle_du_cadre_en_or"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_quel_element_doit_absolument_figurer_dans_tout_post_rs_pour_inciter_a_l_action",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_quel_element_doit_absolument_figurer_dans_tout_post_rs_pour_inciter_a_l_action",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Quel élément doit absolument figurer dans TOUT post RS pour inciter à l'action ?",
+        "options": [
+          {
+            "value": "a_un_emoji",
+            "label": "A) Un emoji",
+            "part": "word/document.xml",
+            "paragraph_index": 126,
+            "xpath": "/document/body[1]/p[109]",
+            "template_text_sha256": "7f62c9b7f8b03dee7b8a8093aaa0043db6e7b0f1f9b4592f05e74315db534878",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_un_hashtag",
+            "label": "B) Un hashtag",
+            "part": "word/document.xml",
+            "paragraph_index": 127,
+            "xpath": "/document/body[1]/p[110]",
+            "template_text_sha256": "724d5b9e6a158dedd392d432ac017b93061f69bb48e30ae2879e6ecc0f66462f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_un_appel_a_l_action_cta",
+            "label": "C) Un appel à l'action (CTA)",
+            "part": "word/document.xml",
+            "paragraph_index": 128,
+            "xpath": "/document/body[1]/p[111]",
+            "template_text_sha256": "e90eabedeb25e0887ddad5ce3eb15a49c1e65619ead39b503e5bd047150cf149",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_une_photo_en_haute_definition",
+            "label": "D) Une photo en haute définition",
+            "part": "word/document.xml",
+            "paragraph_index": 129,
+            "xpath": "/document/body[1]/p[112]",
+            "template_text_sha256": "b04553fb3f8ba6b377ec30b6d263a98ed15237952e944637dda6a9771e89ddfa",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_un_appel_a_l_action_cta",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Quel élément doit absolument figurer dans TOUT post RS pour inciter à l'action ?'.",
+      "validation": {
+        "enum": [
+          "a_un_emoji",
+          "b_un_hashtag",
+          "c_un_appel_a_l_action_cta",
+          "d_une_photo_en_haute_definition"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_decrivez_comment_vous_utiliseriez_canva_pour_creer_un_visuel_professionnel_pour",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_decrivez_comment_vous_utiliseriez_canva_pour_creer_un_visuel_professionnel_pour",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 132,
+          "xpath": "/document/body[1]/tbl[8]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je choisirais un modèle Canva au format carré, j'ajouterais le logo de mon entreprise, une photo de qualité de mon chantier et un titre court et clair avec mes coordonnées en bas du visuel.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je choisirais un modèle Canva au format carré, j'ajouterais le logo de mon entreprise, une photo de qualité de mon chant' after label 'Question 1 : Décrivez comment vous utiliseriez Canva pour créer un visuel professionnel pour votre TPE.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_redigez_un_post_facebook_complet_environ_150_caracteres_pour_annoncer_une_offre",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_redigez_un_post_facebook_complet_environ_150_caracteres_pour_annoncer_une_offre",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 137,
+          "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Offre spéciale printemps ! Entretien complet de votre chaudière à -20% jusqu'au 30 avril. Contactez-nous dès aujourd'hui pour prendre rendez-vous. 06 XX XX XX XX",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Offre spéciale printemps ! Entretien complet de votre chaudière à -20% jusqu'au 30 avril. Contactez-nous dès aujourd'hui' after label 'Question 2 : Rédigez un post Facebook complet (environ 150 caractères) pour annoncer une offre.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_a_quoi_sert_principalement_un_calendrier_editorial_pour_une_tpe",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_a_quoi_sert_principalement_un_calendrier_editorial_pour_une_tpe",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. À quoi sert principalement un calendrier éditorial pour une TPE ?",
+        "options": [
+          {
+            "value": "a_a_noter_les_anniversaires_de_ses_clients",
+            "label": "A) À noter les anniversaires de ses clients",
+            "part": "word/document.xml",
+            "paragraph_index": 150,
+            "xpath": "/document/body[1]/p[125]",
+            "template_text_sha256": "de9fe1e73962020d906503ff91abc633abb65cc24e9d1689b75b5cb4a9a12294",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_a_planifier_ses_publications_a_l_avance_pour_maintenir_la",
+            "label": "B) À planifier ses publications à l'avance pour maintenir la régularité",
+            "part": "word/document.xml",
+            "paragraph_index": 151,
+            "xpath": "/document/body[1]/p[126]",
+            "template_text_sha256": "4536576e3a0bc31050aff018880fe93a469b4358b63f8f167b7c9490a39f9823",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_a_mesurer_les_statistiques_de_sa_page",
+            "label": "C) À mesurer les statistiques de sa page",
+            "part": "word/document.xml",
+            "paragraph_index": 152,
+            "xpath": "/document/body[1]/p[127]",
+            "template_text_sha256": "81baae5b5e0522ebdb1144ddee78f5660736262d67d6d9c12db4449b82b3af4d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_a_gerer_ses_rendez_vous_de_chantier",
+            "label": "D) À gérer ses rendez-vous de chantier",
+            "part": "word/document.xml",
+            "paragraph_index": 153,
+            "xpath": "/document/body[1]/p[128]",
+            "template_text_sha256": "4e69daf12b7b8454f2fe1ee59837cb046d1db2cb21c367bd7ec8acc58dcf901f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_a_planifier_ses_publications_a_l_avance_pour_maintenir_la",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. À quoi sert principalement un calendrier éditorial pour une TPE ?'.",
+      "validation": {
+        "enum": [
+          "a_a_noter_les_anniversaires_de_ses_clients",
+          "b_a_planifier_ses_publications_a_l_avance_pour_maintenir_la",
+          "c_a_mesurer_les_statistiques_de_sa_page",
+          "d_a_gerer_ses_rendez_vous_de_chantier"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_quelle_est_la_frequence_minimale_recommandee_pour_une_tpe_debutante_sur_les_rs",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_quelle_est_la_frequence_minimale_recommandee_pour_une_tpe_debutante_sur_les_rs",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Quelle est la fréquence minimale recommandée pour une TPE débutante sur les RS ?",
+        "options": [
+          {
+            "value": "a_3_publications_par_jour",
+            "label": "A) 3 publications par jour",
+            "part": "word/document.xml",
+            "paragraph_index": 155,
+            "xpath": "/document/body[1]/p[130]",
+            "template_text_sha256": "d62b72a7572a6e4fa751f6228d386ac9e18937827e003f569d4fa14a95f75ea0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_3_a_5_publications_par_semaine",
+            "label": "B) 3 à 5 publications par semaine",
+            "part": "word/document.xml",
+            "paragraph_index": 156,
+            "xpath": "/document/body[1]/p[131]",
+            "template_text_sha256": "401d935f1a04676a5b177bb42ec809b263ba8551751fbf568c4fabddc1d7cc10",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_2_a_3_publications_par_semaine",
+            "label": "C) 2 à 3 publications par semaine",
+            "part": "word/document.xml",
+            "paragraph_index": 157,
+            "xpath": "/document/body[1]/p[132]",
+            "template_text_sha256": "b361e507b18da1d3ce11cf54127cf81c0d865fccdaff3cc6a9aeb7e3c4e28153",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_1_publication_par_mois",
+            "label": "D) 1 publication par mois",
+            "part": "word/document.xml",
+            "paragraph_index": 158,
+            "xpath": "/document/body[1]/p[133]",
+            "template_text_sha256": "52b9b15c0fb1dac39e74323bec75d4a04c796ad96ea35ebcde356cc5bf582079",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_2_a_3_publications_par_semaine",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Quelle est la fréquence minimale recommandée pour une TPE débutante sur les RS ?'.",
+      "validation": {
+        "enum": [
+          "a_3_publications_par_jour",
+          "b_3_a_5_publications_par_semaine",
+          "c_2_a_3_publications_par_semaine",
+          "d_1_publication_par_mois"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_quel_est_le_meilleur_creneau_horaire_pour_publier_sur_facebook_et_toucher_des_p",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_quel_est_le_meilleur_creneau_horaire_pour_publier_sur_facebook_et_toucher_des_p",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Quel est le meilleur créneau horaire pour publier sur Facebook et toucher des particuliers ?",
+        "options": [
+          {
+            "value": "a_6h_7h_du_matin",
+            "label": "A) 6h-7h du matin",
+            "part": "word/document.xml",
+            "paragraph_index": 160,
+            "xpath": "/document/body[1]/p[135]",
+            "template_text_sha256": "8911b412d8ab22262ee409898c599d17345dfdff5df120910f9a8505c239e471",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_12h_13h_et_19h_21h",
+            "label": "B) 12h-13h et 19h-21h",
+            "part": "word/document.xml",
+            "paragraph_index": 161,
+            "xpath": "/document/body[1]/p[136]",
+            "template_text_sha256": "3311512d151fb6708314d8ad9087a82ac122560012d2aa41ca1a845778edff3a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_23h_minuit",
+            "label": "C) 23h-minuit",
+            "part": "word/document.xml",
+            "paragraph_index": 162,
+            "xpath": "/document/body[1]/p[137]",
+            "template_text_sha256": "f2aec927cea640eae80a2acecaffcf764f072bfc5519d36024497d4977374e4c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_en_continu_toute_la_journee",
+            "label": "D) En continu toute la journée",
+            "part": "word/document.xml",
+            "paragraph_index": 163,
+            "xpath": "/document/body[1]/p[138]",
+            "template_text_sha256": "a988723dcf029ff047fcf85c1118dc8ac552efda55b08ae05c69ca94ce2b7119",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_12h_13h_et_19h_21h",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Quel est le meilleur créneau horaire pour publier sur Facebook et toucher des particuliers ?'.",
+      "validation": {
+        "enum": [
+          "a_6h_7h_du_matin",
+          "b_12h_13h_et_19h_21h",
+          "c_23h_minuit",
+          "d_en_continu_toute_la_journee"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_le_concept_de_batch_en_creation_de_contenu_consiste_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_le_concept_de_batch_en_creation_de_contenu_consiste_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Le concept de « batch » en création de contenu consiste à :",
+        "options": [
+          {
+            "value": "a_publier_en_rafale_tout_son_contenu_d_un_coup",
+            "label": "A) Publier en rafale tout son contenu d'un coup",
+            "part": "word/document.xml",
+            "paragraph_index": 165,
+            "xpath": "/document/body[1]/p[140]",
+            "template_text_sha256": "ed4957696414ce82047f89a106f1c038adab3bbc1147859eb2ffde8f306d7879",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_creer_plusieurs_contenus_en_une_seule_session_de_travail_d",
+            "label": "B) Créer plusieurs contenus en une seule session de travail dédiée",
+            "part": "word/document.xml",
+            "paragraph_index": 166,
+            "xpath": "/document/body[1]/p[141]",
+            "template_text_sha256": "e3b8a0769056e0349fc4f8f544e37a8569b99350425d3f5199da6a433edadaba",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_republier_les_memes_publications_plusieurs_fois",
+            "label": "C) Republier les mêmes publications plusieurs fois",
+            "part": "word/document.xml",
+            "paragraph_index": 167,
+            "xpath": "/document/body[1]/p[142]",
+            "template_text_sha256": "0b705122f22656e4c070575fce667512c19cbad9fae54022fb8c4ab1ccb093ba",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_creer_du_contenu_uniquement_pendant_les_periodes_creuses",
+            "label": "D) Créer du contenu uniquement pendant les périodes creuses",
+            "part": "word/document.xml",
+            "paragraph_index": 168,
+            "xpath": "/document/body[1]/p[143]",
+            "template_text_sha256": "1b070fdc6b11aef3f92ba0040c8e4dcb00194cf07ddb77fd125a78a02ca755b4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_creer_plusieurs_contenus_en_une_seule_session_de_travail_d",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Le concept de « batch » en création de contenu consiste à :'.",
+      "validation": {
+        "enum": [
+          "a_publier_en_rafale_tout_son_contenu_d_un_coup",
+          "b_creer_plusieurs_contenus_en_une_seule_session_de_travail_d",
+          "c_republier_les_memes_publications_plusieurs_fois",
+          "d_creer_du_contenu_uniquement_pendant_les_periodes_creuses"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_dans_un_calendrier_editorial_une_colonne_type_de_contenu_correspond_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_dans_un_calendrier_editorial_une_colonne_type_de_contenu_correspond_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Dans un calendrier éditorial, une colonne « type de contenu » correspond à :",
+        "options": [
+          {
+            "value": "a_le_format_technique_du_fichier_jpg_mp4",
+            "label": "A) Le format technique du fichier (JPG, MP4)",
+            "part": "word/document.xml",
+            "paragraph_index": 170,
+            "xpath": "/document/body[1]/p[145]",
+            "template_text_sha256": "72095919aea36aa69145f44169c60ac56b77e39173ace79d97b1ccdc0c01629d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_la_categorie_editoriale_educatif_promotionnel_engagement",
+            "label": "B) La catégorie éditoriale (éducatif, promotionnel, engagement…)",
+            "part": "word/document.xml",
+            "paragraph_index": 171,
+            "xpath": "/document/body[1]/p[146]",
+            "template_text_sha256": "ae8bd9f17b4ce1276fce0cbf24c1e489cf016934a351e5029bceb3719ee0294d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_nombre_de_caracteres_du_texte",
+            "label": "C) Le nombre de caractères du texte",
+            "part": "word/document.xml",
+            "paragraph_index": 172,
+            "xpath": "/document/body[1]/p[147]",
+            "template_text_sha256": "b2f54b9f8e0f7b4d4dbdf790a1cdc4bb7502c517ba42e4ad629e19acf6a74937",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_plateforme_de_publication_visee",
+            "label": "D) La plateforme de publication visée",
+            "part": "word/document.xml",
+            "paragraph_index": 173,
+            "xpath": "/document/body[1]/p[148]",
+            "template_text_sha256": "0785c0878f82359c50c52f2b0f502cc47ab38bf16e5677586d9b38b85dc18d1c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_la_categorie_editoriale_educatif_promotionnel_engagement",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Dans un calendrier éditorial, une colonne « type de contenu » correspond à :'.",
+      "validation": {
+        "enum": [
+          "a_le_format_technique_du_fichier_jpg_mp4",
+          "b_la_categorie_editoriale_educatif_promotionnel_engagement",
+          "c_le_nombre_de_caracteres_du_texte",
+          "d_la_plateforme_de_publication_visee"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_comment_organiseriez_vous_votre_calendrier_editorial_pour_le_mois_prochain_decr",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_comment_organiseriez_vous_votre_calendrier_editorial_pour_le_mois_prochain_decr",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 176,
+          "xpath": "/document/body[1]/tbl[11]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je prévois chaque fin de mois les publications du mois suivant dans un tableau simple avec la date, le thème et le type de contenu, en m'appuyant sur les temps forts de mon métier (saisons, entretiens).",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je prévois chaque fin de mois les publications du mois suivant dans un tableau simple avec la date, le thème et le type ' after label 'Question 1 : Comment organiseriez-vous votre calendrier éditorial pour le mois prochain ? Décrivez votre méthode.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_quels_sont_selon_vous_les_avantages_du_batch_creation_groupee_pour_un_artisan_i",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_quels_sont_selon_vous_les_avantages_du_batch_creation_groupee_pour_un_artisan_i",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 181,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Le batch permet de gagner du temps en préparant plusieurs contenus d'un coup, d'être plus régulier et de moins subir le stress du \"je ne sais pas quoi poster aujourd'hui\".",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Le batch permet de gagner du temps en préparant plusieurs contenus d'un coup, d'être plus régulier et de moins subir le ' after label 'Question 2 : Quels sont selon vous les avantages du « batch » (création groupée) pour un artisan indépendant ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_parmi_ces_kpis_lequel_mesure_specifiquement_l_attractivite_d_un_contenu_pour_so",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_parmi_ces_kpis_lequel_mesure_specifiquement_l_attractivite_d_un_contenu_pour_so",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Parmi ces KPIs, lequel mesure spécifiquement l'attractivité d'un contenu pour son audience ?",
+        "options": [
+          {
+            "value": "a_le_nombre_d_abonnes_total",
+            "label": "A) Le nombre d'abonnés total",
+            "part": "word/document.xml",
+            "paragraph_index": 194,
+            "xpath": "/document/body[1]/p[161]",
+            "template_text_sha256": "2fa11f4c8ba9f83e0249f47f158aebedaf481e625d4d752e141fba1903c8181d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_taux_d_engagement",
+            "label": "B) Le taux d'engagement",
+            "part": "word/document.xml",
+            "paragraph_index": 195,
+            "xpath": "/document/body[1]/p[162]",
+            "template_text_sha256": "b8f0fc2ef96c9b101cc3896304e6f6ab3c32f1c06e86c7948b35b688719317eb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_nombre_de_messages_recus",
+            "label": "C) Le nombre de messages reçus",
+            "part": "word/document.xml",
+            "paragraph_index": 196,
+            "xpath": "/document/body[1]/p[163]",
+            "template_text_sha256": "247ac77d63162b39a5626d090a01b45f363adbae60deb7283f4cc7d64d5d5920",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_budget_publicitaire_depense",
+            "label": "D) Le budget publicitaire dépensé",
+            "part": "word/document.xml",
+            "paragraph_index": 197,
+            "xpath": "/document/body[1]/p[164]",
+            "template_text_sha256": "1046ddd420bbce14991523afc12fc85741ef1623b8abe41cb7af941beb32d65a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_taux_d_engagement",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Parmi ces KPIs, lequel mesure spécifiquement l'attractivité d'un contenu pour son audience ?'.",
+      "validation": {
+        "enum": [
+          "a_le_nombre_d_abonnes_total",
+          "b_le_taux_d_engagement",
+          "c_le_nombre_de_messages_recus",
+          "d_le_budget_publicitaire_depense"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_comment_calcule_t_on_le_taux_d_engagement_d_une_publication",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_comment_calcule_t_on_le_taux_d_engagement_d_une_publication",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Comment calcule-t-on le taux d'engagement d'une publication ?",
+        "options": [
+          {
+            "value": "a_abonnes_portee_x_100",
+            "label": "A) (Abonnés / Portée) x 100",
+            "part": "word/document.xml",
+            "paragraph_index": 199,
+            "xpath": "/document/body[1]/p[166]",
+            "template_text_sha256": "b172ae720030864c0bff09a6f3bba076f227a36a58440f0fdd51d6e44a326996",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_likes_commentaires_partages_portee_x_100",
+            "label": "B) (Likes + Commentaires + Partages) / Portée x 100",
+            "part": "word/document.xml",
+            "paragraph_index": 200,
+            "xpath": "/document/body[1]/p[167]",
+            "template_text_sha256": "934c0c84e6c6e9492d2af6a329c04a1db38380de1dd22d0adeb92c537bb8fff4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_publications_x_reactions_100",
+            "label": "C) (Publications x Réactions) / 100",
+            "part": "word/document.xml",
+            "paragraph_index": 201,
+            "xpath": "/document/body[1]/p[168]",
+            "template_text_sha256": "43db880b35560c83a6d37c548dac2db87bc78c0d02c0f5707dc25e33d7b32ce9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_nombre_d_abonnes_gagnes_dans_la_semaine",
+            "label": "D) Nombre d'abonnés gagnés dans la semaine",
+            "part": "word/document.xml",
+            "paragraph_index": 202,
+            "xpath": "/document/body[1]/p[169]",
+            "template_text_sha256": "7eb29c8ef5ad49144c4805566c6cc07bdd4acb5aa0e6f90ba5b82b1f726c6f50",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_likes_commentaires_partages_portee_x_100",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Comment calcule-t-on le taux d'engagement d'une publication ?'.",
+      "validation": {
+        "enum": [
+          "a_abonnes_portee_x_100",
+          "b_likes_commentaires_partages_portee_x_100",
+          "c_publications_x_reactions_100",
+          "d_nombre_d_abonnes_gagnes_dans_la_semaine"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_dans_les_insights_facebook_portee_et_impressions_sont",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_dans_les_insights_facebook_portee_et_impressions_sont",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Dans les Insights Facebook, « portée » et « impressions » sont :",
+        "options": [
+          {
+            "value": "a_la_meme_chose_deux_mots_identiques",
+            "label": "A) La même chose - deux mots identiques",
+            "part": "word/document.xml",
+            "paragraph_index": 204,
+            "xpath": "/document/body[1]/p[171]",
+            "template_text_sha256": "7e0560b6fa48b8219db702a90431d83516070c47d79915d5669bd19cc9f08345",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_differentes_portee_personnes_uniques_impressions_total_d_a",
+            "label": "B) Différentes : portée = personnes uniques, impressions = total d'affichages",
+            "part": "word/document.xml",
+            "paragraph_index": 205,
+            "xpath": "/document/body[1]/p[172]",
+            "template_text_sha256": "defa9318257d57078074b44123b8881716ca137ab1bbb4002ac304b2b3c00e1f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_portee_budget_paye_impressions_organique",
+            "label": "C) Portée = budget payé, impressions = organique",
+            "part": "word/document.xml",
+            "paragraph_index": 206,
+            "xpath": "/document/body[1]/p[173]",
+            "template_text_sha256": "3fb7a0b8df5bb18032e5eac19814be449cdb67aa07a87dee14964a632310eee7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_deux_indicateurs_des_messages_prives",
+            "label": "D) Deux indicateurs des messages privés",
+            "part": "word/document.xml",
+            "paragraph_index": 207,
+            "xpath": "/document/body[1]/p[174]",
+            "template_text_sha256": "d3755487893154e81498ebe7eb187491485009f0bc2ebaaec2178c8cb1141968",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_differentes_portee_personnes_uniques_impressions_total_d_a",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Dans les Insights Facebook, « portée » et « impressions » sont :'.",
+      "validation": {
+        "enum": [
+          "a_la_meme_chose_deux_mots_identiques",
+          "b_differentes_portee_personnes_uniques_impressions_total_d_a",
+          "c_portee_budget_paye_impressions_organique",
+          "d_deux_indicateurs_des_messages_prives"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_quelle_technique_d_engagement_consiste_a_poser_une_question_a_la_fin_d_un_post",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_quelle_technique_d_engagement_consiste_a_poser_une_question_a_la_fin_d_un_post",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Quelle technique d'engagement consiste à poser une question à la fin d'un post ?",
+        "options": [
+          {
+            "value": "a_le_hook_d_accroche",
+            "label": "A) Le hook d'accroche",
+            "part": "word/document.xml",
+            "paragraph_index": 209,
+            "xpath": "/document/body[1]/p[176]",
+            "template_text_sha256": "e7cbc23dcf23f5a2c93adc5150b4a34905b825081a5562a08dfbd641199fe342",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_l_appel_a_l_action_cta",
+            "label": "B) L'appel à l'action (CTA)",
+            "part": "word/document.xml",
+            "paragraph_index": 210,
+            "xpath": "/document/body[1]/p[177]",
+            "template_text_sha256": "95b203274fc189f122495d7cb5269bc2f11fcb1b0cba070c08a77253dfc909f4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_storytelling",
+            "label": "C) Le storytelling",
+            "part": "word/document.xml",
+            "paragraph_index": 211,
+            "xpath": "/document/body[1]/p[178]",
+            "template_text_sha256": "9e2b521001aafca0baeb0be132ed08cbe4a2121c80feca61d5a554fea7457164",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_format_carrousel",
+            "label": "D) Le format carrousel",
+            "part": "word/document.xml",
+            "paragraph_index": 212,
+            "xpath": "/document/body[1]/p[179]",
+            "template_text_sha256": "3450befd9254f6aad4f5deeba138a373234046208fa2576157ad3fd810ab6179",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_l_appel_a_l_action_cta",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Quelle technique d'engagement consiste à poser une question à la fin d'un post ?'.",
+      "validation": {
+        "enum": [
+          "a_le_hook_d_accroche",
+          "b_l_appel_a_l_action_cta",
+          "c_le_storytelling",
+          "d_le_format_carrousel"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_si_votre_taux_d_engagement_moyen_est_de_0_4_c_est",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_si_votre_taux_d_engagement_moyen_est_de_0_4_c_est",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Si votre taux d'engagement moyen est de 0,4%, c'est :",
+        "options": [
+          {
+            "value": "a_excellent_superieur_a_la_moyenne",
+            "label": "A) Excellent (supérieur à la moyenne)",
+            "part": "word/document.xml",
+            "paragraph_index": 214,
+            "xpath": "/document/body[1]/p[181]",
+            "template_text_sha256": "f2c767faca713b03e0239a949dd623e8afb9e78fb5b9772c9ff4c2a86ebfb403",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_acceptable_pour_une_grande_marque",
+            "label": "B) Acceptable pour une grande marque",
+            "part": "word/document.xml",
+            "paragraph_index": 215,
+            "xpath": "/document/body[1]/p[182]",
+            "template_text_sha256": "fac15fe5eed7c6fdf448f4b0a7d4fd5bf6f7fd62d1005940aba83133cbc9843e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_faible_a_ameliorer_pour_une_tpe",
+            "label": "C) Faible à améliorer pour une TPE",
+            "part": "word/document.xml",
+            "paragraph_index": 216,
+            "xpath": "/document/body[1]/p[183]",
+            "template_text_sha256": "8a5064a52c45a3d5e39a5c5376961ec9c8c8aed2be424d483a3afb55d8dd2018",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_impossible_les_taux_sont_toujours_superieurs_a_1",
+            "label": "D) Impossible (les taux sont toujours supérieurs à 1%)",
+            "part": "word/document.xml",
+            "paragraph_index": 217,
+            "xpath": "/document/body[1]/p[184]",
+            "template_text_sha256": "3c238008daf01a335ed86de48855ebdac2b6dcb52c3b04322c4a37780addd3d1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_faible_a_ameliorer_pour_une_tpe",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Si votre taux d'engagement moyen est de 0,4%, c'est :'.",
+      "validation": {
+        "enum": [
+          "a_excellent_superieur_a_la_moyenne",
+          "b_acceptable_pour_une_grande_marque",
+          "c_faible_a_ameliorer_pour_une_tpe",
+          "d_impossible_les_taux_sont_toujours_superieurs_a_1"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_quels_sont_les_4_kpis_les_plus_importants_a_suivre_pour_une_tpe_artisanale_sur",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_quels_sont_les_4_kpis_les_plus_importants_a_suivre_pour_une_tpe_artisanale_sur",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 220,
+          "xpath": "/document/body[1]/tbl[14]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Le taux d'engagement, la portée, le nombre de demandes de devis générées et le nombre d'abonnés gagnés chaque mois, car ce sont les indicateurs qui montrent si le contenu intéresse réellement mes prospects.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Le taux d'engagement, la portée, le nombre de demandes de devis générées et le nombre d'abonnés gagnés chaque mois, car ' after label 'Question 1 : Quels sont les 4 KPIs les plus importants à suivre pour une TPE artisanale sur les RS ? Justifiez chaque ch'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_decrivez_3_techniques_concretes_que_vous_utiliseriez_pour_augmenter_l_engagemen",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_decrivez_3_techniques_concretes_que_vous_utiliseriez_pour_augmenter_l_engagemen",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 225,
+          "xpath": "/document/body[1]/tbl[15]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Poser des questions en fin de post, répondre rapidement aux commentaires et utiliser plus de contenu avant/après qui suscite davantage de réactions.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Poser des questions en fin de post, répondre rapidement aux commentaires et utiliser plus de contenu avant/après qui sus' after label 'Question 2 : Décrivez 3 techniques concrètes que vous utiliseriez pour augmenter l'engagement de vos publications.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 2,
+      "xpath": "/document/body[1]/p[3]",
+      "blank_content": "Recueil des évaluations intermédiaires (Parties 1 et 2 - QCM et Questions Ouvertes) — Document vierge",
+      "filled_content": "Recueil des évaluations intermédiaires (Parties 1 et 2 - QCM et Questions Ouvertes)",
+      "reason": "Unsafe non-slot text change (similarity 0.90); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 57,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 101,
+      "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 145,
+      "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 189,
+      "xpath": "/document/body[1]/tbl[13]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "6 structural/text difference(s) require review; see mapping evidence and placeholder discovery report."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 36,
+    "confirmed_field_count": 36,
+    "concrete_target_count": 36,
+    "evidence_count": 36,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 6,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "6 unresolved source/template difference(s) remain."
+    ]
+  }
+}

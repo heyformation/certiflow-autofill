@@ -1,0 +1,162 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proskills_rs7200_membres_du_jury_docx",
+  "template_path": "final-templates/Proskills_Institut/RS7200/section-02/jury-and-decision/Membres du Jury - RS7200 - Proskills Institut - Template.docx",
+  "template_hash": "2b16fc8fbbfbd40a63526f5a8125541fe9627cd52385bb52c056b26a0e5d2e4c",
+  "source_original_path": "Proskills Institut/RS7200 - Réseaux Sociaux TPE/Membres du Jury - RS7200 - Proskills Institut - Template.docx",
+  "organization": "Proskills Institut",
+  "certification": "RS7200",
+  "major_section": "Évaluation certificative et décision",
+  "subsection": "jury-and-decision",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proskills Institut/RS7200 - Réseaux Sociaux TPE/Membres du Jury - RS7200 - Proskills Institut - Template.docx",
+    "filled_reference": null,
+    "confidence": "BLOCKED",
+    "structure_similarity": 0.0,
+    "rationale": "No same-group filled reference.",
+    "same_format": false,
+    "candidate_identity": null
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "candidate.questionnaire.responses.membres_du_jury.veiller_a_la_bonne_communication_des_resultats_aux_candidats",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.membres_du_jury.veiller_a_la_bonne_communication_des_resultats_aux_candidats",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 16,
+          "xpath": "/document/body[1]/p[17]",
+          "in_table": false,
+          "style": null,
+          "template_text": "__",
+          "template_text_sha256": "9911f4d2b18457c4726664d309385072d295ca69062e99e66250033c13d09441",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Veiller à la bonne communication des résultats aux candidats.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "jury.members",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.jury.members",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 54,
+          "xpath": "/document/body[1]/p[55]",
+          "in_table": false,
+          "style": null,
+          "template_text": "__",
+          "template_text_sha256": "9911f4d2b18457c4726664d309385072d295ca69062e99e66250033c13d09441",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Merci d’indiquer le/la président·e du jury'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.membres_du_jury.numero_de_telephone_07_67_19_61_02",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.membres_du_jury.numero_de_telephone_07_67_19_61_02",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 61,
+          "xpath": "/document/body[1]/p[62]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "",
+      "confidence": "BLOCKED",
+      "evidence": "Template-only structural slot immediately follows label 'Numéro de téléphone : 07 67 19 61 02'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": "Filled reference did not provide same-format structural evidence."
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "reason": "No same-format filled reference; mapping is label-based and requires review."
+    }
+  ],
+  "blocking_reasons": [
+    "1 structural/text difference(s) require review; see mapping evidence and placeholder discovery report.",
+    "Authorized jury identities, decision provenance, and signature sources are not supplied.",
+    "No filled reference was located for this template.",
+    "No same-group filled reference."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 3,
+    "confirmed_field_count": 0,
+    "concrete_target_count": 3,
+    "evidence_count": 3,
+    "structural_only_evidence_count": 3,
+    "unresolved_difference_count": 1,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "3 field(s) rely only on structural-slot inference.",
+      "3 field(s) are not CONFIRMED.",
+      "1 unresolved source/template difference(s) remain."
+    ]
+  }
+}

@@ -1,0 +1,856 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs6485_recueil_des_besoins_docx",
+  "template_path": "final-templates/Proforma_Institut/RS6485/section-01/admission-and-needs/Recueil des Besoins - RS6485 - Proforma Institut - Template.docx",
+  "template_hash": "855a647e30205f3c85911a2b5a5ebfce6d6c019fb5e699141c80fea721274aa3",
+  "source_original_path": "Proforma Institut/RS6485 - Comptabilité TPE/Recueil des Besoins - RS6485 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS6485",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "admission-and-needs",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS6485 - Comptabilité TPE/Recueil des Besoins - RS6485 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS6485 - Comptabilité TPE/Recueil des Besoins - RS6485 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9577,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "MOREL Julie"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "candidate.identity.full_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.identity.full_name",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 6,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "MOREL Julie",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'MOREL Julie' after label 'Nom et prénom *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.statut_actuel",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.statut_actuel",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Statut actuel *",
+        "options": [
+          {
+            "value": "salarie_e",
+            "label": "Salarié(e)",
+            "part": "word/document.xml",
+            "paragraph_index": 9,
+            "xpath": "/document/body[1]/p[8]",
+            "template_text_sha256": "6771f8e0e1720c2a926af70b102e91545472bfedb6c38fe7278ed7595f058abd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "demandeur_se_d_emploi",
+            "label": "Demandeur(se) d'emploi",
+            "part": "word/document.xml",
+            "paragraph_index": 10,
+            "xpath": "/document/body[1]/p[9]",
+            "template_text_sha256": "ffd93b0bf85fa8bdeb19740c537972da3998a93a725598aac3388faf9e7f7a97",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "independant_e_auto_entrepreneur",
+            "label": "Indépendant(e) / Auto-entrepreneur",
+            "part": "word/document.xml",
+            "paragraph_index": 11,
+            "xpath": "/document/body[1]/p[10]",
+            "template_text_sha256": "ad3c8b6be3d01a8cfca90016d6dbf676b151f76dc3a5f46ee3b7d1d8e89e1ee8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "createur_trice_d_entreprise",
+            "label": "Créateur(trice) d'entreprise",
+            "part": "word/document.xml",
+            "paragraph_index": 12,
+            "xpath": "/document/body[1]/p[11]",
+            "template_text_sha256": "3905d35f4c84f4429b49824e250f1f89e47527bc912db67ea51c2efc69e99e2d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "autre",
+            "label": "Autre :",
+            "part": "word/document.xml",
+            "paragraph_index": 13,
+            "xpath": "/document/body[1]/p[12]",
+            "template_text_sha256": "8e52a2c2e8e88d128add46be27bba8ae3f10a203f89fb5ac5aeadf629a570db4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "createur_trice_d_entreprise",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Statut actuel *'.",
+      "validation": {
+        "enum": [
+          "salarie_e",
+          "demandeur_se_d_emploi",
+          "independant_e_auto_entrepreneur",
+          "createur_trice_d_entreprise",
+          "autre"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.travaillez_vous_actuellement_dans_une_tpe_pme",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.travaillez_vous_actuellement_dans_une_tpe_pme",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Travaillez-vous actuellement dans une TPE / PME ? *",
+        "options": [
+          {
+            "value": "oui",
+            "label": "Oui",
+            "part": "word/document.xml",
+            "paragraph_index": 16,
+            "xpath": "/document/body[1]/p[15]",
+            "template_text_sha256": "3b470d2c1846fa2d2240f240146acd9d26c3983b2ad147697ee7ffd756ec8dea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non",
+            "label": "Non",
+            "part": "word/document.xml",
+            "paragraph_index": 17,
+            "xpath": "/document/body[1]/p[16]",
+            "template_text_sha256": "a797aee61e3a8eafab4ae8d490bb08d3113054a5b78772677b7200a1aac83c82",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "non",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Travaillez-vous actuellement dans une TPE / PME ? *'.",
+      "validation": {
+        "enum": [
+          "oui",
+          "non"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.avez_vous_deja_realise_des_taches_comptables",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.avez_vous_deja_realise_des_taches_comptables",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Avez-vous déjà réalisé des tâches comptables ? *",
+        "options": [
+          {
+            "value": "oui_regulierement",
+            "label": "Oui, régulièrement",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "2f11c36b47eb8247b8da9d8ffb3eb4a8b745146e8682ff4fd112a74b2369e095",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "oui_occasionnellement",
+            "label": "Oui, occasionnellement",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/p[19]",
+            "template_text_sha256": "58bd39a39c2e1215f3f9523e6ccf29f9e95b96adcc7a08803911c5c4fa762121",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non_jamais",
+            "label": "Non, jamais",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "46d9ba194c505f8e77f7cac44d9fcb4a318b43b1f15d1abc3a2df2da2e8ad1b8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "oui_occasionnellement",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Avez-vous déjà réalisé des tâches comptables ? *'.",
+      "validation": {
+        "enum": [
+          "oui_regulierement",
+          "oui_occasionnellement",
+          "non_jamais"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.comment_evaluez_vous_votre_niveau_en_comptabilite",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.comment_evaluez_vous_votre_niveau_en_comptabilite",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Comment évaluez-vous votre niveau en comptabilité ? *",
+        "options": [
+          {
+            "value": "debutant",
+            "label": "Débutant",
+            "part": "word/document.xml",
+            "paragraph_index": 24,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "bd2f80da93733f59736551e05ec60e88c3ead6e3315c03579f08e6f770de8ef6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "intermediaire",
+            "label": "Intermédiaire",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "c9afc578de221089a455c5cd7786f37a8f3a7f770e4d62e5f8a3b39b51d57635",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "avance",
+            "label": "Avancé",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "3def309405c8dc4762e9044cfdde79da30fa9df68421173aeaefebf7824b571a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "debutant",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Comment évaluez-vous votre niveau en comptabilité ? *'.",
+      "validation": {
+        "enum": [
+          "debutant",
+          "intermediaire",
+          "avance"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.quelles_operations_maitrisez_vous_deja",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.quelles_operations_maitrisez_vous_deja",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Quelles opérations maîtrisez-vous déjà ? *",
+        "options": [
+          {
+            "value": "saisie_des_factures_clients",
+            "label": "Saisie des factures clients",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "cb6d734ccf70210e077bced585f1ccacd38f223546258468282c6e03def5bfeb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "saisie_des_factures_fournisseurs",
+            "label": "Saisie des factures fournisseurs",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[28]",
+            "template_text_sha256": "7c00da4c626c70d1de632b2dfc3203efc5a0832ffc8ca81eeec70e6d0e97a1c8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "suivi_de_la_tresorerie",
+            "label": "Suivi de la trésorerie",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "fb29c4dafacf2d8695b2d4f4a7264da5e9ff152f19aafa6f3bc7fae47e62c18b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "lettrage_des_comptes",
+            "label": "Lettrage des comptes",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "d223c7b0925008871e32eb631466288dbe18ec63970867fcfc0a44426c2c2d48",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "rapprochement_bancaire",
+            "label": "Rapprochement bancaire",
+            "part": "word/document.xml",
+            "paragraph_index": 32,
+            "xpath": "/document/body[1]/p[31]",
+            "template_text_sha256": "1960a03c910b3e66023cb6a948bce4cf354c5f34e54dd4d86bf8c1bc1b0b5ee8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "aucune",
+            "label": "Aucune",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "10d40277e838a30dfe6e3b664c5b4cb2bf84c38190adf928d324761b45ef3938",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "suivi_de_la_tresorerie",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Quelles opérations maîtrisez-vous déjà ? *'.",
+      "validation": {
+        "enum": [
+          "saisie_des_factures_clients",
+          "saisie_des_factures_fournisseurs",
+          "suivi_de_la_tresorerie",
+          "lettrage_des_comptes",
+          "rapprochement_bancaire",
+          "aucune"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.pourquoi_souhaitez_vous_suivre_cette_formation",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.pourquoi_souhaitez_vous_suivre_cette_formation",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Pourquoi souhaitez-vous suivre cette formation ? *",
+        "options": [
+          {
+            "value": "gerer_moi_meme_la_comptabilite_courante_de_mon_entreprise_sa",
+            "label": "Gérer moi-même la comptabilité courante de mon entreprise sans recourir systématiquement à un comptable",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "784c09fcd271f80e4eb97f580dbc5e043bec0c5c617657597c23e06a44c18abc",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "acquerir_des_competences_professionnelles_pour_evoluer_ou_me",
+            "label": "Acquérir des compétences professionnelles pour évoluer ou me reconvertir vers un poste administratif/comptable",
+            "part": "word/document.xml",
+            "paragraph_index": 37,
+            "xpath": "/document/body[1]/p[36]",
+            "template_text_sha256": "79baec7fcb74bcd3154e0b8bb8cf92dd9537ddae37a82e288473cb04ced82a4f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "mieux_comprendre_et_suivre_les_documents_comptables_transmis",
+            "label": "Mieux comprendre et suivre les documents comptables transmis par mon expert-comptable",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[37]",
+            "template_text_sha256": "6a4845534ff5c4b01f6d0655cb35c2813edefb8b400143521fdb1b4999ffa336",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "renforcer_mes_connaissances_dans_le_cadre_de_mes_missions_ac",
+            "label": "Renforcer mes connaissances dans le cadre de mes missions actuelles (assistanat, gestion, RH...)",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "e3560b6481ba3475e29d3413bb0f13668bba68d9b47f36ed0ab052577624275e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "gerer_moi_meme_la_comptabilite_courante_de_mon_entreprise_sa",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Pourquoi souhaitez-vous suivre cette formation ? *'.",
+      "validation": {
+        "enum": [
+          "gerer_moi_meme_la_comptabilite_courante_de_mon_entreprise_sa",
+          "acquerir_des_competences_professionnelles_pour_evoluer_ou_me",
+          "mieux_comprendre_et_suivre_les_documents_comptables_transmis",
+          "renforcer_mes_connaissances_dans_le_cadre_de_mes_missions_ac"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.professional.current_position",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.current_position",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Confirmez-vous que cette formation correspond à vos besoins et à votre projet professionnel ? *",
+        "options": [
+          {
+            "value": "oui",
+            "label": "Oui",
+            "part": "word/document.xml",
+            "paragraph_index": 75,
+            "xpath": "/document/body[1]/p[70]",
+            "template_text_sha256": "3b470d2c1846fa2d2240f240146acd9d26c3983b2ad147697ee7ffd756ec8dea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non",
+            "label": "Non",
+            "part": "word/document.xml",
+            "paragraph_index": 76,
+            "xpath": "/document/body[1]/p[71]",
+            "template_text_sha256": "a797aee61e3a8eafab4ae8d490bb08d3113054a5b78772677b7200a1aac83c82",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "oui",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Confirmez-vous que cette formation correspond à vos besoins et à votre projet professionnel ? *'.",
+      "validation": {
+        "enum": [
+          "oui",
+          "non"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.disposez_vous_du_materiel_necessaire_pour_suivre_la_formation_a_distance_ordinateur_connex",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.disposez_vous_du_materiel_necessaire_pour_suivre_la_formation_a_distance_ordinateur_connex",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Disposez-vous du matériel nécessaire pour suivre la formation à distance ? (Ordinateur + connexion internet) *",
+        "options": [
+          {
+            "value": "oui",
+            "label": "Oui",
+            "part": "word/document.xml",
+            "paragraph_index": 51,
+            "xpath": "/document/body[1]/p[50]",
+            "template_text_sha256": "3b470d2c1846fa2d2240f240146acd9d26c3983b2ad147697ee7ffd756ec8dea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non",
+            "label": "Non",
+            "part": "word/document.xml",
+            "paragraph_index": 52,
+            "xpath": "/document/body[1]/p[51]",
+            "template_text_sha256": "a797aee61e3a8eafab4ae8d490bb08d3113054a5b78772677b7200a1aac83c82",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "oui",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Disposez-vous du matériel nécessaire pour suivre la formation à distance ? (Ordinateur + connexion internet) *'.",
+      "validation": {
+        "enum": [
+          "oui",
+          "non"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.avez_vous_deja_suivi_une_formation_a_distance",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.avez_vous_deja_suivi_une_formation_a_distance",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Avez-vous déjà suivi une formation à distance ? *",
+        "options": [
+          {
+            "value": "oui",
+            "label": "Oui",
+            "part": "word/document.xml",
+            "paragraph_index": 54,
+            "xpath": "/document/body[1]/p[53]",
+            "template_text_sha256": "3b470d2c1846fa2d2240f240146acd9d26c3983b2ad147697ee7ffd756ec8dea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non",
+            "label": "Non",
+            "part": "word/document.xml",
+            "paragraph_index": 55,
+            "xpath": "/document/body[1]/p[54]",
+            "template_text_sha256": "a797aee61e3a8eafab4ae8d490bb08d3113054a5b78772677b7200a1aac83c82",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "non",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Avez-vous déjà suivi une formation à distance ? *'.",
+      "validation": {
+        "enum": [
+          "oui",
+          "non"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.avez_vous_des_besoins_specifiques_ou_une_situation_necessitant_un_amenagement_pedagogique",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.avez_vous_des_besoins_specifiques_ou_une_situation_necessitant_un_amenagement_pedagogique",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Avez-vous des besoins spécifiques ou une situation nécessitant un aménagement pédagogique ? Si oui, merci de préciser (facultatif) *",
+        "options": [
+          {
+            "value": "oui",
+            "label": "Oui",
+            "part": "word/document.xml",
+            "paragraph_index": 57,
+            "xpath": "/document/body[1]/p[56]",
+            "template_text_sha256": "3b470d2c1846fa2d2240f240146acd9d26c3983b2ad147697ee7ffd756ec8dea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non",
+            "label": "Non",
+            "part": "word/document.xml",
+            "paragraph_index": 58,
+            "xpath": "/document/body[1]/p[57]",
+            "template_text_sha256": "a797aee61e3a8eafab4ae8d490bb08d3113054a5b78772677b7200a1aac83c82",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "autre",
+            "label": "Autre :",
+            "part": "word/document.xml",
+            "paragraph_index": 59,
+            "xpath": "/document/body[1]/p[58]",
+            "template_text_sha256": "8e52a2c2e8e88d128add46be27bba8ae3f10a203f89fb5ac5aeadf629a570db4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "non",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Avez-vous des besoins spécifiques ou une situation nécessitant un aménagement pédagogique ? Si oui, merci de préciser (facultatif) *'.",
+      "validation": {
+        "enum": [
+          "oui",
+          "non",
+          "autre"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.microsoft_word",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.microsoft_word",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 62,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Notions de base",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Notions de base' after label 'Microsoft Word *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.microsoft_excel",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.microsoft_excel",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 65,
+          "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Notions de base",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Notions de base' after label 'Microsoft Excel *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.utilisation_d_un_ordinateur_fichiers_dossiers_navigation",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.utilisation_d_un_ordinateur_fichiers_dossiers_navigation",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 68,
+          "xpath": "/document/body[1]/tbl[5]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Niveau intermédiaire",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Niveau intermédiaire' after label 'Utilisation d'un ordinateur (fichiers, dossiers, navigation) *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "manual_inputs.recueil_des_besoins.utilisation_d_internet_et_des_emails_professionnels",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.manual_inputs.recueil_des_besoins.utilisation_d_internet_et_des_emails_professionnels",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 71,
+          "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Niveau intermédiaire",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Niveau intermédiaire' after label 'Utilisation d'Internet et des emails professionnels *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "session.start_date",
+      "source_class": "WORKBOOK",
+      "source_path": "$.session.start_date",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 78,
+          "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Dès que possible",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Dès que possible' after label 'À titre indicatif, à quelle date souhaiteriez-vous idéalement débuter la formation ? *'.",
+      "validation": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "format": "date"
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [],
+  "blocking_reasons": [],
+  "layout_fixes": [
+    {
+      "part": "word/document.xml",
+      "target": "Maîtrise des outils informatiques",
+      "change": "Increased paragraph spacing before the heading to prevent contact with the preceding checkbox row.",
+      "heading": "Maîtrise des outils informatiques",
+      "baseline_original_heading_spacing_before_twips": "280",
+      "old_heading_spacing_before_twips": "360",
+      "new_heading_spacing_before_twips": "360",
+      "following_label": "Microsoft Word *",
+      "baseline_original_following_spacing_before_twips": "200",
+      "old_following_spacing_before_twips": "200",
+      "new_following_spacing_before_twips": "120",
+      "rationale": "Move four points of vertical space from below the heading to above it, increasing checkbox separation without changing the page's total vertical budget.",
+      "source_original_unchanged_sha256": "700521648140e9a4970d48b4c598e5e3483732455262872eab5a965e13422ad1"
+    }
+  ],
+  "production_readiness": {
+    "status": "COMPLETE",
+    "field_count": 16,
+    "confirmed_field_count": 16,
+    "concrete_target_count": 16,
+    "evidence_count": 16,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 0,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": []
+  }
+}

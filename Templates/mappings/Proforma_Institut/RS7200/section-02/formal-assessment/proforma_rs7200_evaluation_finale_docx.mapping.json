@@ -1,0 +1,2174 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7200_evaluation_finale_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7200/section-02/formal-assessment/Evaluation Finale - RS7200 - Proforma Institut - Template.docx",
+  "template_hash": "5830cfd9b4a5e903b67bd2e6f8f6b453a08f7f3b0676652254e2ec618395c438",
+  "source_original_path": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Evaluation Finale - RS7200 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7200",
+  "major_section": "Évaluation certificative et décision",
+  "subsection": "formal-assessment",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Evaluation Finale - RS7200 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS7200 - Réseaux Sociaux TPE/Evaluation Finale - RS7200 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9345,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "bre d'abonnés"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.stagiaire",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.stagiaire",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 7,
+          "xpath": "/document/body[1]/p[8]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Camille Bertrand",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Camille Bertrand' after label 'Stagiaire'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_que_signifie_la_lettre_a_dans_l_acronyme_smart_objectifs",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_que_signifie_la_lettre_a_dans_l_acronyme_smart_objectifs",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Que signifie la lettre « A » dans l'acronyme SMART (objectifs) ?",
+        "options": [
+          {
+            "value": "a_ambitieux",
+            "label": "A) Ambitieux",
+            "part": "word/document.xml",
+            "paragraph_index": 18,
+            "xpath": "/document/body[1]/p[17]",
+            "template_text_sha256": "6c93d6c02512a3e8c575365fc5d6afc09adda3281a62296b31ccdc9a35688a83",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_annuel",
+            "label": "B) Annuel",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "26c270a87ae10881fab1a7adfa677a7d6660492f2758226257a2a098ca85f9ca",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_automatique",
+            "label": "C) Automatique",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/p[19]",
+            "template_text_sha256": "f14465645da5f45c0c9038b40dbb54990dc6aaf332b616c5b981fd4c833a6086",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_adaptatif",
+            "label": "D) Adaptatif",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "cf939407168cb84e97867ad90cbda2400b179b82194781b9566b32bf89f5bb58",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_ambitieux",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Que signifie la lettre « A » dans l'acronyme SMART (objectifs) ?'.",
+      "validation": {
+        "enum": [
+          "a_ambitieux",
+          "b_annuel",
+          "c_automatique",
+          "d_adaptatif"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_lequel_de_ces_objectifs_est_formule_de_maniere_smart",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_lequel_de_ces_objectifs_est_formule_de_maniere_smart",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Lequel de ces objectifs est formulé de manière SMART ?",
+        "options": [
+          {
+            "value": "a_je_veux_plus_de_clients_grace_aux_rs",
+            "label": "A) Je veux plus de clients grâce aux RS",
+            "part": "word/document.xml",
+            "paragraph_index": 23,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "dfd1a5ce167dc3b80416188bd3b5ef9b796ca91003ec5aed64122b28f51509a4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_obtenir_100_nouveaux_abonnes_facebook_avant_le_31_03_2026",
+            "label": "B) Obtenir 100 nouveaux abonnés Facebook avant le 31/03/2026 (soit +50/mois)",
+            "part": "word/document.xml",
+            "paragraph_index": 24,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "31d8a9b7f11b542cc198ccf0e78348ead8692d864d72d7b3652e3013180321ce",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_devenir_celebre_sur_instagram",
+            "label": "C) Devenir célèbre sur Instagram",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "bd52be1cdcf61bc825d21ac6576baec77562772a19e89fbcdedafb78fdb638a5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_poster_sur_tous_les_reseaux",
+            "label": "D) Poster sur tous les réseaux",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "7466b6f65df47a4cb6259194aee54cb8f121baf7db335314a2e1d1e541c162a8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_obtenir_100_nouveaux_abonnes_facebook_avant_le_31_03_2026",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Lequel de ces objectifs est formulé de manière SMART ?'.",
+      "validation": {
+        "enum": [
+          "a_je_veux_plus_de_clients_grace_aux_rs",
+          "b_obtenir_100_nouveaux_abonnes_facebook_avant_le_31_03_2026",
+          "c_devenir_celebre_sur_instagram",
+          "d_poster_sur_tous_les_reseaux"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_3_a_quoi_sert_principalement_un_persona_client_dans_une_strategie_rs",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_3_a_quoi_sert_principalement_un_persona_client_dans_une_strategie_rs",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. À quoi sert principalement un persona client dans une stratégie RS ?",
+        "options": [
+          {
+            "value": "a_creer_des_publicites_facebook_ads",
+            "label": "A) Créer des publicités Facebook Ads",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "34f2717d717ba8b591fa6833767f4f0f94cb58f3353540008107dff8dbdc27a2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_mieux_adapter_sa_communication_au_public_cible",
+            "label": "B) Mieux adapter sa communication au public cible",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[28]",
+            "template_text_sha256": "87c420f51cc762e57aa3876c3cf7d6d868688bdca11ce14d1ad80db84d4bad85",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_analyser_les_statistiques_de_la_page",
+            "label": "C) Analyser les statistiques de la page",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "f482084ab19eeb357d8865b06e98f31c6c8c15ebef125a91de26428aa82f9f6f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_planifier_les_publications",
+            "label": "D) Planifier les publications",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "d286742739570d39e5c7bc9f78bb94a17dc560f6b80bc5c1ed98d0eeb89b87c0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_mieux_adapter_sa_communication_au_public_cible",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. À quoi sert principalement un persona client dans une stratégie RS ?'.",
+      "validation": {
+        "enum": [
+          "a_creer_des_publicites_facebook_ads",
+          "b_mieux_adapter_sa_communication_au_public_cible",
+          "c_analyser_les_statistiques_de_la_page",
+          "d_planifier_les_publications"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_4_pour_un_artisan_du_batiment_souhaitant_montrer_des_realisations_visuelles_quel",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_4_pour_un_artisan_du_batiment_souhaitant_montrer_des_realisations_visuelles_quel",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Pour un artisan du bâtiment souhaitant montrer des réalisations visuelles, quel réseau est le plus recommandé ?",
+        "options": [
+          {
+            "value": "a_linkedin",
+            "label": "A) LinkedIn",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "0940e8b3308b686feca6e2b6577d79db3ed9756e471345054f7493000a663491",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_twitter_x",
+            "label": "B) Twitter/X",
+            "part": "word/document.xml",
+            "paragraph_index": 34,
+            "xpath": "/document/body[1]/p[33]",
+            "template_text_sha256": "eae7ab7476845fda25cb7771811521092d8a0c1f33c979ca7a7133fe6fc45532",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_instagram",
+            "label": "C) Instagram",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[34]",
+            "template_text_sha256": "4a6a61ba6e48e7ce3af55887c060f1815e9147d10d01a2d5f0bb42f9b907c387",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_facebook",
+            "label": "D) Facebook",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "8a0c235365eea5ca0ec2eac01e794fb67a0c796d65f14487876ec3e55e39a878",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_instagram",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Pour un artisan du bâtiment souhaitant montrer des réalisations visuelles, quel réseau est le plus recommandé ?'.",
+      "validation": {
+        "enum": [
+          "a_linkedin",
+          "b_twitter_x",
+          "c_instagram",
+          "d_facebook"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_5_quel_objectif_rs_correspond_a_generer_10_demandes_de_devis_par_mois_via_instagr",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_5_quel_objectif_rs_correspond_a_generer_10_demandes_de_devis_par_mois_via_instagr",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Quel objectif RS correspond à « générer 10 demandes de devis par mois via Instagram » ?",
+        "options": [
+          {
+            "value": "a_notoriete",
+            "label": "A) Notoriété",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[37]",
+            "template_text_sha256": "ce5f754135f26452872516f734e9fc4f4fb86795fdb69ba4add072e42d95bf05",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_engagement",
+            "label": "B) Engagement",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "98552b92c11125e5d78a280abb43b02765c9bd95e5d66853c8f738bb4e8ab14c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_conversion",
+            "label": "C) Conversion",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "d5744b1cfe209981485005cd8a2030c86d3a8489e7e6aec8a682a4fbabcb21f7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_fidelisation",
+            "label": "D) Fidélisation",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "4a79c3c7d233f94c0c7bb23573c391384404171ed01447262e8cb9cfafa409f3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_conversion",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Quel objectif RS correspond à « générer 10 demandes de devis par mois via Instagram » ?'.",
+      "validation": {
+        "enum": [
+          "a_notoriete",
+          "b_engagement",
+          "c_conversion",
+          "d_fidelisation"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_decrivez_votre_persona_client_ideal_pour_votre_activite_au_moins_5_elements",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_decrivez_votre_persona_client_ideal_pour_votre_activite_au_moins_5_elements",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 44,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Un client type pour mon activité est un propriétaire de maison individuelle, âgé de 35 à 60 ans, habitant dans un rayon de 20 km, qui recherche un artisan de confiance recommandé par son entourage ou trouvé sur les réseaux sociaux.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Un client type pour mon activité est un propriétaire de maison individuelle, âgé de 35 à 60 ans, habitant dans un rayon ' after label 'Question 1 : Décrivez votre persona client idéal pour votre activité (au moins 5 éléments).'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_formulez_2_objectifs_smart_pour_votre_presence_sur_les_reseaux_sociaux_d_ici_6",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_formulez_2_objectifs_smart_pour_votre_presence_sur_les_reseaux_sociaux_d_ici_6",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 49,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Objectif 1 : obtenir 80 nouveaux abonnés Instagram d'ici 6 mois (environ 13/mois). Objectif 2 : générer 15 demandes de devis via les réseaux sociaux sur la même période.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Objectif 1 : obtenir 80 nouveaux abonnés Instagram d'ici 6 mois (environ 13/mois). Objectif 2 : générer 15 demandes de d' after label 'Question 2 : Formulez 2 objectifs SMART pour votre présence sur les réseaux sociaux d'ici 6 mois.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_parmi_ces_types_de_contenu_lequel_correspond_a_une_publication_inspiration_real",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_parmi_ces_types_de_contenu_lequel_correspond_a_une_publication_inspiration_real",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Parmi ces types de contenu, lequel correspond à une publication « inspiration/réalisation » ?",
+        "options": [
+          {
+            "value": "a_comment_reparer_une_fuite_en_5_etapes",
+            "label": "A) « Comment réparer une fuite en 5 étapes »",
+            "part": "word/document.xml",
+            "paragraph_index": 62,
+            "xpath": "/document/body[1]/p[53]",
+            "template_text_sha256": "4ef3767599e0d0efe3f6d9a446ee32ee8b70b1af223e1b79f282320db2a6b3e8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_photo_avant_apres_d_une_renovation_complete_de_salle_de_ba",
+            "label": "B) Photo avant/après d'une rénovation complète de salle de bain",
+            "part": "word/document.xml",
+            "paragraph_index": 63,
+            "xpath": "/document/body[1]/p[54]",
+            "template_text_sha256": "bdb4ab838b336591086e5cec7b4baa559950d5c77aa382b5e937ed9c5e593a7c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_bonne_annee_a_tous_nos_clients",
+            "label": "C) « Bonne année à tous nos clients! »",
+            "part": "word/document.xml",
+            "paragraph_index": 64,
+            "xpath": "/document/body[1]/p[55]",
+            "template_text_sha256": "552ce5bebaab3d8008eb75babba25bab2f60de7ffec66a68c7eb3c3129604e3e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_sondage_quel_service_avez_vous_le_plus_besoin",
+            "label": "D) Sondage : quel service avez-vous le plus besoin ?",
+            "part": "word/document.xml",
+            "paragraph_index": 65,
+            "xpath": "/document/body[1]/p[56]",
+            "template_text_sha256": "da33479888afa6eb719ba5622eeaaae7e07abdd60399f272bf7adbd5d90b8285",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_photo_avant_apres_d_une_renovation_complete_de_salle_de_ba",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Parmi ces types de contenu, lequel correspond à une publication « inspiration/réalisation » ?'.",
+      "validation": {
+        "enum": [
+          "a_comment_reparer_une_fuite_en_5_etapes",
+          "b_photo_avant_apres_d_une_renovation_complete_de_salle_de_ba",
+          "c_bonne_annee_a_tous_nos_clients",
+          "d_sondage_quel_service_avez_vous_le_plus_besoin"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_que_signifie_le_ton_de_marque_dans_une_ligne_editoriale",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_que_signifie_le_ton_de_marque_dans_une_ligne_editoriale",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Que signifie le « ton de marque » dans une ligne éditoriale ?",
+        "options": [
+          {
+            "value": "a_la_musique_de_fond_utilisee_dans_les_reels",
+            "label": "A) La musique de fond utilisée dans les Reels",
+            "part": "word/document.xml",
+            "paragraph_index": 67,
+            "xpath": "/document/body[1]/p[58]",
+            "template_text_sha256": "e93fd399f6d956a3a321c89226637d76ccc4e9e1335de31a945260428aed0174",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_la_maniere_de_s_exprimer_et_la_personnalite_de_la_marque",
+            "label": "B) La manière de s'exprimer et la personnalité de la marque",
+            "part": "word/document.xml",
+            "paragraph_index": 68,
+            "xpath": "/document/body[1]/p[59]",
+            "template_text_sha256": "f41fc961464b79fea47c37e3634e8c9ff94be5986d76f272b081d48a576e3650",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_volume_sonore_des_videos",
+            "label": "C) Le volume sonore des vidéos",
+            "part": "word/document.xml",
+            "paragraph_index": 69,
+            "xpath": "/document/body[1]/p[60]",
+            "template_text_sha256": "7bc7b44aea51a2aac3fe6d7f541fcfb4e72ab4bad01d7256ca4fccca663282e0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_couleur_dominante_des_visuels",
+            "label": "D) La couleur dominante des visuels",
+            "part": "word/document.xml",
+            "paragraph_index": 70,
+            "xpath": "/document/body[1]/p[61]",
+            "template_text_sha256": "a0858091663039f7281a9bdaa59490f998bc839591393a5aa11beaba075f6db9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_la_maniere_de_s_exprimer_et_la_personnalite_de_la_marque",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Que signifie le « ton de marque » dans une ligne éditoriale ?'.",
+      "validation": {
+        "enum": [
+          "a_la_musique_de_fond_utilisee_dans_les_reels",
+          "b_la_maniere_de_s_exprimer_et_la_personnalite_de_la_marque",
+          "c_le_volume_sonore_des_videos",
+          "d_la_couleur_dominante_des_visuels"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_3_dans_une_structure_de_storytelling_efficace_quel_element_vient_en_premier",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_3_dans_une_structure_de_storytelling_efficace_quel_element_vient_en_premier",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Dans une structure de storytelling efficace, quel élément vient en premier ?",
+        "options": [
+          {
+            "value": "a_la_solution_proposee",
+            "label": "A) La solution proposée",
+            "part": "word/document.xml",
+            "paragraph_index": 72,
+            "xpath": "/document/body[1]/p[63]",
+            "template_text_sha256": "fb3b0d2a0034450d428afcd63988cecefed2280ebfcab48ab58ae2af767c893f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_l_appel_a_l_action",
+            "label": "B) L'appel à l'action",
+            "part": "word/document.xml",
+            "paragraph_index": 73,
+            "xpath": "/document/body[1]/p[64]",
+            "template_text_sha256": "6aea1247e8cf543c8a09b7e16fb7daad249c99dd14eefde831a890cbda7d8f27",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_la_situation_initiale_le_probleme_rencontre",
+            "label": "C) La situation initiale / le problème rencontré",
+            "part": "word/document.xml",
+            "paragraph_index": 74,
+            "xpath": "/document/body[1]/p[65]",
+            "template_text_sha256": "4aee5076d22874289dcec3c6d1787122ba5a2af27c9eee1cc3cbc599f8342381",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_resultat_final_positif",
+            "label": "D) Le résultat final positif",
+            "part": "word/document.xml",
+            "paragraph_index": 75,
+            "xpath": "/document/body[1]/p[66]",
+            "template_text_sha256": "d797a58fcc29450dfd606167719ca4f5e4acbc76e668a5401c8bf3c642b8e37b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_la_situation_initiale_le_probleme_rencontre",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Dans une structure de storytelling efficace, quel élément vient en premier ?'.",
+      "validation": {
+        "enum": [
+          "a_la_solution_proposee",
+          "b_l_appel_a_l_action",
+          "c_la_situation_initiale_le_probleme_rencontre",
+          "d_le_resultat_final_positif"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_4_un_benchmark_concurrentiel_sur_les_rs_consiste_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_4_un_benchmark_concurrentiel_sur_les_rs_consiste_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Un « benchmark concurrentiel » sur les RS consiste à :",
+        "options": [
+          {
+            "value": "a_copier_mot_pour_mot_les_publications_de_ses_concurrents",
+            "label": "A) Copier mot pour mot les publications de ses concurrents",
+            "part": "word/document.xml",
+            "paragraph_index": 77,
+            "xpath": "/document/body[1]/p[68]",
+            "template_text_sha256": "64f3b7f31ba829a6a9231a256de39553ea031619c8dd6f8b9885a88d238abfc5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_observer_et_analyser_ce_que_font_les_concurrents_pour_s_en",
+            "label": "B) Observer et analyser ce que font les concurrents pour s'en inspirer",
+            "part": "word/document.xml",
+            "paragraph_index": 78,
+            "xpath": "/document/body[1]/p[69]",
+            "template_text_sha256": "e3ea275a28ae60c0d45a56f4aa106d9a14f0b2b5745ba71c7d28fce43d56a019",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_bloquer_les_concurrents_sur_ses_reseaux",
+            "label": "C) Bloquer les concurrents sur ses réseaux",
+            "part": "word/document.xml",
+            "paragraph_index": 79,
+            "xpath": "/document/body[1]/p[70]",
+            "template_text_sha256": "c83edeca952fa668a6e86a2b42dd34a99b56bf02009145cd22de85afbf9613bb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_payer_pour_apparaitre_avant_ses_concurrents",
+            "label": "D) Payer pour apparaître avant ses concurrents",
+            "part": "word/document.xml",
+            "paragraph_index": 80,
+            "xpath": "/document/body[1]/p[71]",
+            "template_text_sha256": "080c13eb9b0d50c251f1bd4c705ec2527be9731698c25556f3bd996342d178f0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_observer_et_analyser_ce_que_font_les_concurrents_pour_s_en",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Un « benchmark concurrentiel » sur les RS consiste à :'.",
+      "validation": {
+        "enum": [
+          "a_copier_mot_pour_mot_les_publications_de_ses_concurrents",
+          "b_observer_et_analyser_ce_que_font_les_concurrents_pour_s_en",
+          "c_bloquer_les_concurrents_sur_ses_reseaux",
+          "d_payer_pour_apparaitre_avant_ses_concurrents"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_5_quelle_frequence_de_publication_est_recommandee_pour_facebook_pour_une_tpe_debu",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_5_quelle_frequence_de_publication_est_recommandee_pour_facebook_pour_une_tpe_debu",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Quelle fréquence de publication est recommandée pour Facebook pour une TPE débutante ?",
+        "options": [
+          {
+            "value": "a_5_a_7_fois_par_jour",
+            "label": "A) 5 à 7 fois par jour",
+            "part": "word/document.xml",
+            "paragraph_index": 82,
+            "xpath": "/document/body[1]/p[73]",
+            "template_text_sha256": "afdc4351358d2545df27c5d50c128ebbc5c507a2290c0be555c33cdaf1e25ea8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_1_a_3_fois_par_semaine",
+            "label": "B) 1 à 3 fois par semaine",
+            "part": "word/document.xml",
+            "paragraph_index": 83,
+            "xpath": "/document/body[1]/p[74]",
+            "template_text_sha256": "9c7cece99bc5cf84585321bc29827f1ddfb7170c0acfa3310c5d48e4a760474d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_1_fois_par_mois",
+            "label": "C) 1 fois par mois",
+            "part": "word/document.xml",
+            "paragraph_index": 84,
+            "xpath": "/document/body[1]/p[75]",
+            "template_text_sha256": "fc1dbc8782aa5bd3b22297eabf6d2584f24b72161f906468c5dc926a186b8385",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_uniquement_lors_des_promotions",
+            "label": "D) Uniquement lors des promotions",
+            "part": "word/document.xml",
+            "paragraph_index": 85,
+            "xpath": "/document/body[1]/p[76]",
+            "template_text_sha256": "7ed926dc3dfde7fed6c632d30ad4c4b0701523b7e93bfc47d6ef0930ebd22d91",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_1_a_3_fois_par_semaine",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Quelle fréquence de publication est recommandée pour Facebook pour une TPE débutante ?'.",
+      "validation": {
+        "enum": [
+          "a_5_a_7_fois_par_jour",
+          "b_1_a_3_fois_par_semaine",
+          "c_1_fois_par_mois",
+          "d_uniquement_lors_des_promotions"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_redigez_un_mini_storytelling_8_10_lignes_pour_une_publication_facebook_sur_une",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_redigez_un_mini_storytelling_8_10_lignes_pour_une_publication_facebook_sur_une",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 88,
+          "xpath": "/document/body[1]/tbl[5]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "En hiver, je mets en avant les conseils pour éviter les pannes de chauffage et les interventions d'urgence. Au printemps, je communique sur l'entretien préventif. En été, je propose des offres calmes avant la rentrée.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'En hiver, je mets en avant les conseils pour éviter les pannes de chauffage et les interventions d'urgence. Au printemps' after label 'Question 1 : Rédigez un mini-storytelling (8-10 lignes) pour une publication Facebook sur une intervention récente.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_definissez_votre_ton_de_marque_en_3_adjectifs_et_expliquez_comment_vous_comptez",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_definissez_votre_ton_de_marque_en_3_adjectifs_et_expliquez_comment_vous_comptez",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 93,
+          "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Sérieux, proche et pédagogue. Je l'applique en donnant toujours des explications simples dans mes posts et en répondant personnellement à chaque commentaire.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Sérieux, proche et pédagogue. Je l'applique en donnant toujours des explications simples dans mes posts et en répondant ' after label 'Question 2 : Définissez votre « ton de marque » en 3 adjectifs et expliquez comment vous comptez l'appliquer.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_quelle_est_la_duree_ideale_d_un_reel_instagram_pour_maximiser_l_engagement",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_quelle_est_la_duree_ideale_d_un_reel_instagram_pour_maximiser_l_engagement",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Quelle est la durée idéale d'un Reel Instagram pour maximiser l'engagement ?",
+        "options": [
+          {
+            "value": "a_3_5_secondes",
+            "label": "A) 3-5 secondes",
+            "part": "word/document.xml",
+            "paragraph_index": 106,
+            "xpath": "/document/body[1]/p[89]",
+            "template_text_sha256": "6decbb4c93a2ef0eed19e1e1470b18b20269ca989e8095ad990ccf04ec343e60",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_15_30_secondes",
+            "label": "B) 15-30 secondes",
+            "part": "word/document.xml",
+            "paragraph_index": 107,
+            "xpath": "/document/body[1]/p[90]",
+            "template_text_sha256": "b64142f056f260e9668712bfef2e2268373fd124425d3f55b38c4c13f1e52319",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_2_3_minutes",
+            "label": "C) 2-3 minutes",
+            "part": "word/document.xml",
+            "paragraph_index": 108,
+            "xpath": "/document/body[1]/p[91]",
+            "template_text_sha256": "d7cce06a0f9153e10ca618b4405a43412ac5ed6e224b25c4c41afb14cfc62b1e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_10_15_minutes",
+            "label": "D) 10-15 minutes",
+            "part": "word/document.xml",
+            "paragraph_index": 109,
+            "xpath": "/document/body[1]/p[92]",
+            "template_text_sha256": "7c9d15f4cbc1c93e77f54938acb3b3264055f2a5273e659c2cdee48f3244a172",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_15_30_secondes",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Quelle est la durée idéale d'un Reel Instagram pour maximiser l'engagement ?'.",
+      "validation": {
+        "enum": [
+          "a_3_5_secondes",
+          "b_15_30_secondes",
+          "c_2_3_minutes",
+          "d_10_15_minutes"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_comment_fonctionne_l_algorithme_facebook_en_2025_pour_decider_ce_qu_il_montre",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_comment_fonctionne_l_algorithme_facebook_en_2025_pour_decider_ce_qu_il_montre",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Comment fonctionne l'algorithme Facebook en 2025 pour décider ce qu'il montre ?",
+        "options": [
+          {
+            "value": "a_il_affiche_les_publications_dans_l_ordre_chronologique",
+            "label": "A) Il affiche les publications dans l'ordre chronologique",
+            "part": "word/document.xml",
+            "paragraph_index": 111,
+            "xpath": "/document/body[1]/p[94]",
+            "template_text_sha256": "d102e7de2d518691c5bd1b106c3cfbc248f6a1db0703eed107abe3e6d2c85a0d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_il_favorise_les_contenus_qui_generent_le_plus_d_interactio",
+            "label": "B) Il favorise les contenus qui génèrent le plus d'interactions (likes, commentaires, partages)",
+            "part": "word/document.xml",
+            "paragraph_index": 112,
+            "xpath": "/document/body[1]/p[95]",
+            "template_text_sha256": "1896ca91b649f11664cf88f2ab103b9e2679a0108c2f5a362aeccd6735fee0da",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_il_favorise_uniquement_les_publications_avec_budget_public",
+            "label": "C) Il favorise uniquement les publications avec budget publicitaire",
+            "part": "word/document.xml",
+            "paragraph_index": 113,
+            "xpath": "/document/body[1]/p[96]",
+            "template_text_sha256": "1999b94ff12cf07e944c3b455c1b1768311e5bc444d12956d0e0eb91717b51bd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_il_affiche_aleatoirement_les_publications",
+            "label": "D) Il affiche aléatoirement les publications",
+            "part": "word/document.xml",
+            "paragraph_index": 114,
+            "xpath": "/document/body[1]/p[97]",
+            "template_text_sha256": "6b9d47203110b1596d1b9b3ff8ca7786f2d269c87e8fe0cd302b7fd5030a8cd0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_il_favorise_les_contenus_qui_generent_le_plus_d_interactio",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Comment fonctionne l'algorithme Facebook en 2025 pour décider ce qu'il montre ?'.",
+      "validation": {
+        "enum": [
+          "a_il_affiche_les_publications_dans_l_ordre_chronologique",
+          "b_il_favorise_les_contenus_qui_generent_le_plus_d_interactio",
+          "c_il_favorise_uniquement_les_publications_avec_budget_public",
+          "d_il_affiche_aleatoirement_les_publications"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_3_combien_de_hashtags_est_il_recommande_d_utiliser_sur_instagram_en_2025",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_3_combien_de_hashtags_est_il_recommande_d_utiliser_sur_instagram_en_2025",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Combien de hashtags est-il recommandé d'utiliser sur Instagram en 2025 ?",
+        "options": [
+          {
+            "value": "a_30_le_maximum_autorise",
+            "label": "A) 30 (le maximum autorisé)",
+            "part": "word/document.xml",
+            "paragraph_index": 116,
+            "xpath": "/document/body[1]/p[99]",
+            "template_text_sha256": "890a623f6913a945951cb84d9bf6dfcd076976b502208d85b92bf1ffd39f4516",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_1_a_5_hashtags_cibles",
+            "label": "B) 1 à 5 hashtags ciblés",
+            "part": "word/document.xml",
+            "paragraph_index": 117,
+            "xpath": "/document/body[1]/p[100]",
+            "template_text_sha256": "a71293d31456972da145f962a41c688e930a62879f3bfda4ce58a9ab2ddf6be3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_0_ils_ne_servent_plus_a_rien",
+            "label": "C) 0 (ils ne servent plus à rien)",
+            "part": "word/document.xml",
+            "paragraph_index": 118,
+            "xpath": "/document/body[1]/p[101]",
+            "template_text_sha256": "dce04b9d6b65ddb309f04f119f8ecc9c9e6de43bf2a9d22e1a4c6b72674fc590",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_10_a_20_hashtags",
+            "label": "D) 10 à 20 hashtags",
+            "part": "word/document.xml",
+            "paragraph_index": 119,
+            "xpath": "/document/body[1]/p[102]",
+            "template_text_sha256": "c545843454b39e8848f8974a33a1be160918d14d02ca21ff8e457a10b9f993f9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_1_a_5_hashtags_cibles",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Combien de hashtags est-il recommandé d'utiliser sur Instagram en 2025 ?'.",
+      "validation": {
+        "enum": [
+          "a_30_le_maximum_autorise",
+          "b_1_a_5_hashtags_cibles",
+          "c_0_ils_ne_servent_plus_a_rien",
+          "d_10_a_20_hashtags"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_4_que_signifie_le_hook_dans_le_contexte_d_une_video_pour_les_rs",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_4_que_signifie_le_hook_dans_le_contexte_d_une_video_pour_les_rs",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Que signifie le « hook » dans le contexte d'une vidéo pour les RS ?",
+        "options": [
+          {
+            "value": "a_un_hashtag_tres_populaire",
+            "label": "A) Un hashtag très populaire",
+            "part": "word/document.xml",
+            "paragraph_index": 121,
+            "xpath": "/document/body[1]/p[104]",
+            "template_text_sha256": "b7db6a2cf775b3e4fe86bf368031f7f079fb9e98ab52494d0203cd746f1c3eab",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_l_accroche_dans_les_3_premieres_secondes_qui_retient_l_att",
+            "label": "B) L'accroche dans les 3 premières secondes qui retient l'attention",
+            "part": "word/document.xml",
+            "paragraph_index": 122,
+            "xpath": "/document/body[1]/p[105]",
+            "template_text_sha256": "3d440b38935d785e100806cda5c6d4666b010b673a7f7f838a1020c56a9c834a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_titre_de_la_video",
+            "label": "C) Le titre de la vidéo",
+            "part": "word/document.xml",
+            "paragraph_index": 123,
+            "xpath": "/document/body[1]/p[106]",
+            "template_text_sha256": "13f967df9e07f0a0e9a1985e131e6ea917badb110ecb4e7bbba41cd9907a4368",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_musique_de_fond_choisie",
+            "label": "D) La musique de fond choisie",
+            "part": "word/document.xml",
+            "paragraph_index": 124,
+            "xpath": "/document/body[1]/p[107]",
+            "template_text_sha256": "8862965b9b2c6ac959d40c5dbd9710c7135211f2f3f4393b58e5c23be8a93886",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_l_accroche_dans_les_3_premieres_secondes_qui_retient_l_att",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Que signifie le « hook » dans le contexte d'une vidéo pour les RS ?'.",
+      "validation": {
+        "enum": [
+          "a_un_hashtag_tres_populaire",
+          "b_l_accroche_dans_les_3_premieres_secondes_qui_retient_l_att",
+          "c_le_titre_de_la_video",
+          "d_la_musique_de_fond_choisie"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_5_pour_ameliorer_la_portee_organique_d_une_publication_la_meilleure_action_est",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_5_pour_ameliorer_la_portee_organique_d_une_publication_la_meilleure_action_est",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Pour améliorer la portée organique d'une publication, la meilleure action est :",
+        "options": [
+          {
+            "value": "a_taguer_20_personnes_aleatoirement",
+            "label": "A) Taguer 20 personnes aléatoirement",
+            "part": "word/document.xml",
+            "paragraph_index": 126,
+            "xpath": "/document/body[1]/p[109]",
+            "template_text_sha256": "b34b7d40b994df9be22970cffdaae4d6eb63495d30dc833881e82c44013d975f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_repondre_rapidement_aux_commentaires_et_encourager_l_inter",
+            "label": "B) Répondre rapidement aux commentaires et encourager l'interaction",
+            "part": "word/document.xml",
+            "paragraph_index": 127,
+            "xpath": "/document/body[1]/p[110]",
+            "template_text_sha256": "3afd2b30c36fd05fdd3edce1073d6ef4c6e5a333e271a44037acce8eacbe5d75",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_supprimer_et_republier_le_post",
+            "label": "C) Supprimer et republier le post",
+            "part": "word/document.xml",
+            "paragraph_index": 128,
+            "xpath": "/document/body[1]/p[111]",
+            "template_text_sha256": "93d96e8f9684ccbc909b9155d9784e31dc78c2b1f9a6c72af26c54f381c1229d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_modifier_le_texte_apres_publication",
+            "label": "D) Modifier le texte après publication",
+            "part": "word/document.xml",
+            "paragraph_index": 129,
+            "xpath": "/document/body[1]/p[112]",
+            "template_text_sha256": "928aa8d69c68a7bd18a9470775ee3d5aca066a887429e7f4e69fac76e1b8c5da",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_repondre_rapidement_aux_commentaires_et_encourager_l_inter",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Pour améliorer la portée organique d'une publication, la meilleure action est :'.",
+      "validation": {
+        "enum": [
+          "a_taguer_20_personnes_aleatoirement",
+          "b_repondre_rapidement_aux_commentaires_et_encourager_l_inter",
+          "c_supprimer_et_republier_le_post",
+          "d_modifier_le_texte_apres_publication"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_expliquez_comment_vous_prepareriez_un_reel_de_20_secondes_presentant_une_realis",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_expliquez_comment_vous_prepareriez_un_reel_de_20_secondes_presentant_une_realis",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 132,
+          "xpath": "/document/body[1]/tbl[8]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je filmerais l'arrivée sur le chantier terminé, un plan large de la réalisation, puis un gros plan sur un détail soigné, avec un texte court expliquant le problème initial et la solution apportée.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je filmerais l'arrivée sur le chantier terminé, un plan large de la réalisation, puis un gros plan sur un détail soigné,' after label 'Question 1 : Expliquez comment vous prépareriez un Reel de 20 secondes présentant une réalisation récente.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_choisissez_5_hashtags_pertinents_pour_votre_activite_et_justifiez_chaque_choix",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_choisissez_5_hashtags_pertinents_pour_votre_activite_et_justifiez_chaque_choix",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 137,
+          "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "#plombier, #renovationsalledebain, #artisanlocal, #savoirfaire, #avantapres — chacun cible soit mon métier, soit ma zone, soit le type de contenu (résultat visuel).",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '#plombier, #renovationsalledebain, #artisanlocal, #savoirfaire, #avantapres — chacun cible soit mon métier, soit ma zone' after label 'Question 2 : Choisissez 5 hashtags pertinents pour votre activité et justifiez chaque choix.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_dans_meta_business_suite_quelle_section_donne_acces_aux_statistiques_detaillees",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_dans_meta_business_suite_quelle_section_donne_acces_aux_statistiques_detaillees",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Dans Meta Business Suite, quelle section donne accès aux statistiques détaillées de sa page ?",
+        "options": [
+          {
+            "value": "a_creer_une_publication",
+            "label": "A) Créer une publication",
+            "part": "word/document.xml",
+            "paragraph_index": 150,
+            "xpath": "/document/body[1]/p[125]",
+            "template_text_sha256": "e55bf84f8526d2d973f021283484ffc51c95c96cb1c306f0e55e9c7ffbfc49c1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_insights_statistiques",
+            "label": "B) Insights (Statistiques)",
+            "part": "word/document.xml",
+            "paragraph_index": 151,
+            "xpath": "/document/body[1]/p[126]",
+            "template_text_sha256": "6dcb95d7efc286813adba4daa4afefbfc63b971a1efa5ae328f87877d808d951",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_messagerie",
+            "label": "C) Messagerie",
+            "part": "word/document.xml",
+            "paragraph_index": 152,
+            "xpath": "/document/body[1]/p[127]",
+            "template_text_sha256": "9113a1b4ce2238e6768f2011a91de7be724531aace62d20f274d83e828d9b3d3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_catalogue_produits",
+            "label": "D) Catalogue produits",
+            "part": "word/document.xml",
+            "paragraph_index": 153,
+            "xpath": "/document/body[1]/p[128]",
+            "template_text_sha256": "3c01e7abafa4ece5d5fd42b7c06db5ba10c2dd7e80c55ef385aabd9e48d84a21",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_insights_statistiques",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Dans Meta Business Suite, quelle section donne accès aux statistiques détaillées de sa page ?'.",
+      "validation": {
+        "enum": [
+          "a_creer_une_publication",
+          "b_insights_statistiques",
+          "c_messagerie",
+          "d_catalogue_produits"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_via_meta_business_suite_il_est_possible_de_programmer_des_publications_pour",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_via_meta_business_suite_il_est_possible_de_programmer_des_publications_pour",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Via Meta Business Suite, il est possible de programmer des publications pour :",
+        "options": [
+          {
+            "value": "a_facebook_uniquement",
+            "label": "A) Facebook uniquement",
+            "part": "word/document.xml",
+            "paragraph_index": 155,
+            "xpath": "/document/body[1]/p[130]",
+            "template_text_sha256": "e0e6b2bfaf9acaf85b53ed083db8e93f59b9519a98def4c6f8b8c7f305b42ae9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_instagram_uniquement",
+            "label": "B) Instagram uniquement",
+            "part": "word/document.xml",
+            "paragraph_index": 156,
+            "xpath": "/document/body[1]/p[131]",
+            "template_text_sha256": "258c675a333f0bc3d2b909d6272e80d4196d11f2a21877088bfa3199da31fc39",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_facebook_et_instagram_simultanement",
+            "label": "C) Facebook et Instagram simultanément",
+            "part": "word/document.xml",
+            "paragraph_index": 157,
+            "xpath": "/document/body[1]/p[132]",
+            "template_text_sha256": "dd01e33abda660a0d85a4d1dd4e6d03ef4e0d2ea66ab39fb8ba2cac3f481bdb2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_facebook_instagram_et_whatsapp",
+            "label": "D) Facebook, Instagram et WhatsApp",
+            "part": "word/document.xml",
+            "paragraph_index": 158,
+            "xpath": "/document/body[1]/p[133]",
+            "template_text_sha256": "445aa60fe5236c2ccd59dfc28cb5b0905463eda05faac48f84550cbeb1e96c39",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_facebook_et_instagram_simultanement",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Via Meta Business Suite, il est possible de programmer des publications pour :'.",
+      "validation": {
+        "enum": [
+          "a_facebook_uniquement",
+          "b_instagram_uniquement",
+          "c_facebook_et_instagram_simultanement",
+          "d_facebook_instagram_et_whatsapp"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_3_quelle_pratique_est_consideree_comme_une_bonne_pratique_regle_d_or_sur_les_rs",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_3_quelle_pratique_est_consideree_comme_une_bonne_pratique_regle_d_or_sur_les_rs",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Quelle pratique est considérée comme une bonne pratique (règle d'or) sur les RS ?",
+        "options": [
+          {
+            "value": "a_acheter_des_abonnes_pour_paraitre_credible",
+            "label": "A) Acheter des abonnés pour paraître crédible",
+            "part": "word/document.xml",
+            "paragraph_index": 160,
+            "xpath": "/document/body[1]/p[135]",
+            "template_text_sha256": "47dafcd501a43006df768a56adef7bb727f6a41fa591601d905ff74b4fe8b814",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_supprimer_tous_les_commentaires_negatifs",
+            "label": "B) Supprimer tous les commentaires négatifs",
+            "part": "word/document.xml",
+            "paragraph_index": 161,
+            "xpath": "/document/body[1]/p[136]",
+            "template_text_sha256": "b84c16943f5e77250c82b959a9af790e4dd36c04fe1d5f88fdf64f6bff4bae5d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_varier_les_types_de_contenu_pour_maintenir_l_interet",
+            "label": "C) Varier les types de contenu pour maintenir l'intérêt",
+            "part": "word/document.xml",
+            "paragraph_index": 162,
+            "xpath": "/document/body[1]/p[137]",
+            "template_text_sha256": "c8c8b8f2c30a0a1b1b5c07586f7a550e7a0101c14dd22f9b0ad53898fe57ff53",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_republier_les_memes_posts_chaque_semaine",
+            "label": "D) Republier les mêmes posts chaque semaine",
+            "part": "word/document.xml",
+            "paragraph_index": 163,
+            "xpath": "/document/body[1]/p[138]",
+            "template_text_sha256": "41e957499b0ac97d87ba3f765bf7a311563a6a1197b963a6589d09ee0e86ec21",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_varier_les_types_de_contenu_pour_maintenir_l_interet",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Quelle pratique est considérée comme une bonne pratique (règle d'or) sur les RS ?'.",
+      "validation": {
+        "enum": [
+          "a_acheter_des_abonnes_pour_paraitre_credible",
+          "b_supprimer_tous_les_commentaires_negatifs",
+          "c_varier_les_types_de_contenu_pour_maintenir_l_interet",
+          "d_republier_les_memes_posts_chaque_semaine"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_4_booster_une_publication_facebook_via_meta_business_suite_permet_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_4_booster_une_publication_facebook_via_meta_business_suite_permet_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. « Booster » une publication Facebook via Meta Business Suite permet de :",
+        "options": [
+          {
+            "value": "a_etre_premier_resultat_sur_google",
+            "label": "A) Être premier résultat sur Google",
+            "part": "word/document.xml",
+            "paragraph_index": 165,
+            "xpath": "/document/body[1]/p[140]",
+            "template_text_sha256": "682d7e2a5140edc3b5c6eb87c207b800b383cf245d39bb83f0b8b1c6b520bb61",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_toucher_des_personnes_qui_ne_suivent_pas_encore_votre_page",
+            "label": "B) Toucher des personnes qui ne suivent pas encore votre page",
+            "part": "word/document.xml",
+            "paragraph_index": 166,
+            "xpath": "/document/body[1]/p[141]",
+            "template_text_sha256": "100d40f17f29f768d27694a799ce9d876204401199e5f65da3c42878e40a9da5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_doubler_automatiquement_le_nombre_d_abonnes",
+            "label": "C) Doubler automatiquement le nombre d'abonnés",
+            "part": "word/document.xml",
+            "paragraph_index": 167,
+            "xpath": "/document/body[1]/p[142]",
+            "template_text_sha256": "e031ad0fe5d6456a7ba3dde8aa35234a9c2141db735b7486ee55a56467d8642e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_supprimer_les_commentaires_negatifs",
+            "label": "D) Supprimer les commentaires négatifs",
+            "part": "word/document.xml",
+            "paragraph_index": 168,
+            "xpath": "/document/body[1]/p[143]",
+            "template_text_sha256": "7bc061a53c083f4e1a3854571fa461bf15a3349282cb85fd2955820b4fb54903",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_toucher_des_personnes_qui_ne_suivent_pas_encore_votre_page",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. « Booster » une publication Facebook via Meta Business Suite permet de :'.",
+      "validation": {
+        "enum": [
+          "a_etre_premier_resultat_sur_google",
+          "b_toucher_des_personnes_qui_ne_suivent_pas_encore_votre_page",
+          "c_doubler_automatiquement_le_nombre_d_abonnes",
+          "d_supprimer_les_commentaires_negatifs"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_5_que_doit_on_faire_en_priorite_lors_de_la_reception_d_un_commentaire_negatif_sur",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_5_que_doit_on_faire_en_priorite_lors_de_la_reception_d_un_commentaire_negatif_sur",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Que doit-on faire en priorité lors de la réception d'un commentaire négatif sur sa page ?",
+        "options": [
+          {
+            "value": "a_supprimer_le_commentaire_immediatement",
+            "label": "A) Supprimer le commentaire immédiatement",
+            "part": "word/document.xml",
+            "paragraph_index": 170,
+            "xpath": "/document/body[1]/p[145]",
+            "template_text_sha256": "2fa8a50a45fb5c5365f36fbfe04f7bd5f35e878c91463e05147fd8ad0321ebc3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_ignorer_et_attendre_que_ca_passe",
+            "label": "B) Ignorer et attendre que ça passe",
+            "part": "word/document.xml",
+            "paragraph_index": 171,
+            "xpath": "/document/body[1]/p[146]",
+            "template_text_sha256": "a2ea7dc266d6939a3d3125c527cb89256c79bc92e5bdc59191f0b9d6ec47c1fb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_repondre_calmement_et_proposer_une_solution_en_public_puis",
+            "label": "C) Répondre calmement et proposer une solution en public puis en privé",
+            "part": "word/document.xml",
+            "paragraph_index": 172,
+            "xpath": "/document/body[1]/p[147]",
+            "template_text_sha256": "dd0694d5b24eab1e53faba2410044d17b1354be33b9941396452688a2258aa41",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_contre_attaquer_en_expliquant_que_le_client_a_tort",
+            "label": "D) Contre-attaquer en expliquant que le client a tort",
+            "part": "word/document.xml",
+            "paragraph_index": 173,
+            "xpath": "/document/body[1]/p[148]",
+            "template_text_sha256": "a422a5dc8d3f6edb4547b209cc69d9943bc81ed0591df18c4166047c23d6a5c3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_repondre_calmement_et_proposer_une_solution_en_public_puis",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Que doit-on faire en priorité lors de la réception d'un commentaire négatif sur sa page ?'.",
+      "validation": {
+        "enum": [
+          "a_supprimer_le_commentaire_immediatement",
+          "b_ignorer_et_attendre_que_ca_passe",
+          "c_repondre_calmement_et_proposer_une_solution_en_public_puis",
+          "d_contre_attaquer_en_expliquant_que_le_client_a_tort"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_decrivez_comment_vous_utiliseriez_meta_business_suite_au_quotidien_pour_gerer_v",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_decrivez_comment_vous_utiliseriez_meta_business_suite_au_quotidien_pour_gerer_v",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 176,
+          "xpath": "/document/body[1]/tbl[11]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je consulterais les statistiques une fois par semaine, je répondrais aux messages et commentaires chaque jour, et je programmerais mes publications à l'avance le dimanche pour la semaine suivante.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je consulterais les statistiques une fois par semaine, je répondrais aux messages et commentaires chaque jour, et je pro' after label 'Question 1 : Décrivez comment vous utiliseriez Meta Business Suite au quotidien pour gérer votre présence RS.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_listez_et_expliquez_5_des_10_regles_d_or_de_la_communication_sur_les_reseaux_so",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_listez_et_expliquez_5_des_10_regles_d_or_de_la_communication_sur_les_reseaux_so",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 181,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "1. Être régulier et constant. 2. Répondre à tous les commentaires. 3. Ne jamais ignorer un avis négatif. 4. Varier les formats de contenu. 5. Rester authentique plutôt que trop \"publicitaire\".",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '1. Être régulier et constant. 2. Répondre à tous les commentaires. 3. Ne jamais ignorer un avis négatif. 4. Varier les f' after label 'Question 2 : Listez et expliquez 5 des « 10 règles d'or » de la communication sur les réseaux sociaux.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_a_quelle_frequence_est_il_recommande_d_analyser_ses_statistiques_rs_pour_une_tp",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_a_quelle_frequence_est_il_recommande_d_analyser_ses_statistiques_rs_pour_une_tp",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. À quelle fréquence est-il recommandé d'analyser ses statistiques RS pour une TPE ?",
+        "options": [
+          {
+            "value": "a_tous_les_jours",
+            "label": "A) Tous les jours",
+            "part": "word/document.xml",
+            "paragraph_index": 194,
+            "xpath": "/document/body[1]/p[161]",
+            "template_text_sha256": "9037eb901c84415b90e0c56bf6a9bfdbc0a74034d4acd37a0ea32033c054df0d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_une_fois_par_semaine_ou_par_mois_selon_les_objectifs",
+            "label": "B) Une fois par semaine ou par mois selon les objectifs",
+            "part": "word/document.xml",
+            "paragraph_index": 195,
+            "xpath": "/document/body[1]/p[162]",
+            "template_text_sha256": "8b4d107893f90ced524e77a73816630749da37cc6c4fb23ceb23426b3d1d6258",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_une_fois_par_an",
+            "label": "C) Une fois par an",
+            "part": "word/document.xml",
+            "paragraph_index": 196,
+            "xpath": "/document/body[1]/p[163]",
+            "template_text_sha256": "34249f836f1c3a01b8e88792fd2e7345286790ff94cd188f4ada61aaa0ff1a64",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_uniquement_quand_les_resultats_baissent",
+            "label": "D) Uniquement quand les résultats baissent",
+            "part": "word/document.xml",
+            "paragraph_index": 197,
+            "xpath": "/document/body[1]/p[164]",
+            "template_text_sha256": "d4c5437704e532249130d284e7241ea014b1a35a41313446d73f74b6b4c70880",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_une_fois_par_semaine_ou_par_mois_selon_les_objectifs",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. À quelle fréquence est-il recommandé d'analyser ses statistiques RS pour une TPE ?'.",
+      "validation": {
+        "enum": [
+          "a_tous_les_jours",
+          "b_une_fois_par_semaine_ou_par_mois_selon_les_objectifs",
+          "c_une_fois_par_an",
+          "d_uniquement_quand_les_resultats_baissent"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_que_signifie_taux_de_conversion_dans_le_contexte_des_reseaux_sociaux",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_que_signifie_taux_de_conversion_dans_le_contexte_des_reseaux_sociaux",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Que signifie « taux de conversion » dans le contexte des réseaux sociaux ?",
+        "options": [
+          {
+            "value": "a_le_pourcentage_de_publications_payantes_vs_organiques",
+            "label": "A) Le pourcentage de publications payantes vs organiques",
+            "part": "word/document.xml",
+            "paragraph_index": 199,
+            "xpath": "/document/body[1]/p[166]",
+            "template_text_sha256": "57e35c3f2d87b723b3eeab56737f0822d90d4cff67bcf5650fdc3e2f01b81711",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_pourcentage_de_visiteurs_qui_accomplissent_l_action_sou",
+            "label": "B) Le pourcentage de visiteurs qui accomplissent l'action souhaitée (devis, appel, achat)",
+            "part": "word/document.xml",
+            "paragraph_index": 200,
+            "xpath": "/document/body[1]/p[167]",
+            "template_text_sha256": "1dc32e01d0ee97b56c22047857a0fc96c1c9e784b668d7f6a0cbec8b9aa0eb0c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_la_frequence_a_laquelle_vous_changez_de_strategie",
+            "label": "C) La fréquence à laquelle vous changez de stratégie",
+            "part": "word/document.xml",
+            "paragraph_index": 201,
+            "xpath": "/document/body[1]/p[168]",
+            "template_text_sha256": "0c58749119ba3c22f258087c38bcf3b2368a928c47acbee9f0da510558235eb6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_ratio_likes_commentaires",
+            "label": "D) Le ratio likes / commentaires",
+            "part": "word/document.xml",
+            "paragraph_index": 202,
+            "xpath": "/document/body[1]/p[169]",
+            "template_text_sha256": "ea2c50b5e6715d09f0285ae9be91e52658ddc97db0957f600d5921511088500e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_pourcentage_de_visiteurs_qui_accomplissent_l_action_sou",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Que signifie « taux de conversion » dans le contexte des réseaux sociaux ?'.",
+      "validation": {
+        "enum": [
+          "a_le_pourcentage_de_publications_payantes_vs_organiques",
+          "b_le_pourcentage_de_visiteurs_qui_accomplissent_l_action_sou",
+          "c_la_frequence_a_laquelle_vous_changez_de_strategie",
+          "d_le_ratio_likes_commentaires"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_3_si_un_type_de_contenu_sous_performe_pendant_4_semaines_consecutives_que_devez_v",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_3_si_un_type_de_contenu_sous_performe_pendant_4_semaines_consecutives_que_devez_v",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Si un type de contenu sous-performe pendant 4 semaines consécutives, que devez-vous faire ?",
+        "options": [
+          {
+            "value": "a_le_supprimer_immediatement_de_votre_strategie",
+            "label": "A) Le supprimer immédiatement de votre stratégie",
+            "part": "word/document.xml",
+            "paragraph_index": 204,
+            "xpath": "/document/body[1]/p[171]",
+            "template_text_sha256": "ccb1ed4aa6d9d18ec36466dacf37b6e873b458c46c4724f3d97f91d9ee14f5c6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_continuer_encore_6_mois_pour_etre_vraiment_sur",
+            "label": "B) Continuer encore 6 mois pour être vraiment sûr",
+            "part": "word/document.xml",
+            "paragraph_index": 205,
+            "xpath": "/document/body[1]/p[172]",
+            "template_text_sha256": "e8fa6f01d67156f11a80cfaaef6a2e21099533fb113e5342a9996dd18e20d861",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_l_analyser_le_modifier_et_tester_une_nouvelle_approche",
+            "label": "C) L'analyser, le modifier et tester une nouvelle approche",
+            "part": "word/document.xml",
+            "paragraph_index": 206,
+            "xpath": "/document/body[1]/p[173]",
+            "template_text_sha256": "416e07084b5920824c87abce728ea87e5d0f4693ef20d0887f46fa3c5ff3d56b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_augmenter_la_frequence_de_ce_type_de_contenu",
+            "label": "D) Augmenter la fréquence de ce type de contenu",
+            "part": "word/document.xml",
+            "paragraph_index": 207,
+            "xpath": "/document/body[1]/p[174]",
+            "template_text_sha256": "e19ee1f20aaab5dbdbf2b5b97bb3ea52a03cf9756cdf9af85f4ebf4df092cf28",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_l_analyser_le_modifier_et_tester_une_nouvelle_approche",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Si un type de contenu sous-performe pendant 4 semaines consécutives, que devez-vous faire ?'.",
+      "validation": {
+        "enum": [
+          "a_le_supprimer_immediatement_de_votre_strategie",
+          "b_continuer_encore_6_mois_pour_etre_vraiment_sur",
+          "c_l_analyser_le_modifier_et_tester_une_nouvelle_approche",
+          "d_augmenter_la_frequence_de_ce_type_de_contenu"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_4_un_tableau_de_bord_rs_efficace_pour_une_tpe_doit_contenir_au_minimum",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_4_un_tableau_de_bord_rs_efficace_pour_une_tpe_doit_contenir_au_minimum",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Un tableau de bord RS efficace pour une TPE doit contenir au minimum :",
+        "options": [
+          {
+            "value": "a_uniquement_le_nombre_d_abonnes_total",
+            "label": "A) Uniquement le nombre d'abonnés total",
+            "part": "word/document.xml",
+            "paragraph_index": 209,
+            "xpath": "/document/body[1]/p[176]",
+            "template_text_sha256": "630048c91eaa311cd359fd28b1f09ed378520ace40d39526fa440b698ee052c1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_les_kpis_cles_leur_evolution_dans_le_temps_et_les_objectif",
+            "label": "B) Les KPIs clés, leur évolution dans le temps et les objectifs visés",
+            "part": "word/document.xml",
+            "paragraph_index": 210,
+            "xpath": "/document/body[1]/p[177]",
+            "template_text_sha256": "fab3471002b3279c1e5c9d1cd7e060d7274324d28434e11e709352baa60c7489",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_la_liste_exhaustive_de_tous_les_hashtags_utilises",
+            "label": "C) La liste exhaustive de tous les hashtags utilisés",
+            "part": "word/document.xml",
+            "paragraph_index": 211,
+            "xpath": "/document/body[1]/p[178]",
+            "template_text_sha256": "ee714b9d599026fabb7dda5ffbcb28d194680201bece3f6d1e90aebc794e14ae",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_budget_publicitaire_uniquement",
+            "label": "D) Le budget publicitaire uniquement",
+            "part": "word/document.xml",
+            "paragraph_index": 212,
+            "xpath": "/document/body[1]/p[179]",
+            "template_text_sha256": "d13c37a4935a9ca60b896d0b4a10a768043ee1d9127d6098e238b83f9a2a7a66",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_les_kpis_cles_leur_evolution_dans_le_temps_et_les_objectif",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Un tableau de bord RS efficace pour une TPE doit contenir au minimum :'.",
+      "validation": {
+        "enum": [
+          "a_uniquement_le_nombre_d_abonnes_total",
+          "b_les_kpis_cles_leur_evolution_dans_le_temps_et_les_objectif",
+          "c_la_liste_exhaustive_de_tous_les_hashtags_utilises",
+          "d_le_budget_publicitaire_uniquement"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_5_quelle_est_la_meilleure_approche_pour_une_tpe_qui_voit_ses_resultats_rs_stagner",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_5_quelle_est_la_meilleure_approche_pour_une_tpe_qui_voit_ses_resultats_rs_stagner",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Quelle est la meilleure approche pour une TPE qui voit ses résultats RS stagner depuis 2 mois ?",
+        "options": [
+          {
+            "value": "a_augmenter_le_budget_publicitaire_immediatement",
+            "label": "A) Augmenter le budget publicitaire immédiatement",
+            "part": "word/document.xml",
+            "paragraph_index": 214,
+            "xpath": "/document/body[1]/p[181]",
+            "template_text_sha256": "8002b0ed540bd49561f91441f38ea0d915f4f5d39597c3dbec6b61c4f30eeb24",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_analyser_ce_qui_fonctionne_ne_fonctionne_pas_tester_de_nou",
+            "label": "B) Analyser ce qui fonctionne/ne fonctionne pas, tester de nouveaux formats et rester constant",
+            "part": "word/document.xml",
+            "paragraph_index": 215,
+            "xpath": "/document/body[1]/p[182]",
+            "template_text_sha256": "8e398db2ebe8466864ed4fe698398581bf05038685f9f7880f3e49a5421c0827",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_fermer_les_comptes_et_recommencer_a_zero",
+            "label": "C) Fermer les comptes et recommencer à zéro",
+            "part": "word/document.xml",
+            "paragraph_index": 216,
+            "xpath": "/document/body[1]/p[183]",
+            "template_text_sha256": "5fd58453f802b1bed344f679b7efc58452fef51efb0d65cb39758e79d8ee61f2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_poster_moins_souvent_pour_ne_plus_decevoir_les_abonnes",
+            "label": "D) Poster moins souvent pour ne plus décevoir les abonnés",
+            "part": "word/document.xml",
+            "paragraph_index": 217,
+            "xpath": "/document/body[1]/p[184]",
+            "template_text_sha256": "02ac33cc74a041fa7db4ef1118bc969c9e7265b64501b1aafff4335d1a61f2e5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_analyser_ce_qui_fonctionne_ne_fonctionne_pas_tester_de_nou",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Quelle est la meilleure approche pour une TPE qui voit ses résultats RS stagner depuis 2 mois ?'.",
+      "validation": {
+        "enum": [
+          "a_augmenter_le_budget_publicitaire_immediatement",
+          "b_analyser_ce_qui_fonctionne_ne_fonctionne_pas_tester_de_nou",
+          "c_fermer_les_comptes_et_recommencer_a_zero",
+          "d_poster_moins_souvent_pour_ne_plus_decevoir_les_abonnes"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_1_creez_un_modele_de_tableau_de_bord_mensuel_simple_pour_suivre_vos_performances",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_1_creez_un_modele_de_tableau_de_bord_mensuel_simple_pour_suivre_vos_performances",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 220,
+          "xpath": "/document/body[1]/tbl[14]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Après 3 mois de formation, j'ai mis en place une présence régulière sur Facebook et Instagram avec un calendrier éditorial clair. Mes 3 priorités : augmenter la fréquence de publication, développer les vidéos courtes, et mieux suivre mes statistiques mensuelles.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Après 3 mois de formation, j'ai mis en place une présence régulière sur Facebook et Instagram avec un calendrier éditori' after label 'Question 1 : Créez un modèle de tableau de bord mensuel simple pour suivre vos performances RS.'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_finale.question_2_apres_3_mois_de_formation_quel_est_votre_bilan_rs_et_quelles_sont_vos_3_prochai",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_finale.question_2_apres_3_mois_de_formation_quel_est_votre_bilan_rs_et_quelles_sont_vos_3_prochai",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 225,
+          "xpath": "/document/body[1]/tbl[15]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Un tableau simple avec, chaque mois : nombre d'abonnés, portée moyenne, taux d'engagement et nombre de demandes de devis générées, comparé au mois précédent.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Un tableau simple avec, chaque mois : nombre d'abonnés, portée moyenne, taux d'engagement et nombre de demandes de devis' after label 'Question 2 : Après 3 mois de formation, quel est votre bilan RS et quelles sont vos 3 prochaines priorités ?'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 2,
+      "xpath": "/document/body[1]/p[3]",
+      "blank_content": "Recueil des évaluations finales (Parties 1 et 2 - QCM et Questions Ouvertes) — Document vierge",
+      "filled_content": "Recueil des évaluations finales (Parties 1 et 2 - QCM et Questions Ouvertes)",
+      "reason": "Unsafe non-slot text change (similarity 0.89); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 57,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 101,
+      "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 145,
+      "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 189,
+      "xpath": "/document/body[1]/tbl[13]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "6 structural/text difference(s) require review; see mapping evidence and placeholder discovery report.",
+    "Official scoring formula and/or pass threshold are not proven across the supplied documents; result automation remains unresolved."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 36,
+    "confirmed_field_count": 36,
+    "concrete_target_count": 36,
+    "evidence_count": 36,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 6,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "6 unresolved source/template difference(s) remain."
+    ]
+  }
+}

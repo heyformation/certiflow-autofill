@@ -1,0 +1,79 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs6485_support_certification_pptx",
+  "template_path": "final-templates/Proforma_Institut/RS6485/section-01/candidate-work-and-preparation/Support Certification - RS6485 - Proforma Institut - Template.pptx",
+  "template_hash": "7e5aef94d0c843366764649bbd1906c2cce6487f51b266c2a7d6c8d5338730c8",
+  "source_original_path": "Proforma Institut/RS6485 - Comptabilité TPE/Support Certification - RS6485 - Proforma Institut - Template.pptx",
+  "organization": "Proforma Institut",
+  "certification": "RS6485",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "candidate-work-and-preparation",
+  "format": "PPTX",
+  "pairing": {
+    "template": "Proforma Institut/RS6485 - Comptabilité TPE/Support Certification - RS6485 - Proforma Institut - Template.pptx",
+    "filled_reference": "Proforma Institut/RS6485 - Comptabilité TPE/Support Certification - RS6485 - Proforma Institut - Filled.pptx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.5714,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": null
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [],
+  "unresolved_differences": [
+    {
+      "slide": 13,
+      "reason": "Filled reference has fewer slides."
+    },
+    {
+      "slide": 14,
+      "reason": "Filled reference has fewer slides."
+    },
+    {
+      "slide": 15,
+      "reason": "Filled reference has fewer slides."
+    },
+    {
+      "slide": 16,
+      "reason": "Filled reference has fewer slides."
+    },
+    {
+      "slide": 17,
+      "reason": "Filled reference has fewer slides."
+    },
+    {
+      "slide": 18,
+      "reason": "Filled reference has fewer slides."
+    },
+    {
+      "slide": 19,
+      "reason": "Filled reference has fewer slides."
+    },
+    {
+      "slide": 20,
+      "reason": "Filled reference has fewer slides."
+    },
+    {
+      "slide": 21,
+      "reason": "Filled reference has fewer slides."
+    }
+  ],
+  "blocking_reasons": [
+    "9 structural/text difference(s) require review; see mapping evidence and placeholder discovery report."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 0,
+    "confirmed_field_count": 0,
+    "concrete_target_count": 0,
+    "evidence_count": 0,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 9,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "Mapping has no dynamic field targets.",
+      "9 unresolved source/template difference(s) remain."
+    ]
+  }
+}

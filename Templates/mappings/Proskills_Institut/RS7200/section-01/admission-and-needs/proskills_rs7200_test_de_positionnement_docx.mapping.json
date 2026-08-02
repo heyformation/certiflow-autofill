@@ -1,0 +1,1415 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proskills_rs7200_test_de_positionnement_docx",
+  "template_path": "final-templates/Proskills_Institut/RS7200/section-01/admission-and-needs/Test de Positionnement - RS7200 - Proskills Institut - Template.docx",
+  "template_hash": "8e24d04c2a51b886d81a5f4eb2367386bbb28627ff0b6d99f8d397b47982b213",
+  "source_original_path": "Proskills Institut/RS7200 - Réseaux Sociaux TPE/Test de Positionnement - RS7200 - Proskills Institut - Template.docx",
+  "organization": "Proskills Institut",
+  "certification": "RS7200",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "admission-and-needs",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proskills Institut/RS7200 - Réseaux Sociaux TPE/Test de Positionnement - RS7200 - Proskills Institut - Template.docx",
+    "filled_reference": "Proskills Institut/RS7200 - Réseaux Sociaux TPE/Test de Positionnement - RS7200 - Proskills Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9952,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "LECOMTE Nathan"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "candidate.identity.full_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.identity.full_name",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 5,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "LECOMTE Nathan",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'LECOMTE Nathan' after label 'Nom et Prénom *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.1_quel_est_l_objectif_principal_d_un_persona_dans_une_strategie_de_communication_digitale",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.1_quel_est_l_objectif_principal_d_un_persona_dans_une_strategie_de_communication_digitale",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "1. Quel est l'objectif principal d'un « Persona » dans une stratégie de communication digitale ? *  1 point",
+        "options": [
+          {
+            "value": "definir_precisement_la_cible_ideale_pour_adapter_le_message",
+            "label": "Définir précisément la cible idéale pour adapter le message et le choix des réseaux.",
+            "part": "word/document.xml",
+            "paragraph_index": 8,
+            "xpath": "/document/body[1]/p[7]",
+            "template_text_sha256": "f73c3dc74765ac296273cc8978b9b66324ede4998c654657b9f151f60f7ab187",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "automatiser_la_publication_de_contenu_sur_tous_les_reseaux_s",
+            "label": "Automatiser la publication de contenu sur tous les réseaux sociaux simultanément.",
+            "part": "word/document.xml",
+            "paragraph_index": 9,
+            "xpath": "/document/body[1]/p[8]",
+            "template_text_sha256": "3d391763ef9a598f6d5c70280d590837d01a77b15357360de94e710fb2f9fe33",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "mesurer_l_engagement_likes_commentaires_sur_chaque_publicati",
+            "label": "Mesurer l'engagement (likes, commentaires) sur chaque publication.",
+            "part": "word/document.xml",
+            "paragraph_index": 10,
+            "xpath": "/document/body[1]/p[9]",
+            "template_text_sha256": "67468804b88a67772540ca4415257cd54084cd2cee6c3521d299f4e6d621bae6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "calculer_le_retour_sur_investissement_roi_des_campagnes_publ",
+            "label": "Calculer le retour sur investissement (ROI) des campagnes publicitaires.",
+            "part": "word/document.xml",
+            "paragraph_index": 11,
+            "xpath": "/document/body[1]/p[10]",
+            "template_text_sha256": "be926757657330b970f4d29845f78e8b8f96ee5c4b4fde535edcd24559c25c44",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "definir_precisement_la_cible_ideale_pour_adapter_le_message",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '1. Quel est l'objectif principal d'un « Persona » dans une stratégie de communication digitale ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "definir_precisement_la_cible_ideale_pour_adapter_le_message",
+          "automatiser_la_publication_de_contenu_sur_tous_les_reseaux_s",
+          "mesurer_l_engagement_likes_commentaires_sur_chaque_publicati",
+          "calculer_le_retour_sur_investissement_roi_des_campagnes_publ"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.2_parmi_les_plateformes_suivantes_laquelle_est_principalement_orientee_vers_le_reseautage",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.2_parmi_les_plateformes_suivantes_laquelle_est_principalement_orientee_vers_le_reseautage",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "2. Parmi les plateformes suivantes, laquelle est principalement orientée vers le réseautage professionnel et le B2B ? *  1 point",
+        "options": [
+          {
+            "value": "linkedin",
+            "label": "LinkedIn",
+            "part": "word/document.xml",
+            "paragraph_index": 13,
+            "xpath": "/document/body[1]/p[12]",
+            "template_text_sha256": "d6010d685e3adbc674f56c7aaf78b39a0c643a75ca0c8cb297aeafbdb6a6370d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "tiktok",
+            "label": "TikTok",
+            "part": "word/document.xml",
+            "paragraph_index": 14,
+            "xpath": "/document/body[1]/p[13]",
+            "template_text_sha256": "0dad4ccd2bd3a434dc01988981a156521f2a2a250760013477dc35f90cfa6d5c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "instagram",
+            "label": "Instagram",
+            "part": "word/document.xml",
+            "paragraph_index": 15,
+            "xpath": "/document/body[1]/p[14]",
+            "template_text_sha256": "3d805e2a7939e9d8848af1e7bce4984e526c3e7b8bd5d41c2572186b457af57a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "facebook",
+            "label": "Facebook",
+            "part": "word/document.xml",
+            "paragraph_index": 16,
+            "xpath": "/document/body[1]/p[15]",
+            "template_text_sha256": "cba1f6e8fca685801cef5d1e698a0ad330012f04e327b0461964544418bf3623",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "linkedin",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '2. Parmi les plateformes suivantes, laquelle est principalement orientée vers le réseautage professionnel et le B2B ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "linkedin",
+          "tiktok",
+          "instagram",
+          "facebook"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.3_dans_le_cadre_du_marketing_digital_pour_une_tpe_que_signifie_l_objectif_d_acquisition_1",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.3_dans_le_cadre_du_marketing_digital_pour_une_tpe_que_signifie_l_objectif_d_acquisition_1",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "3. Dans le cadre du marketing digital pour une TPE, que signifie l'objectif d'« Acquisition » ? *  1 point",
+        "options": [
+          {
+            "value": "convertir_les_visiteurs_ou_les_prospects_en_clients_reels_ve",
+            "label": "Convertir les visiteurs ou les prospects en clients réels (ventes, inscriptions, etc.).",
+            "part": "word/document.xml",
+            "paragraph_index": 18,
+            "xpath": "/document/body[1]/p[17]",
+            "template_text_sha256": "10176ad50fe7e8af89ece43206b632944d23008ae4f2560f70ac2219eba2865e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "augmenter_le_nombre_total_de_followers_sur_les_differents_co",
+            "label": "Augmenter le nombre total de followers sur les différents comptes de l'entreprise.",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "e447368959624ef25e8da50644650ddb97bd70b9665e09f8d6cd07276d4b626b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "ameliorer_l_image_de_marque_et_la_reconnaissance_de_l_entrep",
+            "label": "Améliorer l'image de marque et la reconnaissance de l'entreprise.",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/p[19]",
+            "template_text_sha256": "9fccc1d61450b2abff866570686d9c9a5d347e47e1b1ca76f5b6c834983fb40c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "analyser_la_performance_des_publications_et_des_campagnes",
+            "label": "Analyser la performance des publications et des campagnes.",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "b623532a148e9a92729c1514ae342d6209278991f341911464ff8e8138f29a2f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "augmenter_le_nombre_total_de_followers_sur_les_differents_co",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '3. Dans le cadre du marketing digital pour une TPE, que signifie l'objectif d'« Acquisition » ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "convertir_les_visiteurs_ou_les_prospects_en_clients_reels_ve",
+          "augmenter_le_nombre_total_de_followers_sur_les_differents_co",
+          "ameliorer_l_image_de_marque_et_la_reconnaissance_de_l_entrep",
+          "analyser_la_performance_des_publications_et_des_campagnes"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.4_qu_est_ce_qu_une_ligne_editoriale_pour_une_presence_sur_les_reseaux_sociaux_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.4_qu_est_ce_qu_une_ligne_editoriale_pour_une_presence_sur_les_reseaux_sociaux_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "4. Qu'est-ce qu'une « Ligne Éditoriale » pour une présence sur les réseaux sociaux ? *  1 point",
+        "options": [
+          {
+            "value": "l_ensemble_des_regles_qui_definissent_le_ton_les_sujets_les",
+            "label": "L'ensemble des règles qui définissent le ton, les sujets, les formats, et la fréquence des publications.",
+            "part": "word/document.xml",
+            "paragraph_index": 23,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "483a0fcf643790a78655cd33f4c13b443de4382f5c82d902a89d6dbad3cc7c55",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "le_budget_alloue_a_la_publicite_payante_sur_les_plateformes",
+            "label": "Le budget alloué à la publicité payante sur les plateformes sociales.",
+            "part": "word/document.xml",
+            "paragraph_index": 24,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "5886ffa807c58a786c25790f93bdb8e224a3ea7c5926ea183e360b4d70dfd990",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "un_logiciel_permettant_de_programmer_automatiquement_les_pub",
+            "label": "Un logiciel permettant de programmer automatiquement les publications.",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "bebe70f574e03cc651fa642cd37582f155c6492d22e12366464557d53be48774",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "l_analyse_des_statistiques_de_performance_apres_chaque_campa",
+            "label": "L'analyse des statistiques de performance après chaque campagne.",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "880719425c551b34e54f46ca61b9cf4775b7850f4ced8df73587c5fa9d4ae509",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "l_ensemble_des_regles_qui_definissent_le_ton_les_sujets_les",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '4. Qu'est-ce qu'une « Ligne Éditoriale » pour une présence sur les réseaux sociaux ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "l_ensemble_des_regles_qui_definissent_le_ton_les_sujets_les",
+          "le_budget_alloue_a_la_publicite_payante_sur_les_plateformes",
+          "un_logiciel_permettant_de_programmer_automatiquement_les_pub",
+          "l_analyse_des_statistiques_de_performance_apres_chaque_campa"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.5_quel_element_est_indispensable_pour_construire_une_strategie_social_media_personnalisee",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.5_quel_element_est_indispensable_pour_construire_une_strategie_social_media_personnalisee",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "5. Quel élément est indispensable pour construire une stratégie social media personnalisée ? *  1 point",
+        "options": [
+          {
+            "value": "l_alignement_du_contenu_sur_les_objectifs_commerciaux_et_l_i",
+            "label": "L'alignement du contenu sur les objectifs commerciaux et l'identification des publics cibles.",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "a1826eb04c03e515098cda0c822b324a56a449a054df7553705e8487cace9a28",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "l_utilisation_d_un_maximum_de_hashtags_populaires_dans_chaqu",
+            "label": "L'utilisation d'un maximum de hashtags populaires dans chaque publication.",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[28]",
+            "template_text_sha256": "5b356847e535aeccc7c80772289657e9232c2bcdfcf7fd99ba7fcee57d0a0e5e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "la_diffusion_du_meme_contenu_exact_sur_toutes_les_plateforme",
+            "label": "La diffusion du même contenu exact sur toutes les plateformes simultanément.",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "80823985e5da083a21e0186d9d38fc9f754bd9eddf28e584c0e6afae864a2eb0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "la_limitation_des_publications_a_un_seul_format_par_exemple",
+            "label": "La limitation des publications à un seul format (par exemple, uniquement des photos).",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "1b645536f864f06e732c37a5181e1b7754d4a368812989208e26c7db0f9466cd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "l_alignement_du_contenu_sur_les_objectifs_commerciaux_et_l_i",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '5. Quel élément est indispensable pour construire une stratégie social media personnalisée ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "l_alignement_du_contenu_sur_les_objectifs_commerciaux_et_l_i",
+          "l_utilisation_d_un_maximum_de_hashtags_populaires_dans_chaqu",
+          "la_diffusion_du_meme_contenu_exact_sur_toutes_les_plateforme",
+          "la_limitation_des_publications_a_un_seul_format_par_exemple"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.6_qu_est_ce_que_le_storytelling_dans_la_creation_de_contenu_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.6_qu_est_ce_que_le_storytelling_dans_la_creation_de_contenu_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "6. Qu'est-ce que le « Storytelling » dans la création de contenu ? *  1 point",
+        "options": [
+          {
+            "value": "l_art_de_raconter_une_histoire_pour_creer_un_lien_emotionnel",
+            "label": "L'art de raconter une histoire pour créer un lien émotionnel et engager son audience.",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "9eb669bbee21233f58caefcc5da4b18ec6946aa6a634692b2697c42e20fecf3a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "l_utilisation_exclusive_des_formats_story_sur_instagram_ou_f",
+            "label": "L'utilisation exclusive des formats 'Story' sur Instagram ou Facebook.",
+            "part": "word/document.xml",
+            "paragraph_index": 34,
+            "xpath": "/document/body[1]/p[33]",
+            "template_text_sha256": "2c57eec7d89d24337b2f7c2443aecd24685e39e23199bd1bb00c0bb2b927b3ce",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "la_lecture_et_l_analyse_des_statistiques_de_performance_d_un",
+            "label": "La lecture et l'analyse des statistiques de performance d'une publication.",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[34]",
+            "template_text_sha256": "b91939d49e392998ace45df518692a01ffde1c3ff442dd4693a2e2d62e3fd2e2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "la_simple_enumeration_des_caracteristiques_techniques_d_un_p",
+            "label": "La simple énumération des caractéristiques techniques d'un produit.",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "dc2d018023e4733b867df1e8bc72a050a2f2e24abe40876a1d2d4802f1e803f8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "la_lecture_et_l_analyse_des_statistiques_de_performance_d_un",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '6. Qu'est-ce que le « Storytelling » dans la création de contenu ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "l_art_de_raconter_une_histoire_pour_creer_un_lien_emotionnel",
+          "l_utilisation_exclusive_des_formats_story_sur_instagram_ou_f",
+          "la_lecture_et_l_analyse_des_statistiques_de_performance_d_un",
+          "la_simple_enumeration_des_caracteristiques_techniques_d_un_p"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.7_quel_est_l_interet_principal_d_utiliser_des_formats_video_reels_tiktoks_par_rapport_a_un",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.7_quel_est_l_interet_principal_d_utiliser_des_formats_video_reels_tiktoks_par_rapport_a_un",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "7. Quel est l'intérêt principal d'utiliser des formats 'Vidéo' (Reels, TikToks) par rapport à une image statique ? *  1 point",
+        "options": [
+          {
+            "value": "les_videos_generent_generalement_un_meilleur_engagement_et_s",
+            "label": "Les vidéos génèrent généralement un meilleur engagement et sont favorisées par les algorithmes.",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[37]",
+            "template_text_sha256": "1b3fe59b99c134fa5dcc0eedf802b64e5f6a6b074acf45ad2ccdf86eca0c793f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "elles_sont_le_format_le_plus_rapide_a_produire_et_a_monter",
+            "label": "Elles sont le format le plus rapide à produire et à monter.",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "d5e14e19cb4303f5f66e3bacc39fb9efbf15dab68fd6e9de9f337e90323929e9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "elles_permettent_de_contourner_completement_l_utilisation_de",
+            "label": "Elles permettent de contourner complètement l'utilisation des hashtags.",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "45436e5aa9471700251118c7565eb825a1c7bf09d50aaa8c7862b417bec86977",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "elles_sont_le_seul_format_autorise_sur_toutes_les_plateforme",
+            "label": "Elles sont le seul format autorisé sur toutes les plateformes sociales.",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "338ec816b2aa5ba6a215050a09267fa0796a740a059013fe16a57602378ecde8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "les_videos_generent_generalement_un_meilleur_engagement_et_s",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '7. Quel est l'intérêt principal d'utiliser des formats 'Vidéo' (Reels, TikToks) par rapport à une image statique ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "les_videos_generent_generalement_un_meilleur_engagement_et_s",
+          "elles_sont_le_format_le_plus_rapide_a_produire_et_a_monter",
+          "elles_permettent_de_contourner_completement_l_utilisation_de",
+          "elles_sont_le_seul_format_autorise_sur_toutes_les_plateforme"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.8_quel_outil_est_couramment_utilise_pour_la_creation_de_visuels_simples_et_professionnels",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.8_quel_outil_est_couramment_utilise_pour_la_creation_de_visuels_simples_et_professionnels",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "8. Quel outil est couramment utilisé pour la création de visuels simples et professionnels sans compétences graphiques avancées ? *  1 point",
+        "options": [
+          {
+            "value": "canva",
+            "label": "Canva",
+            "part": "word/document.xml",
+            "paragraph_index": 43,
+            "xpath": "/document/body[1]/p[42]",
+            "template_text_sha256": "27d3949cf60d2fc8e0853c11ffb3bf26f158d5236a5a0514374f47d48ce6ac0c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "photoshop",
+            "label": "Photoshop",
+            "part": "word/document.xml",
+            "paragraph_index": 44,
+            "xpath": "/document/body[1]/p[43]",
+            "template_text_sha256": "4949b616c6e8d7119f4a879421b5e5487d779ee020855655e96207ac32b1618c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "excel",
+            "label": "Excel",
+            "part": "word/document.xml",
+            "paragraph_index": 45,
+            "xpath": "/document/body[1]/p[44]",
+            "template_text_sha256": "cc0648b5ec3001d26ac5a683df7956b34eae57e93fd76b4bfee7fdf8452efc21",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "google_docs",
+            "label": "Google Docs",
+            "part": "word/document.xml",
+            "paragraph_index": 46,
+            "xpath": "/document/body[1]/p[45]",
+            "template_text_sha256": "f7a320cf012350402b62168cb2119bed926a1c4034d3b110ebb39330a8cb0e3d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "canva",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '8. Quel outil est couramment utilisé pour la création de visuels simples et professionnels sans compétences graphiques avancées ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "canva",
+          "photoshop",
+          "excel",
+          "google_docs"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.9_quel_est_le_role_principal_d_un_calendrier_editorial_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.9_quel_est_le_role_principal_d_un_calendrier_editorial_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "9. Quel est le rôle principal d'un « Calendrier Éditorial » ? *  1 point",
+        "options": [
+          {
+            "value": "organiser_planifier_et_suivre_les_sujets_les_dates_et_les_fo",
+            "label": "Organiser, planifier et suivre les sujets, les dates et les formats de publication à l'avance.",
+            "part": "word/document.xml",
+            "paragraph_index": 48,
+            "xpath": "/document/body[1]/p[47]",
+            "template_text_sha256": "efbb5c5677e255783013ef5eec8c93939aea9e627f9a85d99f4219c4e2a9263c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "analyser_la_demographie_des_followers_et_leurs_heures_de_con",
+            "label": "Analyser la démographie des followers et leurs heures de connexion.",
+            "part": "word/document.xml",
+            "paragraph_index": 49,
+            "xpath": "/document/body[1]/p[48]",
+            "template_text_sha256": "d79222dae1edae1a9d57dd404777575c5dac86d075fa5ff7c8996b46fb3bc080",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "gerer_les_reponses_aux_commentaires_et_aux_messages_prives",
+            "label": "Gérer les réponses aux commentaires et aux messages privés.",
+            "part": "word/document.xml",
+            "paragraph_index": 50,
+            "xpath": "/document/body[1]/p[49]",
+            "template_text_sha256": "e7c0dc81607ba1985e5fcc68effeeff8e3bb46376cb38caeef9a1ff68dbe4ce9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "definir_le_budget_publicitaire_mensuel_pour_chaque_reseau",
+            "label": "Définir le budget publicitaire mensuel pour chaque réseau.",
+            "part": "word/document.xml",
+            "paragraph_index": 51,
+            "xpath": "/document/body[1]/p[50]",
+            "template_text_sha256": "26c0d4cca530848ee95a9f8eeec71d73a092909a0905139979459ee82f3ecd6a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "organiser_planifier_et_suivre_les_sujets_les_dates_et_les_fo",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '9. Quel est le rôle principal d'un « Calendrier Éditorial » ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "organiser_planifier_et_suivre_les_sujets_les_dates_et_les_fo",
+          "analyser_la_demographie_des_followers_et_leurs_heures_de_con",
+          "gerer_les_reponses_aux_commentaires_et_aux_messages_prives",
+          "definir_le_budget_publicitaire_mensuel_pour_chaque_reseau"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.10_quel_est_l_avantage_principal_d_utiliser_des_outils_de_programmation_comme_meta_busines",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.10_quel_est_l_avantage_principal_d_utiliser_des_outils_de_programmation_comme_meta_busines",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "10. Quel est l'avantage principal d'utiliser des outils de programmation comme Meta Business Suite ? *  1 point",
+        "options": [
+          {
+            "value": "automatiser_la_diffusion_des_contenus_a_des_moments_optimaux",
+            "label": "Automatiser la diffusion des contenus à des moments optimaux sans intervention manuelle quotidienne.",
+            "part": "word/document.xml",
+            "paragraph_index": 53,
+            "xpath": "/document/body[1]/p[52]",
+            "template_text_sha256": "8c8e93bfca76d854b83220fde0fe9bb5e27d828462bfd482c7dd94b07da063ac",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "doubler_automatiquement_le_nombre_de_followers_sur_instagram",
+            "label": "Doubler automatiquement le nombre de followers sur Instagram.",
+            "part": "word/document.xml",
+            "paragraph_index": 54,
+            "xpath": "/document/body[1]/p[53]",
+            "template_text_sha256": "ff825eef649f35b32679bb57156aedf89afbf8c93be0071990b3fe1fde83e391",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "creer_des_videos_de_haute_qualite_en_un_seul_clic",
+            "label": "Créer des vidéos de haute qualité en un seul clic.",
+            "part": "word/document.xml",
+            "paragraph_index": 55,
+            "xpath": "/document/body[1]/p[54]",
+            "template_text_sha256": "0b6bbd5af1821235fe532a3e834de8036f8463c0bde694cc4fc32d12d4419c7e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "generer_des_idees_de_contenu_de_maniere_illimitee",
+            "label": "Générer des idées de contenu de manière illimitée.",
+            "part": "word/document.xml",
+            "paragraph_index": 56,
+            "xpath": "/document/body[1]/p[55]",
+            "template_text_sha256": "52e051639f6db566f7b5ee8b4fd8f635b0e6d75410ba65aa57230fb3e5694442",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "automatiser_la_diffusion_des_contenus_a_des_moments_optimaux",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '10. Quel est l'avantage principal d'utiliser des outils de programmation comme Meta Business Suite ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "automatiser_la_diffusion_des_contenus_a_des_moments_optimaux",
+          "doubler_automatiquement_le_nombre_de_followers_sur_instagram",
+          "creer_des_videos_de_haute_qualite_en_un_seul_clic",
+          "generer_des_idees_de_contenu_de_maniere_illimitee"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.11_comment_fonctionnent_majoritairement_les_algorithmes_des_reseaux_sociaux_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.11_comment_fonctionnent_majoritairement_les_algorithmes_des_reseaux_sociaux_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "11. Comment fonctionnent majoritairement les algorithmes des réseaux sociaux ? *  1 point",
+        "options": [
+          {
+            "value": "ils_privilegient_et_montrent_le_contenu_qui_genere_le_plus_d",
+            "label": "Ils privilégient et montrent le contenu qui génère le plus d'engagement (interactions) auprès d'une audience.",
+            "part": "word/document.xml",
+            "paragraph_index": 58,
+            "xpath": "/document/body[1]/p[57]",
+            "template_text_sha256": "ea667c00d91c9e4fe80bcd882ed8007bdac863badf5fde7aa38d21f0517af552",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "ils_affichent_les_publications_par_ordre_chronologique_stric",
+            "label": "Ils affichent les publications par ordre chronologique strict (du plus récent au plus ancien).",
+            "part": "word/document.xml",
+            "paragraph_index": 59,
+            "xpath": "/document/body[1]/p[58]",
+            "template_text_sha256": "f9416d1e2769d6ed6df1b3a969c94084983de87e3347a88c2d20257e757b5cff",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "ils_favorisent_uniquement_les_publications_qui_incluent_de_l",
+            "label": "Ils favorisent uniquement les publications qui incluent de la publicité payante.",
+            "part": "word/document.xml",
+            "paragraph_index": 60,
+            "xpath": "/document/body[1]/p[59]",
+            "template_text_sha256": "d1e7fb2b4a029d99a0bfd5cfd28b43d20ac504e2eaab65c369163a38a5391f8c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "ils_privilegient_les_comptes_ayant_le_plus_grand_nombre_d_ab",
+            "label": "Ils privilégient les comptes ayant le plus grand nombre d'abonnés, quel que soit l'engagement.",
+            "part": "word/document.xml",
+            "paragraph_index": 61,
+            "xpath": "/document/body[1]/p[60]",
+            "template_text_sha256": "a7972a863dd98f41f9cc7bfe6162b27dd58c11413aa178d4a581bc5a74258a13",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "ils_affichent_les_publications_par_ordre_chronologique_stric",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '11. Comment fonctionnent majoritairement les algorithmes des réseaux sociaux ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "ils_privilegient_et_montrent_le_contenu_qui_genere_le_plus_d",
+          "ils_affichent_les_publications_par_ordre_chronologique_stric",
+          "ils_favorisent_uniquement_les_publications_qui_incluent_de_l",
+          "ils_privilegient_les_comptes_ayant_le_plus_grand_nombre_d_ab"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.12_que_signifie_l_acronyme_kpi_dans_le_contexte_de_l_analyse_des_resultats_digitaux_1_poin",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.12_que_signifie_l_acronyme_kpi_dans_le_contexte_de_l_analyse_des_resultats_digitaux_1_poin",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "12. Que signifie l'acronyme KPI dans le contexte de l'analyse des résultats digitaux ? *  1 point",
+        "options": [
+          {
+            "value": "indicateurs_cles_de_performance_key_performance_indicators",
+            "label": "Indicateurs Clés de Performance (Key Performance Indicators).",
+            "part": "word/document.xml",
+            "paragraph_index": 63,
+            "xpath": "/document/body[1]/p[62]",
+            "template_text_sha256": "1fc1207fc88a002730f40359f99cacfc768b39a5fe66b64fb3c7da4fb31313da",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "outils_de_creation_de_publication_key_publishing_instruments",
+            "label": "Outils de Création de Publication (Key Publishing Instruments).",
+            "part": "word/document.xml",
+            "paragraph_index": 64,
+            "xpath": "/document/body[1]/p[63]",
+            "template_text_sha256": "bb4873ef9bf3fcb0e4177cec53ccea8e62d6245662b200c3fd6bdb2e46ff64a1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "strategie_de_positionnement_sur_internet_known_placement_inf",
+            "label": "Stratégie de Positionnement sur Internet (Known Placement Information).",
+            "part": "word/document.xml",
+            "paragraph_index": 65,
+            "xpath": "/document/body[1]/p[64]",
+            "template_text_sha256": "9b4ca8664681fb1dd1051ff22ee2824283e52604d4bc882a21c9170f68ce70cd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "format_de_contenu_ideal_kinetic_production_image",
+            "label": "Format de Contenu Idéal (Kinetic Production Image).",
+            "part": "word/document.xml",
+            "paragraph_index": 66,
+            "xpath": "/document/body[1]/p[65]",
+            "template_text_sha256": "9c416cd3d732f15cace0139ae3f9a90ef223816432fc75dce9b714a312641e46",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "indicateurs_cles_de_performance_key_performance_indicators",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '12. Que signifie l'acronyme KPI dans le contexte de l'analyse des résultats digitaux ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "indicateurs_cles_de_performance_key_performance_indicators",
+          "outils_de_creation_de_publication_key_publishing_instruments",
+          "strategie_de_positionnement_sur_internet_known_placement_inf",
+          "format_de_contenu_ideal_kinetic_production_image"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.13_pourquoi_l_analyse_des_statistiques_insights_est_elle_essentielle_pour_une_strategie_so",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.13_pourquoi_l_analyse_des_statistiques_insights_est_elle_essentielle_pour_une_strategie_so",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "13. Pourquoi l'analyse des statistiques (Insights) est-elle essentielle pour une stratégie social media ? *  1 point",
+        "options": [
+          {
+            "value": "pour_comprendre_ce_qui_fonctionne_ou_non_et_ajuster_la_strat",
+            "label": "Pour comprendre ce qui fonctionne ou non, et ajuster la stratégie pour améliorer la performance future.",
+            "part": "word/document.xml",
+            "paragraph_index": 68,
+            "xpath": "/document/body[1]/p[67]",
+            "template_text_sha256": "7680d316634095ba60561d2314f005b8095812c3332feb01f903dc2849d72ffe",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "pour_identifier_les_comptes_concurrents_qui_ont_le_plus_de_s",
+            "label": "Pour identifier les comptes concurrents qui ont le plus de succès.",
+            "part": "word/document.xml",
+            "paragraph_index": 69,
+            "xpath": "/document/body[1]/p[68]",
+            "template_text_sha256": "426f65bb812d63efb2fe1a501592d38122afb536c571929f4f1b25a224cf382c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "pour_augmenter_immediatement_le_nombre_de_followers_sans_eff",
+            "label": "Pour augmenter immédiatement le nombre de followers sans effort.",
+            "part": "word/document.xml",
+            "paragraph_index": 70,
+            "xpath": "/document/body[1]/p[69]",
+            "template_text_sha256": "6c064ccd4b0a39369b47a7dd3228611dfbba097cf47b24cf16a9b65a44b9b8b0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "pour_determiner_le_prix_de_vente_des_produits_ou_services",
+            "label": "Pour déterminer le prix de vente des produits ou services.",
+            "part": "word/document.xml",
+            "paragraph_index": 71,
+            "xpath": "/document/body[1]/p[70]",
+            "template_text_sha256": "e547caec6c5192560f1993570b391b5ed23703f1255bbcde3419e6a2798421d0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "pour_comprendre_ce_qui_fonctionne_ou_non_et_ajuster_la_strat",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '13. Pourquoi l'analyse des statistiques (Insights) est-elle essentielle pour une stratégie social media ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "pour_comprendre_ce_qui_fonctionne_ou_non_et_ajuster_la_strat",
+          "pour_identifier_les_comptes_concurrents_qui_ont_le_plus_de_s",
+          "pour_augmenter_immediatement_le_nombre_de_followers_sans_eff",
+          "pour_determiner_le_prix_de_vente_des_produits_ou_services"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.14_comment_un_tpe_peut_elle_utiliser_les_hashtags_pour_ameliorer_sa_visibilite_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.14_comment_un_tpe_peut_elle_utiliser_les_hashtags_pour_ameliorer_sa_visibilite_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "14. Comment un TPE peut-elle utiliser les « Hashtags » pour améliorer sa visibilité ? *  1 point",
+        "options": [
+          {
+            "value": "en_permettant_aux_utilisateurs_interesses_par_un_sujet_speci",
+            "label": "En permettant aux utilisateurs intéressés par un sujet spécifique de découvrir son contenu.",
+            "part": "word/document.xml",
+            "paragraph_index": 73,
+            "xpath": "/document/body[1]/p[72]",
+            "template_text_sha256": "1d1c03d7e071dd2864b7d9276880ea1c44ef98159c790560cfecf3e5f3542ca0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "en_remplacant_entierement_le_texte_de_la_publication_par_des",
+            "label": "En remplaçant entièrement le texte de la publication par des mots-clés.",
+            "part": "word/document.xml",
+            "paragraph_index": 74,
+            "xpath": "/document/body[1]/p[73]",
+            "template_text_sha256": "7bed6e7c95cff6544708c2eaa57a4bb05133c556e7e962912bc4eba2b9cb7146",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "en_garantissant_que_la_publication_soit_vue_par_100_des_abon",
+            "label": "En garantissant que la publication soit vue par 100% des abonnés.",
+            "part": "word/document.xml",
+            "paragraph_index": 75,
+            "xpath": "/document/body[1]/p[74]",
+            "template_text_sha256": "67821edeffdf1d3c069850d36221622aea2b99bcce0c4dc4c5ff452fe3c1850e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "en_creant_un_compte_professionnel_pour_chaque_hashtag_utilis",
+            "label": "En créant un compte professionnel pour chaque hashtag utilisé.",
+            "part": "word/document.xml",
+            "paragraph_index": 76,
+            "xpath": "/document/body[1]/p[75]",
+            "template_text_sha256": "dbf7daf97799c4a539094d3b27e58012a9133a25e89e19d17a4cd93dc71db473",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "en_garantissant_que_la_publication_soit_vue_par_100_des_abon",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '14. Comment un TPE peut-elle utiliser les « Hashtags » pour améliorer sa visibilité ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "en_permettant_aux_utilisateurs_interesses_par_un_sujet_speci",
+          "en_remplacant_entierement_le_texte_de_la_publication_par_des",
+          "en_garantissant_que_la_publication_soit_vue_par_100_des_abon",
+          "en_creant_un_compte_professionnel_pour_chaque_hashtag_utilis"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.15_qu_est_ce_qui_caracterise_le_reseau_social_tiktok_par_rapport_a_instagram_et_facebook_1",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.15_qu_est_ce_qui_caracterise_le_reseau_social_tiktok_par_rapport_a_instagram_et_facebook_1",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "15. Qu'est-ce qui caractérise le réseau social TikTok par rapport à Instagram et Facebook ? *  1 point",
+        "options": [
+          {
+            "value": "son_orientation_principale_vers_des_videos_courtes_et_l_expl",
+            "label": "Son orientation principale vers des vidéos courtes et l'exploration basée sur les intérêts de l'utilisateur.",
+            "part": "word/document.xml",
+            "paragraph_index": 78,
+            "xpath": "/document/body[1]/p[77]",
+            "template_text_sha256": "826bf9237c949032fe377642ce7691c5d21c1bb02d8e9534709d0f9175b49a25",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "sa_limitation_stricte_aux_contenus_textuels_et_aux_liens_ext",
+            "label": "Sa limitation stricte aux contenus textuels et aux liens externes.",
+            "part": "word/document.xml",
+            "paragraph_index": 79,
+            "xpath": "/document/body[1]/p[78]",
+            "template_text_sha256": "c68b5d15e4078559355fe2e1a35238c5b1f543a207477b487fef3c00e43a11ba",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "son_utilisation_exclusive_par_les_professionnels_pour_le_rec",
+            "label": "Son utilisation exclusive par les professionnels pour le recrutement (RH).",
+            "part": "word/document.xml",
+            "paragraph_index": 80,
+            "xpath": "/document/body[1]/p[79]",
+            "template_text_sha256": "17bda6b188077e9f4a85fda0df73aaf05b2594d2adedb0c5bafdab8eb58b59ea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "son_modele_interdisant_la_publicite_payante",
+            "label": "Son modèle interdisant la publicité payante.",
+            "part": "word/document.xml",
+            "paragraph_index": 81,
+            "xpath": "/document/body[1]/p[80]",
+            "template_text_sha256": "9a399483d81ff386c70131f2e3e75dfaff0841de2be8e289e6ba024af66d7b52",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "son_orientation_principale_vers_des_videos_courtes_et_l_expl",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '15. Qu'est-ce qui caractérise le réseau social TikTok par rapport à Instagram et Facebook ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "son_orientation_principale_vers_des_videos_courtes_et_l_expl",
+          "sa_limitation_stricte_aux_contenus_textuels_et_aux_liens_ext",
+          "son_utilisation_exclusive_par_les_professionnels_pour_le_rec",
+          "son_modele_interdisant_la_publicite_payante"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.16_quel_est_l_enjeu_principal_du_marketing_digital_pour_une_petite_entreprise_tpe_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.16_quel_est_l_enjeu_principal_du_marketing_digital_pour_une_petite_entreprise_tpe_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "16. Quel est l'enjeu principal du marketing digital pour une petite entreprise (TPE) ? *  1 point",
+        "options": [
+          {
+            "value": "atteindre_un_public_plus_large_et_plus_cible_avec_des_ressou",
+            "label": "Atteindre un public plus large et plus ciblé avec des ressources limitées.",
+            "part": "word/document.xml",
+            "paragraph_index": 83,
+            "xpath": "/document/body[1]/p[82]",
+            "template_text_sha256": "83dd47726893fbe7a85bc069072cf627419676bdb5ff32b72e628560c67053fd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "remplacer_completement_la_communication_physique_par_la_comm",
+            "label": "Remplacer complètement la communication physique par la communication en ligne.",
+            "part": "word/document.xml",
+            "paragraph_index": 84,
+            "xpath": "/document/body[1]/p[83]",
+            "template_text_sha256": "f50d30e5753b27c84e621ff8f100a9aa54635989a90e1e05cd86577f1a12f5ce",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "publier_des_contenus_24h_24_et_7j_7_pour_saturer_le_marche",
+            "label": "Publier des contenus 24h/24 et 7j/7 pour saturer le marché.",
+            "part": "word/document.xml",
+            "paragraph_index": 85,
+            "xpath": "/document/body[1]/p[84]",
+            "template_text_sha256": "fa1c05d4cd7b94e300a8ba3397c2ae23cb8fb1b448bafbfd43a4ac4ebdbbdada",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "acheter_des_listes_d_emails_pour_des_campagnes_de_prospectio",
+            "label": "Acheter des listes d'emails pour des campagnes de prospection.",
+            "part": "word/document.xml",
+            "paragraph_index": 86,
+            "xpath": "/document/body[1]/p[85]",
+            "template_text_sha256": "256b1a64ef4472dd40245f896156d3a8decea7c899b2b2ccda6a790690ae01a4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "atteindre_un_public_plus_large_et_plus_cible_avec_des_ressou",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '16. Quel est l'enjeu principal du marketing digital pour une petite entreprise (TPE) ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "atteindre_un_public_plus_large_et_plus_cible_avec_des_ressou",
+          "remplacer_completement_la_communication_physique_par_la_comm",
+          "publier_des_contenus_24h_24_et_7j_7_pour_saturer_le_marche",
+          "acheter_des_listes_d_emails_pour_des_campagnes_de_prospectio"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.17_si_vous_souhaitez_mesurer_l_engagement_d_une_publication_quels_indicateurs_regardez_vou",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.17_si_vous_souhaitez_mesurer_l_engagement_d_une_publication_quels_indicateurs_regardez_vou",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "17. Si vous souhaitez mesurer l'« Engagement » d'une publication, quels indicateurs regardez-vous en priorité ? *  1 point",
+        "options": [
+          {
+            "value": "les_likes_les_commentaires_les_partages_et_les_enregistremen",
+            "label": "Les Likes, les commentaires, les partages et les enregistrements (saves).",
+            "part": "word/document.xml",
+            "paragraph_index": 88,
+            "xpath": "/document/body[1]/p[87]",
+            "template_text_sha256": "997e962a3b5b0a3816bc35359218e0e6070e91b2e525d401253890d67ba4bdf6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "le_nombre_total_de_publications_diffusees_durant_le_mois",
+            "label": "Le nombre total de publications diffusées durant le mois.",
+            "part": "word/document.xml",
+            "paragraph_index": 89,
+            "xpath": "/document/body[1]/p[88]",
+            "template_text_sha256": "09197b91f4d117e16b02dcf30cfa9a490f5b32e43601b637d009523c54ee9501",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "le_cout_total_des_publicites_payantes",
+            "label": "Le coût total des publicités payantes.",
+            "part": "word/document.xml",
+            "paragraph_index": 90,
+            "xpath": "/document/body[1]/p[89]",
+            "template_text_sha256": "f2fa0177135384e5de798683bfdbaf3aed7e7862f8a58f73b42016de39e1ec6c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "le_nombre_de_fois_ou_la_publication_a_ete_programmee",
+            "label": "Le nombre de fois où la publication a été programmée.",
+            "part": "word/document.xml",
+            "paragraph_index": 91,
+            "xpath": "/document/body[1]/p[90]",
+            "template_text_sha256": "61bfa49d9f61e074ba0aff06b3509e686dab6f6bfbd36a4da40e43e125d8ea86",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "les_likes_les_commentaires_les_partages_et_les_enregistremen",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '17. Si vous souhaitez mesurer l'« Engagement » d'une publication, quels indicateurs regardez-vous en priorité ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "les_likes_les_commentaires_les_partages_et_les_enregistremen",
+          "le_nombre_total_de_publications_diffusees_durant_le_mois",
+          "le_cout_total_des_publicites_payantes",
+          "le_nombre_de_fois_ou_la_publication_a_ete_programmee"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.18_pourquoi_est_il_important_d_adapter_le_contenu_texte_visuel_au_reseau_social_choisi_fac",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.18_pourquoi_est_il_important_d_adapter_le_contenu_texte_visuel_au_reseau_social_choisi_fac",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "18. Pourquoi est-il important d'adapter le contenu (texte, visuel) au réseau social choisi (Facebook vs. LinkedIn) ? *  1 point",
+        "options": [
+          {
+            "value": "chaque_plateforme_a_un_public_un_ton_et_des_formats_privileg",
+            "label": "Chaque plateforme a un public, un ton, et des formats privilégiés différents.",
+            "part": "word/document.xml",
+            "paragraph_index": 93,
+            "xpath": "/document/body[1]/p[92]",
+            "template_text_sha256": "38ee1e74c36444bca7e482eb5cb35df09e239ca81fc95a0be93996b2996e9c6b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "l_outil_canva_ne_permet_pas_d_exporter_le_meme_format_pour_t",
+            "label": "L'outil Canva ne permet pas d'exporter le même format pour tous les réseaux.",
+            "part": "word/document.xml",
+            "paragraph_index": 94,
+            "xpath": "/document/body[1]/p[93]",
+            "template_text_sha256": "bc2d6a8d3c68dc37b8fd10661386ded004b24bc42c65d4ff76289876a3b0e798",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "pour_eviter_que_les_algorithmes_ne_suppriment_le_contenu",
+            "label": "Pour éviter que les algorithmes ne suppriment le contenu.",
+            "part": "word/document.xml",
+            "paragraph_index": 95,
+            "xpath": "/document/body[1]/p[94]",
+            "template_text_sha256": "d4f74f6bce5737724077c2e8c2df5ea611ae1d3ab0091b3f69c61d320df712e2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "l_adaptation_n_est_necessaire_que_pour_les_comptes_ayant_plu",
+            "label": "L'adaptation n'est nécessaire que pour les comptes ayant plus de 10 000 abonnés.",
+            "part": "word/document.xml",
+            "paragraph_index": 96,
+            "xpath": "/document/body[1]/p[95]",
+            "template_text_sha256": "fc0ec72cb2839bf246e5e0b1e2ca099e8b4e6b2181900e41662f31731c9bc6d1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "chaque_plateforme_a_un_public_un_ton_et_des_formats_privileg",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '18. Pourquoi est-il important d'adapter le contenu (texte, visuel) au réseau social choisi (Facebook vs. LinkedIn) ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "chaque_plateforme_a_un_public_un_ton_et_des_formats_privileg",
+          "l_outil_canva_ne_permet_pas_d_exporter_le_meme_format_pour_t",
+          "pour_eviter_que_les_algorithmes_ne_suppriment_le_contenu",
+          "l_adaptation_n_est_necessaire_que_pour_les_comptes_ayant_plu"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.19_quelle_est_la_premiere_etape_cruciale_avant_de_commencer_a_publier_sur_les_reseaux_soci",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.19_quelle_est_la_premiere_etape_cruciale_avant_de_commencer_a_publier_sur_les_reseaux_soci",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "19. Quelle est la première étape cruciale avant de commencer à publier sur les réseaux sociaux ? *  1 point",
+        "options": [
+          {
+            "value": "definir_clairement_ses_objectifs_de_communication_notoriete",
+            "label": "Définir clairement ses objectifs de communication (notoriété, visibilité, acquisition).",
+            "part": "word/document.xml",
+            "paragraph_index": 98,
+            "xpath": "/document/body[1]/p[97]",
+            "template_text_sha256": "0e6b354cb78139cb56bb878424f02a502f23f556c011d641a64a70d9a721ce2d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "creer_des_visuels_avec_l_outil_canva",
+            "label": "Créer des visuels avec l'outil Canva.",
+            "part": "word/document.xml",
+            "paragraph_index": 99,
+            "xpath": "/document/body[1]/p[98]",
+            "template_text_sha256": "6907f2321a30d796c28ec1a5816069b5c20e837a205246abdac2a4824dfe213e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "acheter_des_publicites_pour_garantir_la_visibilite_immediate",
+            "label": "Acheter des publicités pour garantir la visibilité immédiate.",
+            "part": "word/document.xml",
+            "paragraph_index": 100,
+            "xpath": "/document/body[1]/p[99]",
+            "template_text_sha256": "315ff19909d3a68383b59a36da26c2dd661680909e42085fc3d271f701ca8834",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "suivre_un_maximum_de_comptes_concurrents",
+            "label": "Suivre un maximum de comptes concurrents.",
+            "part": "word/document.xml",
+            "paragraph_index": 101,
+            "xpath": "/document/body[1]/p[100]",
+            "template_text_sha256": "e0eee0cceae2b019deb6b1fcb7c1dfa09cb1d115ef52873487f47c1ba50abf9e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "creer_des_visuels_avec_l_outil_canva",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '19. Quelle est la première étape cruciale avant de commencer à publier sur les réseaux sociaux ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "definir_clairement_ses_objectifs_de_communication_notoriete",
+          "creer_des_visuels_avec_l_outil_canva",
+          "acheter_des_publicites_pour_garantir_la_visibilite_immediate",
+          "suivre_un_maximum_de_comptes_concurrents"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.20_quelle_pratique_est_consideree_comme_une_bonne_pratique_de_publication_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.20_quelle_pratique_est_consideree_comme_une_bonne_pratique_de_publication_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "20. Quelle pratique est considérée comme une « Bonne Pratique de Publication » ? *  1 point",
+        "options": [
+          {
+            "value": "publier_regulierement_et_aux_heures_ou_votre_audience_est_la",
+            "label": "Publier régulièrement et aux heures où votre audience est la plus active.",
+            "part": "word/document.xml",
+            "paragraph_index": 103,
+            "xpath": "/document/body[1]/p[102]",
+            "template_text_sha256": "14de5b31e7e4cbeb1e7bc28a9437a12c51d9573afa78a19401e39ae2c44f6f69",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "ecrire_des_textes_de_publication_extremement_longs_et_detail",
+            "label": "Écrire des textes de publication extrêmement longs et détaillés (plus de 1000 mots).",
+            "part": "word/document.xml",
+            "paragraph_index": 104,
+            "xpath": "/document/body[1]/p[103]",
+            "template_text_sha256": "ab6ef6bc0e0a7c2bbbac29d7f3ac6281f2130cbdcc54735ceea648c5191ff355",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "utiliser_des_visuels_de_mauvaise_qualite_pour_paraitre_plus",
+            "label": "Utiliser des visuels de mauvaise qualité pour paraître plus authentique.",
+            "part": "word/document.xml",
+            "paragraph_index": 105,
+            "xpath": "/document/body[1]/p[104]",
+            "template_text_sha256": "da518c7e70ca86a08a77920e5938b70530be1decfacade3c1584162d51dd6197",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "ignorer_les_commentaires_negatifs_ou_les_questions_des_utili",
+            "label": "Ignorer les commentaires négatifs ou les questions des utilisateurs.",
+            "part": "word/document.xml",
+            "paragraph_index": 106,
+            "xpath": "/document/body[1]/p[105]",
+            "template_text_sha256": "c4c2f731d9692408134bc222c22741ca9b038f2a3b36893b4af315f9fc607e1d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "publier_regulierement_et_aux_heures_ou_votre_audience_est_la",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '20. Quelle pratique est considérée comme une « Bonne Pratique de Publication » ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "publier_regulierement_et_aux_heures_ou_votre_audience_est_la",
+          "ecrire_des_textes_de_publication_extremement_longs_et_detail",
+          "utiliser_des_visuels_de_mauvaise_qualite_pour_paraitre_plus",
+          "ignorer_les_commentaires_negatifs_ou_les_questions_des_utili"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [],
+  "blocking_reasons": [],
+  "production_readiness": {
+    "status": "COMPLETE",
+    "field_count": 21,
+    "confirmed_field_count": 21,
+    "concrete_target_count": 21,
+    "evidence_count": 21,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 0,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": []
+  }
+}

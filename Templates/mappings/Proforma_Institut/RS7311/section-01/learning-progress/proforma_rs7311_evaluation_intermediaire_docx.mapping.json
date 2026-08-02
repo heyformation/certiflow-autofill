@@ -1,0 +1,1756 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7311_evaluation_intermediaire_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7311/section-01/learning-progress/Evaluation Intermediaire - RS7311 - Proforma Institut - Template.docx",
+  "template_hash": "b661c2a98afb6c793357be076f19e1536920c1f52368134754bb371ec018e6f5",
+  "source_original_path": "Proforma Institut/RS7311 - IA TPE/Evaluation Intermediaire - RS7311 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7311",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "learning-progress",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7311 - IA TPE/Evaluation Intermediaire - RS7311 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS7311 - IA TPE/Evaluation Intermediaire - RS7311 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9329,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "bre d'employés à remplacer"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.stagiaire",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.stagiaire",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 7,
+          "xpath": "/document/body[1]/p[8]",
+          "in_table": false,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Camille Bertrand",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Camille Bertrand' after label 'Stagiaire'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_qu_est_ce_que_le_machine_learning_apprentissage_automatique",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_qu_est_ce_que_le_machine_learning_apprentissage_automatique",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Qu'est-ce que le « Machine Learning » (apprentissage automatique) ?",
+        "options": [
+          {
+            "value": "a_un_logiciel_qui_suit_des_instructions_fixes_programmees_ma",
+            "label": "A) Un logiciel qui suit des instructions fixes programmées manuellement",
+            "part": "word/document.xml",
+            "paragraph_index": 18,
+            "xpath": "/document/body[1]/p[17]",
+            "template_text_sha256": "d1bf29cedfdf37ce437688e3ce6f81ec3b3fe72f3d0f145e5da2536a5a386f09",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_un_systeme_qui_apprend_automatiquement_a_partir_de_donnees",
+            "label": "B) Un système qui apprend automatiquement à partir de données sans être explicitement programmé",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "fac7cfc091b19e4f03992641a14cb381b2da0cd35ac3bcc6be15b94317c5e315",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_un_robot_capable_d_apprendre_les_metiers_manuels",
+            "label": "C) Un robot capable d'apprendre les métiers manuels",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/p[19]",
+            "template_text_sha256": "b2e6c0086b9cb955e1685aff13ff028a4158df7a9780e362b74e99ee5d5b01d0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_un_systeme_de_surveillance_des_employes",
+            "label": "D) Un système de surveillance des employés",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "0bd3add86b0dc771dd667aa5ccd6e2c8185b3c53954aa5f6d2c74548be15f5ba",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_un_systeme_qui_apprend_automatiquement_a_partir_de_donnees",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Qu'est-ce que le « Machine Learning » (apprentissage automatique) ?'.",
+      "validation": {
+        "enum": [
+          "a_un_logiciel_qui_suit_des_instructions_fixes_programmees_ma",
+          "b_un_systeme_qui_apprend_automatiquement_a_partir_de_donnees",
+          "c_un_robot_capable_d_apprendre_les_metiers_manuels",
+          "d_un_systeme_de_surveillance_des_employes"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_le_deep_learning_se_distingue_du_machine_learning_classique_car_il_utilise",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_le_deep_learning_se_distingue_du_machine_learning_classique_car_il_utilise",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Le « Deep Learning » se distingue du Machine Learning classique car il utilise :",
+        "options": [
+          {
+            "value": "a_des_bases_de_donnees_plus_grandes",
+            "label": "A) Des bases de données plus grandes",
+            "part": "word/document.xml",
+            "paragraph_index": 23,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "0b3fbdd61798e737fa96cfaba1efa079fb9cf9002cabc4eb52aaeadd80a2fba7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_des_reseaux_de_neurones_artificiels_a_plusieurs_couches_in",
+            "label": "B) Des réseaux de neurones artificiels à plusieurs couches (inspirées du cerveau)",
+            "part": "word/document.xml",
+            "paragraph_index": 24,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "3952c25e76b021dd13373f091fa6fa2ced69c545101989d0d6b03adbe5515169",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_des_processeurs_plus_puissants_uniquement",
+            "label": "C) Des processeurs plus puissants uniquement",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "04f844606bbddd361d9f9dbc5c49eeaf1641a33bdcdf182d93f8caebacd2143f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_des_algorithmes_mathematiques_plus_simples",
+            "label": "D) Des algorithmes mathématiques plus simples",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "924f54dbadd47df9b68f4b5f669158cad51907ec6747550a5d9cacf2e98ef84d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_des_reseaux_de_neurones_artificiels_a_plusieurs_couches_in",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Le « Deep Learning » se distingue du Machine Learning classique car il utilise :'.",
+      "validation": {
+        "enum": [
+          "a_des_bases_de_donnees_plus_grandes",
+          "b_des_reseaux_de_neurones_artificiels_a_plusieurs_couches_in",
+          "c_des_processeurs_plus_puissants_uniquement",
+          "d_des_algorithmes_mathematiques_plus_simples"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_pour_une_tpe_artisanale_l_ia_etroite_ou_ia_faible_signifie",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_pour_une_tpe_artisanale_l_ia_etroite_ou_ia_faible_signifie",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Pour une TPE artisanale, l'IA « étroite » (ou IA faible) signifie :",
+        "options": [
+          {
+            "value": "a_une_ia_capable_de_tout_faire_comme_un_humain_universel",
+            "label": "A) Une IA capable de tout faire comme un humain universel",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "52a780fb580a3dea32fe3854a57b684976475e0b3d5ce83e6fc951c6f5d4756b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_une_ia_specialisee_dans_une_tache_specifique_ex_rediger_du",
+            "label": "B) Une IA spécialisée dans une tâche spécifique (ex : rédiger du texte, reconnaître une image)",
+            "part": "word/document.xml",
+            "paragraph_index": 29,
+            "xpath": "/document/body[1]/p[28]",
+            "template_text_sha256": "e590b78de2e9b8e339faca08c95237bd8468377d861a90240ae1658d17ec5c98",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_une_ia_accessible_seulement_aux_grandes_entreprises",
+            "label": "C) Une IA accessible seulement aux grandes entreprises",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "7780f8647847ff5eb4274bb933fb8ffbed05d24aeede4330a9389d9114cdf524",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_une_ia_moins_performante_que_les_logiciels_classiques",
+            "label": "D) Une IA moins performante que les logiciels classiques",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "d3efc0bb256e3c6cce3fcf315beaa15786e33490bf7aeeef34e1d7ad0b041d15",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_une_ia_specialisee_dans_une_tache_specifique_ex_rediger_du",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Pour une TPE artisanale, l'IA « étroite » (ou IA faible) signifie :'.",
+      "validation": {
+        "enum": [
+          "a_une_ia_capable_de_tout_faire_comme_un_humain_universel",
+          "b_une_ia_specialisee_dans_une_tache_specifique_ex_rediger_du",
+          "c_une_ia_accessible_seulement_aux_grandes_entreprises",
+          "d_une_ia_moins_performante_que_les_logiciels_classiques"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_le_terme_gpt_dans_chatgpt_signifie",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_le_terme_gpt_dans_chatgpt_signifie",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Le terme « GPT » dans ChatGPT signifie :",
+        "options": [
+          {
+            "value": "a_global_processing_technology",
+            "label": "A) Global Processing Technology",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "4b3ead6d6bad0c3f6945a7d68cdb4ce67c2aee4f34920cc58ead317a626fe863",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_generative_pre_trained_transformer",
+            "label": "B) Generative Pre-trained Transformer",
+            "part": "word/document.xml",
+            "paragraph_index": 34,
+            "xpath": "/document/body[1]/p[33]",
+            "template_text_sha256": "2136371f3bca933bfa81e9b6e694561ae5b9f7f6e6136be8a0729cec705d23db",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_general_purpose_tool",
+            "label": "C) General Purpose Tool",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[34]",
+            "template_text_sha256": "106aa987379b3392628bfd39efda70c0902d4b0e5ff98be214243e1c67816739",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_google_processing_tool",
+            "label": "D) Google Processing Tool",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "84f0ea64296daa842330b18592e5903ca568be24c9720e62f52d0d33f587ad90",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_generative_pre_trained_transformer",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Le terme « GPT » dans ChatGPT signifie :'.",
+      "validation": {
+        "enum": [
+          "a_global_processing_technology",
+          "b_generative_pre_trained_transformer",
+          "c_general_purpose_tool",
+          "d_google_processing_tool"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_avant_de_deployer_l_ia_dans_une_tpe_un_diagnostic_ia_doit_identifier_en_priorit",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_avant_de_deployer_l_ia_dans_une_tpe_un_diagnostic_ia_doit_identifier_en_priorit",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Avant de déployer l'IA dans une TPE, un « diagnostic IA » doit identifier en priorité :",
+        "options": [
+          {
+            "value": "a_le_nombre_d_employes_a_remplacer",
+            "label": "A) Le nombre d'employés à remplacer",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[37]",
+            "template_text_sha256": "46ac46ab04ace4544fce3b127e24a345f786795f221f96d2aa9fbd6090c6a519",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_les_taches_repetitives_et_les_points_de_douleur_qui_freine",
+            "label": "B) Les tâches répétitives et les points de douleur qui freinent l'activité",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "e60b55021e939f3366561abe0695d0903dcbf5fa80bfc543dd35089d4aacdd13",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_budget_informatique_disponible",
+            "label": "C) Le budget informatique disponible",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "537a6735252502b93eb458c6a8b5016ff84ad55761f0a9a30d306f7ddd8bd670",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_les_concurrents_qui_utilisent_deja_l_ia",
+            "label": "D) Les concurrents qui utilisent déjà l'IA",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "9fc242d7e2d3acc7097f7070c35c45574684a609045b2ea574f037781f6657b3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_les_taches_repetitives_et_les_points_de_douleur_qui_freine",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Avant de déployer l'IA dans une TPE, un « diagnostic IA » doit identifier en priorité :'.",
+      "validation": {
+        "enum": [
+          "a_le_nombre_d_employes_a_remplacer",
+          "b_les_taches_repetitives_et_les_points_de_douleur_qui_freine",
+          "c_le_budget_informatique_disponible",
+          "d_les_concurrents_qui_utilisent_deja_l_ia"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_distinguez_les_trois_grands_types_d_ia_symbolique_connexionniste_deep_learning",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_distinguez_les_trois_grands_types_d_ia_symbolique_connexionniste_deep_learning",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 44,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "IA symbolique : règles fixes (ex: calcul de devis) ; Deep learning : reconnaissance d'image de chantiers ; hybride : chatbot combinant règles et génératif.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'IA symbolique : règles fixes (ex: calcul de devis) ; Deep learning : reconnaissance d'image de chantiers ; hybride : cha' after label 'Question 1 : Distinguez les trois grands types d'IA (symbolique, connexionniste/deep learning, hybride) et donnez un exe'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_quels_sont_selon_vous_les_3_criteres_les_plus_importants_pour_evaluer_si_une_ta",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_quels_sont_selon_vous_les_3_criteres_les_plus_importants_pour_evaluer_si_une_ta",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 49,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "La répétitivité de la tâche, la clarté des règles à appliquer, et le temps qu'elle me fait perdre chaque semaine.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'La répétitivité de la tâche, la clarté des règles à appliquer, et le temps qu'elle me fait perdre chaque semaine.' after label 'Question 2 : Quels sont selon vous les 3 critères les plus importants pour évaluer si une tâche de votre activité est « '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_un_token_dans_le_contexte_des_llm_large_language_models_est_approximativement",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_un_token_dans_le_contexte_des_llm_large_language_models_est_approximativement",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Un « token » dans le contexte des LLM (Large Language Models) est approximativement :",
+        "options": [
+          {
+            "value": "a_un_mot_entier",
+            "label": "A) Un mot entier",
+            "part": "word/document.xml",
+            "paragraph_index": 62,
+            "xpath": "/document/body[1]/p[53]",
+            "template_text_sha256": "74830b99b4f96d5b111bce9df822ecca772c41d5dbc4cf198110ebc8dbe5c499",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_3_4_d_un_mot_environ_4_caracteres_en_anglais",
+            "label": "B) 3/4 d'un mot (environ 4 caractères en anglais)",
+            "part": "word/document.xml",
+            "paragraph_index": 63,
+            "xpath": "/document/body[1]/p[54]",
+            "template_text_sha256": "90d7933ed6dfd2de03b40135f632ff5d388f06c785f3e83199dede3536cc7c6b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_une_phrase_complete",
+            "label": "C) Une phrase complète",
+            "part": "word/document.xml",
+            "paragraph_index": 64,
+            "xpath": "/document/body[1]/p[55]",
+            "template_text_sha256": "5932d5edcfba5d851e3d06af872fa08960eff633013d911639cd8e126740f3cb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_un_paragraphe",
+            "label": "D) Un paragraphe",
+            "part": "word/document.xml",
+            "paragraph_index": 65,
+            "xpath": "/document/body[1]/p[56]",
+            "template_text_sha256": "6db55165f49c436bf5a479ec714584aed3cdd680bf66f717f13a7d13520556c5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_3_4_d_un_mot_environ_4_caracteres_en_anglais",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Un « token » dans le contexte des LLM (Large Language Models) est approximativement :'.",
+      "validation": {
+        "enum": [
+          "a_un_mot_entier",
+          "b_3_4_d_un_mot_environ_4_caracteres_en_anglais",
+          "c_une_phrase_complete",
+          "d_un_paragraphe"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_la_temperature_d_un_modele_llm_parametrable_dans_certains_outils_controle",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_la_temperature_d_un_modele_llm_parametrable_dans_certains_outils_controle",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. La « température » d'un modèle LLM (paramétrable dans certains outils) contrôle :",
+        "options": [
+          {
+            "value": "a_la_vitesse_de_generation_du_texte",
+            "label": "A) La vitesse de génération du texte",
+            "part": "word/document.xml",
+            "paragraph_index": 67,
+            "xpath": "/document/body[1]/p[58]",
+            "template_text_sha256": "1e6cb42405bd4c1d2127a6b196b7a6248604456a0b359a2b768a81f0308a3cbd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_degre_de_creativite_aleation_des_reponses_0_determinist",
+            "label": "B) Le degré de créativité/aléation des réponses (0=déterministe, 1=très créatif)",
+            "part": "word/document.xml",
+            "paragraph_index": 68,
+            "xpath": "/document/body[1]/p[59]",
+            "template_text_sha256": "23b93f9f509c011713b0464fa14ff80c952188e1be0f58d8d10349ccc73aa4e1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_la_longueur_des_reponses_generees",
+            "label": "C) La longueur des réponses générées",
+            "part": "word/document.xml",
+            "paragraph_index": 69,
+            "xpath": "/document/body[1]/p[60]",
+            "template_text_sha256": "3a62c0be1e00556731e7576449dee7ee57344fdd20576e424185624127a408c6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_niveau_de_langue_utilise",
+            "label": "D) Le niveau de langue utilisé",
+            "part": "word/document.xml",
+            "paragraph_index": 70,
+            "xpath": "/document/body[1]/p[61]",
+            "template_text_sha256": "c7a3d2c2073471a3904702e29a7fc82a382a58456fdc92be8979a3ae9adad3bd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_degre_de_creativite_aleation_des_reponses_0_determinist",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. La « température » d'un modèle LLM (paramétrable dans certains outils) contrôle :'.",
+      "validation": {
+        "enum": [
+          "a_la_vitesse_de_generation_du_texte",
+          "b_le_degre_de_creativite_aleation_des_reponses_0_determinist",
+          "c_la_longueur_des_reponses_generees",
+          "d_le_niveau_de_langue_utilise"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_le_few_shot_prompting_consiste_a",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_le_few_shot_prompting_consiste_a",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Le « few-shot prompting » consiste à :",
+        "options": [
+          {
+            "value": "a_donner_quelques_exemples_de_l_output_attendu_dans_le_promp",
+            "label": "A) Donner quelques exemples de l'output attendu dans le prompt pour guider l'IA",
+            "part": "word/document.xml",
+            "paragraph_index": 72,
+            "xpath": "/document/body[1]/p[63]",
+            "template_text_sha256": "fdb5999017f19c44c0c0f37f391270fef2633b465f1305da856063ae9dd23ca3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_envoyer_plusieurs_prompts_a_la_suite_tres_rapidement",
+            "label": "B) Envoyer plusieurs prompts à la suite très rapidement",
+            "part": "word/document.xml",
+            "paragraph_index": 73,
+            "xpath": "/document/body[1]/p[64]",
+            "template_text_sha256": "f4f8c5dbc9662012379cd100723a8bfd8d18d049c019b71c7b977884ab884d51",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_utiliser_l_ia_pour_generer_seulement_quelques_mots",
+            "label": "C) Utiliser l'IA pour générer seulement quelques mots",
+            "part": "word/document.xml",
+            "paragraph_index": 74,
+            "xpath": "/document/body[1]/p[65]",
+            "template_text_sha256": "a9bfc0574afffb7df3ae6aa92bcc23f5d2242f30191dda45062f08cd9367ac8d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_limiter_la_longueur_de_sa_requete_a_3_mots",
+            "label": "D) Limiter la longueur de sa requête à 3 mots",
+            "part": "word/document.xml",
+            "paragraph_index": 75,
+            "xpath": "/document/body[1]/p[66]",
+            "template_text_sha256": "5fd54f3f764324748189a4f2dbdd82baa785f8e377adf4c9e92f5e21a1eecf51",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_donner_quelques_exemples_de_l_output_attendu_dans_le_promp",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Le « few-shot prompting » consiste à :'.",
+      "validation": {
+        "enum": [
+          "a_donner_quelques_exemples_de_l_output_attendu_dans_le_promp",
+          "b_envoyer_plusieurs_prompts_a_la_suite_tres_rapidement",
+          "c_utiliser_l_ia_pour_generer_seulement_quelques_mots",
+          "d_limiter_la_longueur_de_sa_requete_a_3_mots"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_pour_generer_une_image_professionnelle_de_ses_realisations_avec_une_ia_la_techn",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_pour_generer_une_image_professionnelle_de_ses_realisations_avec_une_ia_la_techn",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Pour générer une image professionnelle de ses réalisations avec une IA, la technique de prompt la plus efficace est :",
+        "options": [
+          {
+            "value": "a_un_simple_mot_ex_plomberie",
+            "label": "A) Un simple mot (ex : « plomberie »)",
+            "part": "word/document.xml",
+            "paragraph_index": 77,
+            "xpath": "/document/body[1]/p[68]",
+            "template_text_sha256": "38ca128511408eeeaa612ebfbed4af07f54297ae49683cb2b3e4cef234274509",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_une_description_detaillee_style_sujet_eclairage_angle_qual",
+            "label": "B) Une description détaillée : style, sujet, éclairage, angle, qualité",
+            "part": "word/document.xml",
+            "paragraph_index": 78,
+            "xpath": "/document/body[1]/p[69]",
+            "template_text_sha256": "2103a7c9707d813a02de28e42387f61a51d9a39e04c377a0bafdda1d0a31395d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_une_description_en_langue_etrangere",
+            "label": "C) Une description en langue étrangère",
+            "part": "word/document.xml",
+            "paragraph_index": 79,
+            "xpath": "/document/body[1]/p[70]",
+            "template_text_sha256": "bf7a5a032c10701493c54907068ceee4a54d7ecf0dc97bd084ae92ea3b2c67d0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_un_prompt_en_langage_de_programmation",
+            "label": "D) Un prompt en langage de programmation",
+            "part": "word/document.xml",
+            "paragraph_index": 80,
+            "xpath": "/document/body[1]/p[71]",
+            "template_text_sha256": "f995455df1600de6f16054a75ecadaeaf682a32d9da2981742327c190fef71f2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_une_description_detaillee_style_sujet_eclairage_angle_qual",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Pour générer une image professionnelle de ses réalisations avec une IA, la technique de prompt la plus efficace est :'.",
+      "validation": {
+        "enum": [
+          "a_un_simple_mot_ex_plomberie",
+          "b_une_description_detaillee_style_sujet_eclairage_angle_qual",
+          "c_une_description_en_langue_etrangere",
+          "d_un_prompt_en_langage_de_programmation"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_le_rag_retrieval_augmented_generation_est_une_technique_qui_permet_a_l_ia_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_le_rag_retrieval_augmented_generation_est_une_technique_qui_permet_a_l_ia_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Le « RAG » (Retrieval-Augmented Generation) est une technique qui permet à l'IA de :",
+        "options": [
+          {
+            "value": "a_generer_des_images_a_partir_de_texte",
+            "label": "A) Générer des images à partir de texte",
+            "part": "word/document.xml",
+            "paragraph_index": 82,
+            "xpath": "/document/body[1]/p[73]",
+            "template_text_sha256": "38932642c81f838fc4d4e7197c63538d246142f73fc89061acf27f343e170e81",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_recuperer_des_informations_actualisees_d_une_base_de_conna",
+            "label": "B) Récupérer des informations actualisées d'une base de connaissances externe avant de répondre",
+            "part": "word/document.xml",
+            "paragraph_index": 83,
+            "xpath": "/document/body[1]/p[74]",
+            "template_text_sha256": "b4b36d9429012ee6756be7457dae19cb8abe8ae88e1a7df1dd59307afc474d9d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_augmenter_la_vitesse_de_traitement",
+            "label": "C) Augmenter la vitesse de traitement",
+            "part": "word/document.xml",
+            "paragraph_index": 84,
+            "xpath": "/document/body[1]/p[75]",
+            "template_text_sha256": "eb773bdf13548bc51e65a9d51c5e3cbdf8e467d4f2253d66f299299c26a86d35",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_creer_des_videos_automatiquement",
+            "label": "D) Créer des vidéos automatiquement",
+            "part": "word/document.xml",
+            "paragraph_index": 85,
+            "xpath": "/document/body[1]/p[76]",
+            "template_text_sha256": "e982dacef358e3433d34ce39150b315520dd1bbe5a853dde15c54a393363458d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_recuperer_des_informations_actualisees_d_une_base_de_conna",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Le « RAG » (Retrieval-Augmented Generation) est une technique qui permet à l'IA de :'.",
+      "validation": {
+        "enum": [
+          "a_generer_des_images_a_partir_de_texte",
+          "b_recuperer_des_informations_actualisees_d_une_base_de_conna",
+          "c_augmenter_la_vitesse_de_traitement",
+          "d_creer_des_videos_automatiquement"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_expliquez_la_difference_entre_un_prompt_zero_shot_one_shot_et_few_shot_donnez_u",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_expliquez_la_difference_entre_un_prompt_zero_shot_one_shot_et_few_shot_donnez_u",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 88,
+          "xpath": "/document/body[1]/tbl[5]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Zero-shot : je pose directement ma question. One-shot : je donne un exemple. Few-shot : je donne plusieurs exemples pour guider le style.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Zero-shot : je pose directement ma question. One-shot : je donne un exemple. Few-shot : je donne plusieurs exemples pour' after label 'Question 1 : Expliquez la différence entre un prompt « zero-shot », « one-shot » et « few-shot ». Donnez un exemple conc'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_quelles_sont_les_limites_actuelles_des_llm_que_vous_devez_connaitre_pour_les_ut",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_quelles_sont_les_limites_actuelles_des_llm_que_vous_devez_connaitre_pour_les_ut",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 93,
+          "xpath": "/document/body[1]/tbl[6]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Le risque d'hallucination et le besoin de toujours vérifier les informations avant de les utiliser avec un client.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Le risque d'hallucination et le besoin de toujours vérifier les informations avant de les utiliser avec un client.' after label 'Question 2 : Quelles sont les limites actuelles des LLM que vous devez connaître pour les utiliser de manière responsabl'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_dans_excel_google_sheets_une_formule_predictive_simple_permet_a_un_artisan_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_dans_excel_google_sheets_une_formule_predictive_simple_permet_a_un_artisan_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Dans Excel/Google Sheets, une « formule prédictive simple » permet à un artisan de :",
+        "options": [
+          {
+            "value": "a_calculer_automatiquement_ses_impots",
+            "label": "A) Calculer automatiquement ses impôts",
+            "part": "word/document.xml",
+            "paragraph_index": 106,
+            "xpath": "/document/body[1]/p[89]",
+            "template_text_sha256": "6b882c07e8776a09edc9b8639c1f1c551db0aef75af6a5b50463ca34591a0564",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_projeter_son_ca_futur_a_partir_de_tendances_historiques",
+            "label": "B) Projeter son CA futur à partir de tendances historiques",
+            "part": "word/document.xml",
+            "paragraph_index": 107,
+            "xpath": "/document/body[1]/p[90]",
+            "template_text_sha256": "24512edab2ec0e3ad7a441d4636d4207289f7951e9d5f4938a51f3dfc5753e02",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_commander_automatiquement_les_fournitures",
+            "label": "C) Commander automatiquement les fournitures",
+            "part": "word/document.xml",
+            "paragraph_index": 108,
+            "xpath": "/document/body[1]/p[91]",
+            "template_text_sha256": "25aacb450391522aafb373f080217571c3a473c513a9f0e1ed45faa4dd4d1561",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_generer_des_devis_automatiquement",
+            "label": "D) Générer des devis automatiquement",
+            "part": "word/document.xml",
+            "paragraph_index": 109,
+            "xpath": "/document/body[1]/p[92]",
+            "template_text_sha256": "1d4ea10af262cf5847ac402202c4f97cd9bb246bc5e4251fa679ea883b563840",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_projeter_son_ca_futur_a_partir_de_tendances_historiques",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Dans Excel/Google Sheets, une « formule prédictive simple » permet à un artisan de :'.",
+      "validation": {
+        "enum": [
+          "a_calculer_automatiquement_ses_impots",
+          "b_projeter_son_ca_futur_a_partir_de_tendances_historiques",
+          "c_commander_automatiquement_les_fournitures",
+          "d_generer_des_devis_automatiquement"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_l_analyse_de_la_saisonnalite_dans_les_donnees_d_une_tpe_artisanale_permet_de",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_l_analyse_de_la_saisonnalite_dans_les_donnees_d_une_tpe_artisanale_permet_de",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. L'analyse de la « saisonnalité » dans les données d'une TPE artisanale permet de :",
+        "options": [
+          {
+            "value": "a_prevoir_les_conges_des_employes",
+            "label": "A) Prévoir les congés des employés",
+            "part": "word/document.xml",
+            "paragraph_index": 111,
+            "xpath": "/document/body[1]/p[94]",
+            "template_text_sha256": "fb0a8baecc4b5f7f924d23ab8df347c7c571cd76d22a677f684ffcb897fe96a5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_identifier_les_periodes_de_forte_et_faible_activite_pour_a",
+            "label": "B) Identifier les périodes de forte et faible activité pour ajuster les ressources",
+            "part": "word/document.xml",
+            "paragraph_index": 112,
+            "xpath": "/document/body[1]/p[95]",
+            "template_text_sha256": "ce594fe45e8a9df1c985937c1c81b65dc53e6a085927bc4cf69161e88cc37c61",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_calculer_les_charges_saisonnales",
+            "label": "C) Calculer les charges saisonnales",
+            "part": "word/document.xml",
+            "paragraph_index": 113,
+            "xpath": "/document/body[1]/p[96]",
+            "template_text_sha256": "41383adef3a1d70a35e91a00d5a2918f62071fd2605b2f0f707ddf5e0dc54ae7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_adapter_le_prix_des_prestations_selon_la_meteo",
+            "label": "D) Adapter le prix des prestations selon la météo",
+            "part": "word/document.xml",
+            "paragraph_index": 114,
+            "xpath": "/document/body[1]/p[97]",
+            "template_text_sha256": "11b5bc6c2e30a827bff658a32f7ee316438e0b43fbaf2cd509352a78d2bd7d9b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_identifier_les_periodes_de_forte_et_faible_activite_pour_a",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. L'analyse de la « saisonnalité » dans les données d'une TPE artisanale permet de :'.",
+      "validation": {
+        "enum": [
+          "a_prevoir_les_conges_des_employes",
+          "b_identifier_les_periodes_de_forte_et_faible_activite_pour_a",
+          "c_calculer_les_charges_saisonnales",
+          "d_adapter_le_prix_des_prestations_selon_la_meteo"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_power_bi_tableau_et_google_looker_studio_sont_des_outils_qui_permettent_princip",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_power_bi_tableau_et_google_looker_studio_sont_des_outils_qui_permettent_princip",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Power BI, Tableau et Google Looker Studio sont des outils qui permettent principalement de :",
+        "options": [
+          {
+            "value": "a_coder_des_applications_mobiles",
+            "label": "A) Coder des applications mobiles",
+            "part": "word/document.xml",
+            "paragraph_index": 116,
+            "xpath": "/document/body[1]/p[99]",
+            "template_text_sha256": "6d5972f6359db2b332e114d736a321cd7da656ae70bb206ff94fe60feb53cf3f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_creer_des_tableaux_de_bord_visuels_a_partir_de_donnees_d_e",
+            "label": "B) Créer des tableaux de bord visuels à partir de données d'entreprise",
+            "part": "word/document.xml",
+            "paragraph_index": 117,
+            "xpath": "/document/body[1]/p[100]",
+            "template_text_sha256": "b7b5ef6e1d0ec281c31bb269d10e9b654d2019445863dfceac3f88949fbbc87f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_gerer_la_comptabilite_d_une_tpe",
+            "label": "C) Gérer la comptabilité d'une TPE",
+            "part": "word/document.xml",
+            "paragraph_index": 118,
+            "xpath": "/document/body[1]/p[101]",
+            "template_text_sha256": "03b78d1dbe103fd7717cebbc43d095c7e0479830a20a9867b3321a552dc11676",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_automatiser_les_emails_marketing",
+            "label": "D) Automatiser les emails marketing",
+            "part": "word/document.xml",
+            "paragraph_index": 119,
+            "xpath": "/document/body[1]/p[102]",
+            "template_text_sha256": "2836f07e2888374f0dd69d09cb5702107f2fee906c742ed9644c61319b49ba7e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_creer_des_tableaux_de_bord_visuels_a_partir_de_donnees_d_e",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Power BI, Tableau et Google Looker Studio sont des outils qui permettent principalement de :'.",
+      "validation": {
+        "enum": [
+          "a_coder_des_applications_mobiles",
+          "b_creer_des_tableaux_de_bord_visuels_a_partir_de_donnees_d_e",
+          "c_gerer_la_comptabilite_d_une_tpe",
+          "d_automatiser_les_emails_marketing"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_l_ia_peut_analyser_les_avis_clients_text_mining_pour_identifier",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_l_ia_peut_analyser_les_avis_clients_text_mining_pour_identifier",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. L'IA peut analyser les avis clients (text mining) pour identifier :",
+        "options": [
+          {
+            "value": "a_le_chiffre_d_affaires_genere_par_chaque_client",
+            "label": "A) Le chiffre d'affaires généré par chaque client",
+            "part": "word/document.xml",
+            "paragraph_index": 121,
+            "xpath": "/document/body[1]/p[104]",
+            "template_text_sha256": "8d4def0df8e71e535465a6fdfae4cd2e0e6d38b377bf818df176e5b2162ed43d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_les_themes_recurrents_de_satisfaction_et_les_problemes_les",
+            "label": "B) Les thèmes récurrents de satisfaction et les problèmes les plus souvent mentionnés",
+            "part": "word/document.xml",
+            "paragraph_index": 122,
+            "xpath": "/document/body[1]/p[105]",
+            "template_text_sha256": "785cd57592afedfa5158da7bf82ae092a978daa691bd587e107aa1c900720d2b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_les_meilleurs_moments_pour_appeler_les_clients",
+            "label": "C) Les meilleurs moments pour appeler les clients",
+            "part": "word/document.xml",
+            "paragraph_index": 123,
+            "xpath": "/document/body[1]/p[106]",
+            "template_text_sha256": "f4226cda458f862198eaa062cbf06ffa31f9072d41b86301831762bcce59a394",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_les_clients_les_plus_susceptibles_de_partir",
+            "label": "D) Les clients les plus susceptibles de partir",
+            "part": "word/document.xml",
+            "paragraph_index": 124,
+            "xpath": "/document/body[1]/p[107]",
+            "template_text_sha256": "f93258af9c0b951df53053d5f89503370d167a794293032a0628037ace380197",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_les_themes_recurrents_de_satisfaction_et_les_problemes_les",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. L'IA peut analyser les avis clients (text mining) pour identifier :'.",
+      "validation": {
+        "enum": [
+          "a_le_chiffre_d_affaires_genere_par_chaque_client",
+          "b_les_themes_recurrents_de_satisfaction_et_les_problemes_les",
+          "c_les_meilleurs_moments_pour_appeler_les_clients",
+          "d_les_clients_les_plus_susceptibles_de_partir"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_qu_est_ce_qu_un_kpi_key_performance_indicator",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_qu_est_ce_qu_un_kpi_key_performance_indicator",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Qu'est-ce qu'un KPI (Key Performance Indicator) ?",
+        "options": [
+          {
+            "value": "a_un_logiciel_de_gestion_de_projet",
+            "label": "A) Un logiciel de gestion de projet",
+            "part": "word/document.xml",
+            "paragraph_index": 126,
+            "xpath": "/document/body[1]/p[109]",
+            "template_text_sha256": "64d617e842e17cdef849fd58af298239b05750aba4f275e6982a94bca05f1fe4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_un_indicateur_cle_permettant_de_mesurer_la_performance_d_u",
+            "label": "B) Un indicateur clé permettant de mesurer la performance d'un aspect spécifique de l'activité",
+            "part": "word/document.xml",
+            "paragraph_index": 127,
+            "xpath": "/document/body[1]/p[110]",
+            "template_text_sha256": "f89935494fc67124228570c19c89514849d4dfe302e69de056c58a262dc22870",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_un_type_de_rapport_comptable_annuel",
+            "label": "C) Un type de rapport comptable annuel",
+            "part": "word/document.xml",
+            "paragraph_index": 128,
+            "xpath": "/document/body[1]/p[111]",
+            "template_text_sha256": "902f79769b8d740e62b38f4733d611d006c40d3497c132e4b872afea269d44dd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_un_protocole_de_securite_informatique",
+            "label": "D) Un protocole de sécurité informatique",
+            "part": "word/document.xml",
+            "paragraph_index": 129,
+            "xpath": "/document/body[1]/p[112]",
+            "template_text_sha256": "204b2048a7e911c46e02cda39c4f28116f8a23220b6d2673179d9e0c668805c6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_un_indicateur_cle_permettant_de_mesurer_la_performance_d_u",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Qu'est-ce qu'un KPI (Key Performance Indicator) ?'.",
+      "validation": {
+        "enum": [
+          "a_un_logiciel_de_gestion_de_projet",
+          "b_un_indicateur_cle_permettant_de_mesurer_la_performance_d_u",
+          "c_un_type_de_rapport_comptable_annuel",
+          "d_un_protocole_de_securite_informatique"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_quels_sont_les_5_kpis_les_plus_importants_que_vous_devriez_suivre_chaque_mois_p",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_quels_sont_les_5_kpis_les_plus_importants_que_vous_devriez_suivre_chaque_mois_p",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 132,
+          "xpath": "/document/body[1]/tbl[8]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "CA mensuel, marge, nombre de devis signés, délai de paiement, taux de satisfaction ; calculés via mon tableur de facturation.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'CA mensuel, marge, nombre de devis signés, délai de paiement, taux de satisfaction ; calculés via mon tableur de factura' after label 'Question 1 : Quels sont les 5 KPIs les plus importants que vous devriez suivre chaque mois pour piloter votre TPE ? Expl'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_comment_utiliseriez_vous_l_ia_pour_analyser_2_ans_de_donnees_de_facturation_et",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_comment_utiliseriez_vous_l_ia_pour_analyser_2_ans_de_donnees_de_facturation_et",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 137,
+          "xpath": "/document/body[1]/tbl[9]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Je croiserais mes données de facturation avec les saisons pour anticiper mes périodes creuses et adapter mes promotions.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Je croiserais mes données de facturation avec les saisons pour anticiper mes périodes creuses et adapter mes promotions.' after label 'Question 2 : Comment utiliseriez-vous l'IA pour analyser 2 ans de données de facturation et en tirer des insights action'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_un_workflow_automatise_sans_code_no_code_se_distingue_de_la_programmation_class",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_un_workflow_automatise_sans_code_no_code_se_distingue_de_la_programmation_class",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 1. Un « workflow automatisé » sans code (no-code) se distingue de la programmation classique car :",
+        "options": [
+          {
+            "value": "a_il_est_moins_performant",
+            "label": "A) Il est moins performant",
+            "part": "word/document.xml",
+            "paragraph_index": 150,
+            "xpath": "/document/body[1]/p[125]",
+            "template_text_sha256": "77b80ea1919f616ee07cd28df23e665224077eaabd1d84dd31ec183cd0544d86",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_il_permet_de_creer_des_automatisations_par_interfaces_visu",
+            "label": "B) Il permet de créer des automatisations par interfaces visuelles sans écrire de code",
+            "part": "word/document.xml",
+            "paragraph_index": 151,
+            "xpath": "/document/body[1]/p[126]",
+            "template_text_sha256": "99af8ef783bdea1ca1f7df8d13619b04323d6830f034e3d0a03f082ce032b424",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_il_est_reserve_aux_professionnels_de_l_informatique",
+            "label": "C) Il est réservé aux professionnels de l'informatique",
+            "part": "word/document.xml",
+            "paragraph_index": 152,
+            "xpath": "/document/body[1]/p[127]",
+            "template_text_sha256": "ad2a3f97eb6d30990efb81884af43e29659e53c00df65809d287e7fcd32064d2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_il_necessite_un_abonnement_tres_couteux",
+            "label": "D) Il nécessite un abonnement très coûteux",
+            "part": "word/document.xml",
+            "paragraph_index": 153,
+            "xpath": "/document/body[1]/p[128]",
+            "template_text_sha256": "d9222b1c68153790483cfe499d5a9c5e2aedbb84c7cea77b184d6c0d8180b8c9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_il_permet_de_creer_des_automatisations_par_interfaces_visu",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 1. Un « workflow automatisé » sans code (no-code) se distingue de la programmation classique car :'.",
+      "validation": {
+        "enum": [
+          "a_il_est_moins_performant",
+          "b_il_permet_de_creer_des_automatisations_par_interfaces_visu",
+          "c_il_est_reserve_aux_professionnels_de_l_informatique",
+          "d_il_necessite_un_abonnement_tres_couteux"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_dans_make_integromat_un_module_est",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_dans_make_integromat_un_module_est",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 2. Dans Make (Integromat), un « module » est :",
+        "options": [
+          {
+            "value": "a_un_document_word_integre_dans_make",
+            "label": "A) Un document Word intégré dans Make",
+            "part": "word/document.xml",
+            "paragraph_index": 155,
+            "xpath": "/document/body[1]/p[130]",
+            "template_text_sha256": "acec4a5d362e9e1b93c7c2d50a199800fbd4a80187718839ef377757edfd1887",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_une_etape_dans_le_workflow_qui_execute_une_action_specifiq",
+            "label": "B) Une étape dans le workflow qui exécute une action spécifique (envoyer email, créer fichier, notifier…)",
+            "part": "word/document.xml",
+            "paragraph_index": 156,
+            "xpath": "/document/body[1]/p[131]",
+            "template_text_sha256": "b8a2c697bc5a5de48d91d535ab505c9251414294e46c1cf6bad970abb73823aa",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_un_employe_virtuel",
+            "label": "C) Un employé virtuel",
+            "part": "word/document.xml",
+            "paragraph_index": 157,
+            "xpath": "/document/body[1]/p[132]",
+            "template_text_sha256": "737ca380e32a81c35c6c0ddd265255326b69f68c8075a634020dd51105326ecd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_un_rapport_automatique",
+            "label": "D) Un rapport automatique",
+            "part": "word/document.xml",
+            "paragraph_index": 158,
+            "xpath": "/document/body[1]/p[133]",
+            "template_text_sha256": "3a9406767aee86f56cbfc2c66f1b48f79753dbb3171b4d6d4bff165d2dad4ecb",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_une_etape_dans_le_workflow_qui_execute_une_action_specifiq",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 2. Dans Make (Integromat), un « module » est :'.",
+      "validation": {
+        "enum": [
+          "a_un_document_word_integre_dans_make",
+          "b_une_etape_dans_le_workflow_qui_execute_une_action_specifiq",
+          "c_un_employe_virtuel",
+          "d_un_rapport_automatique"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_3_un_chatbot_avec_base_de_connaissances_est_capable_de_repondre_a_des_questions",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_3_un_chatbot_avec_base_de_connaissances_est_capable_de_repondre_a_des_questions",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 3. Un chatbot « avec base de connaissances » est capable de répondre à des questions :",
+        "options": [
+          {
+            "value": "a_sur_tous_les_sujets_du_monde",
+            "label": "A) Sur tous les sujets du monde",
+            "part": "word/document.xml",
+            "paragraph_index": 160,
+            "xpath": "/document/body[1]/p[135]",
+            "template_text_sha256": "5fd98c1202512e199667cd5406a277142ab6e2b67df3557e37bbf49bb7c7c180",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_uniquement_sur_les_sujets_que_vous_lui_avez_fournis_dans_s",
+            "label": "B) Uniquement sur les sujets que vous lui avez fournis dans sa base de connaissances",
+            "part": "word/document.xml",
+            "paragraph_index": 161,
+            "xpath": "/document/body[1]/p[136]",
+            "template_text_sha256": "f3c0983d8aee0f3aabd498c3f121917d526a499d3dda8bbbd22a862185151595",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_seulement_en_anglais",
+            "label": "C) Seulement en anglais",
+            "part": "word/document.xml",
+            "paragraph_index": 162,
+            "xpath": "/document/body[1]/p[137]",
+            "template_text_sha256": "48dd12803032f6f96fd1f8853a3e3c0ea5f4c8e06f93063befb43d3a620186c9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_uniquement_par_email",
+            "label": "D) Uniquement par email",
+            "part": "word/document.xml",
+            "paragraph_index": 163,
+            "xpath": "/document/body[1]/p[138]",
+            "template_text_sha256": "c81b95a4714cd6fbe45d4215745e4a0d4c8c665978437a3c3774c004f5acb503",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_uniquement_sur_les_sujets_que_vous_lui_avez_fournis_dans_s",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 3. Un chatbot « avec base de connaissances » est capable de répondre à des questions :'.",
+      "validation": {
+        "enum": [
+          "a_sur_tous_les_sujets_du_monde",
+          "b_uniquement_sur_les_sujets_que_vous_lui_avez_fournis_dans_s",
+          "c_seulement_en_anglais",
+          "d_uniquement_par_email"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_4_le_webhook_dans_une_automatisation_make_est",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_4_le_webhook_dans_une_automatisation_make_est",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 4. Le « webhook » dans une automatisation Make est :",
+        "options": [
+          {
+            "value": "a_un_module_de_securite_des_donnees",
+            "label": "A) Un module de sécurité des données",
+            "part": "word/document.xml",
+            "paragraph_index": 165,
+            "xpath": "/document/body[1]/p[140]",
+            "template_text_sha256": "fcd912b5caac6bc7ef1a6272c21f9e3dd6639d5542a52c23d49549ae50126886",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_une_url_qui_permet_de_declencher_un_scenario_make_quand_un",
+            "label": "B) Une URL qui permet de déclencher un scénario Make quand un événement extérieur se produit",
+            "part": "word/document.xml",
+            "paragraph_index": 166,
+            "xpath": "/document/body[1]/p[141]",
+            "template_text_sha256": "5f4ad961783524270e9c415179ac3f2cef44879eb72b30449e6504b63aea38a3",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_un_outil_de_creation_de_formulaire",
+            "label": "C) Un outil de création de formulaire",
+            "part": "word/document.xml",
+            "paragraph_index": 167,
+            "xpath": "/document/body[1]/p[142]",
+            "template_text_sha256": "6faee9b2887f635aac14cd2af85b34c2542304425b3e8c9ce72b56c7db1b8d23",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_un_tableau_de_bord_de_reporting",
+            "label": "D) Un tableau de bord de reporting",
+            "part": "word/document.xml",
+            "paragraph_index": 168,
+            "xpath": "/document/body[1]/p[143]",
+            "template_text_sha256": "e64fb16c22be1037aab30b09ee1b5ad26b22df6c5873538241ca270967508c15",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_une_url_qui_permet_de_declencher_un_scenario_make_quand_un",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 4. Le « webhook » dans une automatisation Make est :'.",
+      "validation": {
+        "enum": [
+          "a_un_module_de_securite_des_donnees",
+          "b_une_url_qui_permet_de_declencher_un_scenario_make_quand_un",
+          "c_un_outil_de_creation_de_formulaire",
+          "d_un_tableau_de_bord_de_reporting"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_5_parmi_ces_exemples_lequel_est_une_automatisation_utile_et_realiste_pour_une_tpe",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_5_parmi_ces_exemples_lequel_est_une_automatisation_utile_et_realiste_pour_une_tpe",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Question 5. Parmi ces exemples, lequel est une automatisation utile et réaliste pour une TPE artisanale ?",
+        "options": [
+          {
+            "value": "a_automatiser_la_realisation_des_chantiers_par_des_robots",
+            "label": "A) Automatiser la réalisation des chantiers par des robots",
+            "part": "word/document.xml",
+            "paragraph_index": 170,
+            "xpath": "/document/body[1]/p[145]",
+            "template_text_sha256": "6b2a15ed3d80e4e843f64f3ac07d9aa763935fe9b08d7917f3e6732c992d26e1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_quand_un_formulaire_de_contact_est_soumis_envoyer_automati",
+            "label": "B) Quand un formulaire de contact est soumis, envoyer automatiquement un email de confirmation et notifier sur Telegram",
+            "part": "word/document.xml",
+            "paragraph_index": 171,
+            "xpath": "/document/body[1]/p[146]",
+            "template_text_sha256": "883e6effbcc2cc7f6e97867fb33c064bd285da76c68ca83e4d1078a1b5d2b2a5",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_automatiser_la_comptabilite_sans_expert_comptable",
+            "label": "C) Automatiser la comptabilité sans expert-comptable",
+            "part": "word/document.xml",
+            "paragraph_index": 172,
+            "xpath": "/document/body[1]/p[147]",
+            "template_text_sha256": "f84ef6d90c217c3e495f0c4882009d5c7b015b8e4c080f255cff413fc85643d2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_automatiser_la_gestion_des_employes",
+            "label": "D) Automatiser la gestion des employés",
+            "part": "word/document.xml",
+            "paragraph_index": 173,
+            "xpath": "/document/body[1]/p[148]",
+            "template_text_sha256": "0953c27302da5684fd408a156e38151d8d70e0d27d9d8cfffbd8f5a49015fcd9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_quand_un_formulaire_de_contact_est_soumis_envoyer_automati",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Question 5. Parmi ces exemples, lequel est une automatisation utile et réaliste pour une TPE artisanale ?'.",
+      "validation": {
+        "enum": [
+          "a_automatiser_la_realisation_des_chantiers_par_des_robots",
+          "b_quand_un_formulaire_de_contact_est_soumis_envoyer_automati",
+          "c_automatiser_la_comptabilite_sans_expert_comptable",
+          "d_automatiser_la_gestion_des_employes"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_1_identifiez_3_processus_de_votre_activite_qui_pourraient_beneficier_d_une_automa",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_1_identifiez_3_processus_de_votre_activite_qui_pourraient_beneficier_d_une_automa",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 176,
+          "xpath": "/document/body[1]/tbl[11]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "1) Confirmation de RDV automatique. 2) Relance de devis non signés. 3) Réponse aux avis Google.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains '1) Confirmation de RDV automatique. 2) Relance de devis non signés. 3) Réponse aux avis Google.' after label 'Question 1 : Identifiez 3 processus de votre activité qui pourraient bénéficier d'une automatisation avec un outil type '.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.evaluation_intermediaire.question_2_quels_sont_les_risques_de_l_over_automation_trop_automatiser_pour_une_tpe_de_se",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.evaluation.answers.evaluation_intermediaire.question_2_quels_sont_les_risques_de_l_over_automation_trop_automatiser_pour_une_tpe_de_se",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 181,
+          "xpath": "/document/body[1]/tbl[12]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": false,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Le risque de perdre le contact humain sur les échanges sensibles ; je garde toujours une supervision manuelle.",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Le risque de perdre le contact humain sur les échanges sensibles ; je garde toujours une supervision manuelle.' after label 'Question 2 : Quels sont les risques de l'over-automation (trop automatiser) pour une TPE de services ? Comment éviter de'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 2,
+      "xpath": "/document/body[1]/p[3]",
+      "blank_content": "Cas d'évaluation (exemple) — Document vierge",
+      "filled_content": "Cas d'évaluation (exemple)",
+      "reason": "Unsafe non-slot text change (similarity 0.74); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/tbl[1]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 57,
+      "xpath": "/document/body[1]/tbl[4]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 101,
+      "xpath": "/document/body[1]/tbl[7]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 145,
+      "xpath": "/document/body[1]/tbl[10]/tr[1]/tc[1]/p[1]",
+      "blank_content": "Stagiaire : ______________________________",
+      "filled_content": "Stagiaire : Camille Bertrand",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "5 structural/text difference(s) require review; see mapping evidence and placeholder discovery report."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 29,
+    "confirmed_field_count": 29,
+    "concrete_target_count": 29,
+    "evidence_count": 29,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 5,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "5 unresolved source/template difference(s) remain."
+    ]
+  }
+}

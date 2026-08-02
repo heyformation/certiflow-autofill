@@ -6,7 +6,22 @@ import { CandidateRow, CandidateEvaluationResult } from './types';
 import { getJuryRules } from './jury-rules';
 import { getDeterministicProduction, getDeterministicQuestionResponse } from './ai-fill-planner';
 
-const TEMPLATES_ROOT = 'F:\\Office\\Input -output\\CertiFlow_Verified_Document_Templates_v1';
+// Templates root resolution — works on Vercel (Linux) and Windows local dev:
+// 1. Bundled inside the repo at ./templates/ (committed to git, works everywhere)
+// 2. CERTIFLOW_TEMPLATES_ROOT env var (optional override)
+// 3. Hardcoded Windows path fallback (local dev only)
+function resolveTemplatesRoot(): string {
+  const bundled = path.resolve(process.cwd(), 'templates');
+  if (fs.existsSync(path.join(bundled, 'reports', 'complete-document-status.json'))) {
+    return bundled;
+  }
+  if (process.env.CERTIFLOW_TEMPLATES_ROOT) {
+    return path.resolve(process.env.CERTIFLOW_TEMPLATES_ROOT);
+  }
+  return path.resolve('F:\\Office\\Input -output\\CertiFlow_Verified_Document_Templates_v1');
+}
+const TEMPLATES_ROOT = resolveTemplatesRoot();
+
 
 export interface TemplateMappingField {
   semantic_field: string;
@@ -465,9 +480,20 @@ export function getAvailableTemplates(
   organization: string,
   certification: string
 ): AvailableTemplate[] {
-  const statusFile = path.join(TEMPLATES_ROOT, 'reports', 'complete-document-status.json');
+  const reportsDir = path.resolve(TEMPLATES_ROOT, 'reports');
+  const statusFile = path.resolve(reportsDir, 'complete-document-status.json');
+
   if (!fs.existsSync(statusFile)) {
-    throw new Error(`complete-document-status.json not found at ${statusFile}`);
+    const available = fs.existsSync(reportsDir)
+      ? fs.readdirSync(reportsDir).join(', ')
+      : '(reports dir not found)';
+    throw new Error(
+      `complete-document-status.json not found.\n` +
+      `  Looked at: ${statusFile}\n` +
+      `  TEMPLATES_ROOT: ${TEMPLATES_ROOT}\n` +
+      `  Available in reports/: ${available}\n` +
+      `  Tip: set CERTIFLOW_TEMPLATES_ROOT in .env.local`
+    );
   }
 
   const list = JSON.parse(fs.readFileSync(statusFile, 'utf-8')) as Array<Record<string, any>>;

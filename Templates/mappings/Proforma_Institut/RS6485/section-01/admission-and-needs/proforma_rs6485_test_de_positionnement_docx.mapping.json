@@ -1,0 +1,1415 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs6485_test_de_positionnement_docx",
+  "template_path": "final-templates/Proforma_Institut/RS6485/section-01/admission-and-needs/Test de Positionnement - RS6485 - Proforma Institut - Template.docx",
+  "template_hash": "4b254a3bbd7c464991337da19b4aef06f359ef9a9418d210d6ae4e805b7c71f8",
+  "source_original_path": "Proforma Institut/RS6485 - Comptabilité TPE/Test de Positionnement - RS6485 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS6485",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "admission-and-needs",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS6485 - Comptabilité TPE/Test de Positionnement - RS6485 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS6485 - Comptabilité TPE/Test de Positionnement - RS6485 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9954,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "SANCHEZ Fabrice"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "candidate.identity.full_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.identity.full_name",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 5,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "SANCHEZ Fabrice",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'SANCHEZ Fabrice' after label 'Nom et Prénom *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.1_la_comptabilite_d_une_tpe_sert_principalement_a_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.1_la_comptabilite_d_une_tpe_sert_principalement_a_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "1. La comptabilité d'une TPE sert principalement à : *  1 point",
+        "options": [
+          {
+            "value": "a_calculer_uniquement_les_impots",
+            "label": "A. Calculer uniquement les impôts",
+            "part": "word/document.xml",
+            "paragraph_index": 9,
+            "xpath": "/document/body[1]/p[8]",
+            "template_text_sha256": "3d45c72ee3c9a216b3922f320081f6e3ee97263f1608ae835fb6c09b3359180d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_suivre_la_situation_financiere_et_respecter_les_obligation",
+            "label": "B. Suivre la situation financière et respecter les obligations légales",
+            "part": "word/document.xml",
+            "paragraph_index": 10,
+            "xpath": "/document/body[1]/p[9]",
+            "template_text_sha256": "a65fc2f9abbbb7d0e6a1b6541da0ae08690cac8f8450d243c8dc5788dd0d83a2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_fixer_les_prix_de_vente",
+            "label": "C. Fixer les prix de vente",
+            "part": "word/document.xml",
+            "paragraph_index": 11,
+            "xpath": "/document/body[1]/p[10]",
+            "template_text_sha256": "2c718f7a346ac51cb8bb2d3f7da345042383f64db4c19b6da724ea3694f6dc2e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_gerer_les_stocks",
+            "label": "D. Gérer les stocks",
+            "part": "word/document.xml",
+            "paragraph_index": 12,
+            "xpath": "/document/body[1]/p[11]",
+            "template_text_sha256": "ec44cc12fdb086e4b48d4c6453e552f219fae0573750567f14dd8e50cbac5e2f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_suivre_la_situation_financiere_et_respecter_les_obligation",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '1. La comptabilité d'une TPE sert principalement à : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_calculer_uniquement_les_impots",
+          "b_suivre_la_situation_financiere_et_respecter_les_obligation",
+          "c_fixer_les_prix_de_vente",
+          "d_gerer_les_stocks"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.2_le_document_qui_presente_la_situation_financiere_de_l_entreprise_a_une_date_donnee_est_1",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.2_le_document_qui_presente_la_situation_financiere_de_l_entreprise_a_une_date_donnee_est_1",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "2. Le document qui présente la situation financière de l'entreprise à une date donnée est : *  1 point",
+        "options": [
+          {
+            "value": "a_le_compte_de_resultat",
+            "label": "A. Le compte de résultat",
+            "part": "word/document.xml",
+            "paragraph_index": 14,
+            "xpath": "/document/body[1]/p[13]",
+            "template_text_sha256": "80303c846f1384f230a0cb043092d57c01ec3841d0e1c4ed8183217d23326908",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_le_plan_de_tresorerie",
+            "label": "B. Le plan de trésorerie",
+            "part": "word/document.xml",
+            "paragraph_index": 15,
+            "xpath": "/document/body[1]/p[14]",
+            "template_text_sha256": "a265c063f17451e74eb371a0e96fd606472e82ca8bb8c65defb0c65df9d21e83",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_bilan",
+            "label": "C. Le bilan",
+            "part": "word/document.xml",
+            "paragraph_index": 16,
+            "xpath": "/document/body[1]/p[15]",
+            "template_text_sha256": "704a5312d61cefcbb72f84f28d668bd0e3c4937372ef7ac1e43475fb09b916d8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_journal_comptable",
+            "label": "D. Le journal comptable",
+            "part": "word/document.xml",
+            "paragraph_index": 17,
+            "xpath": "/document/body[1]/p[16]",
+            "template_text_sha256": "ba6e1c03ec2c9bee8e1f4b7838c491f3056e4489f09ad1dc2bb85385eabb916e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_le_plan_de_tresorerie",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '2. Le document qui présente la situation financière de l'entreprise à une date donnée est : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_le_compte_de_resultat",
+          "b_le_plan_de_tresorerie",
+          "c_le_bilan",
+          "d_le_journal_comptable"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.3_le_compte_de_resultat_permet_de_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.3_le_compte_de_resultat_permet_de_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "3. Le compte de résultat permet de : *  1 point",
+        "options": [
+          {
+            "value": "a_mesurer_le_benefice_ou_la_perte_sur_une_periode",
+            "label": "A. Mesurer le bénéfice ou la perte sur une période",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "87176a1e623d855d2a80b8bd0f0a59c6e1ad9e282978605231d1c04ed3858f2d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_connaitre_le_solde_bancaire",
+            "label": "B. Connaître le solde bancaire",
+            "part": "word/document.xml",
+            "paragraph_index": 20,
+            "xpath": "/document/body[1]/p[19]",
+            "template_text_sha256": "5bd942a4466b3823b542efca2985610ee5224fd7b11e643c257960cc0b52b2d4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_lister_les_dettes",
+            "label": "C. Lister les dettes",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "8e1e7a416568203f43c2c8a29d6c7e88d183ea41e5a9033393b58d3557d0bd1c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_identifier_les_immobilisations",
+            "label": "D. Identifier les immobilisations",
+            "part": "word/document.xml",
+            "paragraph_index": 22,
+            "xpath": "/document/body[1]/p[21]",
+            "template_text_sha256": "9dd7a6411370e19858b86b9849a41cac01c9cf3f83a9cb3b20591e3ba47780d6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_lister_les_dettes",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '3. Le compte de résultat permet de : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_mesurer_le_benefice_ou_la_perte_sur_une_periode",
+          "b_connaitre_le_solde_bancaire",
+          "c_lister_les_dettes",
+          "d_identifier_les_immobilisations"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.4_le_plan_comptable_sert_a_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.4_le_plan_comptable_sert_a_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "4. Le plan comptable sert à : *  1 point",
+        "options": [
+          {
+            "value": "a_editer_les_factures",
+            "label": "A. Éditer les factures",
+            "part": "word/document.xml",
+            "paragraph_index": 24,
+            "xpath": "/document/body[1]/p[23]",
+            "template_text_sha256": "e52b0c6efa50d30d6371262d1245c6ed2e981a996c91bda618bee0421eca50a0",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_classer_les_operations_dans_des_comptes_normalises",
+            "label": "B. Classer les opérations dans des comptes normalisés",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "194940c2a887ee47622d578e0656f785f8702f88fa0e8cf87a8cee3d0ea6736a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_declarer_la_tva",
+            "label": "C. Déclarer la TVA",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "be4dc22394d0e31b5d8de0e936d96b5c08a0902c82f477da1fbeced7ca2afd2a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_gerer_les_salaires",
+            "label": "D. Gérer les salaires",
+            "part": "word/document.xml",
+            "paragraph_index": 27,
+            "xpath": "/document/body[1]/p[26]",
+            "template_text_sha256": "c4749b35f93ebb2659a44dcf06b16f1ce36c228c223fe9527ae869cab1eb41e2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "d_gerer_les_salaires",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '4. Le plan comptable sert à : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_editer_les_factures",
+          "b_classer_les_operations_dans_des_comptes_normalises",
+          "c_declarer_la_tva",
+          "d_gerer_les_salaires"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.5_dans_un_bilan_l_actif_correspond_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.5_dans_un_bilan_l_actif_correspond_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "5. Dans un bilan, l'actif correspond : *  1 point",
+        "options": [
+          {
+            "value": "a_aux_dettes_de_l_entreprise",
+            "label": "A. Aux dettes de l'entreprise",
+            "part": "word/document.xml",
+            "paragraph_index": 30,
+            "xpath": "/document/body[1]/p[29]",
+            "template_text_sha256": "8f5e76323e44c0737bd009b34a92e9c18ee6e1c4d572b55bb2e6c74d26b3de16",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_aux_ressources_financieres",
+            "label": "B. Aux ressources financières",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "9a4853ce6a42fda04ea74e70c2791557c8d8e37af86a0aea3e774790d36278fa",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_a_ce_que_possede_l_entreprise",
+            "label": "C. À ce que possède l'entreprise",
+            "part": "word/document.xml",
+            "paragraph_index": 32,
+            "xpath": "/document/body[1]/p[31]",
+            "template_text_sha256": "06b3d948addac6553d24864b5c72f4131ab2bfa8dcea33a9be8399b476fabd9d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_aux_charges_de_l_annee",
+            "label": "D. Aux charges de l'année",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "0716b790adc7d04be61d8edc3d81a6b946ebcb5efc0124f74a43126321796d56",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_aux_dettes_de_l_entreprise",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '5. Dans un bilan, l'actif correspond : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_aux_dettes_de_l_entreprise",
+          "b_aux_ressources_financieres",
+          "c_a_ce_que_possede_l_entreprise",
+          "d_aux_charges_de_l_annee"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.6_les_dettes_fournisseurs_figurent_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.6_les_dettes_fournisseurs_figurent_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "6. Les dettes fournisseurs figurent : *  1 point",
+        "options": [
+          {
+            "value": "a_a_l_actif",
+            "label": "A. À l'actif",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[34]",
+            "template_text_sha256": "3ed1d3a2ad2b5b6eea7388814ec1eef6fc30d81f4983a230d94085f24ca61e1c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_au_passif",
+            "label": "B. Au passif",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "2314af2665ce94dc992046287b162c2acd97ac771ef2ca19078f1efc336431c2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_dans_le_compte_de_resultat",
+            "label": "C. Dans le compte de résultat",
+            "part": "word/document.xml",
+            "paragraph_index": 37,
+            "xpath": "/document/body[1]/p[36]",
+            "template_text_sha256": "2b8d596c8ee181ac1121f7fec345abd95d5b7d4129bec003f4c9471a4ffbcb18",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_dans_la_tresorerie",
+            "label": "D. Dans la trésorerie",
+            "part": "word/document.xml",
+            "paragraph_index": 38,
+            "xpath": "/document/body[1]/p[37]",
+            "template_text_sha256": "a9f1d86e9a12c5ff0a6833822ed344417332ad0751036a785b8935e125e103e9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_au_passif",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '6. Les dettes fournisseurs figurent : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_a_l_actif",
+          "b_au_passif",
+          "c_dans_le_compte_de_resultat",
+          "d_dans_la_tresorerie"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.7_la_tresorerie_correspond_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.7_la_tresorerie_correspond_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "7. La trésorerie correspond : *  1 point",
+        "options": [
+          {
+            "value": "a_au_chiffre_d_affaires",
+            "label": "A. Au chiffre d'affaires",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "eeca64ecfb8854aa71bd6371155efe1e17d182a48f07a93c6543183150487c0f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_aux_benefices",
+            "label": "B. Aux bénéfices",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "928556e76c8964d02fa2f9dcec2d8a10c5d8f792d401282ef38c33c293701781",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_a_l_argent_disponible_sur_les_comptes",
+            "label": "C. À l'argent disponible sur les comptes",
+            "part": "word/document.xml",
+            "paragraph_index": 42,
+            "xpath": "/document/body[1]/p[41]",
+            "template_text_sha256": "74b4217174663b6d94224f0b0613fe26d8fe82fe62d3428a8900bf24378aa3f4",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_aux_immobilisations",
+            "label": "D. Aux immobilisations",
+            "part": "word/document.xml",
+            "paragraph_index": 43,
+            "xpath": "/document/body[1]/p[42]",
+            "template_text_sha256": "20e8f4c8c9bb37b5201525ee6555db5d59b6e719c7e88c5519ccb9d410306332",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_aux_benefices",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '7. La trésorerie correspond : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_au_chiffre_d_affaires",
+          "b_aux_benefices",
+          "c_a_l_argent_disponible_sur_les_comptes",
+          "d_aux_immobilisations"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.8_le_plan_de_tresorerie_sert_a_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.8_le_plan_de_tresorerie_sert_a_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "8. Le plan de trésorerie sert à : *  1 point",
+        "options": [
+          {
+            "value": "a_etablir_les_factures",
+            "label": "A. Établir les factures",
+            "part": "word/document.xml",
+            "paragraph_index": 45,
+            "xpath": "/document/body[1]/p[44]",
+            "template_text_sha256": "35b1cec03b304115d801714a03504d28be0335703475d895e753f0f1446c30ac",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_anticiper_les_encaissements_et_decaissements",
+            "label": "B. Anticiper les encaissements et décaissements",
+            "part": "word/document.xml",
+            "paragraph_index": 46,
+            "xpath": "/document/body[1]/p[45]",
+            "template_text_sha256": "b240fd528c76f310d5bd67170a1eff8ecac673995b12791f58b2f5dd15ca3a88",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_calculer_les_charges_sociales",
+            "label": "C. Calculer les charges sociales",
+            "part": "word/document.xml",
+            "paragraph_index": 47,
+            "xpath": "/document/body[1]/p[46]",
+            "template_text_sha256": "3c6e70fec59505484c6c472b67fcc8f9339d5644ca0af98a44a8ddadd956c012",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_declarer_la_tva",
+            "label": "D. Déclarer la TVA",
+            "part": "word/document.xml",
+            "paragraph_index": 48,
+            "xpath": "/document/body[1]/p[47]",
+            "template_text_sha256": "7b92af1347e8cb792982f6f0f538babd19833f54fa91403caf5680d33276a6c6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_calculer_les_charges_sociales",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '8. Le plan de trésorerie sert à : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_etablir_les_factures",
+          "b_anticiper_les_encaissements_et_decaissements",
+          "c_calculer_les_charges_sociales",
+          "d_declarer_la_tva"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.9_la_tva_collectee_correspond_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.9_la_tva_collectee_correspond_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "9. La TVA collectée correspond : *  1 point",
+        "options": [
+          {
+            "value": "a_a_la_tva_payee_aux_fournisseurs",
+            "label": "A. À la TVA payée aux fournisseurs",
+            "part": "word/document.xml",
+            "paragraph_index": 51,
+            "xpath": "/document/body[1]/p[50]",
+            "template_text_sha256": "e5b6c47dc8e743279ddafba4e849e6b976fdbdc04ec7eb0bdc55bceeef2e1d05",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_a_la_tva_facturee_aux_clients",
+            "label": "B. À la TVA facturée aux clients",
+            "part": "word/document.xml",
+            "paragraph_index": 52,
+            "xpath": "/document/body[1]/p[51]",
+            "template_text_sha256": "257eea5e4ee0435a4fd69fb6164048369e27e59c33fc19c3482098fd963f3948",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_a_la_tva_non_recuperable",
+            "label": "C. À la TVA non récupérable",
+            "part": "word/document.xml",
+            "paragraph_index": 53,
+            "xpath": "/document/body[1]/p[52]",
+            "template_text_sha256": "e4534ed82d51adaa9fce1c11cf8b8859bc13b1c938ad2b23a3313ec94e27e1c1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_a_une_charge_definitive",
+            "label": "D. À une charge définitive",
+            "part": "word/document.xml",
+            "paragraph_index": 54,
+            "xpath": "/document/body[1]/p[53]",
+            "template_text_sha256": "aaf893a0a671bb9da50e23a6f05291df4da4b45cb18e9e1c28bbb78b516bb720",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_a_la_tva_payee_aux_fournisseurs",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '9. La TVA collectée correspond : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_a_la_tva_payee_aux_fournisseurs",
+          "b_a_la_tva_facturee_aux_clients",
+          "c_a_la_tva_non_recuperable",
+          "d_a_une_charge_definitive"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.10_la_tva_deductible_est_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.10_la_tva_deductible_est_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "10. La TVA déductible est : *  1 point",
+        "options": [
+          {
+            "value": "a_la_tva_sur_les_ventes",
+            "label": "A. La TVA sur les ventes",
+            "part": "word/document.xml",
+            "paragraph_index": 56,
+            "xpath": "/document/body[1]/p[55]",
+            "template_text_sha256": "29f2887a4336676cdbde1ff31b653942bd3b0481f4c350fd08d795f2aa21e60e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_la_tva_payee_sur_les_achats_professionnels",
+            "label": "B. La TVA payée sur les achats professionnels",
+            "part": "word/document.xml",
+            "paragraph_index": 57,
+            "xpath": "/document/body[1]/p[56]",
+            "template_text_sha256": "f135414a125f0bc96a35782d2d2968e66831d640705f8528f2b854a2e01a4df6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_la_tva_sur_les_salaires",
+            "label": "C. La TVA sur les salaires",
+            "part": "word/document.xml",
+            "paragraph_index": 58,
+            "xpath": "/document/body[1]/p[57]",
+            "template_text_sha256": "83c5a18a718062a76fb37f0e4d62288553e361d07853c13d06fb92d2bcb55043",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_la_tva_non_declaree",
+            "label": "D. La TVA non déclarée",
+            "part": "word/document.xml",
+            "paragraph_index": 59,
+            "xpath": "/document/body[1]/p[58]",
+            "template_text_sha256": "8d308dbac4efc2156fc1041e39603b55558f64d04f3b9533ed7b92b28f44840f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_la_tva_sur_les_ventes",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '10. La TVA déductible est : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_la_tva_sur_les_ventes",
+          "b_la_tva_payee_sur_les_achats_professionnels",
+          "c_la_tva_sur_les_salaires",
+          "d_la_tva_non_declaree"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.11_une_declaration_de_tva_permet_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.11_une_declaration_de_tva_permet_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "11. Une déclaration de TVA permet : *  1 point",
+        "options": [
+          {
+            "value": "a_de_calculer_le_resultat_annuel",
+            "label": "A. De calculer le résultat annuel",
+            "part": "word/document.xml",
+            "paragraph_index": 61,
+            "xpath": "/document/body[1]/p[60]",
+            "template_text_sha256": "580312c000db9a08974b5f390ca815eff820e55b06c02b3bcb81ff213dd37469",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_de_declarer_les_charges_sociales",
+            "label": "B. De déclarer les charges sociales",
+            "part": "word/document.xml",
+            "paragraph_index": 62,
+            "xpath": "/document/body[1]/p[61]",
+            "template_text_sha256": "e764da528e1e06893d3e44ad2c8503a372bc01e82f5723dd52ecef5a32a9fa13",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_de_reverser_la_tva_due_a_l_administration",
+            "label": "C. De reverser la TVA due à l'administration",
+            "part": "word/document.xml",
+            "paragraph_index": 63,
+            "xpath": "/document/body[1]/p[62]",
+            "template_text_sha256": "b0050fa71321e5e33ab7e0fa4075cbde2107fdc3d57d00ea958b00ced4060b30",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_de_payer_les_fournisseurs",
+            "label": "D. De payer les fournisseurs",
+            "part": "word/document.xml",
+            "paragraph_index": 64,
+            "xpath": "/document/body[1]/p[63]",
+            "template_text_sha256": "738780950a224ac6775ed7771ee943dbd6898e62ea58d520677390b79b84e40c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_de_declarer_les_charges_sociales",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '11. Une déclaration de TVA permet : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_de_calculer_le_resultat_annuel",
+          "b_de_declarer_les_charges_sociales",
+          "c_de_reverser_la_tva_due_a_l_administration",
+          "d_de_payer_les_fournisseurs"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.12_parmi_les_taxes_suivantes_lesquelles_peuvent_concerner_une_tpe_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.12_parmi_les_taxes_suivantes_lesquelles_peuvent_concerner_une_tpe_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "12. Parmi les taxes suivantes, lesquelles peuvent concerner une TPE ? *  1 point",
+        "options": [
+          {
+            "value": "a_la_cfe_et_la_taxe_fonciere",
+            "label": "A. La CFE et la taxe foncière",
+            "part": "word/document.xml",
+            "paragraph_index": 66,
+            "xpath": "/document/body[1]/p[65]",
+            "template_text_sha256": "6d03380117317f2cab61d82849b54a0ef7cda5471018797b8d49d48ae1efe80d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_la_tva_uniquement",
+            "label": "B. La TVA uniquement",
+            "part": "word/document.xml",
+            "paragraph_index": 67,
+            "xpath": "/document/body[1]/p[66]",
+            "template_text_sha256": "9ba7c1ddf5050a19d57d2f5e47db45317f6b5374fad3db001f4c19ac4cfd2b55",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_les_dividendes",
+            "label": "C. Les dividendes",
+            "part": "word/document.xml",
+            "paragraph_index": 68,
+            "xpath": "/document/body[1]/p[67]",
+            "template_text_sha256": "667ff2c1387ff1b77a26a3f240f1e2af7a0ee3698ba7a95e203ccece942e7e83",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_les_salaires",
+            "label": "D. Les salaires",
+            "part": "word/document.xml",
+            "paragraph_index": 69,
+            "xpath": "/document/body[1]/p[68]",
+            "template_text_sha256": "30374a69dc6670e710ca54e70c6e704a1cd3146de7fbd413b0c0148e7e73e0ea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_la_tva_uniquement",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '12. Parmi les taxes suivantes, lesquelles peuvent concerner une TPE ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_la_cfe_et_la_taxe_fonciere",
+          "b_la_tva_uniquement",
+          "c_les_dividendes",
+          "d_les_salaires"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.13_une_facture_conforme_doit_obligatoirement_contenir_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.13_une_facture_conforme_doit_obligatoirement_contenir_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "13. Une facture conforme doit obligatoirement contenir : *  1 point",
+        "options": [
+          {
+            "value": "a_le_logo_de_l_entreprise",
+            "label": "A. Le logo de l'entreprise",
+            "part": "word/document.xml",
+            "paragraph_index": 72,
+            "xpath": "/document/body[1]/p[71]",
+            "template_text_sha256": "7b4dea2606d613e532d52d900cae6b82a772a48a2056bf6feb819f65e47e3e76",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_un_numero_de_facture_et_une_date",
+            "label": "B. Un numéro de facture et une date",
+            "part": "word/document.xml",
+            "paragraph_index": 73,
+            "xpath": "/document/body[1]/p[72]",
+            "template_text_sha256": "2a96fc7ffd1f36f64643539696e823bc9eb44c678ccfd9bb32af86bf907a57f8",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_le_rib_du_client",
+            "label": "C. Le RIB du client",
+            "part": "word/document.xml",
+            "paragraph_index": 74,
+            "xpath": "/document/body[1]/p[73]",
+            "template_text_sha256": "45f17a1ce156c573ae49207608969f8e69979ec168a2442fb8bc6f2afa8dadf9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_nom_du_comptable",
+            "label": "D. Le nom du comptable",
+            "part": "word/document.xml",
+            "paragraph_index": 75,
+            "xpath": "/document/body[1]/p[74]",
+            "template_text_sha256": "d3c28f6d3836ca483599ed407019ce919e45e841fe513c439b11bfe478066850",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "d_le_nom_du_comptable",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '13. Une facture conforme doit obligatoirement contenir : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_le_logo_de_l_entreprise",
+          "b_un_numero_de_facture_et_une_date",
+          "c_le_rib_du_client",
+          "d_le_nom_du_comptable"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.14_les_regles_de_facturation_ont_pour_objectif_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.14_les_regles_de_facturation_ont_pour_objectif_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "14. Les règles de facturation ont pour objectif : *  1 point",
+        "options": [
+          {
+            "value": "a_d_ameliorer_le_marketing",
+            "label": "A. D'améliorer le marketing",
+            "part": "word/document.xml",
+            "paragraph_index": 77,
+            "xpath": "/document/body[1]/p[76]",
+            "template_text_sha256": "20260c6e3bd3099998b2231191ead175884f663634c331db968c3e1f4eccb403",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_de_respecter_les_obligations_legales",
+            "label": "B. De respecter les obligations légales",
+            "part": "word/document.xml",
+            "paragraph_index": 78,
+            "xpath": "/document/body[1]/p[77]",
+            "template_text_sha256": "17889154556b1b5d7c49821b52470cfe99eb81132701c8ba394848d5aef6a6be",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_de_reduire_les_impots",
+            "label": "C. De réduire les impôts",
+            "part": "word/document.xml",
+            "paragraph_index": 79,
+            "xpath": "/document/body[1]/p[78]",
+            "template_text_sha256": "48fc47d487a4e995312d8cc07c3fc1399590982db73c286bbff09597cea6cad1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_de_remplacer_la_comptabilite",
+            "label": "D. De remplacer la comptabilité",
+            "part": "word/document.xml",
+            "paragraph_index": 80,
+            "xpath": "/document/body[1]/p[79]",
+            "template_text_sha256": "ca0fcb83c717790a89effeffe94199f5d53a497867d06dbb25bfa8284aca7e06",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_d_ameliorer_le_marketing",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '14. Les règles de facturation ont pour objectif : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_d_ameliorer_le_marketing",
+          "b_de_respecter_les_obligations_legales",
+          "c_de_reduire_les_impots",
+          "d_de_remplacer_la_comptabilite"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.15_la_facturation_electronique_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.15_la_facturation_electronique_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "15. La facturation électronique : *  1 point",
+        "options": [
+          {
+            "value": "a_supprime_la_comptabilite",
+            "label": "A. Supprime la comptabilité",
+            "part": "word/document.xml",
+            "paragraph_index": 82,
+            "xpath": "/document/body[1]/p[81]",
+            "template_text_sha256": "d97194f2ce1e778e36316a52d30cad6aa0b62894a2834e5a0acbc50f6fb0c359",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_est_une_evolution_reglementaire_en_cours",
+            "label": "B. Est une évolution réglementaire en cours",
+            "part": "word/document.xml",
+            "paragraph_index": 83,
+            "xpath": "/document/body[1]/p[82]",
+            "template_text_sha256": "a93935057dfb4914c54ece391a59f7826c418420da6b1cec84faacbbbead63e6",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_est_interdite_pour_les_tpe",
+            "label": "C. Est interdite pour les TPE",
+            "part": "word/document.xml",
+            "paragraph_index": 84,
+            "xpath": "/document/body[1]/p[83]",
+            "template_text_sha256": "3638fbde89f58fc43b23cf5ef5b783b56e14ef5b86f24152287c4c9f7e61401c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_remplace_les_declarations_fiscales",
+            "label": "D. Remplace les déclarations fiscales",
+            "part": "word/document.xml",
+            "paragraph_index": 85,
+            "xpath": "/document/body[1]/p[84]",
+            "template_text_sha256": "92669b8d836153396e6bf45349bee7fde4f9d5e63ad21b7528dd31c5af4759f1",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_est_une_evolution_reglementaire_en_cours",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '15. La facturation électronique : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_supprime_la_comptabilite",
+          "b_est_une_evolution_reglementaire_en_cours",
+          "c_est_interdite_pour_les_tpe",
+          "d_remplace_les_declarations_fiscales"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.16_les_documents_comptables_doivent_generalement_etre_conserves_pendant_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.16_les_documents_comptables_doivent_generalement_etre_conserves_pendant_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "16. Les documents comptables doivent généralement être conservés pendant : *  1 point",
+        "options": [
+          {
+            "value": "a_3_ans",
+            "label": "A. 3 ans",
+            "part": "word/document.xml",
+            "paragraph_index": 87,
+            "xpath": "/document/body[1]/p[86]",
+            "template_text_sha256": "3f15bf1121bded5c12c8546a792b7bb408f44ad4f9d847aa8ac4ff9c63f41ad9",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_5_ans",
+            "label": "B. 5 ans",
+            "part": "word/document.xml",
+            "paragraph_index": 88,
+            "xpath": "/document/body[1]/p[87]",
+            "template_text_sha256": "7cd2ca1c087e89ae95dd3e9ba19cfc57cd900570bb666bcc346cae5f4311578e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_7_ans",
+            "label": "C. 7 ans",
+            "part": "word/document.xml",
+            "paragraph_index": 89,
+            "xpath": "/document/body[1]/p[88]",
+            "template_text_sha256": "e18f03a0c73d9d49ec39d8b81283ce74562718c8593d5d1eb7cf05fe09214aae",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_10_ans",
+            "label": "D. 10 ans",
+            "part": "word/document.xml",
+            "paragraph_index": 90,
+            "xpath": "/document/body[1]/p[89]",
+            "template_text_sha256": "d389d99b6b5fd656e2e257dd9e1153731b7c74f25cb19dc215a69862733fe706",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_7_ans",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '16. Les documents comptables doivent généralement être conservés pendant : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_3_ans",
+          "b_5_ans",
+          "c_7_ans",
+          "d_10_ans"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.17_les_operations_comptables_courantes_incluent_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.17_les_operations_comptables_courantes_incluent_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "17. Les opérations comptables courantes incluent : *  1 point",
+        "options": [
+          {
+            "value": "a_la_strategie_commerciale",
+            "label": "A. La stratégie commerciale",
+            "part": "word/document.xml",
+            "paragraph_index": 93,
+            "xpath": "/document/body[1]/p[92]",
+            "template_text_sha256": "4e8f4b5afe8809133d542b4e7b3fb5d03bf6c5e4806eb40d0485a102fb451210",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_les_factures_salaires_frais_et_operations_bancaires",
+            "label": "B. Les factures, salaires, frais et opérations bancaires",
+            "part": "word/document.xml",
+            "paragraph_index": 94,
+            "xpath": "/document/body[1]/p[93]",
+            "template_text_sha256": "2ea9c9492618913d8d19cc0e3477f7bad80b9b29320e6e5ce88f7b60d8ace4bd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_les_decisions_juridiques",
+            "label": "C. Les décisions juridiques",
+            "part": "word/document.xml",
+            "paragraph_index": 95,
+            "xpath": "/document/body[1]/p[94]",
+            "template_text_sha256": "825178b0c101247d6fae79563751c29eaea42f41c9174833b260539a3e5bf27c",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_le_marketing_digital",
+            "label": "D. Le marketing digital",
+            "part": "word/document.xml",
+            "paragraph_index": 96,
+            "xpath": "/document/body[1]/p[95]",
+            "template_text_sha256": "c2a2498ac4b790bcf1335a0da8836f5d48f45ecef399b56322a14f150cbea721",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "a_la_strategie_commerciale",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '17. Les opérations comptables courantes incluent : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_la_strategie_commerciale",
+          "b_les_factures_salaires_frais_et_operations_bancaires",
+          "c_les_decisions_juridiques",
+          "d_le_marketing_digital"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.18_le_suivi_administratif_et_comptable_permet_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.18_le_suivi_administratif_et_comptable_permet_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "18. Le suivi administratif et comptable permet : *  1 point",
+        "options": [
+          {
+            "value": "a_d_eviter_les_declarations",
+            "label": "A. D'éviter les déclarations",
+            "part": "word/document.xml",
+            "paragraph_index": 98,
+            "xpath": "/document/body[1]/p[97]",
+            "template_text_sha256": "a12732cdeffd33270d81fae9c8e6d3be426ed2671c8ba6133b407b953e6f3ffd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_de_respecter_les_obligations_comptables_et_fiscales",
+            "label": "B. De respecter les obligations comptables et fiscales",
+            "part": "word/document.xml",
+            "paragraph_index": 99,
+            "xpath": "/document/body[1]/p[98]",
+            "template_text_sha256": "77e03727f1b383ceb34ba8bd3b5c15b26bf4a9ac8d7b7a0f4d65ff32aca26077",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_de_supprimer_les_factures",
+            "label": "C. De supprimer les factures",
+            "part": "word/document.xml",
+            "paragraph_index": 100,
+            "xpath": "/document/body[1]/p[99]",
+            "template_text_sha256": "a70641728ae841ecba91d657dff0e35707f07c62caaa966ffa2fe96c4c90c14a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_de_se_passer_d_organisation",
+            "label": "D. De se passer d'organisation",
+            "part": "word/document.xml",
+            "paragraph_index": 101,
+            "xpath": "/document/body[1]/p[100]",
+            "template_text_sha256": "22b74e65cc999e1653a9e8a732ce73a633a9b74cf2ee4d2cc5fbe266ee9b7203",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "b_de_respecter_les_obligations_comptables_et_fiscales",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '18. Le suivi administratif et comptable permet : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_d_eviter_les_declarations",
+          "b_de_respecter_les_obligations_comptables_et_fiscales",
+          "c_de_supprimer_les_factures",
+          "d_de_se_passer_d_organisation"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.19_interagir_efficacement_avec_un_expert_comptable_necessite_1_point",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.19_interagir_efficacement_avec_un_expert_comptable_necessite_1_point",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "19. Interagir efficacement avec un expert-comptable nécessite : *  1 point",
+        "options": [
+          {
+            "value": "a_aucune_comprehension_des_documents",
+            "label": "A. Aucune compréhension des documents",
+            "part": "word/document.xml",
+            "paragraph_index": 103,
+            "xpath": "/document/body[1]/p[102]",
+            "template_text_sha256": "19b51f1ff5a07a9336c5e25d99858f053a37407510d859ee9132f849c8cb168d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_une_lecture_minimale_des_documents_comptables",
+            "label": "B. Une lecture minimale des documents comptables",
+            "part": "word/document.xml",
+            "paragraph_index": 104,
+            "xpath": "/document/body[1]/p[103]",
+            "template_text_sha256": "6393db4c52925dfd84694b465e512ba1317279a0d649575d19a585e8d5a8ec0b",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_un_logiciel_obligatoire",
+            "label": "C. Un logiciel obligatoire",
+            "part": "word/document.xml",
+            "paragraph_index": 105,
+            "xpath": "/document/body[1]/p[104]",
+            "template_text_sha256": "32b1ae847f1905abe8125c0d03314719cb522a2c586b97d7e02e28093ff44250",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_une_formation_juridique",
+            "label": "D. Une formation juridique",
+            "part": "word/document.xml",
+            "paragraph_index": 106,
+            "xpath": "/document/body[1]/p[105]",
+            "template_text_sha256": "0dc18ebe9f0bee48e7cffdf9d5c0452aaf8dcbb6178d3166ddcad81fc35192bd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "c_un_logiciel_obligatoire",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '19. Interagir efficacement avec un expert-comptable nécessite : *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_aucune_comprehension_des_documents",
+          "b_une_lecture_minimale_des_documents_comptables",
+          "c_un_logiciel_obligatoire",
+          "d_une_formation_juridique"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "evaluation.answers.test_de_positionnement.20_lorsqu_une_facture_fournisseur_est_recue_quelle_est_selon_vous_la_bonne_demarche_1_poin",
+      "source_class": "WORKBOOK",
+      "source_path": "$.evaluation.answers.test_de_positionnement.20_lorsqu_une_facture_fournisseur_est_recue_quelle_est_selon_vous_la_bonne_demarche_1_poin",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "20. Lorsqu'une facture fournisseur est reçue, quelle est selon vous la bonne démarche ? *  1 point",
+        "options": [
+          {
+            "value": "a_la_classer_sans_la_verifier",
+            "label": "A. La classer sans la vérifier",
+            "part": "word/document.xml",
+            "paragraph_index": 108,
+            "xpath": "/document/body[1]/p[107]",
+            "template_text_sha256": "d073085bd7d3797c257d917eda8b2240fa664c9878d54a0380a9e04037e813c2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "b_verifier_les_mentions_obligatoires_l_enregistrer_et_la_pre",
+            "label": "B. Vérifier les mentions obligatoires, l'enregistrer et la prévoir pour le règlement",
+            "part": "word/document.xml",
+            "paragraph_index": 109,
+            "xpath": "/document/body[1]/p[108]",
+            "template_text_sha256": "f32280133156693202926871d64493c3d8eedac1ce6dffb4d181d86af7ff222e",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "c_l_envoyer_directement_a_l_administration_fiscale",
+            "label": "C. L'envoyer directement à l'administration fiscale",
+            "part": "word/document.xml",
+            "paragraph_index": 110,
+            "xpath": "/document/body[1]/p[109]",
+            "template_text_sha256": "46f7b95ff59d539a02fa759bdcbfe96ca239643eab3c6cbf38548c46efefe676",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "d_l_ignorer_si_elle_est_inferieure_a_100",
+            "label": "D. L'ignorer si elle est inférieure à 100 €",
+            "part": "word/document.xml",
+            "paragraph_index": 111,
+            "xpath": "/document/body[1]/p[110]",
+            "template_text_sha256": "5dfb4aa49985378f501abf0b7401e875fa78a9e967f963822fb07e3284dcc31f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "d_l_ignorer_si_elle_est_inferieure_a_100",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under '20. Lorsqu'une facture fournisseur est reçue, quelle est selon vous la bonne démarche ? *  1 point'.",
+      "validation": {
+        "enum": [
+          "a_la_classer_sans_la_verifier",
+          "b_verifier_les_mentions_obligatoires_l_enregistrer_et_la_pre",
+          "c_l_envoyer_directement_a_l_administration_fiscale",
+          "d_l_ignorer_si_elle_est_inferieure_a_100"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [],
+  "blocking_reasons": [],
+  "production_readiness": {
+    "status": "COMPLETE",
+    "field_count": 21,
+    "confirmed_field_count": 21,
+    "concrete_target_count": 21,
+    "evidence_count": 21,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 0,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": []
+  }
+}

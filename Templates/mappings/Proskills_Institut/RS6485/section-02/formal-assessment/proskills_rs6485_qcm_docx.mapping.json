@@ -1,0 +1,1272 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proskills_rs6485_qcm_docx",
+  "template_path": "final-templates/Proskills_Institut/RS6485/section-02/formal-assessment/QCM - RS6485 - Proskills Institut - Template.docx",
+  "template_hash": "61b7242d970755bb4b35b573a7f723bc7f0e0b496201af2f71e88a433b8de47f",
+  "source_original_path": "Proskills Institut/RS6485 - Comptabilité TPE/QCM - RS6485 - Proskills Institut - Template.docx",
+  "organization": "Proskills Institut",
+  "certification": "RS6485",
+  "major_section": "Évaluation certificative et décision",
+  "subsection": "formal-assessment",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proskills Institut/RS6485 - Comptabilité TPE/QCM - RS6485 - Proskills Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS6485 - Comptabilité TPE/QCM - RS6485 - Proforma Institut - Filled.docx",
+    "confidence": "PROBABLE",
+    "structure_similarity": 0.7987,
+    "rationale": "Other-organization same-certification/title evidence with moderate structural similarity 0.799.",
+    "same_format": true,
+    "candidate_identity": "DELGADO DA CRUZ Francisco"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [],
+  "unresolved_differences": [
+    {
+      "part": "word/document.xml",
+      "reason": "Paragraph container count differs (153 template vs 157 filled); only same-index stable containers were considered."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 0,
+      "xpath": "/document/body[1]/p[1]",
+      "blank_content": "QCM RS6485 - Réaliser les opérations comptables courantes d’une TPECandidat : [NOM_PRENOM] – Date : [DATE_JURY]",
+      "filled_content": "QCM RS6485 - Réaliser les opérations comptables courantes d’une TPE",
+      "reason": "Unsafe non-slot text change (similarity 0.75); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 1,
+      "xpath": "/document/body[1]/p[2]",
+      "blank_content": "Opérations courantes et partenaires",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 2,
+      "xpath": "/document/body[1]/p[3]",
+      "blank_content": "Question 1 :",
+      "filled_content": "Candidat : DELGADO DA CRUZ Francisco",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 3,
+      "xpath": "/document/body[1]/p[4]",
+      "blank_content": "La forme juridique d'une entreprise aura un impact sur ses obligations administratives et comptables ? ",
+      "filled_content": "Date : 05/06/2026 ",
+      "reason": "Unsafe non-slot text change (similarity 0.08); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 4,
+      "xpath": "/document/body[1]/p[5]",
+      "blank_content": "✓ Vrai",
+      "filled_content": "Opérations courantes et partenaires",
+      "reason": "Unsafe non-slot text change (similarity 0.15); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 5,
+      "xpath": "/document/body[1]/p[6]",
+      "blank_content": "Faux",
+      "filled_content": "Question 1 :",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 6,
+      "xpath": "/document/body[1]/p[7]",
+      "blank_content": "Question 2 :",
+      "filled_content": "La forme juridique d'une entreprise aura un impact sur ses obligations administratives et comptables ? ",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 7,
+      "xpath": "/document/body[1]/p[8]",
+      "blank_content": "Lesquelles de ces mentions sont obligatoires sur une facture ?",
+      "filled_content": "Vrai",
+      "reason": "Unsafe non-slot text change (similarity 0.03); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 8,
+      "xpath": "/document/body[1]/p[9]",
+      "blank_content": "Les conditions générales de vente",
+      "filled_content": "Faux",
+      "reason": "Unsafe non-slot text change (similarity 0.05); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 9,
+      "xpath": "/document/body[1]/p[10]",
+      "blank_content": "✓ La date de la facture",
+      "filled_content": "Question 2 :",
+      "reason": "Unsafe non-slot text change (similarity 0.11); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 10,
+      "xpath": "/document/body[1]/p[11]",
+      "blank_content": "✓ Le numéro de TVA intracommunautaire",
+      "filled_content": "Lesquelles de ces mentions sont obligatoires sur une facture ?",
+      "reason": "Unsafe non-slot text change (similarity 0.30); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 11,
+      "xpath": "/document/body[1]/p[12]",
+      "blank_content": "✓ Le numéro de Siret de l’entreprise vendeuse",
+      "filled_content": "Les conditions générales de vente",
+      "reason": "Unsafe non-slot text change (similarity 0.36); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 12,
+      "xpath": "/document/body[1]/p[13]",
+      "blank_content": "Question 3 :",
+      "filled_content": "La date de la facture",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 13,
+      "xpath": "/document/body[1]/p[14]",
+      "blank_content": "Parmi les éléments suivants lesquels relèvent d’une obligation légale sur les salaires ?",
+      "filled_content": "Le numéro de TVA intracommunautaire",
+      "reason": "Unsafe non-slot text change (similarity 0.21); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 14,
+      "xpath": "/document/body[1]/p[15]",
+      "blank_content": "✓ Le règlement par chèque ou par virement pour un salaire > 1 500 €",
+      "filled_content": "Le numéro de Siret de l’entreprise vendeuse",
+      "reason": "Unsafe non-slot text change (similarity 0.33); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 15,
+      "xpath": "/document/body[1]/p[16]",
+      "blank_content": "✓ La fixation de salaires minimums selon l’échelon, le niveau ou le coefficient du salarié",
+      "filled_content": "Question 3 :",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 16,
+      "xpath": "/document/body[1]/p[17]",
+      "blank_content": "La fixation d’indemnités spécifiques en matière de prise en charge des déplacements ou des repas des salariés",
+      "filled_content": "Parmi les éléments suivants lesquels relèvent d’une obligation légale sur les salaires ?",
+      "reason": "Unsafe non-slot text change (similarity 0.24); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 17,
+      "xpath": "/document/body[1]/p[18]",
+      "blank_content": "La délivrance d’un bulletin de paie détaillé car c’est un élément contractuel",
+      "filled_content": "Le règlement par chèque ou par virement pour un salaire > 1 500 €",
+      "reason": "Unsafe non-slot text change (similarity 0.24); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 18,
+      "xpath": "/document/body[1]/p[19]",
+      "blank_content": "✓ L'imposition de majorations concernant le temps de travail",
+      "filled_content": "La fixation de salaires minimums selon l’échelon, le niveau ou le coefficient du salarié",
+      "reason": "Unsafe non-slot text change (similarity 0.38); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 19,
+      "xpath": "/document/body[1]/p[20]",
+      "blank_content": "Question 4 :",
+      "filled_content": "La fixation d’indemnités spécifiques en matière de prise en charge des déplacements ou des repas des salariés",
+      "reason": "Unsafe non-slot text change (similarity 0.10); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 20,
+      "xpath": "/document/body[1]/p[21]",
+      "blank_content": "Quel est le rôle principal de l’expert-comptable ?",
+      "filled_content": "La délivrance d’un bulletin de paie détaillé car c’est un élément contractuel",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 21,
+      "xpath": "/document/body[1]/p[22]",
+      "blank_content": "Attention, toutes ces propositions sont réalisables par l'expert comptable mais une seule représente le rôle principal.",
+      "filled_content": "L'imposition de majorations concernant le temps de travail",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 22,
+      "xpath": "/document/body[1]/p[23]",
+      "blank_content": "✓ Etablir les comptes annuels",
+      "filled_content": "Question 4 :",
+      "reason": "Unsafe non-slot text change (similarity 0.20); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 23,
+      "xpath": "/document/body[1]/p[24]",
+      "blank_content": "Réaliser les bulletins de salaires",
+      "filled_content": "Quel est le rôle principal de l’expert-comptable ?",
+      "reason": "Unsafe non-slot text change (similarity 0.40); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 24,
+      "xpath": "/document/body[1]/p[25]",
+      "blank_content": "Gérer les assemblées générales (réunion entre associés)",
+      "filled_content": "Attention, toutes ces propositions sont réalisables par l'expert comptable mais une seule représente le rôle principal.",
+      "reason": "Unsafe non-slot text change (similarity 0.24); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 25,
+      "xpath": "/document/body[1]/p[26]",
+      "blank_content": "Etablir les déclarations fiscales",
+      "filled_content": "Etablir les comptes annuels",
+      "reason": "Unsafe non-slot text change (similarity 0.57); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 26,
+      "xpath": "/document/body[1]/p[27]",
+      "blank_content": "Conseiller le chef d’entreprise",
+      "filled_content": "Réaliser les bulletins de salaires",
+      "reason": "Unsafe non-slot text change (similarity 0.43); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 27,
+      "xpath": "/document/body[1]/p[28]",
+      "blank_content": "Le reste est réalisable par l’expert-comptable mais fait partie des missions complémentaires, à indiquer dans la lettre de mission.",
+      "filled_content": "Gérer les assemblées générales (réunion entre associés)",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 28,
+      "xpath": "/document/body[1]/p[29]",
+      "blank_content": "Question 5 :",
+      "filled_content": "Etablir les déclarations fiscales",
+      "reason": "Unsafe non-slot text change (similarity 0.31); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 29,
+      "xpath": "/document/body[1]/p[30]",
+      "blank_content": "Qu'est-ce qu'une facilité de caisse ? ",
+      "filled_content": "Conseiller le chef d’entreprise",
+      "reason": "Unsafe non-slot text change (similarity 0.29); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 30,
+      "xpath": "/document/body[1]/p[31]",
+      "blank_content": "Un découvert permanent",
+      "filled_content": "Le reste est réalisable par l’expert-comptable mais fait partie des missions complémentaires, à indiquer dans la lettre de mission.",
+      "reason": "Unsafe non-slot text change (similarity 0.17); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 31,
+      "xpath": "/document/body[1]/p[32]",
+      "blank_content": "✓ Un découvert temporaire",
+      "filled_content": "Question 5 :",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 32,
+      "xpath": "/document/body[1]/p[33]",
+      "blank_content": "Un crédit de trésorerie saisonnier",
+      "filled_content": "Qu'est-ce qu'une facilité de caisse ? ",
+      "reason": "Unsafe non-slot text change (similarity 0.36); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 33,
+      "xpath": "/document/body[1]/p[34]",
+      "blank_content": "Le bilan",
+      "filled_content": "Un découvert permanent",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 34,
+      "xpath": "/document/body[1]/p[35]",
+      "blank_content": "Question 6 :",
+      "filled_content": "Un découvert temporaire",
+      "reason": "Unsafe non-slot text change (similarity 0.17); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 35,
+      "xpath": "/document/body[1]/p[36]",
+      "blank_content": "Parmi les définitions suivantes lesquelles correspondent le mieux au bilan : ",
+      "filled_content": "Un crédit de trésorerie saisonnier",
+      "reason": "Unsafe non-slot text change (similarity 0.18); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 36,
+      "xpath": "/document/body[1]/p[37]",
+      "blank_content": "Un document comptable s’intéressant à l’activité de l’entreprise",
+      "filled_content": "Le bilan",
+      "reason": "Unsafe non-slot text change (similarity 0.14); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 37,
+      "xpath": "/document/body[1]/p[38]",
+      "blank_content": "✓ Un document comptable décrivant la situation patrimoniale de l’entreprise à une date donnée",
+      "filled_content": "Question 6 :",
+      "reason": "Unsafe non-slot text change (similarity 0.17); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 38,
+      "xpath": "/document/body[1]/p[39]",
+      "blank_content": "Un document comptable représentant la valeur de l’entreprise",
+      "filled_content": "Parmi les définitions suivantes lesquelles correspondent le mieux au bilan : ",
+      "reason": "Unsafe non-slot text change (similarity 0.23); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 39,
+      "xpath": "/document/body[1]/p[40]",
+      "blank_content": "Un document s’intéressant aux flux financiers de l’entreprise",
+      "filled_content": "Un document comptable s’intéressant à l’activité de l’entreprise",
+      "reason": "Unsafe non-slot text change (similarity 0.72); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 40,
+      "xpath": "/document/body[1]/p[41]",
+      "blank_content": "Question 7 :",
+      "filled_content": "Un document comptable décrivant la situation patrimoniale de l’entreprise à une date donnée",
+      "reason": "Unsafe non-slot text change (similarity 0.17); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 41,
+      "xpath": "/document/body[1]/p[42]",
+      "blank_content": "Les créances clients comme les dettes fournisseurs ont un impact sur le bilan et la trésorerie de l’entreprise?",
+      "filled_content": "Un document comptable représentant la valeur de l’entreprise",
+      "reason": "Unsafe non-slot text change (similarity 0.44); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 42,
+      "xpath": "/document/body[1]/p[43]",
+      "blank_content": "✓ Vrai",
+      "filled_content": "Un document s’intéressant aux flux financiers de l’entreprise",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 43,
+      "xpath": "/document/body[1]/p[44]",
+      "blank_content": "Faux",
+      "filled_content": "Question 7 :",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 44,
+      "xpath": "/document/body[1]/p[45]",
+      "blank_content": "Question 8 :",
+      "filled_content": "Les créances clients comme les dettes fournisseurs ont un impact sur le bilan et la trésorerie de l’entreprise?",
+      "reason": "Unsafe non-slot text change (similarity 0.13); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 45,
+      "xpath": "/document/body[1]/p[46]",
+      "blank_content": "A partir des données suivantes, quel est le montant de la trésorerie en passant par les calculs du FR et du BFR ? ",
+      "filled_content": "Vrai",
+      "reason": "Unsafe non-slot text change (similarity 0.03); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 46,
+      "xpath": "/document/body[1]/p[47]",
+      "blank_content": "Frais d’établissement : 1 068 €",
+      "filled_content": "Faux",
+      "reason": "Unsafe non-slot text change (similarity 0.11); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 47,
+      "xpath": "/document/body[1]/p[48]",
+      "blank_content": "Licences : 1 200 €",
+      "filled_content": "Question 8 :",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 48,
+      "xpath": "/document/body[1]/p[49]",
+      "blank_content": "Fonds de commerce : 50 000 €",
+      "filled_content": "A partir des données suivantes, quel est le montant de la trésorerie en passant par les calculs du FR et du BFR ? ",
+      "reason": "Unsafe non-slot text change (similarity 0.21); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 49,
+      "xpath": "/document/body[1]/p[50]",
+      "blank_content": "Découvert, concourt bancaire : 3 535 €",
+      "filled_content": "Frais d’établissement : 1 068 €",
+      "reason": "Unsafe non-slot text change (similarity 0.29); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 50,
+      "xpath": "/document/body[1]/p[51]",
+      "blank_content": "Stocks de marchandises : 6 686 €",
+      "filled_content": "Licences : 1 200 €",
+      "reason": "Unsafe non-slot text change (similarity 0.44); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 51,
+      "xpath": "/document/body[1]/p[52]",
+      "blank_content": "Capital : 60 000 €",
+      "filled_content": "Fonds de commerce : 50 000 €",
+      "reason": "Unsafe non-slot text change (similarity 0.43); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 52,
+      "xpath": "/document/body[1]/p[53]",
+      "blank_content": "Créances : 23 236 €",
+      "filled_content": "Découvert, concourt bancaire : 3 535 €",
+      "reason": "Unsafe non-slot text change (similarity 0.46); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 53,
+      "xpath": "/document/body[1]/p[54]",
+      "blank_content": "Installations techniques et outillages : 2 853 €",
+      "filled_content": "Stocks de marchandises : 6 686 €",
+      "reason": "Unsafe non-slot text change (similarity 0.47); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 54,
+      "xpath": "/document/body[1]/p[55]",
+      "blank_content": "Autres Dettes : 527 €",
+      "filled_content": "Capital : 60 000 €",
+      "reason": "Unsafe non-slot text change (similarity 0.31); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 55,
+      "xpath": "/document/body[1]/p[56]",
+      "blank_content": "Résultat de l’exercice : - 7 767 €",
+      "filled_content": "Créances : 23 236 €",
+      "reason": "Unsafe non-slot text change (similarity 0.42); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 56,
+      "xpath": "/document/body[1]/p[57]",
+      "blank_content": "Dépôt de garantie : 1 829 €",
+      "filled_content": "Installations techniques et outillages : 2 853 €",
+      "reason": "Unsafe non-slot text change (similarity 0.32); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 57,
+      "xpath": "/document/body[1]/p[58]",
+      "blank_content": "Dettes fournisseurs : 960 €",
+      "filled_content": "Autres Dettes : 527 €",
+      "reason": "Unsafe non-slot text change (similarity 0.46); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 58,
+      "xpath": "/document/body[1]/p[59]",
+      "blank_content": "Dettes fiscales et sociales : 1 863 €",
+      "filled_content": "Résultat de l’exercice : - 7 767 €",
+      "reason": "Unsafe non-slot text change (similarity 0.39); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 59,
+      "xpath": "/document/body[1]/p[60]",
+      "blank_content": "Autres immobilisations corporelles : 27 746 €",
+      "filled_content": "Dépôt de garantie : 1 829 €",
+      "reason": "Unsafe non-slot text change (similarity 0.33); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 60,
+      "xpath": "/document/body[1]/p[61]",
+      "blank_content": "Emprunts et dettes auprès des établissements de crédit : 55 500 €",
+      "filled_content": "Dettes fournisseurs : 960 €",
+      "reason": "Unsafe non-slot text change (similarity 0.41); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 61,
+      "xpath": "/document/body[1]/p[62]",
+      "blank_content": "Attention ! Que la trésorerie soit positive ou négative, ne pas préciser de signe \"+\" ou \"-\" devant votre réponse.",
+      "filled_content": "Dettes fiscales et sociales : 1 863 €",
+      "reason": "Unsafe non-slot text change (similarity 0.19); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 62,
+      "xpath": "/document/body[1]/p[63]",
+      "blank_content": "Réponse : ✓ Découvert, concourt bancaire 3 535",
+      "filled_content": "Autres immobilisations corporelles : 27 746 €",
+      "reason": "Unsafe non-slot text change (similarity 0.20); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 63,
+      "xpath": "/document/body[1]/p[64]",
+      "blank_content": "Question 9 :",
+      "filled_content": "Emprunts et dettes auprès des établissements de crédit : 55 500 €",
+      "reason": "Unsafe non-slot text change (similarity 0.23); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 64,
+      "xpath": "/document/body[1]/p[65]",
+      "blank_content": "De quelle catégorie fait partie le ratio d’indépendance financière ?",
+      "filled_content": "Attention ! Que la trésorerie soit positive ou négative, ne pas préciser de signe \"+\" ou \"-\" devant votre réponse.",
+      "reason": "Unsafe non-slot text change (similarity 0.23); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 65,
+      "xpath": "/document/body[1]/p[66]",
+      "blank_content": "✓ Des ratios de structure",
+      "filled_content": "Réponse : Découvert, concourt bancaire 3 535",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 66,
+      "xpath": "/document/body[1]/p[67]",
+      "blank_content": "Des ratios de durée de crédit",
+      "filled_content": "Question 9 :",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 67,
+      "xpath": "/document/body[1]/p[68]",
+      "blank_content": "Des ratios de rentabilité",
+      "filled_content": "De quelle catégorie fait partie le ratio d’indépendance financière ?",
+      "reason": "Unsafe non-slot text change (similarity 0.30); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 68,
+      "xpath": "/document/body[1]/p[69]",
+      "blank_content": "Des ratios de solvabilité",
+      "filled_content": "Des ratios de structure",
+      "reason": "Unsafe non-slot text change (similarity 0.67); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 69,
+      "xpath": "/document/body[1]/p[70]",
+      "blank_content": "Le compte de résultat",
+      "filled_content": "Des ratios de durée de crédit",
+      "reason": "Unsafe non-slot text change (similarity 0.40); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 70,
+      "xpath": "/document/body[1]/p[71]",
+      "blank_content": "Question 10 :",
+      "filled_content": "Des ratios de rentabilité",
+      "reason": "Unsafe non-slot text change (similarity 0.32); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 71,
+      "xpath": "/document/body[1]/p[72]",
+      "blank_content": "Le compte de résultat enregistre les opérations liées à l’activité de l’entreprise à date de connaissance. Que signifie cela ? ",
+      "filled_content": "Des ratios de solvabilité",
+      "reason": "Unsafe non-slot text change (similarity 0.20); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 72,
+      "xpath": "/document/body[1]/p[73]",
+      "blank_content": "Les opérations sont enregistrées à date de règlement",
+      "filled_content": "Le compte de résultat",
+      "reason": "Unsafe non-slot text change (similarity 0.38); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 73,
+      "xpath": "/document/body[1]/p[74]",
+      "blank_content": "✓ Les opérations sont enregistrées d’après les dates d’émission/de réception de facture",
+      "filled_content": "Question 10 :",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 74,
+      "xpath": "/document/body[1]/p[75]",
+      "blank_content": "Les opérations sont enregistrées de manière chronologique",
+      "filled_content": "Le compte de résultat enregistre les opérations liées à l’activité de l’entreprise à date de connaissance. Que signifie cela ? ",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 75,
+      "xpath": "/document/body[1]/p[76]",
+      "blank_content": "Question 11 :",
+      "filled_content": "Les opérations sont enregistrées à date de règlement",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 76,
+      "xpath": "/document/body[1]/p[77]",
+      "blank_content": "Associez les éléments correspondant à un emprunt au bon tableau financier ",
+      "filled_content": "Les opérations sont enregistrées d’après les dates d’émission/de réception de facture",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 77,
+      "xpath": "/document/body[1]/p[78]",
+      "blank_content": "11. a. Les intérêts payés sur l’emprunt ?",
+      "filled_content": "Les opérations sont enregistrées de manière chronologique",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 78,
+      "xpath": "/document/body[1]/p[79]",
+      "blank_content": "Le bilan",
+      "filled_content": "Question 11 :",
+      "reason": "Unsafe non-slot text change (similarity 0.19); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 79,
+      "xpath": "/document/body[1]/p[80]",
+      "blank_content": "✓ Le compte de résultat",
+      "filled_content": "Associez les éléments correspondant à un emprunt au bon tableau financier ",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 80,
+      "xpath": "/document/body[1]/p[81]",
+      "blank_content": "Le plan de trésorerie",
+      "filled_content": "11. a. Les intérêts payés sur l’emprunt ?",
+      "reason": "Unsafe non-slot text change (similarity 0.32); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 81,
+      "xpath": "/document/body[1]/p[82]",
+      "blank_content": "11. b. Le capital emprunté ?",
+      "filled_content": "Le bilan",
+      "reason": "Unsafe non-slot text change (similarity 0.28); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 82,
+      "xpath": "/document/body[1]/p[83]",
+      "blank_content": "✓ Le bilan",
+      "filled_content": "Le compte de résultat",
+      "reason": "Unsafe non-slot text change (similarity 0.32); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 83,
+      "xpath": "/document/body[1]/p[84]",
+      "blank_content": "Le compte de résultat",
+      "filled_content": "Le plan de trésorerie",
+      "reason": "Unsafe non-slot text change (similarity 0.52); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 84,
+      "xpath": "/document/body[1]/p[85]",
+      "blank_content": "Le plan de trésorerie",
+      "filled_content": "11. b. Le capital emprunté ?",
+      "reason": "Unsafe non-slot text change (similarity 0.29); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 85,
+      "xpath": "/document/body[1]/p[86]",
+      "blank_content": "11. c. Le remboursement des mensualités de l’emprunt ?",
+      "filled_content": "Le bilan",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 86,
+      "xpath": "/document/body[1]/p[87]",
+      "blank_content": "Le bilan",
+      "filled_content": "Le compte de résultat",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 87,
+      "xpath": "/document/body[1]/p[88]",
+      "blank_content": "Le compte de résultat",
+      "filled_content": "Le plan de trésorerie",
+      "reason": "Unsafe non-slot text change (similarity 0.52); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 88,
+      "xpath": "/document/body[1]/p[89]",
+      "blank_content": "✓ Le plan de trésorerie",
+      "filled_content": "11. c. Le remboursement des mensualités de l’emprunt ?",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 89,
+      "xpath": "/document/body[1]/p[90]",
+      "blank_content": "Question 12 :",
+      "filled_content": "Le bilan",
+      "reason": "Unsafe non-slot text change (similarity 0.29); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 90,
+      "xpath": "/document/body[1]/p[91]",
+      "blank_content": "Complétez la phrase suivante : les intérêts payés sur l'emprunt font partie de la catégorie des ....... du compte de résultat",
+      "filled_content": "Le compte de résultat",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 91,
+      "xpath": "/document/body[1]/p[92]",
+      "blank_content": "Produits financiers",
+      "filled_content": "Le plan de trésorerie",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 92,
+      "xpath": "/document/body[1]/p[93]",
+      "blank_content": "Charges d'exploitation",
+      "filled_content": "Question 12 :",
+      "reason": "Unsafe non-slot text change (similarity 0.34); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 93,
+      "xpath": "/document/body[1]/p[94]",
+      "blank_content": "Des valeurs mobilières de placement",
+      "filled_content": "Complétez la phrase suivante : les intérêts payés sur l'emprunt font partie de la catégorie des ....... du compte de résultat",
+      "reason": "Unsafe non-slot text change (similarity 0.28); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 94,
+      "xpath": "/document/body[1]/p[95]",
+      "blank_content": "✓ Des charges financières",
+      "filled_content": "Produits financiers",
+      "reason": "Unsafe non-slot text change (similarity 0.55); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 95,
+      "xpath": "/document/body[1]/p[96]",
+      "blank_content": "Des charges exceptionnelles",
+      "filled_content": "Charges d'exploitation",
+      "reason": "Unsafe non-slot text change (similarity 0.57); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 96,
+      "xpath": "/document/body[1]/p[97]",
+      "blank_content": "Question 13 :",
+      "filled_content": "Des valeurs mobilières de placement",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 97,
+      "xpath": "/document/body[1]/p[98]",
+      "blank_content": "A l’aide des données suivantes, calculez le seuil de rentabilité (précision : utilisez un taux de marge avec 1 chiffre après la virgule)",
+      "filled_content": "Des charges financières",
+      "reason": "Unsafe non-slot text change (similarity 0.19); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 98,
+      "xpath": "/document/body[1]/p[99]",
+      "blank_content": "Charges variables annuelles : 43 800 €Chiffre d’affaires annuel : 150 000 €Charges fixes : 88 500 €Résultat : 17 700 €",
+      "filled_content": "Des charges exceptionnelles",
+      "reason": "Unsafe non-slot text change (similarity 0.21); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 99,
+      "xpath": "/document/body[1]/p[100]",
+      "blank_content": "110 000 €",
+      "filled_content": "Question 13 :",
+      "reason": "Unsafe non-slot text change (similarity 0.18); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 100,
+      "xpath": "/document/body[1]/p[101]",
+      "blank_content": "120 500 €",
+      "filled_content": "A l’aide des données suivantes, calculez le seuil de rentabilité (précision : utilisez un taux de marge avec 1 chiffre après la virgule)",
+      "reason": "Unsafe non-slot text change (similarity 0.04); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 101,
+      "xpath": "/document/body[1]/p[102]",
+      "blank_content": "✓ 125 000 €",
+      "filled_content": "Charges variables annuelles : 43 800 €Chiffre d’affaires annuel : 150 000 €Charges fixes : 88 500 €Résultat : 17 700 €",
+      "reason": "Unsafe non-slot text change (similarity 0.14); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 102,
+      "xpath": "/document/body[1]/p[103]",
+      "blank_content": "125 500 €",
+      "filled_content": "110 000 €",
+      "reason": "Unsafe non-slot text change (similarity 0.67); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 103,
+      "xpath": "/document/body[1]/p[104]",
+      "blank_content": "Question 14 :",
+      "filled_content": "120 500 €",
+      "reason": "Unsafe non-slot text change (similarity 0.18); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 104,
+      "xpath": "/document/body[1]/p[105]",
+      "blank_content": "Que signifie le point mort ?",
+      "filled_content": "125 000 €",
+      "reason": "Unsafe non-slot text change (similarity 0.11); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 105,
+      "xpath": "/document/body[1]/p[106]",
+      "blank_content": "✓ La date à partir de laquelle l’entreprise est rentable",
+      "filled_content": "125 500 €",
+      "reason": "Unsafe non-slot text change (similarity 0.06); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 106,
+      "xpath": "/document/body[1]/p[107]",
+      "blank_content": "Le niveau de chiffre d’affaires à partir duquel l’entreprise est rentable",
+      "filled_content": "Question 14 :",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 107,
+      "xpath": "/document/body[1]/p[108]",
+      "blank_content": "TVA et Trésorerie",
+      "filled_content": "Que signifie le point mort ?",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 108,
+      "xpath": "/document/body[1]/p[109]",
+      "blank_content": "Question 15 :",
+      "filled_content": "La date à partir de laquelle l’entreprise est rentable",
+      "reason": "Unsafe non-slot text change (similarity 0.15); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 109,
+      "xpath": "/document/body[1]/p[110]",
+      "blank_content": "A quoi correspond le plan de trésorerie ?",
+      "filled_content": "Le niveau de chiffre d’affaires à partir duquel l’entreprise est rentable",
+      "reason": "Unsafe non-slot text change (similarity 0.23); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 110,
+      "xpath": "/document/body[1]/p[111]",
+      "blank_content": "Aux flux financiers (rentrées/sorties d’argent) de l’entreprise",
+      "filled_content": "TVA et Trésorerie",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 111,
+      "xpath": "/document/body[1]/p[112]",
+      "blank_content": "✓ A un document retraçant les encaissements et décaissements prévisibles d’une entreprise au cours de la première année de son existence",
+      "filled_content": "Question 15 :",
+      "reason": "Unsafe non-slot text change (similarity 0.09); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 112,
+      "xpath": "/document/body[1]/p[113]",
+      "blank_content": "A un document retraçant les encaissements et décaissements d’une entreprise sur douze mois",
+      "filled_content": "A quoi correspond le plan de trésorerie ?",
+      "reason": "Unsafe non-slot text change (similarity 0.20); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 113,
+      "xpath": "/document/body[1]/p[114]",
+      "blank_content": "Question 16 :",
+      "filled_content": "Aux flux financiers (rentrées/sorties d’argent) de l’entreprise",
+      "reason": "Unsafe non-slot text change (similarity 0.21); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 114,
+      "xpath": "/document/body[1]/p[115]",
+      "blank_content": "Parmi les éléments suivants, lequel n’a pas d’impact sur la trésorerie de l’entreprise ?",
+      "filled_content": "A un document retraçant les encaissements et décaissements prévisibles d’une entreprise au cours de la première année de son existence",
+      "reason": "Unsafe non-slot text change (similarity 0.33); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 115,
+      "xpath": "/document/body[1]/p[116]",
+      "blank_content": "FR et BFR",
+      "filled_content": "A un document retraçant les encaissements et décaissements d’une entreprise sur douze mois",
+      "reason": "Unsafe non-slot text change (similarity 0.08); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 116,
+      "xpath": "/document/body[1]/p[117]",
+      "blank_content": "Les marges",
+      "filled_content": "Question 16 :",
+      "reason": "Unsafe non-slot text change (similarity 0.26); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 117,
+      "xpath": "/document/body[1]/p[118]",
+      "blank_content": "Les créances clients",
+      "filled_content": "Parmi les éléments suivants, lequel n’a pas d’impact sur la trésorerie de l’entreprise ?",
+      "reason": "Unsafe non-slot text change (similarity 0.17); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 118,
+      "xpath": "/document/body[1]/p[119]",
+      "blank_content": "Les dettes fournisseurs",
+      "filled_content": "FR et BFR",
+      "reason": "Unsafe non-slot text change (similarity 0.25); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 119,
+      "xpath": "/document/body[1]/p[120]",
+      "blank_content": "✓ La dotation aux amortissement et provisions",
+      "filled_content": "Les marges",
+      "reason": "Unsafe non-slot text change (similarity 0.15); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 120,
+      "xpath": "/document/body[1]/p[121]",
+      "blank_content": "Les stocks",
+      "filled_content": "Les créances clients",
+      "reason": "Unsafe non-slot text change (similarity 0.47); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 121,
+      "xpath": "/document/body[1]/p[122]",
+      "blank_content": "Le résultat",
+      "filled_content": "Les dettes fournisseurs",
+      "reason": "Unsafe non-slot text change (similarity 0.35); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 122,
+      "xpath": "/document/body[1]/p[123]",
+      "blank_content": "Question 17 :",
+      "filled_content": "La dotation aux amortissement et provisions",
+      "reason": "Unsafe non-slot text change (similarity 0.21); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 123,
+      "xpath": "/document/body[1]/p[124]",
+      "blank_content": "La TVA est neutre pour le consommateur final ? (un particulier/une personne physique)",
+      "filled_content": "Les stocks",
+      "reason": "Unsafe non-slot text change (similarity 0.15); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 124,
+      "xpath": "/document/body[1]/p[125]",
+      "blank_content": "Vrai",
+      "filled_content": "Le résultat",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 125,
+      "xpath": "/document/body[1]/p[126]",
+      "blank_content": "✓ Faux",
+      "filled_content": "Question 17 :",
+      "reason": "Unsafe non-slot text change (similarity 0.11); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 126,
+      "xpath": "/document/body[1]/p[127]",
+      "blank_content": "Question 18 : ",
+      "filled_content": "La TVA est neutre pour le consommateur final ? (un particulier/une personne physique)",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 127,
+      "xpath": "/document/body[1]/p[128]",
+      "blank_content": "Une bonne gestion de la trésorerie c’est …",
+      "filled_content": "Vrai",
+      "reason": "Unsafe non-slot text change (similarity 0.04); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 128,
+      "xpath": "/document/body[1]/p[129]",
+      "blank_content": "Suivre l’évolution des disponibilités sur le(s) compte(s) bancaires de l’entreprise",
+      "filled_content": "Faux",
+      "reason": "Unsafe non-slot text change (similarity 0.02); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 129,
+      "xpath": "/document/body[1]/p[130]",
+      "blank_content": "✓ Contrôler les écarts entre prévisions et la réalité des rentrées/sorties d’argent",
+      "filled_content": "Question 18 : ",
+      "reason": "Unsafe non-slot text change (similarity 0.19); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 130,
+      "xpath": "/document/body[1]/p[131]",
+      "blank_content": "Retracer les encaissements et décaissements à la fin de l’année",
+      "filled_content": "Une bonne gestion de la trésorerie c’est …",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 131,
+      "xpath": "/document/body[1]/p[132]",
+      "blank_content": "S’assurer que l’entreprise pourra faire face aux dépenses programmées",
+      "filled_content": "Suivre l’évolution des disponibilités sur le(s) compte(s) bancaires de l’entreprise",
+      "reason": "Unsafe non-slot text change (similarity 0.30); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 132,
+      "xpath": "/document/body[1]/p[133]",
+      "blank_content": "✓ Prévoir une enveloppe budgétaire pour anticiper les imprévus",
+      "filled_content": "Contrôler les écarts entre prévisions et la réalité des rentrées/sorties d’argent",
+      "reason": "Unsafe non-slot text change (similarity 0.21); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 133,
+      "xpath": "/document/body[1]/p[134]",
+      "blank_content": "Pilotage de l'entreprise",
+      "filled_content": "Retracer les encaissements et décaissements à la fin de l’année",
+      "reason": "Unsafe non-slot text change (similarity 0.21); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 134,
+      "xpath": "/document/body[1]/p[135]",
+      "blank_content": "Question 19 : ",
+      "filled_content": "S’assurer que l’entreprise pourra faire face aux dépenses programmées",
+      "reason": "Unsafe non-slot text change (similarity 0.12); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 135,
+      "xpath": "/document/body[1]/p[136]",
+      "blank_content": "Le budget est un outil de pilotage pour les responsables de services et la direction ?",
+      "filled_content": "Prévoir une enveloppe budgétaire pour anticiper les imprévus",
+      "reason": "Unsafe non-slot text change (similarity 0.29); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 136,
+      "xpath": "/document/body[1]/p[137]",
+      "blank_content": "✓ Vrai",
+      "filled_content": "Pilotage de l'entreprise",
+      "reason": "Unsafe non-slot text change (similarity 0.20); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 137,
+      "xpath": "/document/body[1]/p[138]",
+      "blank_content": "Faux",
+      "filled_content": "Question 19 : ",
+      "reason": "Unsafe non-slot text change (similarity 0.11); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 138,
+      "xpath": "/document/body[1]/p[139]",
+      "blank_content": "Question 20 : ",
+      "filled_content": "Le budget est un outil de pilotage pour les responsables de services et la direction ?",
+      "reason": "Unsafe non-slot text change (similarity 0.16); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 139,
+      "xpath": "/document/body[1]/p[140]",
+      "blank_content": "Quels sont les tableaux budgétaires et les tableaux de bord ?",
+      "filled_content": "Vrai",
+      "reason": "Unsafe non-slot text change (similarity 0.06); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 140,
+      "xpath": "/document/body[1]/p[141]",
+      "blank_content": "Des outils similaires",
+      "filled_content": "Faux",
+      "reason": "Unsafe non-slot text change (similarity 0.08); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 141,
+      "xpath": "/document/body[1]/p[142]",
+      "blank_content": "Des outils différents",
+      "filled_content": "Question 20 : ",
+      "reason": "Unsafe non-slot text change (similarity 0.29); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 142,
+      "xpath": "/document/body[1]/p[143]",
+      "blank_content": "✓ Des outils complémentaires",
+      "filled_content": "Quels sont les tableaux budgétaires et les tableaux de bord ?",
+      "reason": "Unsafe non-slot text change (similarity 0.29); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 143,
+      "xpath": "/document/body[1]/p[144]",
+      "blank_content": "Des outils indépendants",
+      "filled_content": "Des outils similaires",
+      "reason": "Unsafe non-slot text change (similarity 0.64); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 144,
+      "xpath": "/document/body[1]/p[145]",
+      "blank_content": "Question 21 :",
+      "filled_content": "Des outils différents",
+      "reason": "Unsafe non-slot text change (similarity 0.29); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 145,
+      "xpath": "/document/body[1]/p[146]",
+      "blank_content": "Quel est l’élément incontournable qui compose un tableau de bord ?",
+      "filled_content": "Des outils complémentaires",
+      "reason": "Unsafe non-slot text change (similarity 0.30); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 146,
+      "xpath": "/document/body[1]/p[147]",
+      "blank_content": "Réponse : ✓ un indicateur ou KPI",
+      "filled_content": "Des outils indépendants",
+      "reason": "Unsafe non-slot text change (similarity 0.29); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 147,
+      "xpath": "/document/body[1]/p[148]",
+      "blank_content": "Question 22 : ",
+      "filled_content": "Question 21 :",
+      "reason": "Unsafe non-slot text change (similarity 0.89); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 148,
+      "xpath": "/document/body[1]/p[149]",
+      "blank_content": "Que représente l’équilibre d’un budget ?",
+      "filled_content": "Quel est l’élément incontournable qui compose un tableau de bord ?",
+      "reason": "Unsafe non-slot text change (similarity 0.47); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 149,
+      "xpath": "/document/body[1]/p[150]",
+      "blank_content": "✓ Recettes = dépenses",
+      "filled_content": "Réponse : un indicateur ou KPI",
+      "reason": "Unsafe non-slot text change (similarity 0.24); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 150,
+      "xpath": "/document/body[1]/p[151]",
+      "blank_content": "Rien car un budget est toujours déséquilibré",
+      "filled_content": "",
+      "reason": "Unsafe non-slot text change (similarity 0.00); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 151,
+      "xpath": "/document/body[1]/p[152]",
+      "blank_content": "Les réalisations sont conformes aux prévisions",
+      "filled_content": "Question 22 : ",
+      "reason": "Unsafe non-slot text change (similarity 0.30); no automatic template mutation."
+    },
+    {
+      "part": "word/document.xml",
+      "paragraph_index": 152,
+      "xpath": "/document/body[1]/p[153]",
+      "blank_content": "Ressources = Besoins",
+      "filled_content": "Que représente l’équilibre d’un budget ?",
+      "reason": "Unsafe non-slot text change (similarity 0.27); no automatic template mutation."
+    }
+  ],
+  "blocking_reasons": [
+    "154 structural/text difference(s) require review; see mapping evidence and placeholder discovery report.",
+    "Official MCQ answer key, scoring formula, and pass threshold are not proven by the supplied evidence."
+  ],
+  "production_readiness": {
+    "status": "INCOMPLETE",
+    "field_count": 0,
+    "confirmed_field_count": 0,
+    "concrete_target_count": 0,
+    "evidence_count": 0,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 154,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": [
+      "Mapping has no dynamic field targets.",
+      "154 unresolved source/template difference(s) remain."
+    ]
+  }
+}

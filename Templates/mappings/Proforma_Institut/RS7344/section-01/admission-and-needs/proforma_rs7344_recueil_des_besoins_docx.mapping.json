@@ -1,0 +1,627 @@
+{
+  "mapping_version": "1.0.0",
+  "template_id": "proforma_rs7344_recueil_des_besoins_docx",
+  "template_path": "final-templates/Proforma_Institut/RS7344/section-01/admission-and-needs/Recueil des Besoins - RS7344 - Proforma Institut - Template.docx",
+  "template_hash": "3738bd39c6faf0d29c9f1b0e9adcf4be52be7a98da5a74667786a7d2ca68dd1a",
+  "source_original_path": "Proforma Institut/RS7344 - IA pour Développer son Activité/Recueil des Besoins - RS7344 - Proforma Institut - Template.docx",
+  "organization": "Proforma Institut",
+  "certification": "RS7344",
+  "major_section": "Admission et préparation du candidat",
+  "subsection": "admission-and-needs",
+  "format": "DOCX",
+  "pairing": {
+    "template": "Proforma Institut/RS7344 - IA pour Développer son Activité/Recueil des Besoins - RS7344 - Proforma Institut - Template.docx",
+    "filled_reference": "Proforma Institut/RS7344 - IA pour Développer son Activité/Recueil des Besoins - RS7344 - Proforma Institut - Filled.docx",
+    "confidence": "CONFIRMED",
+    "structure_similarity": 0.9778,
+    "rationale": "Same organization, certification, normalized title, and editable format.",
+    "same_format": true,
+    "candidate_identity": "PREVOST Florian"
+  },
+  "targeting_policy": "Structural JSON mapping; the source-layout template remains byte-identical to the original copy.",
+  "fields": [
+    {
+      "semantic_field": "candidate.identity.full_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.identity.full_name",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 5,
+          "xpath": "/document/body[1]/tbl[2]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "PREVOST Florian",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'PREVOST Florian' after label 'Nom et prénom *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.etes_vous_autonome_pour_effectuer_des_recherches_sur_internet_acceder_a_des_outils_en_lign",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.etes_vous_autonome_pour_effectuer_des_recherches_sur_internet_acceder_a_des_outils_en_lign",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Êtes-vous autonome pour : effectuer des recherches sur internet, accéder à des outils en ligne, créer un compte sur une plateforme ? *",
+        "options": [
+          {
+            "value": "oui_totalement_autonome",
+            "label": "Oui, totalement autonome",
+            "part": "word/document.xml",
+            "paragraph_index": 9,
+            "xpath": "/document/body[1]/p[8]",
+            "template_text_sha256": "18092f6e6b21f2b85ab2115525da3bffa02270c24955e4131c0bcd915d8828ef",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "partiellement_autonome",
+            "label": "Partiellement autonome",
+            "part": "word/document.xml",
+            "paragraph_index": 10,
+            "xpath": "/document/body[1]/p[9]",
+            "template_text_sha256": "5e4da9219a223141e1feeb922ae58d8d2c6c285af47e1e233d6b527a64fb92fd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non_besoin_d_accompagnement",
+            "label": "Non, besoin d'accompagnement",
+            "part": "word/document.xml",
+            "paragraph_index": 11,
+            "xpath": "/document/body[1]/p[10]",
+            "template_text_sha256": "081c080fbbc256c15460e2f512bdc18f9da3de7802d6412d5f9dfa71d74237cc",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "partiellement_autonome",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Êtes-vous autonome pour : effectuer des recherches sur internet, accéder à des outils en ligne, créer un compte sur une plateforme ? *'.",
+      "validation": {
+        "enum": [
+          "oui_totalement_autonome",
+          "partiellement_autonome",
+          "non_besoin_d_accompagnement"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.etes_vous_capable_de_rediger_un_document_faire_une_mise_en_forme_simple_sauvegarder_un_fic",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.etes_vous_capable_de_rediger_un_document_faire_une_mise_en_forme_simple_sauvegarder_un_fic",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Êtes-vous capable de : rédiger un document, faire une mise en forme simple, sauvegarder un fichier ? *",
+        "options": [
+          {
+            "value": "oui_totalement_autonome",
+            "label": "Oui, totalement autonome",
+            "part": "word/document.xml",
+            "paragraph_index": 13,
+            "xpath": "/document/body[1]/p[12]",
+            "template_text_sha256": "18092f6e6b21f2b85ab2115525da3bffa02270c24955e4131c0bcd915d8828ef",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "partiellement_autonome",
+            "label": "Partiellement autonome",
+            "part": "word/document.xml",
+            "paragraph_index": 14,
+            "xpath": "/document/body[1]/p[13]",
+            "template_text_sha256": "5e4da9219a223141e1feeb922ae58d8d2c6c285af47e1e233d6b527a64fb92fd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non_besoin_d_accompagnement",
+            "label": "Non, besoin d'accompagnement",
+            "part": "word/document.xml",
+            "paragraph_index": 15,
+            "xpath": "/document/body[1]/p[14]",
+            "template_text_sha256": "081c080fbbc256c15460e2f512bdc18f9da3de7802d6412d5f9dfa71d74237cc",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "oui_totalement_autonome",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Êtes-vous capable de : rédiger un document, faire une mise en forme simple, sauvegarder un fichier ? *'.",
+      "validation": {
+        "enum": [
+          "oui_totalement_autonome",
+          "partiellement_autonome",
+          "non_besoin_d_accompagnement"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.etes_vous_a_l_aise_pour_envoyer_et_recevoir_des_emails_ajouter_des_pieces_jointes_organise",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.etes_vous_a_l_aise_pour_envoyer_et_recevoir_des_emails_ajouter_des_pieces_jointes_organise",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Êtes-vous à l'aise pour : envoyer et recevoir des emails, ajouter des pièces jointes, organiser votre boîte mail ? *",
+        "options": [
+          {
+            "value": "oui_totalement_autonome",
+            "label": "Oui, totalement autonome",
+            "part": "word/document.xml",
+            "paragraph_index": 17,
+            "xpath": "/document/body[1]/p[16]",
+            "template_text_sha256": "18092f6e6b21f2b85ab2115525da3bffa02270c24955e4131c0bcd915d8828ef",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "partiellement_autonome",
+            "label": "Partiellement autonome",
+            "part": "word/document.xml",
+            "paragraph_index": 18,
+            "xpath": "/document/body[1]/p[17]",
+            "template_text_sha256": "5e4da9219a223141e1feeb922ae58d8d2c6c285af47e1e233d6b527a64fb92fd",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non_besoin_d_accompagnement",
+            "label": "Non, besoin d'accompagnement",
+            "part": "word/document.xml",
+            "paragraph_index": 19,
+            "xpath": "/document/body[1]/p[18]",
+            "template_text_sha256": "081c080fbbc256c15460e2f512bdc18f9da3de7802d6412d5f9dfa71d74237cc",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "partiellement_autonome",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Êtes-vous à l'aise pour : envoyer et recevoir des emails, ajouter des pièces jointes, organiser votre boîte mail ? *'.",
+      "validation": {
+        "enum": [
+          "oui_totalement_autonome",
+          "partiellement_autonome",
+          "non_besoin_d_accompagnement"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.vous_sentez_vous_capable_de_tester_un_nouvel_outil_numerique_sans_assistance",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.vous_sentez_vous_capable_de_tester_un_nouvel_outil_numerique_sans_assistance",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Vous sentez-vous capable de tester un nouvel outil numérique sans assistance ? *",
+        "options": [
+          {
+            "value": "oui_facilement",
+            "label": "Oui facilement",
+            "part": "word/document.xml",
+            "paragraph_index": 21,
+            "xpath": "/document/body[1]/p[20]",
+            "template_text_sha256": "a3530af686b32c534463da0051559cbd67a2903d28571fe86db4488298aebe64",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "oui_avec_un_peu_d_aide",
+            "label": "Oui avec un peu d'aide",
+            "part": "word/document.xml",
+            "paragraph_index": 22,
+            "xpath": "/document/body[1]/p[21]",
+            "template_text_sha256": "47e35f6c7f8f68dd78b889e413178c18dfecbcad85934215e8cb3b7e2e905d1a",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non",
+            "label": "Non",
+            "part": "word/document.xml",
+            "paragraph_index": 23,
+            "xpath": "/document/body[1]/p[22]",
+            "template_text_sha256": "a797aee61e3a8eafab4ae8d490bb08d3113054a5b78772677b7200a1aac83c82",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "oui_avec_un_peu_d_aide",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Vous sentez-vous capable de tester un nouvel outil numérique sans assistance ? *'.",
+      "validation": {
+        "enum": [
+          "oui_facilement",
+          "oui_avec_un_peu_d_aide",
+          "non"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.si_vous_vous_sentez_en_difficulte_sur_certains_points_quels_amenagements_seraient_utiles",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.si_vous_vous_sentez_en_difficulte_sur_certains_points_quels_amenagements_seraient_utiles",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Si vous vous sentez en difficulté sur certains points, quels aménagements seraient utiles ? *",
+        "options": [
+          {
+            "value": "accompagnement_individualise_lors_des_mises_en_pratique",
+            "label": "Accompagnement individualisé lors des mises en pratique",
+            "part": "word/document.xml",
+            "paragraph_index": 25,
+            "xpath": "/document/body[1]/p[24]",
+            "template_text_sha256": "d5fb936b15ec1c235083887150cd44486465b606a8fc9b314fcc9ffcbf1c3b42",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "ralentissement_du_rythme_lors_des_phases_techniques",
+            "label": "Ralentissement du rythme lors des phases techniques",
+            "part": "word/document.xml",
+            "paragraph_index": 26,
+            "xpath": "/document/body[1]/p[25]",
+            "template_text_sha256": "c577490bddf6d37a0abdaa02725d720148e90ec0b807680aafd4c1d958f757e7",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "support_supplementaire_guides_pas_a_pas",
+            "label": "Support supplémentaire (guides pas à pas)",
+            "part": "word/document.xml",
+            "paragraph_index": 27,
+            "xpath": "/document/body[1]/p[26]",
+            "template_text_sha256": "a78f20feb629d961f7731f5517328b5a72ca60fff9b44142b77fb9defc9be8ed",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "aucun_besoin_particulier",
+            "label": "Aucun besoin particulier",
+            "part": "word/document.xml",
+            "paragraph_index": 28,
+            "xpath": "/document/body[1]/p[27]",
+            "template_text_sha256": "c5901f28674196395bad3659d4d760699d74339a72f5ef029de6d1bbc9a3d27d",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "aucun_besoin_particulier",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Si vous vous sentez en difficulté sur certains points, quels aménagements seraient utiles ? *'.",
+      "validation": {
+        "enum": [
+          "accompagnement_individualise_lors_des_mises_en_pratique",
+          "ralentissement_du_rythme_lors_des_phases_techniques",
+          "support_supplementaire_guides_pas_a_pas",
+          "aucun_besoin_particulier"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.professional.company_name",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.professional.company_name",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Comprenez-vous les enjeux de performance et d'organisation liés à l'intégration de l'IA dans votre entreprise ? *",
+        "options": [
+          {
+            "value": "oui_clairement",
+            "label": "Oui clairement",
+            "part": "word/document.xml",
+            "paragraph_index": 31,
+            "xpath": "/document/body[1]/p[30]",
+            "template_text_sha256": "2d3bfe61d96616fa87591b0a312b3c29b8627695cf24b366706e9acd23a7f8ae",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "partiellement",
+            "label": "Partiellement",
+            "part": "word/document.xml",
+            "paragraph_index": 32,
+            "xpath": "/document/body[1]/p[31]",
+            "template_text_sha256": "92d0871633885ebb44e0f93b6d8c1d878be5be56909166e0805e4e6ab8117be2",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non",
+            "label": "Non",
+            "part": "word/document.xml",
+            "paragraph_index": 33,
+            "xpath": "/document/body[1]/p[32]",
+            "template_text_sha256": "a797aee61e3a8eafab4ae8d490bb08d3113054a5b78772677b7200a1aac83c82",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "oui_clairement",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Comprenez-vous les enjeux de performance et d'organisation liés à l'intégration de l'IA dans votre entreprise ? *'.",
+      "validation": {
+        "enum": [
+          "oui_clairement",
+          "partiellement",
+          "non"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.etes_vous_capable_d_analyser_les_processus_internes_de_votre_service_identifier_les_taches",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.etes_vous_capable_d_analyser_les_processus_internes_de_votre_service_identifier_les_taches",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Êtes-vous capable d'analyser les processus internes de votre service (identifier les tâches chronophages, points d'amélioration) ? *",
+        "options": [
+          {
+            "value": "oui",
+            "label": "Oui",
+            "part": "word/document.xml",
+            "paragraph_index": 35,
+            "xpath": "/document/body[1]/p[34]",
+            "template_text_sha256": "3b470d2c1846fa2d2240f240146acd9d26c3983b2ad147697ee7ffd756ec8dea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "basique",
+            "label": "Basique",
+            "part": "word/document.xml",
+            "paragraph_index": 36,
+            "xpath": "/document/body[1]/p[35]",
+            "template_text_sha256": "baca26169b872bfcac633d8543c1077361f89a4db258991d4d8012ed332a0a0f",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non",
+            "label": "Non",
+            "part": "word/document.xml",
+            "paragraph_index": 37,
+            "xpath": "/document/body[1]/p[36]",
+            "template_text_sha256": "a797aee61e3a8eafab4ae8d490bb08d3113054a5b78772677b7200a1aac83c82",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "oui",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Êtes-vous capable d'analyser les processus internes de votre service (identifier les tâches chronophages, points d'amélioration) ? *'.",
+      "validation": {
+        "enum": [
+          "oui",
+          "basique",
+          "non"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.pouvez_vous_vous_projeter_dans_une_feuille_de_route_d_integration_de_l_ia_pour_votre_servi",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.pouvez_vous_vous_projeter_dans_une_feuille_de_route_d_integration_de_l_ia_pour_votre_servi",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Pouvez-vous vous projeter dans une feuille de route d'intégration de l'IA pour votre service ? *",
+        "options": [
+          {
+            "value": "oui",
+            "label": "Oui",
+            "part": "word/document.xml",
+            "paragraph_index": 39,
+            "xpath": "/document/body[1]/p[38]",
+            "template_text_sha256": "3b470d2c1846fa2d2240f240146acd9d26c3983b2ad147697ee7ffd756ec8dea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "avec_accompagnement",
+            "label": "Avec accompagnement",
+            "part": "word/document.xml",
+            "paragraph_index": 40,
+            "xpath": "/document/body[1]/p[39]",
+            "template_text_sha256": "16da5804142f3c9d3e6b0b339f4f17f8bb5331e9498d1f1b718e28cee4f84f01",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non",
+            "label": "Non",
+            "part": "word/document.xml",
+            "paragraph_index": 41,
+            "xpath": "/document/body[1]/p[40]",
+            "template_text_sha256": "a797aee61e3a8eafab4ae8d490bb08d3113054a5b78772677b7200a1aac83c82",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "avec_accompagnement",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Pouvez-vous vous projeter dans une feuille de route d'intégration de l'IA pour votre service ? *'.",
+      "validation": {
+        "enum": [
+          "oui",
+          "avec_accompagnement",
+          "non"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.etes_vous_en_mesure_de_travailler_sur_un_projet_ou_des_exercices_pratiques_entre_les_sessi",
+      "source_class": "WORKBOOK",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.etes_vous_en_mesure_de_travailler_sur_un_projet_ou_des_exercices_pratiques_entre_les_sessi",
+      "target": {
+        "type": "docx_checkbox_group",
+        "question": "Êtes-vous en mesure de travailler sur un projet ou des exercices pratiques entre les sessions de formation ? *",
+        "options": [
+          {
+            "value": "oui",
+            "label": "Oui",
+            "part": "word/document.xml",
+            "paragraph_index": 43,
+            "xpath": "/document/body[1]/p[42]",
+            "template_text_sha256": "3b470d2c1846fa2d2240f240146acd9d26c3983b2ad147697ee7ffd756ec8dea",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "oui_avec_encadrement",
+            "label": "Oui avec encadrement",
+            "part": "word/document.xml",
+            "paragraph_index": 44,
+            "xpath": "/document/body[1]/p[43]",
+            "template_text_sha256": "a2cf6854a1f79fd3b1d211ed793670e2e0e3ccad6237e7554830ecd98eb03023",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          },
+          {
+            "value": "non",
+            "label": "Non",
+            "part": "word/document.xml",
+            "paragraph_index": 45,
+            "xpath": "/document/body[1]/p[44]",
+            "template_text_sha256": "a797aee61e3a8eafab4ae8d490bb08d3113054a5b78772677b7200a1aac83c82",
+            "on_symbol": "☒",
+            "off_symbol": "☐"
+          }
+        ]
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "semantic_to_checkbox_state",
+      "example_value": "oui_avec_encadrement",
+      "confidence": "CONFIRMED",
+      "evidence": "Filled reference changes checkbox state under 'Êtes-vous en mesure de travailler sur un projet ou des exercices pratiques entre les sessions de formation ? *'.",
+      "validation": {
+        "enum": [
+          "oui",
+          "oui_avec_encadrement",
+          "non"
+        ]
+      },
+      "blocking_reason": null
+    },
+    {
+      "semantic_field": "candidate.questionnaire.responses.recueil_des_besoins.merci_de_preciser_toute_difficulte_ou_besoin_particulier",
+      "source_class": "MANUAL_INPUT",
+      "source_path": "$.candidate.questionnaire.responses.recueil_des_besoins.merci_de_preciser_toute_difficulte_ou_besoin_particulier",
+      "target": {
+        "type": "docx_paragraph_text",
+        "location": {
+          "part": "word/document.xml",
+          "paragraph_index": 47,
+          "xpath": "/document/body[1]/tbl[3]/tr[1]/tc[1]/p[1]",
+          "in_table": true,
+          "style": null,
+          "template_text": "",
+          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "strategy": "fill_empty_or_marker_paragraph",
+          "fixed_prefix": ""
+        }
+      },
+      "required": true,
+      "repeatable": false,
+      "condition": null,
+      "transform": "trim",
+      "example_value": "Aucun besoin particulier",
+      "confidence": "CONFIRMED",
+      "evidence": "Template container is blank/marker-only and filled reference contains 'Aucun besoin particulier' after label 'Merci de préciser toute difficulté ou besoin particulier : *'.",
+      "validation": {
+        "type": [
+          "string",
+          "boolean",
+          "number",
+          "array",
+          "object",
+          "null"
+        ]
+      },
+      "blocking_reason": null
+    }
+  ],
+  "unresolved_differences": [],
+  "blocking_reasons": [],
+  "production_readiness": {
+    "status": "COMPLETE",
+    "field_count": 11,
+    "confirmed_field_count": 11,
+    "concrete_target_count": 11,
+    "evidence_count": 11,
+    "structural_only_evidence_count": 0,
+    "unresolved_difference_count": 0,
+    "formula_or_derived_target_count": 0,
+    "example_schema_valid": true,
+    "reasons": []
+  }
+}
