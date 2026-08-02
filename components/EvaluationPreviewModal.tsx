@@ -1,7 +1,7 @@
 'use client';
 
 import { CandidateEvaluationResult, CandidateRow } from '@/lib/types';
-import { Award, CheckCircle2, CheckSquare, CloudUpload, Download, FileText, Loader2, Sparkles, X } from 'lucide-react';
+import { Award, AlertTriangle, CheckCircle2, CheckSquare, CloudUpload, Download, FileText, Loader2, Sparkles, X } from 'lucide-react';
 import React, { useState } from 'react';
 
 export interface FillStats {
@@ -19,6 +19,8 @@ interface EvaluationPreviewModalProps {
   evalResult: CandidateEvaluationResult | null;
   producedCount: number;
   fillStats?: FillStats | null;
+  warnings?: string[];
+  pdfErrors?: { file: string; reason: string }[];
   onDownloadPackage: () => void;
   onSyncDrive?: () => void;
 }
@@ -30,6 +32,8 @@ export const EvaluationPreviewModal: React.FC<EvaluationPreviewModalProps> = ({
   evalResult,
   producedCount,
   fillStats,
+  warnings = [],
+  pdfErrors = [],
   onDownloadPackage,
   onSyncDrive,
 }) => {
@@ -167,6 +171,44 @@ export const EvaluationPreviewModal: React.FC<EvaluationPreviewModalProps> = ({
               <p className="text-[10px] text-slate-500 mt-2">
                 PDF non activé (variable CLOUDCONVERT_API_KEY). Les documents Word restent disponibles au téléchargement.
               </p>
+            )}
+          </div>
+        )}
+
+        {/* Warnings / PDF Errors Panel */}
+        {(warnings.length > 0 || pdfErrors.length > 0) && (
+          <div className="mb-5 space-y-2">
+            {pdfErrors.length > 0 && (
+              <div className="bg-rose-950/60 border border-rose-500/40 rounded-xl p-3">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <AlertTriangle className="h-4 w-4 text-rose-400 shrink-0" />
+                  <span className="text-xs font-bold text-rose-300">
+                    {pdfErrors.length} erreur{pdfErrors.length > 1 ? 's' : ''} de conversion PDF
+                  </span>
+                </div>
+                <ul className="space-y-1">
+                  {pdfErrors.map((e, i) => (
+                    <li key={i} className="text-[10px] text-rose-200 leading-snug">
+                      <span className="font-semibold">{e.file}:</span> {e.reason}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {warnings.length > 0 && (
+              <div className="bg-amber-950/50 border border-amber-600/30 rounded-xl p-3">
+                <div className="flex items-center gap-2 mb-1.5">
+                  <AlertTriangle className="h-4 w-4 text-amber-400 shrink-0" />
+                  <span className="text-xs font-bold text-amber-300">
+                    {warnings.length} avertissement{warnings.length > 1 ? 's' : ''}
+                  </span>
+                </div>
+                <ul className="space-y-1">
+                  {warnings.map((w, i) => (
+                    <li key={i} className="text-[10px] text-amber-200 leading-snug">{w}</li>
+                  ))}
+                </ul>
+              </div>
             )}
           </div>
         )}

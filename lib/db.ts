@@ -12,6 +12,11 @@ export function getDbPool(): Pool | null {
       connectionString,
       ssl: { rejectUnauthorized: false },
     });
+    pool.on('connect', (client) => {
+      client.query('SET search_path TO public').catch((err) => {
+        console.error('Failed to set search_path to public on connect:', err);
+      });
+    });
   }
   return pool;
 }

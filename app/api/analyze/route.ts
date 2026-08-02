@@ -3,6 +3,7 @@ import { CandidateRow } from '@/lib/types';
 import { NextRequest, NextResponse } from 'next/server';
 
 // Calls Claude for sheet analysis; allow more than the 10s default.
+export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 export const maxDuration = 120;
 

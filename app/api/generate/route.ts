@@ -26,12 +26,12 @@ export async function POST(req: NextRequest) {
 
     if (!isEligible) {
       return NextResponse.json(
-        { error: 'Le candidat n’a pas au moins un mode de génération prêt (Classique ou WeDOF).' },
+        { error: "Le candidat n\u2019a pas au moins un mode de g\u00e9n\u00e9ration pr\u00eat (Classique ou WeDOF)." },
         { status: 400 }
       );
     }
 
-    const { files, evalResult } = await generateCandidateDocuments(candidate, apiKey);
+    const { files, evalResult, warnings } = await generateCandidateDocuments(candidate, apiKey);
 
     const logEntry: GenerationLog = {
       id: `log-${Date.now()}`,
@@ -60,12 +60,19 @@ export async function POST(req: NextRequest) {
       aiFilledDocs: files.filter((f) => f.fillReport?.usedAi).length,
     };
 
+    // Collect PDF-specific errors from fill reports
+    const pdfErrors = files
+      .filter((f) => f.fillReport?.pdfError)
+      .map((f) => ({ file: f.filename, reason: f.fillReport!.pdfError! }));
+
     return NextResponse.json({
       success: true,
       log: logEntry,
       evalResult,
       producedCount: files.length,
       fillStats,
+      warnings: warnings || [],
+      pdfErrors,
       filesSummary: files.map((f) => ({
         filename: f.filename,
         relativePath: f.relativePath,
@@ -76,8 +83,13 @@ export async function POST(req: NextRequest) {
     });
   } catch (err: any) {
     console.error('Error generating documents:', err);
+    const message: string = err?.message || 'Erreur lors de la génération des documents.';
+    const isClaudeError = message.startsWith('[Claude AI]');
     return NextResponse.json(
-      { error: err.message || 'Erreur lors de la génération des documents.' },
+      {
+        error: message,
+        errorType: isClaudeError ? 'claude_api' : 'generation',
+      },
       { status: 500 }
     );
   }

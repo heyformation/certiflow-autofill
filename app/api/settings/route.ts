@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const envKey = process.env.CLAUDE_API_KEY || '';
   const hasEnvKey = Boolean(envKey.trim());

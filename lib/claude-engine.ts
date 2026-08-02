@@ -116,10 +116,9 @@ Format de réponse STRICT JSON :
 }`;
 
       const candidateModels = [
-        'claude-sonnet-4-5-20250929',
-        'claude-3-7-sonnet-20250219',
-        'claude-3-5-sonnet-20241022',
         'claude-3-5-haiku-20241022',
+        'claude-3-5-sonnet-20241022',
+        'claude-3-7-sonnet-20250219',
         'claude-3-haiku-20240307',
       ];
 
@@ -283,7 +282,7 @@ Fournissez une analyse d'expert au format STRICT JSON :
 }`;
 
       const candidateModels = [
-        'claude-sonnet-4-5-20250929',
+        'claude-3-5-haiku-20241022',
         'claude-3-5-sonnet-20241022',
         'claude-3-haiku-20240307',
       ];

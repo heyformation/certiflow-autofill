@@ -2,7 +2,7 @@
 const nextConfig = {
   serverExternalPackages: ['xlsx', 'pizzip', 'docxtemplater', 'jszip', 'pdfkit', 'pg'],
   outputFileTracingIncludes: {
-    '/api/**/*': ['./Templates/**/*', './node_modules/pdfkit/js/data/**/*'],
+    '/api/**/*': ['./Templates/**/*', './Templates_MD/**/*', './node_modules/pdfkit/js/data/**/*'],
   },
 };
 

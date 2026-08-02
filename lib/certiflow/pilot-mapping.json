@@ -1,0 +1,86 @@
+[
+  {
+    "field_key": "candidate.fullName",
+    "source_path": "candidate.fullName",
+    "target": {
+      "type": "table_cell",
+      "table_index": 1,
+      "row_index": 0,
+      "column_index": 1,
+      "label": "Votre nom :"
+    }
+  },
+  {
+    "field_key": "candidate.nom",
+    "source_path": "candidate.nom",
+    "target": {
+      "type": "table_cell",
+      "table_index": 1,
+      "row_index": 1,
+      "column_index": 1,
+      "label": "Nom :"
+    }
+  },
+  {
+    "field_key": "candidate.prenom",
+    "source_path": "candidate.prenom",
+    "target": {
+      "type": "table_cell",
+      "table_index": 1,
+      "row_index": 2,
+      "column_index": 1,
+      "label": "Prénom :"
+    }
+  },
+  {
+    "field_key": "candidate.mail",
+    "source_path": "candidate.mail",
+    "target": {
+      "type": "table_cell",
+      "table_index": 1,
+      "row_index": 3,
+      "column_index": 1,
+      "label": "Email :"
+    }
+  },
+  {
+    "field_key": "candidate.date_naissance",
+    "source_path": "candidate.date_naissance",
+    "target": {
+      "type": "table_cell",
+      "table_index": 1,
+      "row_index": 4,
+      "column_index": 1,
+      "label": "Date de naissance :"
+    }
+  },
+  {
+    "field_key": "employment_status",
+    "source_path": "answers.employment_status",
+    "target": {
+      "type": "checkbox",
+      "table_index": 1,
+      "row_index": 10,
+      "column_index": 1,
+      "label": "Statut professionnel :",
+      "options": ["employee", "manager", "job_seeker"],
+      "labels": {
+        "employee": "Salarié",
+        "manager": "Dirigeant",
+        "job_seeker": "Demandeur d’emploi"
+      }
+    }
+  },
+  {
+    "field_key": "candidate.signature",
+    "source_path": "candidate.signatureUrl",
+    "target": {
+      "type": "signature",
+      "table_index": 1,
+      "row_index": 19,
+      "column_index": 1,
+      "max_width_cm": 4.5,
+      "max_height_cm": 2.0
+    }
+  }
+]
