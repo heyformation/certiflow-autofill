@@ -5,7 +5,8 @@
 ✅ **Build passes** (`npm run build` — green)  
 ✅ **Env vars isolated** (removed hardcoded Google key)  
 ✅ **Function timeouts configured** (vercel.json + route exports)  
-✅ **Templates bundled** (next.config.mjs outputFileTracingIncludes)
+✅ **Templates bundled** (next.config.mjs outputFileTracingIncludes)  
+✅ **Large files removed from Git** (templates stored externally)
 
 ## 🚨 SECURITY ALERT
 
@@ -36,11 +37,20 @@ Go to **Project Settings > Environment Variables** and add:
 |---|---|---|
 | `CLAUDE_API_KEY` | Your Anthropic API key | ✅ Yes |
 | `DATABASE_URL` | Neon PostgreSQL connection string (pooled) | ✅ Yes |
+| `CERTIFLOW_TEMPLATES_ROOT` | Path to templates folder (see note below) | ✅ Yes |
 | `CLOUDCONVERT_API_KEY` | CloudConvert API key for PDF conversion | ❌ Optional* |
 | `PDF_CONVERSION` | Leave empty or set to `off` to disable PDFs | ❌ Optional |
 | `GOOGLE_SERVICE_ACCOUNT_EMAIL` | Service account email (new one, after key rotation) | ❌ Optional** |
 | `GOOGLE_PRIVATE_KEY` | Private key **with literal `\n` escapes** (see example below) | ❌ Optional** |
 | `GOOGLE_DRIVE_FOLDER_ID` | Shared Drive folder ID | ❌ Optional** |
+
+📁 **TEMPLATES_ROOT note**: 
+- For **local development**, set to your local path: `F:\Office\Input -output\CertiFlow_Verified_Document_Templates_v1`
+- For **Vercel production**, you have two options:
+  1. Use Vercel Blob Storage (upload templates to blob, set path accordingly)
+  2. Use Google Drive or external CDN (set path to mounted/synced location)
+- Template files are ~40MB and excluded from Git to save space
+- Required structure: `templates/reports/complete-document-status.json` must exist
 
 *️⃣ **PDF_CONVERSION note**: Requires **Vercel Pro** ($20/month) for `maxDuration: 300`. On Hobby (free), functions timeout at 60s, so PDF conversion may fail. Leave `CLOUDCONVERT_API_KEY` empty to deliver DOCX only.
 
