@@ -28,7 +28,10 @@ Go to **Project Settings > Environment Variables**:
 ```
 CLAUDE_API_KEY=sk-ant-api03-XXXXXXXX_your_actual_key_here
 DATABASE_URL=postgresql://user:password@host/database?sslmode=require
+PDF_CONVERSION=off
 ```
+
+**Note:** PDF conversion is DISABLED. Users will receive DOCX files only (faster, simpler, 100% FREE).
 
 #### For Templates (Choose One Option):
 
@@ -48,6 +51,23 @@ GOOGLE_PRIVATE_KEY=-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY_HERE\n-----END 
 GOOGLE_DRIVE_FOLDER_ID=your_folder_id_here
 ```
 ⚠️ Get these from your `.env.local` file or Google Cloud Console
+
+---
+
+## 📄 PDF Conversion Status
+
+**DISABLED** - Application will deliver DOCX files only.
+
+**Why DOCX only?**
+- ✅ Faster generation (no conversion time)
+- ✅ 100% FREE (no API costs)
+- ✅ Smaller file sizes
+- ✅ Fully editable
+- ✅ Works perfectly on all platforms
+
+**If you need PDF later:**
+- Users can convert DOCX to PDF using Word, Google Docs, or any free online tool
+- OR add CloudConvert API key (costs ~$9 per 1000 conversions)
 
 ### Step 4: Deploy
 ```bash

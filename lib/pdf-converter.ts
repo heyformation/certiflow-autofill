@@ -4,9 +4,10 @@
  * DOCX -> PDF conversion for a Vercel serverless deployment.
  *
  * Strategy:
- * 1. Try local conversion using libreoffice-convert (works in dev/local)
- * 2. Fall back to CloudConvert API (works on Vercel/production)
- * 3. If both fail, return null and deliver DOCX only
+ * 1. Try Microsoft Word (Windows only, 100% FREE)
+ * 2. Try local conversion using libreoffice-convert (works in dev/local)
+ * 3. Fall back to CloudConvert API (works on Vercel/production)
+ * 4. If all fail, return null and deliver DOCX only
  *
  * Configuration (env vars, never committed):
  *   CLOUDCONVERT_API_KEY  - CloudConvert API token (optional).
@@ -14,20 +15,21 @@
  */
 
 import { convertDocxToPdfLocal, isLocalPdfAvailable } from './pdf-converter-local';
+import { convertDocxToPdfWord, isWordAvailable } from './pdf-converter-word';
 
 const CLOUDCONVERT_BASE = 'https://api.cloudconvert.com/v2';
 
 export function isPdfConversionEnabled(): boolean {
   if (process.env.PDF_CONVERSION === 'off') return false;
-  // Enable if either local or CloudConvert is available
-  return isLocalPdfAvailable() || Boolean(process.env.CLOUDCONVERT_API_KEY);
+  // Enable if any method is available
+  return isWordAvailable() || isLocalPdfAvailable() || Boolean(process.env.CLOUDCONVERT_API_KEY);
 }
 
 /**
  * Convert a DOCX buffer to a PDF buffer. Returns null if conversion is disabled
  * or fails for any reason (caller should fall back to the DOCX).
  * 
- * Tries local conversion first (fast), then CloudConvert API (slower but works everywhere)
+ * Tries methods in order: Word (fastest) → LibreOffice → CloudConvert
  */
 export async function convertDocxToPdf(
   docxBuffer: Buffer,
@@ -35,7 +37,18 @@ export async function convertDocxToPdf(
 ): Promise<Buffer | null> {
   if (process.env.PDF_CONVERSION === 'off') return null;
 
-  // Try local conversion first (if available)
+  // Try Microsoft Word first (Windows only, 100% FREE)
+  if (isWordAvailable()) {
+    console.log('Using Microsoft Word for PDF conversion...');
+    const wordPdf = await convertDocxToPdfWord(docxBuffer, filename);
+    if (wordPdf) {
+      console.log('✓ Word PDF conversion successful');
+      return wordPdf;
+    }
+    console.warn('Word PDF conversion failed, trying LibreOffice...');
+  }
+
+  // Try LibreOffice conversion (if available)
   if (isLocalPdfAvailable()) {
     console.log('Using local LibreOffice conversion...');
     const localPdf = await convertDocxToPdfLocal(docxBuffer, filename);
