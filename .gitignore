@@ -34,4 +34,25 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Vercel
 .vercel
+
+# Test outputs and generated files
+/output_test/
+/Filled_Examples/
+
+# Large template files (use external storage or CDN)
+/templates/*.docx
+/templates/*.pptx
+/templates/*.xlsx
+/templates/*.zip
+# Keep only reports folder with JSON metadata
+!/templates/reports/
+
+# Markdown templates (keep if needed for documentation)
+# /Templates_MD/
+
+# Documentation files (optional - remove if not needed in repo)
+*.docx.md
+Developer of EDOF_restructure_v9.xlsx
+Copy of Cahier des Charges*.md
