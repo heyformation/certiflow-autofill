@@ -295,6 +295,39 @@ export default function DashboardPage() {
     }
   };
 
+  // Clear Database
+  const handleClearDatabase = async () => {
+    if (
+      !window.confirm(
+        'Êtes-vous sûr de vouloir vider la base de données ? Tous les candidats enregistrés seront supprimés.'
+      )
+    ) {
+      return;
+    }
+
+    setLoadingState({
+      isOpen: true,
+      type: 'UPLOAD',
+      message: 'Vidage de la base de données en cours...',
+      subMessage: 'Suppression de tous les enregistrements candidats dans la base PostgreSQL...',
+    });
+
+    try {
+      const res = await fetch('/api/candidates', { method: 'DELETE' });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setCandidates([]);
+        alert('La base de données a été vidée avec succès.');
+      } else {
+        alert(data.error || 'Erreur lors du vidage de la base de données.');
+      }
+    } catch (err) {
+      alert('Erreur réseau lors de la suppression.');
+    } finally {
+      setLoadingState({ isOpen: false, type: null });
+    }
+  };
+
   if (!isAuthChecked) {
     return null; // Avoid layout flicker during auth check
   }
@@ -425,6 +458,7 @@ export default function DashboardPage() {
             onToggleGenererMaintenant={handleToggleGenererMaintenant}
             onGenerateCandidate={handleGenerateCandidate}
             onBatchGenerate={handleBatchGenerate}
+            onClearDatabase={handleClearDatabase}
             isGenerating={isGenerating}
             autoMode={autoMode}
           />

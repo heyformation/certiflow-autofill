@@ -2,58 +2,158 @@ import * as XLSX from 'xlsx';
 import { checkCandidateCompleteness } from './completeness';
 import { CandidateRow, Organization, RSCertificationCode } from './types';
 
+export function cleanTitle(str: string): { civilite?: string; cleanName: string } {
+  if (!str) return { cleanName: '' };
+  let s = str.trim();
+  let civilite: string | undefined = undefined;
+
+  const match = s.match(/^(Mr\.|Mr|Ms\.|Ms|Mme\.|Mme|M\.|Mrs\.|Mrs|Dr\.|Dr)\s+/i);
+  if (match) {
+    const rawTitle = match[1].toLowerCase();
+    if (rawTitle.startsWith('mr') || rawTitle === 'm.') civilite = 'M.';
+    else if (rawTitle.startsWith('ms') || rawTitle.startsWith('mme') || rawTitle.startsWith('mrs')) civilite = 'Mme';
+    s = s.substring(match[0].length).trim();
+  }
+  return { civilite, cleanName: s };
+}
+
+export function getPersonKey(nom: string, prenom: string, organisme: string): string {
+  const full = `${nom || ''} ${prenom || ''}`
+    .replace(/^(Mr\.|Mr|Ms\.|Ms|Mme\.|Mme|M\.|Mrs\.|Mrs|Dr\.|Dr)\s+/i, '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s]/g, '')
+    .split(/\s+/)
+    .filter(Boolean)
+    .sort()
+    .join('_');
+
+  const normOrg = (organisme || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]/g, '');
+
+  return `${full}__${normOrg}`;
+}
+
 export function generateDeterministicCandidateId(
   nom: string,
   prenom: string,
   organisme: string,
   code_certif: string
 ): string {
-  const normNom = (nom || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
-  const normPrenom = (prenom || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
-  const normOrg = (organisme || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+  const personKey = getPersonKey(nom, prenom, organisme);
   const normCode = (code_certif || '').trim().toLowerCase();
-  return `cand-${normOrg}-${normCode}-${normNom}-${normPrenom}`;
+  return `cand-${personKey}-${normCode}`;
+}
+
+export function isValidEmail(email?: string): boolean {
+  if (!email) return false;
+  const e = email.trim().toLowerCase();
+  if (
+    !e ||
+    e === 'no email' ||
+    e === 'no_email' ||
+    e === 'sans email' ||
+    e === 'n/a' ||
+    e === 'none' ||
+    e === 'null' ||
+    e === 'undefined'
+  ) {
+    return false;
+  }
+  return e.includes('@');
 }
 
 export function enrichAndDeduplicateCandidates(candidates: CandidateRow[]): CandidateRow[] {
   if (!candidates || candidates.length === 0) return [];
 
-  // Step 1: Map known contact details for each person (nom + prenom + organisme)
-  const personContacts = new Map<string, { mail?: string; numero_tel?: string; adresse?: string; date_naissance?: string }>();
+  // Step 1: Map best contact details for each unique person
+  const personContacts = new Map<
+    string,
+    { mail?: string; numero_tel?: string; adresse?: string; date_naissance?: string; experience_pro?: string }
+  >();
 
   for (const c of candidates) {
-    const personKey = `${(c.nom || '').trim().toLowerCase()}_${(c.prenom || '').trim().toLowerCase()}_${(c.organisme || '').trim().toLowerCase()}`;
-    const existing = personContacts.get(personKey) || {};
-    personContacts.set(personKey, {
-      mail: (c.mail && c.mail.trim()) || existing.mail || '',
-      numero_tel: (c.numero_tel && c.numero_tel.trim()) || existing.numero_tel || '',
-      adresse: (c.adresse && c.adresse.trim()) || existing.adresse || '',
-      date_naissance: (c.date_naissance && c.date_naissance.trim()) || existing.date_naissance || '',
+    const { cleanName: cleanNom } = cleanTitle(c.nom);
+    const { cleanName: cleanPrenom } = cleanTitle(c.prenom);
+    const pNom = cleanNom || c.nom;
+    const pPrenom = cleanPrenom || c.prenom;
+    const key = getPersonKey(pNom, pPrenom, c.organisme);
+
+    const existing = personContacts.get(key) || {};
+    const validMail = isValidEmail(c.mail)
+      ? c.mail!.trim()
+      : isValidEmail(c.mail_wedof)
+      ? c.mail_wedof!.trim()
+      : isValidEmail(c.mail_crm)
+      ? c.mail_crm!.trim()
+      : undefined;
+
+    const validTel =
+      c.numero_tel && c.numero_tel.trim() && !c.numero_tel.toLowerCase().includes('n/a')
+        ? c.numero_tel.trim()
+        : undefined;
+    const validAdresse =
+      c.adresse && c.adresse.trim() && !c.adresse.toLowerCase().includes('n/a')
+        ? c.adresse.trim()
+        : undefined;
+    const validDob = c.date_naissance && c.date_naissance.trim() ? c.date_naissance.trim() : undefined;
+    const validExp = c.experience_pro && c.experience_pro.trim() ? c.experience_pro.trim() : undefined;
+
+    personContacts.set(key, {
+      mail: validMail || existing.mail || '',
+      numero_tel: validTel || existing.numero_tel || '',
+      adresse: validAdresse || existing.adresse || '',
+      date_naissance: validDob || existing.date_naissance || '',
+      experience_pro: validExp || existing.experience_pro || '',
     });
   }
 
-  // Step 2: Enrich contact details & deduplicate by candidate ID
+  // Step 2: Enrich candidate rows & collapse duplicate entries for same (person, code_certif)
   const deduplicatedMap = new Map<string, CandidateRow>();
 
   for (const c of candidates) {
-    const detId = generateDeterministicCandidateId(c.nom, c.prenom, c.organisme, c.code_certif);
-    const personKey = `${(c.nom || '').trim().toLowerCase()}_${(c.prenom || '').trim().toLowerCase()}_${(c.organisme || '').trim().toLowerCase()}`;
+    let { cleanName: cleanNom, civilite: titleNom } = cleanTitle(c.nom);
+    let { cleanName: cleanPrenom, civilite: titlePrenom } = cleanTitle(c.prenom);
+
+    let nom = cleanNom || c.nom;
+    let prenom = cleanPrenom || c.prenom;
+    let civilite = c.civilite || titleNom || titlePrenom || 'M.';
+
+    const personKey = getPersonKey(nom, prenom, c.organisme);
+    const detId = generateDeterministicCandidateId(nom, prenom, c.organisme, c.code_certif);
     const contact = personContacts.get(personKey) || {};
 
-    const mail = (c.mail && c.mail.trim()) || contact.mail || '';
-    const numero_tel = (c.numero_tel && c.numero_tel.trim()) || contact.numero_tel || '';
-    const adresse = (c.adresse && c.adresse.trim()) || contact.adresse || '';
+    const rawMail = isValidEmail(c.mail) ? c.mail!.trim() : '';
+    const mail = rawMail || contact.mail || '';
+
+    const rawTel =
+      c.numero_tel && !c.numero_tel.toLowerCase().includes('n/a') ? c.numero_tel.trim() : '';
+    const numero_tel = rawTel || contact.numero_tel || '';
+
+    const rawAdr =
+      c.adresse && !c.adresse.toLowerCase().includes('n/a') ? c.adresse.trim() : '';
+    const adresse = rawAdr || contact.adresse || '';
+
     const date_naissance = (c.date_naissance && c.date_naissance.trim()) || contact.date_naissance || '';
+    const experience_pro = (c.experience_pro && c.experience_pro.trim()) || contact.experience_pro || '';
 
     const existing = deduplicatedMap.get(detId);
 
     const merged: CandidateRow = {
       ...c,
       id: detId,
+      nom,
+      prenom,
+      civilite,
       mail: mail || existing?.mail || '',
       numero_tel: numero_tel || existing?.numero_tel || '',
       adresse: adresse || existing?.adresse || '',
       date_naissance: date_naissance || existing?.date_naissance || '',
+      experience_pro: experience_pro || existing?.experience_pro || '',
       cv_recu: c.cv_recu || existing?.cv_recu || false,
       cin_ok: c.cin_ok || existing?.cin_ok || false,
       pret_generation_classique: c.pret_generation_classique || existing?.pret_generation_classique || false,
@@ -61,7 +161,6 @@ export function enrichAndDeduplicateCandidates(candidates: CandidateRow[]): Cand
       pret_pour_generation: c.pret_pour_generation || existing?.pret_pour_generation || false,
     };
 
-    // Re-check completeness with enriched fields
     const completeness = checkCandidateCompleteness(merged);
     merged.pret_generation_classique = merged.pret_generation_classique || completeness.pretClassique;
     merged.pret_generation_wedof = merged.pret_generation_wedof || completeness.pretWedof;

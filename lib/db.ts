@@ -22,6 +22,13 @@ export function getDbPool(): Pool | null {
   return pool;
 }
 
+export async function closePool(): Promise<void> {
+  if (pool) {
+    await pool.end();
+    pool = null;
+  }
+}
+
 let isInitialized = false;
 
 export async function initDbSchema(): Promise<boolean> {
@@ -203,6 +210,18 @@ export async function logGenerationToDb(log: GenerationLog): Promise<boolean> {
   }
 }
 
+export async function clearCandidatesFromDb(): Promise<boolean> {
+  const db = getDbPool();
+  if (!db) return false;
+  try {
+    await db.query('DELETE FROM candidates;');
+    return true;
+  } catch (err) {
+    console.error('Failed to clear candidates from PostgreSQL DB:', err);
+    return false;
+  }
+}
+
 export async function getCandidatesFromDb(): Promise<CandidateRow[]> {
   const db = getDbPool();
   if (!db) return [];
@@ -210,7 +229,7 @@ export async function getCandidatesFromDb(): Promise<CandidateRow[]> {
 
   try {
     const res = await db.query(`SELECT * FROM candidates ORDER BY created_at DESC;`);
-    return res.rows.map((r: any) => ({
+    const rawList: CandidateRow[] = res.rows.map((r: any) => ({
       id: r.id,
       nom: r.nom,
       prenom: r.prenom,
@@ -241,6 +260,8 @@ export async function getCandidatesFromDb(): Promise<CandidateRow[]> {
       generer_maintenant: false,
       missing_fields: [],
     }));
+
+    return enrichAndDeduplicateCandidates(rawList);
   } catch (err) {
     console.warn('Failed to query candidates from PostgreSQL:', err);
     return [];

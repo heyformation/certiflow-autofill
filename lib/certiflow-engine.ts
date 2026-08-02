@@ -54,6 +54,49 @@ export interface AvailableTemplate {
 const paragraphPattern = /<w:p\b[^>]*>[\s\S]*?<\/w:p>/g;
 const textPattern = /<w:t\b[^>]*>([\s\S]*?)<\/w:t>/g;
 
+/**
+ * Post-process a populated document.xml to fix template blanks that the
+ * tag-based engine cannot reach because they are split across multiple
+ * <w:r> runs (e.g. "Stagiaire : " in run 1, "______" in run 2).
+ *
+ * Strategy: scan every paragraph, compute its combined visible text, and if
+ * it matches a known blank pattern, replace the whole paragraph content with
+ * the resolved value while preserving the first run's character properties.
+ */
+function postProcessDocxXml(
+  xml: string,
+  data: Record<string, any>
+): string {
+  // Build the candidate full name from canonical data paths
+  // canonical structure: data.identity.first_name / last_name / full_name
+  const fullName: string = (
+    data?.identity?.full_name ||
+    `${data?.identity?.first_name || data?.candidate?.prenom || data?.prenom || ''} ${data?.identity?.last_name || data?.candidate?.nom || data?.nom || ''}`.trim()
+  ).trim();
+  if (!fullName) return xml; // nothing to substitute
+
+  return xml.replace(paragraphPattern, (para) => {
+    // Compute combined visible text of this paragraph
+    const combined = [...para.matchAll(new RegExp(textPattern.source, 'g'))]
+      .map((m) => decodeXml(m[1]))
+      .join('')
+      .trim();
+
+    // Detect: "Stagiaire : ____" or "Stagiaire ____" (5+ underscores)
+    if (/^Stagiaire\s*:?\s*_{5,}$/.test(combined)) {
+      // Preserve first rPr (character formatting) and pPr (paragraph formatting)
+      const rPrMatch = para.match(/<w:rPr[\s\S]*?<\/w:rPr>/);
+      const rPr = rPrMatch ? rPrMatch[0] : '';
+      const pPrMatch = para.match(/<w:pPr[\s\S]*?<\/w:pPr>/);
+      const pPr = pPrMatch ? pPrMatch[0] : '';
+      const encoded = encodeXml(`Stagiaire : ${fullName}`);
+      return `<w:p>${pPr}<w:r>${rPr}<w:t xml:space="preserve">${encoded}</w:t></w:r></w:p>`;
+    }
+    return para;
+  });
+}
+
+
 function decodeXml(value: string): string {
   return value
     .replace(/&lt;/g, '<')
@@ -450,6 +493,9 @@ export function populateDocx(
   if (missingRequired.length) {
     errors.push(`Missing required values: ${missingRequired.join(', ')}`);
   }
+
+  // Post-process: resolve blank lines that span multiple XML runs (e.g. "Stagiaire : ___")
+  xml = postProcessDocxXml(xml, localData);
 
   zip.file('word/document.xml', xml);
   const bytes = zip.generate({ type: 'nodebuffer', compression: 'DEFLATE' }) as Buffer;

@@ -1,4 +1,4 @@
-import { getCandidatesFromDb } from '@/lib/db';
+import { clearCandidatesFromDb, getCandidatesFromDb } from '@/lib/db';
 import { parseEdofExcelBuffer } from '@/lib/edof-parser';
 import fs from 'fs';
 import { NextResponse } from 'next/server';
@@ -44,3 +44,22 @@ export async function GET() {
     );
   }
 }
+
+export async function DELETE() {
+  try {
+    const success = await clearCandidatesFromDb();
+    return NextResponse.json({
+      success,
+      message: success
+        ? 'Base de données vidée avec succès.'
+        : 'Impossible de vider la base de données.',
+    });
+  } catch (err: any) {
+    console.error('Error clearing candidates from DB:', err);
+    return NextResponse.json(
+      { error: err.message || 'Erreur lors du vidage de la base de données.' },
+      { status: 500 }
+    );
+  }
+}
+

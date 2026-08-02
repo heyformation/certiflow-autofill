@@ -1,7 +1,7 @@
 'use client';
 
 import { CandidateRow } from '@/lib/types';
-import { AlertCircle, CheckCircle2, Download, FileCheck, Play, Search, Sparkles } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Download, FileCheck, Play, Search, Sparkles, Trash2 } from 'lucide-react';
 import React, { useState } from 'react';
 
 interface CandidateTableProps {
@@ -9,6 +9,7 @@ interface CandidateTableProps {
   onToggleGenererMaintenant: (id: string) => void;
   onGenerateCandidate: (candidate: CandidateRow) => void;
   onBatchGenerate: (selectedCandidates: CandidateRow[]) => void;
+  onClearDatabase?: () => void;
   isGenerating: boolean;
   autoMode?: boolean;
 }
@@ -18,6 +19,7 @@ export const CandidateTable: React.FC<CandidateTableProps> = ({
   onToggleGenererMaintenant,
   onGenerateCandidate,
   onBatchGenerate,
+  onClearDatabase,
   isGenerating,
   autoMode = false,
 }) => {
@@ -175,17 +177,31 @@ export const CandidateTable: React.FC<CandidateTableProps> = ({
           </select>
         </div>
 
-        {/* Batch Actions for Checkbox Selected */}
-        {selectedIds.length > 0 && (
-          <button
-            onClick={() => onBatchGenerate(selectedCandidates)}
-            disabled={isGenerating}
-            className="flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-semibold text-xs px-4 py-2 rounded-xl shadow-lg transition-all active:scale-95 disabled:opacity-50"
-          >
-            <Download className="h-4 w-4" />
-            <span>Générer Pack ZIP Sélection ({selectedIds.length})</span>
-          </button>
-        )}
+        {/* Action Buttons: Batch Zip & Clear Database */}
+        <div className="flex items-center gap-2">
+          {selectedIds.length > 0 && (
+            <button
+              onClick={() => onBatchGenerate(selectedCandidates)}
+              disabled={isGenerating}
+              className="flex items-center space-x-2 bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white font-semibold text-xs px-4 py-2 rounded-xl shadow-lg transition-all active:scale-95 disabled:opacity-50"
+            >
+              <Download className="h-4 w-4" />
+              <span>Générer Pack ZIP Sélection ({selectedIds.length})</span>
+            </button>
+          )}
+
+          {onClearDatabase && (
+            <button
+              onClick={onClearDatabase}
+              disabled={isGenerating}
+              className="flex items-center space-x-2 bg-red-950/60 hover:bg-red-900/80 text-red-300 font-bold text-xs px-4 py-2 rounded-xl border border-red-800/60 shadow-lg transition-all active:scale-95 disabled:opacity-50"
+              title="Purger / Vider tous les candidats de la base de données"
+            >
+              <Trash2 className="h-4 w-4 text-red-400" />
+              <span>Vider la Base</span>
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Table Body */}
