@@ -629,6 +629,16 @@ export function buildCanonicalInput(
       : 'Dirigeant de TPE',
   };
 
+  // ── Dossier d'inscription (RS7344) ──
+  responses.dossier_inscription = {
+    stagiaire: candidateFullName,
+    votre_prenom: candidate.prenom || '',
+    votre_nom_de_famille: candidate.nom || '',
+    votre_intitule_de_poste_exact: candidate.experience_pro
+      ? candidate.experience_pro.split(/[.\n]/)[0].slice(0, 100).trim()
+      : 'Dirigeant de TPE',
+  };
+
   // ── Evaluation intermédiaire / finale — stagiaire header ──
   responses.evaluation_intermediaire = {
     stagiaire: candidateFullName,
@@ -738,22 +748,40 @@ export function buildCanonicalInput(
   };
 
   // ── Practical case answers (Cas Pratiques) ──
+  // Key schema used by all mapping files:
+  //   votre_production                      → scenario 1
+  //   votre_production_votre_production      → scenario 2 (NO numeric suffix)
+  //   votre_production_votre_production_2    → scenario 3
+  //   votre_production_votre_production_N    → scenario N+1
+  const rsCode = candidate.code_certif;
   const cas_pratiques: Record<string, string> = {};
-  for (let i = 1; i <= 10; i++) {
-    const key = `votre_production_${i}`;
-    const keyAlt = `votre_production_votre_production${i > 1 ? `_${i - 1}` : ''}`;
-    const ans = getDeterministicProduction(candidate.code_certif, `production ${i}`, `production ${i}`);
-    cas_pratiques[key] = ans;
-    cas_pratiques[keyAlt] = ans;
-    narratives[key] = ans;
-    responses[key] = ans;
+
+  // Scenario 1
+  const prod1 = getDeterministicProduction(rsCode, 'production 1', 'production 1');
+  cas_pratiques['votre_production'] = prod1;
+  cas_pratiques['votre_production_1'] = prod1;
+  narratives['votre_production'] = prod1;
+  narratives['votre_production_1'] = prod1;
+  responses['votre_production_1'] = prod1;
+
+  // Scenario 2 — key has NO numeric suffix
+  const prod2 = getDeterministicProduction(rsCode, 'production 2', 'production 2');
+  cas_pratiques['votre_production_votre_production'] = prod2;
+  cas_pratiques['votre_production_2'] = prod2;
+  narratives['votre_production_votre_production'] = prod2;
+  narratives['votre_production_2'] = prod2;
+  responses['votre_production_2'] = prod2;
+
+  // Scenarios 3-10 — key suffix matches scenario number
+  for (let n = 2; n <= 9; n++) {
+    const scenarioNum = n + 1; // scenario 3 → n=2, scenario 10 → n=9
+    const prod = getDeterministicProduction(rsCode, `production ${scenarioNum}`, `production ${scenarioNum}`);
+    cas_pratiques[`votre_production_votre_production_${n}`] = prod;
+    cas_pratiques[`votre_production_${scenarioNum}`] = prod;
+    narratives[`votre_production_votre_production_${n}`] = prod;
+    narratives[`votre_production_${scenarioNum}`] = prod;
+    responses[`votre_production_${scenarioNum}`] = prod;
   }
-  cas_pratiques['votre_production'] = getDeterministicProduction(
-    candidate.code_certif,
-    'production 1',
-    'production 1'
-  );
-  narratives['votre_production'] = cas_pratiques['votre_production'];
   cas_pratiques['stagiaire'] = candidateFullName;
   responses.cas_pratiques = cas_pratiques;
 
@@ -765,6 +793,7 @@ export function buildCanonicalInput(
       evaluation_intermediaire: responses.evaluation_intermediaire,
       evaluation_finale: responses.evaluation_finale,
       dossier_de_presentation: responses.dossier_de_presentation,
+      dossier_inscription: responses.dossier_inscription,
       pv_evaluation: responses.pv_evaluation,
       cas_pratiques: cas_pratiques,
     },

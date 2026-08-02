@@ -13,7 +13,7 @@
     "template": "Proforma Institut/RS6485 - Comptabilité TPE/PV Evaluation - RS6485 - Proforma Institut - Template.docx",
     "filled_reference": "Proforma Institut/RS6485 - Comptabilité TPE/PV Evaluation - RS6485 - Proforma Institut - Filled.pdf",
     "confidence": "STRONGLY_SUPPORTED",
-    "structure_similarity": 0.0,
+    "structure_similarity": 0,
     "rationale": "Same organization/certification/title with cross-format reference evidence.",
     "same_format": false,
     "candidate_identity": "Prénom FPC"
@@ -206,43 +206,6 @@
       "blocking_reason": "Filled reference did not provide same-format structural evidence."
     },
     {
-      "semantic_field": "candidate.professional.current_position",
-      "source_class": "WORKBOOK",
-      "source_path": "$.candidate.professional.current_position",
-      "target": {
-        "type": "docx_paragraph_text",
-        "location": {
-          "part": "word/document.xml",
-          "paragraph_index": 127,
-          "xpath": "/document/body[1]/p[19]",
-          "in_table": false,
-          "style": null,
-          "template_text": "",
-          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "strategy": "fill_empty_or_marker_paragraph",
-          "fixed_prefix": ""
-        }
-      },
-      "required": false,
-      "repeatable": false,
-      "condition": null,
-      "transform": "trim",
-      "example_value": "",
-      "confidence": "STRONGLY_SUPPORTED",
-      "evidence": "Template-only structural slot immediately follows label 'Signature du président du jury : M. Kaina Nassim, Responsable PROFORMA INSTITUT (Civilité, nom et fonction)       Cachet de l’organisme'.",
-      "validation": {
-        "type": [
-          "string",
-          "boolean",
-          "number",
-          "array",
-          "object",
-          "null"
-        ]
-      },
-      "blocking_reason": "Filled reference did not provide same-format structural evidence."
-    },
-    {
       "semantic_field": "signatures.candidate_or_authorized_signer",
       "source_class": "SIGNATURE",
       "source_path": "$.signatures.candidate_or_authorized_signer",
@@ -301,80 +264,6 @@
       "example_value": "",
       "confidence": "STRONGLY_SUPPORTED",
       "evidence": "Template-only structural slot immediately follows label 'Date du constat'.",
-      "validation": {
-        "type": [
-          "string",
-          "boolean",
-          "number",
-          "array",
-          "object",
-          "null"
-        ]
-      },
-      "blocking_reason": "Filled reference did not provide same-format structural evidence."
-    },
-    {
-      "semantic_field": "candidate.professional.current_position",
-      "source_class": "WORKBOOK",
-      "source_path": "$.candidate.professional.current_position",
-      "target": {
-        "type": "docx_paragraph_text",
-        "location": {
-          "part": "word/document.xml",
-          "paragraph_index": 200,
-          "xpath": "/document/body[1]/tbl[5]/tr[4]/tc[2]/p[1]",
-          "in_table": true,
-          "style": null,
-          "template_text": "",
-          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "strategy": "fill_empty_or_marker_paragraph",
-          "fixed_prefix": ""
-        }
-      },
-      "required": false,
-      "repeatable": false,
-      "condition": null,
-      "transform": "trim",
-      "example_value": "",
-      "confidence": "STRONGLY_SUPPORTED",
-      "evidence": "Template-only structural slot immediately follows label 'Nature du dysfonctionnement (Anomalie / Fraude)'.",
-      "validation": {
-        "type": [
-          "string",
-          "boolean",
-          "number",
-          "array",
-          "object",
-          "null"
-        ]
-      },
-      "blocking_reason": "Filled reference did not provide same-format structural evidence."
-    },
-    {
-      "semantic_field": "candidate.professional.current_position",
-      "source_class": "WORKBOOK",
-      "source_path": "$.candidate.professional.current_position",
-      "target": {
-        "type": "docx_paragraph_text",
-        "location": {
-          "part": "word/document.xml",
-          "paragraph_index": 202,
-          "xpath": "/document/body[1]/tbl[5]/tr[5]/tc[2]/p[1]",
-          "in_table": true,
-          "style": null,
-          "template_text": "",
-          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "strategy": "fill_empty_or_marker_paragraph",
-          "fixed_prefix": ""
-        }
-      },
-      "required": false,
-      "repeatable": false,
-      "condition": null,
-      "transform": "trim",
-      "example_value": "",
-      "confidence": "STRONGLY_SUPPORTED",
-      "evidence": "Template-only structural slot immediately follows label 'Contexte dans lequel le dysfonctionnement s’est produit'.",
       "validation": {
         "type": [
           "string",

@@ -13,7 +13,7 @@
     "template": "Proskills Institut/RS6485 - Comptabilité TPE/Fiche Eligibilite - RS6485 - Proskills Institut - Template.docx",
     "filled_reference": null,
     "confidence": "BLOCKED",
-    "structure_similarity": 0.0,
+    "structure_similarity": 0,
     "rationale": "No same-group filled reference.",
     "same_format": false,
     "candidate_identity": null
@@ -597,9 +597,9 @@
       "blocking_reason": "Filled reference did not provide same-format structural evidence."
     },
     {
-      "semantic_field": "candidate.identity.last_name",
+      "semantic_field": "jury.trainer_evaluator_name",
       "source_class": "WORKBOOK",
-      "source_path": "$.candidate.identity.last_name",
+      "source_path": "$.jury.trainer_evaluator_name",
       "target": {
         "type": "docx_paragraph_text",
         "location": {
@@ -634,9 +634,9 @@
       "blocking_reason": "Filled reference did not provide same-format structural evidence."
     },
     {
-      "semantic_field": "candidate.identity.last_name",
+      "semantic_field": "jury.trainer_evaluator_name",
       "source_class": "WORKBOOK",
-      "source_path": "$.candidate.identity.last_name",
+      "source_path": "$.jury.trainer_evaluator_name",
       "target": {
         "type": "docx_paragraph_text",
         "location": {

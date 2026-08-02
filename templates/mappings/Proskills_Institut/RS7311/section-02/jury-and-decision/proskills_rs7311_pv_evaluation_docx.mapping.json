@@ -13,7 +13,7 @@
     "template": "Proskills Institut/RS7311 - IA TPE/PV Evaluation - RS7311 - Proskills Institut - Template.docx",
     "filled_reference": null,
     "confidence": "BLOCKED",
-    "structure_similarity": 0.0,
+    "structure_similarity": 0,
     "rationale": "No same-group filled reference.",
     "same_format": false,
     "candidate_identity": null
@@ -225,43 +225,6 @@
       "example_value": "",
       "confidence": "BLOCKED",
       "evidence": "Template-only structural slot immediately follows label 'Date d’enregistrement du procès-verbal :'.",
-      "validation": {
-        "type": [
-          "string",
-          "boolean",
-          "number",
-          "array",
-          "object",
-          "null"
-        ]
-      },
-      "blocking_reason": "Filled reference did not provide same-format structural evidence."
-    },
-    {
-      "semantic_field": "candidate.professional.current_position",
-      "source_class": "WORKBOOK",
-      "source_path": "$.candidate.professional.current_position",
-      "target": {
-        "type": "docx_paragraph_text",
-        "location": {
-          "part": "word/document.xml",
-          "paragraph_index": 92,
-          "xpath": "/document/body[1]/p[22]",
-          "in_table": false,
-          "style": null,
-          "template_text": "",
-          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "strategy": "fill_empty_or_marker_paragraph",
-          "fixed_prefix": ""
-        }
-      },
-      "required": false,
-      "repeatable": false,
-      "condition": null,
-      "transform": "trim",
-      "example_value": "",
-      "confidence": "BLOCKED",
-      "evidence": "Template-only structural slot immediately follows label 'Signature du président du jury : (Civilité, nom et fonction)       Cachet de l’organisme  Monsieur Anthony Malheiro, Formateur/évaluateur ce'.",
       "validation": {
         "type": [
           "string",
@@ -645,80 +608,6 @@
       "blocking_reason": "Filled reference did not provide same-format structural evidence."
     },
     {
-      "semantic_field": "candidate.professional.current_position",
-      "source_class": "WORKBOOK",
-      "source_path": "$.candidate.professional.current_position",
-      "target": {
-        "type": "docx_paragraph_text",
-        "location": {
-          "part": "word/document.xml",
-          "paragraph_index": 164,
-          "xpath": "/document/body[1]/tbl[5]/tr[4]/tc[2]/p[1]",
-          "in_table": true,
-          "style": null,
-          "template_text": "",
-          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "strategy": "fill_empty_or_marker_paragraph",
-          "fixed_prefix": ""
-        }
-      },
-      "required": false,
-      "repeatable": false,
-      "condition": null,
-      "transform": "trim",
-      "example_value": "",
-      "confidence": "BLOCKED",
-      "evidence": "Template-only structural slot immediately follows label 'Nature du dysfonctionnement (Anomalie / Fraude)'.",
-      "validation": {
-        "type": [
-          "string",
-          "boolean",
-          "number",
-          "array",
-          "object",
-          "null"
-        ]
-      },
-      "blocking_reason": "Filled reference did not provide same-format structural evidence."
-    },
-    {
-      "semantic_field": "candidate.professional.current_position",
-      "source_class": "WORKBOOK",
-      "source_path": "$.candidate.professional.current_position",
-      "target": {
-        "type": "docx_paragraph_text",
-        "location": {
-          "part": "word/document.xml",
-          "paragraph_index": 166,
-          "xpath": "/document/body[1]/tbl[5]/tr[5]/tc[2]/p[1]",
-          "in_table": true,
-          "style": null,
-          "template_text": "",
-          "template_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "strategy": "fill_empty_or_marker_paragraph",
-          "fixed_prefix": ""
-        }
-      },
-      "required": false,
-      "repeatable": false,
-      "condition": null,
-      "transform": "trim",
-      "example_value": "",
-      "confidence": "BLOCKED",
-      "evidence": "Template-only structural slot immediately follows label 'Contexte dans lequel le dysfonctionnement s’est produit'.",
-      "validation": {
-        "type": [
-          "string",
-          "boolean",
-          "number",
-          "array",
-          "object",
-          "null"
-        ]
-      },
-      "blocking_reason": "Filled reference did not provide same-format structural evidence."
-    },
-    {
       "semantic_field": "candidate.questionnaire.responses.pv_evaluation.resultats_et_commentaires",
       "source_class": "MANUAL_INPUT",
       "source_path": "$.candidate.questionnaire.responses.pv_evaluation.resultats_et_commentaires",
@@ -858,4 +747,3 @@
     ]
   }
 }
-
