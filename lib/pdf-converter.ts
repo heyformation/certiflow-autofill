@@ -3,35 +3,67 @@
  * -------------------------------------------------------------
  * DOCX -> PDF conversion for a Vercel serverless deployment.
  *
- * Vercel cannot run LibreOffice / MS Word / headless Chromium reliably, so we
- * convert through an external API (CloudConvert) when a key is configured.
- * If no key is set OR the conversion fails, we return null and the caller keeps
- * delivering the DOCX — generation must never hard-fail because of PDF.
+ * Strategy:
+ * 1. Try local conversion using libreoffice-convert (works in dev/local)
+ * 2. Fall back to CloudConvert API (works on Vercel/production)
+ * 3. If both fail, return null and deliver DOCX only
  *
  * Configuration (env vars, never committed):
  *   CLOUDCONVERT_API_KEY  - CloudConvert API token (optional).
  *   PDF_CONVERSION        - "off" to globally disable PDF conversion.
  */
 
+import { convertDocxToPdfLocal, isLocalPdfAvailable } from './pdf-converter-local';
+
 const CLOUDCONVERT_BASE = 'https://api.cloudconvert.com/v2';
 
 export function isPdfConversionEnabled(): boolean {
   if (process.env.PDF_CONVERSION === 'off') return false;
-  return Boolean(process.env.CLOUDCONVERT_API_KEY);
+  // Enable if either local or CloudConvert is available
+  return isLocalPdfAvailable() || Boolean(process.env.CLOUDCONVERT_API_KEY);
 }
 
 /**
  * Convert a DOCX buffer to a PDF buffer. Returns null if conversion is disabled
  * or fails for any reason (caller should fall back to the DOCX).
+ * 
+ * Tries local conversion first (fast), then CloudConvert API (slower but works everywhere)
  */
 export async function convertDocxToPdf(
   docxBuffer: Buffer,
   filename: string
 ): Promise<Buffer | null> {
-  const apiKey = process.env.CLOUDCONVERT_API_KEY;
-  if (!apiKey || process.env.PDF_CONVERSION === 'off') return null;
+  if (process.env.PDF_CONVERSION === 'off') return null;
 
+  // Try local conversion first (if available)
+  if (isLocalPdfAvailable()) {
+    console.log('Using local LibreOffice conversion...');
+    const localPdf = await convertDocxToPdfLocal(docxBuffer, filename);
+    if (localPdf) {
+      console.log('✓ Local PDF conversion successful');
+      return localPdf;
+    }
+    console.warn('Local PDF conversion failed, trying CloudConvert...');
+  }
+
+  // Fall back to CloudConvert API
+  const apiKey = process.env.CLOUDCONVERT_API_KEY;
+  if (!apiKey) {
+    console.log('No CloudConvert API key, PDF conversion disabled');
+    return null;
+  }
+
+  return convertViaCloudConvert(docxBuffer, filename, apiKey);
+}
+
+async function convertViaCloudConvert(
+  docxBuffer: Buffer,
+  filename: string,
+  apiKey: string
+): Promise<Buffer | null> {
   try {
+    console.log('Using CloudConvert API for PDF conversion...');
+    
     // 1. Create a job: import (base64) -> convert -> export url.
     const jobRes = await fetch(`${CLOUDCONVERT_BASE}/jobs`, {
       method: 'POST',
@@ -80,9 +112,11 @@ export async function convertDocxToPdf(
     const pdfRes = await fetch(fileUrl);
     if (!pdfRes.ok) return null;
     const arrayBuf = await pdfRes.arrayBuffer();
+    
+    console.log('✓ CloudConvert PDF conversion successful');
     return Buffer.from(arrayBuf);
   } catch (err) {
-    console.warn('DOCX->PDF conversion error, falling back to DOCX:', err);
+    console.warn('CloudConvert DOCX->PDF conversion error, falling back to DOCX:', err);
     return null;
   }
 }

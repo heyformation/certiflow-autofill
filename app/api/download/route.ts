@@ -25,7 +25,8 @@ export async function POST(req: NextRequest) {
       const filesToPack = pdfFiles.length > 0 ? pdfFiles : files;
 
       for (const file of filesToPack) {
-        zip.file(`Automatisation Project/${file.relativePath}`, file.buffer);
+        // Use relativePath directly without extra prefix
+        zip.file(file.relativePath, file.buffer);
       }
     }
 
