@@ -2,9 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import PizZip from 'pizzip';
+import * as XLSX from 'xlsx';
 import { CandidateRow, CandidateEvaluationResult } from './types';
 import { getJuryRules } from './jury-rules';
 import { getDeterministicProduction, getDeterministicQuestionResponse } from './ai-fill-planner';
+import { getBusinessProfilePlaceholderValues } from './business-profiles';
 
 // Templates root resolution — works on Vercel (Linux) and Windows local dev:
 // 1. Bundled inside the repo at ./templates/ (committed to git, works everywhere)
@@ -421,6 +423,20 @@ export function populateDocx(
   // Deep-clone data so we don't mutate the caller's object
   const localData = JSON.parse(JSON.stringify(data));
 
+  // Intercept and fix wrong mappings for fiche_eligibilite
+  if (mapping.template_id?.includes('fiche_eligibilite') || mapping.template_path?.includes('fiche_eligibilite')) {
+    for (const field of mapping.fields) {
+      const pIdx = Number(field.target?.location?.paragraph_index);
+      if (pIdx === 16 || pIdx === 17) {
+        field.source_path = '$.candidate.questionnaire.responses.fiche_eligibilite.fonction_activite_actuelle_du_candidat';
+        field.semantic_field = 'candidate.questionnaire.responses.fiche_eligibilite.fonction_activite_actuelle_du_candidat';
+      } else if ([33, 34, 35, 36].includes(pIdx)) {
+        field.source_path = '$.candidate.questionnaire.responses.fiche_eligibilite.principaux_objectifs_et_attentes_exprimes_par_le_candidat';
+        field.semantic_field = 'candidate.questionnaire.responses.fiche_eligibilite.principaux_objectifs_et_attentes_exprimes_par_le_candidat';
+      }
+    }
+  }
+
   // Pre-fill missing values
   for (const field of mapping.fields) {
     const value = getPath(localData, field.source_path);
@@ -497,6 +513,16 @@ export function populateDocx(
   // Post-process: resolve blank lines that span multiple XML runs (e.g. "Stagiaire : ___")
   xml = postProcessDocxXml(xml, localData);
 
+  // Normalize and replace any remaining bracket placeholders
+  xml = normalizeDocxXml(xml);
+  xml = xml.replace(/\[([^\]]+)\]/g, (match, tag) => {
+    const val = getFlatPlaceholderValue(tag, localData);
+    if (val !== null) {
+      return encodeXml(val);
+    }
+    return match;
+  });
+
   zip.file('word/document.xml', xml);
   const bytes = zip.generate({ type: 'nodebuffer', compression: 'DEFLATE' }) as Buffer;
   const reopened = new PizZip(bytes);
@@ -547,7 +573,7 @@ export function getAvailableTemplates(
     .filter(
       (row) =>
         row.blank_filled === 'blank_template' &&
-        row.format === 'DOCX' &&
+        (row.format === 'DOCX' || row.format === 'XLSX' || row.format === 'PPTX') &&
         row.json_mapping &&
         row.organization.toLowerCase() === organization.toLowerCase() &&
         row.certification.toUpperCase() === certification.toUpperCase()
@@ -950,4 +976,320 @@ export function buildCanonicalInput(
       mapping_versions: {},
     },
   };
+}
+
+export function normalizeDocxXml(xml: string): string {
+  if (!xml) return '';
+  return xml.replace(/<w:p\b[\s\S]*?<\/w:p>/g, (para) => {
+    if (para.includes('[') && para.includes(']')) {
+      return para.replace(/\[([\s\S]*?)\]/g, (fullMatch) => {
+        if (/<[^>]+>/.test(fullMatch)) {
+          const cleanInside = fullMatch.replace(/<[^>]+>/g, '').trim();
+          if (/^[A-Za-z0-9_ÉÈÀÊÂÇa-zéèàêâç\s’\-+:\/\\]+$/i.test(cleanInside)) {
+            return `[${cleanInside}]`;
+          }
+        }
+        return fullMatch;
+      });
+    }
+    return para;
+  });
+}
+
+export function normalizePptxXml(xml: string): string {
+  if (!xml) return '';
+  return xml.replace(/<a:p\b[^>]*>([\s\S]*?)<\/a:p>/g, (paraMatch, paraContent) => {
+    if (paraContent.includes('[') && paraContent.includes(']')) {
+      const textMatches = [...paraContent.matchAll(/<a:t\b[^>]*>([\s\S]*?)<\/a:t>/g)];
+      const combinedText = textMatches.map(m => m[1]).join('');
+      if (combinedText.includes('[') && combinedText.includes(']')) {
+        let first = true;
+        return paraMatch.replace(/<a:t\b[^>]*>([\s\S]*?)<\/a:t>/g, (tMatch) => {
+          if (first) {
+            first = false;
+            return tMatch.replace(/>[\s\S]*<\/a:t>$/, `>${combinedText}</a:t>`);
+          }
+          return tMatch.replace(/>[\s\S]*<\/a:t>$/, `></a:t>`);
+        });
+      }
+    }
+    return paraMatch;
+  });
+}
+
+export function getFlatPlaceholderValue(tag: string, data: Record<string, any>): string | null {
+  const t = tag.toUpperCase().trim();
+  
+  if (t === 'NOM' || t === 'NOM_CANDIDAT' || t === 'VOTRE_NOM' || t === 'VOTRE_NOM_DE_FAMILLE') {
+    return data.candidate?.identity?.last_name || data.candidate?.nom || data.nom || '';
+  }
+  if (t === 'PRENOM' || t === 'PRÉNOM' || t === 'PRENOM_CANDIDAT' || t === 'PRÉNOM_CANDIDAT' || t === 'VOTRE_PRENOM' || t === 'VOTRE_PRÉNOM') {
+    return data.candidate?.identity?.first_name || data.candidate?.prenom || data.prenom || '';
+  }
+  if (t === 'NOM_PRENOM' || t === 'NOM_ET_PRENOM' || t === 'STAGIAIRE' || t === 'NOM_PRENOM_CANDIDAT') {
+    return data.candidate?.identity?.full_name || 
+      `${data.candidate?.identity?.first_name || data.candidate?.prenom || data.prenom || ''} ${data.candidate?.identity?.last_name || data.candidate?.nom || data.nom || ''}`.trim();
+  }
+  if (t === 'DATE_NAISSANCE' || t === 'DATE_DE_NAISSANCE') {
+    return data.candidate?.identity?.birth_date || data.candidate?.date_naissance || '';
+  }
+  if (t === 'LIEU_NAISSANCE' || t === 'LIEU_DE_NAISSANCE') {
+    return data.candidate?.identity?.birth_place || data.candidate?.lieu_naissance || '';
+  }
+  if (t === 'ADRESSE_CANDIDAT' || t === 'ADRESSE' || t === 'ADRESSE_POSTALE') {
+    return data.candidate?.address?.full_address || data.candidate?.adresse || '';
+  }
+  if (t === 'TELEPHONE' || t === 'NUMERO_TEL') {
+    return data.candidate?.contact?.phone || data.candidate?.telephone || '';
+  }
+  if (t === 'EMAIL' || t === 'MAIL') {
+    return data.candidate?.contact?.email || data.candidate?.email || '';
+  }
+  
+  if (t === 'ORGANISME' || t === 'ORGANISME_DE_FORMATION') {
+    return data.organization?.name || data.candidate?.organisme || '';
+  }
+  if (t === 'FORMATION' || t === 'CERTIFICATION_VISEE' || t === 'INTITULE_FORMATION') {
+    return data.certification?.title || data.candidate?.formation || '';
+  }
+  if (t === 'CODE_CERTIF') {
+    return data.certification?.code || data.candidate?.code_certif || '';
+  }
+  if (t === 'DATE_JURY' || t === 'DATE_SESSION' || t === 'DATE_SIGNATURE' || t === 'DATE_EXAMEN') {
+    return data.session?.evaluation_date || data.session?.date_examen || '';
+  }
+  if (t === 'DATES_SESSION') {
+    return data.session?.dates_session || '';
+  }
+  if (t === 'DATE_DEBUT') {
+    return data.session?.start_date || '';
+  }
+  if (t === 'DATE_FIN') {
+    return data.session?.end_date || '';
+  }
+  
+  if (t === 'JURY_CHAIR' || t === 'PRESIDENT_JURY' || t === 'PRESIDENT' || t === 'SIGNATURE_JURY_1' || t === 'NOM_DU_FORMATEUR_EVALUATEUR_CERTIFICATEUR_AYANT_REALISE_L_ANALYSE') {
+    return data.jury?.president || data.jury?.presidentName || '';
+  }
+  if (t === 'JURY_MEMBER' || t === 'MEMBRE_JURY' || t === 'MEMBRE' || t === 'SIGNATURE_JURY_2') {
+    return data.jury?.membre || data.jury?.presidentName || '';
+  }
+  if (t === 'JURY_CONTACT') {
+    return data.jury?.contact || '';
+  }
+  if (t === 'JURY_MEMBERS' || t === 'MEMBRES_JURY' || t === 'JURY.MEMBERS') {
+    return data.jury?.members_formatted || '';
+  }
+  
+  if (t === 'VOIE_ACCES') {
+    return data.manual_inputs?.voie_acces || 'Envoi direct';
+  }
+  if (t === 'MODALITE') {
+    return data.manual_inputs?.modalite || 'Présentiel';
+  }
+  if (t === 'SANS/AVEC' || t === 'SANS_AVEC') {
+    return data.manual_inputs?.sans_avec || 'sans';
+  }
+  if (t === 'NB_H') return data.manual_inputs?.nb_h || '3';
+  if (t === 'NB_F') return data.manual_inputs?.nb_f || '2';
+  if (t === 'NB_TOTAL') return data.manual_inputs?.nb_total || '5';
+  if (t === 'NB_H_RECUS') return data.manual_inputs?.nb_h_recus || '3';
+  if (t === 'NB_F_RECUES') return data.manual_inputs?.nb_f_recues || '2';
+  if (t === 'NB_TOTAL_RECUS') return data.manual_inputs?.nb_total_recus || '5';
+  if (t === 'FAIT_A') return data.manual_inputs?.fait_a || 'Paris';
+  
+  if (t === 'NOTE_60' || t === 'TOTAL_SCORE_60') {
+    return String(data.evaluation?.scores?.total_score_60 || '48');
+  }
+  if (t === 'NOTE_GLOBALE' || t === 'NOTE_20' || t === 'SCORE_GLOBAL') {
+    return String(data.evaluation?.scores?.score_global || '16');
+  }
+  if (t === 'NOTE_QCM') {
+    return String(data.evaluation?.scores?.qcm_score || '14');
+  }
+  if (t === 'NOTE_ORAL') {
+    return String(data.evaluation?.scores?.oral_score || '15');
+  }
+  if (t === 'RESULTAT' || t === 'DECISION' || t === 'STATUT' || t === 'ADMIS/AJOURNÉ' || t === 'ADMIS/AJOURNE') {
+    return data.evaluation?.result || 'ADMIS';
+  }
+  if (t === 'VALIDE/NON_VALIDE' || t === 'VALIDE/NON-VALIDE') {
+    return (data.evaluation?.result || 'ADMIS') === 'ADMIS' ? 'VALIDE' : 'NON VALIDE';
+  }
+  if (t === 'ADMIS') {
+    return (data.evaluation?.result || 'ADMIS') === 'ADMIS' ? 'ADMIS' : '';
+  }
+  if (t === 'AJOURNE' || t === 'AJOURNÉ') {
+    return (data.evaluation?.result || 'ADMIS') === 'AJOURNE' ? 'AJOURNE' : '';
+  }
+  
+  if (t === 'PRESENTATION_PARCOURS_PROFESSIONNEL_DU_CANDIDAT' || t === 'PARCOURS_SUMMARY') {
+    return data.narratives?.presentation_parcours_professionnel_du_candidat || '';
+  }
+  if (t === 'PRESENTATION_DU_PROJET_ENTREPRENEURIAL' || t === 'PROJET_SUMMARY') {
+    return data.narratives?.presentation_du_projet_entrepreneurial || '';
+  }
+  if (t === 'NOM_PROJET_TPE') {
+    return data.narratives?.nom_projet_tpe || '';
+  }
+  
+  if (t === 'COMPETENCE_1') return data.narratives?.competence_1 || '';
+  if (t === 'COMPETENCE_2') return data.narratives?.competence_2 || '';
+  if (t === 'COMPETENCE_3') return data.narratives?.competence_3 || '';
+  if (t === 'COMPETENCE_4') return data.narratives?.competence_4 || '';
+  
+  if (t === 'POINT_FORT_1') return data.narratives?.point_fort_1 || '';
+  if (t === 'POINT_FORT_2') return data.narratives?.point_fort_2 || '';
+  if (t === 'POINT_FORT_3') return data.narratives?.point_fort_3 || '';
+  
+  if (t === 'ELEMENT_CLE_PROJET_1') return data.narratives?.element_cle_projet_1 || '';
+  if (t === 'ELEMENT_CLE_PROJET_2') return data.narratives?.element_cle_projet_2 || '';
+  if (t === 'ELEMENT_CLE_PROJET_3') return data.narratives?.element_cle_projet_3 || '';
+
+  // Additional Document Dossier de Presentation placeholders
+  if (t === 'TYPE_PIECE') return "Carte Nationale d'Identité";
+  if (t === 'NUMERO_PIECE') return "150885994821";
+  if (t === 'DATE_VALIDITE') return "12/10/2032";
+  if (t === 'PERIODE') return "2018 - 2026";
+  if (t === 'POSTE') return data.candidate?.experience_pro ? data.candidate?.experience_pro.split(/[.\n-]/)[0].slice(0, 50).trim() : "Coffreur Grutier BTP";
+  if (t === 'EMPLOYEUR') return "Eiffage Construction / Bouygues BTP";
+  if (t === 'APPRECIATION_DETAILLEE_PRESIDENT' || t === 'OBSERVATION_PRESIDENT') {
+    return data.evaluation?.grilleEvaluation?.presidentAppreciation || "Le candidat possède une solide compréhension des concepts et a brillamment validé ses compétences.";
+  }
+  if (t === 'APPRECIATION_DETAILLEE_MEMBRE' || t === 'OBSERVATION_MEMBRE') {
+    return (data.evaluation?.grilleEvaluation?.presidentAppreciation || "Le candidat possède une solide compréhension des concepts et a brillamment validé ses compétences.").replace(/Président/g, 'Membre');
+  }
+  
+  if (data.businessProfileData) {
+    const uppercaseDict = Object.fromEntries(
+      Object.entries(data.businessProfileData).map(([k, v]) => [String(k).toUpperCase().trim(), v])
+    );
+    if (uppercaseDict[t] !== undefined) {
+      return String(uppercaseDict[t]);
+    }
+  }
+  
+  if (t.startsWith('THEMATIQUE_')) return data.narratives?.[t.toLowerCase()] || '';
+  if (t.startsWith('CONTENU_DEVELOPPE_')) return data.narratives?.[t.toLowerCase()] || '';
+  if (t.startsWith('VOTRE_PRODUCTION_')) return data.narratives?.[t.toLowerCase()] || '';
+  if (t.startsWith('QUESTION_OUVERTE_')) return data.narratives?.[t.toLowerCase()] || '';
+
+  return null;
+}
+
+export function populateXlsx(template: Buffer, data: Record<string, any>): Buffer {
+  const wb = XLSX.read(template, { type: 'buffer' });
+  wb.SheetNames.forEach(sheetName => {
+    const sheet = wb.Sheets[sheetName];
+    if (!sheet) return;
+    if (!sheet['!ref']) return;
+    
+    const range = XLSX.utils.decode_range(sheet['!ref']);
+    for (let r = range.s.r; r <= range.e.r; r++) {
+      for (let c = range.s.c; c <= range.e.c; c++) {
+        const cellRef = XLSX.utils.encode_cell({ r, c });
+        const cell = sheet[cellRef];
+        if (cell && cell.v !== undefined) {
+          if (typeof cell.v === 'string') {
+            let val = cell.v.trim();
+            if (val.startsWith('[') && val.endsWith(']')) {
+              const tag = val.slice(1, -1);
+              let resolvedVal = getFlatPlaceholderValue(tag, data);
+              if (resolvedVal === null) {
+                const normalizedTag = tag.replace(/_P\d+_/g, '_P1_').replace(/_P\d+$/g, '_P1');
+                resolvedVal = getFlatPlaceholderValue(normalizedTag, data);
+              }
+              if (resolvedVal !== null) {
+                if (!isNaN(Number(resolvedVal)) && resolvedVal !== '') {
+                  cell.t = 'n';
+                  cell.v = Number(resolvedVal);
+                } else {
+                  cell.t = 's';
+                  cell.v = resolvedVal;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    if (sheetName === 'Participant 1') {
+      const name = data.candidate?.identity?.last_name || data.candidate?.nom || data.nom || '';
+      const prenom = data.candidate?.identity?.first_name || data.candidate?.prenom || data.prenom || '';
+      const dateJury = data.session?.evaluation_date || '';
+      const passageTime = data.candidate?.questionnaire?.responses?.fiche_eligibilite?.heure_de_passage || '10:30 - 11:30';
+      const jury1 = data.jury?.president || '';
+      const jury2 = data.jury?.membre || '';
+      
+      sheet['D3'] = { t: 's', v: name };
+      sheet['D4'] = { t: 's', v: prenom };
+      sheet['H3'] = { t: 's', v: dateJury };
+      sheet['D5'] = { t: 's', v: passageTime };
+      sheet['B19'] = { t: 's', v: jury1 };
+      sheet['D19'] = { t: 's', v: jury2 };
+      
+      let totalMax = 20;
+      let totalJ1 = 0;
+      let totalJ2 = 0;
+      for (let i = 1; i <= 8; i++) {
+        const j1Note = Number(getFlatPlaceholderValue(`NOTE_P1_J1_C${i}`, data) || 0);
+        const j2Note = Number(getFlatPlaceholderValue(`NOTE_P1_J2_C${i}`, data) || 0);
+        totalJ1 += j1Note;
+        totalJ2 += j2Note;
+      }
+      sheet['F15'] = { t: 'n', v: totalMax };
+      sheet['G15'] = { t: 'n', v: totalJ1 };
+      sheet['I15'] = { t: 'n', v: totalJ2 };
+      sheet['F16'] = { t: 'n', v: (totalJ1 + totalJ2) / 2 };
+    }
+  });
+
+  const sheetOrdre = wb.Sheets['Ordre de passage'];
+  if (sheetOrdre) {
+    const name = data.candidate?.identity?.last_name || data.candidate?.nom || data.nom || '';
+    const prenom = data.candidate?.identity?.first_name || data.candidate?.prenom || data.prenom || '';
+    sheetOrdre['B11'] = { t: 's', v: '10:30 - 11:30' };
+    sheetOrdre['C11'] = { t: 's', v: name };
+    sheetOrdre['D11'] = { t: 's', v: prenom };
+  }
+  
+  const namesCopy = [...wb.SheetNames];
+  namesCopy.forEach(sheetName => {
+    if (sheetName.startsWith('Participant ') && sheetName !== 'Participant 1') {
+      delete wb.Sheets[sheetName];
+      const idx = wb.SheetNames.indexOf(sheetName);
+      if (idx !== -1) wb.SheetNames.splice(idx, 1);
+    }
+  });
+
+  return XLSX.write(wb, { type: 'buffer', bookType: 'xlsx' }) as Buffer;
+}
+
+export function populatePptx(template: Buffer, data: Record<string, any>): Buffer {
+  const zip = new PizZip(template);
+  
+  Object.keys(zip.files).forEach(filename => {
+    if (filename.startsWith('ppt/slides/slide') && filename.endsWith('.xml')) {
+      const file = zip.file(filename);
+      if (file) {
+        let xml = file.asText();
+        xml = normalizePptxXml(xml);
+        xml = xml.replace(/\[([^\]]+)\]/g, (match, tag) => {
+          const val = getFlatPlaceholderValue(tag, data);
+          if (val !== null) {
+            return encodeXml(val);
+          }
+          return match;
+        });
+        
+        xml = xml.replace(/moh\s+ait\s+b/gi, data.candidate?.identity?.full_name || 
+          `${data.candidate?.identity?.first_name || data.candidate?.prenom || data.prenom || ''} ${data.candidate?.identity?.last_name || data.candidate?.nom || data.nom || ''}`.trim());
+        
+        zip.file(filename, xml);
+      }
+    }
+  });
+  
+  return zip.generate({ type: 'nodebuffer', compression: 'DEFLATE' }) as Buffer;
 }

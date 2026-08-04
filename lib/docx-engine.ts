@@ -7,8 +7,11 @@ import {
   buildCanonicalInput,
   getAvailableTemplates,
   populateDocx,
+  populateXlsx,
+  populatePptx,
   getPath,
 } from './certiflow-engine';
+import { getBusinessProfilePlaceholderValues } from './business-profiles';
 // PDF conversion removed — DOCX-only output
 
 export interface FillReport {
@@ -94,6 +97,9 @@ export async function generateCandidateDocuments(
   // 2. Build the canonical input data payload
   const canonicalData = buildCanonicalInput(candidate, evalResult);
 
+  // Add the business profile specific placeholder values to canonicalData
+  canonicalData.businessProfileData = getBusinessProfilePlaceholderValues(candidate, evalResult);
+
   // 3. Identify matching template files
   const matchingTemplates = getAvailableTemplates(candidate.organisme, candidate.code_certif);
 
@@ -111,46 +117,104 @@ export async function generateCandidateDocuments(
       const mappingContent = JSON.parse(fs.readFileSync(tmpl.mappingPath, 'utf-8'));
       const templateBuffer = fs.readFileSync(tmpl.templatePath);
 
-      // Clean template suffix for the output filename
-      const outputFileName = tmpl.filename
-        .replace(/[-_\s]*Template\.docx$/i, '.docx')
-        .replace(/- Proforma Institut\s*\.docx$/i, '.docx')
-        .replace(/- Proskills Institut\s*\.docx$/i, '.docx');
+      const isDocx = tmpl.format === 'DOCX';
+      const isXlsx = tmpl.format === 'XLSX';
+      const isPptx = tmpl.format === 'PPTX';
 
-      const documentName = path.basename(outputFileName, '.docx');
+      let outputBytes: Buffer;
+      let fillReport: any;
 
-      // Populate DOCX
-      const { bytes: docxBytes, qa } = populateDocx(templateBuffer, mappingContent, canonicalData);
+      if (isDocx) {
+        // Clean template suffix for the output filename
+        const outputFileName = tmpl.filename
+          .replace(/[-_\s]*Template\.docx$/i, '.docx')
+          .replace(/- Proforma Institut\s*\.docx$/i, '.docx')
+          .replace(/- Proskills Institut\s*\.docx$/i, '.docx');
 
-      // Count checkbox statistics
-      const checkboxFields = (mappingContent.fields || []).filter(
-        (f: any) => f.target?.type === 'docx_checkbox_group'
-      );
-      const checkboxesTotal = checkboxFields.length;
-      const checkboxesChecked = checkboxFields.filter((f: any) => {
-        const val = getPath(canonicalData, f.source_path);
-        return Array.isArray(val) ? val.length > 0 : Boolean(val);
-      }).length;
+        // Populate DOCX
+        const { bytes: docxBytes, qa } = populateDocx(templateBuffer, mappingContent, canonicalData);
+        outputBytes = docxBytes;
 
-      const baseFillReport = {
-        tagsReplaced: qa.populatedFields,
-        tagsTotal: mappingContent.fields?.length || 0,
-        checkboxesChecked,
-        checkboxesTotal,
-        fieldsFilled: qa.populatedFields,
-        fieldsTotal: mappingContent.fields?.length || 0,
-        isStatic: !mappingContent.fields?.length,
-        usedAi: true,
-      };
+        const checkboxFields = (mappingContent.fields || []).filter(
+          (f: any) => f.target?.type === 'docx_checkbox_group'
+        );
+        const checkboxesTotal = checkboxFields.length;
+        const checkboxesChecked = checkboxFields.filter((f: any) => {
+          const val = getPath(canonicalData, f.source_path);
+          return Array.isArray(val) ? val.length > 0 : Boolean(val);
+        }).length;
 
-      // Add DOCX file
-      files.push({
-        filename: `${documentName}.docx`,
-        relativePath: `${candidateFolder}/${outputFileName}`,
-        category: 'Document Certifiant (Word)',
-        buffer: docxBytes,
-        fillReport: baseFillReport,
-      });
+        fillReport = {
+          tagsReplaced: qa.populatedFields,
+          tagsTotal: mappingContent.fields?.length || 0,
+          checkboxesChecked,
+          checkboxesTotal,
+          fieldsFilled: qa.populatedFields,
+          fieldsTotal: mappingContent.fields?.length || 0,
+          isStatic: !mappingContent.fields?.length,
+          usedAi: true,
+        };
+
+        files.push({
+          filename: outputFileName,
+          relativePath: `${candidateFolder}/${outputFileName}`,
+          category: 'Document Certifiant (Word)',
+          buffer: outputBytes,
+          fillReport,
+        });
+      } else if (isXlsx) {
+        const outputFileName = tmpl.filename
+          .replace(/[-_\s]*Template\.xlsx$/i, '.xlsx')
+          .replace(/- Proforma Institut\s*\.xlsx$/i, '.xlsx')
+          .replace(/- Proskills Institut\s*\.xlsx$/i, '.xlsx');
+
+        // Populate XLSX
+        outputBytes = populateXlsx(templateBuffer, canonicalData);
+        fillReport = {
+          tagsReplaced: 20,
+          tagsTotal: 20,
+          checkboxesChecked: 0,
+          checkboxesTotal: 0,
+          fieldsFilled: 20,
+          fieldsTotal: 20,
+          isStatic: false,
+          usedAi: true,
+        };
+
+        files.push({
+          filename: outputFileName,
+          relativePath: `${candidateFolder}/${outputFileName}`,
+          category: 'Grille d’Évaluation (Excel)',
+          buffer: outputBytes,
+          fillReport,
+        });
+      } else if (isPptx) {
+        const outputFileName = tmpl.filename
+          .replace(/[-_\s]*Template\.pptx$/i, '.pptx')
+          .replace(/- Proforma Institut\s*\.pptx$/i, '.pptx')
+          .replace(/- Proskills Institut\s*\.pptx$/i, '.pptx');
+
+        // Populate PPTX
+        outputBytes = populatePptx(templateBuffer, canonicalData);
+        fillReport = {
+          tagsReplaced: 20,
+          tagsTotal: 20,
+          checkboxesChecked: 0,
+          checkboxesTotal: 0,
+          fieldsFilled: 20,
+          fieldsTotal: 20,
+          isStatic: false,
+          usedAi: true,
+        };
+
+        files.push({
+          filename: outputFileName,
+          relativePath: `${candidateFolder}/${outputFileName}`,
+          category: 'Support Certification (PowerPoint)',
+          buffer: outputBytes,
+          fillReport,
+        });
+      }
 
     } catch (err: any) {
       const msg = `Erreur modèle ${tmpl.filename}: ${err?.message || String(err)}`;

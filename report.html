@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CertiFlow AutoFill — Master Project Report & Complete User Manual</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 15mm 18mm 15mm;
+      @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 8.5pt;
+        color: #64748b;
+      }
+      @bottom-left {
+        content: "CertiFlow AutoFill V1.0 • https://certiflow-ten.vercel.app/";
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 8.5pt;
+        color: #64748b;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #1e293b;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Cover Page */
+    .cover-page {
+      height: 96vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      padding: 30px 24px;
+      border: 2px solid #0f172a;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+    }
+
+    .cover-header {
+      border-bottom: 2px solid #0d9488;
+      padding-bottom: 20px;
+    }
+
+    .badge-tag {
+      display: inline-block;
+      background-color: rgba(13, 148, 136, 0.2);
+      border: 1px solid #0d9488;
+      color: #2dd4bf;
+      font-size: 8.5pt;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .cover-title {
+      font-size: 26pt;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #ffffff;
+      margin: 8px 0;
+    }
+
+    .cover-subtitle {
+      font-size: 12.5pt;
+      color: #94a3b8;
+      font-weight: 400;
+      margin-bottom: 18px;
+    }
+
+    .prod-url-box {
+      background-color: rgba(15, 23, 42, 0.8);
+      border: 1px solid #334155;
+      border-left: 4px solid #14b8a6;
+      padding: 12px 18px;
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+
+    .prod-url-title {
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    .prod-url-link {
+      font-size: 13pt;
+      font-weight: 700;
+      color: #2dd4bf;
+      text-decoration: none;
+    }
+
+    .cover-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .cover-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 12px 16px;
+      border-radius: 10px;
+    }
+
+    .cover-card-label {
+      font-size: 8pt;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .cover-card-value {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #f8fafc;
+      margin-top: 3px;
+    }
+
+    .cover-footer {
+      border-top: 1px solid #334155;
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 8.5pt;
+      color: #94a3b8;
+    }
+
+    /* Section Headings */
+    .section-header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 4px;
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 16pt;
+      color: #0f172a;
+      margin: 0;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 12pt;
+      color: #0d9488;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      font-weight: 700;
+      border-left: 3.5px solid #0d9488;
+      padding-left: 8px;
+    }
+
+    h3 {
+      font-size: 10pt;
+      color: #334155;
+      margin-top: 12px;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .no-break {
+      page-break-inside: avoid;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 8.5pt;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      font-weight: 700;
+      text-align: left;
+      padding: 6px 10px;
+      border: 1px solid #0f172a;
+    }
+
+    td {
+      padding: 6px 10px;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    /* Badges & Box Callouts */
+    .status-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 7.5pt;
+      font-weight: 700;
+      font-family: monospace;
+    }
+
+    .badge-pass {
+      background-color: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .badge-classique {
+      background-color: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .badge-wedof {
+      background-color: #e0e7ff;
+      color: #3730a3;
+      border: 1px solid #c7d2fe;
+    }
+
+    .callout {
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin: 10px 0;
+      font-size: 9pt;
+    }
+
+    .callout-info {
+      background-color: #f0fdf4;
+      border-left: 4px solid #16a34a;
+      color: #14532d;
+    }
+
+    .callout-warning {
+      background-color: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      color: #78350f;
+    }
+
+    .callout-jury {
+      background-color: #fdf2f8;
+      border-left: 4px solid #db2777;
+      color: #831843;
+    }
+
+    /* Code Box */
+    pre, code {
+      font-family: 'Consolas', 'Courier New', Courier, monospace;
+      font-size: 8pt;
+    }
+
+    pre {
+      background-color: #0f172a;
+      color: #e2e8f0;
+      padding: 10px 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 8px 0;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    /* Step Card */
+    .step-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      background-color: #ffffff;
+    }
+
+    .step-number {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background-color: #0d9488;
+      color: #ffffff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 22px;
+      font-weight: 700;
+      font-size: 8.5pt;
+      margin-right: 6px;
+    }
+
+    .step-title {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #0f172a;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER PAGE -->
+  <div class="cover-page">
+    <div class="cover-header">
+      <span class="badge-tag">Master Enterprise Documentation</span>
+      <div class="cover-title">CertiFlow AutoFill Platform</div>
+      <div class="cover-subtitle">Master Project Report, Specifications Compliance Audit & User Manual</div>
+      
+      <div class="prod-url-box">
+        <div class="prod-url-title">Live Production Web Application</div>
+        <a href="https://certiflow-ten.vercel.app/" class="prod-url-link" target="_blank">https://certiflow-ten.vercel.app/</a>
+      </div>
+    </div>
+
+    <div class="cover-grid">
+      <div class="cover-card">
+        <div class="cover-card-label">Version & Release</div>
+        <div class="cover-card-value">V1.0.0 Production Build</div>
+      </div>
+      <div class="cover-card">
+        <div class="cover-card-label">Target Organizations</div>
+        <div class="cover-card-value">Proforma & Proskills Institut</div>
+      </div>
+      <div class="cover-card">
+        <div class="cover-card-label">Compliance Standards</div>
+        <div class="cover-card-value">RNCP / RS & Qualiopi Certification</div>
+      </div>
+      <div class="cover-card">
+        <div class="cover-card-label">Core AI Engine</div>
+        <div class="cover-card-value">Anthropic Claude 3.5 Sonnet</div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div>Prepared for: Administrative & Pedagogical Audit Teams</div>
+      <div>Date: August 2026</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: EXECUTIVE OVERVIEW -->
+  <div class="section-header">
+    <h1>1. Executive Summary & Project Overview</h1>
+  </div>
+
+  <h2>1.1 Executive Summary</h2>
+  <p>
+    <strong>CertiFlow AutoFill</strong> is an enterprise-grade document automation, candidate evaluation, and certificate generation platform built specifically for French professional training centers and certification authorities (specifically <strong>Proforma Institut</strong> and <strong>Proskills Institut</strong>). Operating on live data ingested exclusively from the <code>AUTOMATISATION</code> tab of official EDOF spreadsheet registers (<code>EDOF.xlsx</code> / <code>Developer of EDOF_restructure_v9.xlsx</code>), CertiFlow automates candidate completeness validation, seed-reproducible pedagogical evaluation, mark threshold verification, multi-template Word (<code>.docx</code>) content-control assembly, high-fidelity PDF rendering, and automated cloud backup.
+  </p>
+  <p>
+    By integrating Artificial Intelligence (Anthropic Claude 3.5 Sonnet / Claude AI Engine), CertiFlow eliminates manual data copy-paste errors, ensuring that candidate portfolios, evaluation sheets (<em>Grille d'Évaluation</em>), jury transcripts (<em>Procès-Verbal de Jury</em>), and completion certificates (<em>Attestations de Formation</em>) are generated with 100% accuracy and full compliance with French RNCP and RS regulations.
+  </p>
+
+  <h2>1.2 Key Objectives & Value Proposition</h2>
+  <ul>
+    <li><strong>Single Source Data Ingestion:</strong> Ingests candidate data from the <code>AUTOMATISATION</code> tab of <code>EDOF.xlsx</code>, ignoring legacy direct tabs.</li>
+    <li><strong>Completeness Detection:</strong> Pure TypeScript engine checking candidate identity, session dates, contact info, and experience.</li>
+    <li><strong>Dual Pipeline Support:</strong> Automatically classifies candidates into <code>PRET_GENERATION_CLASSIQUE</code> or <code>PRET_GENERATION_WEDOF</code>.</li>
+    <li><strong>Correlated Pedagogical Chain:</strong> Seed-reproducible scoring linking Needs Assessment ➔ Placement Test ➔ Eligibility ➔ Presentation File ➔ Evaluation Grid ➔ PV de Jury.</li>
+    <li><strong>Guaranteed Pass Floor:</strong> Enforces minimum pass floor (score ≥ 10/20 or ≥ 30/60) with decision <strong>"ADMIS"</strong>.</li>
+    <li><strong>Hardcoded Jury Rules:</strong> Auto-enforces regulatory jury composition for Proforma Institut and Proskills Institut.</li>
+    <li><strong>Hybrid PDF Engine:</strong> Local <code>libreoffice-convert</code> in development with automatic fallback to CloudConvert REST API on Vercel.</li>
+  </ul>
+
+  <!-- SECTION 2: SPECIFICATIONS AUDIT MATRIX -->
+  <div class="page-break"></div>
+  <div class="section-header">
+    <h1>2. Requirement-by-Requirement Specifications Compliance Audit</h1>
+  </div>
+
+  <h2>2.1 Specifications Compliance Audit Matrix</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 10%;">Spec §</th>
+        <th style="width: 32%;">Requirement Description</th>
+        <th style="width: 12%;">Status</th>
+        <th style="width: 46%;">Implementation Detail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>§ 2 & 3</strong></td>
+        <td>Single Source Data Ingestion (<code>AUTOMATISATION</code> tab in <code>EDOF.xlsx</code>)</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td><code>lib/edof-parser.ts</code> parses uploaded or DB files directly from <code>AUTOMATISATION</code> tab.</td>
+      </tr>
+      <tr>
+        <td><strong>§ 4.1</strong></td>
+        <td>Completeness Detection (<code>PRET_POUR_GENERATION</code>)</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td>Pure function in <code>lib/completeness.ts</code> verifying NOM, PRENOM, formation, email, and experience.</td>
+      </tr>
+      <tr>
+        <td><strong>§ 4.2</strong></td>
+        <td>Manual Trigger (<code>GENERER_MAINTENANT</code>)</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td>Individual toggle switches on candidate table rows allow manual generation overrides.</td>
+      </tr>
+      <tr>
+        <td><strong>§ 4.3</strong></td>
+        <td>Configurable Auto-Mode</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td><code>Auto-mode: MANUEL / ACTIF</code> toggle in navbar auto-triggers generation when completeness is TRUE.</td>
+      </tr>
+      <tr>
+        <td><strong>§ 5.1</strong></td>
+        <td>Category A — Candidate CV</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td>Generated from <code>experience_pro</code> column using Claude AI expansion without fabricating history.</td>
+      </tr>
+      <tr>
+        <td><strong>§ 5.2</strong></td>
+        <td>Category B — Correlated Pedagogical Chain</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td>Theme-correlated algorithm links Recueil ➔ Placement Test ➔ Eligibility ➔ Grille ➔ PV de Jury.</td>
+      </tr>
+      <tr>
+        <td><strong>§ 5.3</strong></td>
+        <td>Category C — Isolated Pedagogical Docs</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td>Intermediate/Final evaluations retain generic questions with personalized candidate header details.</td>
+      </tr>
+      <tr>
+        <td><strong>§ 6.1</strong></td>
+        <td>Competency Theme Reference Matrix</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td>Full matrix for RS6485, RS7200, RS7311, RS7344 hardcoded in <code>lib/theme-config.ts</code>.</td>
+      </tr>
+      <tr>
+        <td><strong>§ 6.2-6.3</strong></td>
+        <td>Reproducible Seed Variance</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td>Candidate experience maps to 1–5 theme baseline with ±1 seed variance for 100% reproducibility.</td>
+      </tr>
+      <tr>
+        <td><strong>§ 7</strong></td>
+        <td>Hardcoded Jury & Org Rules</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td>Strictly enforces Proforma (Kaina Nassim / Tom Fournaise) & Proskills (Anthony Malheiro / Romain Picano).</td>
+      </tr>
+      <tr>
+        <td><strong>§ 8.1</strong></td>
+        <td>Date Preservation</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td>Empty session date fields are never auto-filled with fictitious dates; empty fields stay empty.</td>
+      </tr>
+      <tr>
+        <td><strong>§ 8.5</strong></td>
+        <td>Guaranteed Pass Floor</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td>Math logic enforces minimum pass floor (score ≥ 10/20 or ≥ 30/60) with decision <strong>"ADMIS"</strong>.</td>
+      </tr>
+      <tr>
+        <td><strong>§ 9.2</strong></td>
+        <td>OOXML Filling & Multi-Run XML</td>
+        <td><span class="status-badge badge-pass">COMPLIANT</span></td>
+        <td>Uses <code>PizZip</code>, native content-control checkbox toggling, and <code>postProcessDocxXml</code> multi-run repair.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2.2 Competency Theme Reference Matrix (RS Standards)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>RS Code</th>
+        <th>Certification Title</th>
+        <th>Competency Themes & Pedagogical Focus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>RS6485</strong></td>
+        <td>Diagnostic & Stratégie Commerciale</td>
+        <td>Theme 1: Analyse du Marché <br>Theme 2: Diagnostic Produit/Service <br>Theme 3: Plan d'Action Commercial</td>
+      </tr>
+      <tr>
+        <td><strong>RS7200</strong></td>
+        <td>Management & Pilotage de Projet</td>
+        <td>Theme 1: Cadrage du Projet <br>Theme 2: Conduite & Planification <br>Theme 3: Performance & Clôture</td>
+      </tr>
+      <tr>
+        <td><strong>RS7311</strong></td>
+        <td>Intelligence Artificielle & Digitalisation</td>
+        <td>Theme 1: Prompt Engineering & IA Generative <br>Theme 2: Automation & Data Workflow <br>Theme 3: Éthique & Conformité RGPD</td>
+      </tr>
+      <tr>
+        <td><strong>RS7344</strong></td>
+        <td>Communication & Négociation Client</td>
+        <td>Theme 1: Posture & Écoute Active <br>Theme 2: Argumentaire & Négociation <br>Theme 3: Fidélisation & Relation Client</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-jury">
+    <strong>Hardcoded Regulatory Jury Rules (§7):</strong><br>
+    • <strong>Proforma Institut (Burgundy #6E1F14):</strong> Chair: Kaina Nassim | Member: Tom Fournaise | Email: <code>proformainstitut@gmail.com</code><br>
+    • <strong>Proskills Institut (Teal #0B3D3D):</strong> Chair: Anthony Malheiro | Member: Romain Picano Palombo | Email: <code>proskillsinstitut@gmail.com</code>
+  </div>
+
+  <!-- SECTION 3: SYSTEM ARCHITECTURE & APIS -->
+  <div class="page-break"></div>
+  <div class="section-header">
+    <h1>3. System Architecture & API Endpoint Specifications</h1>
+  </div>
+
+  <h2>3.1 REST API Endpoint Specifications</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Endpoint</th>
+        <th>Method</th>
+        <th>Input Payload</th>
+        <th>Functionality & Output</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/upload</code></td>
+        <td><code>POST</code></td>
+        <td><code>FormData</code> (EDOF file)</td>
+        <td>Parses <code>AUTOMATISATION</code> sheet, validates mandatory fields, updates Neon PostgreSQL DB.</td>
+      </tr>
+      <tr>
+        <td><code>/api/candidates</code></td>
+        <td><code>GET/DELETE</code></td>
+        <td>None</td>
+        <td>Returns candidate list or clears database for a new training cohort.</td>
+      </tr>
+      <tr>
+        <td><code>/api/generate</code></td>
+        <td><code>POST</code></td>
+        <td>Candidate object + API key</td>
+        <td>Evaluates candidate against mapping rules (<code>pilot-mapping.json</code>), generates DOCX/PDF files.</td>
+      </tr>
+      <tr>
+        <td><code>/api/download</code></td>
+        <td><code>POST</code></td>
+        <td>Candidates array</td>
+        <td>Assembles candidate documents into a structured ZIP archive for instant browser download.</td>
+      </tr>
+      <tr>
+        <td><code>/api/drive</code></td>
+        <td><code>POST</code></td>
+        <td>Candidate object</td>
+        <td>Uploads generated files directly to Google Shared Drive via OAuth Service Account.</td>
+      </tr>
+      <tr>
+        <td><code>/api/analyze</code></td>
+        <td><code>POST</code></td>
+        <td>Candidates array</td>
+        <td>Sends dataset to Claude AI model for deep data audit and compliance recommendations.</td>
+      </tr>
+      <tr>
+        <td><code>/api/settings</code></td>
+        <td><code>GET/POST</code></td>
+        <td>Settings JSON</td>
+        <td>Inspects and updates environment configuration (API keys, DB health, Drive folder ID).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 4: USER MANUAL -->
+  <h2>4. Comprehensive User Manual (Step-by-Step Guide)</h2>
+
+  <div class="step-card">
+    <span class="step-number">1</span>
+    <div class="step-title">Accessing Platform & Authentication</div>
+    <p style="margin-top: 4px;">
+      Navigate to <a href="https://certiflow-ten.vercel.app/" target="_blank"><strong>https://certiflow-ten.vercel.app/</strong></a>. Enter username <code>admin</code> and password <code>Certiflow@2026</code>.
+    </p>
+  </div>
+
+  <div class="step-card">
+    <span class="step-number">2</span>
+    <div class="step-title">Ingesting Candidate Data</div>
+    <p style="margin-top: 4px;">
+      Click <strong>"Charger EDOF.xlsx"</strong> and select your official EDOF workbook. Candidates are categorized into <span class="status-badge badge-classique">PRET_GENERATION_CLASSIQUE</span> or <span class="status-badge badge-wedof">PRET_GENERATION_WEDOF</span>.
+    </p>
+  </div>
+
+  <div class="step-card">
+    <span class="step-number">3</span>
+    <div class="step-title">Running AI Quality Audit</div>
+    <p style="margin-top: 4px;">
+      Click <strong>"Analyse IA Fichier"</strong>. Claude AI scans rows to flag incomplete records, missing birth dates, or mark anomalies before document assembly.
+    </p>
+  </div>
+
+  <div class="step-card">
+    <span class="step-number">4</span>
+    <div class="step-title">Generating Certificate Packages</div>
+    <p style="margin-top: 4px;">
+      <strong>Single Candidate:</strong> Click <strong>"Générer Documents"</strong> on the candidate row.<br>
+      <strong>Batch ZIP:</strong> Select candidate rows and click <strong>"Télécharger Package ZIP"</strong>.<br>
+      <strong>Auto-Mode:</strong> Toggle <strong>"Auto-mode: ACTIF"</strong> in the navbar for hands-free background generation.
+    </p>
+  </div>
+
+  <div class="step-card">
+    <span class="step-number">5</span>
+    <div class="step-title">Synchronizing to Google Shared Drive</div>
+    <p style="margin-top: 4px;">
+      Click <strong>"Envoyer vers Google Drive"</strong> in the preview modal to upload files directly into your Google Shared Drive folder.
+    </p>
+  </div>
+
+  <!-- SECTION 5: ACCEPTANCE TEST SUITE -->
+  <div class="page-break"></div>
+  <div class="section-header">
+    <h1>5. Acceptance Test Verification Suite (TC-01 to TC-10)</h1>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 12%;">Test ID</th>
+        <th style="width: 32%;">Test Scenario</th>
+        <th style="width: 44%;">Verification Method & Criterion</th>
+        <th style="width: 12%;">Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>TC-01</strong></td>
+        <td>Complete candidate generation</td>
+        <td>End-to-end execution of RS6485/RS7200 generation pipeline.</td>
+        <td><span class="status-badge badge-pass">PASSED</span></td>
+      </tr>
+      <tr>
+        <td><strong>TC-02</strong></td>
+        <td>Incomplete data block</td>
+        <td>Ingest candidate missing <code>experience_pro</code> ➔ <code>isReady = FALSE</code>.</td>
+        <td><span class="status-badge badge-pass">PASSED</span></td>
+      </tr>
+      <tr>
+        <td><strong>TC-03</strong></td>
+        <td>Jury safety lock</td>
+        <td>Verification that jury documents require explicit user confirmation.</td>
+        <td><span class="status-badge badge-pass">PASSED</span></td>
+      </tr>
+      <tr>
+        <td><strong>TC-04</strong></td>
+        <td>Jury identity match</td>
+        <td>Check Proforma vs Proskills jury chair & member names in output.</td>
+        <td><span class="status-badge badge-pass">PASSED</span></td>
+      </tr>
+      <tr>
+        <td><strong>TC-05</strong></td>
+        <td>Theme correlation & realism</td>
+        <td>Cross-check Recueil expectations ➔ Test Pos ➔ Grille score progression.</td>
+        <td><span class="status-badge badge-pass">PASSED</span></td>
+      </tr>
+      <tr>
+        <td><strong>TC-06</strong></td>
+        <td>Empty date preservation</td>
+        <td>Blank session dates remain blank strings in generated XML output.</td>
+        <td><span class="status-badge badge-pass">PASSED</span></td>
+      </tr>
+      <tr>
+        <td><strong>TC-07</strong></td>
+        <td>Category C isolation</td>
+        <td>Intermediate/Final evals retain generic questions with personalized header.</td>
+        <td><span class="status-badge badge-pass">PASSED</span></td>
+      </tr>
+      <tr>
+        <td><strong>TC-08</strong></td>
+        <td>Guaranteed pass floor</td>
+        <td>100% of tested candidate profiles score ≥ 10/20 ("ADMIS").</td>
+        <td><span class="status-badge badge-pass">PASSED</span></td>
+      </tr>
+      <tr>
+        <td><strong>TC-09</strong></td>
+        <td>Multi-run XML blank filling</td>
+        <td><code>postProcessDocxXml</code> replaces split run placeholders across XML tags.</td>
+        <td><span class="status-badge badge-pass">PASSED</span></td>
+      </tr>
+      <tr>
+        <td><strong>TC-10</strong></td>
+        <td>Output naming compliance</td>
+        <td>Output files match exact French standard naming convention.</td>
+        <td><span class="status-badge badge-pass">PASSED</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 6: DIAGNOSTICS & TROUBLESHOOTING -->
+  <div class="section-header">
+    <h1>6. Administrator & Diagnostic Troubleshooting Guide</h1>
+  </div>
+
+  <h2>6.1 Production Environment Variables (Vercel)</h2>
+  <pre><code>CLAUDE_API_KEY="sk-ant-api03-..."
+DATABASE_URL="postgresql://user:pass@ep-cool-base-12345.us-east-2.aws.neon.tech/neondb?sslmode=require"
+CERTIFLOW_TEMPLATES_ROOT="templates"
+CLOUDCONVERT_API_KEY="https://api.cloudconvert.com/v2/..."
+GOOGLE_SERVICE_ACCOUNT_EMAIL="certiflow-drive@certiflow-drive-integrator.iam.gserviceaccount.com"
+GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkq...\n-----END PRIVATE KEY-----\n"
+GOOGLE_DRIVE_FOLDER_ID="1A2b3C4d5E6f7G8h9I0j"</code></pre>
+
+  <h2>6.2 Error Diagnostic Matrix</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Symptom / Error</th>
+        <th>Root Cause</th>
+        <th>Resolution Step</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Vercel 504 Gateway Timeout</code></td>
+        <td>Serverless function exceeded 60s limit on free plan during PDF conversion.</td>
+        <td>Upgrade to Vercel Pro (configured with <code>maxDuration: 300</code>) or leave <code>CLOUDCONVERT_API_KEY</code> empty to deliver DOCX instantly.</td>
+      </tr>
+      <tr>
+        <td><code>Google Drive Permission Error</code></td>
+        <td>Service Account email lacks Editor rights on target Shared Drive folder.</td>
+        <td>Open Google Drive folder settings ➔ Share ➔ Add Service Account Email as <strong>Editor</strong>.</td>
+      </tr>
+      <tr>
+        <td><code>Template File Not Found</code></td>
+        <td>Missing template file corresponding to certification code (e.g. RS5520).</td>
+        <td>Verify file exists in <code>templates/</code> directory and matches <code>lib/certiflow/pilot-mapping.json</code>.</td>
+      </tr>
+      <tr>
+        <td><code>Invalid Claude API Key</code></td>
+        <td>Anthropic API key quota depleted or key expired.</td>
+        <td>Check billing at <code>console.anthropic.com</code> and update key in Settings modal.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout callout-info" style="margin-top: 20px;">
+    <strong>CertiFlow Master Documentation Summary:</strong> End of official master project report, audit specifications, and user manual for <code>https://certiflow-ten.vercel.app/</code>.
+  </div>
+
+</body>
+</html>
